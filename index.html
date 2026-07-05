@@ -4,23 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gausyn</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: black;
+    }
+
+    .hero {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(1.5px);
+      transform: scale(1.03);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding-top: 11vh;
+    }
+
+    h1 {
+      font-size: clamp(48px, 5vw, 82px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 42px;
+    }
+
+    p {
+      font-size: clamp(20px, 1.6vw, 30px);
+      font-weight: 500;
+      margin-bottom: 46px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 56px;
+      border-radius: 999px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        padding-top: 16vh;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <main class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline>
       <source src="gausyn-backdrop.mp4" type="video/mp4" />
     </video>
 
     <div class="overlay"></div>
 
-    <section class="hero-content">
-      <h1>Education for every<br />student on the planet.</h1>
+    <section class="content">
+      <h1>Education for every<br>student on the planet.</h1>
       <p>Launching 2026.</p>
-      <a class="button" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank">
-        Waitlist
-      </a>
+      <a href="https://forms.fillout.com/t/fFYbyT4sTous">Waitlist</a>
     </section>
   </main>
 </body>
