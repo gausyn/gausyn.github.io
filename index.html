@@ -35,13 +35,14 @@
       height: 100%;
       object-fit: cover;
 
-      /* moves the video/background framing lower */
-      object-position: center 64%;
+      /* moves the MP4 background WAY lower */
+      object-position: center 20%;
 
       filter: blur(1.5px);
 
-      /* slightly zooms video so bottom white/grey edge is less visible */
-      transform: scale(1.08);
+      /* larger zoom prevents empty edges while shifting video lower */
+      transform: scale(1.18) translateY(8%);
+      transform-origin: center center;
     }
 
     .overlay {
@@ -55,8 +56,6 @@
       z-index: 2;
       color: white;
       text-align: center;
-
-      /* moves text lower */
       padding-top: 16vh;
     }
 
@@ -94,8 +93,8 @@
 
     @media (max-width: 700px) {
       video {
-        object-position: center 64%;
-        transform: scale(1.1);
+        object-position: center 20%;
+        transform: scale(1.22) translateY(8%);
       }
 
       .content {
