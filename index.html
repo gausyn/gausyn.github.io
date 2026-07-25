@@ -40,7 +40,6 @@
       justify-content: center;
       max-width: 680px;
       width: 100%;
-      text-align: center;
     }
 
     .letter p {
@@ -48,7 +47,21 @@
       line-height: 1.55;
       color: #1a1a1a;
       margin-bottom: clamp(12px, 2.4vh, 28px);
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 1.1s ease forwards;
     }
+
+    .letter p:nth-child(1) { animation-delay: 0.15s; }
+    .letter p:nth-child(2) { animation-delay: 0.45s; }
+    .letter p:nth-child(3) { animation-delay: 0.75s; }
+    .letter p:nth-child(4) { animation-delay: 1.05s; }
+    .letter p:nth-child(5) { animation-delay: 1.35s; }
+    .letter p:nth-child(6) { animation-delay: 1.65s; }
+    .letter p:nth-child(7) { animation-delay: 1.95s; }
 
     .letter p:last-of-type {
       margin-bottom: 0;
@@ -68,6 +81,13 @@
 
     .closing em {
       font-style: italic;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .waitlist {
@@ -102,6 +122,10 @@
       flex-shrink: 0;
       text-align: center;
       padding-top: clamp(12px, 2vh, 24px);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 1.1s ease forwards;
+      animation-delay: 2.2s;
     }
 
     .footer-links {
