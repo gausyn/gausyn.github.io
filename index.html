@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gausyn</title>
-  <meta name="description" content="Gausyn — education for every student on the planet. Launching 2026." />
+  <meta name="description" content="Gausyn — education for every student on the planet." />
 
   <style>
     * {
@@ -15,132 +15,143 @@
 
     html, body {
       width: 100%;
+      height: 100%;
+      overflow: hidden;
       background: #ffffff;
       color: #1a1a1a;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Georgia, "Times New Roman", Times, serif;
       -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 12vh 24px 14vh;
-    }
-
-    .wordmark {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 64px;
+      justify-content: space-between;
+      padding: clamp(18px, 4vh, 48px) clamp(18px, 4vw, 40px);
     }
 
     .letter {
-      max-width: 620px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 680px;
+      width: 100%;
       text-align: center;
     }
 
     .letter p {
-      font-size: clamp(18px, 1.5vw, 21px);
-      line-height: 1.75;
-      color: #2b2b2b;
-      margin-bottom: 34px;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: rise 1.1s ease forwards;
+      font-size: clamp(13px, 1.55vh + 0.35vw, 18px);
+      line-height: 1.55;
+      color: #1a1a1a;
+      margin-bottom: clamp(12px, 2.4vh, 28px);
     }
 
-    .letter p:nth-child(1) { animation-delay: 0.15s; }
-    .letter p:nth-child(2) { animation-delay: 0.45s; }
-    .letter p:nth-child(3) { animation-delay: 0.75s; }
-    .letter p:nth-child(4) { animation-delay: 1.05s; }
-    .letter p:nth-child(5) { animation-delay: 1.35s; }
+    .letter p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .vision {
+      margin-bottom: clamp(8px, 1.6vh, 18px) !important;
+    }
+
+    .vision-next {
+      margin-bottom: clamp(12px, 2.4vh, 28px) !important;
+    }
 
     .closing {
-      font-size: clamp(20px, 1.8vw, 24px) !important;
-      color: #111 !important;
+      margin-top: clamp(4px, 1vh, 12px);
     }
 
     .closing em {
       font-style: italic;
     }
 
-    @keyframes rise {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .waitlist {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .team {
-      max-width: 560px;
-      text-align: center;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #8a8a8a;
-      margin-top: 18px;
-      margin-bottom: 56px;
-      opacity: 0;
-      animation: rise 1.1s ease forwards;
-      animation-delay: 1.65s;
+    .waitlist:hover {
+      color: #555;
     }
 
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 210px;
-      height: 58px;
-      padding: 0 36px;
-      border-radius: 999px;
-      background: #111;
-      color: #fff;
+    .signature {
+      margin-top: clamp(16px, 3vh, 36px);
+      text-align: right;
+      font-size: clamp(13px, 1.4vh + 0.3vw, 17px);
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .signature a {
+      color: inherit;
       text-decoration: none;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: 0.01em;
-      transition: background 0.2s ease, transform 0.2s ease;
-      opacity: 0;
-      animation: rise 1.1s ease forwards;
-      animation-delay: 1.9s;
     }
 
-    .cta:hover {
-      background: #333;
-      transform: translateY(-1px);
+    .signature a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .launch {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #b5b5b5;
-      margin-top: 28px;
-      opacity: 0;
-      animation: rise 1.1s ease forwards;
-      animation-delay: 2.1s;
+    .footer {
+      flex-shrink: 0;
+      text-align: center;
+      padding-top: clamp(12px, 2vh, 24px);
     }
 
-    @media (max-width: 700px) {
-      .page {
-        padding: 9vh 22px 12vh;
-      }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(28px, 5vw, 56px);
+      margin-bottom: clamp(14px, 2.2vh, 28px);
+      list-style: none;
+    }
 
-      .wordmark {
-        margin-bottom: 48px;
-      }
+    .footer-links a {
+      font-size: clamp(12px, 1.3vh + 0.2vw, 15px);
+      color: #1a1a1a;
+      text-decoration: none;
+    }
 
+    .footer-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copyright {
+      font-size: clamp(11px, 1.2vh + 0.15vw, 14px);
+      color: #1a1a1a;
+    }
+
+    @media (max-width: 600px), (max-height: 700px) {
       .letter p {
-        font-size: 17px;
-        margin-bottom: 28px;
+        line-height: 1.45;
+      }
+
+      .signature {
+        text-align: center;
+      }
+    }
+
+    @media (max-height: 560px) {
+      .letter p {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .signature {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      .footer-links {
+        margin-bottom: 10px;
+        gap: 24px;
       }
     }
   </style>
@@ -148,12 +159,10 @@
 
 <body>
   <main class="page">
-    <div class="wordmark">Gausyn</div>
-
     <section class="letter">
       <p>
         Somewhere tonight, a student is sitting alone with a question no one
-        is there to answer. Not because they can&rsquo;t learn&nbsp;&mdash; but because
+        is there to answer. Not because they can&rsquo;t learn, but because
         the right teacher, the patient one, the one who explains it the way
         that finally makes sense, never crossed their path.
       </p>
@@ -165,28 +174,36 @@
       </p>
       <p>
         And we believe learning should go deep. Not answers handed over, but
-        understanding built&nbsp;&mdash; visually, gently, one honest question at a
-        time, until the idea clicks and stays with you for life.
+        understanding built, visually, gently, one honest question at a time,
+        until the idea clicks and stays with you for life.
       </p>
-      <p>
-        Imagine what one student could become with that kind of teacher
-        beside them. Now imagine every student on the planet.
+      <p class="vision">
+        Imagine what one student could become with that kind of teacher beside them.
+      </p>
+      <p class="vision-next">
+        Now imagine every student on the planet.
       </p>
       <p class="closing">
         That is why we are building <em>Gausyn</em>.
+        <a class="waitlist" href="https://forms.fillout.com/t/fFYbyT4sTous">Waitlist Today</a>.
+      </p>
+
+      <p class="signature">
+        &ndash;
+        <a href="https://www.linkedin.com/in/mattlisondra/" target="_blank" rel="noopener noreferrer">Matthew Lisondra</a>
+        and
+        <a href="https://www.linkedin.com/in/jameslisondra/" target="_blank" rel="noopener noreferrer">James Lisondra</a>
       </p>
     </section>
 
-    <p class="team">
-      Gausyn is being built by a team of PhDs, physicians, engineers, and
-      university instructors from the University of Toronto, the University
-      of Ottawa, and beyond&nbsp;&mdash; people who have spent their lives teaching,
-      and believe every student deserves better.
-    </p>
-
-    <a class="cta" href="https://forms.fillout.com/t/fFYbyT4sTous">Join the Waitlist</a>
-
-    <div class="launch">Launching 2026</div>
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
+        <li><a href="mailto:gausyninc@gmail.com">Careers</a></li>
+        <li><a href="mailto:gausyninc@gmail.com">Investors</a></li>
+      </ul>
+      <p class="copyright">&copy; 2026 Inquisara</p>
+    </footer>
   </main>
 </body>
 </html>
