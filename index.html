@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gausyn</title>
+  <meta name="description" content="Gausyn — education for every student on the planet. Launching 2026." />
 
   <style>
     * {
@@ -14,126 +15,178 @@
 
     html, body {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12vh 24px 14vh;
+    }
+
+    .wordmark {
       font-family: Inter, Arial, Helvetica, sans-serif;
-      background: black;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 64px;
     }
 
-    .hero {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-      /* moves the MP4 background WAY lower */
-      object-position: center 20%;
-
-      filter: blur(1.5px);
-
-      /* larger zoom prevents empty edges while shifting video lower */
-      transform: scale(1.18) translateY(6%);
-      transform-origin: center center;
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.18);
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-      color: white;
+    .letter {
+      max-width: 620px;
       text-align: center;
-      padding-top: 16vh;
     }
 
-    h1 {
-      font-size: clamp(48px, 5vw, 82px);
-      font-weight: 300;
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      margin-bottom: 42px;
+    .letter p {
+      font-size: clamp(18px, 1.5vw, 21px);
+      line-height: 1.75;
+      color: #2b2b2b;
+      margin-bottom: 34px;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 1.1s ease forwards;
     }
 
-    p {
-      font-size: clamp(20px, 1.6vw, 30px);
-      font-weight: 500;
-      margin-bottom: 46px;
+    .letter p:nth-child(1) { animation-delay: 0.15s; }
+    .letter p:nth-child(2) { animation-delay: 0.45s; }
+    .letter p:nth-child(3) { animation-delay: 0.75s; }
+    .letter p:nth-child(4) { animation-delay: 1.05s; }
+    .letter p:nth-child(5) { animation-delay: 1.35s; }
+
+    .closing {
+      font-size: clamp(20px, 1.8vw, 24px) !important;
+      color: #111 !important;
     }
 
-    a {
+    .closing em {
+      font-style: italic;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .team {
+      max-width: 560px;
+      text-align: center;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #8a8a8a;
+      margin-top: 18px;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: rise 1.1s ease forwards;
+      animation-delay: 1.65s;
+    }
+
+    .cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 150px;
-      height: 56px;
+      min-width: 210px;
+      height: 58px;
+      padding: 0 36px;
       border-radius: 999px;
-      background: white;
-      color: black;
+      background: #111;
+      color: #fff;
       text-decoration: none;
-      font-weight: 700;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-weight: 600;
       font-size: 16px;
+      letter-spacing: 0.01em;
+      transition: background 0.2s ease, transform 0.2s ease;
+      opacity: 0;
+      animation: rise 1.1s ease forwards;
+      animation-delay: 1.9s;
     }
 
-    a:hover {
-      background: #f2f2f2;
+    .cta:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    .launch {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b5b5b5;
+      margin-top: 28px;
+      opacity: 0;
+      animation: rise 1.1s ease forwards;
+      animation-delay: 2.1s;
     }
 
     @media (max-width: 700px) {
-      video {
-        object-position: center 20%;
-        transform: scale(1.22) translateY(8%);
+      .page {
+        padding: 9vh 22px 12vh;
       }
-    
-      .content {
-        padding-top: 12vh;
-        padding-left: 20px;
-        padding-right: 20px;
+
+      .wordmark {
+        margin-bottom: 48px;
       }
-    
-      h1 {
-        font-size: 42px;
-        line-height: 1.08;
-        margin-bottom: 38px;
-      }
-    
-      p {
-        margin-bottom: 40px;
-      }
-    
-      a {
-        width: 150px;
-        height: 56px;
+
+      .letter p {
+        font-size: 17px;
+        margin-bottom: 28px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="gausyn-backdrop.mp4" type="video/mp4" />
-    </video>
+  <main class="page">
+    <div class="wordmark">Gausyn</div>
 
-    <div class="overlay"></div>
-
-    <section class="content">
-      <h1>Education for every<br>student on the planet.</h1>
-      <p>Launching 2026.</p>
-      <a href="https://forms.fillout.com/t/fFYbyT4sTous">Waitlist</a>
+    <section class="letter">
+      <p>
+        Somewhere tonight, a student is sitting alone with a question no one
+        is there to answer. Not because they can&rsquo;t learn&nbsp;&mdash; but because
+        the right teacher, the patient one, the one who explains it the way
+        that finally makes sense, never crossed their path.
+      </p>
+      <p>
+        We believe that teacher should be there for everyone. At midnight
+        before the exam. On the bus ride home. In a classroom of sixty, or a
+        village with a single shared connection. Wherever curiosity finds
+        you, and whenever it does.
+      </p>
+      <p>
+        And we believe learning should go deep. Not answers handed over, but
+        understanding built&nbsp;&mdash; visually, gently, one honest question at a
+        time, until the idea clicks and stays with you for life.
+      </p>
+      <p>
+        Imagine what one student could become with that kind of teacher
+        beside them. Now imagine every student on the planet.
+      </p>
+      <p class="closing">
+        That is why we are building <em>Gausyn</em>.
+      </p>
     </section>
+
+    <p class="team">
+      Gausyn is being built by a team of PhDs, physicians, engineers, and
+      university instructors from the University of Toronto, the University
+      of Ottawa, and beyond&nbsp;&mdash; people who have spent their lives teaching,
+      and believe every student deserves better.
+    </p>
+
+    <a class="cta" href="https://forms.fillout.com/t/fFYbyT4sTous">Join the Waitlist</a>
+
+    <div class="launch">Launching 2026</div>
   </main>
 </body>
 </html>
