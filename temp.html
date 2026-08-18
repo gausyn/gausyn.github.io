@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gausyn — A personal teacher for every student</title>
+  <meta name="description" content="Gausyn is a personal teacher for every student. Any subject, any level, any language, taught the way you learn best." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #6b6b6b;
+      --faint: #9a9a9a;
+      --rule: #e6e6e6;
+      --surface: #f5f5f4;
+      --maxw: 1180px;
+      --pad: clamp(20px, 5vw, 48px);
+      --section: clamp(72px, 12vh, 160px);
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: clamp(16px, 1.15vw, 19px);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
+
+    /* ---------- header ---------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.72);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: clamp(56px, 7vh, 68px);
+    }
+
+    .wordmark {
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 40px);
+      list-style: none;
+    }
+
+    .nav a,
+    .nav .inert {
+      font-size: clamp(14px, 1vw, 15px);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav a:hover { opacity: 0.55; }
+
+    .nav a.current { opacity: 0.45; }
+
+    .nav .inert {
+      color: var(--faint);
+      cursor: default;
+      user-select: none;
+    }
+
+    /* ---------- type ---------- */
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 104px);
+      line-height: 1.02;
+      max-width: 15ch;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4.4vw, 58px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      font-size: clamp(20px, 1.7vw, 24px);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .lede {
+      font-size: clamp(18px, 1.55vw, 23px);
+      line-height: 1.5;
+      color: var(--muted);
+      letter-spacing: -0.012em;
+      max-width: 46ch;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    p + p { margin-top: 1em; }
+
+    .muted { color: var(--muted); }
+
+    /* ---------- sections ---------- */
+
+    section { padding: var(--section) 0; }
+
+    .rule-top { border-top: 1px solid var(--rule); }
+
+    /* ---------- hero ---------- */
+
+    .hero {
+      padding-top: clamp(64px, 13vh, 140px);
+      padding-bottom: clamp(40px, 7vh, 80px);
+    }
+
+    .hero .lede { margin-top: clamp(22px, 3.2vh, 34px); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px 26px;
+      margin-top: clamp(30px, 4.5vh, 46px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      padding: 14px 28px;
+      border-radius: 999px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .btn:hover { opacity: 0.82; transform: translateY(-1px); }
+
+    .btn-quiet {
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 2px;
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn-quiet:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* ---------- placeholders ---------- */
+
+    .ph {
+      position: relative;
+      background: var(--surface);
+      border-radius: clamp(10px, 1.2vw, 18px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ph::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(10, 10, 10, 0.07);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .ph span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--faint);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .ph-video { aspect-ratio: 16 / 9; }
+    .ph-wide { aspect-ratio: 21 / 9; }
+    .ph-square { aspect-ratio: 4 / 3; }
+
+    /* ---------- statement ---------- */
+
+    .statement p {
+      font-size: clamp(26px, 3.5vw, 46px);
+      line-height: 1.18;
+      letter-spacing: -0.028em;
+      max-width: 22ch;
+      font-weight: 500;
+    }
+
+    .statement .sub {
+      font-size: clamp(17px, 1.35vw, 20px);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--muted);
+      max-width: 52ch;
+      font-weight: 400;
+      margin-top: clamp(24px, 3.5vh, 40px);
+    }
+
+    /* ---------- grids ---------- */
+
+    .section-head { margin-bottom: clamp(40px, 6vh, 72px); }
+    .section-head h2 { max-width: 18ch; }
+    .section-head .lede { margin-top: 18px; }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(32px, 4vw, 64px);
+    }
+
+    .col .eyebrow { display: block; margin-bottom: 14px; }
+    .col h3 { margin-bottom: 12px; }
+    .col p { color: var(--muted); font-size: clamp(15px, 1.05vw, 17px); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(28px, 3.5vw, 52px);
+    }
+
+    .step .ph { margin-bottom: 22px; }
+    .step .eyebrow { display: block; margin-bottom: 10px; }
+    .step h3 { margin-bottom: 10px; }
+    .step p { color: var(--muted); font-size: clamp(15px, 1.05vw, 17px); }
+
+    /* ---------- reach ---------- */
+
+    .reach .ph { margin-bottom: clamp(40px, 6vh, 72px); }
+
+    .reach-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 4vw, 72px);
+      align-items: start;
+    }
+
+    .reach-text h2 { max-width: 14ch; }
+    .reach-text p { color: var(--muted); }
+
+    /* ---------- closing ---------- */
+
+    .closing { text-align: center; }
+
+    .closing h2 {
+      max-width: 20ch;
+      margin: 0 auto;
+    }
+
+    .closing .cta-row { justify-content: center; }
+
+    .signature {
+      margin-top: clamp(40px, 6vh, 72px);
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .signature a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+    }
+
+    .signature a:hover { border-color: var(--ink); }
+
+    /* ---------- footer ---------- */
+
+    .site-footer {
+      border-top: 1px solid var(--rule);
+      padding: clamp(40px, 6vh, 64px) 0 clamp(32px, 5vh, 52px);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px 40px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(20px, 3vw, 40px);
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    .copyright { font-size: 14px; color: var(--faint); }
+
+    /* ---------- reveal ---------- */
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ---------- responsive ---------- */
+
+    @media (max-width: 860px) {
+      .cols,
+      .steps,
+      .reach-text {
+        grid-template-columns: 1fr;
+      }
+
+      .cols { gap: 40px; }
+      .steps { gap: 44px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { max-width: none; }
+      .statement p { max-width: none; }
+      .btn { width: 100%; }
+      .cta-row { gap: 16px; }
+      .closing .cta-row { flex-direction: column; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="temp.html">gausyn</a>
+      <nav>
+        <ul class="nav">
+          <li><a href="temp-about.html">About</a></li>
+          <li><span class="inert" aria-disabled="true">Log In</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero">
+      <div class="wrap">
+        <h1 data-reveal>A personal teacher for every student.</h1>
+        <p class="lede" data-reveal>
+          Any subject. Any level. Any language. Taught the way you
+          learn best, whenever you need it.
+        </p>
+        <div class="cta-row" data-reveal>
+          <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="btn-quiet" href="temp-about.html">Read why we are building this</a>
+        </div>
+        <div class="ph ph-video" style="margin-top: clamp(48px, 8vh, 96px);" data-reveal>
+          <span>Product video &mdash; 16:9</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- statement -->
+    <section class="statement rule-top">
+      <div class="wrap">
+        <p data-reveal>Not answers handed over. Understanding built.</p>
+        <p class="sub" data-reveal>
+          Most tools are built to finish the problem for you. Gausyn is built to
+          teach it &mdash; through conversation, visual explanation, and guided
+          practice, one honest question at a time, until the idea clicks and stays.
+        </p>
+      </div>
+    </section>
+
+    <!-- what it does -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>A teacher that adapts to you.</h2>
+          <p class="lede">
+            A real teacher figures out what you already understand, finds the
+            misconception, and changes the lesson when the explanation does not
+            land. Gausyn is designed to do the same.
+          </p>
+        </div>
+
+        <div class="cols">
+          <div class="col" data-reveal>
+            <span class="eyebrow">01</span>
+            <h3>It teaches, it does not answer</h3>
+            <p>
+              Bring a homework problem and you get the concept underneath it:
+              worked through visually, step by step, with examples and practice
+              generated for you as you go.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">02</span>
+            <h3>It changes as you learn</h3>
+            <p>
+              Pace, language, depth, and the kind of example used all shift in
+              real time. Ask for it slower, drawn out, in another language, or
+              through a different analogy &mdash; and it starts again from there.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">03</span>
+            <h3>Any subject, any level</h3>
+            <p>
+              Elementary arithmetic through graduate coursework. A single
+              question before an exam, or a full sequence of lessons that carries
+              you through an entire course.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- how it works -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>How it works.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-reveal>
+            <div class="ph ph-square"><span>Upload interface</span></div>
+            <span class="eyebrow">Step one</span>
+            <h3>Bring anything</h3>
+            <p>
+              An assignment, a page of notes, a diagram, a lab report, or just a
+              topic you want to finally understand.
+            </p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="ph ph-square"><span>Lesson screenshot</span></div>
+            <span class="eyebrow">Step two</span>
+            <h3>Learn through it</h3>
+            <p>
+              Gausyn explains, draws it out, asks you questions back, checks what
+              landed, and reworks whatever did not.
+            </p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="ph ph-square"><span>Learner profile</span></div>
+            <span class="eyebrow">Step three</span>
+            <h3>It remembers how you learn</h3>
+            <p>
+              Every session builds a clearer picture of you as a learner, and
+              that picture follows you across subjects and years.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- reach -->
+    <section class="reach rule-top">
+      <div class="wrap">
+        <div class="ph ph-wide" data-reveal><span>Students, wide still &mdash; 21:9</span></div>
+        <div class="reach-text">
+          <h2 data-reveal>Built for every student on the planet.</h2>
+          <div data-reveal>
+            <p>
+              Whatever their age. Whatever language they speak. Whatever school
+              system they were born into, and whatever their family can afford.
+            </p>
+            <p>
+              At midnight before an exam. On the bus ride home. In a crowded
+              classroom, or anywhere a student has a question and no one nearby
+              who can answer it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- closing -->
+    <section class="closing rule-top">
+      <div class="wrap">
+        <h2 data-reveal>Imagine every student with a teacher of their own.</h2>
+        <div class="cta-row" data-reveal>
+          <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+        </div>
+        <p class="signature" data-reveal>
+          &ndash;
+          <a href="https://www.linkedin.com/in/mattlisondra/" target="_blank" rel="noopener noreferrer">Matthew Lisondra</a>
+          and
+          <a href="https://www.linkedin.com/in/jameslisondra/" target="_blank" rel="noopener noreferrer">James Lisondra</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="wordmark" href="temp.html">gausyn</a>
+      <ul class="footer-links">
+        <li><a href="temp-about.html">About</a></li>
+        <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
+        <li><a href="mailto:gausyninc@gmail.com">Careers</a></li>
+        <li><a href="mailto:gausyninc@gmail.com">Investors</a></li>
+      </ul>
+      <p class="copyright">&copy; 2026 Gausyn</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('[data-reveal]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+      items.forEach(function (el, i) {
+        el.style.transitionDelay = (Math.min(i, 3) * 0.08) + 's';
+        io.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
