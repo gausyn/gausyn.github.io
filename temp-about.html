@@ -277,7 +277,7 @@
       position: absolute;
       display: block;
       border-radius: 50%;
-      filter: blur(64px);
+      filter: blur(clamp(30px, 5vw, 68px));
       opacity: 0.9;
       will-change: transform;
     }
@@ -301,6 +301,12 @@
       top: 24%; left: 28%;
       background: radial-gradient(circle at 50% 50%, #e5c3b3 0%, rgba(229, 195, 179, 0) 70%);
       animation: drift-c 22s ease-in-out infinite alternate;
+    }
+
+    @media (max-width: 640px) {
+      .aurora i:nth-child(1) { width: 115vw; height: 115vw; top: -12%; left: -12%; }
+      .aurora i:nth-child(2) { width: 100vw; height: 100vw; top: 2%; right: -18%; }
+      .aurora i:nth-child(3) { width: 90vw; height: 90vw; top: 26%; left: 12%; }
     }
 
     .aurora .grain {
