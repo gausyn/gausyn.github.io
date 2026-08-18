@@ -18,8 +18,8 @@
       --maxw: 1180px;
       --pad: clamp(20px, 5vw, 48px);
       --section: clamp(72px, 12vh, 160px);
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
-      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --label: Georgia, "Times New Roman", Times, serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,7 +29,7 @@
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: var(--sans);
+      font-family: var(--serif);
       font-size: clamp(16px, 1.15vw, 19px);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -66,8 +66,8 @@
 
     .wordmark {
       font-size: clamp(19px, 2vw, 23px);
-      font-weight: 600;
-      letter-spacing: -0.035em;
+      font-weight: 700;
+      letter-spacing: -0.022em;
       text-decoration: none;
     }
 
@@ -81,7 +81,7 @@
     .nav a,
     .nav .inert {
       font-size: clamp(14px, 1vw, 15px);
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
       text-decoration: none;
       color: var(--ink);
     }
@@ -99,13 +99,14 @@
     /* ---------- type ---------- */
 
     h1, h2, h3 {
-      font-weight: 600;
-      letter-spacing: -0.03em;
+      font-weight: 700;
+      letter-spacing: -0.018em;
       line-height: 1.05;
     }
 
     .hero h1 {
       font-size: clamp(44px, 8vw, 104px);
+      font-weight: 400;
       line-height: 1.02;
       max-width: 15ch;
     }
@@ -117,7 +118,7 @@
 
     h3 {
       font-size: clamp(20px, 1.7vw, 24px);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       line-height: 1.2;
     }
 
@@ -125,12 +126,12 @@
       font-size: clamp(18px, 1.55vw, 23px);
       line-height: 1.5;
       color: var(--muted);
-      letter-spacing: -0.012em;
+      letter-spacing: 0;
       max-width: 46ch;
     }
 
     .eyebrow {
-      font-family: var(--mono);
+      font-family: var(--label);
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -172,8 +173,8 @@
       color: #fff;
       text-decoration: none;
       font-size: 15px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
+      font-weight: 700;
+      letter-spacing: 0;
       padding: 14px 28px;
       border-radius: 999px;
       transition: opacity 0.25s ease, transform 0.25s ease;
@@ -214,7 +215,7 @@
     }
 
     .ph span {
-      font-family: var(--mono);
+      font-family: var(--label);
       font-size: 11px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -232,15 +233,15 @@
     .statement p {
       font-size: clamp(26px, 3.5vw, 46px);
       line-height: 1.18;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.014em;
       max-width: 22ch;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     .statement .sub {
       font-size: clamp(17px, 1.35vw, 20px);
       line-height: 1.55;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
       color: var(--muted);
       max-width: 52ch;
       font-weight: 400;
@@ -563,7 +564,7 @@
         <li><a href="mailto:gausyninc@gmail.com">Careers</a></li>
         <li><a href="mailto:gausyninc@gmail.com">Investors</a></li>
       </ul>
-      <p class="copyright">&copy; 2026 Gausyn</p>
+      <p class="copyright">&copy; 2026 Inquisara</p>
     </div>
   </footer>
 
