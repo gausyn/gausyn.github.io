@@ -6,7 +6,7 @@
   <title>Gausyn — A personal teacher for every student</title>
   <meta name="description" content="Gausyn plans your week, teaches lessons out loud, and works through every problem beside you on a shared board. Any subject, any level, any language." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=5" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=6" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -27,29 +27,13 @@
 
   <main>
 
-    <!-- hero -->
-    <section class="hero">
-      <div class="wrap">
-        <h1 data-reveal>A personal teacher for every student.</h1>
-        <p class="lede" data-reveal>
-          Tell it what your week looks like. It plans the lessons, teaches them
-          out loud, and works through every problem beside you on a shared board
-          &mdash; from kindergarten to a doctorate, in any language, at your pace.
-        </p>
-        <div class="cta-row" data-reveal>
-          <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
-          <a class="btn-quiet" href="#how">See how it works</a>
-        </div>
-      </div>
-    </section>
+    <!-- hero + film, one viewport -->
+    <section class="scene herofilm" data-scene>
+      <h1 data-reveal>A personal teacher for every student.</h1>
 
-
-    <section class="scene film-sec" id="film" data-scene>
-      <div class="film">
-        <div class="act act-1">
-          <div class="act-cap">
-            <h3>Tell it what&rsquo;s coming.</h3>
-          </div>
+      <div class="film" data-reveal>
+        <div class="act act-1 on">
+          <div class="act-cap"><h3>Tell it what&rsquo;s coming.</h3></div>
           <div class="act-body">
 
         <div class="stage" data-reveal>
@@ -139,9 +123,7 @@
         </div>
 
         <div class="act act-2">
-          <div class="act-cap">
-            <h3>Show up. That&rsquo;s all.</h3>
-          </div>
+          <div class="act-cap"><h3>Show up. That&rsquo;s all.</h3></div>
           <div class="act-body">
 
         <div class="lobby-stage" data-reveal>
@@ -170,9 +152,7 @@
         </div>
 
         <div class="act act-3">
-          <div class="act-cap">
-            <h3>A lesson that hears you.</h3>
-          </div>
+          <div class="act-cap"><h3>A lesson that hears you.</h3></div>
           <div class="act-body">
 
         <div class="stage" data-reveal>
@@ -259,9 +239,7 @@
         </div>
 
         <div class="act act-4">
-          <div class="act-cap">
-            <h3>Your hand on the pen.</h3>
-          </div>
+          <div class="act-cap"><h3>Your hand on the pen.</h3></div>
           <div class="act-body">
 
         <div class="stage" data-reveal>
@@ -338,9 +316,7 @@
         </div>
 
         <div class="act act-5">
-          <div class="act-cap">
-            <h3>It grows with you.</h3>
-          </div>
+          <div class="act-cap"><h3>It grows with you.</h3></div>
           <div class="film-big film-levels">
             <span><b>Kindergarten</b>counting to ten</span>
             <span><b>Grade 4</b>7 &times; 8</span>
@@ -353,9 +329,7 @@
         </div>
 
         <div class="act act-6">
-          <div class="act-cap">
-            <h3>In the language you think in.</h3>
-          </div>
+          <div class="act-cap"><h3>In the language you think in.</h3></div>
           <div class="film-big film-langs">
             <span>A personal teacher for every student.</span>
             <span lang="fr">Un professeur personnel pour chaque &eacute;l&egrave;ve.</span>
@@ -366,6 +340,25 @@
           <p class="film-line">Every student, taught the way the luckiest ones always were.</p>
         </div>
 
+        <button class="film-nav prev" type="button" aria-label="Previous part">&#8249;</button>
+        <button class="film-nav next" type="button" aria-label="Next part">&#8250;</button>
+        <div class="film-dots" aria-label="Film parts">
+          <button class="film-dot on" type="button" aria-label="Part 1"></button>
+          <button class="film-dot" type="button" aria-label="Part 2"></button>
+          <button class="film-dot" type="button" aria-label="Part 3"></button>
+          <button class="film-dot" type="button" aria-label="Part 4"></button>
+          <button class="film-dot" type="button" aria-label="Part 5"></button>
+          <button class="film-dot" type="button" aria-label="Part 6"></button>
+        </div>
+      </div>
+      <p class="lede" data-reveal>
+        Tell it what your week looks like. It plans the lessons, teaches them
+        out loud, and works through every problem beside you on a shared board,
+        from kindergarten to a doctorate, in any language, at your pace.
+      </p>
+      <div class="cta-row" data-reveal>
+        <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+        <a class="btn-quiet" href="#how">See how it works</a>
       </div>
     </section>
 
@@ -1065,6 +1058,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=5"></script>
+  <script src="assets/gausyn.js?v=6"></script>
 </body>
 </html>

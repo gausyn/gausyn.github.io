@@ -33,6 +33,42 @@
     scenes.forEach(function (el) { sio.observe(el); });
   }
 
+  // film: auto-advancing slideshow with prev/next and dots
+  var film = document.querySelector('.film');
+  if (film) {
+    var acts = Array.prototype.slice.call(film.querySelectorAll('.act'));
+    var dots = Array.prototype.slice.call(film.querySelectorAll('.film-dot'));
+    var DURS = [65, 30, 65, 65, 40, 35]; // seconds per act
+    var idx = 0, timer = null, onScreen = true;
+
+    function schedule() {
+      clearTimeout(timer);
+      if (reduce || !onScreen) return;
+      timer = setTimeout(function () { show(idx + 1); }, DURS[idx] * 1000);
+    }
+    function show(i) {
+      idx = ((i % acts.length) + acts.length) % acts.length;
+      acts.forEach(function (a, j) { a.classList.toggle('on', j === idx); });
+      dots.forEach(function (d, j) { d.classList.toggle('on', j === idx); });
+      schedule();
+    }
+    var prev = film.querySelector('.film-nav.prev');
+    var next = film.querySelector('.film-nav.next');
+    if (prev) prev.addEventListener('click', function () { show(idx - 1); });
+    if (next) next.addEventListener('click', function () { show(idx + 1); });
+    dots.forEach(function (d, j) { d.addEventListener('click', function () { show(j); }); });
+
+    if (hasIO) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          onScreen = entry.isIntersecting;
+          if (onScreen) schedule(); else clearTimeout(timer);
+        });
+      }, { threshold: 0.05 }).observe(film);
+    }
+    show(0);
+  }
+
   // contact form: compose an email in the visitor's mail app
   var cf = document.getElementById('contact-form');
   if (cf) {

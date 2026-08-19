@@ -817,84 +817,137 @@ html.js .te-li{animation:te-listen 50s steps(1) infinite}
 .side-meta .val { font-size: 13px; color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .da-dim { display: none !important; } }
 
-/* ── the one-minute film ────────────────────────────────────────────────── */
-.film-sec { padding: 0; border-bottom: 1px solid var(--rule); }
-.film { position: relative; min-height: calc(100vh - 68px); overflow: hidden; }
-@supports (height: 100svh) { .film { min-height: calc(100svh - var(--header-h)); } }
+/* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
+.herofilm {
+  min-height: calc(100vh - 68px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: clamp(14px, 2.2vh, 28px) var(--pad) clamp(18px, 2.8vh, 34px);
+}
+@supports (height: 100svh) { .herofilm { min-height: calc(100svh - var(--header-h)); } }
+.herofilm h1 {
+  font-size: clamp(32px, 4.4vw, 62px);
+  max-width: 24ch;
+  margin: 0 auto clamp(12px, 2vh, 22px);
+}
+.herofilm .lede {
+  margin: clamp(12px, 2vh, 22px) auto 0;
+  font-size: clamp(15px, 1.2vw, 18px);
+  max-width: 66ch;
+}
+.herofilm .cta-row { justify-content: center; margin-top: clamp(12px, 2vh, 20px); }
+
+.film {
+  position: relative;
+  width: min(100%, 1500px);
+  height: clamp(360px, calc(100vh - 470px), 700px);
+}
+@supports (height: 100svh) { .film { height: clamp(360px, calc(100svh - 450px), 700px); } }
 
 .act {
-  position: absolute; inset: 0; opacity: 0;
+  position: absolute; inset: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: clamp(40px, 5vh, 56px) var(--pad) clamp(44px, 6vh, 64px);
+  padding: 4px clamp(44px, 4vw, 60px) 30px;
+  overflow: hidden;
 }
-.act-1 { opacity: 1; }
-.act-cap { text-align: center; margin-bottom: clamp(14px, 2.4vh, 26px); }
-.act-cap h3 { font-size: clamp(22px, 2.6vw, 34px); }
-.act-body { width: min(100%, var(--widew)); }
+.act-1 { opacity: 1; visibility: visible; }
+html.js .act-1 { opacity: 0; visibility: hidden; }
+html.js .act.on { opacity: 1; visibility: visible; }
 
+.act-cap { margin-bottom: clamp(8px, 1.4vh, 14px); }
+.act-cap h3 { font-size: clamp(16px, 1.5vw, 21px); }
+.act-body { width: 100%; max-width: 1240px; }
+
+/* scenes shrink to fit the pane */
 .film .appshell { min-height: 0; }
-.film .boardarea { min-height: clamp(280px, 36vh, 430px); }
-.film .cal-grid .tm, .film .cal-grid .cell { height: 42px; }
-.film .dockmsgs .dm { font-size: 11.5px; }
-.film .line { font-size: 11.5px; }
+.film .boardarea { min-height: clamp(210px, 30vh, 340px); }
+.film .cal-grid .tm, .film .cal-grid .cell { height: 34px; }
+.film .dockmsgs { gap: 6px; margin-bottom: 8px; }
+.film .dockmsgs .dm { font-size: 10.5px; }
+.film .dockinput { padding: 6px 13px; font-size: 11px; }
+.film .side-lines { gap: 8px; padding: 11px 13px; }
+.film .line { font-size: 11px; }
+.film .voice { padding: 8px 14px; }
+.film .lobby-card { padding: 18px 20px; width: min(400px, 100%); }
+.film .lobby-cam { margin: 12px auto; }
+.film .lesson-page h4 { font-size: clamp(16px, 1.4vw, 20px); }
+.film .aside { padding: 12px; }
+.film .apprail { padding: 12px 10px; gap: 10px; }
+.film .statcard { padding: 10px; }
+.film .appmain { padding: 10px 14px; }
 
-/* the film runs its scenes double-speed so the whole story fits a minute */
-.film [class*="da-"], .film .fade-da { animation-duration: 23s !important; }
-.film [class*="te-"], .film .fade-te { animation-duration: 25s !important; }
-.film [class*="pr-"], .film .fade-pr { animation-duration: 27s !important; }
-.film .lobby-opt.o1, .film .lobby-opt.o2, .film .lobby-join { animation-duration: 10s !important; }
+/* hover controls: arrows + act dots */
+.film-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 6;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--rule); background: rgba(255,255,255,0.85);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 20px; line-height: 1; color: var(--muted);
+  cursor: pointer; padding: 0 0 2px;
+  opacity: 0; transition: opacity 0.3s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.film-nav.prev { left: 2px; }
+.film-nav.next { right: 2px; }
+.film:hover .film-nav, .film-nav:focus-visible { opacity: 1; }
+.film-nav:hover { color: var(--ink); border-color: var(--ink); }
+.film-dots {
+  position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 9px; z-index: 6;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.film:hover .film-dots, .film-dots:focus-within { opacity: 1; }
+.film-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rule); border: 0; cursor: pointer; padding: 0; }
+.film-dot.on { background: var(--ink); }
+@media (hover: none) { .film-nav, .film-dots { opacity: 0.85; } }
 
-html.js .act-1 { animation: act1 60s linear infinite; }
-html.js .act-2 { animation: act2 60s linear infinite; }
-html.js .act-3 { animation: act3 60s linear infinite; }
-html.js .act-4 { animation: act4 60s linear infinite; }
-html.js .act-5 { animation: act5 60s linear infinite; }
-html.js .act-6 { animation: act6 60s linear infinite; }
-@keyframes act1 { 0% { opacity: 1; visibility: visible; } 22.17% { opacity: 1; } 23.33% { opacity: 0; visibility: hidden; } 99% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; } }
-@keyframes act2 { 0% { opacity: 0; visibility: hidden; } 22.17% { opacity: 0; visibility: hidden; } 23.33% { opacity: 1; visibility: visible; } 33.83% { opacity: 1; } 35% { opacity: 0; visibility: hidden; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes act3 { 0% { opacity: 0; visibility: hidden; } 33.83% { opacity: 0; visibility: hidden; } 35% { opacity: 1; visibility: visible; } 55.5% { opacity: 1; } 56.67% { opacity: 0; visibility: hidden; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes act4 { 0% { opacity: 0; visibility: hidden; } 55.5% { opacity: 0; visibility: hidden; } 56.67% { opacity: 1; visibility: visible; } 77.17% { opacity: 1; } 78.33% { opacity: 0; visibility: hidden; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes act5 { 0% { opacity: 0; visibility: hidden; } 77.17% { opacity: 0; visibility: hidden; } 78.33% { opacity: 1; visibility: visible; } 88.83% { opacity: 1; } 90% { opacity: 0; visibility: hidden; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes act6 { 0% { opacity: 0; visibility: hidden; } 88.83% { opacity: 0; visibility: hidden; } 90% { opacity: 1; visibility: visible; } 99.5% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
-
-.film-big { position: relative; width: 100%; max-width: 920px; height: clamp(150px, 28vh, 240px); }
+.film-big { position: relative; width: 100%; max-width: 920px; height: clamp(130px, 24vh, 210px); }
 .film-big > span {
   position: absolute; inset: 0; opacity: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
   text-align: center; font-family: var(--mono);
-  font-size: clamp(28px, 5vw, 64px); color: var(--ink); line-height: 1.15;
+  font-size: clamp(26px, 4.4vw, 58px); color: var(--ink); line-height: 1.15;
 }
 .film-big > span b { font-weight: 400; font-family: var(--serif); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
-.film-langs > span { font-family: var(--serif); font-size: clamp(24px, 4vw, 52px); letter-spacing: -0.018em; }
-html.js .film-levels > span { animation: cyc7f 12.6s ease-in-out infinite; }
+.film-langs > span { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 48px); letter-spacing: -0.018em; }
+html.js .film-levels > span { animation: cyc7f 38.5s ease-in-out infinite; }
 html.js .film-levels > span:nth-child(1) { animation-delay: 0s; }
-html.js .film-levels > span:nth-child(2) { animation-delay: 1.8s; }
-html.js .film-levels > span:nth-child(3) { animation-delay: 3.6s; }
-html.js .film-levels > span:nth-child(4) { animation-delay: 5.4s; }
-html.js .film-levels > span:nth-child(5) { animation-delay: 7.2s; }
-html.js .film-levels > span:nth-child(6) { animation-delay: 9s; }
-html.js .film-levels > span:nth-child(7) { animation-delay: 10.8s; }
-@keyframes cyc7f { 0% { opacity: 0; transform: translateY(10px); } 3% { opacity: 1; transform: none; } 11.3% { opacity: 1; transform: none; } 14.3% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
-html.js .film-langs > span { animation: cyc5f 12.5s ease-in-out infinite; }
+html.js .film-levels > span:nth-child(2) { animation-delay: 5.5s; }
+html.js .film-levels > span:nth-child(3) { animation-delay: 11s; }
+html.js .film-levels > span:nth-child(4) { animation-delay: 16.5s; }
+html.js .film-levels > span:nth-child(5) { animation-delay: 22s; }
+html.js .film-levels > span:nth-child(6) { animation-delay: 27.5s; }
+html.js .film-levels > span:nth-child(7) { animation-delay: 33s; }
+@keyframes cyc7f { 0% { opacity: 0; transform: translateY(10px); } 1.5% { opacity: 1; transform: none; } 12.8% { opacity: 1; transform: none; } 14.3% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
+html.js .film-langs > span { animation: cyc5f 25s ease-in-out infinite; }
 html.js .film-langs > span:nth-child(1) { animation-delay: 0s; }
-html.js .film-langs > span:nth-child(2) { animation-delay: 2.5s; }
-html.js .film-langs > span:nth-child(3) { animation-delay: 5s; }
-html.js .film-langs > span:nth-child(4) { animation-delay: 7.5s; }
-html.js .film-langs > span:nth-child(5) { animation-delay: 10s; }
-@keyframes cyc5f { 0% { opacity: 0; transform: translateY(10px); } 4% { opacity: 1; transform: none; } 16% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
-.film-line { margin-top: clamp(16px, 3vh, 28px); color: var(--muted); font-size: clamp(15px, 1.3vw, 19px); text-align: center; }
+html.js .film-langs > span:nth-child(2) { animation-delay: 5s; }
+html.js .film-langs > span:nth-child(3) { animation-delay: 10s; }
+html.js .film-langs > span:nth-child(4) { animation-delay: 15s; }
+html.js .film-langs > span:nth-child(5) { animation-delay: 20s; }
+@keyframes cyc5f { 0% { opacity: 0; transform: translateY(10px); } 2% { opacity: 1; transform: none; } 18% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
+.film-line { margin-top: clamp(12px, 2vh, 22px); color: var(--muted); font-size: clamp(14px, 1.2vw, 18px); text-align: center; }
 
 @media (max-width: 900px) {
   .film .side { display: none; }
   .film .board-shell { grid-template-columns: 1fr; }
+  .film .aside, .film .apprail { display: none; }
 }
 @media (max-width: 640px) {
-  .act { padding: 28px var(--pad) 40px; }
+  .herofilm { min-height: 0; }
+  .film { height: clamp(340px, 58vh, 560px); }
+  .act { padding: 4px 8px 30px; }
+  .film-nav.prev { left: 4px; } .film-nav.next { right: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .film { min-height: 0; }
-  .act { position: static; opacity: 1 !important; padding: 40px var(--pad); }
-  .act-2, .act-3, .act-4, .act-5, .act-6 { display: none !important; }
+  .herofilm { min-height: 0; }
+  .film { height: auto; }
+  .act { position: static; transition: none; }
+  .act:not(.act-1) { display: none; }
+  html.js .act { display: none; opacity: 1; visibility: visible; }
+  html.js .act.on { display: flex; }
   .film-big { height: auto; }
   .film-big > span { position: static; opacity: 1 !important; }
   .film-big > span ~ span { display: none; }
