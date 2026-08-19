@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gausyn — A personal teacher for every student</title>
+  <meta name="description" content="Gausyn plans your week, teaches the lesson, and works through the problem with you on a shared board. Any subject, any level, any language." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════
+       Tokens — the same vocabulary as the product (app/globals.css)
+       ═══════════════════════════════════════════════════════════════════ */
+    :root {
+      --bg: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #6b6b6b;
+      --faint: #9a9a9a;
+      --rule: #e6e6e6;
+      --rule-soft: #f2f2f2;
+      --surface: #f5f5f4;
+
+      --warm: #f0c79a;
+      --warm-soft: #f9f1e8;
+      --warm-line: #e8c9a4;
+      --warm-ink: #a9722c;
+      --warm-deep: #8a5c1f;
+
+      --cool: #c9d4e8;
+      --cool-soft: #eef1f7;
+      --cool-line: #c5d0e4;
+      --cool-ink: #4a5f86;
+      --cool-deep: #3b4d6d;
+
+      --blush: #e5c3b3;
+      --hint: #cc2222;
+
+      --maxw: 1180px;
+      --readw: 760px;
+      --pad: clamp(20px, 5vw, 48px);
+      --section: clamp(72px, 12vh, 150px);
+
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --label: Georgia, "Times New Roman", Times, serif;
+      --mono: "Courier New", Courier, monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-float: 0 10px 40px rgba(10, 10, 10, 0.07);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(16px, 1.15vw, 19px);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
+
+    /* ── header ───────────────────────────────────────────────────────── */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.72);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: clamp(56px, 7vh, 68px);
+    }
+
+    .wordmark {
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      text-decoration: none;
+    }
+
+    .nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 36px); list-style: none; }
+    .nav a { font-size: clamp(14px, 1vw, 15px); text-decoration: none; color: var(--ink); }
+    .nav a:hover { opacity: 0.55; }
+
+    /* ── type ─────────────────────────────────────────────────────────── */
+
+    h1, h2, h3, h4 {
+      font-weight: 400;
+      letter-spacing: -0.018em;
+      line-height: 1.1;
+    }
+
+    h1 { font-size: clamp(44px, 8vw, 104px); letter-spacing: -0.022em; line-height: 1.02; }
+    h2 { font-size: clamp(30px, 4.2vw, 54px); line-height: 1.08; letter-spacing: -0.02em; }
+    h3 { font-size: clamp(20px, 1.7vw, 25px); letter-spacing: -0.01em; line-height: 1.2; }
+    h4 { font-size: clamp(17px, 1.25vw, 19px); letter-spacing: -0.01em; }
+
+    .lede {
+      font-size: clamp(18px, 1.55vw, 23px);
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 46ch;
+    }
+
+    .eyebrow {
+      font-family: var(--label);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    p + p { margin-top: 1em; }
+    .muted { color: var(--muted); }
+
+    section { padding: var(--section) 0; scroll-margin-top: clamp(56px, 7vh, 68px); }
+    .rule-top { border-top: 1px solid var(--rule); }
+
+    /* ── buttons ──────────────────────────────────────────────────────── */
+
+    .cta-row {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 18px 26px; margin-top: clamp(30px, 4.5vh, 46px);
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--ink); color: #fff; text-decoration: none;
+      font-size: 15px; padding: 14px 28px; border-radius: 999px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .btn:hover { opacity: 0.82; transform: translateY(-1px); }
+
+    .btn-quiet {
+      font-size: 15px; color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid var(--rule); padding-bottom: 2px;
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .btn-quiet:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* ── aurora ───────────────────────────────────────────────────────── */
+
+    .aurora-host { position: relative; isolation: isolate; overflow: hidden; }
+
+    .aurora {
+      position: absolute; inset: -20% -10% 0; z-index: 0;
+      pointer-events: none; overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 56%, transparent 94%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 56%, transparent 94%);
+    }
+
+    .aurora i {
+      position: absolute; display: block; border-radius: 50%;
+      filter: blur(clamp(30px, 5vw, 68px)); opacity: 0.9; will-change: transform;
+    }
+
+    .aurora i:nth-child(1) {
+      width: 62vw; height: 62vw; top: -18%; left: 2%;
+      background: radial-gradient(circle at 40% 40%, var(--warm) 0%, rgba(240,199,154,0) 68%);
+      animation: drift-a 26s ease-in-out infinite alternate;
+    }
+    .aurora i:nth-child(2) {
+      width: 56vw; height: 56vw; top: 0%; right: 0%;
+      background: radial-gradient(circle at 55% 45%, var(--cool) 0%, rgba(201,212,232,0) 68%);
+      animation: drift-b 32s ease-in-out infinite alternate;
+    }
+    .aurora i:nth-child(3) {
+      width: 48vw; height: 48vw; top: 24%; left: 28%;
+      background: radial-gradient(circle at 50% 50%, var(--blush) 0%, rgba(229,195,179,0) 70%);
+      animation: drift-c 22s ease-in-out infinite alternate;
+    }
+
+    .aurora .grain {
+      position: absolute; inset: 0; opacity: 0.24; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+
+    @keyframes drift-a {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(6vw,4vh,0) scale(1.12); }
+      100% { transform: translate3d(-3vw,7vh,0) scale(1.04); }
+    }
+    @keyframes drift-b {
+      0% { transform: translate3d(0,0,0) scale(1.06); }
+      50% { transform: translate3d(-7vw,5vh,0) scale(0.94); }
+      100% { transform: translate3d(2vw,-3vh,0) scale(1.1); }
+    }
+    @keyframes drift-c {
+      0% { transform: translate3d(0,0,0) scale(0.96); }
+      50% { transform: translate3d(5vw,-5vh,0) scale(1.14); }
+      100% { transform: translate3d(-6vw,2vh,0) scale(1); }
+    }
+
+    /* ── hero ─────────────────────────────────────────────────────────── */
+
+    .hero {
+      text-align: center;
+      padding-top: clamp(88px, 17vh, 190px);
+      padding-bottom: clamp(64px, 10vh, 120px);
+    }
+    .hero .wrap { position: relative; z-index: 1; }
+    .hero h1 { max-width: 15ch; margin: 0 auto; }
+    .hero .lede { margin: clamp(22px, 3.2vh, 34px) auto 0; }
+    .hero .cta-row { justify-content: center; }
+
+    .scroll-cue {
+      margin-top: clamp(48px, 8vh, 90px);
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--faint);
+      display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .scroll-cue span:last-child {
+      display: block; width: 1px; height: 34px;
+      background: linear-gradient(to bottom, var(--rule), transparent);
+      animation: cue 2.6s ease-in-out infinite;
+    }
+    @keyframes cue { 0%,100% { opacity: 0.3; transform: scaleY(0.7); } 50% { opacity: 1; transform: scaleY(1); } }
+
+    /* ── statement ────────────────────────────────────────────────────── */
+
+    .statement p {
+      font-size: clamp(26px, 3.5vw, 46px);
+      line-height: 1.18; letter-spacing: -0.02em; max-width: 22ch;
+    }
+    .statement .sub {
+      font-size: clamp(17px, 1.35vw, 20px); line-height: 1.55;
+      color: var(--muted); max-width: 52ch;
+      margin-top: clamp(24px, 3.5vh, 40px);
+    }
+
+    /* ── scene scaffold ───────────────────────────────────────────────── */
+
+    .scene-head { margin-bottom: clamp(38px, 6vh, 64px); max-width: 62ch; }
+    .scene-head .eyebrow { display: block; margin-bottom: 16px; }
+    .scene-head h2 { max-width: 18ch; }
+    .scene-head p { color: var(--muted); margin-top: 18px; max-width: 56ch; }
+
+    .stage {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-float);
+      overflow: hidden;
+    }
+
+    /* every animation inside a scene waits until the scene is on screen */
+    .scene * { animation-play-state: paused; }
+    .scene.play * { animation-play-state: running; }
+
+    .chrome {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--rule-soft);
+      background: rgba(245, 245, 244, 0.55);
+    }
+    .chrome .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); }
+    .chrome .title {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint);
+      margin-left: 4px;
+    }
+    .chrome .spacer { flex: 1; }
+    .chrome .pill {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--rule);
+      border-radius: 999px; padding: 3px 10px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .split.board-split { grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr); }
+    .split > * + * { border-left: 1px solid var(--rule-soft); }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCENE 1 — you just say what's happening
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .chat { padding: clamp(18px, 2.4vw, 26px); display: flex; flex-direction: column; gap: 14px; min-height: 330px; }
+
+    .msg { max-width: 88%; font-size: clamp(13.5px, 1vw, 15px); line-height: 1.5; }
+
+    .msg .who {
+      display: block; font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--faint); margin-bottom: 6px;
+    }
+
+    .msg .body {
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: 11px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .msg.you { align-self: flex-end; text-align: right; }
+    .msg.you .body { background: var(--surface); border-color: transparent; text-align: left; }
+    .msg.g .body { border-color: var(--rule); }
+
+    .msg { opacity: 0; animation: msg-in 0.55s ease forwards; }
+    @keyframes msg-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+    .m1 { animation-delay: 0.3s; }
+    .m2 { animation-delay: 2.1s; }
+    .m3 { animation-delay: 3.4s; }
+    .m4 { animation-delay: 6.2s; }
+
+    .typing { display: inline-flex; gap: 4px; align-items: center; height: 18px; }
+    .typing i {
+      width: 5px; height: 5px; border-radius: 50%; background: var(--faint);
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    .typing i:nth-child(2) { animation-delay: 0.16s; }
+    .typing i:nth-child(3) { animation-delay: 0.32s; }
+    @keyframes blink { 0%,100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+    .msg.typing-msg {
+      max-height: 70px; overflow: hidden;
+      animation: msg-in 0.4s ease 1.5s forwards, fade-out 0.45s ease 3.3s forwards;
+    }
+    @keyframes fade-out { to { opacity: 0; max-height: 0; margin-bottom: -14px; } }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .chip {
+      font-size: 11px; letter-spacing: 0.04em;
+      border: 1px solid var(--rule); border-radius: 999px;
+      padding: 5px 12px; color: var(--muted);
+      opacity: 0; animation: chip-in 0.5s ease forwards;
+    }
+    .chip.deadline { border-color: rgba(204,34,34,0.28); color: var(--hint); }
+    .chip.warm { border-color: var(--warm-line); background: var(--warm-soft); color: var(--warm-ink); }
+    .chip.cool { border-color: var(--cool-line); background: var(--cool-soft); color: var(--cool-ink); }
+    .c1 { animation-delay: 6.9s; }
+    .c2 { animation-delay: 7.1s; }
+    .c3 { animation-delay: 7.3s; }
+    @keyframes chip-in { from { opacity: 0; transform: translateY(6px) scale(0.96); } to { opacity: 1; transform: none; } }
+
+    /* ── calendar ─────────────────────────────────────────────────────── */
+
+    .cal { padding: clamp(16px, 2vw, 22px); }
+
+    .cal-top {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 14px; gap: 12px; flex-wrap: wrap;
+    }
+    .cal-top h4 { font-size: clamp(15px, 1.15vw, 18px); }
+    .cal-views { display: flex; gap: 4px; }
+    .cal-views span {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--faint); border: 1px solid var(--rule);
+      border-radius: 6px; padding: 3px 9px;
+    }
+    .cal-views span.on { color: var(--ink); border-color: var(--ink); }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: 34px repeat(5, minmax(0, 1fr));
+      border-top: 1px solid var(--rule-soft);
+      border-left: 1px solid var(--rule-soft);
+      position: relative;
+    }
+
+    .cal-grid .hd {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--faint); text-align: center; padding: 8px 0 7px;
+      border-right: 1px solid var(--rule-soft);
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .cal-grid .hd.today { color: var(--ink); }
+
+    .cal-grid .tm {
+      font-size: 9px; color: var(--faint); text-align: right;
+      padding: 3px 6px 0 0; height: 46px;
+      border-right: 1px solid var(--rule-soft);
+      border-bottom: 1px solid var(--rule-soft);
+    }
+
+    .cal-grid .cell {
+      height: 46px;
+      border-right: 1px solid var(--rule-soft);
+      border-bottom: 1px solid var(--rule-soft);
+      position: relative;
+    }
+    .cal-grid .cell.off { background: rgba(10, 10, 10, 0.035); }
+
+    /* event pills sit inside their cell */
+    .ev {
+      position: absolute; left: 3px; right: 3px; top: 3px; bottom: 3px;
+      border-radius: 4px; padding: 4px 6px;
+      font-size: 10px; line-height: 1.25; overflow: hidden;
+      opacity: 0; animation: ev-in 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+    }
+    .ev b { font-weight: 400; display: block; }
+    .ev em { font-style: normal; opacity: 0.75; display: block; font-size: 9px; }
+
+    .ev.math  { background: #eef1f7; color: #4a5f86; }
+    .ev.chem  { background: #f9f1e8; color: #a9722c; }
+    .ev.phys  { background: #eef2ee; color: #55705a; }
+    .ev.eng   { background: #f8eff0; color: #9c5f68; }
+
+    @keyframes ev-in { from { opacity: 0; transform: translateY(8px) scale(0.94); } to { opacity: 1; transform: none; } }
+
+    .e1 { animation-delay: 7.4s; }
+    .e2 { animation-delay: 7.6s; }
+    .e3 { animation-delay: 7.8s; }
+    .e4 { animation-delay: 8.0s; }
+
+    /* the drag: a ghost flies from Wed to Thu, then the real Thu pill lands */
+    .ev.ghost {
+      opacity: 0;
+      animation: ghost-fly 2.6s cubic-bezier(0.4, 0, 0.2, 1) 9.0s forwards;
+      z-index: 3; box-shadow: 0 6px 18px rgba(10,10,10,0.12);
+    }
+    @keyframes ghost-fly {
+      0%   { opacity: 0; transform: translate(0, 0) scale(1); }
+      12%  { opacity: 1; transform: translate(0, 0) scale(1.06); }
+      70%  { opacity: 1; transform: translate(calc(100% + 6px), -46px) scale(1.06); }
+      88%  { opacity: 1; transform: translate(calc(100% + 6px), -46px) scale(1); }
+      100% { opacity: 0; transform: translate(calc(100% + 6px), -46px) scale(1); }
+    }
+
+    .ev.faded { animation: ev-in 0.5s ease 7.8s forwards, ev-out 0.5s ease 9.6s forwards; }
+    @keyframes ev-out { to { opacity: 0.12; } }
+
+    .ev.landed { animation: ev-in 0.45s cubic-bezier(0.2,0.8,0.3,1) 11.3s forwards; }
+
+    /* deadline marker */
+    .dl {
+      position: absolute; left: 3px; right: 3px; top: 3px;
+      font-size: 9px; letter-spacing: 0.04em;
+      color: var(--hint); border: 1px solid rgba(204,34,34,0.3);
+      border-radius: 4px; padding: 2px 5px; background: #fff;
+      opacity: 0; animation: ev-in 0.5s ease 8.3s forwards;
+    }
+
+    .cal-note {
+      margin-top: 14px; font-size: 12px; color: var(--faint);
+      display: flex; align-items: center; gap: 8px;
+      opacity: 0; animation: msg-in 0.6s ease 12.2s forwards;
+    }
+    .cal-note::before {
+      content: ""; width: 14px; height: 1px; background: var(--rule); display: block;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCENE 2 — the lesson is a real session
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .lifecycle {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 2.4vw, 28px);
+    }
+
+    .card {
+      border: 1px solid var(--rule); border-radius: var(--radius-lg);
+      padding: clamp(20px, 2.4vw, 28px); background: #fff;
+    }
+
+    .card .bar { height: 3px; border-radius: 999px; margin-bottom: 18px; }
+    .card .bar.math { background: #8fa4c8; }
+    .card .bar.any  { background: linear-gradient(90deg, var(--warm), var(--cool)); }
+
+    .card h4 { margin-bottom: 6px; }
+    .card .when { font-size: 12px; color: var(--faint); letter-spacing: 0.04em; }
+    .card p { font-size: clamp(14px, 1vw, 15.5px); color: var(--muted); margin-top: 14px; }
+
+    .topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .topics span {
+      font-size: 10.5px; color: var(--muted);
+      border: 1px solid var(--rule); border-radius: 999px; padding: 3px 9px;
+    }
+
+    /* the state pill cycles through the real lifecycle */
+    .states {
+      position: relative; height: 34px; margin-top: 22px;
+    }
+    .states .st {
+      position: absolute; inset: 0 auto 0 0;
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 12px; letter-spacing: 0.04em;
+      border: 1px solid var(--rule); border-radius: 999px;
+      padding: 0 16px; height: 34px; color: var(--muted);
+      opacity: 0; animation: state-cycle 12s ease-in-out infinite;
+    }
+    .states .st i {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--faint); display: block;
+    }
+    .states .st.live { border-color: var(--ink); color: var(--ink); }
+    .states .st.live i { background: var(--hint); animation: pulse 1.6s ease-in-out infinite; }
+    .states .st.done { border-color: var(--rule); color: var(--faint); }
+
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+    .states .s1 { animation-delay: 0s; }
+    .states .s2 { animation-delay: 3s; }
+    .states .s3 { animation-delay: 6s; }
+    .states .s4 { animation-delay: 9s; }
+
+    @keyframes state-cycle {
+      0%    { opacity: 0; transform: translateY(6px); }
+      3%    { opacity: 1; transform: none; }
+      22%   { opacity: 1; transform: none; }
+      25%   { opacity: 0; transform: translateY(-6px); }
+      100%  { opacity: 0; transform: translateY(-6px); }
+    }
+
+    .join-note { font-size: 12px; color: var(--faint); margin-top: 14px; }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCENE 3 — two ways to run a session
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 28px); }
+
+    .mode {
+      display: block; text-align: left; width: 100%;
+      border: 1px solid var(--rule); border-radius: var(--radius-lg);
+      padding: clamp(22px, 2.6vw, 32px);
+      background: #fff; cursor: pointer; font: inherit; color: inherit;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .mode:hover { transform: translateY(-3px); box-shadow: var(--shadow-float); }
+    .mode.warm:hover { border-color: var(--warm-line); }
+    .mode.cool:hover { border-color: var(--cool-line); }
+
+    .mode .tag {
+      display: inline-block; font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; border-radius: 999px; padding: 4px 11px; margin-bottom: 18px;
+    }
+    .mode.warm .tag { background: var(--warm-soft); color: var(--warm-ink); border: 1px solid var(--warm-line); }
+    .mode.cool .tag { background: var(--cool-soft); color: var(--cool-ink); border: 1px solid var(--cool-line); }
+
+    .mode h3 { margin-bottom: 12px; }
+    .mode p { font-size: clamp(14px, 1vw, 15.5px); color: var(--muted); }
+    .mode .go { display: inline-block; margin-top: 18px; font-size: 13px; color: var(--muted); }
+    .mode:hover .go { color: var(--ink); }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCENE 4 — teacher mode: pages advance, speech only
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .board {
+      position: relative;
+      background:
+        linear-gradient(rgba(10,10,10,0.045) 1px, transparent 1px) 0 0 / 100% 26px,
+        linear-gradient(90deg, rgba(10,10,10,0.045) 1px, transparent 1px) 0 0 / 26px 100%,
+        #fff;
+      min-height: clamp(300px, 42vw, 430px);
+      overflow: hidden;
+      padding: clamp(18px, 2.4vw, 30px);
+    }
+
+    .board.plain { background: #fff; }
+
+    /* the lesson deck slides page to page */
+    .deck { position: absolute; inset: clamp(18px, 2.4vw, 30px); }
+
+    .page {
+      position: absolute; inset: 0;
+      opacity: 0; animation: page-cycle 15s ease-in-out infinite;
+    }
+    .p1 { animation-delay: 0s; }
+    .p2 { animation-delay: 5s; }
+    .p3 { animation-delay: 10s; }
+
+    @keyframes page-cycle {
+      0%   { opacity: 0; transform: translateY(14px) scale(0.99); }
+      4%   { opacity: 1; transform: none; }
+      30%  { opacity: 1; transform: none; }
+      34%  { opacity: 0; transform: translateY(-14px) scale(0.99); }
+      100% { opacity: 0; transform: translateY(-14px) scale(0.99); }
+    }
+
+    .page .num {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--faint); margin-bottom: 14px; display: block;
+    }
+    .page h4 { margin-bottom: 14px; font-size: clamp(19px, 1.7vw, 25px); }
+    .page ul { list-style: none; display: grid; gap: 9px; }
+    .page li {
+      font-size: clamp(13.5px, 1vw, 15.5px); color: var(--muted);
+      padding-left: 18px; position: relative;
+    }
+    .page li::before {
+      content: ""; position: absolute; left: 0; top: 0.62em;
+      width: 7px; height: 1px; background: var(--rule);
+    }
+    .page .eq {
+      margin-top: 18px; font-family: var(--mono);
+      font-size: clamp(15px, 1.3vw, 19px); color: var(--ink);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--rule); border-radius: var(--radius-sm);
+      padding: 10px 14px; display: inline-block;
+    }
+
+    /* voice rail — speech only in teacher mode */
+    .voice {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px clamp(16px, 2vw, 22px);
+      border-top: 1px solid var(--rule-soft);
+      background: rgba(245,245,244,0.5);
+      flex-wrap: wrap;
+    }
+
+    .status {
+      position: relative; width: 104px; height: 24px; flex-shrink: 0;
+    }
+    .status span {
+      position: absolute; inset: 0;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); display: inline-flex; align-items: center;
+      opacity: 0; animation: status-cycle 15s ease-in-out infinite;
+    }
+    .status .t1 { animation-delay: 0s; }
+    .status .t2 { animation-delay: 5s; }
+    .status .t3 { animation-delay: 10s; }
+    @keyframes status-cycle {
+      0% { opacity: 0; } 3% { opacity: 1; } 30% { opacity: 1; } 33% { opacity: 0; } 100% { opacity: 0; }
+    }
+
+    .wave { display: flex; align-items: center; gap: 3px; height: 22px; flex: 1; min-width: 120px; }
+    .wave i {
+      width: 2px; background: var(--rule); border-radius: 2px; height: 20%;
+      animation: wave 1.5s ease-in-out infinite;
+    }
+    .wave i:nth-child(3n) { background: var(--warm-line); }
+    @keyframes wave {
+      0%, 100% { height: 18%; }
+      50% { height: 88%; }
+    }
+
+    .say {
+      display: flex; gap: 6px; flex-wrap: wrap;
+    }
+    .say span {
+      font-size: 10.5px; color: var(--muted);
+      border: 1px solid var(--rule); border-radius: 999px; padding: 4px 11px;
+      white-space: nowrap;
+    }
+
+    .caption {
+      padding: 0 clamp(16px, 2vw, 22px) 16px;
+      font-size: clamp(13px, 0.95vw, 14.5px); color: var(--muted);
+      min-height: 46px; position: relative;
+    }
+    .caption span {
+      position: absolute; left: clamp(16px, 2vw, 22px); right: clamp(16px, 2vw, 22px);
+      opacity: 0; animation: status-cycle 15s ease-in-out infinite;
+    }
+    .caption .t1 { animation-delay: 0s; }
+    .caption .t2 { animation-delay: 5s; }
+    .caption .t3 { animation-delay: 10s; }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCENE 5 — practice mode: the shared board
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .tabs {
+      display: flex; align-items: flex-end; gap: 4px;
+      padding: 10px clamp(14px, 1.8vw, 20px) 0;
+      border-bottom: 1px solid var(--rule);
+      background: rgba(245,245,244,0.55);
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+
+    .tab {
+      font-size: 11.5px; padding: 6px 14px; white-space: nowrap;
+      border: 1px solid var(--rule); border-bottom: none;
+      border-radius: 6px 6px 0 0; color: var(--muted); background: #fafafa;
+      margin-bottom: -1px;
+    }
+    .tab.active { background: #fff; border-color: var(--ink); color: var(--ink); }
+    .tab.ws { background: var(--warm-soft); border-color: var(--warm-line); color: var(--warm-ink); }
+    .tab.pr {
+      background: var(--cool-soft); border-color: var(--cool-line); color: var(--cool-ink);
+      opacity: 0; animation: chip-in 0.5s ease 12.4s forwards;
+    }
+
+    .work {
+      position: relative;
+      min-height: clamp(340px, 46vw, 470px);
+      background:
+        linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px) 0 0 / 100% 26px,
+        linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px) 0 0 / 26px 100%,
+        #fff;
+    }
+
+    .sheet {
+      position: absolute; inset: 0;
+      padding: clamp(20px, 2.6vw, 34px);
+    }
+
+    .q {
+      font-size: clamp(14px, 1.05vw, 16px); color: var(--ink);
+      max-width: 34ch; line-height: 1.6;
+    }
+    .q .n { color: var(--faint); margin-right: 8px; }
+    .q .blank {
+      display: inline-block; width: 62px; border-bottom: 1px solid var(--ink);
+      margin: 0 3px;
+    }
+
+    /* the student's pen */
+    .ink { position: absolute; left: clamp(20px, 2.6vw, 34px); top: clamp(74px, 9vw, 108px); width: min(240px, 52%); }
+    .ink path {
+      fill: none; stroke: #1a3a6b; stroke-width: 5;
+      stroke-linecap: round; stroke-linejoin: round;
+      stroke-dasharray: 200; stroke-dashoffset: 200;
+      animation: draw 0.7s ease forwards;
+    }
+    .ink path:nth-child(1) { animation-delay: 1.6s; }
+    .ink path:nth-child(2) { animation-delay: 1.9s; }
+    .ink path:nth-child(3) { animation-delay: 2.4s; }
+    .ink path:nth-child(4) { animation-delay: 2.6s; }
+    .ink path:nth-child(5) { animation-delay: 3.1s; }
+    .ink path:nth-child(6) { animation-delay: 3.4s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* Gausyn's hint stack — red, exactly like the product */
+    .hint-col {
+      position: absolute; right: clamp(20px, 2.6vw, 34px);
+      top: clamp(66px, 8vw, 96px); width: min(260px, 46%);
+      display: grid; gap: 10px; justify-items: start;
+    }
+
+    .hint {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(204,34,34,0.2);
+      border-left: 2px solid rgba(204,34,34,0.5);
+      border-radius: 5px; padding: 7px 11px;
+      font-size: clamp(12px, 0.92vw, 13.5px); line-height: 1.45;
+      color: var(--hint); box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+      opacity: 0; animation: hint-in 0.45s ease forwards;
+    }
+    .hint.tex { font-family: var(--mono); font-size: clamp(13px, 1vw, 15px); }
+    .h1 { animation-delay: 4.4s; }
+    .h2 { animation-delay: 6.4s; }
+    .h3 { animation-delay: 8.4s; }
+    @keyframes hint-in { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+    /* the practice question card — periwinkle, pinned, monospace */
+    .pq {
+      position: absolute; left: 50%; top: clamp(18px, 2.4vw, 28px);
+      transform: translateX(-50%);
+      width: min(440px, 82%);
+      background: rgba(238, 241, 247, 0.95);
+      border: 1.5px solid rgba(74, 95, 134, 0.35);
+      border-radius: 8px; padding: 12px 16px 14px;
+      font-family: var(--mono); font-size: clamp(13px, 1vw, 15px);
+      line-height: 1.5; color: var(--cool-deep);
+      opacity: 0; animation: pq-in 0.5s ease 12.6s forwards;
+      z-index: 4;
+    }
+    .pq .lbl {
+      display: block; font-family: var(--serif); font-size: 10px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cool-ink); opacity: 0.85; margin-bottom: 5px;
+    }
+    @keyframes pq-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+      to   { opacity: 1; transform: translateX(-50%); }
+    }
+
+    /* moving to the Practice tab dims the worksheet behind it */
+    .fades { animation: soft-out 0.5s ease 12.4s forwards; }
+    @keyframes soft-out { to { opacity: 0.12; } }
+
+    /* Ask Gausyn selection rectangle */
+    .crop {
+      position: absolute; left: clamp(16px, 2.2vw, 28px); top: clamp(56px, 7vw, 84px);
+      width: min(300px, 58%); height: clamp(84px, 11vw, 116px);
+      border: 1.5px dashed var(--warm-ink); border-radius: 6px;
+      background: rgba(240, 199, 154, 0.1);
+      opacity: 0; animation: crop-in 0.5s ease 10.2s forwards, crop-out 0.5s ease 12.2s forwards;
+    }
+    .crop .lbl {
+      position: absolute; top: -11px; left: 10px;
+      background: var(--warm-soft); color: var(--warm-ink);
+      border: 1px solid var(--warm-line); border-radius: 999px;
+      font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 2px 9px; font-family: var(--serif);
+    }
+    @keyframes crop-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+    @keyframes crop-out { to { opacity: 0; } }
+
+    /* tutor sidebar */
+    .side {
+      padding: clamp(16px, 2vw, 22px);
+      display: flex; flex-direction: column; gap: 12px;
+      background: rgba(250, 250, 249, 0.6);
+      min-height: 100%;
+    }
+    .side .head {
+      display: flex; align-items: center; gap: 8px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--rule-soft);
+    }
+    .side .head i {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--warm-ink);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .side .head b { font-weight: 400; font-size: 14px; }
+    .side .head em {
+      font-style: normal; margin-left: auto; font-size: 9.5px;
+      letter-spacing: 0.13em; text-transform: uppercase; color: var(--faint);
+    }
+
+    .line { font-size: clamp(12.5px, 0.92vw, 14px); line-height: 1.5; opacity: 0; animation: msg-in 0.5s ease forwards; }
+    .line .who {
+      display: block; font-size: 9.5px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--faint); margin-bottom: 4px;
+    }
+    .line.you { color: var(--ink); }
+    .line.g { color: var(--muted); }
+    .l1 { animation-delay: 0.6s; }
+    .l2 { animation-delay: 4.2s; }
+    .l3 { animation-delay: 6.2s; }
+    .l4 { animation-delay: 8.2s; }
+    .l5 { animation-delay: 10.0s; }
+    .l6 { animation-delay: 12.4s; }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       adapts / grid of small truths
+       ═══════════════════════════════════════════════════════════════════ */
+
+    .cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(30px, 4vw, 60px); }
+    .cols3 .col .eyebrow { display: block; margin-bottom: 14px; }
+    .cols3 .col h3 { margin-bottom: 12px; }
+    .cols3 .col p { color: var(--muted); font-size: clamp(14.5px, 1.05vw, 17px); }
+
+    .quote-band { text-align: center; }
+    .quote-band p {
+      font-size: clamp(26px, 3.4vw, 46px); line-height: 1.18;
+      letter-spacing: -0.02em; max-width: 20ch; margin: 0 auto;
+    }
+
+    /* ── closing ──────────────────────────────────────────────────────── */
+
+    .closing { text-align: center; }
+    .closing h2 { max-width: none; margin: 0 auto; }
+    .closing .cta-row { justify-content: center; }
+
+    @media (min-width: 760px) {
+      .closing h2 { white-space: nowrap; font-size: min(3.5vw, 43px); }
+    }
+
+    /* ── footer ───────────────────────────────────────────────────────── */
+
+    .site-footer {
+      border-top: 1px solid var(--rule);
+      padding: clamp(52px, 8vh, 84px) 0 clamp(36px, 5vh, 56px);
+      background: var(--bg);
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) repeat(4, minmax(0, 1fr));
+      gap: clamp(28px, 3vw, 44px);
+    }
+
+    .foot-brand .wordmark { display: inline-block; margin-bottom: 12px; }
+    .foot-brand p { font-size: 13px; color: var(--faint); max-width: 26ch; line-height: 1.55; }
+
+    .foot-col h5 {
+      font-family: var(--label); font-weight: 400;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--faint); margin-bottom: 14px;
+    }
+    .foot-col ul { list-style: none; display: grid; gap: 9px; }
+    .foot-col li { font-size: 13.5px; line-height: 1.35; }
+    .foot-col a { color: var(--muted); text-decoration: none; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-col span { color: var(--muted); cursor: default; }
+    .foot-col .soon { color: var(--faint); }
+
+    .foot-base {
+      display: flex; flex-wrap: wrap; align-items: flex-end;
+      justify-content: space-between; gap: 20px 40px;
+      margin-top: clamp(44px, 6vh, 72px);
+      padding-top: clamp(22px, 3vh, 32px);
+      border-top: 1px solid var(--rule-soft);
+    }
+    .foot-base .parent {
+      font-size: clamp(15px, 1.4vw, 18px); letter-spacing: 0.14em;
+      color: var(--faint); text-transform: uppercase;
+    }
+    .foot-base .copy { font-size: 12.5px; color: var(--faint); }
+
+    /* ── reveal ───────────────────────────────────────────────────────── */
+
+    [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    [data-reveal].in { opacity: 1; transform: none; }
+
+    /* ── responsive ───────────────────────────────────────────────────── */
+
+    @media (max-width: 1000px) {
+      .split { grid-template-columns: 1fr; }
+      .split > * + * { border-left: 0; border-top: 1px solid var(--rule-soft); }
+      .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .foot-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 860px) {
+      .cols3, .lifecycle, .modes { grid-template-columns: 1fr; }
+      .cols3 { gap: 40px; }
+    }
+
+    @media (max-width: 760px) {
+      .cal-grid { grid-template-columns: 28px repeat(5, minmax(0, 1fr)); }
+      .cal-grid .tm, .cal-grid .cell { height: 40px; }
+
+      @keyframes ghost-fly {
+        0%   { opacity: 0; transform: translate(0, 0) scale(1); }
+        12%  { opacity: 1; transform: translate(0, 0) scale(1.06); }
+        70%  { opacity: 1; transform: translate(calc(100% + 6px), -40px) scale(1.06); }
+        88%  { opacity: 1; transform: translate(calc(100% + 6px), -40px) scale(1); }
+        100% { opacity: 0; transform: translate(calc(100% + 6px), -40px) scale(1); }
+      }
+
+      /* the practice board stops being a canvas and becomes a column */
+      .work { min-height: 0; }
+      .sheet { position: static; padding: clamp(18px, 5vw, 26px); }
+      .ink {
+        position: static; display: block; height: auto;
+        width: min(200px, 58%); margin: 16px 0 2px;
+      }
+      .crop { display: none; }
+      .hint-col { position: static; width: auto; margin-top: 18px; }
+      .pq {
+        position: static; transform: none; width: auto;
+        margin-top: 20px; animation-name: hint-in;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .aurora i:nth-child(1) { width: 115vw; height: 115vw; top: -12%; left: -12%; }
+      .aurora i:nth-child(2) { width: 100vw; height: 100vw; top: 2%; right: -18%; }
+      .aurora i:nth-child(3) { width: 90vw;  height: 90vw;  top: 26%; left: 12%; }
+
+      .hero h1 { max-width: none; }
+      .statement p { max-width: none; }
+      .btn { width: 100%; }
+      .closing .cta-row { flex-direction: column; }
+      .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+      .foot-base { flex-direction: column; align-items: flex-start; }
+      .msg { max-width: 96%; }
+      .say { width: 100%; }
+      .board { min-height: 280px; }
+      .cal-grid .hd { font-size: 9px; letter-spacing: 0.08em; }
+      .ev { font-size: 9px; padding: 3px 4px; }
+      .ev em { display: none; }
+    }
+
+    /* Reduced motion: no sequence runs, so every panel has to already read as
+       a finished composition rather than an empty frame. */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0.001ms !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+
+      .msg, .chip, .ev, .dl, .hint, .line, .cal-note, .tab.pr, .q, .hint-col {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .ink path { stroke-dashoffset: 0 !important; }
+      .fades { opacity: 1 !important; }
+      .ev.faded { opacity: 0.12 !important; }
+      .ev.ghost, .msg.typing-msg, .crop { display: none !important; }
+
+      /* stacked cycles collapse to their first frame */
+      .deck, .page { position: static; height: auto; opacity: 1 !important; }
+      .page + .page { display: none; }
+      .states { height: auto; }
+      .states .st { position: static; opacity: 1 !important; }
+      .states .st + .st { display: none; }
+      .status { width: auto; height: auto; }
+      .status span { position: static; opacity: 1 !important; }
+      .status span + span { display: none; }
+      .caption { min-height: 0; }
+      .caption span { position: static; opacity: 1 !important; }
+      .caption span + span { display: none; }
+      .wave { display: none; }
+
+      /* the practice board flows instead of overlaying */
+      .work { min-height: 0; }
+      .sheet { position: static; }
+      .ink { position: static; display: block; height: auto; width: min(210px, 55%); margin: 16px 0 2px; }
+      .hint-col { position: static; width: auto; margin-top: 18px; }
+      .pq { position: static; transform: none !important; width: auto; margin-top: 20px; opacity: 1 !important; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="temp2.html">gausyn</a>
+      <nav>
+        <ul class="nav">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="temp-about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="hero aurora-host">
+      <div class="aurora" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <div class="grain"></div>
+      </div>
+      <div class="wrap">
+        <h1 data-reveal>A personal teacher for every student.</h1>
+        <p class="lede" data-reveal>
+          Tell it what your week looks like. It plans the lessons, teaches them,
+          and works through every problem beside you on a shared board.
+        </p>
+        <div class="cta-row" data-reveal>
+          <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="btn-quiet" href="#how">See how it works</a>
+        </div>
+        <div class="scroll-cue" data-reveal>
+          <span>Scroll</span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ STATEMENT ══════════════════ -->
+    <section class="statement rule-top">
+      <div class="wrap">
+        <p data-reveal>Not answers handed over. Understanding built.</p>
+        <p class="sub" data-reveal>
+          Most tools are built to finish the problem for you. Gausyn is built to
+          teach it, through conversation, visual explanation, and guided
+          practice, one honest question at a time, until the idea clicks and stays.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 1. SAY WHAT'S HAPPENING ══════════════════ -->
+    <section class="scene rule-top" id="how" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">One · Tell it what is coming</span>
+          <h2>You talk. The week arranges itself.</h2>
+          <p>
+            No forms, no dragging things into place to begin with. Say you have a
+            chemistry exam Friday and math due tomorrow, and Gausyn works out how
+            many sessions that needs, when you are actually free, and what each
+            one should cover.
+          </p>
+        </div>
+
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Dashboard</span>
+            <span class="spacer"></span>
+            <span class="pill">Daily check-in</span>
+          </div>
+
+          <div class="split">
+            <!-- chat -->
+            <div class="chat">
+              <div class="msg g m1">
+                <span class="who">Gausyn</span>
+                <div class="body">Morning. Anything new on your plate this week?</div>
+              </div>
+
+              <div class="msg you typing-msg">
+                <div class="body"><span class="typing"><i></i><i></i><i></i></span></div>
+              </div>
+
+              <div class="msg you m2">
+                <div class="body">Chem exam next Friday. And I have math homework due tomorrow that I have not started.</div>
+              </div>
+
+              <div class="msg g m3">
+                <span class="who">Gausyn</span>
+                <div class="body">
+                  Got it. Tonight is free from 7, so I have put 30 minutes on the
+                  math there. For the exam I have added three chemistry reviews
+                  across the week, ending Thursday so Friday stays clear.
+                </div>
+              </div>
+
+              <div class="msg g m4">
+                <div class="chips">
+                  <span class="chip deadline c1">Chem exam · Fri</span>
+                  <span class="chip cool c2">Math · tonight 7:00</span>
+                  <span class="chip warm c3">3 reviews added</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- calendar -->
+            <div class="cal">
+              <div class="cal-top">
+                <h4>This week</h4>
+                <div class="cal-views">
+                  <span>Month</span><span class="on">Week</span><span>Day</span>
+                </div>
+              </div>
+
+              <div class="cal-grid">
+                <div class="hd"></div>
+                <div class="hd today">Mon</div>
+                <div class="hd">Tue</div>
+                <div class="hd">Wed</div>
+                <div class="hd">Thu</div>
+                <div class="hd">Fri</div>
+
+                <div class="tm">5pm</div>
+                <div class="cell off"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="tm">6pm</div>
+                <div class="cell"></div>
+                <div class="cell">
+                  <div class="ev chem e2"><b>Chemistry</b><em>Moles · 45m</em></div>
+                </div>
+                <div class="cell"></div>
+                <div class="cell">
+                  <div class="ev chem landed"><b>Chemistry</b><em>Rates · 45m</em></div>
+                </div>
+                <div class="cell off"></div>
+
+                <div class="tm">7pm</div>
+                <div class="cell">
+                  <div class="ev math e1"><b>Math</b><em>Homework · 30m</em></div>
+                </div>
+                <div class="cell"></div>
+                <div class="cell">
+                  <div class="ev chem faded"><b>Chemistry</b><em>Rates · 45m</em></div>
+                  <div class="ev chem ghost"><b>Chemistry</b><em>Rates · 45m</em></div>
+                </div>
+                <div class="cell"></div>
+                <div class="cell off"></div>
+
+                <div class="tm">8pm</div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell">
+                  <div class="ev phys e4"><b>Physics</b><em>Optics · 45m</em></div>
+                </div>
+                <div class="cell">
+                  <div class="dl">Chem exam · 9:00</div>
+                </div>
+              </div>
+
+              <p class="cal-note">Drag anything. It re-checks your availability before it moves.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 2. THE SESSION IS REAL ══════════════════ -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Two · Then you just show up</span>
+          <h2>A lesson, not a link.</h2>
+          <p>
+            Every session on the calendar is clocked. It opens ten minutes early,
+            runs on a real timer, and ends with a line about what actually
+            happened. Or skip the calendar entirely and start something now.
+          </p>
+        </div>
+
+        <div class="lifecycle">
+          <div class="card" data-reveal>
+            <div class="bar math"></div>
+            <h4>Quadratics, part two</h4>
+            <p class="when">Monday · 7:00 PM · 45 minutes</p>
+            <p>Completing the square, then the discriminant and what it tells you before you solve anything.</p>
+            <div class="topics">
+              <span>Completing the square</span>
+              <span>Discriminant</span>
+              <span>Word problems</span>
+            </div>
+            <div class="states">
+              <span class="st s1"><i></i> Starts in 12m</span>
+              <span class="st s2"><i></i> Join now</span>
+              <span class="st live s3"><i></i> In progress · 22:14 left</span>
+              <span class="st done s4"><i></i> Completed 28 min · 12 exchanges</span>
+            </div>
+            <p class="join-note">
+              The clock lives on the server, so reloading, switching devices, or
+              editing the URL changes nothing.
+            </p>
+          </div>
+
+          <div class="card" data-reveal>
+            <div class="bar any"></div>
+            <h4>Quick session</h4>
+            <p class="when">Any subject · 30 minutes · right now</p>
+            <p>
+              Nothing scheduled and something is due. Open a board, upload the
+              worksheet or just start talking, and pick how you want to be taught.
+            </p>
+            <div class="topics">
+              <span>No setup</span>
+              <span>Any subject</span>
+              <span>Upload or ask</span>
+            </div>
+            <div class="states">
+              <span class="st s1"><i></i> Choose a mode</span>
+              <span class="st s2"><i></i> Teacher mode</span>
+              <span class="st live s3"><i></i> Practice mode</span>
+              <span class="st done s4"><i></i> Board ready</span>
+            </div>
+            <p class="join-note">
+              Same timer, same tutor, same board as a scheduled lesson. It just
+              starts the moment you ask.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 3. TWO MODES ══════════════════ -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Three · Two ways to be taught</span>
+          <h2>Sit and listen, or roll up your sleeves.</h2>
+          <p>
+            The same tutor, pointed two different directions. You can switch
+            mid-session by simply saying so.
+          </p>
+        </div>
+
+        <div class="modes">
+          <a class="mode warm" href="#teacher" data-reveal>
+            <span class="tag">Teacher mode</span>
+            <h3>It teaches the lesson.</h3>
+            <p>
+              Gausyn pulls a lesson and walks it page by page, out loud, at the
+              pace you set. The tools disappear. Interrupt whenever you want,
+              ask it to go back, or say you are ready to practise.
+            </p>
+            <span class="go">See it teach &rarr;</span>
+          </a>
+
+          <a class="mode cool" href="#practice" data-reveal>
+            <span class="tag">Practice mode</span>
+            <h3>You work. It watches.</h3>
+            <p>
+              Bring your own worksheet or ask for questions. You write on the
+              board, Gausyn sees what you wrote, and hints stack beside the exact
+              problem you are stuck on. Never the answer.
+            </p>
+            <span class="go">See it help &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 4. TEACHER MODE ══════════════════ -->
+    <section class="scene rule-top" id="teacher" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Teacher mode</span>
+          <h2>A lesson, spoken to you.</h2>
+          <p>
+            No toolbar, no clutter, nothing to click. Just the page it is
+            teaching from and its voice, moving forward only when you are ready.
+          </p>
+        </div>
+
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Chemistry · Reaction rates</span>
+            <span class="spacer"></span>
+            <span class="pill">Teacher mode · 41:08 left</span>
+          </div>
+
+          <div class="board plain">
+            <div class="deck">
+              <div class="page p1">
+                <span class="num">Page 1 of 6</span>
+                <h4>What a rate actually measures</h4>
+                <ul>
+                  <li>How much of something appears or disappears, per unit of time.</li>
+                  <li>Always a change divided by an interval, never a single reading.</li>
+                  <li>The sign tells you which side of the arrow you are standing on.</li>
+                </ul>
+                <div class="eq">rate = &Delta;[A] / &Delta;t</div>
+              </div>
+
+              <div class="page p2">
+                <span class="num">Page 2 of 6</span>
+                <h4>Why concentration changes it</h4>
+                <ul>
+                  <li>More particles in the same space means more collisions each second.</li>
+                  <li>More collisions means more of them clear the energy barrier.</li>
+                  <li>This is why rate usually falls off as a reaction proceeds.</li>
+                </ul>
+                <div class="eq">rate = k[A]<sup>m</sup>[B]<sup>n</sup></div>
+              </div>
+
+              <div class="page p3">
+                <span class="num">Page 3 of 6</span>
+                <h4>Reading it off a graph</h4>
+                <ul>
+                  <li>The slope of the tangent at any point is the rate at that instant.</li>
+                  <li>A steep early curve flattening out is the classic shape.</li>
+                  <li>Flat means finished, or something ran out.</li>
+                </ul>
+                <div class="eq">slope &rarr; instantaneous rate</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="voice">
+            <div class="status">
+              <span class="t1">Speaking</span>
+              <span class="t2">Listening</span>
+              <span class="t3">Speaking</span>
+            </div>
+            <div class="wave" aria-hidden="true">
+              <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
+              <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
+              <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
+              <i style="animation-delay:.72s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:.88s"></i>
+              <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
+              <i style="animation-delay:1.2s"></i><i style="animation-delay:1.28s"></i><i style="animation-delay:1.36s"></i>
+            </div>
+            <div class="say">
+              <span>&ldquo;Go back&rdquo;</span>
+              <span>&ldquo;Slower&rdquo;</span>
+              <span>&ldquo;Let&rsquo;s practise&rdquo;</span>
+            </div>
+          </div>
+
+          <div class="caption">
+            <span class="t1">&ldquo;A rate is never one reading. It is always something changing, divided by the time it took.&rdquo;</span>
+            <span class="t2">&ldquo;Wait, why does it slow down near the end?&rdquo;</span>
+            <span class="t3">&ldquo;Good question, that is exactly page two. Fewer particles left means fewer collisions.&rdquo;</span>
+          </div>
+        </div>
+
+        <div class="cols3" style="margin-top: clamp(40px, 6vh, 72px);">
+          <div class="col" data-reveal>
+            <span class="eyebrow">Speech only</span>
+            <h3>Nothing to fiddle with</h3>
+            <p>
+              The whole toolbar is hidden during a walkthrough. There is one
+              thing to do, which is listen and interrupt, so that is all the
+              screen offers.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">Your pace</span>
+            <h3>It waits for you</h3>
+            <p>
+              It never advances on a timer. Say go back, slower, or explain that
+              differently, and the lesson reshapes around where you actually are.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">One sentence away</span>
+            <h3>Switch whenever</h3>
+            <p>
+              Say let us practise and the paired worksheet loads, the tools come
+              back, and the same conversation carries straight over.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 5. PRACTICE MODE ══════════════════ -->
+    <section class="scene rule-top" id="practice" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Practice mode</span>
+          <h2>A board you both write on.</h2>
+          <p>
+            Upload a worksheet, a photo of your homework, or nothing at all.
+            Gausyn reads the page, works out every answer for itself first, then
+            helps you find yours without ever handing it over.
+          </p>
+        </div>
+
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Algebra · Linear equations</span>
+            <span class="spacer"></span>
+            <span class="pill">Practice mode · 18:42 left</span>
+          </div>
+
+          <div class="tabs">
+            <span class="tab active">Board 1</span>
+            <span class="tab ws">Q3</span>
+            <span class="tab pr">Practice</span>
+          </div>
+
+          <div class="split board-split">
+            <div class="work">
+              <div class="sheet">
+                <p class="q fades"><span class="n">3.</span> Solve for <em>x</em>: &nbsp; 2x + 5 = 13, then explain what the solution means on a number line.</p>
+
+                <svg class="ink fades" viewBox="0 0 230 110" aria-hidden="true">
+                  <path d="M18,34 C30,50 44,70 58,94" />
+                  <path d="M60,34 C48,52 34,72 20,94" />
+                  <path d="M80,56 C98,53 118,54 136,57" />
+                  <path d="M80,76 C98,73 118,74 136,77" />
+                  <path d="M176,30 C163,50 152,68 145,84 C163,84 184,83 200,82" />
+                  <path d="M184,46 C183,66 182,84 181,100" />
+                </svg>
+
+                <div class="crop">
+                  <span class="lbl">Ask Gausyn</span>
+                </div>
+
+                <div class="hint-col fades">
+                  <div class="hint h1">What do you have to undo first, the plus 5 or the times 2?</div>
+                  <div class="hint tex h2">2x = 13 &minus; 5</div>
+                  <div class="hint h3">Good. Now the 2 is multiplying x, so what is the opposite of that?</div>
+                </div>
+
+                <div class="pq">
+                  <span class="lbl">Practice · P1</span>
+                  A number is tripled, then 7 is subtracted. The result is 26.
+                  Write the equation and solve it.
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="head">
+                <i></i><b>Gausyn</b><em>Speaking</em>
+              </div>
+
+              <div class="line you l1">
+                <span class="who">You</span>
+                I got x equals 4 but I am not sure why.
+              </div>
+              <div class="line g l2">
+                <span class="who">Gausyn</span>
+                Four is right. Let us make sure you know why, rather than that it
+                just came out that way.
+              </div>
+              <div class="line g l3">
+                <span class="who">Gausyn</span>
+                You had 2x + 5 = 13. Everything on the left is happening to x, so
+                we peel it off in reverse order.
+              </div>
+              <div class="line you l4">
+                <span class="who">You</span>
+                Oh, so subtract 5 first because it happened last.
+              </div>
+              <div class="line g l5">
+                <span class="who">Gausyn</span>
+                Exactly that. Circle the part you want more room for and I will
+                open a fresh space for it.
+              </div>
+              <div class="line you l6">
+                <span class="who">You</span>
+                Can I have another one like this?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cols3" style="margin-top: clamp(40px, 6vh, 72px);">
+          <div class="col" data-reveal>
+            <span class="eyebrow">It solved it first</span>
+            <h3>Grounded, not guessing</h3>
+            <p>
+              The moment a worksheet loads, Gausyn works every problem out and
+              keeps those solutions beside it. So when it checks your line four,
+              it is checking against real arithmetic.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">Beside the question</span>
+            <h3>Hints that know where they are</h3>
+            <p>
+              It reads the geometry of the page, so a hint about question three
+              lands next to question three, clear of your writing, and stacks as
+              the conversation grows.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">More room</span>
+            <h3>Ask Gausyn</h3>
+            <p>
+              Drag a box around any problem and it opens as its own workspace,
+              the original pinned at the top, blank grid below, with a pin back
+              to where you came from.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ 6. IT LEARNS YOU ══════════════════ -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Four · Over time</span>
+          <h2>It gets to know how you learn.</h2>
+          <p>
+            One session is a tutor. A hundred sessions is something no tutor has
+            ever been able to be, which is a teacher who remembers every
+            explanation that worked on you, and every one that did not.
+          </p>
+        </div>
+
+        <div class="cols3">
+          <div class="col" data-reveal>
+            <span class="eyebrow">Any language</span>
+            <h3>In the language you think in</h3>
+            <p>
+              Not a translated interface. The teaching itself happens in your
+              language, with examples that make sense where you live.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">Any level</span>
+            <h3>From counting to convergence</h3>
+            <p>
+              Elementary arithmetic through graduate coursework, on one account
+              that grows with you instead of being outgrown.
+            </p>
+          </div>
+          <div class="col" data-reveal>
+            <span class="eyebrow">Any way in</span>
+            <h3>Whatever finally lands</h3>
+            <p>
+              Visually, algebraically, through a story, or by taking it apart and
+              rebuilding it. If one route fails, it tries another.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ QUOTE ══════════════════ -->
+    <section class="quote-band rule-top">
+      <div class="wrap">
+        <p data-reveal>
+          Every student, taught the way the luckiest ones always were.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════ CLOSING ══════════════════ -->
+    <section class="closing rule-top">
+      <div class="wrap">
+        <h2 data-reveal>Imagine every student with a teacher of their own.</h2>
+        <div class="cta-row" data-reveal>
+          <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="wordmark" href="temp2.html">gausyn</a>
+          <p>A personal teacher for every student. Built in Toronto, for learners everywhere.</p>
+        </div>
+
+        <div class="foot-col">
+          <h5>Product</h5>
+          <ul>
+            <li><span>Whiteboard</span></li>
+            <li><span>Calendar</span></li>
+            <li><span>Teacher mode</span></li>
+            <li><span>Practice mode</span></li>
+            <li><span>Ask Gausyn</span></li>
+            <li><span>Voice</span></li>
+            <li><span>Pricing</span></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h5>Learning</h5>
+          <ul>
+            <li><span>Elementary</span></li>
+            <li><span>High school</span></li>
+            <li><span>University</span></li>
+            <li><span>Mathematics</span></li>
+            <li><span>Physics</span></li>
+            <li><span>Chemistry</span></li>
+            <li><span>Computer science</span></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="temp-about.html">About</a></li>
+            <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
+            <li><a href="mailto:gausyninc@gmail.com">Careers</a></li>
+            <li><a href="mailto:gausyninc@gmail.com">Investors</a></li>
+            <li><span class="soon">Blog</span></li>
+            <li><span class="soon">Research</span></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h5>Trust</h5>
+          <ul>
+            <li><span class="soon">Privacy</span></li>
+            <li><span class="soon">Terms</span></li>
+            <li><span class="soon">Accessibility</span></li>
+            <li><span class="soon">Student data</span></li>
+            <li><span class="soon">Responsible AI</span></li>
+            <li><span class="soon">Status</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-base">
+        <div>
+          <p class="parent">Inquisara</p>
+          <p class="copy">Gausyn is a product of Inquisara.</p>
+        </div>
+        <p class="copy">&copy; 2026 Inquisara</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var hasIO = 'IntersectionObserver' in window;
+
+      // ── scroll reveal ────────────────────────────────────────────────
+      var items = document.querySelectorAll('[data-reveal]');
+
+      if (reduce || !hasIO) {
+        items.forEach(function (el) { el.classList.add('in'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+        items.forEach(function (el, i) {
+          el.style.transitionDelay = (Math.min(i, 3) * 0.08) + 's';
+          io.observe(el);
+        });
+      }
+
+      // ── scenes: hold every animation until the panel is actually on
+      //    screen, so the sequence starts from the top for each viewer ──
+      var scenes = document.querySelectorAll('[data-scene]');
+
+      if (reduce || !hasIO) {
+        scenes.forEach(function (el) { el.classList.add('play'); });
+        return;
+      }
+
+      var sio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('play');
+          sio.unobserve(entry.target);
+        });
+      }, { threshold: 0.22 });
+
+      scenes.forEach(function (el) { sio.observe(el); });
+    })();
+  </script>
+</body>
+</html>

@@ -207,7 +207,7 @@
       margin-top: clamp(36px, 5vh, 56px);
     }
 
-    .founder .ph { margin-bottom: 22px; }
+    .founder { padding-top: 24px; border-top: 1px solid var(--rule); }
     .founder h3 { margin-bottom: 6px; }
     .founder .role {
       font-family: var(--label);
@@ -227,39 +227,6 @@
     }
 
     .founder h3 a:hover { border-color: var(--ink); }
-
-    /* ---------- placeholders ---------- */
-
-    .ph {
-      position: relative;
-      background: var(--surface);
-      border-radius: clamp(10px, 1.2vw, 18px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ph::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(10, 10, 10, 0.07);
-      border-radius: inherit;
-      pointer-events: none;
-    }
-
-    .ph span {
-      font-family: var(--label);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .ph-portrait { aspect-ratio: 4 / 5; }
 
     /* animated backdrop */
 
@@ -572,7 +539,6 @@
 
         <div class="founders">
           <div class="founder" data-reveal>
-            <div class="ph ph-portrait"><span>Portrait, Matthew</span></div>
             <h3>
               <a href="https://www.linkedin.com/in/mattlisondra/" target="_blank" rel="noopener noreferrer">Matthew Lisondra</a>
             </h3>
@@ -586,7 +552,6 @@
             </p>
           </div>
           <div class="founder" data-reveal>
-            <div class="ph ph-portrait"><span>Portrait, James</span></div>
             <h3>
               <a href="https://www.linkedin.com/in/jameslisondra/" target="_blank" rel="noopener noreferrer">James Lisondra</a>
             </h3>
