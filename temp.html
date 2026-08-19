@@ -4,467 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gausyn — A personal teacher for every student</title>
-  <meta name="description" content="Gausyn is a personal teacher for every student. Any subject, any level, any language, taught the way you learn best." />
+  <meta name="description" content="Gausyn plans your week, teaches lessons out loud, and works through every problem beside you on a shared board. Any subject, any level, any language." />
   <meta name="robots" content="noindex, nofollow" />
-
-  <style>
-    :root {
-      --bg: #ffffff;
-      --ink: #0a0a0a;
-      --muted: #6b6b6b;
-      --faint: #9a9a9a;
-      --rule: #e6e6e6;
-      --surface: #f5f5f4;
-      --maxw: 1180px;
-      --pad: clamp(20px, 5vw, 48px);
-      --section: clamp(72px, 12vh, 160px);
-      --serif: Georgia, "Times New Roman", Times, serif;
-      --label: Georgia, "Times New Roman", Times, serif;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: clamp(16px, 1.15vw, 19px);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    a { color: inherit; }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding-left: var(--pad);
-      padding-right: var(--pad);
-    }
-
-    /* ---------- header ---------- */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.72);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
-      backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .site-header .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: clamp(56px, 7vh, 68px);
-    }
-
-    .wordmark {
-      font-size: clamp(19px, 2vw, 23px);
-      font-weight: 400;
-      letter-spacing: -0.022em;
-      text-decoration: none;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(20px, 3vw, 40px);
-      list-style: none;
-    }
-
-    .nav a {
-      font-size: clamp(14px, 1vw, 15px);
-      letter-spacing: 0;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .nav a:hover { opacity: 0.55; }
-
-    .nav a.current { opacity: 0.45; }
-
-    /* ---------- type ---------- */
-
-    h1, h2, h3 {
-      font-weight: 400;
-      letter-spacing: -0.018em;
-      line-height: 1.05;
-    }
-
-    .hero h1 {
-      font-size: clamp(44px, 8vw, 104px);
-      font-weight: 400;
-      line-height: 1.02;
-      max-width: 15ch;
-    }
-
-    h2 {
-      font-size: clamp(30px, 4.4vw, 58px);
-      line-height: 1.08;
-    }
-
-    h3 {
-      font-size: clamp(20px, 1.7vw, 24px);
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-
-    .lede {
-      font-size: clamp(18px, 1.55vw, 23px);
-      line-height: 1.5;
-      color: var(--muted);
-      letter-spacing: 0;
-      max-width: 46ch;
-    }
-
-    .eyebrow {
-      font-family: var(--label);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--faint);
-    }
-
-    p + p { margin-top: 1em; }
-
-    .muted { color: var(--muted); }
-
-    /* ---------- sections ---------- */
-
-    section { padding: var(--section) 0; }
-
-    .rule-top { border-top: 1px solid var(--rule); }
-
-    /* ---------- hero ---------- */
-
-    .hero {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      text-align: center;
-      padding-top: clamp(88px, 17vh, 190px);
-      padding-bottom: clamp(56px, 9vh, 110px);
-    }
-
-    .hero .wrap { position: relative; z-index: 1; }
-
-    .hero h1 { margin: 0 auto; }
-    .hero .lede { margin: clamp(22px, 3.2vh, 34px) auto 0; }
-    .hero .cta-row { justify-content: center; }
-
-    /* animated backdrop */
-
-    .aurora {
-      position: absolute;
-      inset: -20% -10% 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 56%, transparent 94%);
-      mask-image: linear-gradient(to bottom, #000 0%, #000 56%, transparent 94%);
-    }
-
-    .aurora i {
-      position: absolute;
-      display: block;
-      border-radius: 50%;
-      filter: blur(clamp(30px, 5vw, 68px));
-      opacity: 0.9;
-      will-change: transform;
-    }
-
-    .aurora i:nth-child(1) {
-      width: 62vw; height: 62vw;
-      top: -18%; left: 2%;
-      background: radial-gradient(circle at 40% 40%, #f0c79a 0%, rgba(240, 199, 154, 0) 68%);
-      animation: drift-a 26s ease-in-out infinite alternate;
-    }
-
-    .aurora i:nth-child(2) {
-      width: 56vw; height: 56vw;
-      top: 0%; right: 0%;
-      background: radial-gradient(circle at 55% 45%, #c9d4e8 0%, rgba(201, 212, 232, 0) 68%);
-      animation: drift-b 32s ease-in-out infinite alternate;
-    }
-
-    .aurora i:nth-child(3) {
-      width: 48vw; height: 48vw;
-      top: 24%; left: 28%;
-      background: radial-gradient(circle at 50% 50%, #e5c3b3 0%, rgba(229, 195, 179, 0) 70%);
-      animation: drift-c 22s ease-in-out infinite alternate;
-    }
-
-    @media (max-width: 640px) {
-      .aurora i:nth-child(1) { width: 115vw; height: 115vw; top: -12%; left: -12%; }
-      .aurora i:nth-child(2) { width: 100vw; height: 100vw; top: 2%; right: -18%; }
-      .aurora i:nth-child(3) { width: 90vw; height: 90vw; top: 26%; left: 12%; }
-    }
-
-    .aurora .grain {
-      position: absolute;
-      inset: 0;
-      opacity: 0.24;
-      mix-blend-mode: multiply;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-      filter: none;
-      border-radius: 0;
-    }
-
-    @keyframes drift-a {
-      0%   { transform: translate3d(0, 0, 0) scale(1); }
-      50%  { transform: translate3d(6vw, 4vh, 0) scale(1.12); }
-      100% { transform: translate3d(-3vw, 7vh, 0) scale(1.04); }
-    }
-
-    @keyframes drift-b {
-      0%   { transform: translate3d(0, 0, 0) scale(1.06); }
-      50%  { transform: translate3d(-7vw, 5vh, 0) scale(0.94); }
-      100% { transform: translate3d(2vw, -3vh, 0) scale(1.1); }
-    }
-
-    @keyframes drift-c {
-      0%   { transform: translate3d(0, 0, 0) scale(0.96); }
-      50%  { transform: translate3d(5vw, -5vh, 0) scale(1.14); }
-      100% { transform: translate3d(-6vw, 2vh, 0) scale(1); }
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 18px 26px;
-      margin-top: clamp(30px, 4.5vh, 46px);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--ink);
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0;
-      padding: 14px 28px;
-      border-radius: 999px;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .btn:hover { opacity: 0.82; transform: translateY(-1px); }
-
-    .btn-quiet {
-      font-size: 15px;
-      color: var(--muted);
-      text-decoration: none;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 2px;
-      transition: color 0.25s ease, border-color 0.25s ease;
-    }
-
-    .btn-quiet:hover { color: var(--ink); border-color: var(--ink); }
-
-    /* ---------- placeholders ---------- */
-
-    .ph {
-      position: relative;
-      background: var(--surface);
-      border-radius: clamp(10px, 1.2vw, 18px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ph::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(10, 10, 10, 0.07);
-      border-radius: inherit;
-      pointer-events: none;
-    }
-
-    .ph span {
-      font-family: var(--label);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .ph-video { aspect-ratio: 16 / 9; }
-    .ph-wide { aspect-ratio: 21 / 9; }
-    .ph-square { aspect-ratio: 4 / 3; }
-
-    /* ---------- statement ---------- */
-
-    .statement p {
-      font-size: clamp(26px, 3.5vw, 46px);
-      line-height: 1.18;
-      letter-spacing: -0.014em;
-      max-width: 22ch;
-      font-weight: 400;
-    }
-
-    .statement .sub {
-      font-size: clamp(17px, 1.35vw, 20px);
-      line-height: 1.55;
-      letter-spacing: 0;
-      color: var(--muted);
-      max-width: 52ch;
-      font-weight: 400;
-      margin-top: clamp(24px, 3.5vh, 40px);
-    }
-
-    /* ---------- grids ---------- */
-
-    .section-head { margin-bottom: clamp(40px, 6vh, 72px); }
-    .section-head h2 { max-width: 18ch; }
-    .section-head .lede { margin-top: 18px; }
-
-    .cols {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(32px, 4vw, 64px);
-    }
-
-    .col .eyebrow { display: block; margin-bottom: 14px; }
-    .col h3 { margin-bottom: 12px; }
-    .col p { color: var(--muted); font-size: clamp(15px, 1.05vw, 17px); }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(28px, 3.5vw, 52px);
-    }
-
-    .step .ph { margin-bottom: 22px; }
-    .step .eyebrow { display: block; margin-bottom: 10px; }
-    .step h3 { margin-bottom: 10px; }
-    .step p { color: var(--muted); font-size: clamp(15px, 1.05vw, 17px); }
-
-    /* ---------- reach ---------- */
-
-    .reach .ph { margin-bottom: clamp(40px, 6vh, 72px); }
-
-    .reach-text {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(32px, 4vw, 72px);
-      align-items: start;
-    }
-
-    .reach-text h2 { max-width: 14ch; }
-    .reach-text p { color: var(--muted); }
-
-    /* ---------- closing ---------- */
-
-    .closing { text-align: center; }
-
-    .closing h2 {
-      max-width: none;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 760px) {
-      .closing h2 {
-        white-space: nowrap;
-        font-size: min(3.5vw, 43px);
-      }
-    }
-
-    .closing .cta-row { justify-content: center; }
-
-    /* ---------- footer ---------- */
-
-    .site-footer {
-      border-top: 1px solid var(--rule);
-      padding: clamp(40px, 6vh, 64px) 0 clamp(32px, 5vh, 52px);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px 40px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: clamp(20px, 3vw, 40px);
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover { color: var(--ink); }
-
-    .copyright { font-size: 14px; color: var(--faint); }
-
-    /* ---------- reveal ---------- */
-
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    [data-reveal].in {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ---------- responsive ---------- */
-
-    @media (max-width: 860px) {
-      .cols,
-      .steps,
-      .reach-text {
-        grid-template-columns: 1fr;
-      }
-
-      .cols { gap: 40px; }
-      .steps { gap: 44px; }
-    }
-
-    @media (max-width: 640px) {
-      .hero h1 { max-width: none; }
-      .statement p { max-width: none; }
-      .btn { width: 100%; }
-      .cta-row { gap: 16px; }
-      .closing .cta-row { flex-direction: column; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { animation: none !important; transition: none !important; }
-      [data-reveal] { opacity: 1; transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/gausyn.css?v=3" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
-
 <body>
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav>
         <ul class="nav">
+          <li><a class="hide-sm current" href="temp.html#how">How it works</a></li>
+          <li><a href="temp-learning.html">Learning</a></li>
+          <li><a href="temp-pricing.html">Pricing</a></li>
           <li><a href="temp-about.html">About</a></li>
         </ul>
       </nav>
@@ -472,8 +25,9 @@
   </header>
 
   <main>
+
     <!-- hero -->
-    <section class="hero">
+    <section class="hero aurora-host">
       <div class="aurora" aria-hidden="true">
         <i></i><i></i><i></i>
         <div class="grain"></div>
@@ -481,136 +35,681 @@
       <div class="wrap">
         <h1 data-reveal>A personal teacher for every student.</h1>
         <p class="lede" data-reveal>
-          Any subject. Any level. Any language. Taught the way you
-          learn best, whenever you need it.
+          Tell it what your week looks like. It plans the lessons, teaches them
+          out loud, and works through every problem beside you on a shared board
+          &mdash; from kindergarten to a doctorate, in any language, at your pace.
         </p>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
-          <a class="btn-quiet" href="temp-about.html">Read why we are building this</a>
-        </div>
-        <div class="ph ph-video" style="margin-top: clamp(48px, 8vh, 96px);" data-reveal>
-          <span>Product video, 16:9</span>
+          <a class="btn-quiet" href="#how">See how it works</a>
         </div>
       </div>
     </section>
 
-    <!-- statement -->
-    <section class="statement rule-top">
+    <!-- statement + two ways -->
+    <section class="scene statement rule-top" data-scene>
       <div class="wrap">
-        <p data-reveal>Not answers handed over. Understanding built.</p>
-        <p class="sub" data-reveal>
-          Most tools are built to finish the problem for you. Gausyn is built to
-          teach it, through conversation, visual explanation, and guided
-          practice, one honest question at a time, until the idea clicks and stays.
-        </p>
+        <div class="statement-grid">
+          <div>
+            <p class="big" data-reveal>Not answers handed over. Understanding built.</p>
+            <p class="sub" data-reveal>
+              Most tools are built to finish the problem for you. Gausyn is built
+              to teach it, through conversation, visual explanation, and guided
+              practice, one honest question at a time, until the idea clicks and stays.
+            </p>
+          </div>
+
+          <div class="stage" data-reveal>
+            <div class="chrome">
+              <span class="dot"></span>
+              <span class="title">One question, two ways</span>
+            </div>
+            <div class="two-ways">
+              <div class="way way-a">
+                <span class="tag">Everything else</span>
+                <p class="prompt">Solve 2x + 5 = 13</p>
+                <p class="blurt">x = 4</p>
+                <p class="aftermath">You write it down. Tomorrow it is gone, and the next one is new again.</p>
+              </div>
+              <div class="way way-b">
+                <span class="tag">Gausyn</span>
+                <p class="prompt">Solve 2x + 5 = 13</p>
+                <div class="steps-reveal">
+                  <div class="ask">What is happening to x last?</div>
+                  <div class="got">The plus 5, so undo that first.</div>
+                  <div class="eqn">2x = 13 &minus; 5 = 8</div>
+                  <div class="ask">And now the 2 is multiplying x?</div>
+                  <div class="eqn">x = 4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- what it does -->
-    <section class="rule-top">
+    <!-- the gaps -->
+    <section class="scene rule-top" data-scene>
       <div class="wrap">
-        <div class="section-head" data-reveal>
-          <h2>A teacher that adapts to you.</h2>
-          <p class="lede">
-            A real teacher figures out what you already understand, finds the
-            misconception, and changes the lesson when the explanation does not
-            land. Gausyn is designed to do the same.
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Why this needs to exist</span>
+          <h2>The way we learn has not kept up.</h2>
+          <p>
+            Everything a student reaches for today was built to broadcast, not to
+            teach. Lessons that cannot hear you. Courses tuned to an average
+            student who does not exist. Apps that finish the homework and end the
+            thinking. Gausyn exists to close the loop every one of them leaves
+            open: the moment you say <em>wait, I don&rsquo;t get it.</em>
           </p>
         </div>
 
-        <div class="cols">
-          <div class="col" data-reveal>
-            <span class="eyebrow">01</span>
-            <h3>It teaches, it does not answer</h3>
+        <div class="gaps">
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo gd-player" aria-hidden="true">
+              <span class="tri"></span>
+              <span class="bub">wait &mdash; what?</span>
+              <div class="bar"><i></i></div>
+            </div>
+            <h3>Recorded lessons play at you</h3>
             <p>
-              Bring a homework problem and you get the concept underneath it:
-              worked through visually, step by step, with examples and practice
-              generated for you as you go.
+              The video cannot hear you. Pause it a hundred times and it says the
+              same thing, the same way, at the same speed. The moment you stop
+              following, you are on your own.
             </p>
           </div>
-          <div class="col" data-reveal>
-            <span class="eyebrow">02</span>
-            <h3>It changes as you learn</h3>
+
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo gd-pace" aria-hidden="true">
+              <div class="lane l1"><span class="lbl">everyone</span><span class="dot"></span></div>
+              <div class="lane l2"><span class="lbl">you</span><span class="dot"></span></div>
+            </div>
+            <h3>One pace for a million students</h3>
             <p>
-              Pace, language, depth, and the kind of example used all shift in
-              real time. Ask for it slower, drawn out, in another language, or
-              through a different analogy, and it starts again from there.
+              Fixed curricula are tuned to the middle of an imaginary class.
+              Nobody lives there. Real understanding slows down, doubles back,
+              then suddenly sprints, and the course should move with it.
             </p>
           </div>
-          <div class="col" data-reveal>
-            <span class="eyebrow">03</span>
-            <h3>Any subject, any level</h3>
+
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo gd-answer" aria-hidden="true">
+              <div class="snap"></div>
+              <span class="out">x = 4</span>
+              <div class="meter"><span class="k">understanding</span><div class="m"><i></i></div></div>
+            </div>
+            <h3>Answer apps end the thinking</h3>
             <p>
-              Elementary arithmetic through graduate coursework. A single
-              question before an exam, or a full sequence of lessons that carries
-              you through an entire course.
+              A photo in, an answer out. The assignment gets finished and nothing
+              gets learned, so tomorrow&rsquo;s problem is just as impossible as
+              today&rsquo;s.
+            </p>
+          </div>
+
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo gd-tutor" aria-hidden="true">
+              <span class="price">$95<span class="per">/hr</span></span>
+              <div class="slots">
+                <span class="slot x"></span><span class="slot x"></span><span class="slot"></span><span class="slot x"></span>
+                <span class="slot x"></span><span class="slot"></span><span class="slot x"></span><span class="slot x"></span>
+              </div>
+              <span class="cap">two slots left</span>
+            </div>
+            <h3>Great teachers do not scale</h3>
+            <p>
+              The best fix has always been a patient human, one-on-one. But an
+              hour costs more than most families can spend weekly, and the
+              teacher who finally makes it click has thirty other students.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- how it works -->
+    <!-- 1: calendar -->
+    <section class="scene rule-top" id="how" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">One &middot; Tell it what is coming</span>
+          <h2>You talk. The week arranges itself.</h2>
+          <p>
+            No forms, and nothing to drag into place unless you want to. Say you
+            have a chemistry exam Friday and math due tomorrow, and Gausyn works
+            out how many sessions that needs, when you are actually free, and
+            what each one should cover. Change your mind mid-week and it
+            re-plans around you.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Dashboard</span>
+            <span class="spacer"></span>
+            <span class="pill">Daily check-in</span>
+          </div>
+          <div class="appshell fade-da">
+            <div class="aside" aria-hidden="true">
+              <span class="wordmark">gausyn</span>
+              <span class="item active">Home</span>
+              <span class="item">Learning <span class="soon">soon</span></span>
+              <span class="item">Projects <span class="soon">soon</span></span>
+              <span class="item">Library <span class="soon">soon</span></span>
+              <span class="item">Billing &amp; Usage</span>
+              <span class="item">Settings</span>
+              <span class="me"><i>Y</i> You</span>
+            </div>
+
+            <div class="appmain">
+              <div class="apptop">
+                <h4>Home</h4>
+                <span class="qs-btn">Quick Session</span>
+              </div>
+              <div class="calhead">
+                <h4>This week</h4>
+                <div class="cal-views"><span>Month</span><span class="on">Week</span><span>Day</span></div>
+              </div>
+
+              <div class="cal-grid">
+                <div class="hd"></div>
+                <div class="hd today">Mon</div><div class="hd">Tue</div><div class="hd">Wed</div><div class="hd">Thu</div><div class="hd">Fri</div>
+
+                <div class="tm">5pm</div>
+                <div class="cell off"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"><div class="dl k da-e5">Chem exam &middot; Fri 9:00</div></div>
+
+                <div class="tm">6pm</div>
+                <div class="cell"></div>
+                <div class="cell"><div class="ev chem k da-e2"><b>Chemistry</b><em>Moles &middot; 45m</em></div></div>
+                <div class="cell"></div>
+                <div class="cell"><div class="ev chem k da-e4"><b>Chemistry</b><em>Rates &middot; 45m</em></div></div>
+                <div class="cell off"></div>
+
+                <div class="tm">7pm</div>
+                <div class="cell"><div class="ev math k da-e1"><b>Math</b><em>Homework &middot; 30m</em></div></div>
+                <div class="cell"></div>
+                <div class="cell">
+                  <div class="ev chem da-dim"><b>Chemistry</b><em>Rates &middot; 45m</em></div>
+                  <div class="ev chem da-ghost tr"><b>Chemistry</b><em>Rates &middot; 45m</em></div>
+                  <div class="ev eng k da-e6"><b>English</b><em>Essay outline &middot; 45m</em></div>
+                </div>
+                <div class="cell"></div>
+                <div class="cell off"></div>
+
+                <div class="tm">8pm</div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell off"></div>
+              </div>
+
+              <div class="dockchat">
+                <div class="dockmsgs">
+                  <div class="dm g k da-m1"><i>G</i><span>Hey &mdash; tell me about your day, upcoming exams, availability, or ask to reschedule.</span></div>
+                  <div class="dm you k da-m2"><span>I have a chemistry exam next Friday, and math homework due tomorrow I haven&rsquo;t started.</span></div>
+                  <div class="dm g k da-m3"><i>G</i><span>Tonight is free after 7, so the math is booked for 7:00. Three chemistry reviews go in across the week, ending Thursday so Friday stays clear.</span></div>
+                  <div class="dm you k da-m4"><span>Wednesdays are actually bad for me.</span></div>
+                  <div class="dm g k da-m5"><i>G</i><span>Moved &mdash; Wednesday&rsquo;s review is now Thursday at 6. That frees Wednesday for the essay you mentioned last week. Want it in?</span></div>
+                  <div class="dm you k da-m6"><span>Yes, and track the essay deadline too.</span></div>
+                  <div class="dm g k da-m7"><i>G</i><span>Done. Four sessions this week, two deadlines tracked, Friday morning clear for the exam.</span></div>
+                </div>
+                <div class="dockinput">+ <span>How can I help you today?</span><span class="caret tr"></span><span class="up">&uarr;</span></div>
+              </div>
+            </div>
+
+            <div class="apprail" aria-hidden="true">
+              <div class="statcard"><b>4</b><span>lessons this week</span></div>
+              <span class="railhead">Upcoming deadlines</span>
+              <div class="dl-card k da-d1"><b>Chemistry exam</b><span>Friday &middot; 9:00 AM</span></div>
+              <div class="dl-card k da-d2"><b>English essay</b><span>Thursday &middot; 11:59 PM</span></div>
+              <span class="railhead">Today</span>
+              <div class="today-card k da-t1"><b>Math &middot; Homework</b><span>7:00 PM &middot; 30 min</span><span class="join">Join opens 6:50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2: real sessions + lobby -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Two &middot; Then you just show up</span>
+          <h2>A lesson, not a link.</h2>
+          <p>
+            Every session on the calendar is clocked. It opens ten minutes early,
+            runs on a real timer that lives on the server, and ends with a line
+            about what actually happened. Or skip the calendar entirely: a Quick
+            Session starts the moment you ask.
+          </p>
+        </div>
+
+        <div class="lifecycle">
+          <div class="card" data-reveal>
+            <div class="bar math"></div>
+            <h4>Quadratics, part two</h4>
+            <p class="when">Monday &middot; 7:00 PM &middot; 45 minutes</p>
+            <p>Completing the square, then the discriminant and what it tells you before you solve anything.</p>
+            <div class="topics"><span>Completing the square</span><span>Discriminant</span><span>Word problems</span></div>
+            <div class="states">
+              <span class="st s1 k"><i></i> Starts in 12m</span>
+              <span class="st s2"><i></i> Join now</span>
+              <span class="st live s3"><i></i> In progress &middot; 22:14 left</span>
+              <span class="st done s4"><i></i> Completed 28 min &middot; 12 exchanges</span>
+            </div>
+            <p class="join-note">The clock lives on the server. Reloading, switching devices, or editing the URL changes nothing.</p>
+          </div>
+
+          <div class="card" data-reveal>
+            <div class="bar any"></div>
+            <h4>Quick session</h4>
+            <p class="when">Any subject &middot; 30 minutes &middot; right now</p>
+            <p>Nothing scheduled and something is due. Open a board, upload the worksheet or just start talking, and pick how you want to be taught.</p>
+            <div class="topics"><span>No setup</span><span>Any subject</span><span>Upload or ask</span></div>
+            <div class="states">
+              <span class="st s1 k"><i></i> Choose a mode</span>
+              <span class="st s2"><i></i> Teacher / Practice</span>
+              <span class="st live s3"><i></i> Homework</span>
+              <span class="st done s4"><i></i> Board ready</span>
+            </div>
+            <p class="join-note">Same timer, same teacher, same board as a scheduled lesson. It just starts the moment you ask.</p>
+          </div>
+        </div>
+        <div style="margin-top: clamp(28px, 4vh, 44px)">
+
+        <div class="lobby-stage" data-reveal>
+          <div class="lobby-card">
+            <div class="wm">gausyn</div>
+            <p class="sub">Your intelligent space</p>
+            <div class="lobby-cam"><i></i></div>
+            <p class="lobby-q">How would you like to learn today?</p>
+            <div class="lobby-opts">
+              <div class="lobby-opt o1">
+                <span class="n">01</span>
+                <h4>Teacher / Practice</h4>
+                <p>Gausyn leads a lesson and provides worksheets based on your topic</p>
+              </div>
+              <div class="lobby-opt o2">
+                <span class="n">02</span>
+                <h4>Homework</h4>
+                <p>Upload your own worksheet or homework pictures to work through together</p>
+              </div>
+            </div>
+            <p class="lobby-note">Make sure your camera and microphone are enabled</p>
+            <span class="lobby-join">Join the Session</span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: two modes -->
     <section class="rule-top">
       <div class="wrap">
-        <div class="section-head" data-reveal>
-          <h2>How it works.</h2>
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Three &middot; Two ways to be taught</span>
+          <h2>Sit and listen, or roll up your sleeves.</h2>
+          <p>The same teacher, pointed two different directions. Switch mid-session by simply saying so.</p>
         </div>
-
-        <div class="steps">
-          <div class="step" data-reveal>
-            <div class="ph ph-square"><span>Upload interface</span></div>
-            <span class="eyebrow">Step one</span>
-            <h3>Bring anything</h3>
+        <div class="modes">
+          <a class="mode warm" href="temp-teacher-mode.html" data-reveal>
+            <span class="tag">Teacher mode</span>
+            <h3>It teaches the lesson.</h3>
             <p>
-              An assignment, a page of notes, a diagram, a lab report, or just a
-              topic you want to finally understand.
+              Gausyn pulls a lesson and walks it page by page, out loud, at the
+              pace you set. The tools disappear. Interrupt whenever you want, ask
+              it to go back, or say you are ready to practise.
             </p>
-          </div>
-          <div class="step" data-reveal>
-            <div class="ph ph-square"><span>Lesson screenshot</span></div>
-            <span class="eyebrow">Step two</span>
-            <h3>Learn through it</h3>
+            <span class="go">Explore Teacher mode &rarr;</span>
+          </a>
+          <a class="mode cool" href="temp-practice-mode.html" data-reveal>
+            <span class="tag">Practice mode</span>
+            <h3>You work. It watches.</h3>
             <p>
-              Gausyn explains, draws it out, asks you questions back, checks what
-              landed, and reworks whatever did not.
+              Bring your own worksheet or ask for questions. You write on the
+              board, Gausyn sees what you wrote, and hints land beside the exact
+              problem you are stuck on. Never the answer.
             </p>
-          </div>
-          <div class="step" data-reveal>
-            <div class="ph ph-square"><span>Learner profile</span></div>
-            <span class="eyebrow">Step three</span>
-            <h3>It remembers how you learn</h3>
-            <p>
-              Every session builds a clearer picture of you as a learner, and
-              that picture follows you across subjects and years.
-            </p>
-          </div>
+            <span class="go">Explore Practice mode &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- reach -->
-    <section class="reach rule-top">
+    <!-- 4: teacher scene -->
+    <section class="scene rule-top" id="teacher" data-scene>
       <div class="wrap">
-        <div class="ph ph-wide" data-reveal><span>Students, wide still, 21:9</span></div>
-        <div class="reach-text">
-          <h2 data-reveal>Built for every student on the planet.</h2>
-          <div data-reveal>
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Teacher mode</span>
+          <h2>A lesson that stops when you say wait.</h2>
+          <p>
+            No toolbar, no clutter. Just the page it is teaching from and its
+            voice &mdash; and unlike any recording, it hears you. Ask why in the
+            middle of a sentence and it draws you an answer before moving on.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="spacer" style="flex:1"></span>
+          </div>
+          <div class="board-shell fade-te">
+            <div>
+              <div class="boardarea plain">
+                <div class="camthumb" aria-hidden="true"></div>
+
+                <div class="lesson-page te-p1">
+                  <span class="num">Lesson &middot; page 1 of 6</span>
+                  <h4>What a rate actually measures</h4>
+                  <ul>
+                    <li>How much of something appears or disappears, per unit of time.</li>
+                    <li>Always a change divided by an interval, never a single reading.</li>
+                    <li>The sign tells you which side of the arrow you are standing on.</li>
+                  </ul>
+                  <div class="eq">rate = &Delta;[A] / &Delta;t</div>
+                  <svg class="curve k" width="240" height="120" viewBox="0 0 240 120" style="margin-top:16px" aria-hidden="true">
+                    <line x1="8" y1="104" x2="228" y2="104"></line>
+                    <line x1="8" y1="104" x2="8" y2="8"></line>
+                    <path class="te-curve" d="M10,16 C60,20 90,52 120,76 C150,94 190,102 226,103"></path>
+                    <text x="176" y="94">flattens here</text>
+                  </svg>
+                </div>
+
+                <div class="lesson-page te-p2">
+                  <span class="num">Lesson &middot; page 2 of 6</span>
+                  <h4>Why concentration changes the rate</h4>
+                  <ul>
+                    <li>More particles in the same space collide more often.</li>
+                    <li>More collisions means more of them clear the energy barrier.</li>
+                    <li>Second order in A: doubling [A] quadruples the rate.</li>
+                  </ul>
+                  <div class="eq">rate = k[A]&sup2;[B]</div>
+                </div>
+              </div>
+
+              <div class="voice">
+                <div class="wave" aria-hidden="true">
+                  <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
+                  <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
+                  <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
+                  <i style="animation-delay:.72s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:.88s"></i>
+                  <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
+                </div>
+                <div class="say">
+                  <span>&ldquo;Go back&rdquo;</span><span>&ldquo;Slower&rdquo;</span><span>&ldquo;Let&rsquo;s practise&rdquo;</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <div class="status-wrap" aria-hidden="true">
+                  <span class="te-sp">Speaking</span>
+                  <span class="te-li">Listening</span>
+                </div>
+                <span class="mode-pill">Teacher</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Chemistry</span></div>
+                <div><span class="lbl">Time left</span><span class="val">41:08</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line g k te-l1"><span class="who">Gausyn</span>A rate is how much changes, divided by how long it took. Watch the curve on the left.</div>
+                <div class="line you k te-l2"><span class="who">You</span>Wait &mdash; why does it flatten near the end?</div>
+                <div class="line g k te-l3"><span class="who">Gausyn</span>Good catch. Fewer particles left means fewer collisions. Let me draw what that does to the slope.</div>
+                <div class="line you k te-l4"><span class="who">You</span>Got it. Keep going.</div>
+                <div class="line g k te-l5"><span class="who">Gausyn</span>Next page: concentration. More particles in the same space collide more often.</div>
+                <div class="line you k te-l6"><span class="who">You</span>Slower on this part.</div>
+                <div class="line g k te-l7"><span class="who">Gausyn</span>Of course. Second order means doubling A quadruples the rate. One piece at a time.</div>
+                <div class="line you k te-l8"><span class="who">You</span>Okay. Let&rsquo;s practise.</div>
+              </div>
+              <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: practice scene -->
+    <section class="scene rule-top" id="practice" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Practice mode</span>
+          <h2>A board you both write on.</h2>
+          <p>
+            Upload a worksheet, a photo of your homework, or nothing at all.
+            Gausyn reads the page, works out every answer for itself first, then
+            helps you find yours without ever handing it over. Ask for a harder
+            one and it writes a fresh problem on the spot.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="tab pr k pr-tpr">Practice</span>
+            <span class="tab ws k pr-tws">Q1</span>
+          </div>
+          <div class="board-shell fade-pr">
+            <div>
+              <div class="boardarea graph">
+                <div class="camthumb" aria-hidden="true"></div>
+                <div class="toolspanel" aria-hidden="true">
+                  <div class="tp-h">Tools</div>
+                  <div class="tp-btn on">Draw</div>
+                  <div class="tp-btn">Select</div>
+                  <div class="tp-btn">Upload</div>
+                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+                </div>
+
+                <div class="sheet">
+                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x + 5 = 13. Show every step.</p>
+
+                  <svg class="ink" viewBox="0 0 260 150" width="260" height="150" style="left:clamp(140px,13vw,160px);top:clamp(76px,9vw,110px)" aria-hidden="true">
+                    <path class="pr-a1" d="M14,26 C20,18 30,16 34,24 C37,31 26,40 16,48 C28,46 38,46 46,47"></path>
+                    <path class="pr-a2" d="M60,24 C70,34 80,44 88,50 M88,24 C80,34 70,42 60,50"></path>
+                    <path class="pr-a3" d="M104,32 C116,30 130,30 140,32 M104,44 C116,42 130,42 140,44"></path>
+                    <path class="pr-a4" d="M170,26 C160,30 158,40 168,44 C158,48 158,60 170,62 C182,60 184,48 172,44 C184,40 182,30 170,26"></path>
+                    <path class="pr-b1" d="M28,92 C40,104 52,116 62,126 M62,92 C52,104 40,114 28,126"></path>
+                    <path class="pr-b2" d="M84,102 C96,100 110,100 120,102 M84,116 C96,114 110,114 120,116"></path>
+                    <path class="pr-b3" d="M152,94 C142,106 136,116 132,126 C144,124 158,124 168,124"></path>
+                  </svg>
+
+                  <div class="hint k pr-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">What was done to x last &mdash; the &times;2 or the +5?</div>
+                  <div class="hint tex k pr-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(112px,13vw,150px)">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
+
+                  <div class="crop tr pr-crop" style="left:clamp(130px,12vw,150px);top:clamp(66px,8vw,96px);width:min(300px,54%);height:clamp(90px,11vw,120px)">
+                    <span class="lbl">Ask Gausyn</span>
+                  </div>
+
+                  <div class="pq k pr-pq" style="top:clamp(200px,24vw,300px)">
+                    <span class="lbl">Practice &middot; P1</span>
+                    A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Practice &middot; 18:42 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Algebra</span></div>
+                <div><span class="lbl">Files</span><span class="val">worksheet.pdf</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line you k pr-c1"><span class="who">You</span>Where do I even start?</div>
+                <div class="line g k pr-c2"><span class="who">Gausyn</span>Look at the left side. What happened to x last?</div>
+                <div class="line you k pr-c3"><span class="who">You</span>The plus five. So I undo that first.</div>
+                <div class="line g k pr-c4"><span class="who">Gausyn</span>x = 4 &mdash; and this time you can say why. Want to make it stick?</div>
+                <div class="line you k pr-c5"><span class="who">You</span>Give me a harder one.</div>
+                <div class="line g k pr-c6"><span class="who">Gausyn</span>Same skeleton, new coat of paint. Talk me through your first move.</div>
+                <div class="line you k pr-c7"><span class="who">You</span>Can I get more room for this?</div>
+                <div class="line g k pr-c8"><span class="who">Gausyn</span>Opened workspace Q1 &mdash; the problem is pinned at the top.</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6: adapts -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Four &middot; Over time</span>
+          <h2>It gets to know how you learn.</h2>
+          <p>
+            One session is a tutor. A hundred sessions is something no tutor has
+            ever been able to be: a teacher who remembers every explanation that
+            worked on you, and every one that did not, from your first times
+            table to your last thesis chapter.
+          </p>
+        </div>
+
+        <div class="cols3">
+          <div class="col" data-reveal>
+            <span class="eyebrow">Any language</span>
+            <div class="demo">
+              <span class="cap">The same lesson, asked</span>
+              <div class="cycler cyc-lang">
+                <span lang="en">What does a rate actually measure?</span>
+                <span lang="fr">Que mesure vraiment un taux&nbsp;?</span>
+                <span lang="es">&iquest;Qu&eacute; mide realmente una tasa?</span>
+                <span lang="zh">&#36895;&#29575;&#21040;&#24213;&#27979;&#37327;&#20160;&#20040;&#65311;</span>
+                <span lang="ar" dir="rtl">&#1605;&#1575; &#1575;&#1604;&#1584;&#1610; &#1610;&#1602;&#1610;&#1587;&#1607; &#1575;&#1604;&#1605;&#1593;&#1583;&#1604;&#1567;</span>
+              </div>
+            </div>
+            <h3>In the language you think in</h3>
             <p>
-              Whatever their age. Whatever language they speak. Whatever school
-              system they were born into, and whatever their family can afford.
+              Not a translated interface. The teaching itself happens in your
+              language, with examples that make sense where you live.
             </p>
+          </div>
+
+          <div class="col" data-reveal>
+            <span class="eyebrow">Kindergarten to doctorate</span>
+            <div class="demo">
+              <span class="cap">One account, all of it</span>
+              <div class="cycler cyc-level">
+                <span><b>Grade 3</b>7 &times; 8</span>
+                <span><b>Grade 8</b>&minus;3(x &minus; 4)</span>
+                <span><b>Grade 12</b>d/dx [ sin 2x ]</span>
+                <span><b>Undergrad</b>&int; e^(&minus;x&sup2;) dx</span>
+                <span><b>MASc</b>state estimation, step by step</span>
+                <span><b>PhD</b>your thesis, chapter three</span>
+              </div>
+              <div class="rail6"><i></i></div>
+            </div>
+            <h3>From counting to convergence</h3>
             <p>
-              At midnight before an exam. On the bus ride home. In a crowded
-              classroom, or anywhere a student has a question and no one nearby
-              who can answer it.
+              Elementary arithmetic through graduate research, on one account
+              that grows with you instead of being outgrown.
+            </p>
+          </div>
+
+          <div class="col" data-reveal>
+            <span class="eyebrow">Any way in</span>
+            <div class="demo">
+              <span class="cap">If one route fails</span>
+              <div class="cycler cyc-route">
+                <span>
+                  <svg width="52" height="42" viewBox="0 0 52 42" aria-hidden="true">
+                    <path d="M6,36 L26,6 L46,36 Z"></path>
+                    <path d="M26,6 L26,36" stroke-dasharray="3 3"></path>
+                  </svg>
+                  <span class="txt">Draw it, and the relationship becomes obvious.</span>
+                </span>
+                <span>
+                  <span class="eqn">a&sup2; + b&sup2; = c&sup2;</span>
+                  <span class="txt">Or write it down and let the algebra carry it.</span>
+                </span>
+                <span>
+                  <svg width="52" height="42" viewBox="0 0 52 42" aria-hidden="true">
+                    <circle cx="26" cy="14" r="7"></circle>
+                    <path d="M12,36 C14,26 38,26 40,36"></path>
+                  </svg>
+                  <span class="txt">Or a story about someone walking across a field.</span>
+                </span>
+              </div>
+            </div>
+            <h3>Whatever finally lands</h3>
+            <p>
+              Visually, algebraically, through a story, or by taking it apart
+              and rebuilding it. If one route fails, it tries another.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- closing -->
+    <!-- 7: audiences -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Who it is for</span>
+          <h2>Built for the whole table.</h2>
+        </div>
+        <div class="aud">
+          <div class="card" data-reveal>
+            <span class="eyebrow">Students</span>
+            <h3>The 2 a.m. question, answered.</h3>
+            <p>
+              You were never bad at math. You met one explanation that did not
+              fit, and nobody was there with a second one. Bring the real
+              assignment, the real exam date, the real confusion &mdash; and get a
+              teacher who stays until it clicks.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="eyebrow">Parents</span>
+            <h3>See the plan, not just the grade.</h3>
+            <p>
+              A patient teacher beside your kid every evening, for less per month
+              than a single hour of tutoring. You see the schedule it keeps, the
+              deadlines it tracks, and how each session actually went &mdash; not
+              just a mark at the end of term.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="eyebrow">Teachers</span>
+            <h3>Thirty students. One of you.</h3>
+            <p>
+              You know exactly who needs twenty more minutes you do not have.
+              Gausyn carries the practice: it re-explains, drills, and adapts to
+              each student between your classes, so your hours go to what only
+              you can do.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="eyebrow">Schools &amp; programs</span>
+            <h3>Every seat, not just the front row.</h3>
+            <p>
+              Individual teaching has always been rationed by cost. Institutional
+              plans put a personal teacher beside every enrolled student, in
+              whatever language they think in.
+              <a class="btn-quiet" href="temp-contact.html">Talk to us</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- quote -->
+    <section class="quote-band rule-top">
+      <div class="wrap">
+        <p data-reveal>Every student, taught the way the luckiest ones always were.</p>
+      </div>
+    </section>
+
     <section class="closing rule-top">
       <div class="wrap">
         <h2 data-reveal>Imagine every student with a teacher of their own.</h2>
@@ -622,41 +721,69 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <a class="wordmark" href="temp.html">gausyn</a>
-      <ul class="footer-links">
-        <li><a href="temp-about.html">About</a></li>
-        <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
-        <li><a href="mailto:gausyninc@gmail.com">Careers</a></li>
-        <li><a href="mailto:gausyninc@gmail.com">Investors</a></li>
-      </ul>
-      <p class="copyright">&copy; 2026 Inquisara</p>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="wordmark" href="temp.html">gausyn</a>
+          <p>A personal teacher for every student. Built in Toronto, for learners everywhere.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="temp-whiteboard.html">Whiteboard</a></li>
+            <li><a href="temp-calendar.html">Calendar</a></li>
+            <li><a href="temp-teacher-mode.html">Teacher mode</a></li>
+            <li><a href="temp-practice-mode.html">Practice mode</a></li>
+            <li><a href="temp-ask-gausyn.html">Ask Gausyn</a></li>
+            <li><a href="temp-voice.html">Voice</a></li>
+            <li><a href="temp-pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Learning</h5>
+          <ul>
+            <li><a href="temp-learning.html#elementary">Elementary</a></li>
+            <li><a href="temp-learning.html#high-school">High school</a></li>
+            <li><a href="temp-learning.html#university">University</a></li>
+            <li><a href="temp-learning.html#graduate">Graduate</a></li>
+            <li><a href="temp-learning.html#mathematics">Mathematics</a></li>
+            <li><a href="temp-learning.html#physics">Physics</a></li>
+            <li><a href="temp-learning.html#chemistry">Chemistry</a></li>
+            <li><a href="temp-learning.html#computer-science">Computer science</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="temp-about.html">About</a></li>
+            <li><a href="temp-contact.html">Contact</a></li>
+            <li><a href="temp-careers.html">Careers</a></li>
+            <li><a href="temp-investors.html">Investors</a></li>
+            <li><a href="temp-blog.html">Blog</a></li>
+            <li><a href="temp-research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Trust</h5>
+          <ul>
+            <li><a href="temp-trust.html#privacy">Privacy</a></li>
+            <li><a href="temp-trust.html#terms">Terms</a></li>
+            <li><a href="temp-trust.html#accessibility">Accessibility</a></li>
+            <li><a href="temp-trust.html#student-data">Student data</a></li>
+            <li><a href="temp-trust.html#responsible-ai">Responsible AI</a></li>
+            <li><a href="temp-trust.html#status">Status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>
+          <p class="parent">Inquisara</p>
+          <p class="copy">Gausyn is a product of Inquisara.</p>
+        </div>
+        <p class="copy">&copy; 2026 Inquisara</p>
+      </div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      var items = document.querySelectorAll('[data-reveal]');
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if (reduce || !('IntersectionObserver' in window)) {
-        items.forEach(function (el) { el.classList.add('in'); });
-        return;
-      }
-
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-      items.forEach(function (el, i) {
-        el.style.transitionDelay = (Math.min(i, 3) * 0.08) + 's';
-        io.observe(el);
-      });
-    })();
-  </script>
+  <script src="assets/gausyn.js?v=3"></script>
 </body>
 </html>
