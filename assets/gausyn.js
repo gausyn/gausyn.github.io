@@ -20,16 +20,31 @@
     });
   }
 
-  // scenes: run while on screen, pause off screen (loops resume, not restart)
+  // rewind every animation inside a subtree, then let it run again from frame 0
+  function restart(el) {
+    if (!el) return;
+    el.classList.add('restart');
+    void el.offsetWidth; // forced reflow: the browser drops the old timelines here
+    el.classList.remove('restart');
+  }
+
+  // scenes: play from the top every time they come back on screen
   var scenes = document.querySelectorAll('[data-scene]');
   if (reduce || !hasIO) {
     scenes.forEach(function (el) { el.classList.add('play'); });
   } else {
     var sio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        entry.target.classList.toggle('play', entry.isIntersecting);
+        var el = entry.target;
+        if (entry.isIntersecting) {
+          if (el.classList.contains('play')) return;
+          el.classList.add('play');
+          restart(el);
+        } else {
+          el.classList.remove('play');
+        }
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
     scenes.forEach(function (el) { sio.observe(el); });
   }
 
@@ -38,8 +53,14 @@
   if (film) {
     var acts = Array.prototype.slice.call(film.querySelectorAll('.act'));
     var dots = Array.prototype.slice.call(film.querySelectorAll('.film-dot'));
-    var DURS = [65, 30, 65, 65, 40, 35]; // seconds per act
+    var DURS = [46, 20, 50, 54, 38.5, 25]; // one full loop of each act's own animation
     var idx = 0, timer = null, onScreen = true;
+
+    // the pane is exactly as tall as the act on screen: no dead space, no clipping
+    function fit() {
+      var h = acts[idx].offsetHeight;
+      if (h) film.style.height = h + 'px';
+    }
 
     function schedule() {
       clearTimeout(timer);
@@ -50,6 +71,8 @@
       idx = ((i % acts.length) + acts.length) % acts.length;
       acts.forEach(function (a, j) { a.classList.toggle('on', j === idx); });
       dots.forEach(function (d, j) { d.classList.toggle('on', j === idx); });
+      fit();
+      restart(acts[idx]); // the act you land on always starts at its first beat
       schedule();
     }
     var prev = film.querySelector('.film-nav.prev');
@@ -61,10 +84,22 @@
     if (hasIO) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
+          if (entry.isIntersecting === onScreen) return;
           onScreen = entry.isIntersecting;
-          if (onScreen) schedule(); else clearTimeout(timer);
+          if (onScreen) { restart(acts[idx]); schedule(); } else { clearTimeout(timer); }
         });
-      }, { threshold: 0.05 }).observe(film);
+      }, { threshold: 0 }).observe(film);
+    }
+
+    // a tab left in the background stops firing timers cleanly: pick the act up again
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { clearTimeout(timer); }
+      else if (onScreen) { restart(acts[idx]); schedule(); }
+    });
+    window.addEventListener('resize', fit);
+    if ('ResizeObserver' in window) {
+      var ro = new ResizeObserver(function () { fit(); });
+      acts.forEach(function (a) { ro.observe(a); });
     }
     show(0);
   }

@@ -155,6 +155,10 @@ section { padding: var(--section) 0; scroll-margin-top: calc(var(--header-h) + 2
 
 html.js .scene * { animation-play-state: paused; }
 html.js .scene.play * { animation-play-state: running; }
+/* only the act on screen runs; the rest wait at their first frame */
+html.js .film .act:not(.on) * { animation-play-state: paused; }
+/* momentary class used to rewind every animation in a subtree to frame zero */
+html.js .restart, html.js .restart * { animation: none !important; }
 
 .chrome {
   display: flex; align-items: center; gap: 10px;
@@ -259,6 +263,9 @@ html.js .lobby-join { animation: lobby-press 20s ease-in-out infinite; }
 /* ── board scenes (teacher / practice) ──────────────────────────────────── */
 .board-shell { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.58fr); }
 .board-shell > * + * { border-left: 1px solid var(--rule-soft); }
+/* the board fills its column so the voice rail sits on the bottom edge, not mid-air */
+.board-shell > div:first-child { display: flex; flex-direction: column; }
+.board-shell > div:first-child .boardarea { flex: 1 1 auto; }
 
 .tabsbar { display: flex; align-items: flex-end; gap: 4px; padding: 10px clamp(14px, 1.8vw, 20px) 0; border-bottom: 1px solid var(--rule); background: rgba(245,245,244,0.55); overflow-x: auto; scrollbar-width: none; }
 .tabsbar::-webkit-scrollbar { display: none; }
@@ -589,7 +596,7 @@ html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route 
 .foot-col h5 { font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
 .foot-col ul { list-style: none; display: grid; gap: 9px; }
 .foot-col li { font-size: 13.5px; line-height: 1.35; }
-.foot-col a { color: var(--muted); text-decoration: none; }
+.foot-col a, .foot-col span { color: var(--muted); text-decoration: none; }
 .foot-col a:hover { color: var(--ink); }
 .foot-base { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-top: clamp(44px, 6vh, 72px); padding-top: clamp(22px, 3vh, 32px); border-top: 1px solid var(--rule-soft); }
 .foot-base .parent { font-size: clamp(15px, 1.4vw, 18px); letter-spacing: 0.14em; color: var(--faint); text-transform: uppercase; }
@@ -819,64 +826,50 @@ html.js .te-li{animation:te-listen 50s steps(1) infinite}
 
 /* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
 .herofilm {
-  min-height: calc(100vh - 68px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
-  padding: clamp(14px, 2.2vh, 28px) var(--pad) clamp(18px, 2.8vh, 34px);
+  padding: clamp(22px, 4vh, 52px) var(--pad) clamp(26px, 5vh, 60px);
 }
-@supports (height: 100svh) { .herofilm { min-height: calc(100svh - var(--header-h)); } }
 .herofilm h1 {
   font-size: clamp(32px, 4.4vw, 62px);
   max-width: 24ch;
-  margin: 0 auto clamp(12px, 2vh, 22px);
+  margin: 0 auto clamp(18px, 2.8vh, 30px);
 }
 .herofilm .lede {
-  margin: clamp(12px, 2vh, 22px) auto 0;
+  margin: clamp(20px, 3.2vh, 34px) auto 0;
   font-size: clamp(15px, 1.2vw, 18px);
   max-width: 66ch;
 }
-.herofilm .cta-row { justify-content: center; margin-top: clamp(12px, 2vh, 20px); }
+.herofilm .cta-row { justify-content: center; margin-top: clamp(16px, 2.6vh, 26px); }
 
+/* one act at a time, and the pane takes that act's exact height: every scene
+   renders at full size, nothing is scaled down and nothing is clipped */
 .film {
   position: relative;
   width: min(100%, 1500px);
-  height: clamp(360px, calc(100vh - 470px), 700px);
 }
-@supports (height: 100svh) { .film { height: clamp(360px, calc(100svh - 450px), 700px); } }
-
 .act {
-  position: absolute; inset: 0;
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.7s ease, visibility 0.7s;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 4px clamp(44px, 4vw, 60px) 30px;
-  overflow: hidden;
+  width: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 6px clamp(46px, 4vw, 64px) 40px;
 }
-.act-1 { opacity: 1; visibility: visible; }
-html.js .act-1 { opacity: 0; visibility: hidden; }
+.act:not(.act-1) { display: none; }
+
+html.js .film { transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+html.js .act {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
 html.js .act.on { opacity: 1; visibility: visible; }
 
-.act-cap { margin-bottom: clamp(8px, 1.4vh, 14px); }
+.act-cap { margin-bottom: clamp(10px, 1.6vh, 18px); }
 .act-cap h3 { font-size: clamp(16px, 1.5vw, 21px); }
 .act-body { width: 100%; max-width: 1240px; }
 
-/* scenes shrink to fit the pane */
-.film .appshell { min-height: 0; }
-.film .boardarea { min-height: clamp(210px, 30vh, 340px); }
-.film .cal-grid .tm, .film .cal-grid .cell { height: 34px; }
-.film .dockmsgs { gap: 6px; margin-bottom: 8px; }
-.film .dockmsgs .dm { font-size: 10.5px; }
-.film .dockinput { padding: 6px 13px; font-size: 11px; }
-.film .side-lines { gap: 8px; padding: 11px 13px; }
-.film .line { font-size: 11px; }
-.film .voice { padding: 8px 14px; }
-.film .lobby-card { padding: 18px 20px; width: min(400px, 100%); }
-.film .lobby-cam { margin: 12px auto; }
-.film .lesson-page h4 { font-size: clamp(16px, 1.4vw, 20px); }
-.film .aside { padding: 12px; }
-.film .apprail { padding: 12px 10px; gap: 10px; }
-.film .statcard { padding: 10px; }
-.film .appmain { padding: 10px 14px; }
+/* the hero centres its own copy; the product scenes inside it read left, as they do everywhere else */
+.film .stage { text-align: left; }
 
 /* hover controls: arrows + act dots */
 .film-nav {
@@ -894,16 +887,16 @@ html.js .act.on { opacity: 1; visibility: visible; }
 .film:hover .film-nav, .film-nav:focus-visible { opacity: 1; }
 .film-nav:hover { color: var(--ink); border-color: var(--ink); }
 .film-dots {
-  position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
   display: flex; gap: 9px; z-index: 6;
   opacity: 0; transition: opacity 0.3s ease;
 }
 .film:hover .film-dots, .film-dots:focus-within { opacity: 1; }
 .film-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rule); border: 0; cursor: pointer; padding: 0; }
 .film-dot.on { background: var(--ink); }
-@media (hover: none) { .film-nav, .film-dots { opacity: 0.85; } }
+@media (hover: none) { .film-nav, .film-dots { opacity: 0.9; } }
 
-.film-big { position: relative; width: 100%; max-width: 920px; height: clamp(130px, 24vh, 210px); }
+.film-big { position: relative; width: 100%; max-width: 920px; min-height: clamp(150px, 26vh, 240px); }
 .film-big > span {
   position: absolute; inset: 0; opacity: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
@@ -930,25 +923,19 @@ html.js .film-langs > span:nth-child(5) { animation-delay: 20s; }
 @keyframes cyc5f { 0% { opacity: 0; transform: translateY(10px); } 2% { opacity: 1; transform: none; } 18% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
 .film-line { margin-top: clamp(12px, 2vh, 22px); color: var(--muted); font-size: clamp(14px, 1.2vw, 18px); text-align: center; }
 
-@media (max-width: 900px) {
-  .film .side { display: none; }
-  .film .board-shell { grid-template-columns: 1fr; }
-  .film .aside, .film .apprail { display: none; }
-}
 @media (max-width: 640px) {
-  .herofilm { min-height: 0; }
-  .film { height: clamp(340px, 58vh, 560px); }
-  .act { padding: 4px 8px 30px; }
-  .film-nav.prev { left: 4px; } .film-nav.next { right: 4px; }
+  .act { padding: 4px 0 52px; }
+  .film-nav { top: auto; bottom: 0; transform: none; width: 34px; height: 34px; opacity: 0.9; }
+  .film-nav.prev { left: calc(50% - 82px); }
+  .film-nav.next { right: calc(50% - 82px); }
+  .film-dots { bottom: 14px; opacity: 0.9; }
+  .film-big { min-height: clamp(150px, 30vh, 220px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .herofilm { min-height: 0; }
-  .film { height: auto; }
-  .act { position: static; transition: none; }
-  .act:not(.act-1) { display: none; }
-  html.js .act { display: none; opacity: 1; visibility: visible; }
+  html.js .film { height: auto !important; transition: none; }
+  html.js .act { position: static; transition: none; display: none; opacity: 1; visibility: visible; }
   html.js .act.on { display: flex; }
-  .film-big { height: auto; }
+  .film-big { min-height: 0; }
   .film-big > span { position: static; opacity: 1 !important; }
   .film-big > span ~ span { display: none; }
 }
