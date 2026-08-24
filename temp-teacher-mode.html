@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teacher mode — Gausyn</title>
-  <meta name="description" content="A lesson taught out loud, page by page, that stops the moment you say wait." />
+  <meta name="description" content="A real lesson, chosen by your week, taught out loud page by page — and it stops the moment you say wait." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=7" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=8" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -19,6 +19,9 @@
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav>
         <ul class="nav">
+          <li class="hide-sm"><a href="temp-teacher-mode.html" class="current">Teacher</a></li>
+          <li class="hide-sm"><a href="temp-practice-mode.html">Practice</a></li>
+          <li class="hide-sm"><a href="temp-ask-gausyn.html">Ask Gausyn</a></li>
           <li><a href="temp-about.html">About</a></li>
         </ul>
       </nav>
@@ -31,18 +34,84 @@
       <div class="wrap">
         <span class="eyebrow" data-reveal>Product &middot; Teacher mode</span>
         <h1 data-reveal>A lesson that stops when you say wait.</h1>
-        <p class="lede" data-reveal>Gausyn pulls a real lesson and walks it page by page, out loud &mdash; and unlike any recording ever made, it hears you.</p>
+        <p class="lede" data-reveal>Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud &mdash; page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practise&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </div>
       </div>
     </section>
-    <section class="scene rule-top" data-scene>
-      <div class="wrapw">
 
+    <!-- scene 1: the schedule already chose the topic -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Before you even arrive</span>
+          <h2>Your week already chose tonight&rsquo;s lesson.</h2>
+          <p>
+            Teacher mode does not begin with a blank screen and a search box. It
+            begins with your calendar. When Gausyn planned your week &mdash; the
+            chemistry exam on Friday, the review sessions leading up to it &mdash;
+            every session was given a subject, a grade level, and a topic. The
+            moment you join, Gausyn matches those against its bank of real
+            lessons and loads the best one onto the board, with its paired
+            practice worksheet standing by. You sit down; it starts teaching.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Session setup</span>
+            <span class="spacer"></span>
+            <span class="pill">Thursday &middot; 6:00 PM</span>
+          </div>
+          <div class="match fade-tm">
+            <div class="mcol">
+              <div class="mrow cal k tm-r1"><i>G</i><span>From your calendar: this session was planned as part of Friday&rsquo;s exam prep.<span class="evpill">Chemistry &middot; Reaction rates &middot; 45 min</span></span></div>
+              <div class="mrow k tm-r2"><i>G</i><span>Matching against the lesson bank&hellip; <span class="okz">subject: chemistry &#10003;</span> &nbsp;<span class="okz">grade: 11 &#10003;</span> &nbsp;<span class="okz">topic: rates &#10003;</span></span></div>
+              <div class="mrow k tm-r3"><i>G</i><span>Loaded to the board &mdash; narrating page 1 as you join. Say &ldquo;let&rsquo;s practise&rdquo; any time and the paired worksheet takes its place.</span></div>
+            </div>
+            <div class="mcol">
+              <span class="bankhead">Worksheet bank &middot; best matches</span>
+              <div class="bankcard k tm-c1 tm-winner">
+                <b>Reaction Rates &mdash; Lesson</b>
+                <span class="meta">6 pages &middot; Grade 11 &middot; written by a teacher</span>
+                <span class="pp k tm-pp">Paired practice &#10003;</span>
+              </div>
+              <div class="bankcard k tm-c2">
+                <b>Moles &amp; Stoichiometry &mdash; Lesson</b>
+                <span class="meta">5 pages &middot; Grade 11</span>
+              </div>
+              <div class="bankcard k tm-c3">
+                <b>Reaction Rates &mdash; Practice</b>
+                <span class="meta">8 problems &middot; Grade 11</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene 2: the chemistry walkthrough -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Taught out loud</span>
+          <h2>Page by page, in a voice that hears you.</h2>
+          <p>
+            During a lesson the toolbar disappears on purpose. There is nothing
+            to click, nothing to manage &mdash; just the page it is teaching from
+            and its voice. It narrates, draws your eye to the right part of the
+            page, and turns the page only when you are ready. Speak over it, in
+            any language, and it stops mid-word to listen.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
         <div class="stage" data-reveal>
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
+            <span class="tab active">Lesson &middot; Reaction Rates</span>
             <span class="spacer" style="flex:1"></span>
           </div>
           <div class="board-shell fade-te">
@@ -122,45 +191,296 @@
         </div>
       </div>
     </section>
-    <section class="rule-top">
+
+    <!-- scene 3: physics — interrupt, answer, resume -->
+    <section class="scene rule-top" data-scene>
       <div class="wrap">
-        <div class="feature-list">
-          <div class="feature" data-reveal>
-            <span class="eyebrow">01</span>
-            <div>
-              <h3>Speech only, on purpose</h3>
-              <p>During a walkthrough the toolbar disappears. There is one thing to do &mdash; listen, and interrupt &mdash; so that is all the screen offers. The lesson has your full attention because it asks for nothing else.</p>
-            </div>
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Interrupt &middot; answer &middot; resume</span>
+          <h2>Your question does not derail the lesson. It becomes part of it.</h2>
+          <p>
+            The question you blurt out mid-page is the most honest signal a
+            teacher ever gets, and Gausyn treats it that way. The walkthrough
+            pauses, your question gets a real answer &mdash; drawn on the page if
+            a picture will land better than words &mdash; and the moment you say
+            &ldquo;continue,&rdquo; the lesson resumes from the exact page where
+            it stopped. Here it is in a Grade 12 physics lesson.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Lesson &middot; Projectile Motion</span>
+            <span class="spacer" style="flex:1"></span>
           </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">02</span>
+          <div class="board-shell fade-tp">
             <div>
-              <h3>It never advances on a timer</h3>
-              <p>Every page turn waits for you. Say “go back”, “slower”, or “why?” in the middle of a sentence and the lesson reshapes itself around where you actually are, not where a syllabus says you should be.</p>
+              <div class="boardarea plain">
+                <div class="camthumb" aria-hidden="true"></div>
+
+                <div class="lesson-page tp-p1">
+                  <span class="num">Lesson &middot; page 3 of 7</span>
+                  <h4>Why projectiles curve</h4>
+                  <ul>
+                    <li>Gravity only ever pulls straight down &mdash; nothing pulls sideways.</li>
+                    <li>So the horizontal speed never changes; only the vertical one does.</li>
+                    <li>A steady sideways drift plus a growing fall traces a parabola.</li>
+                  </ul>
+                  <svg class="curve k" width="260" height="130" viewBox="0 0 260 130" style="margin-top:14px" aria-hidden="true">
+                    <line x1="8" y1="116" x2="250" y2="116"></line>
+                    <line x1="8" y1="116" x2="8" y2="10"></line>
+                    <path class="tp-curve" d="M10,112 C50,30 110,14 140,26 C180,44 220,86 246,114"></path>
+                    <path class="tp-dash" style="stroke-dasharray:6 6" d="M10,112 L200,18"></path>
+                    <text class="k tp-lb" x="188" y="14">no gravity</text>
+                  </svg>
+                </div>
+
+                <div class="lesson-page tp-p2">
+                  <span class="num">Lesson &middot; page 4 of 7</span>
+                  <h4>Splitting the launch velocity</h4>
+                  <ul>
+                    <li>Every launch hides two motions: one sideways, one up.</li>
+                    <li>The angle decides how the speed is shared between them.</li>
+                    <li>Treat them separately and every projectile problem opens.</li>
+                  </ul>
+                  <div class="eq">v&#8339; = v cos &theta; &nbsp;&nbsp; v&#7524; = v sin &theta;</div>
+                </div>
+              </div>
+
+              <div class="voice">
+                <div class="wave" aria-hidden="true">
+                  <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
+                  <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
+                  <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
+                  <i style="animation-delay:.72s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:.88s"></i>
+                  <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
+                </div>
+                <div class="say">
+                  <span>&ldquo;Pause&rdquo;</span><span>&ldquo;Go back&rdquo;</span><span>&ldquo;Continue lesson&rdquo;</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">03</span>
-            <div>
-              <h3>Interruptions are the lesson</h3>
-              <p>The question you blurt out mid-page is the most honest signal a teacher ever gets. Gausyn treats it that way: it stops, draws the answer if a picture helps, checks it landed, then carries on.</p>
-            </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">04</span>
-            <div>
-              <h3>One sentence to switch</h3>
-              <p>Say “let's practise” and the paired worksheet loads, the tools come back, and the same conversation continues into Practice mode. Say “switch to homework” and bring your own instead.</p>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <div class="status-wrap" aria-hidden="true">
+                  <span class="tp-sn">Narrating</span>
+                  <span class="tp-sp">Paused</span>
+                </div>
+                <span class="mode-pill">Teacher</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Physics</span></div>
+                <div><span class="lbl">Time left</span><span class="val">33:52</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line g k tp-g1"><span class="who">Gausyn</span>Watch the ball. Gravity only pulls straight down, so only the vertical part of the motion ever changes.</div>
+                <div class="line you k tp-y1"><span class="who">You</span>Wait &mdash; what would it look like with no gravity at all?</div>
+                <div class="line g k tp-g2"><span class="who">Gausyn</span>Then nothing would bend it &mdash; it would sail along the dashed line forever. Gravity is the whole difference between the two paths.</div>
+                <div class="line you k tp-y2"><span class="who">You</span>Got it &mdash; continue lesson.</div>
+                <div class="line g k tp-g3"><span class="who">Gausyn</span>Page 4. Every launch hides two motions &mdash; we split the velocity with cos and sin of the angle.</div>
+                <div class="line you k tp-y3"><span class="who">You</span>Slower on the &theta; part.</div>
+                <div class="line g k tp-g4"><span class="who">Gausyn</span>No rush. cos &theta; is just &ldquo;how much of the speed points sideways.&rdquo; Aim flatter, and it grows. One piece at a time.</div>
+                <div class="line you k tp-y4"><span class="who">You</span>Okay, that clicked. Keep going.</div>
+              </div>
+              <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- scene 4: say the word -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="statement-grid">
+          <div class="statement" data-reveal>
+            <p class="big">The whole lesson answers to your voice.</p>
+            <p class="sub">
+              There are no menus to learn because your words are the menu.
+              Everything a student would ask a real teacher &mdash; slow down, go
+              back, wait, why, let&rsquo;s practise, actually can we do something
+              else &mdash; is simply said, out loud or typed, and the session
+              reshapes itself around it. Mid-session you can pull a different
+              lesson from the bank, switch into Practice on the paired worksheet,
+              or switch to Homework mode and upload your own &mdash; without ever
+              leaving the room.
+            </p>
+          </div>
+          <div class="demo" data-reveal>
+            <span class="cap">You say &middot; it happens</span>
+            <div class="cycler cyc-say">
+              <span><span class="cmd">&ldquo;Slower.&rdquo;</span><span class="outc">The narration eases off and re-explains the line it was on.</span></span>
+              <span><span class="cmd">&ldquo;Go back.&rdquo;</span><span class="outc">The previous page returns, and the thread picks up from there.</span></span>
+              <span><span class="cmd">&ldquo;Why does that work?&rdquo;</span><span class="outc">The lesson pauses. You get a real answer, not a bookmark.</span></span>
+              <span><span class="cmd">&ldquo;Continue lesson.&rdquo;</span><span class="outc">It resumes from the exact page where it paused.</span></span>
+              <span><span class="cmd">&ldquo;Let&rsquo;s practise.&rdquo;</span><span class="outc">The paired worksheet loads and the full toolset unlocks.</span></span>
+              <span><span class="cmd">&ldquo;Get me a lesson on limits.&rdquo;</span><span class="outc">A different lesson is pulled from the bank, mid-session.</span></span>
+            </div>
+            <div class="rail6" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene 5: handoff to practice -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">One sentence away</span>
+          <h2>From being taught to trying it yourself.</h2>
+          <p>
+            Every lesson in the bank arrives with a paired practice worksheet
+            &mdash; written to match the lesson, problem for problem. Say
+            &ldquo;let&rsquo;s practise&rdquo; and the sheet replaces the lesson,
+            the drawing tools unlock, and Gausyn shifts from teaching to
+            coaching: watching what you write and helping only where you stall.
+            Say &ldquo;switch to teacher mode&rdquo; and the lesson comes back,
+            open to the page you left.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Lesson &middot; Reaction Rates</span>
+            <span class="tab pr k th-tab">Practice &middot; Rates</span>
+            <span class="spacer" style="flex:1"></span>
+          </div>
+          <div class="board-shell fade-th">
+            <div>
+              <div class="boardarea swap">
+                <div class="camthumb" aria-hidden="true"></div>
+                <div class="bstate th-les">
+                  <div class="lesson-page">
+                    <span class="num">Lesson &middot; page 4 of 6</span>
+                    <h4>Reading a rate from a graph</h4>
+                    <ul>
+                      <li>The slope of the tangent is the rate at that instant.</li>
+                      <li>Steep early, flat late &mdash; the reaction is running out of fuel.</li>
+                    </ul>
+                    <div class="eq">rate &asymp; slope of tangent</div>
+                  </div>
+                </div>
+                <div class="bstate graph th-pr">
+                  <div class="toolspanel th-toolsin" aria-hidden="true">
+                    <div class="tp-h">Tools</div>
+                    <div class="tp-btn on">Draw</div>
+                    <div class="tp-btn">Select</div>
+                    <div class="tp-btn">Upload</div>
+                    <div class="tp-btn ask">Ask Gausyn</div>
+                    <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+                  </div>
+                  <div class="sheet" style="padding-top: clamp(18px, 2.4vw, 30px)">
+                    <p class="q"><span class="n">1.</span>2 N&#8322;O&#8325; &rarr; 4 NO&#8322; + O&#8322;. If O&#8322; appears at 0.30 M/s, how fast is N&#8322;O&#8325; disappearing?</p>
+                    <div class="hint k th-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(72px,9vw,110px)">Two moles of N&#8322;O&#8325; go for every one O&#8322; that shows up.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <div class="status-wrap" aria-hidden="true">
+                  <span class="th-pa" style="position:absolute;inset:0;display:inline-flex;align-items:center;justify-content:flex-end;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">Teacher</span>
+                  <span class="th-pb" style="position:absolute;inset:0;display:inline-flex;align-items:center;justify-content:flex-end;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">Practice</span>
+                </div>
+                <span class="mode-pill">Session &middot; 22:15 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Chemistry</span></div>
+                <div><span class="lbl">Worksheet</span><span class="val">Paired &middot; 8 problems</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line you k th-y1"><span class="who">You</span>Let&rsquo;s practise.</div>
+                <div class="line g k th-g1"><span class="who">Gausyn</span>Here&rsquo;s the paired worksheet &mdash; eight problems, matched to the pages we just did. Number one is on the board.</div>
+                <div class="line you k th-y2"><span class="who">You</span>And if I want the lesson back?</div>
+                <div class="line g k th-g2"><span class="who">Gausyn</span>Say &ldquo;switch to teacher mode&rdquo; &mdash; we pick up on page 4, right where we left it.</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- everything teacher mode does -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">In full</span>
+          <h2>Everything Teacher mode does.</h2>
+        </div>
+        <div class="feature-list">
+          <div class="feature" data-reveal>
+            <span class="eyebrow">01</span>
+            <div>
+              <h3>Planned by your week, not picked from a menu</h3>
+              <p>Sessions come off your calendar with a subject, grade, and topic already attached &mdash; because Gausyn planned them around your real deadlines. An exam on Friday becomes rates on Tuesday, equilibrium on Wednesday, review on Thursday. When you join, the right lesson is already loaded. There is nothing to search, nothing to configure, nothing between sitting down and learning.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">02</span>
+            <div>
+              <h3>Real lessons, from a bank built by teachers</h3>
+              <p>Lessons are not generated slideshows. They come from a bank of lesson and worksheet pairs written by real teachers &mdash; millions of problems across subjects and grades, each lesson matched to your session by subject, grade level, and topic, and each one paired with the practice worksheet written to go with it. Where the bank has no page for your corner of the syllabus, Gausyn generates the material itself, so no topic is ever out of reach.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">03</span>
+            <div>
+              <h3>Taught out loud, page by page</h3>
+              <p>Gausyn narrates the lesson the way a teacher works a room: page by page, pointing at what matters, in the language you think in. During a walkthrough the toolbar disappears on purpose &mdash; there is one thing to do, listen and interrupt, so that is all the screen offers. The lesson has your full attention because it asks for nothing else.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">04</span>
+            <div>
+              <h3>It never advances on a timer</h3>
+              <p>No page ever turns because a video kept playing. Every transition waits for you. Say &ldquo;slower&rdquo; and it re-explains at half the pace; say &ldquo;go back&rdquo; and the previous page returns with the thread intact. The lesson moves at the speed of your understanding, not the speed of a recording.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">05</span>
+            <div>
+              <h3>Interrupt mid-sentence, out loud or typed</h3>
+              <p>Click the mic and talk over it, or type into the sidebar &mdash; both work at every moment, and both stop the lesson cold. Your question gets a real answer, drawn on the page when a picture will land better than words. Then &ldquo;continue lesson&rdquo; resumes from the exact page where it paused, like the interruption was always part of the plan. Because it was.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">06</span>
+            <div>
+              <h3>Practice is one sentence away &mdash; and so is the way back</h3>
+              <p>&ldquo;Let&rsquo;s practise&rdquo; swaps in the paired worksheet and unlocks the full toolset: your pen, hints beside the exact problem, Ask Gausyn workspaces. &ldquo;Switch to teacher mode&rdquo; brings the lesson back to the page you left. Students move between being taught and trying it themselves as often as the material needs &mdash; the way the best tutoring sessions always have.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">07</span>
+            <div>
+              <h3>Change course without leaving the room</h3>
+              <p>&ldquo;Get me a lesson on limits&rdquo; pulls different material from the bank mid-session. &ldquo;Switch to homework mode&rdquo; lets you upload tonight&rsquo;s actual assignment instead. The session bends to what you need in the moment &mdash; no rejoining, no starting over, no losing the conversation you have already had.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">08</span>
+            <div>
+              <h3>A real class period, honestly kept</h3>
+              <p>Every session is a clocked lesson with a subject and a countdown on screen, anchored on the server &mdash; not a window you can leave open forever. When it ends, the calendar records what actually happened: completed, how long, how much was covered. Parents see a week of real teaching, not a screen-time guess.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="closing rule-top">
       <div class="wrap">
         <h2 data-reveal>The best lectures were always conversations.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="btn-quiet" href="temp-practice-mode.html">Next: Practice mode &rarr;</a>
         </div>
       </div>
     </section>
@@ -230,6 +550,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=7"></script>
+  <script src="assets/gausyn.js?v=8"></script>
 </body>
 </html>

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Practice mode — Gausyn</title>
-  <meta name="description" content="You work, it watches: hints beside the exact question you are stuck on, never the answer." />
+  <meta name="description" content="Your worksheet, your handwriting, your pace. Gausyn solves the sheet first, watches you work, and helps exactly where you stall — never the answer." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=7" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=8" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -19,6 +19,9 @@
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav>
         <ul class="nav">
+          <li class="hide-sm"><a href="temp-teacher-mode.html">Teacher</a></li>
+          <li class="hide-sm"><a href="temp-practice-mode.html" class="current">Practice</a></li>
+          <li class="hide-sm"><a href="temp-ask-gausyn.html">Ask Gausyn</a></li>
           <li><a href="temp-about.html">About</a></li>
         </ul>
       </nav>
@@ -31,15 +34,30 @@
       <div class="wrap">
         <span class="eyebrow" data-reveal>Product &middot; Practice mode</span>
         <h1 data-reveal>You work. It watches.</h1>
-        <p class="lede" data-reveal>Your worksheet, your handwriting, your pace. Gausyn reads the board as you write and helps exactly where you stall &mdash; without ever finishing the problem for you.</p>
+        <p class="lede" data-reveal>Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </div>
       </div>
     </section>
-    <section class="scene rule-top" data-scene>
-      <div class="wrapw">
 
+    <!-- scene 1: the classic socratic loop -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">The loop</span>
+          <h2>Hints that land beside the problem, not on top of it.</h2>
+          <p>
+            This is the heart of Practice mode: you write, it watches, and when
+            you stall it asks the one question that gets you moving &mdash; placed
+            right next to the problem it belongs to. Every hint is a nudge or a
+            single step, checked against the reference solution Gausyn worked out
+            when the sheet loaded. The moment of actually getting it right is
+            never taken from you.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
         <div class="stage" data-reveal>
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
@@ -112,45 +130,355 @@
         </div>
       </div>
     </section>
-    <section class="rule-top">
+
+    <!-- scene 2: it draws -->
+    <section class="scene rule-top" data-scene>
       <div class="wrap">
-        <div class="feature-list">
-          <div class="feature" data-reveal>
-            <span class="eyebrow">01</span>
-            <div>
-              <h3>Grounded before it speaks</h3>
-              <p>When your worksheet loads, Gausyn quietly works every problem out for itself and keeps those solutions beside it. When it checks your third line, it is checking against real arithmetic, not a guess.</p>
-            </div>
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Words &middot; steps &middot; pictures</span>
+          <h2>When words are not enough, it draws.</h2>
+          <p>
+            Some help is a sentence. Some is a single line of math. And some
+            problems only open up when somebody sketches them &mdash; so Gausyn
+            does. Ask for a picture, or let it decide one would help, and a
+            labelled diagram appears beside the problem: draggable, resizable,
+            and placed by the same rules as every other hint. Here, a geometry
+            problem that was just words becomes a triangle you can see.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="spacer" style="flex:1"></span>
           </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">02</span>
+          <div class="board-shell fade-pg">
             <div>
-              <h3>Help that knows its place</h3>
-              <p>Hints stack beside the question they belong to: a nudge in plain words, a single formula step, or a small drawn diagram. Your ink, the worksheet text, and its own earlier notes all stay out of each other's way.</p>
+              <div class="boardarea graph">
+                <div class="camthumb" aria-hidden="true"></div>
+
+                <div class="sheet">
+                  <p class="q"><span class="n">5.</span>A ladder leans against a wall, reaching 12 ft up, with its base 5 ft from the wall. How long is the ladder?</p>
+
+                  <div class="sketch tr pg-sk" style="left:clamp(140px,13vw,160px);top:clamp(80px,9vw,110px)">Sketching<i></i><i></i><i></i></div>
+
+                  <svg class="diagram" viewBox="0 0 200 150" width="200" height="150" style="left:clamp(140px,13vw,160px);top:clamp(64px,8vw,92px)" aria-hidden="true">
+                    <path class="pg-d1" d="M40,10 L40,130"></path>
+                    <path class="pg-d2" d="M40,130 L160,130"></path>
+                    <path class="pg-d3" d="M40,14 L156,130"></path>
+                    <text class="k pg-lb" x="20" y="74">12</text>
+                    <text class="k pg-lb" x="92" y="145">5</text>
+                    <text class="k pg-lb" x="108" y="62">?</text>
+                    <path class="pg-d2" d="M40,118 L52,118 L52,130" style="stroke-width:1.2"></path>
+                  </svg>
+
+                  <div class="hint k pg-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">The ladder is the longest side &mdash; the hypotenuse.</div>
+                  <div class="hint tex k pg-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(104px,12vw,140px)">a&sup2; + b&sup2; = c&sup2;</div>
+
+                  <svg class="ink" viewBox="0 0 140 70" width="140" height="70" style="left:clamp(360px,34vw,420px);top:clamp(120px,13vw,170px)" aria-hidden="true">
+                    <path class="pg-i1" d="M28,16 C34,12 38,10 40,10 L40,58"></path>
+                    <path class="pg-i2" d="M66,12 C82,6 94,14 84,26 C80,31 72,32 68,32 C74,32 86,34 88,44 C90,58 70,64 58,54"></path>
+                  </svg>
+
+                  <div class="hint tex k pg-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(156px,19vw,215px)">5&ndash;12&ndash;13 &mdash; a classic triple &#10003;</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">03</span>
-            <div>
-              <h3>Harder, easier, different</h3>
-              <p>Ask for more practice and a fresh question appears on its own tab, one at a time. Say “harder”, “easier”, or “a different one” and the next question adjusts &mdash; even mid-problem.</p>
-            </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">04</span>
-            <div>
-              <h3>Your blanks stay yours</h3>
-              <p>By design, Gausyn never writes in your answer spaces. It can circle an option you are confirming or annotate the margin, but the moment of actually getting it right is never taken from you.</p>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Practice &middot; 24:10 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Geometry</span></div>
+                <div><span class="lbl">Files</span><span class="val">homework.pdf</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line you k pg-y1"><span class="who">You</span>I can&rsquo;t picture what this looks like.</div>
+                <div class="line g k pg-g1"><span class="who">Gausyn</span>Then let&rsquo;s not do it blind &mdash; give me a second to sketch it.</div>
+                <div class="line g k pg-h1"><span class="who">Gausyn</span>Wall, ground, ladder. Which side is the ladder?</div>
+                <div class="line you k pg-y2"><span class="who">You</span>The slanted one. So&hellip; Pythagoras.</div>
+                <div class="line g k pg-h2"><span class="who">Gausyn</span>Go on &mdash; the board is yours.</div>
+                <div class="line g k pg-g2"><span class="who">Gausyn</span>13 feet &mdash; and you saw why before you calculated anything.</div>
+                <div class="line you k pg-y3"><span class="who">You</span>Give me one where the ladder is sliding.</div>
+                <div class="line g k pg-g3"><span class="who">Gausyn</span>That&rsquo;s related rates &mdash; want me to open a practice question on it?</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- scene 3: layout-aware, blanks stay yours -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">It reads the page like a teacher</span>
+          <h2>It knows where every question, blank, and option sits.</h2>
+          <p>
+            When your worksheet loads, Gausyn maps its geography: where each
+            question starts, where the blanks are, where the multiple-choice
+            options sit. So a fill-in gets its nudge beside the blank, a
+            multiple-choice question gets one near the options, and a
+            show-your-work problem gets a worked step only where there is room.
+            One rule is absolute: it never writes in your answer spaces. The pen,
+            and the moment of getting it right, are yours.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="spacer" style="flex:1"></span>
+          </div>
+          <div class="board-shell fade-pb">
+            <div>
+              <div class="boardarea plain">
+                <div class="camthumb" aria-hidden="true"></div>
+
+                <div class="sheet">
+                  <div class="wsq">
+                    <p><span class="n">2.</span>Balance: <span class="bl"></span> H&#8322; &nbsp;+&nbsp; O&#8322; &nbsp;&rarr;&nbsp; <span class="bl"></span> H&#8322;O</p>
+                    <p style="margin-top:18px"><span class="n">3.</span>Which of these is a noble gas?</p>
+                    <span class="opts"><span>(A) O&#8322;</span><span>(B) Ne</span><span>(C) CO&#8322;</span><span>(D) H&#8322;</span></span>
+                  </div>
+
+                  <svg class="ink" viewBox="0 0 300 140" width="300" height="140" style="left:clamp(130px,12vw,150px);top:clamp(8px,1vw,14px)" aria-hidden="true">
+                    <path class="pb-i1" d="M108,26 C108,16 122,14 122,22 C122,29 109,33 108,40 L124,40"></path>
+                    <path class="pb-i2" d="M258,26 C258,16 272,14 272,22 C272,29 259,33 258,40 L274,40"></path>
+                    <path class="pb-i3" d="M100,98 C78,96 70,112 84,122 C100,130 126,124 126,110 C126,100 112,97 100,98" style="stroke-width:2.6"></path>
+                  </svg>
+
+                  <div class="hint k pb-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(6px,1vw,14px)">Count the H atoms on each side first.</div>
+                  <div class="hint tex k pb-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,70px)">H: 4 = 4 &#10003; &nbsp; O: 2 = 2 &#10003;</div>
+                  <div class="hint k pb-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(104px,12.5vw,142px)">One of these already has a full outer shell.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Homework &middot; 31:04 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Chemistry</span></div>
+                <div><span class="lbl">Files</span><span class="val">unit-3-review.pdf</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line g k pb-g1"><span class="who">Gausyn</span>Your sheet has fill-ins and multiple choice &mdash; I place help differently for each. Start with the blanks.</div>
+                <div class="line you k pb-y1"><span class="who">You</span>Is 3 argon? No wait &mdash; that&rsquo;s not even an option.</div>
+                <div class="line g k pb-g2"><span class="who">Gausyn</span>Ne it is &mdash; and notice I never wrote in your blanks. The pen stays yours.</div>
+                <div class="line you k pb-y2"><span class="who">You</span>What happens if I get one wrong?</div>
+                <div class="line g k pb-g3"><span class="who">Gausyn</span>Then I ask the question that shows you why, you erase, and you try again. Wrong answers are where the learning is.</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene 4: generated questions, self-adjusting -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">An infinite worksheet</span>
+          <h2>Ask for practice, and it makes the questions itself.</h2>
+          <p>
+            Beyond the bank there is a second source of practice: Gausyn writes
+            questions on the spot, one at a time, on any topic in your subject.
+            Say &ldquo;harder&rdquo; and the next one climbs. &ldquo;Easier&rdquo;
+            and it steps back down. &ldquo;More like word problems&rdquo; and the
+            same skeleton puts on different clothes. Each question lands in its
+            own Practice tab, pinned at the top of the board, and the Socratic
+            loop carries on underneath it &mdash; hints, your handwriting, never
+            the answer. It is a worksheet that never runs out and never stops
+            listening.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Practice tab</span>
+            <span class="spacer"></span>
+            <span class="pill">Generated &middot; one at a time</span>
+          </div>
+          <div class="fade-pgen" style="padding: clamp(18px, 2.6vw, 32px)">
+            <div class="pgencmd" aria-hidden="true">
+              <span class="k pgen-c1">&ldquo;Harder.&rdquo;</span>
+              <span class="k pgen-c2">&ldquo;Harder &mdash; with fractions.&rdquo;</span>
+              <span class="k pgen-c3">&ldquo;More like word problems.&rdquo;</span>
+              <span class="k pgen-c4">&ldquo;Easier.&rdquo;</span>
+            </div>
+            <div class="pqcyc">
+              <div class="pq k pgen-p1"><span class="lbl">Practice &middot; P1</span>Solve: &nbsp;x + 7 = 12</div>
+              <div class="pq k pgen-p2"><span class="lbl">Practice &middot; P2</span>Solve: &nbsp;3(x &minus; 2) = 2x + 5</div>
+              <div class="pq k pgen-p3"><span class="lbl">Practice &middot; P3</span>Solve: &nbsp;(2x + 1)/3 &minus; (x &minus; 4)/2 = 1</div>
+              <div class="pq k pgen-p4"><span class="lbl">Practice &middot; P4</span>A phone plan costs $20 plus $3 per GB. After how many GB does it cost more than a $38 flat plan?</div>
+              <div class="pq k pgen-p5"><span class="lbl">Practice &middot; P5</span>Solve: &nbsp;2x = 10</div>
+            </div>
+            <div class="dial" aria-hidden="true">
+              <div class="kk"><span>easier</span><span>difficulty</span><span>harder</span></div>
+              <div class="m"><i class="pgen-meter"></i></div>
+            </div>
+            <p class="film-line k pgen-g" style="margin-top:22px">One question at a time, on your topic, at your level &mdash; forever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- grounded before it speaks -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Under the hood</span>
+          <h2>Grounded before it says a word.</h2>
+          <p>
+            The moment your worksheet loads, two things happen that you never
+            see. Gausyn works every problem out for itself, start to finish, and
+            keeps those reference solutions beside it &mdash; so when it checks
+            your third line, it is checking against real arithmetic, not a
+            guess. And it maps the page itself, so every piece of help it ever
+            gives has a correct place to stand.
+          </p>
+        </div>
+        <div class="gaps">
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <span class="ps-file k ps-f">worksheet.pdf</span>
+              <div class="ps-bar"><i></i></div>
+              <span class="ps-done k">12 problems solved &mdash; reference ready &#10003;</span>
+              <span class="ps-note k ps-note">Every hint is checked against worked math.</span>
+            </div>
+            <h3>It solves your sheet first</h3>
+            <p>
+              Before the first hint, Gausyn has already solved every numbered
+              problem on your worksheet, step by step. Those solutions ground
+              everything it says afterwards &mdash; when it tells you a line
+              checks out, that is a fact, not a vibe.
+            </p>
+          </div>
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <div class="plmap">
+                <span class="tl" style="top:16%"></span>
+                <span class="tl" style="top:30%; right:40%"></span>
+                <span class="tl" style="top:56%"></span>
+                <span class="tl" style="top:70%; right:30%"></span>
+                <span class="plr r1" style="left:6%; right:8%; top:10%; height:26%"></span>
+                <span class="plr r2" style="left:6%; right:36%; top:50%; height:16%"></span>
+                <span class="plr r3" style="left:6%; right:26%; top:64%; height:16%"></span>
+              </div>
+              <span class="pl-cap k pl-cap">Questions, blanks, and options are located on the page &mdash; so hints stand exactly where they should.</span>
+            </div>
+            <h3>It reads the page&rsquo;s geography</h3>
+            <p>
+              Typed or scanned, the sheet is mapped: question lines, underscore
+              blanks, answer boxes, choice options. Hint placement is
+              deterministic &mdash; beside the blank, under the question, near
+              the options &mdash; never scattered wherever a model felt like
+              pointing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- everything practice mode does -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">In full</span>
+          <h2>Everything Practice mode does.</h2>
+        </div>
+        <div class="feature-list">
+          <div class="feature" data-reveal>
+            <span class="eyebrow">01</span>
+            <div>
+              <h3>Bring anything, or bring nothing</h3>
+              <p>Practise on the worksheet paired with your lesson, pull a different sheet from the bank &mdash; &ldquo;get me a worksheet on trig identities&rdquo; &mdash; upload tonight&rsquo;s actual homework as a PDF or photos, or ask Gausyn to generate questions from nothing. All four flow through the same board, the same conversation, the same rules of help.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">02</span>
+            <div>
+              <h3>A bank written by teachers</h3>
+              <p>The worksheet bank pairs every lesson with practice written to match it &mdash; real teachers&rsquo; material, matched to your session by subject, grade, and topic, millions of problems deep and growing. This is practice with a point of view, not a random question generator wearing a worksheet costume.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">03</span>
+            <div>
+              <h3>It solves the sheet before you start</h3>
+              <p>On upload, Gausyn works every problem to a full reference solution and keeps it private. Your work is checked against real worked math for the rest of the session &mdash; which is why it can say &ldquo;that line is right, keep going&rdquo; with a straight face, and catch the exact step where things went sideways.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">04</span>
+            <div>
+              <h3>It sees your handwriting</h3>
+              <p>Every exchange, Gausyn looks at the board as it actually is &mdash; your strokes, your crossed-out attempts, your half-finished line. Help responds to what you actually wrote, not to what a transcript claims you meant. Write it the way you would on paper; it reads it the way a teacher leaning over your shoulder would.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">05</span>
+            <div>
+              <h3>Hints, never answers</h3>
+              <p>The help is Socratic by design. A nudge in plain words. One step of math, typeset properly. A question that makes you notice what you missed. Gausyn is graded on whether you could do the next one alone &mdash; so it refuses to do this one for you, even when you ask nicely.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">06</span>
+            <div>
+              <h3>Three kinds of help, one placement engine</h3>
+              <p>Plain words, a formula step, or a drawn diagram &mdash; whichever the moment needs. All three land by the same deterministic rules: stacked beside the question they belong to, out of the way of your ink and the worksheet text, pruning the oldest notes when space runs short. The board stays legible for the whole session.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">07</span>
+            <div>
+              <h3>It draws when a picture teaches better</h3>
+              <p>Ask &ldquo;can you draw this?&rdquo; &mdash; or let it judge that words are failing &mdash; and a labelled diagram is sketched beside the problem: the triangle in the word problem, the forces on the block, the shape of the graph. Drag it, resize it, keep it for the rest of the session.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">08</span>
+            <div>
+              <h3>Infinite practice that tunes itself</h3>
+              <p>Generated questions arrive one at a time in their own Practice tab, pinned where you cannot lose them. &ldquo;Harder,&rdquo; &ldquo;easier,&rdquo; &ldquo;a different one,&rdquo; &ldquo;more like word problems&rdquo; &mdash; the next question adjusts instantly, even mid-problem. Breadth when you want variety, depth when you want a fight, mercy when you need a win.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">09</span>
+            <div>
+              <h3>Your blanks stay yours</h3>
+              <p>Gausyn never writes in an answer space &mdash; not a number, not a letter, not helpfully, not once. It can annotate the margin and circle what you are confirming, but the answer is always in your handwriting. That is the difference between finishing the homework and being changed by it.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">10</span>
+            <div>
+              <h3>Boards that remember, and room when you need it</h3>
+              <p>Every board tab keeps its ink, its PDF, its scroll position, and every hint exactly where it was &mdash; switch away and back and nothing has moved. And when one problem deserves a full page of thinking, drag a box around it and <a class="btn-quiet" href="temp-ask-gausyn.html">Ask Gausyn</a> opens a workspace just for it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="closing rule-top">
       <div class="wrap">
         <h2 data-reveal>Practice makes permanent. Make it count.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="btn-quiet" href="temp-ask-gausyn.html">Next: Ask Gausyn &rarr;</a>
         </div>
       </div>
     </section>
@@ -220,6 +548,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=7"></script>
+  <script src="assets/gausyn.js?v=8"></script>
 </body>
 </html>

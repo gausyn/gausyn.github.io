@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ask Gausyn — Gausyn</title>
-  <meta name="description" content="Drag a box around any problem and it becomes its own workspace, with the original pinned on top." />
+  <meta name="description" content="Drag a box around any problem and it becomes its own workspace — the question pinned on top, a clean page of room below, and a pin back to where you left off." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=7" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=8" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -19,6 +19,9 @@
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav>
         <ul class="nav">
+          <li class="hide-sm"><a href="temp-teacher-mode.html">Teacher</a></li>
+          <li class="hide-sm"><a href="temp-practice-mode.html">Practice</a></li>
+          <li class="hide-sm"><a href="temp-ask-gausyn.html" class="current">Ask Gausyn</a></li>
           <li><a href="temp-about.html">About</a></li>
         </ul>
       </nav>
@@ -30,58 +33,70 @@
     <section class="page-head">
       <div class="wrap">
         <span class="eyebrow" data-reveal>Product &middot; Ask Gausyn</span>
-        <h1 data-reveal>More room, exactly where you need it.</h1>
-        <p class="lede" data-reveal>Some problems need a full page of thinking that the worksheet never gave you. Drag a box around one and it becomes its own workspace.</p>
+        <h1 data-reveal>Drag a box. Get a room.</h1>
+        <p class="lede" data-reveal>Worksheets give you two inches of margin for a problem that needs a full page of thinking. Ask Gausyn fixes that: drag a box around any problem and it becomes its own workspace &mdash; the question pinned at the top, clean grid below, a pin left behind so you can jump straight back.</p>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </div>
       </div>
     </section>
-    <section class="scene rule-top" data-scene>
-      <div class="wrapw">
 
+    <!-- scene 1: crop -> workspace, calculus -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">One gesture</span>
+          <h2>From a cramped margin to a full page of room.</h2>
+          <p>
+            Hit <em>Ask Gausyn</em> in the toolbar and drag a rectangle around
+            the problem &mdash; the whole problem: the diagram, the data table,
+            the instructions. That crop becomes the reference for a brand-new
+            workspace tab, pinned at the top so it can never scroll out of
+            sight. Below it, an open page. Watch it happen on a calculus
+            worksheet where question 4 was never going to fit in the space the
+            sheet allowed.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
         <div class="stage" data-reveal>
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
-            <span class="tab pr k pr-tpr">Practice</span>
-            <span class="tab ws k pr-tws">Q1</span>
+            <span class="tab ws k ag-tab">Q4</span>
+            <span class="spacer" style="flex:1"></span>
           </div>
-          <div class="board-shell fade-pr">
+          <div class="board-shell fade-ag">
             <div>
-              <div class="boardarea graph">
+              <div class="boardarea swap">
                 <div class="camthumb" aria-hidden="true"></div>
-                <div class="toolspanel" aria-hidden="true">
-                  <div class="tp-h">Tools</div>
-                  <div class="tp-btn on">Draw</div>
-                  <div class="tp-btn">Select</div>
-                  <div class="tp-btn">Upload</div>
-                  <div class="tp-btn ask">Ask Gausyn</div>
-                  <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+
+                <div class="bstate ag-src">
+                  <div class="sheet">
+                    <p class="wsfaint">2.&nbsp; Differentiate g(x) = 3x&sup2; &minus; 4x + 1<br />3.&nbsp; Differentiate h(x) = (x&sup3; + 1)&#8309;</p>
+                    <p class="q" style="margin-top:8px"><span class="n">4.</span>Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2). Show every step.</p>
+                    <p class="wsfaint" style="margin-top:8px">5.&nbsp; Find the tangent line to y = ln x at x = e</p>
+
+                    <div class="crop ag-cropin" style="left:clamp(120px,11vw,140px);top:clamp(56px,7vw,86px);width:min(380px,62%);height:clamp(54px,6.5vw,74px)">
+                      <span class="lbl">Ask Gausyn</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="sheet">
-                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x + 5 = 13. Show every step.</p>
-
-                  <svg class="ink" viewBox="0 0 260 150" width="260" height="150" style="left:clamp(140px,13vw,160px);top:clamp(76px,9vw,110px)" aria-hidden="true">
-                    <path class="pr-a1" d="M14,26 C20,18 30,16 34,24 C37,31 26,40 16,48 C28,46 38,46 46,47"></path>
-                    <path class="pr-a2" d="M60,24 C70,34 80,44 88,50 M88,24 C80,34 70,42 60,50"></path>
-                    <path class="pr-a3" d="M104,32 C116,30 130,30 140,32 M104,44 C116,42 130,42 140,44"></path>
-                    <path class="pr-a4" d="M170,26 C160,30 158,40 168,44 C158,48 158,60 170,62 C182,60 184,48 172,44 C184,40 182,30 170,26"></path>
-                    <path class="pr-b1" d="M28,92 C40,104 52,116 62,126 M62,92 C52,104 40,114 28,126"></path>
-                    <path class="pr-b2" d="M84,102 C96,100 110,100 120,102 M84,116 C96,114 110,114 120,116"></path>
-                    <path class="pr-b3" d="M152,94 C142,106 136,116 132,126 C144,124 158,124 168,124"></path>
-                  </svg>
-
-                  <div class="hint k pr-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">What was done to x last &mdash; the &times;2 or the +5?</div>
-                  <div class="hint tex k pr-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(112px,13vw,150px)">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
-
-                  <div class="crop tr pr-crop" style="left:clamp(130px,12vw,150px);top:clamp(66px,8vw,96px);width:min(300px,54%);height:clamp(90px,11vw,120px)">
-                    <span class="lbl">Ask Gausyn</span>
+                <div class="bstate graph ag-ws">
+                  <div class="pincard">
+                    <span class="lbl">Q4 &middot; pinned reference</span>
+                    4.&nbsp; Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2).
                   </div>
+                  <div class="sheet" style="padding-top: clamp(76px, 8.5vw, 104px)">
+                    <div class="hint k ag-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(80px,9vw,116px)">Product rule &mdash; two pieces, and each keeps its identity.</div>
+                    <div class="hint tex k ag-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(128px,15vw,186px)">(uv)&prime; = u&prime;v + uv&prime;</div>
 
-                  <div class="pq k pr-pq" style="top:clamp(200px,24vw,300px)">
-                    <span class="lbl">Practice &middot; P1</span>
-                    A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
+                    <svg class="ink" viewBox="0 0 300 110" width="300" height="110" style="left:clamp(130px,12vw,150px);top:clamp(96px,11vw,140px)" aria-hidden="true">
+                      <path class="ag-i1" d="M10,34 C16,22 26,20 30,28 C33,35 22,44 12,50 M44,26 C50,36 58,44 64,48 M64,26 C58,36 50,42 44,48 M80,38 C92,36 104,36 112,38 M128,26 C136,22 144,22 146,30 C148,38 136,44 128,48 C140,46 148,46 154,47 M170,30 C176,26 184,24 188,30 L188,50 M204,28 C216,24 226,30 220,40 C216,46 208,48 204,46"></path>
+                      <path class="ag-i2" d="M28,78 L64,78 M38,78 L38,102 M54,78 C54,90 52,98 58,102"></path>
+                    </svg>
+
+                    <div class="hint tex k ag-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(176px,21vw,258px)">at &pi;/2: cos(&pi;/2) = 0 &mdash; one term survives</div>
                   </div>
                 </div>
               </div>
@@ -90,21 +105,19 @@
             <div class="side">
               <div class="side-dark">
                 <i></i><b>Gausyn</b>
-                <span class="mode-pill">Practice &middot; 18:42 left</span>
+                <span class="mode-pill">Practice &middot; 12:26 left</span>
               </div>
               <div class="side-meta">
-                <div><span class="lbl">Subject</span><span class="val">Algebra</span></div>
-                <div><span class="lbl">Files</span><span class="val">worksheet.pdf</span></div>
+                <div><span class="lbl">Subject</span><span class="val">Calculus</span></div>
+                <div><span class="lbl">Workspace</span><span class="val">Q4</span></div>
               </div>
               <div class="side-lines">
-                <div class="line you k pr-c1"><span class="who">You</span>Where do I even start?</div>
-                <div class="line g k pr-c2"><span class="who">Gausyn</span>Look at the left side. What happened to x last?</div>
-                <div class="line you k pr-c3"><span class="who">You</span>The plus five. So I undo that first.</div>
-                <div class="line g k pr-c4"><span class="who">Gausyn</span>x = 4 &mdash; and this time you can say why. Want to make it stick?</div>
-                <div class="line you k pr-c5"><span class="who">You</span>Give me a harder one.</div>
-                <div class="line g k pr-c6"><span class="who">Gausyn</span>Same skeleton, new coat of paint. Talk me through your first move.</div>
-                <div class="line you k pr-c7"><span class="who">You</span>Can I get more room for this?</div>
-                <div class="line g k pr-c8"><span class="who">Gausyn</span>Opened workspace Q1 &mdash; the problem is pinned at the top.</div>
+                <div class="line you k ag-y1"><span class="who">You</span>Number 4 needs way more space than this margin.</div>
+                <div class="line g k ag-g1"><span class="who">Gausyn</span>Drag a box around it &mdash; I&rsquo;ll open a workspace.</div>
+                <div class="line g k ag-g2"><span class="who">Gausyn</span>There. Your problem is pinned up top, and all the room below is ours.</div>
+                <div class="line g k ag-g3"><span class="who">Gausyn</span>&pi; &mdash; clean. The pin on Board 1 takes you straight back to the sheet.</div>
+                <div class="line you k ag-y2"><span class="who">You</span>And Q4 stays here if I come back?</div>
+                <div class="line g k ag-g4"><span class="who">Gausyn</span>This tab keeps everything &mdash; your work, my notes, exactly as we left them.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -112,45 +125,221 @@
         </div>
       </div>
     </section>
-    <section class="rule-top">
+
+    <!-- scene 2: physics workspace -->
+    <section class="scene rule-top" data-scene>
       <div class="wrap">
-        <div class="feature-list">
-          <div class="feature" data-reveal>
-            <span class="eyebrow">01</span>
-            <div>
-              <h3>Crop the problem</h3>
-              <p>Hit Ask Gausyn, drag a rectangle around the question &mdash; the diagram, the data table, all of it. That crop becomes the reference for a brand-new workspace tab: Q1, Q2, Q3 as the session grows.</p>
-            </div>
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Any subject that needs a picture</span>
+          <h2>Word problems become diagrams you can argue with.</h2>
+          <p>
+            The workspace is where dense problems get untangled. A physics
+            question that is sixty words of setup becomes a drawn figure with
+            the forces labelled; a geometry proof gets the figure redrawn large
+            enough to mark up; a chemistry mechanism gets room for every arrow.
+            Gausyn sketches the situation under the pinned reference, then hands
+            you the pen.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="tab ws">Q7</span>
+            <span class="spacer" style="flex:1"></span>
           </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">02</span>
+          <div class="board-shell fade-ag2">
             <div>
-              <h3>Reference pinned, grid below</h3>
-              <p>The workspace opens with your cropped problem pinned at the top and a clean grid underneath. All the explaining, sketching, and second attempts happen down there, at whatever length they need.</p>
+              <div class="boardarea graph" style="min-height: clamp(320px, 34vw, 430px)">
+                <div class="camthumb" aria-hidden="true"></div>
+
+                <div class="pincard k ag2-pin">
+                  <span class="lbl">Q7 &middot; pinned reference</span>
+                  7.&nbsp; A 4 kg block rests on a 30&deg; incline. Find the friction force holding it in place.
+                </div>
+
+                <div class="sheet" style="padding-top: clamp(80px, 9vw, 110px)">
+                  <svg class="diagram" viewBox="0 0 240 150" width="240" height="150" style="left:clamp(140px,13vw,170px);top:clamp(88px,10vw,120px)" aria-hidden="true">
+                    <path class="ag2-d1" d="M10,130 L230,130 L230,40 Z"></path>
+                    <path class="ag2-d2" d="M148,64 L188,52 L200,88 L160,100 Z"></path>
+                    <path class="ag2-d3" d="M176,78 L176,138 M176,138 L170,128 M176,138 L182,128"></path>
+                    <path class="ag2-d4" d="M172,74 L144,44 M144,44 L146,56 M144,44 L156,46"></path>
+                    <path class="ag2-d5" d="M162,86 L120,98 M120,98 L130,102 M120,98 L128,90"></path>
+                    <text class="k ag2-lb" x="182" y="148">mg</text>
+                    <text class="k ag2-lb" x="130" y="38">N</text>
+                    <text class="k ag2-lb" x="104" y="112">f</text>
+                    <text class="k ag2-lb" x="28" y="126">30&deg;</text>
+                  </svg>
+
+                  <div class="hint k ag2-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(84px,10vw,120px)">Three forces. Which one balances the pull along the slope?</div>
+
+                  <svg class="ink" viewBox="0 0 240 70" width="240" height="70" style="left:clamp(140px,13vw,170px);top:clamp(238px,27vw,300px)" aria-hidden="true">
+                    <path class="ag2-i1" d="M12,44 C16,30 26,28 28,38 M42,52 C50,56 58,52 56,44 C54,38 44,40 44,46 M72,40 L96,40 M72,50 L96,50 M112,32 C112,50 110,56 116,58 M130,36 C138,30 148,32 148,40 C148,50 136,54 130,52 M164,30 L164,56 M180,40 C188,34 198,36 198,44 C198,52 186,56 180,52"></path>
+                  </svg>
+
+                  <div class="hint tex k ag2-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(150px,17.5vw,224px)">f = mg sin &theta; &asymp; 19.6 N &#10003;</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">03</span>
-            <div>
-              <h3>A pin back home</h3>
-              <p>An anchor stays on the original worksheet, so when the side quest is over you land exactly where you left off &mdash; with the workspace still one tab away if you need it again.</p>
-            </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">04</span>
-            <div>
-              <h3>Hints follow you in</h3>
-              <p>Inside a workspace, Gausyn's help stacks beneath the pinned reference, same rules as everywhere: nudges and steps, never the finished answer.</p>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Homework &middot; 26:40 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Physics</span></div>
+                <div><span class="lbl">Workspace</span><span class="val">Q7</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line g k ag2-g1"><span class="who">Gausyn</span>Sixty words of setup &mdash; let&rsquo;s draw what they describe instead.</div>
+                <div class="line g k ag2-h1"><span class="who">Gausyn</span>Block, slope, three forces. Which one is fighting the slide?</div>
+                <div class="line you k ag2-y1"><span class="who">You</span>Why sin and not cos?</div>
+                <div class="line g k ag2-g2"><span class="who">Gausyn</span>sin &theta; picks out the part of gravity that points along the slope. Tilt the triangle in your head &mdash; at 0&deg; there is nothing to hold.</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- it stays organized -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">A session that stays tidy</span>
+          <h2>Every hard problem gets a room. None of them get lost.</h2>
+        </div>
+        <div class="gaps">
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <div class="agt-tabs">
+                <span class="tab active">Board 1</span>
+                <span class="tab ws k agt-q1">Q1</span>
+                <span class="tab ws k agt-q2">Q2</span>
+                <span class="tab ws k agt-q3">Q3</span>
+              </div>
+            </div>
+            <h3>One workspace per problem</h3>
+            <p>
+              Q1, Q2, Q3 &mdash; each hard problem in the session gets its own
+              tab, and they all stay open until the session ends. Jump between
+              them freely; each keeps its own pinned reference, ink, and hints.
+            </p>
+          </div>
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <div class="agp-board">
+                <span class="tl" style="position:absolute;left:10%;right:14%;top:22%;height:2px;background:var(--rule-soft)"></span>
+                <span class="tl" style="position:absolute;left:10%;right:40%;top:42%;height:2px;background:var(--rule-soft)"></span>
+                <span class="tl" style="position:absolute;left:10%;right:20%;top:62%;height:2px;background:var(--rule-soft)"></span>
+                <span class="agp-pin" style="left:64%;top:38%"></span>
+              </div>
+              <span class="pl-cap k agp-cap" style="left:auto;right:14px;top:26px;width:34%">A pin marks the exact spot you left.</span>
+            </div>
+            <h3>A pin back home</h3>
+            <p>
+              When you crop a problem, an anchor stays behind on the worksheet.
+              When the side quest is over, one click lands you exactly where you
+              left off &mdash; mid-sheet, mid-thought, nothing to re-find.
+            </p>
+          </div>
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <div class="agk-tabs">
+                <span class="tab agk-ta">Q1</span>
+                <span class="tab agk-tb">Q2</span>
+              </div>
+              <div class="agk-dotrow">
+                <span class="inkd"></span><span class="hintd"></span><span></span><span class="inkd"></span><span class="hintd"></span><span></span><span class="inkd"></span>
+              </div>
+            </div>
+            <h3>Nothing disappears</h3>
+            <p>
+              Switch tabs and switch back: every stroke, every hint, every
+              scroll position is exactly where it was. Work on Q2 for ten
+              minutes and Q1 is still waiting, mid-solution, when you return.
+            </p>
+          </div>
+          <div class="gap-card" data-reveal>
+            <div class="gap-demo" aria-hidden="true">
+              <span class="ps-file" style="top:18px">&ldquo;Can I get more room for this?&rdquo;</span>
+              <span class="ps-done" style="top:52px">&rarr; Workspace opened, problem pinned.</span>
+            </div>
+            <h3>Or just ask</h3>
+            <p>
+              The button is one way in. Saying &ldquo;can I get more room for
+              this?&rdquo; is the other. Ask Gausyn works everywhere the pen
+              does &mdash; on bank worksheets, on your uploaded homework, and on
+              generated practice questions alike.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- everything ask gausyn does -->
+    <section class="rule-top">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">In full</span>
+          <h2>Everything Ask Gausyn does.</h2>
+        </div>
+        <div class="feature-list">
+          <div class="feature" data-reveal>
+            <span class="eyebrow">01</span>
+            <div>
+              <h3>One gesture, on anything</h3>
+              <p>Click the button, drag a rectangle, done. It works on any problem, on any board &mdash; a worksheet from the bank, the homework you uploaded, a generated practice question. If it is on the board and it is hard, it can have a room of its own.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">02</span>
+            <div>
+              <h3>The crop is the reference, pinned for good</h3>
+              <p>Your cropped problem &mdash; diagram, data table, instructions and all &mdash; is pinned at the top of the workspace where it can never scroll away. However deep the working gets, the question is always one glance up, exactly as it appeared on the original page.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">03</span>
+            <div>
+              <h3>A clean page for however long it takes</h3>
+              <p>Below the pin is open grid &mdash; a full page for the working the worksheet never made space for. Three failed attempts, a diagram, the fourth attempt that lands: it all fits, and none of it crowds the original sheet.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">04</span>
+            <div>
+              <h3>The same honest help, inside</h3>
+              <p>In a workspace the rules do not change: Gausyn&rsquo;s hints stack beneath the pinned reference &mdash; plain words, single steps, drawn figures &mdash; still grounded against its worked solutions, still never the finished answer, still never touching your blanks back on the sheet.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">05</span>
+            <div>
+              <h3>A pin back to the exact spot you left</h3>
+              <p>An anchor stays behind on the source board at the crop. When the side quest is over, one click returns you there &mdash; and the workspace stays one tab away if the problem pulls you back in.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="eyebrow">06</span>
+            <div>
+              <h3>Rooms that accumulate, and remember</h3>
+              <p>Q1, Q2, Q3 &mdash; each workspace persists for the whole session with its own ink, hints, and scroll position intact. It is the difference between a whiteboard and a binder: by the end of the hour, your hardest problems each have their own worked page you can walk back through.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="closing rule-top">
       <div class="wrap">
         <h2 data-reveal>Every hard problem deserves scratch paper.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="btn-quiet" href="temp-teacher-mode.html">Back to: Teacher mode &rarr;</a>
         </div>
       </div>
     </section>
@@ -220,6 +409,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=7"></script>
+  <script src="assets/gausyn.js?v=8"></script>
 </body>
 </html>
