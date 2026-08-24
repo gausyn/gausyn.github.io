@@ -6,7 +6,7 @@
   <title>Teacher mode — Gausyn</title>
   <meta name="description" content="A real lesson, chosen by your week, taught out loud page by page — and it stops the moment you say wait." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=8" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=9" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -131,7 +131,7 @@
                   <svg class="curve k" width="240" height="120" viewBox="0 0 240 120" style="margin-top:16px" aria-hidden="true">
                     <line x1="8" y1="104" x2="228" y2="104"></line>
                     <line x1="8" y1="104" x2="8" y2="8"></line>
-                    <path class="te-curve" d="M10,16 C60,20 90,52 120,76 C150,94 190,102 226,103"></path>
+                    <path class="te-curve" pathLength="320" d="M10,16 C60,20 90,52 120,76 C150,94 190,102 226,103"></path>
                     <text x="176" y="94">flattens here</text>
                   </svg>
                 </div>
@@ -230,8 +230,8 @@
                   <svg class="curve k" width="260" height="130" viewBox="0 0 260 130" style="margin-top:14px" aria-hidden="true">
                     <line x1="8" y1="116" x2="250" y2="116"></line>
                     <line x1="8" y1="116" x2="8" y2="10"></line>
-                    <path class="tp-curve" d="M10,112 C50,30 110,14 140,26 C180,44 220,86 246,114"></path>
-                    <path class="tp-dash" style="stroke-dasharray:6 6" d="M10,112 L200,18"></path>
+                    <path class="tp-curve" pathLength="320" d="M10,112 C50,30 110,14 140,26 C180,44 220,86 246,114"></path>
+                    <path class="k tp-dsh" style="stroke-dasharray:6 6;stroke-dashoffset:0" d="M10,112 L200,18"></path>
                     <text class="k tp-lb" x="188" y="14">no gravity</text>
                   </svg>
                 </div>
@@ -287,6 +287,112 @@
               </div>
               <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene 3b: breadth -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Kindergarten to a doctorate</span>
+          <h2>The same teacher, at every level, in every subject.</h2>
+          <p>
+            A tutor who can only do Grade 9 algebra is a tutor you outgrow.
+            Gausyn teaches the fraction bar to an eight-year-old and the
+            eigenvector to a graduate student with the same patience and the
+            same method: one idea per page, in plain words, with a picture when
+            a picture helps. Because it is one teacher rather than a shelf of
+            courses, it can follow a student for a decade &mdash; and it already
+            knows how they like to be taught when the material gets hard.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Lesson bank</span>
+            <span class="spacer"></span>
+            <span class="pill">Matched to your session</span>
+          </div>
+          <div class="showcase fade-tl">
+
+            <div class="shot k tl-s1">
+              <span class="shotcap">Grade 3 &middot; Mathematics</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 2 of 5</span>
+                <h4>What a fraction actually says</h4>
+                <ul>
+                  <li>The bottom number names the size of the pieces.</li>
+                  <li>The top number just counts how many you have.</li>
+                  <li>Same whole, different cuts &mdash; the bar never changes length.</li>
+                </ul>
+                <div class="fracbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="eq">3/8 of the bar</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s2">
+              <span class="shotcap">Grade 9 &middot; Mathematics</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 3 of 6</span>
+                <h4>Keeping an equation balanced</h4>
+                <ul>
+                  <li>An equals sign is a promise that both sides weigh the same.</li>
+                  <li>Whatever you do to one side, do to the other, or the promise breaks.</li>
+                  <li>Undo the last thing that happened to x, first.</li>
+                </ul>
+                <div class="eq">3x &minus; 7 = 14 &nbsp;&rarr;&nbsp; 3x = 21 &nbsp;&rarr;&nbsp; x = 7</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s3">
+              <span class="shotcap">Grade 10 &middot; English</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 1 of 4</span>
+                <h4>What a thesis has to do</h4>
+                <ul>
+                  <li>It makes a claim someone reasonable could disagree with.</li>
+                  <li>It says <em>why</em>, not just <em>what</em> &mdash; the because is the argument.</li>
+                  <li>If your whole essay could not fail to prove it, it is a summary.</li>
+                </ul>
+                <div class="work">
+                  <b>Weak:</b> Macbeth is about ambition.<br />
+                  <b>Arguable:</b> Macbeth&rsquo;s ambition only becomes fatal once it is witnessed &mdash; he kills to be seen as king, not to be one.
+                </div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s4">
+              <span class="shotcap">Grade 12 &middot; Calculus</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 2 of 8</span>
+                <h4>What a derivative measures</h4>
+                <ul>
+                  <li>The slope of the curve at a single instant, not over a stretch.</li>
+                  <li>Take the average rate, then shrink the interval to nothing.</li>
+                  <li>Whatever the average settles on as h vanishes is the derivative.</li>
+                </ul>
+                <div class="eq">f&prime;(x) = lim<sub>h&rarr;0</sub> [ f(x+h) &minus; f(x) ] / h</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s5">
+              <span class="shotcap">University &middot; Linear algebra</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 5 of 9</span>
+                <h4>Eigenvectors: the directions that survive</h4>
+                <ul>
+                  <li>A matrix knocks almost every vector off the line it was on.</li>
+                  <li>A few directions are only stretched or squashed, never turned.</li>
+                  <li>Those are the eigenvectors; the amount of stretch is &lambda;.</li>
+                </ul>
+                <div class="eq">A v = &lambda; v</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -550,6 +656,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=8"></script>
+  <script src="assets/gausyn.js?v=9"></script>
 </body>
 </html>

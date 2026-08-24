@@ -6,7 +6,7 @@
   <title>Ask Gausyn — Gausyn</title>
   <meta name="description" content="Drag a box around any problem and it becomes its own workspace — the question pinned on top, a clean page of room below, and a pin back to where you left off." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=8" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=9" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -91,10 +91,10 @@
                     <div class="hint k ag-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(80px,9vw,116px)">Product rule &mdash; two pieces, and each keeps its identity.</div>
                     <div class="hint tex k ag-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(128px,15vw,186px)">(uv)&prime; = u&prime;v + uv&prime;</div>
 
-                    <svg class="ink" viewBox="0 0 300 110" width="300" height="110" style="left:clamp(130px,12vw,150px);top:clamp(96px,11vw,140px)" aria-hidden="true">
-                      <path class="ag-i1" d="M10,34 C16,22 26,20 30,28 C33,35 22,44 12,50 M44,26 C50,36 58,44 64,48 M64,26 C58,36 50,42 44,48 M80,38 C92,36 104,36 112,38 M128,26 C136,22 144,22 146,30 C148,38 136,44 128,48 C140,46 148,46 154,47 M170,30 C176,26 184,24 188,30 L188,50 M204,28 C216,24 226,30 220,40 C216,46 208,48 204,46"></path>
-                      <path class="ag-i2" d="M28,78 L64,78 M38,78 L38,102 M54,78 C54,90 52,98 58,102"></path>
-                    </svg>
+                    <div class="penwork" style="position:absolute;left:clamp(140px,13vw,158px);top:clamp(96px,11vw,140px)">
+                      <span class="pen k ag-l1">f&#8242;(x) = 2x sin x + x&sup2; cos x</span>
+                      <span class="pen k ag-l2">f&#8242;(&pi;/2) = &pi;</span>
+                    </div>
 
                     <div class="hint tex k ag-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(176px,21vw,258px)">at &pi;/2: cos(&pi;/2) = 0 &mdash; one term survives</div>
                   </div>
@@ -160,23 +160,28 @@
                 </div>
 
                 <div class="sheet" style="padding-top: clamp(80px, 9vw, 110px)">
-                  <svg class="diagram" viewBox="0 0 240 150" width="240" height="150" style="left:clamp(140px,13vw,170px);top:clamp(88px,10vw,120px)" aria-hidden="true">
-                    <path class="ag2-d1" d="M10,130 L230,130 L230,40 Z"></path>
-                    <path class="ag2-d2" d="M148,64 L188,52 L200,88 L160,100 Z"></path>
-                    <path class="ag2-d3" d="M176,78 L176,138 M176,138 L170,128 M176,138 L182,128"></path>
-                    <path class="ag2-d4" d="M172,74 L144,44 M144,44 L146,56 M144,44 L156,46"></path>
-                    <path class="ag2-d5" d="M162,86 L120,98 M120,98 L130,102 M120,98 L128,90"></path>
-                    <text class="k ag2-lb" x="182" y="148">mg</text>
-                    <text class="k ag2-lb" x="130" y="38">N</text>
-                    <text class="k ag2-lb" x="104" y="112">f</text>
-                    <text class="k ag2-lb" x="28" y="126">30&deg;</text>
+                  <svg class="diagram" viewBox="0 0 260 175" width="330" height="222" style="left:clamp(150px,14vw,180px);top:clamp(80px,9vw,106px)" aria-hidden="true">
+                    <!-- the incline, with the ground hatched under it -->
+                    <path class="ag2-d1" pathLength="320" d="M20,155 L228,155 L228,35 Z M40,155 L32,164 M80,155 L72,164 M120,155 L112,164 M160,155 L152,164 M200,155 L192,164"></path>
+                    <path class="ag2-d6" pathLength="320" d="M58,155 A38,38 0 0 0 52.9,136"></path>
+                    <!-- the block, sitting flush on the slope -->
+                    <path class="ag2-d2" pathLength="320" d="M98,110 L150,80 L133,50.6 L81,80.6 Z"></path>
+                    <!-- weight, normal, friction: all from the centre of mass -->
+                    <path class="ag2-d3" pathLength="320" d="M116,80 L116,148 M116,148 L110.5,138 M116,148 L121.5,138"></path>
+                    <path class="ag2-d4" pathLength="320" d="M116,80 L90,35 M90,35 L98.7,41.8 M90,35 L91.5,45.9"></path>
+                    <path class="ag2-d5" pathLength="320" d="M116,80 L161,54 M161,54 L150.1,55.5 M161,54 L154.2,62.7"></path>
+                    <text class="k ag2-lb" x="124" y="141">mg</text>
+                    <text class="k ag2-lb" x="72" y="30">N</text>
+                    <text class="k ag2-lb" x="167" y="50">f</text>
+                    <text class="k ag2-lb" x="64" y="147">30&deg;</text>
                   </svg>
 
                   <div class="hint k ag2-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(84px,10vw,120px)">Three forces. Which one balances the pull along the slope?</div>
 
-                  <svg class="ink" viewBox="0 0 240 70" width="240" height="70" style="left:clamp(140px,13vw,170px);top:clamp(238px,27vw,300px)" aria-hidden="true">
-                    <path class="ag2-i1" d="M12,44 C16,30 26,28 28,38 M42,52 C50,56 58,52 56,44 C54,38 44,40 44,46 M72,40 L96,40 M72,50 L96,50 M112,32 C112,50 110,56 116,58 M130,36 C138,30 148,32 148,40 C148,50 136,54 130,52 M164,30 L164,56 M180,40 C188,34 198,36 198,44 C198,52 186,56 180,52"></path>
-                  </svg>
+                  <div class="penwork" style="position:absolute;left:clamp(150px,36vw,540px);top:clamp(238px,26vw,292px)">
+                    <span class="pen k ag2-l1">f = mg sin 30&deg;</span>
+                    <span class="pen k ag2-l2">= 4(9.8)(0.5) = 19.6 N</span>
+                  </div>
 
                   <div class="hint tex k ag2-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(150px,17.5vw,224px)">f = mg sin &theta; &asymp; 19.6 N &#10003;</div>
                 </div>
@@ -197,6 +202,72 @@
                 <div class="line g k ag2-h1"><span class="who">Gausyn</span>Block, slope, three forces. Which one is fighting the slide?</div>
                 <div class="line you k ag2-y1"><span class="who">You</span>Why sin and not cos?</div>
                 <div class="line g k ag2-g2"><span class="who">Gausyn</span>sin &theta; picks out the part of gravity that points along the slope. Tilt the triangle in your head &mdash; at 0&deg; there is nothing to hold.</div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene 3: a proof needs room -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Not only calculations</span>
+          <h2>Proofs, arguments, and anything that needs to be written out.</h2>
+          <p>
+            The problems that most need room are rarely the ones with a number
+            at the end. A proof has to be <em>argued</em> &mdash; set up the
+            general case, do the algebra, and say the sentence that closes it
+            &mdash; and no worksheet margin has ever been the right size for
+            that. In a workspace the claim stays pinned at the top while the
+            argument runs down the page, and Gausyn holds you to the standard a
+            marker would: define your terms, then show the conclusion follows.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="tabsbar">
+            <span class="tab active">Board 1</span>
+            <span class="tab ws">Q2</span>
+            <span class="spacer" style="flex:1"></span>
+          </div>
+          <div class="board-shell fade-ag3">
+            <div>
+              <div class="boardarea plain" style="min-height: clamp(300px, 32vw, 400px)">
+                <div class="camthumb" aria-hidden="true"></div>
+                <div class="pincard k ag3-pin">
+                  <span class="lbl">Q2 &middot; pinned reference</span>
+                  2.&nbsp; Prove that the sum of any two odd integers is even.
+                </div>
+                <div class="sheet" style="padding-top: clamp(80px, 9vw, 112px)">
+                  <div class="penwork">
+                    <span class="pen k ag3-l1">let a = 2m + 1, &nbsp; b = 2n + 1</span>
+                    <span class="pen k ag3-l2">a + b = 2m + 2n + 2</span>
+                    <span class="pen k ag3-l3">= 2(m + n + 1) &nbsp; &#8756; even</span>
+                  </div>
+                  <div class="hint k ag3-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(84px,10vw,118px)">Good &mdash; but say what m and n are, or the proof only covers your two numbers.</div>
+                  <div class="hint tex k ag3-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(150px,17.5vw,206px)">m, n &isin; &#8484; &nbsp;&rarr;&nbsp; m + n + 1 &isin; &#8484; &#10003;</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Homework &middot; 19:05 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Discrete math</span></div>
+                <div><span class="lbl">Workspace</span><span class="val">Q2</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line g k ag3-g1"><span class="who">Gausyn</span>A proof needs the whole page. Start with what &ldquo;odd&rdquo; lets you write down.</div>
+                <div class="line g k ag3-h1"><span class="who">Gausyn</span>Careful &mdash; if m and n are never named as integers, you have only proved it for the two you picked.</div>
+                <div class="line you k ag3-y1"><span class="who">You</span>So the factor of 2 is the whole proof?</div>
+                <div class="line g k ag3-g3"><span class="who">Gausyn</span>That is the proof. Everything before it was getting into a form where 2 could be pulled out.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -409,6 +480,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=8"></script>
+  <script src="assets/gausyn.js?v=9"></script>
 </body>
 </html>
