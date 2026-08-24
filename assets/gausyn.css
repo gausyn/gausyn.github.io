@@ -251,13 +251,13 @@ html.js .restart, html.js .restart * { animation: none !important; }
 .lobby-opt .n { font-size: 9px; letter-spacing: 0.16em; color: var(--faint); display: block; margin-bottom: 4px; }
 .lobby-opt h4 { font-size: 14.5px; margin-bottom: 5px; }
 .lobby-opt p { font-size: 10.5px; color: var(--muted); line-height: 1.45; }
-html.js .lobby-opt.o1 { animation: lobby-o1 20s ease-in-out infinite; }
-html.js .lobby-opt.o2 { animation: lobby-o2 20s ease-in-out infinite; }
+html.js .lobby-opt.o1 { animation: lobby-o1 10s ease-in-out infinite; }
+html.js .lobby-opt.o2 { animation: lobby-o2 10s ease-in-out infinite; }
 @keyframes lobby-o1 { 0%, 8% { border-color: var(--rule); background: #fff; } 12%, 44% { border-color: var(--ink); background: var(--surface); } 48%, 100% { border-color: var(--rule); background: #fff; } }
 @keyframes lobby-o2 { 0%, 48% { border-color: var(--rule); background: #fff; } 52%, 88% { border-color: var(--ink); background: var(--surface); } 92%, 100% { border-color: var(--rule); background: #fff; } }
 .lobby-note { font-size: 10.5px; color: var(--faint); margin-bottom: 14px; }
 .lobby-join { display: block; background: var(--ink); color: #fff; border-radius: 999px; padding: 13px; font-size: 14px; }
-html.js .lobby-join { animation: lobby-press 20s ease-in-out infinite; }
+html.js .lobby-join { animation: lobby-press 10s ease-in-out infinite; }
 @keyframes lobby-press { 0%, 89% { transform: none; } 91% { transform: scale(0.97); } 93%, 100% { transform: none; } }
 
 /* ── board scenes (teacher / practice) ──────────────────────────────────── */
@@ -299,7 +299,7 @@ html.js .lobby-join { animation: lobby-press 20s ease-in-out infinite; }
 .q .n { color: var(--faint); margin-right: 8px; }
 
 .ink { position: absolute; }
-.ink path { fill: none; stroke: #3b6fd4; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240; stroke-dashoffset: 240; }
+.ink path { fill: none; stroke: #3b6fd4; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
 
 .hint { position: absolute; background: rgba(255,255,255,0.92); border: 1px solid rgba(204,34,34,0.2); border-left: 2px solid rgba(204,34,34,0.5); border-radius: 5px; padding: 7px 11px; font-size: clamp(11.5px, 0.88vw, 13px); line-height: 1.45; color: var(--hint); box-shadow: 0 1px 5px rgba(0,0,0,0.06); max-width: 250px; }
 .hint.tex { font-family: var(--mono); font-size: clamp(12.5px, 0.95vw, 14.5px); }
@@ -319,7 +319,7 @@ html.js .lobby-join { animation: lobby-press 20s ease-in-out infinite; }
 .lesson-page .eq { margin-top: 14px; font-family: var(--mono); font-size: clamp(14px, 1.2vw, 17px); color: var(--ink); background: rgba(255,255,255,0.9); border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 9px 13px; display: inline-block; }
 
 .curve { position: absolute; }
-.curve path { fill: none; stroke: var(--hint); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 320; stroke-dashoffset: 320; }
+.curve path { fill: none; stroke: var(--hint); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 320 800; stroke-dashoffset: 322; }
 .curve line { stroke: var(--rule); stroke-width: 1.4; }
 .curve text { font-size: 9px; fill: var(--faint); font-family: var(--serif); }
 
@@ -365,8 +365,8 @@ html.js .lobby-join { animation: lobby-press 20s ease-in-out infinite; }
 
 .two-ways { position: relative; min-height: clamp(280px, 32vw, 340px); }
 .way { position: absolute; inset: clamp(22px, 2.6vw, 32px); opacity: 0; }
-html.js .way-a { animation: way-a-cyc 17s ease-in-out infinite; }
-html.js .way-b { animation: way-b-cyc 17s ease-in-out infinite; }
+html.js .way-a { animation: way-a-cyc 8.5s ease-in-out infinite; }
+html.js .way-b { animation: way-b-cyc 8.5s ease-in-out infinite; }
 @keyframes way-a-cyc { 0% { opacity: 0; } 3% { opacity: 1; } 28% { opacity: 1; } 33% { opacity: 0; } 100% { opacity: 0; } }
 @keyframes way-b-cyc { 0% { opacity: 0; } 35% { opacity: 0; } 40% { opacity: 1; } 95% { opacity: 1; } 99% { opacity: 0; } 100% { opacity: 0; } }
 .way .tag { display: inline-block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 999px; padding: 4px 11px; margin-bottom: 20px; }
@@ -374,12 +374,12 @@ html.js .way-b { animation: way-b-cyc 17s ease-in-out infinite; }
 .way-b .tag { border: 1px solid var(--cool-line); background: var(--cool-soft); color: var(--cool-ink); }
 .prompt { font-family: var(--mono); font-size: clamp(14px, 1.1vw, 16px); color: var(--muted); padding-bottom: 14px; border-bottom: 1px solid var(--rule-soft); margin-bottom: 16px; }
 .blurt { font-family: var(--mono); font-size: clamp(26px, 2.8vw, 38px); color: var(--ink); opacity: 0; }
-html.js .blurt { animation: blurt-in 17s ease-in-out infinite; }
+html.js .blurt { animation: blurt-in 8.5s ease-in-out infinite; }
 @keyframes blurt-in { 0% { opacity: 0; transform: translateY(6px); } 7% { opacity: 0; transform: translateY(6px); } 11% { opacity: 1; transform: none; } 28% { opacity: 1; transform: none; } 33% { opacity: 0; } 100% { opacity: 0; } }
 .aftermath { font-size: clamp(13px, 0.98vw, 15px); color: var(--faint); margin-top: 18px; opacity: 0; }
-html.js .aftermath { animation: blurt-in 17s ease-in-out infinite; animation-delay: 0.9s; }
+html.js .aftermath { animation: blurt-in 8.5s ease-in-out infinite; animation-delay: 0.9s; }
 .steps-reveal { overflow: hidden; max-height: 240px; }
-html.js .steps-reveal { animation: grow 17s ease-in-out infinite; }
+html.js .steps-reveal { animation: grow 8.5s ease-in-out infinite; }
 @keyframes grow { 0% { max-height: 0; } 38% { max-height: 0; } 45% { max-height: 44px; } 55% { max-height: 88px; } 65% { max-height: 132px; } 75% { max-height: 176px; } 85% { max-height: 240px; } 100% { max-height: 240px; } }
 .steps-reveal div { height: 44px; display: flex; align-items: center; gap: 12px; font-size: clamp(13px, 1vw, 15px); color: var(--muted); }
 .steps-reveal .eqn { font-family: var(--mono); font-size: clamp(14px, 1.1vw, 16.5px); color: var(--ink); }
@@ -445,7 +445,7 @@ html.js .gd-answer .out { animation: gd-out 6s ease-in-out infinite; }
 .topics span { font-size: 10.5px; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 3px 9px; }
 .states { position: relative; height: 34px; margin-top: 22px; }
 .states .st { position: absolute; inset: 0 auto 0 0; display: inline-flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: 0.04em; border: 1px solid var(--rule); border-radius: 999px; padding: 0 16px; height: 34px; color: var(--muted); opacity: 0; }
-html.js .states .st { animation: state-cycle 12s ease-in-out infinite; }
+html.js .states .st { animation: state-cycle 6s ease-in-out infinite; }
 .states .st i { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); display: block; }
 .states .st.live { border-color: var(--ink); color: var(--ink); }
 .states .st.live i { background: var(--hint); animation: pulse 1.6s ease-in-out infinite; }
@@ -481,14 +481,14 @@ html.js .states .s1 { animation-delay: 0s; } html.js .states .s2 { animation-del
 .cycler > *[dir="rtl"] { justify-content: flex-end; text-align: right; }
 
 .cyc-lang { height: 4.2em; }
-html.js .cyc-lang > * { animation: cyc5 17.5s ease-in-out infinite; }
+html.js .cyc-lang > * { animation: cyc5 8.75s ease-in-out infinite; }
 html.js .cyc-lang > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-lang > *:nth-child(2) { animation-delay: 3.5s; }
 html.js .cyc-lang > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-lang > *:nth-child(4) { animation-delay: 10.5s; }
 html.js .cyc-lang > *:nth-child(5) { animation-delay: 14s; }
 @keyframes cyc5 { 0% { opacity: 0; transform: translateY(7px); } 2.5% { opacity: 1; transform: none; } 17% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-7px); } 100% { opacity: 0; transform: translateY(-7px); } }
 
 .cyc-level { height: 4.2em; }
-html.js .cyc-level > * { animation: cyc6 21s ease-in-out infinite; }
+html.js .cyc-level > * { animation: cyc6 10.5s ease-in-out infinite; }
 .cyc-level > * { font-family: var(--mono); flex-direction: column; align-items: flex-start; justify-content: center; gap: 5px; }
 html.js .cyc-level > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-level > *:nth-child(2) { animation-delay: 3.5s; }
 html.js .cyc-level > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-level > *:nth-child(4) { animation-delay: 10.5s; }
@@ -498,11 +498,11 @@ html.js .cyc-level > *:nth-child(5) { animation-delay: 14s; } html.js .cyc-level
 
 .rail6 { height: 2px; background: var(--rule-soft); margin-top: 14px; position: relative; overflow: hidden; }
 .rail6 i { position: absolute; left: 0; top: 0; bottom: 0; display: block; background: var(--ink); width: 16.6%; }
-html.js .rail6 i { animation: rail6 21s ease-in-out infinite; }
+html.js .rail6 i { animation: rail6 10.5s ease-in-out infinite; }
 @keyframes rail6 { 0% { width: 16.6%; } 14% { width: 16.6%; } 17% { width: 33.3%; } 31% { width: 33.3%; } 34% { width: 50%; } 48% { width: 50%; } 51% { width: 66.6%; } 64% { width: 66.6%; } 67% { width: 83.3%; } 81% { width: 83.3%; } 84% { width: 100%; } 100% { width: 100%; } }
 
 .cyc-route { height: 5.4em; }
-html.js .cyc-route > * { animation: cyc3 15s ease-in-out infinite; }
+html.js .cyc-route > * { animation: cyc3 7.5s ease-in-out infinite; }
 .cyc-route > * { align-items: center; }
 html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route > *:nth-child(2) { animation-delay: 5s; } html.js .cyc-route > *:nth-child(3) { animation-delay: 10s; }
 @keyframes cyc3 { 0% { opacity: 0; transform: translateY(7px); } 4% { opacity: 1; transform: none; } 29% { opacity: 1; transform: none; } 33% { opacity: 0; transform: translateY(-7px); } 100% { opacity: 0; transform: translateY(-7px); } }
@@ -697,110 +697,110 @@ html.js [data-reveal].in { opacity: 1; transform: none; }
 }
 
 @keyframes da-m1{0%{opacity:0;transform:translateY(10px)}3.26%{opacity:0;transform:translateY(10px)}4.78%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m1{animation:da-m1 46s ease-in-out infinite both}
+html.js .da-m1{animation:da-m1 23s ease-in-out infinite both}
 @keyframes da-m2{0%{opacity:0;transform:translateY(10px)}10.87%{opacity:0;transform:translateY(10px)}12.39%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m2{animation:da-m2 46s ease-in-out infinite both}
+html.js .da-m2{animation:da-m2 23s ease-in-out infinite both}
 @keyframes da-m3{0%{opacity:0;transform:translateY(10px)}20.65%{opacity:0;transform:translateY(10px)}22.17%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m3{animation:da-m3 46s ease-in-out infinite both}
+html.js .da-m3{animation:da-m3 23s ease-in-out infinite both}
 @keyframes da-d1{0%{opacity:0;transform:translateY(10px)}22.17%{opacity:0;transform:translateY(10px)}23.70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-d1{animation:da-d1 46s ease-in-out infinite both}
+html.js .da-d1{animation:da-d1 23s ease-in-out infinite both}
 @keyframes da-e1{0%{opacity:0;transform:translateY(10px)}23.48%{opacity:0;transform:translateY(10px)}25.00%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-e1{animation:da-e1 46s ease-in-out infinite both}
+html.js .da-e1{animation:da-e1 23s ease-in-out infinite both}
 @keyframes da-e2{0%{opacity:0;transform:translateY(10px)}24.78%{opacity:0;transform:translateY(10px)}26.30%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-e2{animation:da-e2 46s ease-in-out infinite both}
+html.js .da-e2{animation:da-e2 23s ease-in-out infinite both}
 @keyframes da-e5{0%{opacity:0;transform:translateY(10px)}26.74%{opacity:0;transform:translateY(10px)}28.26%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-e5{animation:da-e5 46s ease-in-out infinite both}
+html.js .da-e5{animation:da-e5 23s ease-in-out infinite both}
 @keyframes da-m4{0%{opacity:0;transform:translateY(10px)}40.22%{opacity:0;transform:translateY(10px)}41.74%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m4{animation:da-m4 46s ease-in-out infinite both}
+html.js .da-m4{animation:da-m4 23s ease-in-out infinite both}
 @keyframes da-m5{0%{opacity:0;transform:translateY(10px)}46.74%{opacity:0;transform:translateY(10px)}48.26%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m5{animation:da-m5 46s ease-in-out infinite both}
+html.js .da-m5{animation:da-m5 23s ease-in-out infinite both}
 @keyframes da-e4{0%{opacity:0;transform:translateY(10px)}50.43%{opacity:0;transform:translateY(10px)}51.96%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-e4{animation:da-e4 46s ease-in-out infinite both}
+html.js .da-e4{animation:da-e4 23s ease-in-out infinite both}
 @keyframes da-e6{0%{opacity:0;transform:translateY(10px)}52.17%{opacity:0;transform:translateY(10px)}53.70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-e6{animation:da-e6 46s ease-in-out infinite both}
+html.js .da-e6{animation:da-e6 23s ease-in-out infinite both}
 @keyframes da-d2{0%{opacity:0;transform:translateY(10px)}54.35%{opacity:0;transform:translateY(10px)}55.87%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-d2{animation:da-d2 46s ease-in-out infinite both}
+html.js .da-d2{animation:da-d2 23s ease-in-out infinite both}
 @keyframes da-m6{0%{opacity:0;transform:translateY(10px)}63.04%{opacity:0;transform:translateY(10px)}64.57%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m6{animation:da-m6 46s ease-in-out infinite both}
+html.js .da-m6{animation:da-m6 23s ease-in-out infinite both}
 @keyframes da-m7{0%{opacity:0;transform:translateY(10px)}70.65%{opacity:0;transform:translateY(10px)}72.17%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-m7{animation:da-m7 46s ease-in-out infinite both}
+html.js .da-m7{animation:da-m7 23s ease-in-out infinite both}
 @keyframes da-t1{0%{opacity:0;transform:translateY(10px)}76.09%{opacity:0;transform:translateY(10px)}77.61%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .da-t1{animation:da-t1 46s ease-in-out infinite both}
+html.js .da-t1{animation:da-t1 23s ease-in-out infinite both}
 @keyframes fade-da{0%{opacity:1}94%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-da{animation:fade-da 46s linear infinite}
+html.js .fade-da{animation:fade-da 23s linear infinite}
 @keyframes te-l1{0%{opacity:0;transform:translateY(10px)}4.00%{opacity:0;transform:translateY(10px)}5.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l1{animation:te-l1 50s ease-in-out infinite both}
+html.js .te-l1{animation:te-l1 25s ease-in-out infinite both}
 @keyframes te-l2{0%{opacity:0;transform:translateY(10px)}20.00%{opacity:0;transform:translateY(10px)}21.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l2{animation:te-l2 50s ease-in-out infinite both}
+html.js .te-l2{animation:te-l2 25s ease-in-out infinite both}
 @keyframes te-l3{0%{opacity:0;transform:translateY(10px)}26.00%{opacity:0;transform:translateY(10px)}27.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l3{animation:te-l3 50s ease-in-out infinite both}
+html.js .te-l3{animation:te-l3 25s ease-in-out infinite both}
 @keyframes te-l4{0%{opacity:0;transform:translateY(10px)}46.00%{opacity:0;transform:translateY(10px)}47.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l4{animation:te-l4 50s ease-in-out infinite both}
+html.js .te-l4{animation:te-l4 25s ease-in-out infinite both}
 @keyframes te-l5{0%{opacity:0;transform:translateY(10px)}53.00%{opacity:0;transform:translateY(10px)}54.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l5{animation:te-l5 50s ease-in-out infinite both}
+html.js .te-l5{animation:te-l5 25s ease-in-out infinite both}
 @keyframes te-l6{0%{opacity:0;transform:translateY(10px)}72.00%{opacity:0;transform:translateY(10px)}73.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l6{animation:te-l6 50s ease-in-out infinite both}
+html.js .te-l6{animation:te-l6 25s ease-in-out infinite both}
 @keyframes te-l7{0%{opacity:0;transform:translateY(10px)}78.00%{opacity:0;transform:translateY(10px)}79.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l7{animation:te-l7 50s ease-in-out infinite both}
+html.js .te-l7{animation:te-l7 25s ease-in-out infinite both}
 @keyframes te-l8{0%{opacity:0;transform:translateY(10px)}90.00%{opacity:0;transform:translateY(10px)}91.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-l8{animation:te-l8 50s ease-in-out infinite both}
+html.js .te-l8{animation:te-l8 25s ease-in-out infinite both}
 @keyframes te-sw{0%{opacity:0;transform:translateY(10px)}93.00%{opacity:0;transform:translateY(10px)}94.40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-sw{animation:te-sw 50s ease-in-out infinite both}
+html.js .te-sw{animation:te-sw 25s ease-in-out infinite both}
 @keyframes fade-te{0%{opacity:1}94%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-te{animation:fade-te 50s linear infinite}
-@keyframes te-curve{0%{stroke-dashoffset:320}28.00%{stroke-dashoffset:320}40.00%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .te-curve{animation:te-curve 50s linear infinite both}
+html.js .fade-te{animation:fade-te 25s linear infinite}
+@keyframes te-curve{0%{stroke-dashoffset:322}28.00%{stroke-dashoffset:322}40.00%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .te-curve{animation:te-curve 25s linear infinite both}
 @keyframes pr-c1{0%{opacity:0;transform:translateY(10px)}5.56%{opacity:0;transform:translateY(10px)}6.85%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c1{animation:pr-c1 54s ease-in-out infinite both}
+html.js .pr-c1{animation:pr-c1 27s ease-in-out infinite both}
 @keyframes pr-c2{0%{opacity:0;transform:translateY(10px)}12.04%{opacity:0;transform:translateY(10px)}13.33%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c2{animation:pr-c2 54s ease-in-out infinite both}
+html.js .pr-c2{animation:pr-c2 27s ease-in-out infinite both}
 @keyframes pr-h1{0%{opacity:0;transform:translateY(10px)}12.96%{opacity:0;transform:translateY(10px)}14.26%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-h1{animation:pr-h1 54s ease-in-out infinite both}
+html.js .pr-h1{animation:pr-h1 27s ease-in-out infinite both}
 @keyframes pr-c3{0%{opacity:0;transform:translateY(10px)}20.37%{opacity:0;transform:translateY(10px)}21.67%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c3{animation:pr-c3 54s ease-in-out infinite both}
+html.js .pr-c3{animation:pr-c3 27s ease-in-out infinite both}
 @keyframes pr-h2{0%{opacity:0;transform:translateY(10px)}35.19%{opacity:0;transform:translateY(10px)}36.48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-h2{animation:pr-h2 54s ease-in-out infinite both}
+html.js .pr-h2{animation:pr-h2 27s ease-in-out infinite both}
 @keyframes pr-c4{0%{opacity:0;transform:translateY(10px)}50.00%{opacity:0;transform:translateY(10px)}51.30%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c4{animation:pr-c4 54s ease-in-out infinite both}
+html.js .pr-c4{animation:pr-c4 27s ease-in-out infinite both}
 @keyframes pr-c5{0%{opacity:0;transform:translateY(10px)}57.41%{opacity:0;transform:translateY(10px)}58.70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c5{animation:pr-c5 54s ease-in-out infinite both}
+html.js .pr-c5{animation:pr-c5 27s ease-in-out infinite both}
 @keyframes pr-tpr{0%{opacity:0;transform:translateY(10px)}62.04%{opacity:0;transform:translateY(10px)}63.33%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-tpr{animation:pr-tpr 54s ease-in-out infinite both}
+html.js .pr-tpr{animation:pr-tpr 27s ease-in-out infinite both}
 @keyframes pr-pq{0%{opacity:0;transform:translateY(10px)}64.81%{opacity:0;transform:translateY(10px)}66.11%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-pq{animation:pr-pq 54s ease-in-out infinite both}
+html.js .pr-pq{animation:pr-pq 27s ease-in-out infinite both}
 @keyframes pr-c6{0%{opacity:0;transform:translateY(10px)}70.37%{opacity:0;transform:translateY(10px)}71.67%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c6{animation:pr-c6 54s ease-in-out infinite both}
+html.js .pr-c6{animation:pr-c6 27s ease-in-out infinite both}
 @keyframes pr-c7{0%{opacity:0;transform:translateY(10px)}77.78%{opacity:0;transform:translateY(10px)}79.07%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c7{animation:pr-c7 54s ease-in-out infinite both}
+html.js .pr-c7{animation:pr-c7 27s ease-in-out infinite both}
 @keyframes pr-crop{0%{opacity:0;transform:translateY(10px)}81.48%{opacity:0;transform:translateY(10px)}82.78%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-crop{animation:pr-crop 54s ease-in-out infinite both}
+html.js .pr-crop{animation:pr-crop 27s ease-in-out infinite both}
 @keyframes pr-tws{0%{opacity:0;transform:translateY(10px)}85.19%{opacity:0;transform:translateY(10px)}86.48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-tws{animation:pr-tws 54s ease-in-out infinite both}
+html.js .pr-tws{animation:pr-tws 27s ease-in-out infinite both}
 @keyframes pr-c8{0%{opacity:0;transform:translateY(10px)}88.89%{opacity:0;transform:translateY(10px)}90.19%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c8{animation:pr-c8 54s ease-in-out infinite both}
+html.js .pr-c8{animation:pr-c8 27s ease-in-out infinite both}
 @keyframes fade-pr{0%{opacity:1}94%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pr{animation:fade-pr 54s linear infinite}
-@keyframes pr-a1{0%{stroke-dashoffset:240}24.07%{stroke-dashoffset:240}26.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a1{animation:pr-a1 54s linear infinite both}
-@keyframes pr-a2{0%{stroke-dashoffset:240}26.30%{stroke-dashoffset:240}28.15%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a2{animation:pr-a2 54s linear infinite both}
-@keyframes pr-a3{0%{stroke-dashoffset:240}28.15%{stroke-dashoffset:240}29.63%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a3{animation:pr-a3 54s linear infinite both}
-@keyframes pr-a4{0%{stroke-dashoffset:240}29.63%{stroke-dashoffset:240}31.85%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a4{animation:pr-a4 54s linear infinite both}
-@keyframes pr-b1{0%{stroke-dashoffset:240}38.89%{stroke-dashoffset:240}41.48%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b1{animation:pr-b1 54s linear infinite both}
-@keyframes pr-b2{0%{stroke-dashoffset:240}41.48%{stroke-dashoffset:240}43.33%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b2{animation:pr-b2 54s linear infinite both}
-@keyframes pr-b3{0%{stroke-dashoffset:240}43.33%{stroke-dashoffset:240}46.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b3{animation:pr-b3 54s linear infinite both}
+html.js .fade-pr{animation:fade-pr 27s linear infinite}
+@keyframes pr-a1{0%{stroke-dashoffset:242}24.07%{stroke-dashoffset:242}26.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-a1{animation:pr-a1 27s linear infinite both}
+@keyframes pr-a2{0%{stroke-dashoffset:242}26.30%{stroke-dashoffset:242}28.15%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-a2{animation:pr-a2 27s linear infinite both}
+@keyframes pr-a3{0%{stroke-dashoffset:242}28.15%{stroke-dashoffset:242}29.63%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-a3{animation:pr-a3 27s linear infinite both}
+@keyframes pr-a4{0%{stroke-dashoffset:242}29.63%{stroke-dashoffset:242}31.85%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-a4{animation:pr-a4 27s linear infinite both}
+@keyframes pr-b1{0%{stroke-dashoffset:242}38.89%{stroke-dashoffset:242}41.48%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-b1{animation:pr-b1 27s linear infinite both}
+@keyframes pr-b2{0%{stroke-dashoffset:242}41.48%{stroke-dashoffset:242}43.33%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-b2{animation:pr-b2 27s linear infinite both}
+@keyframes pr-b3{0%{stroke-dashoffset:242}43.33%{stroke-dashoffset:242}46.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-b3{animation:pr-b3 27s linear infinite both}
 
 /* dashboard: the Wednesday review dims after being moved */
 @keyframes da-dim{0%{opacity:0;transform:translateY(10px)}26.09%{opacity:0;transform:translateY(10px)}27.6%{opacity:1;transform:none}47.4%{opacity:1}48.9%{opacity:0.12}100%{opacity:0.12}}
-html.js .da-dim{animation:da-dim 46s ease-in-out infinite both}
+html.js .da-dim{animation:da-dim 23s ease-in-out infinite both}
 /* dashboard: ghost pill flies from Wed 7pm to Thu 6pm */
 @keyframes da-ghost{0%{opacity:0;transform:translate(0,0)}46.74%{opacity:0;transform:translate(0,0) scale(1)}47.8%{opacity:1;transform:translate(0,0) scale(1.06)}50%{opacity:1;transform:translate(calc(100% + 6px),-49px) scale(1.06)}50.7%{opacity:0;transform:translate(calc(100% + 6px),-49px) scale(1)}100%{opacity:0}}
-html.js .da-ghost{animation:da-ghost 46s cubic-bezier(0.4,0,0.2,1) infinite both;z-index:3;box-shadow:0 6px 18px rgba(10,10,10,0.12)}
+html.js .da-ghost{animation:da-ghost 23s cubic-bezier(0.4,0,0.2,1) infinite both;z-index:3;box-shadow:0 6px 18px rgba(10,10,10,0.12)}
 @media (max-width: 760px){
   @keyframes da-ghost{0%{opacity:0;transform:translate(0,0)}46.74%{opacity:0;transform:translate(0,0) scale(1)}47.8%{opacity:1;transform:translate(0,0) scale(1.06)}50%{opacity:1;transform:translate(calc(100% + 6px),-43px) scale(1.06)}50.7%{opacity:0;transform:translate(calc(100% + 6px),-43px) scale(1)}100%{opacity:0}}
 }
@@ -808,14 +808,14 @@ html.js .da-ghost{animation:da-ghost 46s cubic-bezier(0.4,0,0.2,1) infinite both
 /* teacher: lesson pages swap */
 @keyframes te-p1{0%{opacity:0;transform:translateY(12px)}2%{opacity:0}3.4%{opacity:1;transform:none}51%{opacity:1;transform:none}52.4%{opacity:0;transform:translateY(-12px)}100%{opacity:0}}
 @keyframes te-p2{0%{opacity:0;transform:translateY(12px)}52%{opacity:0;transform:translateY(12px)}53.4%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .te-p1{animation:te-p1 50s ease-in-out infinite both}
-html.js .te-p2{animation:te-p2 50s ease-in-out infinite both}
+html.js .te-p1{animation:te-p1 25s ease-in-out infinite both}
+html.js .te-p2{animation:te-p2 25s ease-in-out infinite both}
 
 /* teacher: SPEAKING / LISTENING alternation */
 @keyframes te-speak{0%,3%{opacity:0}4%,19%{opacity:1}20%,25%{opacity:0}26%,44%{opacity:1}45%,51%{opacity:0}52%,70%{opacity:1}71%,77%{opacity:0}78%,88%{opacity:1}89%,100%{opacity:0}}
 @keyframes te-listen{0%,19%{opacity:0}20%,25%{opacity:1}26%,45%{opacity:0}46%,50%{opacity:1}51%,71%{opacity:0}72%,76%{opacity:1}77%,89%{opacity:0}90%,94%{opacity:1}95%,100%{opacity:0}}
-html.js .te-sp{animation:te-speak 50s steps(1) infinite}
-html.js .te-li{animation:te-listen 50s steps(1) infinite}
+html.js .te-sp{animation:te-speak 25s steps(1) infinite}
+html.js .te-li{animation:te-listen 25s steps(1) infinite}
 
 
 /* build-time additions */
@@ -905,7 +905,7 @@ html.js .act.on { opacity: 1; visibility: visible; }
 }
 .film-big > span b { font-weight: 400; font-family: var(--serif); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
 .film-langs > span { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 48px); letter-spacing: -0.018em; }
-html.js .film-levels > span { animation: cyc7f 38.5s ease-in-out infinite; }
+html.js .film-levels > span { animation: cyc7f 19.25s ease-in-out infinite; }
 html.js .film-levels > span:nth-child(1) { animation-delay: 0s; }
 html.js .film-levels > span:nth-child(2) { animation-delay: 5.5s; }
 html.js .film-levels > span:nth-child(3) { animation-delay: 11s; }
@@ -914,7 +914,7 @@ html.js .film-levels > span:nth-child(5) { animation-delay: 22s; }
 html.js .film-levels > span:nth-child(6) { animation-delay: 27.5s; }
 html.js .film-levels > span:nth-child(7) { animation-delay: 33s; }
 @keyframes cyc7f { 0% { opacity: 0; transform: translateY(10px); } 1.5% { opacity: 1; transform: none; } 12.8% { opacity: 1; transform: none; } 14.3% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
-html.js .film-langs > span { animation: cyc5f 25s ease-in-out infinite; }
+html.js .film-langs > span { animation: cyc5f 12.5s ease-in-out infinite; }
 html.js .film-langs > span:nth-child(1) { animation-delay: 0s; }
 html.js .film-langs > span:nth-child(2) { animation-delay: 5s; }
 html.js .film-langs > span:nth-child(3) { animation-delay: 10s; }
@@ -943,325 +943,325 @@ html.js .film-langs > span:nth-child(5) { animation-delay: 20s; }
 /* === mode pages: scene timelines (generated) === */
 
 @keyframes tm-r1{0%{opacity:0;transform:translateY(10px)}3%{opacity:0;transform:translateY(10px)}7.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r1{animation:tm-r1 20s ease-in-out infinite both}
+html.js .tm-r1{animation:tm-r1 10s ease-in-out infinite both}
 @keyframes tm-r2{0%{opacity:0;transform:translateY(10px)}15%{opacity:0;transform:translateY(10px)}19.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r2{animation:tm-r2 20s ease-in-out infinite both}
+html.js .tm-r2{animation:tm-r2 10s ease-in-out infinite both}
 @keyframes tm-c1{0%{opacity:0;transform:translateY(10px)}26%{opacity:0;transform:translateY(10px)}30.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-c1{animation:tm-c1 20s ease-in-out infinite both}
+html.js .tm-c1{animation:tm-c1 10s ease-in-out infinite both}
 @keyframes tm-c2{0%{opacity:0;transform:translateY(10px)}30%{opacity:0;transform:translateY(10px)}34.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-c2{animation:tm-c2 20s ease-in-out infinite both}
+html.js .tm-c2{animation:tm-c2 10s ease-in-out infinite both}
 @keyframes tm-c3{0%{opacity:0;transform:translateY(10px)}34%{opacity:0;transform:translateY(10px)}38.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-c3{animation:tm-c3 20s ease-in-out infinite both}
+html.js .tm-c3{animation:tm-c3 10s ease-in-out infinite both}
 @keyframes tm-pp{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}54.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-pp{animation:tm-pp 20s ease-in-out infinite both}
+html.js .tm-pp{animation:tm-pp 10s ease-in-out infinite both}
 @keyframes tm-r3{0%{opacity:0;transform:translateY(10px)}57.5%{opacity:0;transform:translateY(10px)}62%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r3{animation:tm-r3 20s ease-in-out infinite both}
+html.js .tm-r3{animation:tm-r3 10s ease-in-out infinite both}
 @keyframes tp-g1{0%{opacity:0;transform:translateY(10px)}4.167%{opacity:0;transform:translateY(10px)}6.042%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-g1{animation:tp-g1 48s ease-in-out infinite both}
+html.js .tp-g1{animation:tp-g1 24s ease-in-out infinite both}
 @keyframes tp-y1{0%{opacity:0;transform:translateY(10px)}25%{opacity:0;transform:translateY(10px)}26.875%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-y1{animation:tp-y1 48s ease-in-out infinite both}
+html.js .tp-y1{animation:tp-y1 24s ease-in-out infinite both}
 @keyframes tp-g2{0%{opacity:0;transform:translateY(10px)}29.167%{opacity:0;transform:translateY(10px)}31.042%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-g2{animation:tp-g2 48s ease-in-out infinite both}
+html.js .tp-g2{animation:tp-g2 24s ease-in-out infinite both}
 @keyframes tp-dsh{0%{opacity:0;transform:translateY(10px)}31.25%{opacity:0;transform:translateY(10px)}33.125%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-dsh{animation:tp-dsh 48s ease-in-out infinite both}
+html.js .tp-dsh{animation:tp-dsh 24s ease-in-out infinite both}
 @keyframes tp-lb{0%{opacity:0;transform:translateY(10px)}34.375%{opacity:0;transform:translateY(10px)}36.25%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-lb{animation:tp-lb 48s ease-in-out infinite both}
+html.js .tp-lb{animation:tp-lb 24s ease-in-out infinite both}
 @keyframes tp-y2{0%{opacity:0;transform:translateY(10px)}45.833%{opacity:0;transform:translateY(10px)}47.708%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-y2{animation:tp-y2 48s ease-in-out infinite both}
+html.js .tp-y2{animation:tp-y2 24s ease-in-out infinite both}
 @keyframes tp-g3{0%{opacity:0;transform:translateY(10px)}54.167%{opacity:0;transform:translateY(10px)}56.042%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-g3{animation:tp-g3 48s ease-in-out infinite both}
+html.js .tp-g3{animation:tp-g3 24s ease-in-out infinite both}
 @keyframes tp-y3{0%{opacity:0;transform:translateY(10px)}70.833%{opacity:0;transform:translateY(10px)}72.708%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-y3{animation:tp-y3 48s ease-in-out infinite both}
+html.js .tp-y3{animation:tp-y3 24s ease-in-out infinite both}
 @keyframes tp-g4{0%{opacity:0;transform:translateY(10px)}75%{opacity:0;transform:translateY(10px)}76.875%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-g4{animation:tp-g4 48s ease-in-out infinite both}
+html.js .tp-g4{animation:tp-g4 24s ease-in-out infinite both}
 @keyframes tp-y4{0%{opacity:0;transform:translateY(10px)}91.667%{opacity:0;transform:translateY(10px)}93.542%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-y4{animation:tp-y4 48s ease-in-out infinite both}
+html.js .tp-y4{animation:tp-y4 24s ease-in-out infinite both}
 @keyframes th-y1{0%{opacity:0;transform:translateY(10px)}13.636%{opacity:0;transform:translateY(10px)}17.727%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-y1{animation:th-y1 22s ease-in-out infinite both}
+html.js .th-y1{animation:th-y1 11s ease-in-out infinite both}
 @keyframes th-tab{0%{opacity:0;transform:translateY(10px)}22.727%{opacity:0;transform:translateY(10px)}26.818%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-tab{animation:th-tab 22s ease-in-out infinite both}
+html.js .th-tab{animation:th-tab 11s ease-in-out infinite both}
 @keyframes th-g1{0%{opacity:0;transform:translateY(10px)}40.909%{opacity:0;transform:translateY(10px)}45%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-g1{animation:th-g1 22s ease-in-out infinite both}
+html.js .th-g1{animation:th-g1 11s ease-in-out infinite both}
 @keyframes th-h1{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}54.091%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-h1{animation:th-h1 22s ease-in-out infinite both}
+html.js .th-h1{animation:th-h1 11s ease-in-out infinite both}
 @keyframes th-y2{0%{opacity:0;transform:translateY(10px)}59.091%{opacity:0;transform:translateY(10px)}63.182%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-y2{animation:th-y2 22s ease-in-out infinite both}
+html.js .th-y2{animation:th-y2 11s ease-in-out infinite both}
 @keyframes th-g2{0%{opacity:0;transform:translateY(10px)}68.182%{opacity:0;transform:translateY(10px)}72.273%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .th-g2{animation:th-g2 22s ease-in-out infinite both}
+html.js .th-g2{animation:th-g2 11s ease-in-out infinite both}
 @keyframes pg-y1{0%{opacity:0;transform:translateY(10px)}4.762%{opacity:0;transform:translateY(10px)}6.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y1{animation:pg-y1 42s ease-in-out infinite both}
+html.js .pg-y1{animation:pg-y1 21s ease-in-out infinite both}
 @keyframes pg-g1{0%{opacity:0;transform:translateY(10px)}9.524%{opacity:0;transform:translateY(10px)}11.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g1{animation:pg-g1 42s ease-in-out infinite both}
+html.js .pg-g1{animation:pg-g1 21s ease-in-out infinite both}
 @keyframes pg-lb{0%{opacity:0;transform:translateY(10px)}31.429%{opacity:0;transform:translateY(10px)}33.571%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-lb{animation:pg-lb 42s ease-in-out infinite both}
+html.js .pg-lb{animation:pg-lb 21s ease-in-out infinite both}
 @keyframes pg-h1{0%{opacity:0;transform:translateY(10px)}35.714%{opacity:0;transform:translateY(10px)}37.857%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h1{animation:pg-h1 42s ease-in-out infinite both}
+html.js .pg-h1{animation:pg-h1 21s ease-in-out infinite both}
 @keyframes pg-y2{0%{opacity:0;transform:translateY(10px)}42.857%{opacity:0;transform:translateY(10px)}45%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y2{animation:pg-y2 42s ease-in-out infinite both}
+html.js .pg-y2{animation:pg-y2 21s ease-in-out infinite both}
 @keyframes pg-h2{0%{opacity:0;transform:translateY(10px)}47.619%{opacity:0;transform:translateY(10px)}49.762%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h2{animation:pg-h2 42s ease-in-out infinite both}
+html.js .pg-h2{animation:pg-h2 21s ease-in-out infinite both}
 @keyframes pg-h3{0%{opacity:0;transform:translateY(10px)}66.667%{opacity:0;transform:translateY(10px)}68.81%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h3{animation:pg-h3 42s ease-in-out infinite both}
+html.js .pg-h3{animation:pg-h3 21s ease-in-out infinite both}
 @keyframes pg-g2{0%{opacity:0;transform:translateY(10px)}71.429%{opacity:0;transform:translateY(10px)}73.571%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g2{animation:pg-g2 42s ease-in-out infinite both}
+html.js .pg-g2{animation:pg-g2 21s ease-in-out infinite both}
 @keyframes pg-y3{0%{opacity:0;transform:translateY(10px)}79.762%{opacity:0;transform:translateY(10px)}81.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y3{animation:pg-y3 42s ease-in-out infinite both}
+html.js .pg-y3{animation:pg-y3 21s ease-in-out infinite both}
 @keyframes pg-g3{0%{opacity:0;transform:translateY(10px)}84.524%{opacity:0;transform:translateY(10px)}86.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g3{animation:pg-g3 42s ease-in-out infinite both}
+html.js .pg-g3{animation:pg-g3 21s ease-in-out infinite both}
 @keyframes pb-g1{0%{opacity:0;transform:translateY(10px)}5.263%{opacity:0;transform:translateY(10px)}7.632%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g1{animation:pb-g1 38s ease-in-out infinite both}
+html.js .pb-g1{animation:pb-g1 19s ease-in-out infinite both}
 @keyframes pb-h1{0%{opacity:0;transform:translateY(10px)}11.842%{opacity:0;transform:translateY(10px)}14.211%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h1{animation:pb-h1 38s ease-in-out infinite both}
+html.js .pb-h1{animation:pb-h1 19s ease-in-out infinite both}
 @keyframes pb-h2{0%{opacity:0;transform:translateY(10px)}34.211%{opacity:0;transform:translateY(10px)}36.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h2{animation:pb-h2 38s ease-in-out infinite both}
+html.js .pb-h2{animation:pb-h2 19s ease-in-out infinite both}
 @keyframes pb-y1{0%{opacity:0;transform:translateY(10px)}42.105%{opacity:0;transform:translateY(10px)}44.474%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-y1{animation:pb-y1 38s ease-in-out infinite both}
+html.js .pb-y1{animation:pb-y1 19s ease-in-out infinite both}
 @keyframes pb-h3{0%{opacity:0;transform:translateY(10px)}47.368%{opacity:0;transform:translateY(10px)}49.737%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h3{animation:pb-h3 38s ease-in-out infinite both}
+html.js .pb-h3{animation:pb-h3 19s ease-in-out infinite both}
 @keyframes pb-g2{0%{opacity:0;transform:translateY(10px)}65.789%{opacity:0;transform:translateY(10px)}68.158%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g2{animation:pb-g2 38s ease-in-out infinite both}
+html.js .pb-g2{animation:pb-g2 19s ease-in-out infinite both}
 @keyframes pb-y2{0%{opacity:0;transform:translateY(10px)}78.947%{opacity:0;transform:translateY(10px)}81.316%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-y2{animation:pb-y2 38s ease-in-out infinite both}
+html.js .pb-y2{animation:pb-y2 19s ease-in-out infinite both}
 @keyframes pb-g3{0%{opacity:0;transform:translateY(10px)}84.211%{opacity:0;transform:translateY(10px)}86.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g3{animation:pb-g3 38s ease-in-out infinite both}
+html.js .pb-g3{animation:pb-g3 19s ease-in-out infinite both}
 @keyframes pgen-g{0%{opacity:0;transform:translateY(10px)}86.111%{opacity:0;transform:translateY(10px)}88.611%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pgen-g{animation:pgen-g 36s ease-in-out infinite both}
+html.js .pgen-g{animation:pgen-g 18s ease-in-out infinite both}
 @keyframes pw-l1{0%{opacity:0;transform:translateY(10px)}5%{opacity:0;transform:translateY(10px)}8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l1{animation:pw-l1 30s ease-in-out infinite both}
+html.js .pw-l1{animation:pw-l1 15s ease-in-out infinite both}
 @keyframes pw-y1{0%{opacity:0;transform:translateY(10px)}10%{opacity:0;transform:translateY(10px)}13%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y1{animation:pw-y1 30s ease-in-out infinite both}
+html.js .pw-y1{animation:pw-y1 15s ease-in-out infinite both}
 @keyframes pw-g1{0%{opacity:0;transform:translateY(10px)}16.667%{opacity:0;transform:translateY(10px)}19.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g1{animation:pw-g1 30s ease-in-out infinite both}
+html.js .pw-g1{animation:pw-g1 15s ease-in-out infinite both}
 @keyframes pw-h1{0%{opacity:0;transform:translateY(10px)}21.667%{opacity:0;transform:translateY(10px)}24.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-h1{animation:pw-h1 30s ease-in-out infinite both}
+html.js .pw-h1{animation:pw-h1 15s ease-in-out infinite both}
 @keyframes pw-y2{0%{opacity:0;transform:translateY(10px)}33.333%{opacity:0;transform:translateY(10px)}36.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y2{animation:pw-y2 30s ease-in-out infinite both}
+html.js .pw-y2{animation:pw-y2 15s ease-in-out infinite both}
 @keyframes pw-l2{0%{opacity:0;transform:translateY(10px)}45%{opacity:0;transform:translateY(10px)}48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l2{animation:pw-l2 30s ease-in-out infinite both}
+html.js .pw-l2{animation:pw-l2 15s ease-in-out infinite both}
 @keyframes pw-l3{0%{opacity:0;transform:translateY(10px)}51.667%{opacity:0;transform:translateY(10px)}54.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l3{animation:pw-l3 30s ease-in-out infinite both}
+html.js .pw-l3{animation:pw-l3 15s ease-in-out infinite both}
 @keyframes pw-g2{0%{opacity:0;transform:translateY(10px)}56.667%{opacity:0;transform:translateY(10px)}59.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g2{animation:pw-g2 30s ease-in-out infinite both}
+html.js .pw-g2{animation:pw-g2 15s ease-in-out infinite both}
 @keyframes pw-l4{0%{opacity:0;transform:translateY(10px)}58.333%{opacity:0;transform:translateY(10px)}61.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l4{animation:pw-l4 30s ease-in-out infinite both}
+html.js .pw-l4{animation:pw-l4 15s ease-in-out infinite both}
 @keyframes pw-h2{0%{opacity:0;transform:translateY(10px)}61.667%{opacity:0;transform:translateY(10px)}64.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-h2{animation:pw-h2 30s ease-in-out infinite both}
+html.js .pw-h2{animation:pw-h2 15s ease-in-out infinite both}
 @keyframes pw-y3{0%{opacity:0;transform:translateY(10px)}70%{opacity:0;transform:translateY(10px)}73%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y3{animation:pw-y3 30s ease-in-out infinite both}
+html.js .pw-y3{animation:pw-y3 15s ease-in-out infinite both}
 @keyframes pw-g3{0%{opacity:0;transform:translateY(10px)}76.667%{opacity:0;transform:translateY(10px)}79.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g3{animation:pw-g3 30s ease-in-out infinite both}
+html.js .pw-g3{animation:pw-g3 15s ease-in-out infinite both}
 @keyframes ag-y1{0%{opacity:0;transform:translateY(10px)}4.348%{opacity:0;transform:translateY(10px)}6.304%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-y1{animation:ag-y1 46s ease-in-out infinite both}
+html.js .ag-y1{animation:ag-y1 23s ease-in-out infinite both}
 @keyframes ag-g1{0%{opacity:0;transform:translateY(10px)}8.696%{opacity:0;transform:translateY(10px)}10.652%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-g1{animation:ag-g1 46s ease-in-out infinite both}
+html.js .ag-g1{animation:ag-g1 23s ease-in-out infinite both}
 @keyframes ag-tab{0%{opacity:0;transform:translateY(10px)}21.739%{opacity:0;transform:translateY(10px)}23.696%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-tab{animation:ag-tab 46s ease-in-out infinite both}
+html.js .ag-tab{animation:ag-tab 23s ease-in-out infinite both}
 @keyframes ag-g2{0%{opacity:0;transform:translateY(10px)}28.261%{opacity:0;transform:translateY(10px)}30.217%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-g2{animation:ag-g2 46s ease-in-out infinite both}
+html.js .ag-g2{animation:ag-g2 23s ease-in-out infinite both}
 @keyframes ag-h1{0%{opacity:0;transform:translateY(10px)}32.609%{opacity:0;transform:translateY(10px)}34.565%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-h1{animation:ag-h1 46s ease-in-out infinite both}
+html.js .ag-h1{animation:ag-h1 23s ease-in-out infinite both}
 @keyframes ag-h2{0%{opacity:0;transform:translateY(10px)}39.13%{opacity:0;transform:translateY(10px)}41.087%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-h2{animation:ag-h2 46s ease-in-out infinite both}
+html.js .ag-h2{animation:ag-h2 23s ease-in-out infinite both}
 @keyframes ag-h3{0%{opacity:0;transform:translateY(10px)}60.87%{opacity:0;transform:translateY(10px)}62.826%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-h3{animation:ag-h3 46s ease-in-out infinite both}
+html.js .ag-h3{animation:ag-h3 23s ease-in-out infinite both}
 @keyframes ag-g3{0%{opacity:0;transform:translateY(10px)}71.739%{opacity:0;transform:translateY(10px)}73.696%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-g3{animation:ag-g3 46s ease-in-out infinite both}
+html.js .ag-g3{animation:ag-g3 23s ease-in-out infinite both}
 @keyframes ag-y2{0%{opacity:0;transform:translateY(10px)}78.261%{opacity:0;transform:translateY(10px)}80.217%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-y2{animation:ag-y2 46s ease-in-out infinite both}
+html.js .ag-y2{animation:ag-y2 23s ease-in-out infinite both}
 @keyframes ag-g4{0%{opacity:0;transform:translateY(10px)}82.609%{opacity:0;transform:translateY(10px)}84.565%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-g4{animation:ag-g4 46s ease-in-out infinite both}
+html.js .ag-g4{animation:ag-g4 23s ease-in-out infinite both}
 @keyframes ag2-pin{0%{opacity:0;transform:translateY(10px)}2.941%{opacity:0;transform:translateY(10px)}5.588%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-pin{animation:ag2-pin 34s ease-in-out infinite both}
+html.js .ag2-pin{animation:ag2-pin 17s ease-in-out infinite both}
 @keyframes ag2-g1{0%{opacity:0;transform:translateY(10px)}8.824%{opacity:0;transform:translateY(10px)}11.471%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-g1{animation:ag2-g1 34s ease-in-out infinite both}
+html.js .ag2-g1{animation:ag2-g1 17s ease-in-out infinite both}
 @keyframes ag2-lb{0%{opacity:0;transform:translateY(10px)}45.588%{opacity:0;transform:translateY(10px)}48.235%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-lb{animation:ag2-lb 34s ease-in-out infinite both}
+html.js .ag2-lb{animation:ag2-lb 17s ease-in-out infinite both}
 @keyframes ag2-h1{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}52.647%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-h1{animation:ag2-h1 34s ease-in-out infinite both}
+html.js .ag2-h1{animation:ag2-h1 17s ease-in-out infinite both}
 @keyframes ag2-h2{0%{opacity:0;transform:translateY(10px)}70.588%{opacity:0;transform:translateY(10px)}73.235%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-h2{animation:ag2-h2 34s ease-in-out infinite both}
+html.js .ag2-h2{animation:ag2-h2 17s ease-in-out infinite both}
 @keyframes ag2-y1{0%{opacity:0;transform:translateY(10px)}79.412%{opacity:0;transform:translateY(10px)}82.059%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-y1{animation:ag2-y1 34s ease-in-out infinite both}
+html.js .ag2-y1{animation:ag2-y1 17s ease-in-out infinite both}
 @keyframes ag2-g2{0%{opacity:0;transform:translateY(10px)}85.294%{opacity:0;transform:translateY(10px)}87.941%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-g2{animation:ag2-g2 34s ease-in-out infinite both}
+html.js .ag2-g2{animation:ag2-g2 17s ease-in-out infinite both}
 @keyframes ag3-pin{0%{opacity:0;transform:translateY(10px)}3.333%{opacity:0;transform:translateY(10px)}6.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-pin{animation:ag3-pin 30s ease-in-out infinite both}
+html.js .ag3-pin{animation:ag3-pin 15s ease-in-out infinite both}
 @keyframes ag3-g1{0%{opacity:0;transform:translateY(10px)}10%{opacity:0;transform:translateY(10px)}13%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-g1{animation:ag3-g1 30s ease-in-out infinite both}
+html.js .ag3-g1{animation:ag3-g1 15s ease-in-out infinite both}
 @keyframes ag3-l1{0%{opacity:0;transform:translateY(10px)}16.667%{opacity:0;transform:translateY(10px)}19.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l1{animation:ag3-l1 30s ease-in-out infinite both}
+html.js .ag3-l1{animation:ag3-l1 15s ease-in-out infinite both}
 @keyframes ag3-h1{0%{opacity:0;transform:translateY(10px)}33.333%{opacity:0;transform:translateY(10px)}36.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-h1{animation:ag3-h1 30s ease-in-out infinite both}
+html.js .ag3-h1{animation:ag3-h1 15s ease-in-out infinite both}
 @keyframes ag3-l2{0%{opacity:0;transform:translateY(10px)}40%{opacity:0;transform:translateY(10px)}43%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l2{animation:ag3-l2 30s ease-in-out infinite both}
+html.js .ag3-l2{animation:ag3-l2 15s ease-in-out infinite both}
 @keyframes ag3-l3{0%{opacity:0;transform:translateY(10px)}53.333%{opacity:0;transform:translateY(10px)}56.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l3{animation:ag3-l3 30s ease-in-out infinite both}
+html.js .ag3-l3{animation:ag3-l3 15s ease-in-out infinite both}
 @keyframes ag3-g2{0%{opacity:0;transform:translateY(10px)}56.667%{opacity:0;transform:translateY(10px)}59.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-g2{animation:ag3-g2 30s ease-in-out infinite both}
+html.js .ag3-g2{animation:ag3-g2 15s ease-in-out infinite both}
 @keyframes ag3-h2{0%{opacity:0;transform:translateY(10px)}63.333%{opacity:0;transform:translateY(10px)}66.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-h2{animation:ag3-h2 30s ease-in-out infinite both}
+html.js .ag3-h2{animation:ag3-h2 15s ease-in-out infinite both}
 @keyframes ag3-y1{0%{opacity:0;transform:translateY(10px)}73.333%{opacity:0;transform:translateY(10px)}76.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-y1{animation:ag3-y1 30s ease-in-out infinite both}
+html.js .ag3-y1{animation:ag3-y1 15s ease-in-out infinite both}
 @keyframes ag3-g3{0%{opacity:0;transform:translateY(10px)}80%{opacity:0;transform:translateY(10px)}83%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-g3{animation:ag3-g3 30s ease-in-out infinite both}
+html.js .ag3-g3{animation:ag3-g3 15s ease-in-out infinite both}
 @keyframes ps-f{0%{opacity:0;transform:translateY(10px)}4.167%{opacity:0;transform:translateY(10px)}11.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ps-f{animation:ps-f 12s ease-in-out infinite both}
+html.js .ps-f{animation:ps-f 6s ease-in-out infinite both}
 @keyframes ps-done{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}57.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ps-done{animation:ps-done 12s ease-in-out infinite both}
+html.js .ps-done{animation:ps-done 6s ease-in-out infinite both}
 @keyframes ps-note{0%{opacity:0;transform:translateY(10px)}66.667%{opacity:0;transform:translateY(10px)}74.167%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ps-note{animation:ps-note 12s ease-in-out infinite both}
+html.js .ps-note{animation:ps-note 6s ease-in-out infinite both}
 @keyframes pl-cap{0%{opacity:0;transform:translateY(10px)}41.667%{opacity:0;transform:translateY(10px)}49.167%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pl-cap{animation:pl-cap 12s ease-in-out infinite both}
+html.js .pl-cap{animation:pl-cap 6s ease-in-out infinite both}
 @keyframes agt-q1{0%{opacity:0;transform:translateY(10px)}5%{opacity:0;transform:translateY(10px)}14%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .agt-q1{animation:agt-q1 10s ease-in-out infinite both}
+html.js .agt-q1{animation:agt-q1 5s ease-in-out infinite both}
 @keyframes agt-q2{0%{opacity:0;transform:translateY(10px)}35%{opacity:0;transform:translateY(10px)}44%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .agt-q2{animation:agt-q2 10s ease-in-out infinite both}
+html.js .agt-q2{animation:agt-q2 5s ease-in-out infinite both}
 @keyframes agt-q3{0%{opacity:0;transform:translateY(10px)}65%{opacity:0;transform:translateY(10px)}74%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .agt-q3{animation:agt-q3 10s ease-in-out infinite both}
+html.js .agt-q3{animation:agt-q3 5s ease-in-out infinite both}
 @keyframes agp-cap{0%{opacity:0;transform:translateY(10px)}20%{opacity:0;transform:translateY(10px)}29%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .agp-cap{animation:agp-cap 10s ease-in-out infinite both}
+html.js .agp-cap{animation:agp-cap 5s ease-in-out infinite both}
 @keyframes bl-1{0%{opacity:0;transform:translateY(10px)}2%{opacity:0;transform:translateY(10px)}5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-1{animation:bl-1 30s ease-in-out infinite both}
+html.js .bl-1{animation:bl-1 15s ease-in-out infinite both}
 @keyframes bl-2{0%{opacity:0;transform:translateY(10px)}8%{opacity:0;transform:translateY(10px)}11%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-2{animation:bl-2 30s ease-in-out infinite both}
+html.js .bl-2{animation:bl-2 15s ease-in-out infinite both}
 @keyframes bl-3{0%{opacity:0;transform:translateY(10px)}15.333%{opacity:0;transform:translateY(10px)}18.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-3{animation:bl-3 30s ease-in-out infinite both}
+html.js .bl-3{animation:bl-3 15s ease-in-out infinite both}
 @keyframes bl-4{0%{opacity:0;transform:translateY(10px)}23.333%{opacity:0;transform:translateY(10px)}26.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-4{animation:bl-4 30s ease-in-out infinite both}
+html.js .bl-4{animation:bl-4 15s ease-in-out infinite both}
 @keyframes bl-5{0%{opacity:0;transform:translateY(10px)}31.333%{opacity:0;transform:translateY(10px)}34.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-5{animation:bl-5 30s ease-in-out infinite both}
+html.js .bl-5{animation:bl-5 15s ease-in-out infinite both}
 @keyframes bl-6{0%{opacity:0;transform:translateY(10px)}39.333%{opacity:0;transform:translateY(10px)}42.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-6{animation:bl-6 30s ease-in-out infinite both}
+html.js .bl-6{animation:bl-6 15s ease-in-out infinite both}
 @keyframes bl-7{0%{opacity:0;transform:translateY(10px)}47.333%{opacity:0;transform:translateY(10px)}50.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-7{animation:bl-7 30s ease-in-out infinite both}
+html.js .bl-7{animation:bl-7 15s ease-in-out infinite both}
 @keyframes bl-8{0%{opacity:0;transform:translateY(10px)}55.333%{opacity:0;transform:translateY(10px)}58.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-8{animation:bl-8 30s ease-in-out infinite both}
+html.js .bl-8{animation:bl-8 15s ease-in-out infinite both}
 @keyframes bl-9{0%{opacity:0;transform:translateY(10px)}63.333%{opacity:0;transform:translateY(10px)}66.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-9{animation:bl-9 30s ease-in-out infinite both}
+html.js .bl-9{animation:bl-9 15s ease-in-out infinite both}
 @keyframes bl-10{0%{opacity:0;transform:translateY(10px)}71.333%{opacity:0;transform:translateY(10px)}74.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-10{animation:bl-10 30s ease-in-out infinite both}
+html.js .bl-10{animation:bl-10 15s ease-in-out infinite both}
 @keyframes bl-11{0%{opacity:0;transform:translateY(10px)}79.333%{opacity:0;transform:translateY(10px)}82.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-11{animation:bl-11 30s ease-in-out infinite both}
+html.js .bl-11{animation:bl-11 15s ease-in-out infinite both}
 @keyframes bl-12{0%{opacity:0;transform:translateY(10px)}87.333%{opacity:0;transform:translateY(10px)}90.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .bl-12{animation:bl-12 30s ease-in-out infinite both}
-@keyframes tp-curve{0%{stroke-dasharray:320;stroke-dashoffset:320}8.333%{stroke-dasharray:320;stroke-dashoffset:320}18.75%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .tp-curve{animation:tp-curve 48s linear infinite both}
-@keyframes pg-d1{0%{stroke-dasharray:240;stroke-dashoffset:240}19.048%{stroke-dasharray:240;stroke-dashoffset:240}23.81%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pg-d1{animation:pg-d1 42s linear infinite both}
-@keyframes pg-d2{0%{stroke-dasharray:240;stroke-dashoffset:240}22.619%{stroke-dasharray:240;stroke-dashoffset:240}27.381%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pg-d2{animation:pg-d2 42s linear infinite both}
-@keyframes pg-d3{0%{stroke-dasharray:240;stroke-dashoffset:240}26.19%{stroke-dasharray:240;stroke-dashoffset:240}32.143%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pg-d3{animation:pg-d3 42s linear infinite both}
-@keyframes pg-i1{0%{stroke-dasharray:240;stroke-dashoffset:240}54.762%{stroke-dasharray:240;stroke-dashoffset:240}61.905%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pg-i1{animation:pg-i1 42s linear infinite both}
-@keyframes pg-i2{0%{stroke-dasharray:240;stroke-dashoffset:240}63.095%{stroke-dasharray:240;stroke-dashoffset:240}66.667%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pg-i2{animation:pg-i2 42s linear infinite both}
-@keyframes pb-i1{0%{stroke-dasharray:240;stroke-dashoffset:240}21.053%{stroke-dasharray:240;stroke-dashoffset:240}26.316%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pb-i1{animation:pb-i1 38s linear infinite both}
-@keyframes pb-i2{0%{stroke-dasharray:240;stroke-dashoffset:240}28.947%{stroke-dasharray:240;stroke-dashoffset:240}34.211%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pb-i2{animation:pb-i2 38s linear infinite both}
-@keyframes pb-i3{0%{stroke-dasharray:240;stroke-dashoffset:240}57.895%{stroke-dasharray:240;stroke-dashoffset:240}63.158%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pb-i3{animation:pb-i3 38s linear infinite both}
-@keyframes pw-i2{0%{stroke-dasharray:240;stroke-dashoffset:240}36.667%{stroke-dasharray:240;stroke-dashoffset:240}42%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .pw-i2{animation:pw-i2 30s linear infinite both}
-@keyframes ag-i1{0%{stroke-dasharray:240;stroke-dashoffset:240}45.652%{stroke-dasharray:240;stroke-dashoffset:240}56.522%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .ag-i1{animation:ag-i1 46s linear infinite both}
-@keyframes ag-i2{0%{stroke-dasharray:240;stroke-dashoffset:240}67.391%{stroke-dasharray:240;stroke-dashoffset:240}71.739%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .ag-i2{animation:ag-i2 46s linear infinite both}
-@keyframes ag2-d1{0%{stroke-dasharray:320;stroke-dashoffset:320}11.765%{stroke-dasharray:320;stroke-dashoffset:320}20.588%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d1{animation:ag2-d1 34s linear infinite both}
-@keyframes ag2-d6{0%{stroke-dasharray:320;stroke-dashoffset:320}20.588%{stroke-dasharray:320;stroke-dashoffset:320}23.529%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d6{animation:ag2-d6 34s linear infinite both}
-@keyframes ag2-d2{0%{stroke-dasharray:320;stroke-dashoffset:320}23.529%{stroke-dasharray:320;stroke-dashoffset:320}29.412%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d2{animation:ag2-d2 34s linear infinite both}
-@keyframes ag2-d3{0%{stroke-dasharray:320;stroke-dashoffset:320}30.882%{stroke-dasharray:320;stroke-dashoffset:320}35.294%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d3{animation:ag2-d3 34s linear infinite both}
-@keyframes ag2-d4{0%{stroke-dasharray:320;stroke-dashoffset:320}35.294%{stroke-dasharray:320;stroke-dashoffset:320}39.706%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d4{animation:ag2-d4 34s linear infinite both}
-@keyframes ag2-d5{0%{stroke-dasharray:320;stroke-dashoffset:320}39.706%{stroke-dasharray:320;stroke-dashoffset:320}44.118%{stroke-dasharray:320;stroke-dashoffset:0}100%{stroke-dasharray:320;stroke-dashoffset:0}}
-html.js .ag2-d5{animation:ag2-d5 34s linear infinite both}
-@keyframes ag2-i1{0%{stroke-dasharray:240;stroke-dashoffset:240}55.882%{stroke-dasharray:240;stroke-dashoffset:240}67.647%{stroke-dasharray:240;stroke-dashoffset:0}100%{stroke-dasharray:240;stroke-dashoffset:0}}
-html.js .ag2-i1{animation:ag2-i1 34s linear infinite both}
+html.js .bl-12{animation:bl-12 15s ease-in-out infinite both}
+@keyframes tp-curve{0%{stroke-dasharray:320 800;stroke-dashoffset:322}8.333%{stroke-dasharray:320 800;stroke-dashoffset:322}18.75%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .tp-curve{animation:tp-curve 24s linear infinite both}
+@keyframes pg-d1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}19.048%{stroke-dasharray:240 600;stroke-dashoffset:242}23.81%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pg-d1{animation:pg-d1 21s linear infinite both}
+@keyframes pg-d2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}22.619%{stroke-dasharray:240 600;stroke-dashoffset:242}27.381%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pg-d2{animation:pg-d2 21s linear infinite both}
+@keyframes pg-d3{0%{stroke-dasharray:240 600;stroke-dashoffset:242}26.19%{stroke-dasharray:240 600;stroke-dashoffset:242}32.143%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pg-d3{animation:pg-d3 21s linear infinite both}
+@keyframes pg-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}54.762%{stroke-dasharray:240 600;stroke-dashoffset:242}61.905%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pg-i1{animation:pg-i1 21s linear infinite both}
+@keyframes pg-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}63.095%{stroke-dasharray:240 600;stroke-dashoffset:242}66.667%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pg-i2{animation:pg-i2 21s linear infinite both}
+@keyframes pb-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}21.053%{stroke-dasharray:240 600;stroke-dashoffset:242}26.316%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pb-i1{animation:pb-i1 19s linear infinite both}
+@keyframes pb-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}28.947%{stroke-dasharray:240 600;stroke-dashoffset:242}34.211%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pb-i2{animation:pb-i2 19s linear infinite both}
+@keyframes pb-i3{0%{stroke-dasharray:240 600;stroke-dashoffset:242}57.895%{stroke-dasharray:240 600;stroke-dashoffset:242}63.158%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pb-i3{animation:pb-i3 19s linear infinite both}
+@keyframes pw-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}36.667%{stroke-dasharray:240 600;stroke-dashoffset:242}42%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .pw-i2{animation:pw-i2 15s linear infinite both}
+@keyframes ag-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}45.652%{stroke-dasharray:240 600;stroke-dashoffset:242}56.522%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .ag-i1{animation:ag-i1 23s linear infinite both}
+@keyframes ag-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}67.391%{stroke-dasharray:240 600;stroke-dashoffset:242}71.739%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .ag-i2{animation:ag-i2 23s linear infinite both}
+@keyframes ag2-d1{0%{stroke-dasharray:320 800;stroke-dashoffset:322}11.765%{stroke-dasharray:320 800;stroke-dashoffset:322}20.588%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d1{animation:ag2-d1 17s linear infinite both}
+@keyframes ag2-d6{0%{stroke-dasharray:320 800;stroke-dashoffset:322}20.588%{stroke-dasharray:320 800;stroke-dashoffset:322}23.529%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d6{animation:ag2-d6 17s linear infinite both}
+@keyframes ag2-d2{0%{stroke-dasharray:320 800;stroke-dashoffset:322}23.529%{stroke-dasharray:320 800;stroke-dashoffset:322}29.412%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d2{animation:ag2-d2 17s linear infinite both}
+@keyframes ag2-d3{0%{stroke-dasharray:320 800;stroke-dashoffset:322}30.882%{stroke-dasharray:320 800;stroke-dashoffset:322}35.294%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d3{animation:ag2-d3 17s linear infinite both}
+@keyframes ag2-d4{0%{stroke-dasharray:320 800;stroke-dashoffset:322}35.294%{stroke-dasharray:320 800;stroke-dashoffset:322}39.706%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d4{animation:ag2-d4 17s linear infinite both}
+@keyframes ag2-d5{0%{stroke-dasharray:320 800;stroke-dashoffset:322}39.706%{stroke-dasharray:320 800;stroke-dashoffset:322}44.118%{stroke-dasharray:320 800;stroke-dashoffset:0}100%{stroke-dasharray:320 800;stroke-dashoffset:0}}
+html.js .ag2-d5{animation:ag2-d5 17s linear infinite both}
+@keyframes ag2-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}55.882%{stroke-dasharray:240 600;stroke-dashoffset:242}67.647%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
+html.js .ag2-i1{animation:ag2-i1 17s linear infinite both}
 @keyframes pg-sk{0%{opacity:0;transform:translateY(8px)}10.714%{opacity:0;transform:translateY(8px)}12.381%{opacity:1;transform:none}19.048%{opacity:1;transform:none}20.714%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pg-sk{animation:pg-sk 42s ease-in-out infinite both}
+html.js .pg-sk{animation:pg-sk 21s ease-in-out infinite both}
 @keyframes pgen-p1{0%{opacity:0;transform:translateY(8px)}2.778%{opacity:0;transform:translateY(8px)}4.722%{opacity:1;transform:none}19.444%{opacity:1;transform:none}21.389%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p1{animation:pgen-p1 36s ease-in-out infinite both}
+html.js .pgen-p1{animation:pgen-p1 18s ease-in-out infinite both}
 @keyframes pgen-p2{0%{opacity:0;transform:translateY(8px)}19.444%{opacity:0;transform:translateY(8px)}21.389%{opacity:1;transform:none}38.889%{opacity:1;transform:none}40.833%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p2{animation:pgen-p2 36s ease-in-out infinite both}
+html.js .pgen-p2{animation:pgen-p2 18s ease-in-out infinite both}
 @keyframes pgen-p3{0%{opacity:0;transform:translateY(8px)}38.889%{opacity:0;transform:translateY(8px)}40.833%{opacity:1;transform:none}58.333%{opacity:1;transform:none}60.278%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p3{animation:pgen-p3 36s ease-in-out infinite both}
+html.js .pgen-p3{animation:pgen-p3 18s ease-in-out infinite both}
 @keyframes pgen-p4{0%{opacity:0;transform:translateY(8px)}58.333%{opacity:0;transform:translateY(8px)}60.278%{opacity:1;transform:none}77.778%{opacity:1;transform:none}79.722%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p4{animation:pgen-p4 36s ease-in-out infinite both}
+html.js .pgen-p4{animation:pgen-p4 18s ease-in-out infinite both}
 @keyframes pgen-c1{0%{opacity:0;transform:translateY(8px)}13.889%{opacity:0;transform:translateY(8px)}15.833%{opacity:1;transform:none}20.833%{opacity:1;transform:none}22.778%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c1{animation:pgen-c1 36s ease-in-out infinite both}
+html.js .pgen-c1{animation:pgen-c1 18s ease-in-out infinite both}
 @keyframes pgen-c2{0%{opacity:0;transform:translateY(8px)}33.333%{opacity:0;transform:translateY(8px)}35.278%{opacity:1;transform:none}40.278%{opacity:1;transform:none}42.222%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c2{animation:pgen-c2 36s ease-in-out infinite both}
+html.js .pgen-c2{animation:pgen-c2 18s ease-in-out infinite both}
 @keyframes pgen-c3{0%{opacity:0;transform:translateY(8px)}52.778%{opacity:0;transform:translateY(8px)}54.722%{opacity:1;transform:none}59.722%{opacity:1;transform:none}61.667%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c3{animation:pgen-c3 36s ease-in-out infinite both}
+html.js .pgen-c3{animation:pgen-c3 18s ease-in-out infinite both}
 @keyframes pgen-c4{0%{opacity:0;transform:translateY(8px)}72.222%{opacity:0;transform:translateY(8px)}74.167%{opacity:1;transform:none}79.167%{opacity:1;transform:none}81.111%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c4{animation:pgen-c4 36s ease-in-out infinite both}
+html.js .pgen-c4{animation:pgen-c4 18s ease-in-out infinite both}
 @keyframes tl-s1{0%{opacity:0;transform:translateY(8px)}0%{opacity:0;transform:translateY(8px)}1.75%{opacity:1;transform:none}18%{opacity:1;transform:none}19.75%{opacity:0;transform:none}100%{opacity:0}}
-html.js .tl-s1{animation:tl-s1 40s ease-in-out infinite both}
+html.js .tl-s1{animation:tl-s1 20s ease-in-out infinite both}
 @keyframes tl-s2{0%{opacity:0;transform:translateY(8px)}20%{opacity:0;transform:translateY(8px)}21.75%{opacity:1;transform:none}38%{opacity:1;transform:none}39.75%{opacity:0;transform:none}100%{opacity:0}}
-html.js .tl-s2{animation:tl-s2 40s ease-in-out infinite both}
+html.js .tl-s2{animation:tl-s2 20s ease-in-out infinite both}
 @keyframes tl-s3{0%{opacity:0;transform:translateY(8px)}40%{opacity:0;transform:translateY(8px)}41.75%{opacity:1;transform:none}58%{opacity:1;transform:none}59.75%{opacity:0;transform:none}100%{opacity:0}}
-html.js .tl-s3{animation:tl-s3 40s ease-in-out infinite both}
+html.js .tl-s3{animation:tl-s3 20s ease-in-out infinite both}
 @keyframes tl-s4{0%{opacity:0;transform:translateY(8px)}60%{opacity:0;transform:translateY(8px)}61.75%{opacity:1;transform:none}78%{opacity:1;transform:none}79.75%{opacity:0;transform:none}100%{opacity:0}}
-html.js .tl-s4{animation:tl-s4 40s ease-in-out infinite both}
+html.js .tl-s4{animation:tl-s4 20s ease-in-out infinite both}
 @keyframes tl-s5{0%{opacity:0;transform:translateY(8px)}80%{opacity:0;transform:translateY(8px)}81.75%{opacity:1;transform:none}98%{opacity:1;transform:none}99.75%{opacity:0;transform:none}100%{opacity:0}}
-html.js .tl-s5{animation:tl-s5 40s ease-in-out infinite both}
+html.js .tl-s5{animation:tl-s5 20s ease-in-out infinite both}
 @keyframes pv-s1{0%{opacity:0;transform:translateY(8px)}0%{opacity:0;transform:translateY(8px)}1.458%{opacity:1;transform:none}15%{opacity:1;transform:none}16.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s1{animation:pv-s1 48s ease-in-out infinite both}
+html.js .pv-s1{animation:pv-s1 24s ease-in-out infinite both}
 @keyframes pv-h1{0%{opacity:0;transform:translateY(8px)}5.417%{opacity:0;transform:translateY(8px)}6.875%{opacity:1;transform:none}15%{opacity:1;transform:none}16.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h1{animation:pv-h1 48s ease-in-out infinite both}
+html.js .pv-h1{animation:pv-h1 24s ease-in-out infinite both}
 @keyframes pv-s2{0%{opacity:0;transform:translateY(8px)}16.667%{opacity:0;transform:translateY(8px)}18.125%{opacity:1;transform:none}31.667%{opacity:1;transform:none}33.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s2{animation:pv-s2 48s ease-in-out infinite both}
+html.js .pv-s2{animation:pv-s2 24s ease-in-out infinite both}
 @keyframes pv-h2{0%{opacity:0;transform:translateY(8px)}22.083%{opacity:0;transform:translateY(8px)}23.542%{opacity:1;transform:none}31.667%{opacity:1;transform:none}33.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h2{animation:pv-h2 48s ease-in-out infinite both}
+html.js .pv-h2{animation:pv-h2 24s ease-in-out infinite both}
 @keyframes pv-s3{0%{opacity:0;transform:translateY(8px)}33.333%{opacity:0;transform:translateY(8px)}34.792%{opacity:1;transform:none}48.333%{opacity:1;transform:none}49.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s3{animation:pv-s3 48s ease-in-out infinite both}
+html.js .pv-s3{animation:pv-s3 24s ease-in-out infinite both}
 @keyframes pv-h3{0%{opacity:0;transform:translateY(8px)}38.75%{opacity:0;transform:translateY(8px)}40.208%{opacity:1;transform:none}48.333%{opacity:1;transform:none}49.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h3{animation:pv-h3 48s ease-in-out infinite both}
+html.js .pv-h3{animation:pv-h3 24s ease-in-out infinite both}
 @keyframes pv-s4{0%{opacity:0;transform:translateY(8px)}50%{opacity:0;transform:translateY(8px)}51.458%{opacity:1;transform:none}65%{opacity:1;transform:none}66.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s4{animation:pv-s4 48s ease-in-out infinite both}
+html.js .pv-s4{animation:pv-s4 24s ease-in-out infinite both}
 @keyframes pv-h4{0%{opacity:0;transform:translateY(8px)}55.417%{opacity:0;transform:translateY(8px)}56.875%{opacity:1;transform:none}65%{opacity:1;transform:none}66.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h4{animation:pv-h4 48s ease-in-out infinite both}
+html.js .pv-h4{animation:pv-h4 24s ease-in-out infinite both}
 @keyframes pv-s5{0%{opacity:0;transform:translateY(8px)}66.667%{opacity:0;transform:translateY(8px)}68.125%{opacity:1;transform:none}81.667%{opacity:1;transform:none}83.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s5{animation:pv-s5 48s ease-in-out infinite both}
+html.js .pv-s5{animation:pv-s5 24s ease-in-out infinite both}
 @keyframes pv-h5{0%{opacity:0;transform:translateY(8px)}72.083%{opacity:0;transform:translateY(8px)}73.542%{opacity:1;transform:none}81.667%{opacity:1;transform:none}83.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h5{animation:pv-h5 48s ease-in-out infinite both}
+html.js .pv-h5{animation:pv-h5 24s ease-in-out infinite both}
 @keyframes pv-s6{0%{opacity:0;transform:translateY(8px)}83.333%{opacity:0;transform:translateY(8px)}84.792%{opacity:1;transform:none}98.333%{opacity:1;transform:none}99.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s6{animation:pv-s6 48s ease-in-out infinite both}
+html.js .pv-s6{animation:pv-s6 24s ease-in-out infinite both}
 @keyframes pv-h6{0%{opacity:0;transform:translateY(8px)}88.75%{opacity:0;transform:translateY(8px)}90.208%{opacity:1;transform:none}98.333%{opacity:1;transform:none}99.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h6{animation:pv-h6 48s ease-in-out infinite both}
+html.js .pv-h6{animation:pv-h6 24s ease-in-out infinite both}
 @keyframes pgen-p5{0%{opacity:0;transform:translateY(10px)}77.778%{opacity:0;transform:translateY(10px)}80.278%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pgen-p5{animation:pgen-p5 36s ease-in-out infinite both}
+html.js .pgen-p5{animation:pgen-p5 18s ease-in-out infinite both}
 @keyframes fade-tm{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-tm{animation:fade-tm 20s linear infinite}
+html.js .fade-tm{animation:fade-tm 10s linear infinite}
 @keyframes fade-tp{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-tp{animation:fade-tp 48s linear infinite}
+html.js .fade-tp{animation:fade-tp 24s linear infinite}
 @keyframes fade-th{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-th{animation:fade-th 22s linear infinite}
+html.js .fade-th{animation:fade-th 11s linear infinite}
 @keyframes fade-pg{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pg{animation:fade-pg 42s linear infinite}
+html.js .fade-pg{animation:fade-pg 21s linear infinite}
 @keyframes fade-pb{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pb{animation:fade-pb 38s linear infinite}
+html.js .fade-pb{animation:fade-pb 19s linear infinite}
 @keyframes fade-pgen{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pgen{animation:fade-pgen 36s linear infinite}
+html.js .fade-pgen{animation:fade-pgen 18s linear infinite}
 @keyframes fade-pw{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pw{animation:fade-pw 30s linear infinite}
+html.js .fade-pw{animation:fade-pw 15s linear infinite}
 @keyframes fade-ag{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-ag{animation:fade-ag 46s linear infinite}
+html.js .fade-ag{animation:fade-ag 23s linear infinite}
 @keyframes fade-ag2{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-ag2{animation:fade-ag2 34s linear infinite}
+html.js .fade-ag2{animation:fade-ag2 17s linear infinite}
 @keyframes fade-ag3{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-ag3{animation:fade-ag3 30s linear infinite}
+html.js .fade-ag3{animation:fade-ag3 15s linear infinite}
 @keyframes fade-tl{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-tl{animation:fade-tl 40s linear infinite}
+html.js .fade-tl{animation:fade-tl 20s linear infinite}
 @keyframes fade-pv{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pv{animation:fade-pv 48s linear infinite}
+html.js .fade-pv{animation:fade-pv 24s linear infinite}
 @keyframes fade-bl{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-bl{animation:fade-bl 30s linear infinite}
+html.js .fade-bl{animation:fade-bl 15s linear infinite}
 
 /* === mode pages: structure ============================================== */
 
@@ -1278,17 +1278,17 @@ html.js .fade-bl{animation:fade-bl 30s linear infinite}
 .bankcard .meta { color: var(--faint); font-size: 11px; }
 .bankcard .pp { display: inline-block; margin-top: 7px; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--warm-line); background: var(--warm-soft); color: var(--warm-ink); border-radius: 999px; padding: 2px 8px; }
 @keyframes tm-win{0%,44%{border-color:var(--rule);background:#fff}48%,100%{border-color:var(--ink);background:var(--surface)}}
-html.js .tm-winner{animation:tm-win 20s ease-in-out infinite both}
+html.js .tm-winner{animation:tm-win 10s ease-in-out infinite both}
 
 /* lesson-page swaps + narrating/paused status */
 @keyframes tp-p1{0%{opacity:0;transform:translateY(12px)}1%{opacity:0}2.5%{opacity:1;transform:none}48%{opacity:1;transform:none}50%{opacity:0;transform:translateY(-12px)}100%{opacity:0}}
 @keyframes tp-p2{0%{opacity:0;transform:translateY(12px)}50%{opacity:0;transform:translateY(12px)}53%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tp-p1{animation:tp-p1 48s ease-in-out infinite both}
-html.js .tp-p2{animation:tp-p2 48s ease-in-out infinite both}
+html.js .tp-p1{animation:tp-p1 24s ease-in-out infinite both}
+html.js .tp-p2{animation:tp-p2 24s ease-in-out infinite both}
 @keyframes tp-sn{0%,2%{opacity:0}3%,26%{opacity:1}27%,49%{opacity:0}50%,95%{opacity:1}96%,100%{opacity:0}}
 @keyframes tp-sp{0%,26%{opacity:0}27%,49%{opacity:1}50%,100%{opacity:0}}
-html.js .tp-sn{animation:tp-sn 48s steps(1) infinite}
-html.js .tp-sp{animation:tp-sp 48s steps(1) infinite}
+html.js .tp-sn{animation:tp-sn 24s steps(1) infinite}
+html.js .tp-sp{animation:tp-sp 24s steps(1) infinite}
 
 /* two-state boards (handoff, ask-gausyn): both states share the same box */
 .boardarea.swap { min-height: clamp(320px, 34vw, 430px); }
@@ -1301,12 +1301,12 @@ html.js .tp-sp{animation:tp-sp 48s steps(1) infinite}
 @media (min-width: 761px) {
   @keyframes th-les{0%,26%{opacity:1}31%,100%{opacity:0}}
   @keyframes th-pr{0%,28%{opacity:0}33%,100%{opacity:1}}
-  html.js .th-les{animation:th-les 22s ease-in-out infinite both}
-  html.js .th-pr{animation:th-pr 22s ease-in-out infinite both}
+  html.js .th-les{animation:th-les 11s ease-in-out infinite both}
+  html.js .th-pr{animation:th-pr 11s ease-in-out infinite both}
   @keyframes ag-src{0%,22%{opacity:1}26.5%,100%{opacity:0}}
   @keyframes ag-ws{0%,24%{opacity:0}28.5%,100%{opacity:1}}
-  html.js .ag-src{animation:ag-src 46s ease-in-out infinite both}
-  html.js .ag-ws{animation:ag-ws 46s ease-in-out infinite both}
+  html.js .ag-src{animation:ag-src 23s ease-in-out infinite both}
+  html.js .ag-ws{animation:ag-ws 23s ease-in-out infinite both}
 }
 @media (max-width: 760px) {
   .boardarea.swap { min-height: 0; }
@@ -1314,15 +1314,15 @@ html.js .tp-sp{animation:tp-sp 48s steps(1) infinite}
   .bstate + .bstate { border-top: 1px dashed var(--rule); }
 }
 @keyframes th-tools{0%,33%{opacity:0;transform:translateX(-14px)}38%,100%{opacity:1;transform:none}}
-html.js .th-toolsin{animation:th-tools 22s ease-in-out infinite both}
+html.js .th-toolsin{animation:th-tools 11s ease-in-out infinite both}
 @keyframes th-pa{0%,26%{opacity:1}27%,100%{opacity:0}}
 @keyframes th-pb{0%,26%{opacity:0}27%,100%{opacity:1}}
-html.js .th-pa{animation:th-pa 22s steps(1) infinite}
-html.js .th-pb{animation:th-pb 22s steps(1) infinite}
+html.js .th-pa{animation:th-pa 11s steps(1) infinite}
+html.js .th-pb{animation:th-pb 11s steps(1) infinite}
 
 /* the ask-gausyn crop marquee drags itself around the problem */
 @keyframes ag-cropin{0%,12%{opacity:0;transform:scale(0.18,0.2)}14%{opacity:1}19.6%{transform:scale(1,1)}100%{opacity:1;transform:none}}
-html.js .ag-cropin{animation:ag-cropin 46s cubic-bezier(0.3,0,0.2,1) infinite both;transform-origin:left top}
+html.js .ag-cropin{animation:ag-cropin 23s cubic-bezier(0.3,0,0.2,1) infinite both;transform-origin:left top}
 
 /* "Sketching..." placeholder while a diagram is generated */
 .sketch { position: absolute; border: 1px dashed var(--rule); border-radius: 8px; background: rgba(255,255,255,0.92); padding: 9px 14px; font-size: 11px; letter-spacing: 0.06em; color: var(--faint); display: inline-flex; align-items: center; gap: 9px; }
@@ -1333,7 +1333,7 @@ html.js .ag-cropin{animation:ag-cropin 46s cubic-bezier(0.3,0,0.2,1) infinite bo
 
 /* diagrams Gausyn draws (red, like its hints) */
 .diagram { position: absolute; }
-.diagram path, .diagram line { fill: none; stroke: var(--hint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.diagram path, .diagram line { fill: none; stroke: var(--hint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
 .diagram text { font-size: 10px; fill: var(--hint); font-family: var(--serif); }
 
 /* worksheet-style questions with blanks + options */
@@ -1353,7 +1353,7 @@ html.js .ag-cropin{animation:ag-cropin 46s cubic-bezier(0.3,0,0.2,1) infinite bo
 .dial .m { height: 3px; background: var(--rule); border-radius: 999px; position: relative; overflow: hidden; }
 .dial .m i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: var(--ink); width: 18%; }
 @keyframes pgen-meter{0%,12%{width:18%}20%{width:44%}37%{width:44%}42%{width:66%}56%{width:66%}61%{width:84%}76%{width:84%}81%{width:22%}100%{width:22%}}
-html.js .pgen-meter{animation:pgen-meter 36s ease-in-out infinite both}
+html.js .pgen-meter{animation:pgen-meter 18s ease-in-out infinite both}
 
 /* showcase: many shots share one cell, one visible at a time */
 .showcase { display: grid; padding: clamp(20px, 2.6vw, 34px); min-height: clamp(300px, 33vw, 400px); }
@@ -1381,20 +1381,20 @@ html.js .pgen-meter{animation:pgen-meter 36s ease-in-out infinite both}
 
 /* pen working inside the ask-gausyn workspaces */
 @keyframes ag-l1{0%{opacity:0;transform:translateY(10px)}47.826%{opacity:0;transform:translateY(10px)}49.783%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-l1{animation:ag-l1 46s ease-in-out infinite both}
+html.js .ag-l1{animation:ag-l1 23s ease-in-out infinite both}
 @keyframes ag-l2{0%{opacity:0;transform:translateY(10px)}65.217%{opacity:0;transform:translateY(10px)}67.174%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag-l2{animation:ag-l2 46s ease-in-out infinite both}
+html.js .ag-l2{animation:ag-l2 23s ease-in-out infinite both}
 @keyframes ag2-l1{0%{opacity:0;transform:translateY(10px)}58.824%{opacity:0;transform:translateY(10px)}61.471%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-l1{animation:ag2-l1 34s ease-in-out infinite both}
+html.js .ag2-l1{animation:ag2-l1 17s ease-in-out infinite both}
 @keyframes ag2-l2{0%{opacity:0;transform:translateY(10px)}66.176%{opacity:0;transform:translateY(10px)}68.824%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag2-l2{animation:ag2-l2 34s ease-in-out infinite both}
+html.js .ag2-l2{animation:ag2-l2 17s ease-in-out infinite both}
 
 /* command chips cycler */
 .cyc-say { height: 5.6em; }
 .cyc-say > * { flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; }
 .cyc-say .cmd { font-family: var(--mono); color: var(--ink); font-size: clamp(15px, 1.25vw, 19px); }
 .cyc-say .outc { color: var(--muted); font-size: clamp(13px, 1vw, 15px); line-height: 1.5; }
-html.js .cyc-say > * { animation: cyc6 21s ease-in-out infinite; }
+html.js .cyc-say > * { animation: cyc6 10.5s ease-in-out infinite; }
 html.js .cyc-say > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-say > *:nth-child(2) { animation-delay: 3.5s; }
 html.js .cyc-say > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-say > *:nth-child(4) { animation-delay: 10.5s; }
 html.js .cyc-say > *:nth-child(5) { animation-delay: 14s; } html.js .cyc-say > *:nth-child(6) { animation-delay: 17.5s; }
@@ -1408,7 +1408,7 @@ html.js .cyc-say > *:nth-child(5) { animation-delay: 14s; } html.js .cyc-say > *
 .ps-bar { position: absolute; left: 14px; right: 14px; top: 44px; height: 3px; background: var(--rule); border-radius: 999px; overflow: hidden; }
 .ps-bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--muted); border-radius: 999px; width: 0; }
 @keyframes ps-fill{0%,8%{width:0}42%{width:100%}100%{width:100%}}
-html.js .ps-bar i{animation:ps-fill 12s linear infinite both}
+html.js .ps-bar i{animation:ps-fill 6s linear infinite both}
 .ps-done { position: absolute; left: 14px; top: 54px; font-size: 11px; color: var(--muted); }
 .ps-note { position: absolute; left: 14px; right: 14px; bottom: 10px; font-size: 10px; color: var(--faint); }
 .plmap { position: absolute; left: 14px; top: 12px; bottom: 12px; width: 42%; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
@@ -1418,9 +1418,9 @@ html.js .ps-bar i{animation:ps-fill 12s linear infinite both}
 @keyframes plr-1{0%,8%{opacity:0}12%,100%{opacity:1}}
 @keyframes plr-2{0%,18%{opacity:0}22%,100%{opacity:1}}
 @keyframes plr-3{0%,28%{opacity:0}32%,100%{opacity:1}}
-html.js .plr.r1{animation:plr-1 12s ease infinite both}
-html.js .plr.r2{animation:plr-2 12s ease infinite both}
-html.js .plr.r3{animation:plr-3 12s ease infinite both}
+html.js .plr.r1{animation:plr-1 6s ease infinite both}
+html.js .plr.r2{animation:plr-2 6s ease infinite both}
+html.js .plr.r3{animation:plr-3 6s ease infinite both}
 
 /* ask-gausyn small demos */
 .agt-tabs { position: absolute; left: 14px; top: 30px; display: flex; gap: 5px; }
@@ -1434,8 +1434,8 @@ html.js .plr.r3{animation:plr-3 12s ease infinite both}
 .agk-dotrow span.hintd { background: rgba(204,34,34,0.5); }
 @keyframes agk-a{0%,48%{background:#fff;border-color:var(--ink);color:var(--ink)}50%,98%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fff}}
 @keyframes agk-b{0%,48%{background:#fafafa;border-color:var(--rule);color:var(--muted)}50%,98%{background:#fff;border-color:var(--ink);color:var(--ink)}100%{background:#fafafa}}
-html.js .agk-ta{animation:agk-a 8s steps(1) infinite}
-html.js .agk-tb{animation:agk-b 8s steps(1) infinite}
+html.js .agk-ta{animation:agk-a 4s steps(1) infinite}
+html.js .agk-tb{animation:agk-b 4s steps(1) infinite}
 
 /* three mode cards on the home page */
 .modes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1493,3 +1493,36 @@ html.js .agk-tb{animation:agk-b 8s steps(1) infinite}
   .shot { grid-area: auto; }
   .shot ~ .shot { display: none; }
 }
+
+/* the closing montage carries the language line under the level */
+.film-langline { position: relative; width: 100%; max-width: 760px; height: 2.6em; margin-top: clamp(10px, 1.8vh, 18px); }
+.film-langline > span {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-size: clamp(15px, 1.5vw, 21px); color: var(--muted); line-height: 1.3;
+}
+html.js .film-langline > span { animation: cyc5f 12.5s ease-in-out infinite; }
+html.js .film-langline > span:nth-child(1) { animation-delay: 0s; }
+html.js .film-langline > span:nth-child(2) { animation-delay: 2.5s; }
+html.js .film-langline > span:nth-child(3) { animation-delay: 5s; }
+html.js .film-langline > span:nth-child(4) { animation-delay: 7.5s; }
+html.js .film-langline > span:nth-child(5) { animation-delay: 10s; }
+@media (prefers-reduced-motion: reduce) {
+  .film-langline { height: auto; }
+  .film-langline > span { position: static; opacity: 1 !important; }
+  .film-langline > span ~ span { display: none; }
+}
+
+/* ── release notes ──────────────────────────────────────────────────────── */
+.release { padding-top: clamp(26px, 4vh, 40px); border-top: 1px solid var(--rule); }
+.release + .release { margin-top: clamp(40px, 6vh, 72px); }
+.release .stamp { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 14px; }
+.release .ver { font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -0.018em; }
+.release .when { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+.release .tagline { color: var(--muted); font-size: clamp(15px, 1.2vw, 18px); max-width: 60ch; margin-bottom: clamp(22px, 3vh, 32px); }
+.release h3 { font-size: clamp(17px, 1.35vw, 20px); margin-bottom: 7px; }
+.notes { display: grid; gap: clamp(20px, 3vh, 30px); }
+.note { display: grid; grid-template-columns: 130px 1fr; gap: clamp(12px, 2.4vw, 28px); align-items: start; }
+.note .kind { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); padding-top: 5px; }
+.note p { color: var(--muted); font-size: clamp(14.5px, 1.05vw, 16.5px); }
+@media (max-width: 700px) { .note { grid-template-columns: 1fr; gap: 6px; } }

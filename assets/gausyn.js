@@ -7,17 +7,23 @@
   if (reduce || !hasIO) {
     items.forEach(function (el) { el.classList.add('in'); });
   } else {
+    // Everything arriving in the same tick fades in reading order: down the
+    // page first, and left to right across anything sharing a row.
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
+      var hits = entries.filter(function (e) { return e.isIntersecting; });
+      if (!hits.length) return;
+      hits.sort(function (a, b) {
+        var ra = a.boundingClientRect, rb = b.boundingClientRect;
+        if (Math.abs(ra.top - rb.top) > 24) return ra.top - rb.top;
+        return ra.left - rb.left;
+      });
+      hits.forEach(function (entry, n) {
+        entry.target.style.transitionDelay = (Math.min(n, 10) * 0.07) + 's';
         entry.target.classList.add('in');
         io.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    items.forEach(function (el, i) {
-      el.style.transitionDelay = (Math.min(i % 6, 3) * 0.08) + 's';
-      io.observe(el);
-    });
+    items.forEach(function (el) { io.observe(el); });
   }
 
   // rewind every animation inside a subtree, then let it run again from frame 0
@@ -53,13 +59,20 @@
   if (film) {
     var acts = Array.prototype.slice.call(film.querySelectorAll('.act'));
     var dots = Array.prototype.slice.call(film.querySelectorAll('.film-dot'));
-    var DURS = [46, 20, 50, 54, 38.5, 25]; // one full loop of each act's own animation
+    var DURS = [23, 25, 27, 14]; // one full loop of each act, at the doubled pace
     var idx = 0, timer = null, onScreen = true;
 
-    // the pane is exactly as tall as the act on screen: no dead space, no clipping
+    // one height for every act, so the copy underneath never jumps on a slide change
     function fit() {
-      var h = acts[idx].offsetHeight;
-      if (h) film.style.height = h + 'px';
+      var tallest = 0;
+      acts.forEach(function (a) {
+        var was = a.style.visibility;
+        if (!a.classList.contains('on')) { a.style.visibility = 'hidden'; }
+        var h = a.scrollHeight;
+        a.style.visibility = was;
+        if (h > tallest) tallest = h;
+      });
+      if (tallest) film.style.height = tallest + 'px';
     }
 
     function schedule() {

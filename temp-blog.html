@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Gausyn</title>
+  <title>Blog, Gausyn</title>
   <meta name="description" content="Building Gausyn in public. v0.1: everything that shipped in the first ninety-nine days, and what comes next." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=9" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=10" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -19,9 +19,6 @@
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav>
         <ul class="nav">
-          <li class="hide-sm"><a href="temp-teacher-mode.html">Teacher</a></li>
-          <li class="hide-sm"><a href="temp-practice-mode.html">Practice</a></li>
-          <li class="hide-sm"><a href="temp-ask-gausyn.html">Ask Gausyn</a></li>
           <li><a href="temp-about.html">About</a></li>
         </ul>
       </nav>
@@ -32,333 +29,132 @@
 
     <section class="page-head">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>Blog &middot; Building in public</span>
-        <h1 data-reveal>Gausyn v0.1</h1>
-        <p class="lede" data-reveal>Ninety-nine commits, one whiteboard, and a tutor that learned to teach a lesson, hand over a worksheet, and keep its hands off your answers. Here is everything in the first release, and what it taught us.</p>
+        <span class="eyebrow" data-reveal>Updates</span>
+        <h1 data-reveal>What is new in Gausyn.</h1>
+        <p class="lede" data-reveal>
+          Every time we release a new version of Gausyn, we write down what
+          changed for you in plain language. The newest version is at the top.
+        </p>
       </div>
     </section>
 
-    <!-- the build, in order -->
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="verband" data-reveal>
-          <span class="verpill">v0.1</span>
-          <span class="when">May 20 &ndash; July 27, 2026 &middot; 99 commits &middot; in private testing</span>
-        </div>
-        <div class="scene-head" data-reveal>
-          <h2>How it got built.</h2>
-          <p>
-            We did not start from a model and look for a use. We started from a
-            whiteboard, because that is where tutoring actually happens &mdash;
-            two people, one surface, a pen. Everything since has been an answer
-            to a question a real session raised: <em>how does it know where to
-            write? what happens when the student interrupts? where do the
-            worksheets come from? who decides the lesson is over?</em>
-          </p>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="stage" data-reveal>
-          <div class="chrome">
-            <span class="dot"></span>
-            <span class="title">Changelog</span>
-            <span class="spacer"></span>
-            <span class="pill">v0.1</span>
-          </div>
-          <div class="chgstream fade-bl">
-            <div class="chg k bl-1"><span class="d">20 May</span><span class="t"><b>The first commit.</b> Auth, a dashboard, and a canvas you could draw on.</span></div>
-            <div class="chg k bl-2"><span class="d">21 Jun</span><span class="t"><b>It found its voice.</b> Microphone capture, transcription, and a spoken reply instead of a wall of text.</span></div>
-            <div class="chg k bl-3"><span class="d">23 Jun</span><span class="t"><b>A real calendar.</b> Month, week, and day views; drag a lesson and it moves.</span></div>
-            <div class="chg k bl-4"><span class="d">28 Jun</span><span class="t"><b>Learning.</b> Subjects and grade-level topics pulled from the student&rsquo;s own profile.</span></div>
-            <div class="chg k bl-5"><span class="d">4 Jul</span><span class="t"><b>Ask Gausyn.</b> Drag a box around a problem and it opens a workspace of its own, with a pin left on the sheet.</span></div>
-            <div class="chg k bl-6"><span class="d">5 Jul</span><span class="t"><b>Hints learned where to stand.</b> Deterministic placement from the worksheet&rsquo;s own text geometry &mdash; no more guessed coordinates.</span></div>
-            <div class="chg k bl-7"><span class="d">12 Jul</span><span class="t"><b>Three modes.</b> Teacher, Practice, and Homework &mdash; and a worksheet bank behind them.</span></div>
-            <div class="chg k bl-8"><span class="d">15 Jul</span><span class="t"><b>It started teaching.</b> Autonomous page-by-page lesson walkthroughs, and &ldquo;let&rsquo;s practise&rdquo; handing over to the paired worksheet.</span></div>
-            <div class="chg k bl-9"><span class="d">15 Jul</span><span class="t"><b>It started drawing.</b> Generated diagram hints, with a Sketching placeholder while the picture is made.</span></div>
-            <div class="chg k bl-10"><span class="d">22 Jul</span><span class="t"><b>A voice per subject.</b> Named tutor personas, matched to the subject and the student&rsquo;s stated learning style.</span></div>
-            <div class="chg k bl-11"><span class="d">25 Jul</span><span class="t"><b>Infinite practice.</b> Generated questions in their own tab &mdash; harder, easier, different, on command.</span></div>
-            <div class="chg k bl-12"><span class="d">26 Jul</span><span class="t"><b>It started planning.</b> Deadlines, a daily check-in, and homework photos that turn into next week&rsquo;s sessions.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- release notes in full -->
     <section class="rule-top">
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Release notes</span>
-          <h2>What is actually in v0.1.</h2>
-          <p>
-            Written for the people who want the specifics: what works today, how
-            it works, and where the edges still are.
-          </p>
-        </div>
+      <div class="read">
 
-        <div class="relnote" data-reveal>
-          <h3>The whiteboard</h3>
-          <p>
-            The session is a real canvas, not a chat window with a picture in
-            it. Pen, eraser, shapes, a select tool for moving things around, and
-            multiple board tabs per session. Upload a PDF worksheet and it
-            renders page by page for you to write straight on top of; upload a
-            photo of homework and it is scaled and centred for you. Boards can
-            be plain, lined, or graph paper.
-          </p>
-          <p>
-            Every board tab independently remembers its strokes, its PDF, its
-            scroll position, its background, and every hint Gausyn has placed on
-            it. Switch to another tab and back and nothing has moved &mdash;
-            which sounds small until you have lost twenty minutes of working out
-            because a tool decided to tidy up after you.
-          </p>
-          <div class="ships">
-            <span>Pen, eraser, shapes, select</span><span>Multi-board tabs</span><span>PDF worksheets</span>
-            <span>Photo upload</span><span>Plain / lined / graph</span><span>Per-tab persistence</span>
+        <article class="release">
+          <div class="stamp" data-reveal>
+            <span class="ver">Version 0.1</span>
+            <span class="when">August 2026 &middot; First release</span>
           </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>The tutor loop</h3>
-          <p>
-            Every exchange, Gausyn captures what is actually on your board and
-            sends it along with what you said. It replies with speech and, when
-            useful, with something written on the board &mdash; a plain-words
-            nudge, a single typeset step of math, or a generated diagram. It is
-            Socratic by default: the system prompt is built to withhold the
-            answer and ask the question that unlocks it.
+          <p class="tagline" data-reveal>
+            The first version of Gausyn that students can sit down and use. It
+            covers the whole loop: planning your week, being taught a lesson,
+            and working through problems on a shared board.
           </p>
-          <p>
-            The part we are proudest of is the least visible. When a worksheet
-            loads, Gausyn solves every numbered problem to a full reference
-            solution before the student writes anything, and grounds the rest of
-            the session against it. That is why it can tell you your third line
-            is right rather than agreeing pleasantly with whatever you wrote.
-          </p>
-          <div class="ships">
-            <span>Board-aware vision</span><span>Reference solutions on upload</span><span>Socratic prompting</span>
-            <span>Typeset math hints</span><span>Generated diagrams</span><span>Never fills your blanks</span>
+          <div class="notes">
+            <div class="note" data-reveal>
+              <span class="kind">Whiteboard</span>
+              <div>
+                <h3>A board you and your teacher share</h3>
+                <p>Write with a pen, drop in shapes, or upload a worksheet and work straight on top of it. Gausyn sees the page the same way you do, so it can talk about the actual question in front of you instead of a description of it.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Teacher mode</span>
+              <div>
+                <h3>Lessons taught out loud</h3>
+                <p>Pick a topic and Gausyn teaches it page by page, speaking as it goes. Interrupt at any point to ask why, ask for it slower, or ask it to go back. It waits for you rather than running on a timer.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Practice mode</span>
+              <div>
+                <h3>Work the problem yourself</h3>
+                <p>Bring your own worksheet or a photo of your homework. You do the writing; Gausyn watches, and when you stall it offers a nudge or a single step, placed right beside the question you are stuck on. It will not fill in your answers.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Hints</span>
+              <div>
+                <h3>Help that appears where you are looking</h3>
+                <p>Gausyn works out every problem on the sheet for itself the moment you upload it, so when it checks your line four it is checking against real work. Hints stack next to the relevant question rather than scrolling away in a chat window.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Ask Gausyn</span>
+              <div>
+                <h3>More space for a hard question</h3>
+                <p>Drag a box around any problem and it opens in its own workspace, with the original pinned at the top and a clean grid underneath. A marker takes you back to where you were.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Practice questions</span>
+              <div>
+                <h3>Ask for another one</h3>
+                <p>Say you want more practice and Gausyn writes a fresh question on the spot, one at a time. Ask for harder, easier, or just different, and the next one adjusts.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Calendar</span>
+              <div>
+                <h3>A week planned by talking</h3>
+                <p>Tell Gausyn about an exam or an assignment in plain words and it books the study sessions around the hours you are actually free. Change your mind and it re-plans. You can still drag anything by hand.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Deadlines</span>
+              <div>
+                <h3>Exams and due dates you can see</h3>
+                <p>Add a test or an assignment and it sits on the calendar with a live countdown. Gausyn plans the week around it rather than up to it, and leaves the morning of the exam clear.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Sessions</span>
+              <div>
+                <h3>Lessons that are real appointments</h3>
+                <p>A booked lesson opens ten minutes early, runs on a clock kept on our servers, and finishes with a short note about what you covered. Reloading the page or switching devices does not change the time you have left.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Voice</span>
+              <div>
+                <h3>Talk to it, or type</h3>
+                <p>Speak your question and Gausyn answers out loud, or turn the microphone off and type instead. Everything works either way, so a quiet library and a noisy kitchen both work.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Levels</span>
+              <div>
+                <h3>Grade one through graduate school</h3>
+                <p>The same account covers early arithmetic, high school algebra and chemistry, university calculus, and graduate work. The explanations, pace, and vocabulary change with the level rather than the account.</p>
+              </div>
+            </div>
+            <div class="note" data-reveal>
+              <span class="kind">Your files</span>
+              <div>
+                <h3>We do not keep your homework</h3>
+                <p>When you upload a worksheet, Gausyn reads it, writes down a short summary of the topic, and discards the file itself. The summary is what helps it prepare for your next session.</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="relnote" data-reveal>
-          <h3>Where hints stand</h3>
-          <p>
-            An AI that picks pixel coordinates will eventually write over your
-            work. So Gausyn does not pick them. When a typed PDF loads, we read
-            the page&rsquo;s own text geometry &mdash; where each question line
-            starts, where the underscore blanks are, where the multiple-choice
-            options sit &mdash; and hints are placed by a deterministic engine
-            against that map. Fill-in-the-blank gets a nudge beside the blank;
-            multiple choice gets one near the options; show-your-work gets a step
-            where there is vertical room, and a suggestion to open a workspace
-            where there is not.
-          </p>
-          <p>
-            Your ink, the worksheet&rsquo;s own text, and shapes all block
-            placement. When the column fills up, the oldest hints are pruned
-            rather than stacked into a pile. Scanned worksheets fall back to a
-            vision pass, which is the weakest link in the chain today.
-          </p>
-          <div class="ships">
-            <span>PDF text-geometry mapping</span><span>Question-anchored columns</span><span>Occupancy avoidance</span><span>Overflow pruning</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>Teacher, Practice, and Homework</h3>
-          <p>
-            A session opens in one of three shapes.
-            <a class="btn-quiet" href="temp-teacher-mode.html">Teacher mode</a>
-            pulls a lesson matched to the session&rsquo;s subject, grade, and
-            topic and walks it page by page, out loud. During a walkthrough the
-            toolbar is hidden and Gausyn is deliberately speech-only &mdash; it
-            will not write on the board, because the lesson is the thing to
-            follow. Interrupt with the mic or a typed line and the walkthrough
-            pauses; say &ldquo;continue lesson&rdquo; and it resumes from the
-            page it stopped on.
-          </p>
-          <p>
-            <a class="btn-quiet" href="temp-practice-mode.html">Practice mode</a>
-            takes the paired worksheet written to match that lesson and unlocks
-            the full toolset. Homework mode skips the bank entirely and expects
-            your own upload. You can move between them mid-session by saying so
-            &mdash; &ldquo;let&rsquo;s practise&rdquo;, &ldquo;switch to teacher
-            mode&rdquo;, &ldquo;switch to homework&rdquo;, or &ldquo;get me a
-            worksheet on trig identities&rdquo; &mdash; without rejoining and
-            without losing the conversation.
-          </p>
-          <div class="ships">
-            <span>Lesson walkthroughs</span><span>Interrupt &amp; resume</span><span>Paired practice handoff</span>
-            <span>Mid-session mode switching</span><span>On-demand worksheets</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>The worksheet bank</h3>
-          <p>
-            Behind the modes is a bank of lesson and practice PDFs, tagged with
-            subject, grade levels, and topic keywords, stored privately and
-            matched by score when a session starts. Lessons carry a pointer to
-            the practice sheet written to go with them, which is what makes the
-            handoff feel like one continuous class rather than two apps.
-          </p>
-          <p>
-            The honest limitation of v0.1: the bank is small, and seeded by us.
-            Filling it &mdash; with teachers&rsquo; own material, at every grade
-            and in every subject &mdash; is the single biggest piece of work in
-            front of the product.
-          </p>
-          <div class="ships">
-            <span>Scored subject / grade / topic matching</span><span>Lesson &harr; practice pairs</span><span>Private storage</span><span>Offline fallback manifest</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>Ask Gausyn workspaces</h3>
-          <p>
-            <a class="btn-quiet" href="temp-ask-gausyn.html">Ask Gausyn</a> is
-            the answer to the oldest problem in worksheets: the margin is two
-            inches and the thinking is two pages. Drag a box around a problem and
-            it becomes its own tab &mdash; the crop pinned at the top as the
-            reference, a clean grid underneath, and an anchor pin left on the
-            source board so you can jump straight back. Hints follow the same
-            rules inside, stacking below the pinned reference.
-          </p>
-          <div class="ships">
-            <span>Drag-to-crop</span><span>Pinned reference</span><span>Q1, Q2, Q3 tabs</span><span>Anchor pin home</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>Generated practice</h3>
-          <p>
-            Ask for more practice on any topic in the session&rsquo;s subject and
-            Gausyn writes a question itself, one at a time, into a dedicated
-            Practice tab pinned at the top of the board where it cannot be
-            scrolled away or accidentally closed. Say &ldquo;harder&rdquo;,
-            &ldquo;easier&rdquo;, &ldquo;a different one&rdquo;, or &ldquo;next
-            problem&rdquo; and the tab is cleared and rewritten &mdash; even
-            mid-problem, if you have decided you picked the wrong fight.
-          </p>
-          <div class="ships">
-            <span>One question at a time</span><span>Pinned, uncloseable card</span><span>Harder / easier / different</span><span>Math typeset like the hints</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>Voice, and who is speaking</h3>
-          <p>
-            Voice in, voice out. The microphone only listens when you click it,
-            except in Freeform mode, where Gausyn listens after it finishes
-            speaking and submits when you stop &mdash; with noise gating so a
-            passing bus does not become a question. Text chat is an equal
-            alternative at every step, for the library and the late-night
-            session in a shared room.
-          </p>
-          <p>
-            v0.1 also gave the tutor an identity: named personas mapped to
-            subjects, each with its own voice, levelled so nobody arrives
-            shouting, and a greeting that uses the student&rsquo;s name and their
-            stated learning style.
-          </p>
-          <div class="ships">
-            <span>Speech to text</span><span>Natural TTS with fallback</span><span>Freeform listening</span><span>Subject personas</span><span>Any language</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>The dashboard that plans the week</h3>
-          <p>
-            Onboarding takes five steps &mdash; name and grade, subjects, goals
-            and learning style, any files you want to hand over, and a
-            drag-to-select weekly availability grid &mdash; and ends with a
-            four-week lesson plan generated onto the calendar.
-          </p>
-          <p>
-            After that the calendar is conversational. Tell it you have a
-            chemistry exam next Friday and prep sessions appear inside your real
-            availability; tell it Wednesdays are bad and it re-plans. Deadlines
-            are tracked separately from lessons, with a countdown. A daily
-            check-in asks what changed and lets you attach a photo of tonight&rsquo;s
-            homework &mdash; we read it once for a summary, use that to shape the
-            session, and delete the file rather than keep it.
-          </p>
-          <p>
-            Sessions are real class periods. Joining opens ten minutes early, the
-            countdown is anchored on the server rather than in your browser, and
-            when time is up the tutor itself stops answering &mdash; you cannot
-            extend a lesson by editing a URL or reloading the page. The calendar
-            then records what actually happened: completed, how long, how much
-            was covered.
-          </p>
-          <div class="ships">
-            <span>Natural-language scheduling</span><span>Availability guardrails</span><span>Deadlines &amp; countdowns</span>
-            <span>Daily check-in</span><span>Files summarised, then deleted</span><span>Server-authoritative timer</span>
-          </div>
-        </div>
-
-        <div class="relnote" data-reveal>
-          <h3>What is not in v0.1</h3>
-          <p>
-            Projects and Library are visible in the navigation but not built yet,
-            and the Learning tab has full unit breakdowns for high-school math
-            while other subjects still show topic grids. Scanned and handwritten
-            worksheets work through a vision fallback that is noticeably weaker
-            than the typed-PDF path. The bank needs to be an order of magnitude
-            larger. And every hour of tutoring costs real money to run, which is
-            why sessions carry a usage budget today &mdash; getting that cost
-            down is a product goal, not just an infrastructure one, because a
-            personal teacher that only some families can afford is the problem we
-            started with.
-          </p>
-        </div>
       </div>
     </section>
 
-    <!-- what's next -->
     <section class="rule-top">
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Next</span>
-          <h2>What v0.2 is about.</h2>
-          <p>
-            Three things, in order: worksheets at scale, so every topic in every
-            grade has a lesson worth teaching; richer worksheet understanding, so
-            a photographed page works as well as a typed one; and memory across
-            sessions, so the teacher who helped you in October remembers in March
-            exactly which step you always skip.
-          </p>
-        </div>
-        <div class="postlist">
-          <div class="feature" data-reveal>
-            <span class="eyebrow">Soon</span>
-            <div>
-              <h3>Why answer apps make homework worse</h3>
-              <p>The assignment gets finished, the learning gets skipped, and tomorrow&rsquo;s problem is just as impossible as today&rsquo;s.</p>
-            </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">Soon</span>
-            <div>
-              <h3>What a great tutor actually does, minute by minute</h3>
-              <p>We watched, we taught, we took notes for a decade. The magic decomposes into moves &mdash; and moves can be built.</p>
-            </div>
-          </div>
-          <div class="feature" data-reveal>
-            <span class="eyebrow">Soon</span>
-            <div>
-              <h3>Teaching in two languages at once</h3>
-              <p>What happens when a student thinks in one language and is graded in another &mdash; and what a teacher owes them.</p>
-            </div>
-          </div>
-        </div>
+      <div class="read">
+        <p class="muted" data-reveal>
+          Have something you want Gausyn to do that it cannot do yet? Tell us,
+          and it may well show up in the next version:
+          <a class="btn-quiet" href="temp-contact.html">get in touch</a>.
+        </p>
       </div>
     </section>
 
     <section class="closing rule-top">
       <div class="wrap">
-        <h2 data-reveal>Writing it down as we build it.</h2>
+        <h2 data-reveal>Imagine every student with a teacher of their own.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </div>
@@ -430,6 +226,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=9"></script>
+  <script src="assets/gausyn.js?v=10"></script>
 </body>
 </html>
