@@ -595,11 +595,11 @@ html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route 
 .foot-brand p { font-size: 13px; color: var(--faint); max-width: 26ch; line-height: 1.55; }
 .foot-brand .foot-reach { margin-top: clamp(22px, 3vh, 30px); }
 .foot-reach h5 { font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 11px; }
-.foot-reach ul { list-style: none; display: grid; gap: 8px; }
+.foot-reach ul { list-style: none; display: grid; gap: 9px; }
 .foot-reach li { font-size: 13.5px; line-height: 1.35; }
 .foot-reach a, .foot-reach span { color: var(--muted); text-decoration: none; }
 .foot-reach a:hover { color: var(--ink); }
-.foot-social { grid-auto-flow: column; justify-content: start; gap: 20px; }
+
 
 .foot-col h5 { font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
 .foot-col ul { list-style: none; display: grid; gap: 9px; }
