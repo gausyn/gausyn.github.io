@@ -62,17 +62,11 @@
     var DURS = [23, 25, 27, 19.5]; // one full loop of each act, at the doubled pace
     var idx = 0, timer = null, onScreen = true;
 
-    // one height for every act, so the copy underneath never jumps on a slide change
+    // the pane takes the height of the act on screen and eases between them:
+    // sizing to the tallest act instead left short acts sitting over dead space
     function fit() {
-      var tallest = 0;
-      acts.forEach(function (a) {
-        var was = a.style.visibility;
-        if (!a.classList.contains('on')) { a.style.visibility = 'hidden'; }
-        var h = a.scrollHeight;
-        a.style.visibility = was;
-        if (h > tallest) tallest = h;
-      });
-      if (tallest) film.style.height = tallest + 'px';
+      var h = acts[idx].offsetHeight;
+      if (h) film.style.height = h + 'px';
     }
 
     function schedule() {

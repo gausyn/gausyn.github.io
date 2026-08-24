@@ -1526,3 +1526,58 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 .note .kind { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); padding-top: 5px; }
 .note p { color: var(--muted); font-size: clamp(14.5px, 1.05vw, 16.5px); }
 @media (max-width: 700px) { .note { grid-template-columns: 1fr; gap: 6px; } }
+
+/* === trust pages: a document, not a landing page ======================== */
+/* deliberately free of reveals and drifting colour — these are read, not scrolled */
+.legal-head { padding-top: clamp(46px, 7.5vh, 88px); padding-bottom: clamp(22px, 3.4vh, 36px); border-bottom: 1px solid var(--rule); }
+.legal-head .eyebrow { display: block; margin-bottom: 14px; }
+.legal-head h1 { font-size: clamp(30px, 3.8vw, 48px); max-width: 22ch; }
+.legal-head .meta { margin-top: 16px; font-size: 13px; color: var(--faint); letter-spacing: 0.02em; }
+.legal-head .meta span + span::before { content: "\00b7"; margin: 0 9px; }
+
+.legal { padding: clamp(28px, 4.5vh, 48px) 0 clamp(56px, 9vh, 104px); }
+.legal .intro { color: var(--muted); font-size: clamp(15.5px, 1.1vw, 17px); line-height: 1.7; }
+.legal .intro + .toc { margin-top: clamp(26px, 4vh, 40px); }
+
+.toc { border: 1px solid var(--rule); border-radius: var(--radius-md); padding: clamp(17px, 2.2vw, 24px) clamp(18px, 2.4vw, 26px); margin-bottom: clamp(30px, 4.5vh, 50px); background: rgba(255, 255, 255, 0.55); }
+.toc h2 { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--faint); margin-bottom: 13px; }
+.toc ol { list-style: none; counter-reset: toc; display: grid; gap: 8px; }
+.toc li { counter-increment: toc; font-size: 14.5px; line-height: 1.4; }
+.toc li::before { content: counter(toc) "."; color: var(--faint); margin-right: 9px; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.legal .clause { padding: 0; margin-top: clamp(28px, 4.2vh, 44px); scroll-margin-top: calc(var(--header-h) + 20px); }
+.legal .clause > h2 { font-size: clamp(18px, 1.5vw, 23px); margin-bottom: 12px; line-height: 1.25; }
+.legal .clause > h2 .num { color: var(--faint); margin-right: 10px; }
+.legal h3 { font-size: clamp(15px, 1.15vw, 17px); margin: 22px 0 8px; }
+.legal p { color: var(--muted); font-size: clamp(15px, 1.05vw, 16.5px); line-height: 1.72; }
+.legal p + p { margin-top: 0.85em; }
+.legal ul, .legal ol.body { margin-top: 13px; padding-left: 20px; display: grid; gap: 9px; }
+.legal li { color: var(--muted); font-size: clamp(14.5px, 1vw, 16px); line-height: 1.65; }
+.legal li::marker { color: var(--faint); }
+.legal strong { font-weight: 400; color: var(--ink); }
+.legal a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.legal a:hover { opacity: 0.6; }
+.legal address { font-style: normal; color: var(--muted); font-size: 15.5px; line-height: 1.75; margin-top: 12px; }
+
+.callout { border: 1px solid var(--rule); border-left: 2px solid var(--ink); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 22px); margin: clamp(20px, 3vh, 28px) 0; background: rgba(255, 255, 255, 0.6); }
+.callout p { color: var(--ink); font-size: clamp(14.5px, 1vw, 16px); }
+.callout .lbl { display: block; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+
+/* status page */
+.statusbar { display: flex; align-items: center; gap: 12px; border: 1px solid var(--rule); border-radius: var(--radius-md); padding: clamp(16px, 2vw, 22px); background: rgba(255, 255, 255, 0.6); margin-bottom: clamp(26px, 4vh, 40px); }
+.statusbar i { width: 9px; height: 9px; border-radius: 50%; background: #2a9d4a; flex-shrink: 0; }
+.statusbar b { font-weight: 400; font-size: clamp(16px, 1.3vw, 19px); }
+.statusbar .since { margin-left: auto; font-size: 12.5px; color: var(--faint); text-align: right; }
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; align-items: baseline; border-top: 1px solid var(--rule-soft); padding: 13px 2px; }
+.svc:first-of-type { border-top: 1px solid var(--rule); }
+.svc .n { font-size: clamp(14.5px, 1.05vw, 16px); color: var(--ink); }
+.svc .n small { display: block; color: var(--faint); font-size: 12.5px; margin-top: 3px; line-height: 1.5; }
+.svc .s { font-size: 11px; letter-spacing: 0.11em; text-transform: uppercase; color: #2a7d43; white-space: nowrap; }
+.svc .s.na { color: var(--faint); }
+
+@media (max-width: 640px) {
+  .statusbar { flex-wrap: wrap; }
+  .statusbar .since { margin-left: 0; width: 100%; text-align: left; }
+}

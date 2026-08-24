@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsible AI, Gausyn</title>
+  <meta name="description" content="How Gausyn is built to teach honestly, where it can still be wrong, and what we have refused to build." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=12" />
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapw">
+      <a class="wordmark" href="temp.html">gausyn</a>
+      <nav>
+        <ul class="nav">
+          <li><a href="temp-about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-head">
+      <div class="read">
+        <span class="eyebrow">Trust &middot; Responsible AI</span>
+        <h1>Responsible AI</h1>
+        <p class="meta"><span>Last updated 24 August 2026</span><span>Gausyn, a product of Inquisara</span></p>
+      </div>
+    </section>
+
+    <section class="legal">
+      <div class="read">
+        <p class="intro">Gausyn puts an AI in the position of a teacher, in front of children, on material they will be graded on. That deserves stating plainly: what it does, where it fails, and what we have refused to do with it.</p>
+
+        <div class="toc">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#what">What Gausyn is</a></li>
+            <li><a href="#built">How the tutor is built</a></li>
+            <li><a href="#wrong">Where it can be wrong</a></li>
+            <li><a href="#integrity">Integrity by design</a></li>
+            <li><a href="#minors">Students are minors</a></li>
+            <li><a href="#oversight">Human oversight</a></li>
+            <li><a href="#data">Models and your data</a></li>
+            <li><a href="#wont">What we will not build</a></li>
+            <li><a href="#report">Reporting a problem</a></li>
+          </ol>
+        </div>
+
+        <div class="clause" id="what">
+          <h2><span class="num">1.</span>What Gausyn is</h2>
+          <p>Gausyn is an AI tutor built on large language models, vision models, and speech systems from third-party providers. It teaches lessons out loud, reads what a student writes on a shared board, and helps them work through problems.</p>
+          <p>It is a teaching tool. It is not a teacher's replacement, not an assessor, and not a source of authority about anything outside the problem on the page.</p>
+        </div>
+
+        <div class="clause" id="built">
+          <h2><span class="num">2.</span>How the tutor is built</h2>
+          <p>Three design decisions do most of the work of keeping it honest.</p>
+          <ul>
+            <li><strong>It is grounded before it speaks.</strong> When a worksheet loads, Gausyn works every problem to a full reference solution first, and checks the student's steps against that rather than against its own improvisation.</li>
+            <li><strong>Its help is placed by rules, not by guesswork.</strong> Where a hint lands on the page is computed from the worksheet's own geometry. The model does not choose coordinates, so it cannot write over a student's work.</li>
+            <li><strong>It withholds the answer on purpose.</strong> The tutor is instructed to give a nudge, a single step, or a question &mdash; never the finished result &mdash; and it never writes in an answer space.</li>
+          </ul>
+        </div>
+
+        <div class="clause" id="wrong">
+          <h2><span class="num">3.</span>Where it can be wrong</h2>
+          <p>All of the above reduces error. None of it eliminates error.</p>
+          <ul>
+            <li>The models can be confidently wrong, especially on long multi-step reasoning, unusual notation, or questions that depend on a diagram it cannot read clearly.</li>
+            <li>Handwriting recognition is imperfect. A misread digit can send a hint in the wrong direction.</li>
+            <li>Scanned or photographed worksheets are understood less reliably than typed PDFs.</li>
+            <li>Reference solutions are themselves generated, so a wrong reference produces a confidently wrong check.</li>
+            <li>The tutor may reflect biases present in its underlying models, including in the examples and contexts it invents for word problems.</li>
+          </ul>
+          <div class="callout">
+            <span class="lbl">What this means for you</span>
+            <p>Treat Gausyn as a very patient tutor who is usually right and occasionally not &mdash; not as an answer key. Check anything that will be graded, and tell us when it gets something wrong.</p>
+          </div>
+        </div>
+
+        <div class="clause" id="integrity">
+          <h2><span class="num">4.</span>Integrity by design</h2>
+          <p>The easiest AI tutor to build is one that does the homework. We deliberately did not build that.</p>
+          <p>Gausyn does not fill blanks, does not hand over final answers on request, and asks the student to say why an answer works before it agrees. Teachers should be able to set homework knowing that a student who used Gausyn did the thinking. If you find a way to make it behave otherwise, that is a bug and we would like to hear about it.</p>
+        </div>
+
+        <div class="clause" id="minors">
+          <h2><span class="num">5.</span>Students are minors</h2>
+          <p>Most of our users are children. That shapes what the tutor is allowed to be.</p>
+          <ul>
+            <li>Generated images pass through a fixed safety template and the strictest moderation setting the image provider offers, and the model's own words never reach the image API unmodified.</li>
+            <li>The tutor stays on the subject of the session and is not built as a general-purpose companion or advice service.</li>
+            <li>Gausyn is not a mental-health service. If a student raises something serious, the right response is a person &mdash; a parent, a teacher, a counsellor, or an emergency service &mdash; and we will not pretend a tutor is a substitute for one.</li>
+          </ul>
+        </div>
+
+        <div class="clause" id="oversight">
+          <h2><span class="num">6.</span>Human oversight</h2>
+          <p>We read reports ourselves. Sessions are not routinely reviewed by staff &mdash; that would be a privacy problem of its own &mdash; but when a problem is reported we look at what happened and fix the prompt, the placement rules, or the product.</p>
+          <p>No consequential decision about a student is made automatically by Gausyn. It does not grade, rank, stream, or report on students.</p>
+        </div>
+
+        <div class="clause" id="data">
+          <h2><span class="num">7.</span>Models and your data</h2>
+          <p>To answer a student we send the relevant part of the session to an AI provider. We use those providers under business terms that exclude customer content from training their general models, and we ask them to process content only to return a reply. More detail is in the <a href="temp-privacy.html">Privacy Policy</a> and the <a href="temp-student-data.html">student data</a> page.</p>
+        </div>
+
+        <div class="clause" id="wont">
+          <h2><span class="num">8.</span>What we will not build</h2>
+          <ul>
+            <li>We will not sell student data, or fund Gausyn with advertising to children.</li>
+            <li>We will not build engagement mechanics designed to keep a child on the product longer than the learning requires. A session that ends early because the student understood is a success.</li>
+            <li>We will not present Gausyn as a human, or let it claim to be one.</li>
+            <li>We will not add features whose main use is helping a student submit work they did not do.</li>
+            <li>We will not use a student's struggles as marketing material.</li>
+          </ul>
+        </div>
+
+        <div class="clause" id="report">
+          <h2><span class="num">9.</span>Reporting a problem</h2>
+          <p>If Gausyn taught something incorrectly, said something inappropriate, or behaved in a way that worries you, tell us. Include the subject and roughly when it happened.</p>
+          <address>Inquisara &mdash; Gausyn<br />Toronto, Ontario, Canada<br /><a href="mailto:gausyninc@gmail.com">gausyninc@gmail.com</a></address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <span class="wordmark">gausyn</span>
+          <p>A personal teacher for every student. Built in Toronto, for learners everywhere.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="temp-teacher-mode.html">Teacher mode</a></li>
+            <li><a href="temp-practice-mode.html">Practice mode</a></li>
+            <li><a href="temp-ask-gausyn.html">Ask Gausyn</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Learning</h5>
+          <ul>
+            <li><span>Elementary</span></li>
+            <li><span>High school</span></li>
+            <li><span>University</span></li>
+            <li><span>Graduate</span></li>
+            <li><span>Mathematics</span></li>
+            <li><span>Physics</span></li>
+            <li><span>Chemistry</span></li>
+            <li><span>Computer science</span></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="temp-about.html">About</a></li>
+            <li><a href="temp-contact.html">Contact</a></li>
+            <li><a href="temp-careers.html">Careers</a></li>
+            <li><a href="temp-blog.html">Blog</a></li>
+            <li><span>Investors</span></li>
+            <li><span>Research</span></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Trust</h5>
+          <ul>
+            <li><a href="temp-privacy.html">Privacy</a></li>
+            <li><a href="temp-terms.html">Terms</a></li>
+            <li><a href="temp-accessibility.html">Accessibility</a></li>
+            <li><a href="temp-student-data.html">Student data</a></li>
+            <li><a href="temp-responsible-ai.html">Responsible AI</a></li>
+            <li><a href="temp-status.html">Status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>
+          <p class="parent">Inquisara</p>
+          <p class="copy">Gausyn is a product of Inquisara.</p>
+        </div>
+        <p class="copy">&copy; 2026 Inquisara</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/gausyn.js?v=12"></script>
+</body>
+</html>
