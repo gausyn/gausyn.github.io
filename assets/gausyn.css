@@ -377,7 +377,7 @@ html.js .way-b { animation: way-b-cyc 8.5s ease-in-out infinite; }
 html.js .blurt { animation: blurt-in 8.5s ease-in-out infinite; }
 @keyframes blurt-in { 0% { opacity: 0; transform: translateY(6px); } 7% { opacity: 0; transform: translateY(6px); } 11% { opacity: 1; transform: none; } 28% { opacity: 1; transform: none; } 33% { opacity: 0; } 100% { opacity: 0; } }
 .aftermath { font-size: clamp(13px, 0.98vw, 15px); color: var(--faint); margin-top: 18px; opacity: 0; }
-html.js .aftermath { animation: blurt-in 8.5s ease-in-out infinite; animation-delay: 0.9s; }
+html.js .aftermath { animation: blurt-in 8.5s ease-in-out infinite; animation-delay: 0.45s; }
 .steps-reveal { overflow: hidden; max-height: 240px; }
 html.js .steps-reveal { animation: grow 8.5s ease-in-out infinite; }
 @keyframes grow { 0% { max-height: 0; } 38% { max-height: 0; } 45% { max-height: 44px; } 55% { max-height: 88px; } 65% { max-height: 132px; } 75% { max-height: 176px; } 85% { max-height: 240px; } 100% { max-height: 240px; } }
@@ -450,7 +450,7 @@ html.js .states .st { animation: state-cycle 6s ease-in-out infinite; }
 .states .st.live { border-color: var(--ink); color: var(--ink); }
 .states .st.live i { background: var(--hint); animation: pulse 1.6s ease-in-out infinite; }
 .states .st.done { border-color: var(--rule); color: var(--faint); }
-html.js .states .s1 { animation-delay: 0s; } html.js .states .s2 { animation-delay: 3s; } html.js .states .s3 { animation-delay: 6s; } html.js .states .s4 { animation-delay: 9s; }
+html.js .states .s1 { animation-delay: 0s; } html.js .states .s2 { animation-delay: 1.5s; } html.js .states .s3 { animation-delay: 3s; } html.js .states .s4 { animation-delay: 4.5s; }
 @keyframes state-cycle { 0% { opacity: 0; transform: translateY(6px); } 3% { opacity: 1; transform: none; } 22% { opacity: 1; transform: none; } 25% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 0; transform: translateY(-6px); } }
 .join-note { font-size: 12px; color: var(--faint); margin-top: 14px; }
 
@@ -482,17 +482,17 @@ html.js .states .s1 { animation-delay: 0s; } html.js .states .s2 { animation-del
 
 .cyc-lang { height: 4.2em; }
 html.js .cyc-lang > * { animation: cyc5 8.75s ease-in-out infinite; }
-html.js .cyc-lang > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-lang > *:nth-child(2) { animation-delay: 3.5s; }
-html.js .cyc-lang > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-lang > *:nth-child(4) { animation-delay: 10.5s; }
-html.js .cyc-lang > *:nth-child(5) { animation-delay: 14s; }
+html.js .cyc-lang > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-lang > *:nth-child(2) { animation-delay: 1.75s; }
+html.js .cyc-lang > *:nth-child(3) { animation-delay: 3.5s; } html.js .cyc-lang > *:nth-child(4) { animation-delay: 5.25s; }
+html.js .cyc-lang > *:nth-child(5) { animation-delay: 7s; }
 @keyframes cyc5 { 0% { opacity: 0; transform: translateY(7px); } 2.5% { opacity: 1; transform: none; } 17% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-7px); } 100% { opacity: 0; transform: translateY(-7px); } }
 
 .cyc-level { height: 4.2em; }
 html.js .cyc-level > * { animation: cyc6 10.5s ease-in-out infinite; }
 .cyc-level > * { font-family: var(--mono); flex-direction: column; align-items: flex-start; justify-content: center; gap: 5px; }
-html.js .cyc-level > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-level > *:nth-child(2) { animation-delay: 3.5s; }
-html.js .cyc-level > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-level > *:nth-child(4) { animation-delay: 10.5s; }
-html.js .cyc-level > *:nth-child(5) { animation-delay: 14s; } html.js .cyc-level > *:nth-child(6) { animation-delay: 17.5s; }
+html.js .cyc-level > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-level > *:nth-child(2) { animation-delay: 1.75s; }
+html.js .cyc-level > *:nth-child(3) { animation-delay: 3.5s; } html.js .cyc-level > *:nth-child(4) { animation-delay: 5.25s; }
+html.js .cyc-level > *:nth-child(5) { animation-delay: 7s; } html.js .cyc-level > *:nth-child(6) { animation-delay: 8.75s; }
 @keyframes cyc6 { 0% { opacity: 0; transform: translateY(7px); } 2% { opacity: 1; transform: none; } 14.3% { opacity: 1; transform: none; } 16.7% { opacity: 0; transform: translateY(-7px); } 100% { opacity: 0; transform: translateY(-7px); } }
 .cyc-level b { font-family: var(--serif); font-weight: 400; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
 
@@ -504,7 +504,7 @@ html.js .rail6 i { animation: rail6 10.5s ease-in-out infinite; }
 .cyc-route { height: 5.4em; }
 html.js .cyc-route > * { animation: cyc3 7.5s ease-in-out infinite; }
 .cyc-route > * { align-items: center; }
-html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route > *:nth-child(2) { animation-delay: 5s; } html.js .cyc-route > *:nth-child(3) { animation-delay: 10s; }
+html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route > *:nth-child(2) { animation-delay: 2.5s; } html.js .cyc-route > *:nth-child(3) { animation-delay: 5s; }
 @keyframes cyc3 { 0% { opacity: 0; transform: translateY(7px); } 4% { opacity: 1; transform: none; } 29% { opacity: 1; transform: none; } 33% { opacity: 0; transform: translateY(-7px); } 100% { opacity: 0; transform: translateY(-7px); } }
 .cyc-route svg { flex-shrink: 0; }
 .cyc-route svg path, .cyc-route svg circle { fill: none; stroke: var(--cool-ink); stroke-width: 1.4; stroke-linecap: round; }
@@ -907,19 +907,19 @@ html.js .act.on { opacity: 1; visibility: visible; }
 .film-langs > span { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 48px); letter-spacing: -0.018em; }
 html.js .film-levels > span { animation: cyc7f 19.25s ease-in-out infinite; }
 html.js .film-levels > span:nth-child(1) { animation-delay: 0s; }
-html.js .film-levels > span:nth-child(2) { animation-delay: 5.5s; }
-html.js .film-levels > span:nth-child(3) { animation-delay: 11s; }
-html.js .film-levels > span:nth-child(4) { animation-delay: 16.5s; }
-html.js .film-levels > span:nth-child(5) { animation-delay: 22s; }
-html.js .film-levels > span:nth-child(6) { animation-delay: 27.5s; }
-html.js .film-levels > span:nth-child(7) { animation-delay: 33s; }
+html.js .film-levels > span:nth-child(2) { animation-delay: 2.75s; }
+html.js .film-levels > span:nth-child(3) { animation-delay: 5.5s; }
+html.js .film-levels > span:nth-child(4) { animation-delay: 8.25s; }
+html.js .film-levels > span:nth-child(5) { animation-delay: 11s; }
+html.js .film-levels > span:nth-child(6) { animation-delay: 13.75s; }
+html.js .film-levels > span:nth-child(7) { animation-delay: 16.5s; }
 @keyframes cyc7f { 0% { opacity: 0; transform: translateY(10px); } 1.5% { opacity: 1; transform: none; } 12.8% { opacity: 1; transform: none; } 14.3% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
 html.js .film-langs > span { animation: cyc5f 12.5s ease-in-out infinite; }
 html.js .film-langs > span:nth-child(1) { animation-delay: 0s; }
-html.js .film-langs > span:nth-child(2) { animation-delay: 5s; }
-html.js .film-langs > span:nth-child(3) { animation-delay: 10s; }
-html.js .film-langs > span:nth-child(4) { animation-delay: 15s; }
-html.js .film-langs > span:nth-child(5) { animation-delay: 20s; }
+html.js .film-langs > span:nth-child(2) { animation-delay: 2.5s; }
+html.js .film-langs > span:nth-child(3) { animation-delay: 5s; }
+html.js .film-langs > span:nth-child(4) { animation-delay: 7.5s; }
+html.js .film-langs > span:nth-child(5) { animation-delay: 10s; }
 @keyframes cyc5f { 0% { opacity: 0; transform: translateY(10px); } 2% { opacity: 1; transform: none; } 18% { opacity: 1; transform: none; } 20% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(-10px); } }
 .film-line { margin-top: clamp(12px, 2vh, 22px); color: var(--muted); font-size: clamp(14px, 1.2vw, 18px); text-align: center; }
 
@@ -1395,9 +1395,9 @@ html.js .ag2-l2{animation:ag2-l2 17s ease-in-out infinite both}
 .cyc-say .cmd { font-family: var(--mono); color: var(--ink); font-size: clamp(15px, 1.25vw, 19px); }
 .cyc-say .outc { color: var(--muted); font-size: clamp(13px, 1vw, 15px); line-height: 1.5; }
 html.js .cyc-say > * { animation: cyc6 10.5s ease-in-out infinite; }
-html.js .cyc-say > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-say > *:nth-child(2) { animation-delay: 3.5s; }
-html.js .cyc-say > *:nth-child(3) { animation-delay: 7s; } html.js .cyc-say > *:nth-child(4) { animation-delay: 10.5s; }
-html.js .cyc-say > *:nth-child(5) { animation-delay: 14s; } html.js .cyc-say > *:nth-child(6) { animation-delay: 17.5s; }
+html.js .cyc-say > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-say > *:nth-child(2) { animation-delay: 1.75s; }
+html.js .cyc-say > *:nth-child(3) { animation-delay: 3.5s; } html.js .cyc-say > *:nth-child(4) { animation-delay: 5.25s; }
+html.js .cyc-say > *:nth-child(5) { animation-delay: 7s; } html.js .cyc-say > *:nth-child(6) { animation-delay: 8.75s; }
 
 /* pinned reference card inside a workspace */
 .pincard { position: absolute; left: 14px; right: 14px; top: 14px; margin: 0 auto; width: min(540px, 90%); background: var(--warm-soft); border: 1.5px dashed var(--warm-line); border-radius: 8px; padding: 10px 14px 11px; font-family: var(--mono); font-size: clamp(12px, 0.95vw, 14px); line-height: 1.5; color: var(--warm-deep); z-index: 4; }
@@ -1501,12 +1501,12 @@ html.js .agk-tb{animation:agk-b 4s steps(1) infinite}
   display: flex; align-items: center; justify-content: center; text-align: center;
   font-size: clamp(15px, 1.5vw, 21px); color: var(--muted); line-height: 1.3;
 }
-html.js .film-langline > span { animation: cyc5f 12.5s ease-in-out infinite; }
+html.js .film-langline > span { animation: cyc5f 6.25s ease-in-out infinite; }
 html.js .film-langline > span:nth-child(1) { animation-delay: 0s; }
-html.js .film-langline > span:nth-child(2) { animation-delay: 2.5s; }
-html.js .film-langline > span:nth-child(3) { animation-delay: 5s; }
-html.js .film-langline > span:nth-child(4) { animation-delay: 7.5s; }
-html.js .film-langline > span:nth-child(5) { animation-delay: 10s; }
+html.js .film-langline > span:nth-child(2) { animation-delay: 1.25s; }
+html.js .film-langline > span:nth-child(3) { animation-delay: 2.5s; }
+html.js .film-langline > span:nth-child(4) { animation-delay: 3.75s; }
+html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 @media (prefers-reduced-motion: reduce) {
   .film-langline { height: auto; }
   .film-langline > span { position: static; opacity: 1 !important; }
