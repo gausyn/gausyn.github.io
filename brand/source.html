@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Gausyn brand asset renderer</title>
+<style>
+  /* the same palette the site uses (assets/gausyn.css :root) */
+  :root {
+    --ink: #0a0a0a;
+    --warm: #f0c79a;
+    --cool: #c9d4e8;
+    --blush: #e5c3b3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  .canvas {
+    position: relative; overflow: hidden; background: #ffffff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .canvas.square { width: 1600px; height: 1600px; }
+  .canvas.banner { width: 3000px; height: 1000px; }
+
+  .aurora { position: absolute; inset: 0; overflow: hidden; }
+  .aurora i { position: absolute; display: block; border-radius: 50%; }
+  .grain {
+    position: absolute; inset: 0; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* ── square: reads at 48px in a timeline, so the hues carry more weight ── */
+  .square .aurora i { filter: blur(150px); opacity: 0.92; }
+  .square .w { width: 1180px; height: 1180px; top: -230px; left: -180px;
+    background: radial-gradient(circle at 40% 40%, var(--warm) 0%, rgba(240,199,154,0) 68%); }
+  .square .c { width: 1320px; height: 1320px; top: 380px; left: 620px;
+    background: radial-gradient(circle at 55% 45%, var(--cool) 0%, rgba(201,212,232,0) 68%); }
+  .square .b { width: 1000px; height: 1000px; top: 830px; left: 60px;
+    background: radial-gradient(circle at 50% 50%, var(--blush) 0%, rgba(229,195,179,0) 70%); }
+  .square .grain { opacity: 0.20; }
+
+  /* Georgia's g carries a deep descender, so the ink sits 20.8% of the em
+     below the box centre and 1.1% right of it. Both are corrected here so the
+     glyph is centred on its ink, not on its line box, inside X's circular crop. */
+  .mark {
+    position: absolute; color: var(--ink); line-height: 1;
+    letter-spacing: -0.022em;
+    left: 50%; top: 50%; transform: translate(-50%, -70.8%);
+  }
+  .mark.centre { font-size: 1050px; margin-left: calc(1050px * -0.011); }
+  .mark.left   { font-size: 900px;  margin-left: calc(900px * -0.011 - 200px); }
+
+  /* ── banner: 3:1, no text, just the drift ── */
+  .banner .aurora i { filter: blur(190px); opacity: 0.85; }
+  .banner .w { width: 1700px; height: 1700px; top: -560px; left: -320px;
+    background: radial-gradient(circle at 40% 40%, var(--warm) 0%, rgba(240,199,154,0) 68%); }
+  .banner .c { width: 1900px; height: 1900px; top: -420px; left: 1500px;
+    background: radial-gradient(circle at 55% 45%, var(--cool) 0%, rgba(201,212,232,0) 68%); }
+  .banner .b { width: 1400px; height: 1400px; top: 340px; left: 780px;
+    background: radial-gradient(circle at 50% 50%, var(--blush) 0%, rgba(229,195,179,0) 70%); }
+  .banner .grain { opacity: 0.16; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+  var v = new URLSearchParams(location.search).get('v') || 'avatar';
+  var shape = v === 'banner' ? 'banner' : 'square';
+  var mark = v === 'avatar' ? '<div class="mark centre">g</div>'
+           : v === 'avatar-left' ? '<div class="mark left">g</div>' : '';
+  document.getElementById('stage').innerHTML =
+    '<div class="canvas ' + shape + '">' +
+      '<div class="aurora"><i class="w"></i><i class="c"></i><i class="b"></i><div class="grain"></div></div>' +
+      mark +
+    '</div>';
+</script>
+</body>
+</html>
