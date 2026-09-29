@@ -121,7 +121,12 @@
         return el ? el.value.trim() : '';
       }
       var subject = '[' + (v('topic') || 'Hello') + '] ' + (v('name') || 'Website message');
-      var body = v('message') + '\n\n\u2014 ' + v('name') + (v('email') ? ' (' + v('email') + ')' : '');
+      // any field marked data-include leads the email as a labelled line
+      var extras = Array.prototype.slice.call(cf.querySelectorAll('[data-include]'))
+        .map(function (el) { var t = el.value.trim(); return t ? el.getAttribute('data-include') + ': ' + t : ''; })
+        .filter(Boolean);
+      var body = (extras.length ? extras.join('\n') + '\n\n' : '') + v('message') +
+        '\n\n- ' + v('name') + (v('email') ? ' (' + v('email') + ')' : '');
       window.location.href = 'mailto:gausyninc@gmail.com?subject=' +
         encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       var note = document.getElementById('contact-note');
