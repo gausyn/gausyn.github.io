@@ -59,7 +59,7 @@
   if (film) {
     var acts = Array.prototype.slice.call(film.querySelectorAll('.act'));
     var dots = Array.prototype.slice.call(film.querySelectorAll('.film-dot'));
-    var DURS = [23, 25, 27, 19.5]; // one full loop of each act, at the doubled pace
+    var DURS = [23, 25, 27, 30, 36]; // one full loop of each act: dashboard, teacher, practice, learning, projects
     var idx = 0, timer = null, onScreen = true;
 
     // the pane takes the height of the act on screen and eases between them:
