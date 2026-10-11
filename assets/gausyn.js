@@ -2,8 +2,8 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
-  // scroll reveal
-  var items = document.querySelectorAll('[data-reveal]');
+  // reveal: only the opening section of a page fades in (see gausyn.css)
+  var items = document.querySelectorAll('main > section:first-child [data-reveal]');
   if (reduce || !hasIO) {
     items.forEach(function (el) { el.classList.add('in'); });
   } else {
