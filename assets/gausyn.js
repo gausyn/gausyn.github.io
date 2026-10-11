@@ -2,8 +2,8 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
-  // reveal: only the opening section of a page fades in (see gausyn.css)
-  var items = document.querySelectorAll('main > section:first-child [data-reveal]');
+  // reveal: only the homepage's film hero fades in (see gausyn.css)
+  var items = document.querySelectorAll('.herofilm [data-reveal]');
   if (reduce || !hasIO) {
     items.forEach(function (el) { el.classList.add('in'); });
   } else {
