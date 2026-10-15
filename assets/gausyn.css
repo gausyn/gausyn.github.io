@@ -153,10 +153,10 @@ section { padding: var(--section) 0; scroll-margin-top: calc(var(--header-h) + 2
   box-shadow: var(--shadow-float); overflow: hidden;
 }
 
-html.js .scene * { animation-play-state: paused; }
-html.js .scene.play * { animation-play-state: running; }
-/* only the act on screen runs; the rest wait at their first frame */
-html.js .film .act:not(.on) * { animation-play-state: paused; }
+/* a demo waits while it is off screen, and in the film only the act on screen runs.
+   !important because every timeline rule below is an `animation:` shorthand, which
+   resets the play state to running and, being later in the file, would otherwise win */
+html.js .scene:not(.play) *, html.js .film .act:not(.on) * { animation-play-state: paused !important; }
 /* momentary class used to rewind every animation in a subtree to frame zero */
 html.js .restart, html.js .restart * { animation: none !important; }
 

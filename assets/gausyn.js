@@ -1,23 +1,51 @@
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
+  var now = function () { return window.performance && performance.now ? performance.now() : Date.now(); };
 
-  // reveal: things fade in the first time you scroll down to them. Whether they fade at
-  // all is the --fade-in switch in gausyn.css; this only decides when each one shows.
+  // How the page is moving, shared by the fade-in and the demos: which way, how quickly
+  // (px per ms), and whether fast: about a screen and a half a second or more, as in a
+  // fling, a drag of the scroll bar or a jump. Speed is taken over the last ~150ms, so a
+  // single notch of a mouse wheel reads as the unhurried scroll it is.
+  var FAST = 1.2;
+  var motion = { y: window.pageYOffset || 0, up: false, fast: false, v: 0 };
+  var trail = [], calm = null;
+  function track() {
+    var y = window.pageYOffset || 0, t = now();
+    if (y !== motion.y) motion.up = y < motion.y;
+    trail.push({ t: t, y: y });
+    while (trail.length > 1 && t - trail[0].t > 150) trail.shift();
+    var span = t - trail[0].t, dy = Math.abs(y - motion.y);
+    var prev = trail.length > 1 ? trail[trail.length - 2] : null;
+    var inst = prev ? dy / Math.max(t - prev.t, 8) : 0;
+    // With under 40ms of history: one frame moving 120px or more is fast (a fling, a jump,
+    // a drag of the bar; reading never moves that far in a frame), and so is a second
+    // frame moving faster than one wheel notch ever does (about 2px per ms at its peak).
+    if (span >= 40) motion.v = Math.abs(y - trail[0].y) / span;
+    else if (dy >= 120) motion.v = dy / 16;
+    else motion.v = inst > FAST * 2 ? inst : 0;
+    motion.fast = motion.v > FAST || (motion.fast && motion.v > FAST / 2);
+    motion.y = y;
+    clearTimeout(calm);
+    calm = setTimeout(function () { motion.fast = false; motion.v = 0; trail = []; }, 180);
+  }
+  window.addEventListener('scroll', track, { passive: true });
+
+  // reveal: things fade in as you scroll down to them. Whether they fade at all is the
+  // --fade-in switch in gausyn.css; this only decides when each one shows, and how.
   var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
   if (reduce || !hasIO) {
     items.forEach(function (el) { el.classList.add('in'); });
   } else {
     var pending = items.slice(); // not shown yet
     var fading = [];             // shown a moment ago, and maybe still on its way in
-    var lastY = window.pageYOffset || 0, goingUp = false, sweeping = false;
+    var sweeping = false;
 
     function without(list, els) {
       return list.filter(function (el) { return els.indexOf(el) === -1; });
     }
 
-    // shown at once, with no fade (and any fade under way cut short): it has already
-    // been scrolled past, or it is being met on the way back up
+    // shown at once, with no fade (and any fade under way cut short)
     function settle(els) {
       if (!els.length) return;
       els.forEach(function (el) {
@@ -32,23 +60,33 @@
       fading = without(fading, els);
     }
 
-    function isPassed(rect) { return (rect.width || rect.height) && rect.top < 0; }
+    // A fade only reads when there is time to watch it, so only an unhurried scroll down
+    // gets one. Shown at once instead: anything already scrolled past, anything met on
+    // the way back up, and, while the page moves fast, anything on screen or about to be
+    // (looking further ahead the faster it goes).
+    function atOnce(r) {
+      if (!r.width && !r.height) return false; // not laid out (a hidden film act, say)
+      if (r.top < 0) return true;
+      var vh = window.innerHeight;
+      if (motion.up) return r.top < vh;
+      return motion.fast && r.top < vh + Math.max(vh * 0.6, motion.v * 300);
+    }
 
     // Everything arriving in the same tick fades in reading order: down the
     // page first, and left to right across anything sharing a row.
     var io = new IntersectionObserver(function (entries) {
       var hits = entries.filter(function (e) { return e.isIntersecting && pending.indexOf(e.target) !== -1; });
       if (!hits.length) return;
-      var now = hits.filter(function (e) { return goingUp || isPassed(e.boundingClientRect); });
-      settle(now.map(function (e) { return e.target; }));
-      hits = hits.filter(function (e) { return now.indexOf(e) === -1; });
+      var quick = hits.filter(function (e) { return atOnce(e.boundingClientRect); });
+      settle(quick.map(function (e) { return e.target; }));
+      hits = hits.filter(function (e) { return quick.indexOf(e) === -1; });
       hits.sort(function (a, b) {
         var ra = a.boundingClientRect, rb = b.boundingClientRect;
         if (Math.abs(ra.top - rb.top) > 24) return ra.top - rb.top;
         return ra.left - rb.left;
       });
       hits.forEach(function (entry, n) {
-        var el = entry.target, delay = Math.min(n, 10) * 0.07;
+        var el = entry.target, delay = Math.min(n, 5) * 0.05;
         el.style.transitionDelay = delay + 's';
         el.classList.add('in');
         io.unobserve(el);
@@ -61,19 +99,15 @@
         }, delay * 1000 + 700);
       });
       pending = without(pending, hits.map(function (e) { return e.target; }));
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
     items.forEach(function (el) { io.observe(el); });
 
-    // Anything whose top is above the window has been passed, however fast the scroll
-    // or jump that passed it: it is simply there, so the way back up is never blank.
+    // every frame the page moves, catch up anything the observer has not reached yet
     function sweep() {
       sweeping = false;
-      settle(pending.concat(fading).filter(function (el) { return isPassed(el.getBoundingClientRect()); }));
+      settle(pending.concat(fading).filter(function (el) { return atOnce(el.getBoundingClientRect()); }));
     }
     function onScroll() {
-      var y = window.pageYOffset || 0;
-      if (y < lastY - 1) goingUp = true; else if (y > lastY + 1) goingUp = false;
-      lastY = y;
       if (!sweeping && (pending.length || fading.length)) { sweeping = true; requestAnimationFrame(sweep); }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -89,23 +123,124 @@
     el.classList.remove('restart');
   }
 
-  // scenes: each starts from the top the first time it is reached, waits while it is
-  // off screen, and picks up where it stopped when you come back. Rewinding on every
-  // return left its empty first frame on screen whenever you scrolled back up quickly.
-  var scenes = document.querySelectorAll('[data-scene]');
+  // Demos: each loops, and waits while it is off screen (gausyn.css pauses it). It is
+  // never met on an empty frame: off screen it waits on its full frame, just before the
+  // loop fades out, so a fling or a scroll back up always lands on a finished picture.
+  // Reading your way down to one at an ordinary pace, it starts its story from the top
+  // instead, out of sight, just before it scrolls into view.
+  var OPEN = 3000; // ms: the first seconds of a demo are still mostly empty
+
+  function loopAnim(wrap) {
+    if (!wrap || !wrap.getAnimations) return null;
+    return wrap.getAnimations().filter(function (a) { return a.animationName && a.animationName.indexOf('fade-') === 0; })[0] || null;
+  }
+  // the loop a demo runs on: its length, and its full frame just before it fades out
+  function loopOf(stage) {
+    if (stage.gzLoop) return stage.gzLoop;
+    var wrap = stage.querySelector('[class*="fade-"]'), a = loopAnim(wrap);
+    if (!a) return null;
+    var D = a.effect.getComputedTiming().duration, at = 0.9;
+    try {
+      var kf = a.effect.getKeyframes();
+      for (var i = 0; i + 1 < kf.length; i++) {
+        if (parseFloat(kf[i].opacity) >= 1 && parseFloat(kf[i + 1].opacity) < 1) at = kf[i].computedOffset;
+      }
+    } catch (e) { /* keep 0.9 */ }
+    return (stage.gzLoop = { wrap: wrap, D: D, full: Math.max(0, at * D - 400) });
+  }
+  function where(stage) { // ms into its loop, or null
+    var L = loopOf(stage), a = L && loopAnim(L.wrap);
+    return a && a.currentTime != null ? Number(a.currentTime) % L.D : null;
+  }
+  function seek(stage, t) { // every part of one demo moves together
+    var L = loopOf(stage);
+    if (!L || !stage.getAnimations) return;
+    stage.getAnimations({ subtree: true }).forEach(function (a) {
+      if (a.animationName && Math.abs(a.effect.getComputedTiming().duration - L.D) < 1) a.currentTime = t;
+    });
+  }
+  function emptyAt(stage, t) { return t < OPEN || t > loopOf(stage).full; }
+  function stagesIn(section) {
+    return Array.prototype.slice.call(section.querySelectorAll('.stage')).filter(function (st) {
+      var act = st.closest ? st.closest('.act') : null;
+      return !act || act.classList.contains('on');
+    });
+  }
+  function arrive(section) {
+    var vh = window.innerHeight;
+    stagesIn(section).forEach(function (st) {
+      var t = where(st);
+      if (t == null) return;
+      if (st.getBoundingClientRect().top >= vh && !motion.up && !motion.fast) seek(st, 0);
+      else seek(st, emptyAt(st, t) ? loopOf(st).full : t);
+    });
+  }
+  function leave(section) {
+    stagesIn(section).forEach(function (st) {
+      var t = where(st);
+      if (t != null && emptyAt(st, t)) seek(st, loopOf(st).full);
+    });
+  }
+  // as the page opens, a demo you can properly see starts its story; one only peeking
+  // in at the bottom edge waits on its full frame like any other off screen
+  function opening(section) {
+    var vh = window.innerHeight;
+    stagesIn(section).forEach(function (st) {
+      var r = st.getBoundingClientRect(), seen = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+      if (seen < Math.min(r.height, vh) * 0.4 && where(st) != null) seek(st, loopOf(st).full);
+    });
+  }
+  // While the page moves fast, no demo on screen or about to be is left in its empty
+  // opening or its fade-out: it jumps to its full frame (mid-fling, nobody sees the cut)
+  // and plays on from there once the page settles.
+  var demos = Array.prototype.slice.call(document.querySelectorAll('[data-scene] .stage'));
+  function demoSweep() {
+    if (!motion.fast || !demos.length) return;
+    var vh = window.innerHeight, reach = Math.max(vh * 0.6, motion.v * 300);
+    demos.forEach(function (st) {
+      var act = st.closest ? st.closest('.act') : null;
+      if (act && !act.classList.contains('on')) return;
+      var r = st.getBoundingClientRect();
+      if (r.bottom < -reach || r.top > vh + reach) return;
+      var t = where(st);
+      if (t == null || !emptyAt(st, t)) return;
+      seek(st, loopOf(st).full);
+      if (filmSync && film && film.contains(st)) filmSync();
+    });
+  }
+  if (!reduce && hasIO) {
+    var demoQueued = false;
+    window.addEventListener('scroll', function () {
+      if (demoQueued || !motion.fast) return;
+      demoQueued = true;
+      requestAnimationFrame(function () { demoQueued = false; demoSweep(); });
+    }, { passive: true });
+  }
+
+  var film = document.querySelector('.film');
+  var filmSync = null; // the film times its next act from the demo's clock; told when that moves
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('[data-scene]'));
   if (reduce || !hasIO) {
     scenes.forEach(function (el) { el.classList.add('play'); });
   } else {
     var sio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        entry.target.classList.toggle('play', entry.isIntersecting);
+        var s = entry.target, first = !s.gzSeen;
+        s.gzSeen = true;
+        if (entry.isIntersecting) {
+          if (first) opening(s); else arrive(s);
+          s.classList.add('play');
+        } else {
+          s.classList.remove('play');
+          leave(s);
+        }
+        if (filmSync && film && s.contains(film)) filmSync();
       });
     }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
     scenes.forEach(function (el) { sio.observe(el); });
   }
 
   // film: auto-advancing slideshow with prev/next and dots
-  var film = document.querySelector('.film');
   if (film) {
     var acts = Array.prototype.slice.call(film.querySelectorAll('.act'));
     var dots = Array.prototype.slice.call(film.querySelectorAll('.film-dot'));
@@ -120,13 +255,12 @@
     }
 
     // How long the act on screen still has to run, read from its own loop clock. The act
-    // waits while it is off screen and picks up where it stopped, so the wait for the
-    // next act has to as well, or acts would change in the middle of a loop.
+    // waits while it is off screen and may be moved to its full frame, so the wait for
+    // the next act follows the clock, or acts would change in the middle of a loop.
     function left() {
       var total = DURS[idx] * 1000;
-      var wrap = acts[idx].querySelector('[class*="fade-"]');
-      var loops = wrap && wrap.getAnimations ? wrap.getAnimations().filter(function (a) { return a.animationName; }) : [];
-      var t = loops.length ? Number(loops[0].currentTime) : NaN;
+      var a = loopAnim(acts[idx].querySelector('[class*="fade-"]'));
+      var t = a ? Number(a.currentTime) : NaN;
       return t >= 0 ? total - (t % total) : total;
     }
 
@@ -135,6 +269,7 @@
       if (reduce || !onScreen) return;
       timer = setTimeout(function () { show(idx + 1); }, left());
     }
+    filmSync = schedule;
     function show(i) {
       idx = ((i % acts.length) + acts.length) % acts.length;
       acts.forEach(function (a, j) { a.classList.toggle('on', j === idx); });
