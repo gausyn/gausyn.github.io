@@ -6,7 +6,7 @@
   <title>Student data, gausyn</title>
   <meta name="description" content="What gausyn does and does not do with student data, written for parents, guardians, teachers and schools." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=25" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=26" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -26,7 +26,7 @@
       <div class="read">
         <span class="eyebrow">Trust &middot; Student data</span>
         <h1>Student data</h1>
-        <p class="meta"><span>Last updated 18 October 2026</span><span>gausyn, a product of Inquisara</span></p>
+        <p class="meta"><span>Last updated 19 October 2026</span><span>gausyn, a product of Inquisara</span></p>
       </div>
     </section>
 
@@ -109,14 +109,14 @@
           <li>Boards shared in a space. They pass through our lesson server to the others in the space and are not stored there.</li>
           </ul>
           <h3>Kept for a short time by the companies we use</h3>
-          <p>OpenAI may keep what it receives for up to 30 days to check for abuse. Our hosting providers keep standard server records, such as internet addresses and error reports, for a limited time.</p>
+          <p>Our AI model provider may keep what it receives for up to 30 days to check for abuse. Our hosting providers keep standard server records, such as internet addresses and error reports, for a limited time.</p>
         </div>
 
         <div class="clause" id="uploads">
           <h2><span class="num">5.</span>Homework you upload</h2>
           <p>There are three ways to bring work into gausyn, and each is handled differently on purpose.</p>
           <ul>
-          <li><strong>On the whiteboard, during a lesson.</strong> The worksheet or photo is shown on the board. When gausyn answers, a picture of the visible board, with the pages on it, is sent to OpenAI so gausyn can see the work. The pages are saved with the board in the student's browser, not on our servers.</li>
+          <li><strong>On the whiteboard, during a lesson.</strong> The worksheet or photo is shown on the board. When gausyn answers, a picture of the visible board, with the pages on it, is sent to our AI model provider so gausyn can see the work. The pages are saved with the board in the student's browser, not on our servers.</li>
           <li><strong>Attached ahead of a lesson</strong>, from the daily check-in for example. The file is read once to write a short summary of the topic and the kind of problems, so gausyn knows roughly what is coming. The summary is kept. The file itself is not, which is why gausyn asks for the sheet again when the lesson starts.</li>
           <li><strong>Uploaded to a Project.</strong> The file is stored in the student's account so they can keep working with it, until they delete it or the project.</li>
           </ul>
@@ -126,14 +126,14 @@
           <h2><span class="num">6.</span>Who processes it</h2>
           <p>gausyn runs on a small number of companies, each doing one job, and each receives only what its job needs:</p>
           <ul>
-          <li><strong>Supabase</strong>: sign-in, the database, and stored project files.</li>
-          <li><strong>Vercel</strong> and <strong>Railway</strong>: hosting for the app and for the whiteboard's lesson server.</li>
-          <li><strong>OpenAI</strong>: gausyn's replies and drawings, and turning speech into text.</li>
-          <li><strong>ElevenLabs</strong>: gausyn's voice. It receives only the words gausyn is about to say.</li>
-          <li><strong>Stripe</strong>: subscriptions, payments and receipts, for families who choose a paid plan.</li>
+          <li><strong>A database and sign-in provider</strong>: sign-in, the database, and stored project files.</li>
+          <li><strong>Hosting providers</strong>: hosting for the app and for the whiteboard's lesson server.</li>
+          <li><strong>An AI model provider</strong>: gausyn's replies and drawings, and turning speech into text.</li>
+          <li><strong>A voice provider</strong>: gausyn's voice. It receives only the words gausyn is about to say.</li>
+          <li><strong>A payment processor</strong>: subscriptions, payments and receipts, for families who choose a paid plan.</li>
           <li><strong>An email delivery service</strong>: the emails gausyn sends, such as confirming an address or choosing a new password.</li>
           </ul>
-          <p style="margin-top: 0.85em">Two smaller things happen in the browser. To show mathematics and to read scanned worksheets, gausyn loads open-source code from public content networks (Cloudflare and jsDelivr). To connect a call between friends, the browser asks Google's public connection service for its own internet address. These see the device's internet address, not the student's work.</p>
+          <p style="margin-top: 0.85em">Two smaller things happen in the browser. To show mathematics and to read scanned worksheets, gausyn loads open-source code from public content networks. To connect a call between friends, the browser asks a public connection service for its own internet address. These see the device's internet address, not the student's work.</p>
           <p>Nobody else receives student data. Before we add a company that handles student content, we update the Privacy Policy and this page. Anyone can ask us for the current list, with where each company operates.</p>
         </div>
 
@@ -262,7 +262,6 @@
             <li><a href="temp-accessibility.html">Accessibility</a></li>
             <li><a href="temp-student-data.html">Student data</a></li>
             <li><a href="temp-responsible-ai.html">Responsible AI</a></li>
-            <li><a href="temp-status.html">Status</a></li>
           </ul>
         </div>
       </div>
@@ -275,6 +274,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=25"></script>
+  <script src="assets/gausyn.js?v=26"></script>
 </body>
 </html>
