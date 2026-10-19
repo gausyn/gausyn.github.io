@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsible AI, Gausyn</title>
-  <meta name="description" content="How Gausyn is built to teach honestly, where it can still be wrong, and what we have refused to build." />
+  <title>Responsible AI, gausyn</title>
+  <meta name="description" content="How gausyn is built to teach honestly, how it keeps students safe, where it can still be wrong, and what we refuse to build." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="stylesheet" href="assets/gausyn.css?v=25" />
   <script>document.documentElement.classList.add('js')</script>
@@ -26,100 +26,114 @@
       <div class="read">
         <span class="eyebrow">Trust &middot; Responsible AI</span>
         <h1>Responsible AI</h1>
-        <p class="meta"><span>Last updated 24 August 2026</span><span>Gausyn, a product of Inquisara</span></p>
+        <p class="meta"><span>Last updated 18 October 2026</span><span>gausyn, a product of Inquisara</span></p>
       </div>
     </section>
 
     <section class="legal">
       <div class="read">
-        <p class="intro">Gausyn puts an AI in the position of a teacher, in front of children, on material they will be graded on. That deserves stating plainly: what it does, where it fails, and what we have refused to do with it.</p>
+        <p class="intro">gausyn teaches children and teenagers, on work many of them will be graded on, using AI models made by other companies. That deserves plain answers: what gausyn is, how it is kept honest, where it can still be wrong, how it keeps students safe, and what we have refused to build.</p>
+
+        <p class="draftnote">gausyn is in private testing and this page describes it as it is today. It will be reviewed with a lawyer, with the Privacy Policy and the Terms, before gausyn opens to the public. If anything here matters to a decision you are making, write to us and we will answer plainly.</p>
 
         <div class="toc">
           <h2>On this page</h2>
           <ol>
-            <li><a href="#what">What Gausyn is</a></li>
-            <li><a href="#built">How the tutor is built</a></li>
+            <li><a href="#what">What gausyn is</a></li>
+            <li><a href="#built">How gausyn is kept honest</a></li>
             <li><a href="#wrong">Where it can be wrong</a></li>
+            <li><a href="#safety">Keeping students safe</a></li>
             <li><a href="#integrity">Integrity by design</a></li>
-            <li><a href="#minors">Students are minors</a></li>
-            <li><a href="#oversight">Human oversight</a></li>
-            <li><a href="#data">Models and your data</a></li>
+            <li><a href="#people">People, not automatic decisions</a></li>
+            <li><a href="#data">AI models and your data</a></li>
             <li><a href="#wont">What we will not build</a></li>
             <li><a href="#report">Reporting a problem</a></li>
           </ol>
         </div>
 
         <div class="clause" id="what">
-          <h2><span class="num">1.</span>What Gausyn is</h2>
-          <p>Gausyn is an AI tutor built on large language models, vision models, and speech systems from third-party providers. It teaches lessons out loud, reads what a student writes on a shared board, and helps them work through problems.</p>
-          <p>It is a teaching tool. It is not a teacher's replacement, not an assessor, and not a source of authority about anything outside the problem on the page.</p>
+          <h2><span class="num">1.</span>What gausyn is</h2>
+          <p>gausyn is a computer program that teaches. It plans lessons, teaches them out loud on a whiteboard, draws, answers questions in Learning and helps with Projects. Its replies, drawings and voice are produced by AI models run by other companies: OpenAI for replies, drawings and turning speech into text, and ElevenLabs for the voice. At times OpenAI's voice is used instead.</p>
+          <p>gausyn is not a person and never claims to be one. If a student asks whether it is a person, it says plainly that it is a computer program that teaches. Its voice is computer-generated, and when the second voice is speaking, the app says so on screen.</p>
+          <p>It is a learning tool. It is not a school, an examiner, or a replacement for a teacher or a parent.</p>
         </div>
 
         <div class="clause" id="built">
-          <h2><span class="num">2.</span>How the tutor is built</h2>
-          <p>Three design decisions do most of the work of keeping it honest.</p>
+          <h2><span class="num">2.</span>How gausyn is kept honest</h2>
+          <p>Four design decisions do most of the work.</p>
           <ul>
-            <li><strong>It is grounded before it speaks.</strong> When a worksheet loads, Gausyn works every problem to a full reference solution first, and checks the student's steps against that rather than against its own improvisation.</li>
-            <li><strong>Its help is placed by rules, not by guesswork.</strong> Where a hint lands on the page is computed from the worksheet's own geometry. The model does not choose coordinates, so it cannot write over a student's work.</li>
-            <li><strong>It withholds the answer on purpose.</strong> The tutor is instructed to give a nudge, a single step, or a question, never the finished result, and it never writes in an answer space.</li>
+          <li><strong>It works the worksheet first.</strong> When a worksheet is loaded onto the board, gausyn first solves every problem on it to make a reference solution, then checks the student's steps against that rather than improvising.</li>
+          <li><strong>Its writing on the page is placed by rules.</strong> Where a hint goes is worked out from the worksheet's own layout: the empty space beside the question it belongs to. It never goes over printed text or over the student's own writing. The AI model never chooses the position.</li>
+          <li><strong>It does not do the homework.</strong> On a student's own worksheet, gausyn gives a hint, a step or a question, never the finished answer. It does not fill in a blank or pick a multiple-choice answer.</li>
+          <li><strong>It stays on learning.</strong> It refuses, kindly, requests that are harmful, dangerous, sexual or deceptive, and keeps everything suitable for the student's age.</li>
           </ul>
+          <p style="margin-top: 0.85em">In a planned lesson, gausyn teaches as a teacher would: it explains, asks check questions, and if the student does not answer, explains the answer itself before moving on.</p>
+          <p>Pictures are made with the same care. Every request for a picture is wrapped in a fixed description of a simple school diagram, with no real people, photorealistic faces or violence, and is made with the stricter of the two safety settings the picture service offers. The AI model's own words never reach the picture service unchanged.</p>
         </div>
 
         <div class="clause" id="wrong">
           <h2><span class="num">3.</span>Where it can be wrong</h2>
-          <p>All of the above reduces error. None of it eliminates error.</p>
+          <p>All of this reduces mistakes. None of it removes them.</p>
           <ul>
-            <li>The models can be confidently wrong, especially on long multi-step reasoning, unusual notation, or questions that depend on a diagram it cannot read clearly.</li>
-            <li>Handwriting recognition is imperfect. A misread digit can send a hint in the wrong direction.</li>
-            <li>Scanned or photographed worksheets are understood less reliably than typed PDFs.</li>
-            <li>Reference solutions are themselves generated, so a wrong reference produces a confidently wrong check.</li>
-            <li>The tutor may reflect biases present in its underlying models, including in the examples and contexts it invents for word problems.</li>
+          <li>AI models can be confidently wrong, especially on long reasoning with many steps, on unusual notation, and on diagrams they cannot read clearly.</li>
+          <li>Reading handwriting and scanned pages is imperfect. One misread digit can send a hint the wrong way.</li>
+          <li>The reference solution is made by an AI model too. If it is wrong, gausyn's checks are wrong with it.</li>
+          <li>Drawings can have mistakes in their labels, numbers or proportions.</li>
+          <li>gausyn can reflect biases in the models it is built on, for example in the people and places it invents for word problems.</li>
           </ul>
-          <p>What that means in practice: treat Gausyn as a very patient tutor who is usually right and occasionally not, rather than as an answer key. Check anything that will be graded, and tell us when it gets something wrong.</p>
+          <p style="margin-top: 0.85em">So treat gausyn as a patient teacher who is usually right and sometimes not, rather than as an answer key. Check anything that will be graded, and tell us when it gets something wrong. Our <a href="temp-terms.html#output">Terms of Service</a> say the same.</p>
+        </div>
+
+        <div class="clause" id="safety">
+          <h2><span class="num">4.</span>Keeping students safe</h2>
+          <p>Many people who use gausyn are under 18, and some are under 13, on an account a parent or guardian made for them. That shapes what gausyn is allowed to do.</p>
+          <ul>
+          <li><strong>When a student is not safe.</strong> If a student says or hints that they might hurt themselves, that someone is hurting them, or that they or someone else is in danger, gausyn stops teaching for that reply. It tells them it is glad they said so and that it matters, that it is not a person and cannot help the way a person can, and asks them to tell a parent, a teacher or another adult they trust that day. It gives them the numbers: 911 or the local emergency number if they may be in danger right now, 988 by call or text in Canada and the United States, and in Canada, Kids Help Phone at 1-800-668-6868 or by texting CONNECT to 686868. It does not ask for details or try to counsel them, and it goes back to the lesson only if the student asks.</li>
+          <li><strong>gausyn alerts nobody.</strong> No one watches conversations as they happen, and gausyn does not tell parents, schools or us when a student says something like this. gausyn is not a crisis or mental-health service. A child in danger needs a person.</li>
+          <li><strong>What gausyn remembers</strong> is short notes about how a student learns. It is built not to keep notes about health, religion, family circumstances or similar private matters, and the student or parent can read and delete every note in Settings, under Memory.</li>
+          <li><strong>Learning with friends</strong> happens only with people a student adds by their friend code, or who were given a space's invitation link. Calls are not recorded.</li>
+          <li><strong>Pictures</strong> are made with the safety framing described in section 2.</li>
+          </ul>
         </div>
 
         <div class="clause" id="integrity">
-          <h2><span class="num">4.</span>Integrity by design</h2>
-          <p>The easiest AI tutor to build is one that does the homework. We deliberately did not build that.</p>
-          <p>Gausyn does not fill blanks, does not hand over final answers on request, and asks the student to say why an answer works before it agrees. Teachers should be able to set homework knowing that a student who used Gausyn did the thinking. If you find a way to make it behave otherwise, that is a bug and we would like to hear about it.</p>
+          <h2><span class="num">5.</span>Integrity by design</h2>
+          <p>The easiest teaching program to build is one that does the homework. We chose not to build that.</p>
+          <p>On a worksheet, gausyn guides and does not fill in answers. In Learning it explains and works through examples, and in Projects it builds things with the student: drafts, code and designs. Whether that kind of help is allowed for a piece of schoolwork is up to the student's school. Handing in what gausyn produced as one's own unaided work, where the school forbids it, breaks our <a href="temp-terms.html#integrity">Terms of Service</a> as well as the school's rules.</p>
+          <p>If you find a way to make gausyn fill in a worksheet's answers, that is a bug, and we would like to hear about it.</p>
         </div>
 
-        <div class="clause" id="minors">
-          <h2><span class="num">5.</span>Students are minors</h2>
-          <p>Most of our users are children. That shapes what the tutor is allowed to be.</p>
+        <div class="clause" id="people">
+          <h2><span class="num">6.</span>People, not automatic decisions</h2>
           <ul>
-            <li>Generated images pass through a fixed safety template and the strictest moderation setting the image provider offers, and the model's own words never reach the image API unmodified.</li>
-            <li>The tutor stays on the subject of the session and is not built as a general-purpose companion or advice service.</li>
-            <li>Gausyn is not a mental-health service. If a student raises something serious, the right response is a person: a parent, a teacher, a counsellor, or an emergency service. We will not pretend a tutor is a substitute for one.</li>
+          <li>gausyn makes no decision about a student with legal or similarly serious effect. It does not give marks that count, rank students, or report on them to anyone. When it says whether an answer is right, that is teaching, not a grade.</li>
+          <li>We do not read students' conversations as a matter of course. Our servers' logs record sizes and errors, not what students say or write. When an account holder reports a problem, we look at what they show us, or, with their permission, at the account, and we fix the instructions, the rules or the product.</li>
+          <li>People at Inquisara decide what gausyn is allowed to do, and are responsible for it.</li>
           </ul>
         </div>
 
-        <div class="clause" id="oversight">
-          <h2><span class="num">6.</span>Human oversight</h2>
-          <p>We read reports ourselves. Sessions are not routinely reviewed by staff, which would be a privacy problem of its own, but when a problem is reported we look at what happened and fix the prompt, the placement rules, or the product.</p>
-          <p>No consequential decision about a student is made automatically by Gausyn. It does not grade, rank, stream, or report on students.</p>
-        </div>
-
         <div class="clause" id="data">
-          <h2><span class="num">7.</span>Models and your data</h2>
-          <p>To answer a student we send the relevant part of the session to an AI provider. We use those providers under business terms that exclude customer content from training their general models, and we ask them to process content only to return a reply. More detail is in the <a href="temp-privacy.html">Privacy Policy</a> and the <a href="temp-student-data.html">student data</a> page.</p>
+          <h2><span class="num">7.</span>AI models and your data</h2>
+          <p>To answer a student, we send the AI companies only the part of the session that the reply needs. Under the terms we use, OpenAI does not use it to train its models and may keep it for up to 30 days to check for abuse; recordings sent to be turned into text are not kept. ElevenLabs receives only the words gausyn is about to say, and our account is set so that they are not used to train its models. We do not train AI models on what students write, draw or say either.</p>
+          <p>The full details are in the <a href="temp-privacy.html#ai">Privacy Policy</a> and on the <a href="temp-student-data.html">Student data</a> page.</p>
         </div>
 
         <div class="clause" id="wont">
           <h2><span class="num">8.</span>What we will not build</h2>
           <ul>
-            <li>We will not sell student data, or fund Gausyn with advertising to children.</li>
-            <li>We will not build engagement mechanics designed to keep a child on the product longer than the learning requires. A session that ends early because the student understood is a success.</li>
-            <li>We will not present Gausyn as a human, or let it claim to be one.</li>
-            <li>We will not add features whose main use is helping a student submit work they did not do.</li>
-            <li>We will not use a student's struggles as marketing material.</li>
+          <li>We will not sell student data, show advertising in gausyn, or fund gausyn with advertising to children.</li>
+          <li>We will not build streaks, points, leaderboards or other tricks meant to keep a child on gausyn longer than learning needs. A session that ends early because the student understood is a success.</li>
+          <li>We will not present gausyn as a person, or let it claim to be one.</li>
+          <li>We will not add features whose main use is handing in work a student did not do.</li>
+          <li>We will not analyse students' faces or voices to identify them or to judge their feelings.</li>
+          <li>We will not use a student's work, words or struggles in our marketing.</li>
           </ul>
         </div>
 
         <div class="clause" id="report">
           <h2><span class="num">9.</span>Reporting a problem</h2>
-          <p>If Gausyn taught something incorrectly, said something inappropriate, or behaved in a way that worries you, tell us. Include the subject and roughly when it happened.</p>
-          <address>Inquisara, makers of Gausyn<br />Toronto, Ontario, Canada<br /><a href="mailto:gausyninc@gmail.com">gausyninc@gmail.com</a></address>
+          <p>If gausyn taught something wrong, said something inappropriate, or behaved in a way that worries you, tell us. Include the subject, roughly when it happened, and what it said if you can.</p>
+          <address>Inquisara, makers of gausyn<br />Toronto, Ontario, Canada<br /><a href="mailto:gausyninc@gmail.com">gausyninc@gmail.com</a></address>
         </div>
       </div>
     </section>
@@ -194,7 +208,7 @@
       <div class="foot-base">
         <div>
           <p class="parent">Inquisara</p>
-          <p class="copy">Gausyn is a product of Inquisara.</p>
+          <p class="copy">gausyn is a product of Inquisara.</p>
         </div>
         <p class="copy">&copy; 2026 Inquisara</p>
       </div>

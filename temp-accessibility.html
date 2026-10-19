@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessibility, Gausyn</title>
-  <meta name="description" content="How Gausyn works for students with disabilities, the standard we build to, and the gaps we have not closed yet." />
+  <title>Accessibility, gausyn</title>
+  <meta name="description" content="How gausyn works for students with disabilities, the standard we build to, and the gaps we have not closed yet." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="stylesheet" href="assets/gausyn.css?v=25" />
   <script>document.documentElement.classList.add('js')</script>
@@ -26,13 +26,15 @@
       <div class="read">
         <span class="eyebrow">Trust &middot; Accessibility</span>
         <h1>Accessibility</h1>
-        <p class="meta"><span>Last updated 24 August 2026</span><span>Gausyn, a product of Inquisara</span></p>
+        <p class="meta"><span>Last updated 18 October 2026</span><span>gausyn, a product of Inquisara</span></p>
       </div>
     </section>
 
     <section class="legal">
       <div class="read">
-        <p class="intro">A personal teacher for every student is a claim with an obligation attached. A tutor that only some students can operate is not the product we set out to build.</p>
+        <p class="intro">gausyn is meant to teach every student, so it has to work for students with disabilities. This page says what works today, the standard we build to, where gausyn still falls short, and how to ask for help.</p>
+
+        <p class="draftnote">gausyn is in private testing and this page describes it as it is today. It will be reviewed with a lawyer, with the Privacy Policy and the Terms, before gausyn opens to the public. If anything here matters to a decision you are making, write to us and we will answer plainly.</p>
 
         <div class="toc">
           <h2>On this page</h2>
@@ -40,6 +42,7 @@
             <li><a href="#commitment">Our commitment</a></li>
             <li><a href="#standard">The standard we build to</a></li>
             <li><a href="#today">What works today</a></li>
+            <li><a href="#time">Time limits</a></li>
             <li><a href="#gaps">Known gaps</a></li>
             <li><a href="#assistive">Assistive technology</a></li>
             <li><a href="#accommodations">Asking for an accommodation</a></li>
@@ -49,54 +52,76 @@
 
         <div class="clause" id="commitment">
           <h2><span class="num">1.</span>Our commitment</h2>
-          <p>We are building Gausyn to be usable by students with disabilities, including students who use screen readers, who navigate by keyboard, who need high contrast or larger text, who cannot use a mouse or stylus precisely, or who rely on captions.</p>
-          <p>We are not finished. This page says honestly where we are, because a vague accessibility statement helps nobody.</p>
+          <p>We build gausyn to be usable by students with disabilities: students who use a screen reader or a magnifier, who use a keyboard or a switch instead of a mouse, who need larger text or stronger contrast, who cannot draw precisely, who are deaf or hard of hearing, and students who need more time.</p>
+          <p>We are not finished. This page lists what works and what does not work yet, so that a family or a school can decide with the facts in front of them.</p>
         </div>
 
         <div class="clause" id="standard">
           <h2><span class="num">2.</span>The standard we build to</h2>
-          <p>We are working towards <strong>WCAG 2.1 Level AA</strong> as our baseline, which is also the standard referenced by the Accessibility for Ontarians with Disabilities Act (AODA) and by procurement rules at many schools and universities.</p>
-          <p>We have not yet completed a formal third-party audit or published a VPAT. Both are on the roadmap before Gausyn opens publicly, and institutions that need documentation to evaluate us should write to us in the meantime.</p>
+          <p>Our target is the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA. It includes the WCAG 2.0 Level AA requirements that Ontario's accessibility law, the Accessibility for Ontarians with Disabilities Act (AODA), refers to, and it is the level many schools ask for.</p>
+          <p>gausyn does not meet that target everywhere yet: section 5 lists where it falls short. No independent audit has been done, and we have not published an accessibility conformance report (a VPAT). We plan both before gausyn opens to the public. If your school needs documentation now, write to us and we will tell you exactly where things stand.</p>
         </div>
 
         <div class="clause" id="today">
           <h2><span class="num">3.</span>What works today</h2>
           <ul>
-            <li><strong>Voice as a first-class input.</strong> Every question can be asked out loud instead of typed, and every reply is spoken as well as written, which helps students with dyslexia, motor impairments, or visual impairments.</li>
-            <li><strong>Text as a first-class input.</strong> The reverse is equally true: nothing in Gausyn requires a microphone. Deaf and hard-of-hearing students can run an entire session in text.</li>
-            <li><strong>Reduced motion is respected.</strong> If your operating system is set to reduce motion, our animations do not play; scenes settle at their final, readable state rather than looping.</li>
-            <li><strong>Pace is set by the student.</strong> Nothing advances on a timer. A lesson waits for you, and "slower" and "go back" are always available.</li>
-            <li><strong>Zoom and reflow.</strong> Pages use relative sizing and reflow rather than fixed layouts, so browser zoom and larger system text sizes work.</li>
+          <li><strong>Speak or type, whichever suits you.</strong> Every question can be asked out loud or typed. Nothing in gausyn requires a microphone, a camera or drawing: a whole lesson can be done in text.</li>
+          <li><strong>Everything spoken is also written.</strong> In a whiteboard lesson, what gausyn says also appears in the chat. In Learning, replies are written, and voice mode reads them aloud. Students who are deaf or hard of hearing can follow in text, and students who find reading hard can listen.</li>
+          <li><strong>Pictures in Learning have a description.</strong> A picture gausyn makes in a Learning conversation carries a short written description that screen readers read out.</li>
+          <li><strong>Reduced motion.</strong> If your device is set to reduce motion, gausyn's animations stop and pages appear at once, in their final state.</li>
+          <li><strong>Light and dark.</strong> Settings, Appearance, offers Light, Dark, or Match system.</li>
+          <li><strong>Zoom and larger text.</strong> The calendar, Learning, Projects and Settings reflow when you zoom the browser or use larger text. The whiteboard is a fixed-size sheet: zooming makes it bigger to move around rather than rearranging it.</li>
+          <li><strong>Your pace, in your words.</strong> gausyn teaches at the student's level, and "slower", "say that again", "wait" or "explain it another way" always work.</li>
+          <li><strong>More than one way to do things.</strong> A lesson can be moved by dragging it on the calendar, or by asking in the chat on the Home page instead.</li>
+          <li><strong>Phones and tablets.</strong> gausyn works with touch as well as with a mouse.</li>
           </ul>
         </div>
 
+        <div class="clause" id="time">
+          <h2><span class="num">4.</span>Time limits</h2>
+          <p>Some parts of gausyn run on a clock, and we would rather say so plainly.</p>
+          <ul>
+          <li><strong>Planned lessons have a set length</strong>, chosen when they are planned, and stop when their time is up. A lesson can be made longer on the calendar before it starts, up to 4 hours.</li>
+          <li><strong>Check questions in a lesson gausyn leads</strong> (a planned lesson, or one started with the Teacher button). When gausyn asks a check question, it waits 30 seconds for an answer. If none comes, it explains the answer itself, then waits 20 seconds on "Did that make sense?" before moving on. The student can answer, type or ask a question at any moment, including after the time is up.</li>
+          <li><strong>"Wait" holds a lesson.</strong> Saying or typing "wait", "stop", "hold on" or "give me a minute" holds the lesson, with no countdown, until the student says "continue" or "keep going".</li>
+          <li><strong>The welcome tour</strong> after sign-up moves on by itself. It can be left at any time with "Skip tutorial".</li>
+          <li><strong>Everywhere else, gausyn waits for you.</strong> Learning, Projects, the chat on the Home page, and the whiteboard outside a lesson gausyn leads, such as help with your own homework, have no timers.</li>
+          </ul>
+          <p style="margin-top: 0.85em">There is no setting yet to make the waits longer or to turn them off for every lesson, and we plan to add one. Until then, "wait" holds a lesson for as long as a student needs.</p>
+        </div>
+
         <div class="clause" id="gaps">
-          <h2><span class="num">4.</span>Known gaps</h2>
+          <h2><span class="num">5.</span>Known gaps</h2>
           <p>We would rather list these than let you discover them:</p>
           <ul>
-            <li>The whiteboard canvas is inherently visual. Drawing requires a pointer, stylus, or finger, and its contents are not currently exposed to screen readers as structured text. A student who cannot draw can still work entirely by voice and text, but the board itself is not yet an accessible surface.</li>
-            <li>Diagrams generated by the tutor do not yet carry alternative text descriptions.</li>
-            <li>Uploaded worksheets are rendered as they were authored. If the original PDF is an inaccessible scan, Gausyn cannot make it accessible.</li>
-            <li>Keyboard navigation through board tabs and tool panels is incomplete.</li>
-            <li>We have not verified colour contrast across every state of every component.</li>
+          <li><strong>The whiteboard is visual.</strong> The drawings gausyn makes on the board have no text description yet, and what is on the board is not available to a screen reader. A student who cannot see or use the board can still learn by voice and text, in the lesson chat and in Learning.</li>
+          <li><strong>New replies in a whiteboard lesson are not announced.</strong> A screen reader does not yet read a new reply in the lesson chat by itself. gausyn's voice does read it aloud.</li>
+          <li><strong>Keyboard use is incomplete.</strong> The board's drawing tools and tabs, dragging lessons on the calendar, and some menus still need a mouse or touch.</li>
+          <li><strong>The waits in lessons</strong> (section 4) cannot be made longer in a setting yet. Saying "wait" holds a lesson in the meantime.</li>
+          <li><strong>Scanned worksheets.</strong> An uploaded worksheet is shown as it was made. gausyn reads a scanned page to know where its hints should go, but it does not yet pass that text to screen readers.</li>
+          <li><strong>Calls with friends</strong> in Collaborate have no captions.</li>
+          <li><strong>Colour contrast</strong> has not been checked in every state of every part of gausyn.</li>
           </ul>
         </div>
 
         <div class="clause" id="assistive">
-          <h2><span class="num">5.</span>Assistive technology</h2>
-          <p>Gausyn is a web application and runs in current versions of Chrome, Safari, Edge, and Firefox. We test with the screen readers and magnifiers built into macOS, Windows, and iOS. If you use a tool we have not tested and something is broken, that is exactly the report we want.</p>
+          <h2><span class="num">6.</span>Assistive technology</h2>
+          <p>gausyn is a web app. It runs in current versions of Chrome, Edge, Safari and Firefox, on computers, phones and tablets.</p>
+          <p>We have not yet tested it systematically with screen readers such as VoiceOver, NVDA, JAWS or TalkBack, or with switch and voice control software. If you use one of these and something does not work, that is exactly the report we want.</p>
         </div>
 
         <div class="clause" id="accommodations">
-          <h2><span class="num">6.</span>Asking for an accommodation</h2>
-          <p>If a barrier in Gausyn stops a student from learning, write to us and describe it. We will tell you honestly whether we can fix it, work around it, or not yet solve it, and roughly when. Where a student needs material in an alternate format to use Gausyn at all, ask and we will arrange it.</p>
+          <h2><span class="num">7.</span>Asking for an accommodation</h2>
+          <p>If something in gausyn stops a student from learning, write to us and describe what gets in the way. You do not need to tell us about a diagnosis. We will tell you honestly whether we can fix it, work around it, or not yet, and roughly when. If a student needs gausyn's material in another format, ask and we will work out a way with you.</p>
+          <p>We use what you tell us only to help with that request. It is not added to what gausyn remembers about the student, and it is handled as our <a href="temp-privacy.html">Privacy Policy</a> describes.</p>
+          <p>This page is available in another format on request.</p>
         </div>
 
         <div class="clause" id="feedback">
-          <h2><span class="num">7.</span>Feedback</h2>
+          <h2><span class="num">8.</span>Feedback</h2>
           <p>Accessibility reports go straight to the people who can fix them:</p>
-          <address>Inquisara, makers of Gausyn<br />Toronto, Ontario, Canada<br /><a href="mailto:gausyninc@gmail.com">gausyninc@gmail.com</a></address>
-          <p>Tell us the page, what you were trying to do, and the assistive technology you were using. We aim to acknowledge accessibility reports within five business days.</p>
+          <address>Inquisara, makers of gausyn<br />Toronto, Ontario, Canada<br /><a href="mailto:gausyninc@gmail.com">gausyninc@gmail.com</a></address>
+          <p>Tell us the page, what you were trying to do, and the assistive technology you use. We aim to reply to accessibility reports within five business days.</p>
         </div>
       </div>
     </section>
@@ -171,7 +196,7 @@
       <div class="foot-base">
         <div>
           <p class="parent">Inquisara</p>
-          <p class="copy">Gausyn is a product of Inquisara.</p>
+          <p class="copy">gausyn is a product of Inquisara.</p>
         </div>
         <p class="copy">&copy; 2026 Inquisara</p>
       </div>
