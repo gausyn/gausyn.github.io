@@ -6,10 +6,10 @@
   <title>Learning, Gausyn</title>
   <meta name="description" content="A teacher for every subject: frontier intelligence tuned by people who teach it, pitched to your level, aware of your week, one tap from the whiteboard." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=29" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=30" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="has-film-hero">
   <div class="aurora aurora-fix" aria-hidden="true">
     <i></i><i></i><i></i>
     <div class="grain"></div>
@@ -17,9 +17,15 @@
   <header class="site-header">
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
-      <nav>
-        <ul class="nav">
+      <nav aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul class="nav" id="site-menu">
+          <li><a href="temp-whiteboard.html">Whiteboard</a></li>
+          <li><a class="current" aria-current="page" href="temp-learning.html">Learning</a></li>
+          <li><a href="temp-collaborate.html">Collaborate</a></li>
+          <li><a href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
+          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -27,16 +33,99 @@
 
   <main>
 
-    <section class="page-head">
-      <div class="wrap">
+    <!-- the opening: the whole window, a silent loop of this part of the product -->
+    <section class="hero-full" data-film="learning">
+      <div class="hero-media" aria-hidden="true"><video muted loop playsinline preload="none"></video></div>
+      <div class="hero-copy">
         <span class="eyebrow" data-reveal>Product &middot; Learning</span>
         <h1 data-reveal>A teacher for every subject.</h1>
-        <p class="lede" data-reveal>Frontier intelligence, tuned subject by subject by people who teach it. Ask Ava about mathematics, Kai about physics, or Iris about chemistry, at any hour and at any level, and get an answer pitched exactly to you, from Grade 4 to a doctorate. When a question deserves more, they draw it, quiz you on it, or open a whiteboard session and put it on your calendar.</p>
-        <div class="cta-row" data-reveal>
+        <div class="hero-actions" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="hero-watch" href="assets/GAUSYN-LAUNCH-VIDEO.mp4#t=98.4,125.8">Watch this part</a>
+        </div>
+      </div>
+      <div class="hero-foot" data-reveal>
+        <a class="hero-more" href="#how">See how it works</a>
+        <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+      </div>
+    </section>
+
+    <section class="hero-intro" id="how">
+      <div class="wrap">
+        <p class="lede" data-reveal>Frontier intelligence, tuned subject by subject by people who teach it. Ask Ava about mathematics, Kai about physics, or Iris about chemistry, at any hour and at any level, and get an answer pitched exactly to you, from Grade 4 to a doctorate. When a question deserves more, they draw it, quiz you on it, or open a whiteboard session and put it on your calendar.</p>
+      </div>
+    </section>
+
+    <section class="rule-top" id="teachers">
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Meet your teachers</span>
+          <h2>Twelve subjects. A teacher for every one.</h2>
+          <p>
+            Every subject has its own teacher with its own voice, the same one who
+            follows you onto the whiteboard. Each is frontier intelligence tuned for
+            its field by people who teach it, and carries the habits a great teacher
+            of that subject has.
+          </p>
+        </div>
+        <div class="tgrid">
+          <div class="tch" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86" data-reveal><i class="lx-av">A</i><b>Ava</b><span class="sub">Math</span><p>Proof over procedure. Every step earns its place, from times tables to real analysis.</p></div>
+          <div class="tch" style="--sf:#eef2ee;--sl:#dee5de;--si:#55705a" data-reveal><i class="lx-av">K</i><b>Kai</b><span class="sub">Physics</span><p>Draws the free-body diagram first, then lets the algebra follow the picture.</p></div>
+          <div class="tch" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c" data-reveal><i class="lx-av">I</i><b>Iris</b><span class="sub">Chemistry</span><p>Carries the units honestly all the way through, and makes the invisible visible.</p></div>
+          <div class="tch" style="--sf:#f0f2ea;--sl:#e2e6d8;--si:#5f6b47" data-reveal><i class="lx-av">M</i><b>Mira</b><span class="sub">Biology</span><p>Mechanism first, from a single cell to a whole ecosystem.</p></div>
+          <div class="tch" style="--sf:#f0eff5;--sl:#e1dfe9;--si:#625a80" data-reveal><i class="lx-av">N</i><b>Nolan</b><span class="sub">Computer science</span><p>Trace it by hand, predict the output, then run it.</p></div>
+          <div class="tch" style="--sf:#f8eff0;--sl:#eddfe1;--si:#9c5f68" data-reveal><i class="lx-av">E</i><b>Eliot</b><span class="sub">English</span><p>Your argument, sharper. Your voice, still yours.</p></div>
+          <div class="tch" style="--sf:#eeeef6;--sl:#dfdfee;--si:#565a8a" data-reveal><i class="lx-av">C</i><b>Camille</b><span class="sub">French</span><p>Conversation first, and grammar whenever it helps you say more.</p></div>
+          <div class="tch" style="--sf:#f7f3ea;--sl:#ebe4d4;--si:#8a7448" data-reveal><i class="lx-av">C</i><b>Clara</b><span class="sub">History</span><p>Causes, evidence, and the people caught in between.</p></div>
+          <div class="tch" style="--sf:#ecf2f1;--sl:#dae5e3;--si:#4d716c" data-reveal><i class="lx-av">L</i><b>Lena</b><span class="sub">Geography</span><p>Maps, systems, and why places are the way they are.</p></div>
+          <div class="tch" style="--sf:#edf1f3;--sl:#dce4e8;--si:#4f6875" data-reveal><i class="lx-av">M</i><b>Marcus</b><span class="sub">Economics</span><p>Models you can draw, and incentives you can feel.</p></div>
+          <div class="tch" style="--sf:#f8f0ec;--sl:#eeded6;--si:#a06a56" data-reveal><i class="lx-av">R</i><b>Remy</b><span class="sub">Art</span><p>Looking closely first, then making.</p></div>
+          <div class="tch" style="--sf:#f4eff4;--sl:#e7dfe7;--si:#7a5a78" data-reveal><i class="lx-av">A</i><b>Ava</b><span class="sub">Music</span><p>Theory you can hear: intervals, harmony, and why a chord wants to resolve.</p></div>
         </div>
       </div>
     </section>
+
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">The right teacher for the question</span>
+          <h2>Ask the wrong teacher, and meet the right one.</h2>
+          <p>
+            Every subject keeps its own conversation, and every teacher knows the edges of its field. Ask your mathematics teacher about chemistry and you get a useful pointer, then an offer to continue with Iris, your question carried across so you never have to ask twice.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="lx one fade-lc">
+            <div class="lx-main">
+              <div class="lx-headwrap">
+                <div class="lx-head tr lc-hm" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86"><i class="lx-av">A</i><div class="lx-who"><b>Ava</b><span>Math</span></div><span class="lx-qs">Quick Session with Ava</span></div>
+                <div class="lx-head k lc-hc" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><i class="lx-av">I</i><div class="lx-who"><b>Iris</b><span>Chemistry</span></div><span class="lx-qs">Quick Session with Iris</span></div>
+              </div>
+              <div class="lx-panes">
+                <div class="lx-pane tr lc-pm" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86"><div class="lx-msgs">
+<div class="lx-it k lc-y1"><div class="lx-you"><span>Quick one: why does salt melt the ice on roads?</span></div></div>
+<div class="lx-it tr lc-t1"><div class="lx-think">Ava is thinking<i></i><i></i><i></i></div></div>
+<div class="lx-it k lc-g1"><div class="lx-g"><i class="lx-av">A</i><div><p>Short version: the salt dissolves into the thin film of water on the ice and lowers the temperature it can freeze at. The full why is chemistry, though, and that is Iris&rsquo;s subject.</p></div></div></div>
+<div class="lx-it k lc-sw"><div class="lx-switch" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c">That one is Chemistry. Iris teaches it.<div class="row"><span class="ask lc-pr">Ask Iris</span><span class="stay">Stay with Ava</span></div></div></div>
+                </div></div>
+                <div class="lx-pane tr lc-in" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><div class="lx-intro"><i class="lx-av">I</i><span class="eyebrow">Your Chemistry teacher</span><h4>Getting Iris&hellip;</h4></div></div>
+                <div class="lx-pane" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><div class="lx-msgs">
+<div class="lx-it k lc-y2"><div class="lx-you"><span>Quick one: why does salt melt the ice on roads?</span></div></div>
+<div class="lx-it tr lc-t2"><div class="lx-think">Iris is thinking<i></i><i></i><i></i></div></div>
+<div class="lx-it k lc-g2"><div class="lx-g"><i class="lx-av">I</i><div><p>Ice and liquid water are always trading molecules at the surface. At <span class="m u">0 &deg;C</span> the trade is even. Dissolved salt gets in the way of water molecules rejoining the ice, so melting wins, until it is cold enough to balance again. That new balance point is the lowered freezing point:</p><span class="m-disp">&Delta;<i>T</i><sub>f</sub> = <i>i</i> <i>K</i><sub>f</sub> <i>m</i></span></div></div></div>
+<div class="lx-it k lc-g3"><div class="lx-g cont"><div><p>Rock salt stops being much use somewhere around <span class="m u">&minus;10 &deg;C</span>. Want to work out why calcium chloride keeps working when it is colder?</p></div></div></div>
+                </div></div>
+              </div>
+              <div class="lx-input"><span class="ic">+</span><span class="lx-ph"><span class="tr lc-im">Ask Ava anything about math&hellip;</span><span class="k lc-ic">Ask Iris anything about chemistry&hellip;</span></span><span class="send">&uarr;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="scene rule-top" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
@@ -85,6 +174,43 @@
         </div>
       </div>
     </section>
+
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Pitched to you</span>
+          <h2>One question. Four students. Four answers.</h2>
+          <p>
+            A Grade 5 student and a doctoral candidate should not get the same answer to &ldquo;what is a derivative?&rdquo;, and on Gausyn they never do. For younger learners it favors intuition, pictures, and short sentences. For advanced ones it teaches at the frontier of the field, with all the rigor the subject demands.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="chrome"><span class="dot"></span><span class="title">One question &middot; four students</span></div>
+          <div class="lv">
+            <div class="lv-tabs">
+              <span class="lv-q">Asked by</span>
+              <div class="lv-tab t1">Grade 5<small>age 10</small></div>
+              <div class="lv-tab t2">Grade 11<small>first term of calculus</small></div>
+              <div class="lv-tab t3">Undergraduate<small>second-year analysis</small></div>
+              <div class="lv-tab t4">PhD<small>functional analysis</small></div>
+            </div>
+            <div class="lv-body" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86">
+              <div class="lv-ask"><span>What is a derivative?</span></div>
+              <div class="lv-ans">
+                <div class="a1"><i class="lx-av">A</i><div><span class="lv-for">Pitched for Grade 5</span><p>Think about a car&rsquo;s speedometer. The distance you have driven keeps changing, and the speedometer tells you how fast it is changing right now, at this exact moment. A derivative is a speedometer for anything that changes.</p></div></div>
+                <div class="a2"><i class="lx-av">A</i><div><span class="lv-for">Pitched for Grade 11</span><p>It is the slope of a curve at one single point. Take two points on the curve, find the slope between them, then slide the second point closer and closer to the first. The slope you settle on is the derivative:</p><span class="m-disp"><i>f</i>&prime;(<i>x</i>) = <span class="u">lim</span><sub><i>h</i>&rarr;0</sub> <span class="m-frac"><span><i>f</i>(<i>x</i> + <i>h</i>) &minus; <i>f</i>(<i>x</i>)</span><span><i>h</i></span></span></span></div></div>
+                <div class="a3"><i class="lx-av">A</i><div><span class="lv-for">Pitched for an undergraduate</span><p>The best linear approximation to a function near a point: <span class="m">f(x + h) = f(x) + f&prime;(x) h + o(h)</span>. Read it that way and it generalizes cleanly. For a map between vector spaces, the derivative is the linear map given by the Jacobian matrix.</p></div></div>
+                <div class="a4"><i class="lx-av">A</i><div><span class="lv-for">Pitched for a doctoral student</span><p>For a map between Banach spaces, the Fr&eacute;chet derivative at <span class="m">x</span> is the bounded linear operator <span class="m">A</span> with <span class="m">&Vert;f(x + h) &minus; f(x) &minus; Ah&Vert; = o(&Vert;h&Vert;)</span>. Want to compare it with the G&acirc;teaux derivative, where the limit only has to exist along each direction?</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="scene rule-top" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
@@ -128,109 +254,7 @@
         </div>
       </div>
     </section>
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Pitched to you</span>
-          <h2>One question. Four students. Four answers.</h2>
-          <p>
-            A Grade 5 student and a doctoral candidate should not get the same answer to &ldquo;what is a derivative?&rdquo;, and on Gausyn they never do. For younger learners it favors intuition, pictures, and short sentences. For advanced ones it teaches at the frontier of the field, with all the rigor the subject demands.
-          </p>
-        </div>
-      </div>
-      <div class="wrapw">
 
-        <div class="stage" data-reveal>
-          <div class="chrome"><span class="dot"></span><span class="title">One question &middot; four students</span></div>
-          <div class="lv">
-            <div class="lv-tabs">
-              <span class="lv-q">Asked by</span>
-              <div class="lv-tab t1">Grade 5<small>age 10</small></div>
-              <div class="lv-tab t2">Grade 11<small>first term of calculus</small></div>
-              <div class="lv-tab t3">Undergraduate<small>second-year analysis</small></div>
-              <div class="lv-tab t4">PhD<small>functional analysis</small></div>
-            </div>
-            <div class="lv-body" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86">
-              <div class="lv-ask"><span>What is a derivative?</span></div>
-              <div class="lv-ans">
-                <div class="a1"><i class="lx-av">A</i><div><span class="lv-for">Pitched for Grade 5</span><p>Think about a car&rsquo;s speedometer. The distance you have driven keeps changing, and the speedometer tells you how fast it is changing right now, at this exact moment. A derivative is a speedometer for anything that changes.</p></div></div>
-                <div class="a2"><i class="lx-av">A</i><div><span class="lv-for">Pitched for Grade 11</span><p>It is the slope of a curve at one single point. Take two points on the curve, find the slope between them, then slide the second point closer and closer to the first. The slope you settle on is the derivative:</p><span class="m-disp"><i>f</i>&prime;(<i>x</i>) = <span class="u">lim</span><sub><i>h</i>&rarr;0</sub> <span class="m-frac"><span><i>f</i>(<i>x</i> + <i>h</i>) &minus; <i>f</i>(<i>x</i>)</span><span><i>h</i></span></span></span></div></div>
-                <div class="a3"><i class="lx-av">A</i><div><span class="lv-for">Pitched for an undergraduate</span><p>The best linear approximation to a function near a point: <span class="m">f(x + h) = f(x) + f&prime;(x) h + o(h)</span>. Read it that way and it generalizes cleanly. For a map between vector spaces, the derivative is the linear map given by the Jacobian matrix.</p></div></div>
-                <div class="a4"><i class="lx-av">A</i><div><span class="lv-for">Pitched for a doctoral student</span><p>For a map between Banach spaces, the Fr&eacute;chet derivative at <span class="m">x</span> is the bounded linear operator <span class="m">A</span> with <span class="m">&Vert;f(x + h) &minus; f(x) &minus; Ah&Vert; = o(&Vert;h&Vert;)</span>. Want to compare it with the G&acirc;teaux derivative, where the limit only has to exist along each direction?</p></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="rule-top" id="teachers">
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Meet your teachers</span>
-          <h2>Twelve subjects. A teacher for every one.</h2>
-          <p>
-            Every subject has its own teacher with its own voice, the same one who
-            follows you onto the whiteboard. Each is frontier intelligence tuned for
-            its field by people who teach it, and carries the habits a great teacher
-            of that subject has.
-          </p>
-        </div>
-        <div class="tgrid">
-          <div class="tch" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86" data-reveal><i class="lx-av">A</i><b>Ava</b><span class="sub">Math</span><p>Proof over procedure. Every step earns its place, from times tables to real analysis.</p></div>
-          <div class="tch" style="--sf:#eef2ee;--sl:#dee5de;--si:#55705a" data-reveal><i class="lx-av">K</i><b>Kai</b><span class="sub">Physics</span><p>Draws the free-body diagram first, then lets the algebra follow the picture.</p></div>
-          <div class="tch" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c" data-reveal><i class="lx-av">I</i><b>Iris</b><span class="sub">Chemistry</span><p>Carries the units honestly all the way through, and makes the invisible visible.</p></div>
-          <div class="tch" style="--sf:#f0f2ea;--sl:#e2e6d8;--si:#5f6b47" data-reveal><i class="lx-av">M</i><b>Mira</b><span class="sub">Biology</span><p>Mechanism first, from a single cell to a whole ecosystem.</p></div>
-          <div class="tch" style="--sf:#f0eff5;--sl:#e1dfe9;--si:#625a80" data-reveal><i class="lx-av">N</i><b>Nolan</b><span class="sub">Computer science</span><p>Trace it by hand, predict the output, then run it.</p></div>
-          <div class="tch" style="--sf:#f8eff0;--sl:#eddfe1;--si:#9c5f68" data-reveal><i class="lx-av">E</i><b>Eliot</b><span class="sub">English</span><p>Your argument, sharper. Your voice, still yours.</p></div>
-          <div class="tch" style="--sf:#eeeef6;--sl:#dfdfee;--si:#565a8a" data-reveal><i class="lx-av">C</i><b>Camille</b><span class="sub">French</span><p>Conversation first, and grammar whenever it helps you say more.</p></div>
-          <div class="tch" style="--sf:#f7f3ea;--sl:#ebe4d4;--si:#8a7448" data-reveal><i class="lx-av">C</i><b>Clara</b><span class="sub">History</span><p>Causes, evidence, and the people caught in between.</p></div>
-          <div class="tch" style="--sf:#ecf2f1;--sl:#dae5e3;--si:#4d716c" data-reveal><i class="lx-av">L</i><b>Lena</b><span class="sub">Geography</span><p>Maps, systems, and why places are the way they are.</p></div>
-          <div class="tch" style="--sf:#edf1f3;--sl:#dce4e8;--si:#4f6875" data-reveal><i class="lx-av">M</i><b>Marcus</b><span class="sub">Economics</span><p>Models you can draw, and incentives you can feel.</p></div>
-          <div class="tch" style="--sf:#f8f0ec;--sl:#eeded6;--si:#a06a56" data-reveal><i class="lx-av">R</i><b>Remy</b><span class="sub">Art</span><p>Looking closely first, then making.</p></div>
-          <div class="tch" style="--sf:#f4eff4;--sl:#e7dfe7;--si:#7a5a78" data-reveal><i class="lx-av">A</i><b>Ava</b><span class="sub">Music</span><p>Theory you can hear: intervals, harmony, and why a chord wants to resolve.</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">The right teacher for the question</span>
-          <h2>Ask the wrong teacher, and meet the right one.</h2>
-          <p>
-            Every subject keeps its own conversation, and every teacher knows the edges of its field. Ask your mathematics teacher about chemistry and you get a useful pointer, then an offer to continue with Iris, your question carried across so you never have to ask twice.
-          </p>
-        </div>
-      </div>
-      <div class="wrapw">
-
-        <div class="stage" data-reveal>
-          <div class="lx one fade-lc">
-            <div class="lx-main">
-              <div class="lx-headwrap">
-                <div class="lx-head tr lc-hm" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86"><i class="lx-av">A</i><div class="lx-who"><b>Ava</b><span>Math</span></div><span class="lx-qs">Quick Session with Ava</span></div>
-                <div class="lx-head k lc-hc" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><i class="lx-av">I</i><div class="lx-who"><b>Iris</b><span>Chemistry</span></div><span class="lx-qs">Quick Session with Iris</span></div>
-              </div>
-              <div class="lx-panes">
-                <div class="lx-pane tr lc-pm" style="--sf:#eef1f7;--sl:#dde3ef;--si:#4a5f86"><div class="lx-msgs">
-<div class="lx-it k lc-y1"><div class="lx-you"><span>Quick one: why does salt melt the ice on roads?</span></div></div>
-<div class="lx-it tr lc-t1"><div class="lx-think">Ava is thinking<i></i><i></i><i></i></div></div>
-<div class="lx-it k lc-g1"><div class="lx-g"><i class="lx-av">A</i><div><p>Short version: the salt dissolves into the thin film of water on the ice and lowers the temperature it can freeze at. The full why is chemistry, though, and that is Iris&rsquo;s subject.</p></div></div></div>
-<div class="lx-it k lc-sw"><div class="lx-switch" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c">That one is Chemistry. Iris teaches it.<div class="row"><span class="ask lc-pr">Ask Iris</span><span class="stay">Stay with Ava</span></div></div></div>
-                </div></div>
-                <div class="lx-pane tr lc-in" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><div class="lx-intro"><i class="lx-av">I</i><span class="eyebrow">Your Chemistry teacher</span><h4>Getting Iris&hellip;</h4></div></div>
-                <div class="lx-pane" style="--sf:#f9f1e8;--sl:#efe1d0;--si:#a9722c"><div class="lx-msgs">
-<div class="lx-it k lc-y2"><div class="lx-you"><span>Quick one: why does salt melt the ice on roads?</span></div></div>
-<div class="lx-it tr lc-t2"><div class="lx-think">Iris is thinking<i></i><i></i><i></i></div></div>
-<div class="lx-it k lc-g2"><div class="lx-g"><i class="lx-av">I</i><div><p>Ice and liquid water are always trading molecules at the surface. At <span class="m u">0 &deg;C</span> the trade is even. Dissolved salt gets in the way of water molecules rejoining the ice, so melting wins, until it is cold enough to balance again. That new balance point is the lowered freezing point:</p><span class="m-disp">&Delta;<i>T</i><sub>f</sub> = <i>i</i> <i>K</i><sub>f</sub> <i>m</i></span></div></div></div>
-<div class="lx-it k lc-g3"><div class="lx-g cont"><div><p>Rock salt stops being much use somewhere around <span class="m u">&minus;10 &deg;C</span>. Want to work out why calcium chloride keeps working when it is colder?</p></div></div></div>
-                </div></div>
-              </div>
-              <div class="lx-input"><span class="ic">+</span><span class="lx-ph"><span class="tr lc-im">Ask Ava anything about math&hellip;</span><span class="k lc-ic">Ask Iris anything about chemistry&hellip;</span></span><span class="send">&uarr;</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="rule-top">
       <div class="wrap">
         <div class="scene-head" data-reveal>
@@ -325,6 +349,7 @@
         </div>
       </div>
     </section>
+
     <!-- the product, in a loop -->
     <section class="rule-top" id="explore">
       <div class="wrap">
@@ -333,8 +358,8 @@
           <h2>One teacher, four places to find it.</h2>
           <p>
             The whiteboard is where lessons happen. Learning is where questions
-            go between them. Projects is where the long work lives. Collaborate
-            is where you learn with friends. It is the same teacher in all four,
+            go between them. Collaborate is where you learn with friends. Projects
+            is where the long work lives. It is the same teacher in all four,
             working from the same picture of you: your level, your subjects, and
             how you like to learn.
           </p>
@@ -352,17 +377,17 @@
             <p>A teacher for every subject, pitched to your level, aware of your week, and one tap away from opening a whiteboard session.</p>
             <span class="go">You are here</span>
           </div>
-          <a class="mode rose" href="temp-projects.html" data-reveal>
-            <span class="tag">Projects</span>
-            <h3>Where the long work lives.</h3>
-            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
-            <span class="go">Explore Projects &rarr;</span>
-          </a>
           <a class="mode sage" href="temp-collaborate.html" data-reveal>
             <span class="tag">Collaborate</span>
             <h3>Where friends learn together.</h3>
             <p>Shared boards, named cursors, voice and video, a Friends room, and a friend&rsquo;s lesson you can join with one tap, with your own Gausyn beside you.</p>
             <span class="go">Explore Collaborate &rarr;</span>
+          </a>
+          <a class="mode rose" href="temp-projects.html" data-reveal>
+            <span class="tag">Projects</span>
+            <h3>Where the long work lives.</h3>
+            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
+            <span class="go">Explore Projects &rarr;</span>
           </a>
         </div>
       </div>
@@ -373,7 +398,7 @@
         <h2 data-reveal>Every subject deserves its best teacher.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
-          <a class="btn-quiet" href="temp-projects.html">Next: Projects &rarr;</a>
+          <a class="btn-quiet" href="temp-collaborate.html">Next: Collaborate &rarr;</a>
         </div>
       </div>
     </section>
@@ -405,8 +430,8 @@
           <ul>
             <li><a href="temp-whiteboard.html">Whiteboard</a></li>
             <li><a href="temp-learning.html">Learning</a></li>
-            <li><a href="temp-projects.html">Projects</a></li>
             <li><a href="temp-collaborate.html">Collaborate</a></li>
+            <li><a href="temp-projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -453,6 +478,10 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=29"></script>
+  <dialog class="film-dialog" aria-label="The gausyn launch film">
+    <button class="film-close" type="button">Close</button>
+    <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
+  </dialog>
+  <script src="assets/gausyn.js?v=30"></script>
 </body>
 </html>

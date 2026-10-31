@@ -19,6 +19,7 @@
   --pad: clamp(20px, 5vw, 48px);
   --section: clamp(72px, 11vh, 140px);
   --header-h: clamp(56px, 7vh, 68px);
+  --hero-pad: clamp(20px, 3vw, 40px);
 
   --serif: Georgia, "Times New Roman", Times, serif;
   --mono: "Courier New", Courier, monospace;
@@ -50,17 +51,16 @@ a { color: inherit; }
 /* ── header ─────────────────────────────────────────────────────────────── */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255, 255, 255, 0.72);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--rule);
 }
-.site-header .wrapw { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+.site-header .wrapw { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); max-width: none; padding-left: var(--hero-pad); padding-right: var(--hero-pad); }
 .wordmark { font-size: clamp(19px, 2vw, 23px); font-weight: 400; letter-spacing: -0.022em; text-decoration: none; }
+.site-header .wordmark { font-size: 25px; }
 .nav { display: flex; align-items: center; gap: clamp(14px, 2.6vw, 34px); list-style: none; }
 .nav a { font-size: clamp(13px, 1vw, 15px); text-decoration: none; color: var(--ink); white-space: nowrap; }
 .nav a:hover { opacity: 0.55; }
-.nav a.current { opacity: 0.45; }
+.nav a.current { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 
 /* ── type ───────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4 { font-weight: 400; letter-spacing: -0.018em; line-height: 1.1; }
@@ -817,22 +817,27 @@ html.js .te-li{animation:te-listen 25s steps(1) infinite}
 .side-meta .val { font-size: 13px; color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .da-dim { display: none !important; } }
 
-/* ── the homepage's opening: the whole window at any zoom. Sizes here are fixed px on
+/* ── a page's opening: the whole window at any zoom. Sizes here are fixed px on
    purpose: type set in vw ignores browser zoom, and here only the type should change ── */
-.has-film-hero { --hero-pad: clamp(20px, 3vw, 40px); }
 .hero-full {
   position: relative; display: flex; flex-direction: column; justify-content: flex-end;
   min-height: 100vh; min-height: 100svh; overflow: hidden; color: #fff; background: #171310;
   padding: 92px var(--hero-pad) clamp(28px, 5vh, 52px);
 }
-.hero-media { position: absolute; inset: 0; background: #171310 url("hero-film-poster.jpg") center / cover no-repeat; }
+.hero-media { position: absolute; inset: 0; background: #171310 center / cover no-repeat; }
+[data-film="home"] .hero-media { background-image: url("hero-home-poster.jpg"); }
+[data-film="whiteboard"] .hero-media { background-image: url("hero-whiteboard-poster.jpg"); }
+[data-film="learning"] .hero-media { background-image: url("hero-learning-poster.jpg"); }
+[data-film="collaborate"] .hero-media { background-image: url("hero-collaborate-poster.jpg"); }
+[data-film="projects"] .hero-media { background-image: url("hero-projects-poster.jpg"); }
 .hero-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* dark enough at the top and the bottom for white type, even over a white board */
 .hero-media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 11, 9, 0.46) 0%, rgba(14, 11, 9, 0.22) 15%, rgba(14, 11, 9, 0.1) 34%, rgba(14, 11, 9, 0.14) 48%, rgba(14, 11, 9, 0.6) 70%, rgba(14, 11, 9, 0.82) 100%);
+  background: linear-gradient(to bottom, rgba(14, 11, 9, 0.66) 0%, rgba(14, 11, 9, 0.52) 7%, rgba(14, 11, 9, 0.2) 15%, rgba(14, 11, 9, 0.1) 34%, rgba(14, 11, 9, 0.14) 48%, rgba(14, 11, 9, 0.6) 70%, rgba(14, 11, 9, 0.82) 100%);
 }
 .hero-copy, .hero-foot { position: relative; }
+.hero-copy .eyebrow { display: block; margin-bottom: 14px; color: rgba(255, 255, 255, 0.86); }
 .hero-copy h1 { color: #fff; font-size: 56px; line-height: 1.08; max-width: 15em; text-wrap: balance; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 24px; }
 .hero-full .btn { background: #fff; color: var(--ink); }
@@ -849,19 +854,22 @@ html.js .te-li{animation:te-listen 25s steps(1) infinite}
 .hero-pause::before { content: ""; position: absolute; left: 12px; top: 11px; width: 3px; height: 12px; background: #fff; box-shadow: 7px 0 0 #fff; }
 .hero-pause.held::before { left: 13px; top: 10px; width: 0; height: 0; background: none; box-shadow: none; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
 
+/* a product page's first paragraph, just under its opening: "See how it works" stops
+   with the opening fully gone, or the header would stay white on a white page */
+.hero-intro { text-align: center; padding-top: calc(var(--header-h) + clamp(40px, 7vh, 80px)); padding-bottom: clamp(44px, 7vh, 80px); scroll-margin-top: 0; }
+.hero-intro .lede { margin: 0 auto; }
+
 /* the header sits on the film, then turns solid once the opening has scrolled away */
-.has-film-hero .site-header .wrapw { max-width: none; padding-left: var(--hero-pad); padding-right: var(--hero-pad); }
-.has-film-hero .wordmark { font-size: 25px; }
 .nav-toggle { display: none; padding: 7px 14px; font: inherit; font-size: 14px; color: inherit; background: none; border: 1px solid currentColor; border-radius: 999px; cursor: pointer; }
 .nav-cta { padding: 7px 15px; border: 1px solid currentColor; border-radius: 999px; }
 html.js .has-film-hero .site-header {
   position: fixed; left: 0; right: 0; background: transparent; border-bottom-color: transparent;
-  -webkit-backdrop-filter: none; backdrop-filter: none; transition: background 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 html.js .has-film-hero:not(.past-hero) .site-header .wordmark,
 html.js .has-film-hero:not(.past-hero) .nav-toggle { color: #fff; }
 @media (min-width: 981px) { html.js .has-film-hero:not(.past-hero) .nav a { color: #fff; } }
-html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 0.94); border-bottom-color: var(--rule); }
+html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 0.98); border-bottom-color: var(--rule); }
 
 /* the film, with sound, over everything */
 .film-dialog { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #000; overflow: hidden; }
@@ -874,20 +882,29 @@ html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 
 
 @media (max-width: 999px) { .hero-copy h1 { font-size: 44px; } }
 @media (max-width: 980px) {
-  html.js .has-film-hero .nav-toggle { display: inline-block; }
-  html.js .has-film-hero .nav { display: none; }
-  html.js .has-film-hero .nav.open {
+  html.js .nav-toggle { display: inline-block; }
+  html.js .nav { display: none; }
+  html.js .nav.open {
     display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
     position: absolute; top: calc(100% - 4px); right: var(--hero-pad); padding: 16px 20px;
     background: #fff; border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow-float);
   }
-  html.js .has-film-hero .nav.open a { font-size: 15px; color: var(--ink); }
+  html.js .nav.open a { font-size: 15px; color: var(--ink); }
+  /* without scripts there is no Menu button, so the links wrap */
+  html:not(.js) .site-header .wrapw { height: auto; min-height: var(--header-h); padding-top: 10px; padding-bottom: 10px; }
+  html:not(.js) .nav { flex-wrap: wrap; justify-content: flex-end; row-gap: 6px; }
 }
 @media (max-width: 640px) {
   .hero-copy h1 { font-size: 34px; }
   .hero-foot { position: relative; right: auto; bottom: auto; justify-content: space-between; margin-top: 18px; }
 }
-@media (max-aspect-ratio: 3/4) { .hero-media { background-image: url("hero-film-poster-tall.jpg"); } }
+@media (max-aspect-ratio: 3/4) {
+  [data-film="home"] .hero-media { background-image: url("hero-home-poster-tall.jpg"); }
+  [data-film="whiteboard"] .hero-media { background-image: url("hero-whiteboard-poster-tall.jpg"); }
+  [data-film="learning"] .hero-media { background-image: url("hero-learning-poster-tall.jpg"); }
+  [data-film="collaborate"] .hero-media { background-image: url("hero-collaborate-poster-tall.jpg"); }
+  [data-film="projects"] .hero-media { background-image: url("hero-projects-poster-tall.jpg"); }
+}
 
 /* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
 .herofilm {

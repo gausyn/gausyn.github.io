@@ -6,10 +6,10 @@
   <title>Collaborate, Gausyn</title>
   <meta name="description" content="Learn with friends on shared boards in real time: named cursors, everyone&rsquo;s handwriting, voice and video, a private Friends room, and your own teacher beside each of you. Join a friend&rsquo;s lesson with one tap." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=29" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=30" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="has-film-hero">
   <div class="aurora aurora-fix" aria-hidden="true">
     <i></i><i></i><i></i>
     <div class="grain"></div>
@@ -17,9 +17,15 @@
   <header class="site-header">
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
-      <nav>
-        <ul class="nav">
+      <nav aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul class="nav" id="site-menu">
+          <li><a href="temp-whiteboard.html">Whiteboard</a></li>
+          <li><a href="temp-learning.html">Learning</a></li>
+          <li><a class="current" aria-current="page" href="temp-collaborate.html">Collaborate</a></li>
+          <li><a href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
+          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -27,14 +33,26 @@
 
   <main>
 
-    <section class="page-head">
-      <div class="wrap">
+    <!-- the opening: the whole window, a silent loop of this part of the product -->
+    <section class="hero-full" data-film="collaborate">
+      <div class="hero-media" aria-hidden="true"><video muted loop playsinline preload="none"></video></div>
+      <div class="hero-copy">
         <span class="eyebrow" data-reveal>Product &middot; Collaborate</span>
         <h1 data-reveal>Learn together, each with your own teacher.</h1>
-        <p class="lede" data-reveal>Make a space for your study group and work on the same boards in real time: named cursors, everyone&rsquo;s handwriting, voice and video, and a Friends room for the messages in between. Everyone brings their own Gausyn, so each of you learns at your own pace, and when a friend starts a lesson you can join it with one tap.</p>
-        <div class="cta-row" data-reveal>
+        <div class="hero-actions" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="hero-watch" href="assets/GAUSYN-LAUNCH-VIDEO.mp4#t=125.9,159">Watch this part</a>
         </div>
+      </div>
+      <div class="hero-foot" data-reveal>
+        <a class="hero-more" href="#how">See how it works</a>
+        <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+      </div>
+    </section>
+
+    <section class="hero-intro" id="how">
+      <div class="wrap">
+        <p class="lede" data-reveal>Make a space for your study group and work on the same boards in real time: named cursors, everyone&rsquo;s handwriting, voice and video, and a Friends room for the messages in between. Everyone brings their own Gausyn, so each of you learns at your own pace, and when a friend starts a lesson you can join it with one tap.</p>
       </div>
     </section>
 
@@ -371,8 +389,8 @@
           <h2>One teacher, four places to find it.</h2>
           <p>
             The whiteboard is where lessons happen. Learning is where questions
-            go between them. Projects is where the long work lives. Collaborate
-            is where you learn with friends. It is the same teacher in all four,
+            go between them. Collaborate is where you learn with friends. Projects
+            is where the long work lives. It is the same teacher in all four,
             working from the same picture of you: your level, your subjects, and
             how you like to learn.
           </p>
@@ -390,18 +408,18 @@
             <p>A teacher for every subject, pitched to your level, aware of your week, and one tap away from opening a whiteboard session.</p>
             <span class="go">Explore Learning &rarr;</span>
           </a>
-          <a class="mode rose" href="temp-projects.html" data-reveal>
-            <span class="tag">Projects</span>
-            <h3>Where the long work lives.</h3>
-            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
-            <span class="go">Explore Projects &rarr;</span>
-          </a>
           <div class="mode sage here" data-reveal>
             <span class="tag">Collaborate</span>
             <h3>Where friends learn together.</h3>
             <p>Shared boards, named cursors, voice and video, a Friends room, and a friend&rsquo;s lesson you can join with one tap, with your own Gausyn beside you.</p>
             <span class="go">You are here</span>
           </div>
+          <a class="mode rose" href="temp-projects.html" data-reveal>
+            <span class="tag">Projects</span>
+            <h3>Where the long work lives.</h3>
+            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
+            <span class="go">Explore Projects &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -411,7 +429,7 @@
         <h2 data-reveal>Better together, at your own pace.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
-          <a class="btn-quiet" href="temp-whiteboard.html">Next: Whiteboard &rarr;</a>
+          <a class="btn-quiet" href="temp-projects.html">Next: Projects &rarr;</a>
         </div>
       </div>
     </section>
@@ -443,8 +461,8 @@
           <ul>
             <li><a href="temp-whiteboard.html">Whiteboard</a></li>
             <li><a href="temp-learning.html">Learning</a></li>
-            <li><a href="temp-projects.html">Projects</a></li>
             <li><a href="temp-collaborate.html">Collaborate</a></li>
+            <li><a href="temp-projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -491,6 +509,10 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=29"></script>
+  <dialog class="film-dialog" aria-label="The gausyn launch film">
+    <button class="film-close" type="button">Close</button>
+    <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
+  </dialog>
+  <script src="assets/gausyn.js?v=30"></script>
 </body>
 </html>

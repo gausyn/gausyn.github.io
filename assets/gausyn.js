@@ -307,8 +307,8 @@
     show(0);
   }
 
-  // The homepage's opening: a short silent loop behind the headline, the header sitting
-  // on it until you scroll past, and the full film, with sound, one click away.
+  // A page's opening: a short silent loop behind the headline (data-film names it), the
+  // header sitting on it until you scroll past, and the film, with sound, one click away.
   var hero = document.querySelector('.hero-full');
   if (hero) {
     var heroVideo = hero.querySelector('video'), heroPause = hero.querySelector('.hero-pause');
@@ -324,7 +324,7 @@
     }
     // phones get their own version: the whole screen across the width, over a soft copy of itself
     function chooseLoop() {
-      var src = 'assets/hero-film' + (tall.matches ? '-tall' : '') + '.mp4';
+      var src = 'assets/hero-' + hero.getAttribute('data-film') + (tall.matches ? '-tall' : '') + '.mp4';
       if (heroVideo.getAttribute('src') !== src) { heroVideo.setAttribute('src', src); syncLoop(); }
     }
     if (wantsLoop) {

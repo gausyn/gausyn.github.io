@@ -6,10 +6,10 @@
   <title>Projects, Gausyn</title>
   <meta name="description" content="Essays, presentations, apps, games, and 3D parts built live beside the chat: real slides, ten themes, pictures, Present mode, games that run as they are written, models you can print, and export to PowerPoint, Word, or PDF." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=29" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=30" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="has-film-hero">
   <div class="aurora aurora-fix" aria-hidden="true">
     <i></i><i></i><i></i>
     <div class="grain"></div>
@@ -17,9 +17,15 @@
   <header class="site-header">
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
-      <nav>
-        <ul class="nav">
+      <nav aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul class="nav" id="site-menu">
+          <li><a href="temp-whiteboard.html">Whiteboard</a></li>
+          <li><a href="temp-learning.html">Learning</a></li>
+          <li><a href="temp-collaborate.html">Collaborate</a></li>
+          <li><a class="current" aria-current="page" href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
+          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -27,14 +33,26 @@
 
   <main>
 
-    <section class="page-head">
-      <div class="wrap">
+    <!-- the opening: the whole window, a silent loop of this part of the product -->
+    <section class="hero-full" data-film="projects">
+      <div class="hero-media" aria-hidden="true"><video muted loop playsinline preload="none"></video></div>
+      <div class="hero-copy">
         <span class="eyebrow" data-reveal>Product &middot; Projects</span>
         <h1 data-reveal>The long work, with someone beside you.</h1>
-        <p class="lede" data-reveal>Essays, presentations, apps and games, 3D parts, science fairs, and the things you build for fun. Tell Gausyn what you are making and watch it take shape beside the chat as it writes: real slides and themed pages, games that run as they are built, models you can turn and print, and a Present button when you are ready to stand up. It coaches, drafts, and improves, and it keeps you doing the thinking.</p>
-        <div class="cta-row" data-reveal>
+        <div class="hero-actions" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="hero-watch" href="assets/GAUSYN-LAUNCH-VIDEO.mp4#t=164.5,204.4">Watch this part</a>
         </div>
+      </div>
+      <div class="hero-foot" data-reveal>
+        <a class="hero-more" href="#how">See how it works</a>
+        <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+      </div>
+    </section>
+
+    <section class="hero-intro" id="how">
+      <div class="wrap">
+        <p class="lede" data-reveal>Essays, presentations, apps and games, 3D parts, science fairs, and the things you build for fun. Tell Gausyn what you are making and watch it take shape beside the chat as it writes: real slides and themed pages, games that run as they are built, models you can turn and print, and a Present button when you are ready to stand up. It coaches, drafts, and improves, and it keeps you doing the thinking.</p>
       </div>
     </section>
 
@@ -66,6 +84,70 @@
                 <span class="eyebrow">Name <span style="text-transform:none;letter-spacing:0">(optional)</span></span>
                 <div class="pk-name">gausyn names it for you if you skip this</div>
                 <span class="pk-create pk-cr">Create</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Apps and games</span>
+          <h2>Watch your game come to life as it is written.</h2>
+          <p>
+            Describe a game, an app, or a tool, and Gausyn writes it as real files while the code appears in front of you. When it lands, it runs right there in the Preview, 2D or 3D, with a console underneath. If something breaks, one button sends the error back, and Gausyn reads it, finds the cause, and fixes it. When you are done, download every file as a .zip.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="xw fade-kg">
+            <div class="xw-head"><span class="back">&larr; Projects</span><b>Asteroid Dodging Game</b><span class="eyebrow">App or game</span><span class="del">Delete project</span></div>
+            <div class="xw-split">
+              <div class="xw-chat">
+                <div class="xw-msgs">
+<div class="xw-it k kg-y1"><div class="xw-user"><span>Build an asteroid dodging game. Arrow keys to steer, and keep score.</span></div></div>
+<div class="xw-it tr kg-t1"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
+<div class="xw-it tr kg-w1"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span><span class="stack"><span class="kg-wa">Writing index.html&hellip;</span><span class="kg-wb">Writing game.js&hellip;</span><span class="kg-wc">Writing style.css&hellip;</span></span></div></div>
+<div class="xw-it k kg-d1"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote 3 files</div><p>Arrow keys to move. The asteroids speed up as your score climbs.</p></div></div></div>
+<div class="xw-it k kg-y2"><div class="xw-user"><span>The preview shows this error: score is undefined. Can you find the cause and fix it?</span></div></div>
+<div class="xw-it tr kg-t2"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
+<div class="xw-it tr kg-w2"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span>Writing game.js&hellip;</div></div>
+<div class="xw-it k kg-d2"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote game.js</div><p>Found it: the score was read before the game set it up. Fixed, try another run.</p></div></div></div>
+<div class="xw-it k kg-y3"><div class="xw-user"><span>Make the asteroids glow.</span></div></div>
+<div class="xw-it tr kg-w3"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span>Writing style.css&hellip;</div></div>
+<div class="xw-it k kg-d3"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote style.css</div></div></div></div>
+                </div>
+                <div class="xw-composer">Ask about Asteroid Dodging Game&hellip;<span class="xw-effort"><span class="bars"><i></i><i></i><i></i></span>Medium</span><span class="send">&uarr;</span></div>
+              </div>
+              <div class="xw-viewer">
+                <div class="xw-toolbar">
+                  <div class="xw-tabs"><span class="xw-tab kg-tp">Preview</span><span class="xw-tab kg-tc">Code &middot; 3</span><span class="xw-tab">Uploads</span>
+                    <span class="xw-live"><span class="tr kg-lv1"><i></i>Live</span><span class="tr kg-lv2"><i></i>Live</span><span class="tr kg-lv3"><i></i>Live</span></span></div>
+                  <div class="xw-tools"><span class="xw-tool">Run</span><span class="xw-tool pdf">.zip</span><span class="xw-tool fw">Full width</span></div>
+                </div>
+                <div class="xw-scroll">
+                  <div class="xv-empty tr kg-em"><span class="art"></span><p>Your app or game runs here, live, as gausyn builds it.</p></div>
+                  <div class="kg-pane k kg-pv">
+                    <div class="kg-prev">
+                      <div class="kg-browser">
+                        <div class="kg-bar"><span class="ic"></span><span class="addr">asteroid-dodging-game / index.html</span><span class="ic"></span><span class="ic"></span></div>
+                        <div class="kg-game kg-gm"><span class="kg-score">Score 128</span><i class="kg-rock" style="left:12%;width:14px;height:14px;animation-duration:2.4s;animation-delay:-0.0s"></i><i class="kg-rock" style="left:31%;width:20px;height:20px;animation-duration:3.1s;animation-delay:-1.2s"></i><i class="kg-rock" style="left:52%;width:11px;height:11px;animation-duration:2.2s;animation-delay:-0.6s"></i><i class="kg-rock" style="left:70%;width:17px;height:17px;animation-duration:2.8s;animation-delay:-1.8s"></i><i class="kg-rock" style="left:86%;width:13px;height:13px;animation-duration:2.5s;animation-delay:-0.3s"></i><i class="kg-rock" style="left:42%;width:9px;height:9px;animation-duration:2.0s;animation-delay:-2.1s"></i><div class="kg-glow k kg-gl" style="position:absolute;inset:0"><i class="kg-rock" style="left:12%;width:14px;height:14px;animation-duration:2.4s;animation-delay:-0.0s"></i><i class="kg-rock" style="left:31%;width:20px;height:20px;animation-duration:3.1s;animation-delay:-1.2s"></i><i class="kg-rock" style="left:52%;width:11px;height:11px;animation-duration:2.2s;animation-delay:-0.6s"></i><i class="kg-rock" style="left:70%;width:17px;height:17px;animation-duration:2.8s;animation-delay:-1.8s"></i><i class="kg-rock" style="left:86%;width:13px;height:13px;animation-duration:2.5s;animation-delay:-0.3s"></i><i class="kg-rock" style="left:42%;width:9px;height:9px;animation-duration:2.0s;animation-delay:-2.1s"></i></div><i class="kg-ship"></i></div>
+                      </div>
+                      <div class="kg-con"><div class="kg-ch"><span>Console</span><span>Close</span></div>
+                        <div class="kg-log k kg-lg">Nothing printed yet. console.log() output and errors show here.</div><div class="kg-err tr kg-er"><span>TypeError: score is undefined &middot; game.js:42</span><span class="kg-fix kg-fx">Ask gausyn to fix this</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kg-pane tr kg-cv"><div class="kg-code"><div class="kg-tree">
+                    <span class="f k kg-f1" style="--c:#e4572e"><i></i>index.html</span><span class="f on k kg-f2" style="--c:#f2c14e"><i></i>game.js</span><span class="f k kg-f3" style="--c:#2e86ab"><i></i>style.css</span>
+                  </div><div class="kg-ed"><span class="ln k kg-l1"><span class="kw">const</span> ship = { x: W / <span class="nu">2</span>, speed: <span class="nu">6</span> }</span><span class="ln k kg-l2"><span class="kw">const</span> rocks = []</span><span class="ln k kg-l3"><span class="kw">let</span> score = <span class="nu">0</span></span><span class="ln k kg-l4">&nbsp;</span><span class="ln k kg-l5"><span class="kw">function</span> <span class="fn">spawn</span>() {</span><span class="ln k kg-l6">  rocks.push({ x: Math.random() * W, y: <span class="nu">-20</span>, r: <span class="nu">8</span> + Math.random() * <span class="nu">10</span> })</span><span class="ln k kg-l7">}</span><span class="ln k kg-l8">&nbsp;</span><span class="ln k kg-l9"><span class="kw">function</span> <span class="fn">tick</span>() {</span><span class="ln k kg-l10">  <span class="kw">if</span> (keys.ArrowLeft) ship.x -= ship.speed</span><span class="ln k kg-l11">  <span class="kw">if</span> (keys.ArrowRight) ship.x += ship.speed</span><span class="ln k kg-l12">  score += <span class="nu">1</span>  <span class="cm">// faster as it climbs</span></span><span class="kg-caret"></span></div></div></div>
+                  <div class="kg-pane tr kg-cv2"><div class="kg-code"><div class="kg-tree"><span class="f" style="--c:#e4572e"><i></i>index.html</span><span class="f on" style="--c:#f2c14e"><i></i>game.js</span><span class="f" style="--c:#2e86ab"><i></i>style.css</span></div><div class="kg-ed"><span class="ln"><span class="kw">function</span> <span class="fn">tick</span>() {</span><span class="ln">  <span class="kw">if</span> (keys.ArrowLeft) ship.x -= ship.speed</span><span class="ln">  <span class="kw">if</span> (keys.ArrowRight) ship.x += ship.speed</span><span class="ln">  score += <span class="nu">1</span>  <span class="cm">// faster as it climbs</span></span><span class="ln">  <span class="kw">if</span> (hit(ship)) <span class="fn">gameOver</span>(score)<span class="kg-caret"></span></span></div></div></div>
+                  <div class="kg-pane tr kg-cv3"><div class="kg-code"><div class="kg-tree"><span class="f" style="--c:#e4572e"><i></i>index.html</span><span class="f" style="--c:#f2c14e"><i></i>game.js</span><span class="f on" style="--c:#2e86ab"><i></i>style.css</span></div><div class="kg-ed"><span class="ln">.rock {</span><span class="ln">  background: <span class="nu">#f2a65a</span>;</span><span class="ln">  box-shadow: <span class="nu">0 0 10px 3px</span> rgba(<span class="nu">242, 166, 90, .7</span>);</span><span class="ln">}<span class="kg-caret"></span></span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -264,135 +346,6 @@
     <section class="scene rule-top" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
-          <span class="eyebrow">Engineering and code</span>
-          <h2>Build it in steps you can test.</h2>
-          <p>
-            For builds, Gausyn breaks the work into milestones you can check as you go. When the draft holds code, a preview sits right under the page: press Run and HTML renders, JavaScript and Python execute, all in a sealed sandbox, so you see the result before you ask the next question.
-          </p>
-        </div>
-      </div>
-      <div class="wrapw">
-
-        <div class="stage" data-reveal>
-          <div class="xw fade-kc">
-            <div class="xw-head"><span class="back">&larr; Projects</span><b>Projectile range sim</b><span class="eyebrow">Engineering &amp; code &middot; Physics</span><span class="del">Delete project</span></div>
-            <div class="xw-split">
-              <div class="xw-chat">
-                <div class="xw-msgs">
-<div class="xw-it k kc-y1"><div class="xw-user"><span>Physics project: simulate a ball launched at 20 m/s and find the angle that goes the farthest.</span></div></div>
-<div class="xw-it tr kc-t1"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
-<div class="xw-it tr kc-w1"><div class="xw-card writing"><span class="ic">&para;</span>Writing the draft&hellip;</div></div>
-<div class="xw-it k kc-g1"><div class="xw-g"><span class="xw-orb"></span><div><p>Step one is on the right: one launch, five angles. Press Run and read the output.</p><div class="xw-card"><span class="ic">&para;</span>Updated the draft</div></div></div></div>
-<div class="xw-it k kc-y2"><div class="xw-user"><span>Why do 30 and 60 land in exactly the same place?</span></div></div>
-<div class="xw-it tr kc-t2"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
-<div class="xw-it k kc-g2"><div class="xw-g"><span class="xw-orb"></span><div><p>Nice catch. Range depends on <span class="m">sin 2&theta;</span>, and <span class="m">sin 60&deg; = sin 120&deg;</span>. Next: add air resistance, run it again, and watch that symmetry break.</p></div></div></div>
-<div class="xw-it k kc-y3"><div class="xw-user"><span>Adding drag now.</span></div></div>
-<div class="xw-it k kc-g3"><div class="xw-g"><span class="xw-orb"></span><div><p>Change one thing, run it, compare. That is the whole method.</p></div></div></div>
-                </div>
-                <div class="xw-composer">Ask about Projectile range sim&hellip;<span class="send">&uarr;</span></div>
-              </div>
-              <div class="xw-viewer" style="--pt-bg:#fbfaf7;--pt-surface:#f1ede6;--pt-text:#1c1b19;--pt-muted:#6b675f;--pt-accent:#a06a56;--pt-on-accent:#ffffff;--pt-accent-soft:#ebe0da;--pt-heading-font:Georgia, 'Times New Roman', serif;--pt-body-font:'Helvetica Neue', Helvetica, Arial, sans-serif">
-                <div class="xw-toolbar">
-                  <div class="xw-tabs"><span class="xw-tab on">Draft</span><span class="xw-tab">Files</span>
-                    <span class="xw-live"><span class="tr kc-lv"><i></i>Live</span></span></div>
-                  <div class="xw-tools"><span class="xw-tool th"><span class="sw"></span>Theme</span><span class="xw-tool">DOCX</span><span class="xw-tool pdf">PDF</span><span class="xw-tool fw">Full width</span></div>
-                </div>
-                <div class="xw-scroll">
-                  <div class="xv-empty tr kc-em"><span class="art page"></span><p>Your draft appears here as Gausyn writes it.</p><small>Ask for an outline or a first draft to begin.</small></div>
-                  <div class="xv-docwrap">
-                    <article class="xv-doc k kc-pg">
-                      <div class="xv-blk k kc-b1"><div class="in"><h1>Projectile range sim</h1></div></div>
-                      <div class="xv-blk k kc-b2"><div class="in"><h2>Step 1: one launch, five angles</h2></div></div>
-                      <div class="xv-blk k kc-b3"><i class="xv-hl kc-h3"></i><div class="in"><div class="xv-code"><span class="kw">import</span> math
-
-<span class="kw">def</span> <span class="fn">range_at</span>(angle, v=<span class="nu">20.0</span>, g=<span class="nu">9.81</span>):
-    t = <span class="nu">2</span> * v * math.sin(math.radians(angle)) / g
-    <span class="kw">return</span> v * math.cos(math.radians(angle)) * t
-
-<span class="kw">for</span> a <span class="kw">in</span> (<span class="nu">15</span>, <span class="nu">30</span>, <span class="nu">45</span>, <span class="nu">60</span>, <span class="nu">75</span>):
-    <span class="fn">print</span>(a, <span class="fn">round</span>(range_at(a), <span class="nu">1</span>))</div></div></div>
-                    </article>
-                    <div class="xv-run k kc-pv">
-                      <div class="xv-run-h"><span class="eyebrow">Preview</span><span class="lang">Python</span>
-                        <span class="runb kc-rb"><span class="tr kc-r0">Run</span><span class="tr kc-rn">Running...</span><span class="k kc-r1">Run</span></span></div>
-                      <div class="xv-con"><span class="ph tr kc-ph">Press Run to execute the draft and see its output here.</span><div class="k kc-o1">15 20.4</div><div class="k kc-o2">30 35.3</div><div class="k kc-o3">45 40.8</div><div class="k kc-o4">60 35.3</div><div class="k kc-o5">75 20.4</div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Apps and games</span>
-          <h2>Watch your game come to life as it is written.</h2>
-          <p>
-            Describe a game, an app, or a tool, and Gausyn writes it as real files while the code appears in front of you. When it lands, it runs right there in the Preview, 2D or 3D, with a console underneath. If something breaks, one button sends the error back, and Gausyn reads it, finds the cause, and fixes it. When you are done, download every file as a .zip.
-          </p>
-        </div>
-      </div>
-      <div class="wrapw">
-
-        <div class="stage" data-reveal>
-          <div class="xw fade-kg">
-            <div class="xw-head"><span class="back">&larr; Projects</span><b>Asteroid Dodging Game</b><span class="eyebrow">App or game</span><span class="del">Delete project</span></div>
-            <div class="xw-split">
-              <div class="xw-chat">
-                <div class="xw-msgs">
-<div class="xw-it k kg-y1"><div class="xw-user"><span>Build an asteroid dodging game. Arrow keys to steer, and keep score.</span></div></div>
-<div class="xw-it tr kg-t1"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
-<div class="xw-it tr kg-w1"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span><span class="stack"><span class="kg-wa">Writing index.html&hellip;</span><span class="kg-wb">Writing game.js&hellip;</span><span class="kg-wc">Writing style.css&hellip;</span></span></div></div>
-<div class="xw-it k kg-d1"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote 3 files</div><p>Arrow keys to move. The asteroids speed up as your score climbs.</p></div></div></div>
-<div class="xw-it k kg-y2"><div class="xw-user"><span>The preview shows this error: score is undefined. Can you find the cause and fix it?</span></div></div>
-<div class="xw-it tr kg-t2"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
-<div class="xw-it tr kg-w2"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span>Writing game.js&hellip;</div></div>
-<div class="xw-it k kg-d2"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote game.js</div><p>Found it: the score was read before the game set it up. Fixed, try another run.</p></div></div></div>
-<div class="xw-it k kg-y3"><div class="xw-user"><span>Make the asteroids glow.</span></div></div>
-<div class="xw-it tr kg-w3"><div class="xw-card writing"><span class="ic">&lt;/&gt;</span>Writing style.css&hellip;</div></div>
-<div class="xw-it k kg-d3"><div class="xw-g"><span class="xw-orb"></span><div><div class="xw-card"><span class="ic">&lt;/&gt;</span>Wrote style.css</div></div></div></div>
-                </div>
-                <div class="xw-composer">Ask about Asteroid Dodging Game&hellip;<span class="xw-effort"><span class="bars"><i></i><i></i><i></i></span>Medium</span><span class="send">&uarr;</span></div>
-              </div>
-              <div class="xw-viewer">
-                <div class="xw-toolbar">
-                  <div class="xw-tabs"><span class="xw-tab kg-tp">Preview</span><span class="xw-tab kg-tc">Code &middot; 3</span><span class="xw-tab">Uploads</span>
-                    <span class="xw-live"><span class="tr kg-lv1"><i></i>Live</span><span class="tr kg-lv2"><i></i>Live</span><span class="tr kg-lv3"><i></i>Live</span></span></div>
-                  <div class="xw-tools"><span class="xw-tool">Run</span><span class="xw-tool pdf">.zip</span><span class="xw-tool fw">Full width</span></div>
-                </div>
-                <div class="xw-scroll">
-                  <div class="xv-empty tr kg-em"><span class="art"></span><p>Your app or game runs here, live, as gausyn builds it.</p></div>
-                  <div class="kg-pane k kg-pv">
-                    <div class="kg-prev">
-                      <div class="kg-browser">
-                        <div class="kg-bar"><span class="ic"></span><span class="addr">asteroid-dodging-game / index.html</span><span class="ic"></span><span class="ic"></span></div>
-                        <div class="kg-game kg-gm"><span class="kg-score">Score 128</span><i class="kg-rock" style="left:12%;width:14px;height:14px;animation-duration:2.4s;animation-delay:-0.0s"></i><i class="kg-rock" style="left:31%;width:20px;height:20px;animation-duration:3.1s;animation-delay:-1.2s"></i><i class="kg-rock" style="left:52%;width:11px;height:11px;animation-duration:2.2s;animation-delay:-0.6s"></i><i class="kg-rock" style="left:70%;width:17px;height:17px;animation-duration:2.8s;animation-delay:-1.8s"></i><i class="kg-rock" style="left:86%;width:13px;height:13px;animation-duration:2.5s;animation-delay:-0.3s"></i><i class="kg-rock" style="left:42%;width:9px;height:9px;animation-duration:2.0s;animation-delay:-2.1s"></i><div class="kg-glow k kg-gl" style="position:absolute;inset:0"><i class="kg-rock" style="left:12%;width:14px;height:14px;animation-duration:2.4s;animation-delay:-0.0s"></i><i class="kg-rock" style="left:31%;width:20px;height:20px;animation-duration:3.1s;animation-delay:-1.2s"></i><i class="kg-rock" style="left:52%;width:11px;height:11px;animation-duration:2.2s;animation-delay:-0.6s"></i><i class="kg-rock" style="left:70%;width:17px;height:17px;animation-duration:2.8s;animation-delay:-1.8s"></i><i class="kg-rock" style="left:86%;width:13px;height:13px;animation-duration:2.5s;animation-delay:-0.3s"></i><i class="kg-rock" style="left:42%;width:9px;height:9px;animation-duration:2.0s;animation-delay:-2.1s"></i></div><i class="kg-ship"></i></div>
-                      </div>
-                      <div class="kg-con"><div class="kg-ch"><span>Console</span><span>Close</span></div>
-                        <div class="kg-log k kg-lg">Nothing printed yet. console.log() output and errors show here.</div><div class="kg-err tr kg-er"><span>TypeError: score is undefined &middot; game.js:42</span><span class="kg-fix kg-fx">Ask gausyn to fix this</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="kg-pane tr kg-cv"><div class="kg-code"><div class="kg-tree">
-                    <span class="f k kg-f1" style="--c:#e4572e"><i></i>index.html</span><span class="f on k kg-f2" style="--c:#f2c14e"><i></i>game.js</span><span class="f k kg-f3" style="--c:#2e86ab"><i></i>style.css</span>
-                  </div><div class="kg-ed"><span class="ln k kg-l1"><span class="kw">const</span> ship = { x: W / <span class="nu">2</span>, speed: <span class="nu">6</span> }</span><span class="ln k kg-l2"><span class="kw">const</span> rocks = []</span><span class="ln k kg-l3"><span class="kw">let</span> score = <span class="nu">0</span></span><span class="ln k kg-l4">&nbsp;</span><span class="ln k kg-l5"><span class="kw">function</span> <span class="fn">spawn</span>() {</span><span class="ln k kg-l6">  rocks.push({ x: Math.random() * W, y: <span class="nu">-20</span>, r: <span class="nu">8</span> + Math.random() * <span class="nu">10</span> })</span><span class="ln k kg-l7">}</span><span class="ln k kg-l8">&nbsp;</span><span class="ln k kg-l9"><span class="kw">function</span> <span class="fn">tick</span>() {</span><span class="ln k kg-l10">  <span class="kw">if</span> (keys.ArrowLeft) ship.x -= ship.speed</span><span class="ln k kg-l11">  <span class="kw">if</span> (keys.ArrowRight) ship.x += ship.speed</span><span class="ln k kg-l12">  score += <span class="nu">1</span>  <span class="cm">// faster as it climbs</span></span><span class="kg-caret"></span></div></div></div>
-                  <div class="kg-pane tr kg-cv2"><div class="kg-code"><div class="kg-tree"><span class="f" style="--c:#e4572e"><i></i>index.html</span><span class="f on" style="--c:#f2c14e"><i></i>game.js</span><span class="f" style="--c:#2e86ab"><i></i>style.css</span></div><div class="kg-ed"><span class="ln"><span class="kw">function</span> <span class="fn">tick</span>() {</span><span class="ln">  <span class="kw">if</span> (keys.ArrowLeft) ship.x -= ship.speed</span><span class="ln">  <span class="kw">if</span> (keys.ArrowRight) ship.x += ship.speed</span><span class="ln">  score += <span class="nu">1</span>  <span class="cm">// faster as it climbs</span></span><span class="ln">  <span class="kw">if</span> (hit(ship)) <span class="fn">gameOver</span>(score)<span class="kg-caret"></span></span></div></div></div>
-                  <div class="kg-pane tr kg-cv3"><div class="kg-code"><div class="kg-tree"><span class="f" style="--c:#e4572e"><i></i>index.html</span><span class="f" style="--c:#f2c14e"><i></i>game.js</span><span class="f on" style="--c:#2e86ab"><i></i>style.css</span></div><div class="kg-ed"><span class="ln">.rock {</span><span class="ln">  background: <span class="nu">#f2a65a</span>;</span><span class="ln">  box-shadow: <span class="nu">0 0 10px 3px</span> rgba(<span class="nu">242, 166, 90, .7</span>);</span><span class="ln">}<span class="kg-caret"></span></span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
           <span class="eyebrow">Designed in 3D</span>
           <h2>Parts you can turn, measure, and print.</h2>
           <p>
@@ -448,6 +401,71 @@
                   </div>
                   <div class="kg-pane tr k3-cv"><div class="kg-code"><div class="kg-tree"><span class="f on" style="--c:#55705a"><i></i>stand.scad</span></div><div class="kg-ed"><span class="ln k k3-l1"><span class="cm">// Simple phone stand, in millimetres</span></span><span class="ln k k3-l2">lean_angle = <span class="nu">66</span>;  <span class="cm">// degrees back</span></span><span class="ln k k3-l3">base_depth = <span class="nu">64</span>;</span><span class="ln k k3-l4">width = <span class="nu">80</span>;</span><span class="ln k k3-l5">&nbsp;</span><span class="ln k k3-l6"><span class="fn">cube</span>([width, base_depth, <span class="nu">6</span>]);</span><span class="ln k k3-l7"><span class="fn">translate</span>([<span class="nu">0</span>, base_depth - <span class="nu">30</span>, <span class="nu">6</span>])</span><span class="ln k k3-l8">  <span class="fn">rotate</span>([lean_angle - <span class="nu">90</span>, <span class="nu">0</span>, <span class="nu">0</span>])</span><span class="ln k k3-l9">    <span class="fn">cube</span>([width, <span class="nu">6</span>, <span class="nu">92</span>]);</span><span class="ln k k3-l10"><span class="fn">translate</span>([<span class="nu">0</span>, base_depth - <span class="nu">7</span>, <span class="nu">6</span>])</span><span class="ln k k3-l11">  <span class="fn">cube</span>([width, <span class="nu">7</span>, <span class="nu">11</span>]);</span><span class="kg-caret"></span></div></div></div>
                   <div class="kg-pane tr k3-cv2"><div class="kg-code"><div class="kg-tree"><span class="f on" style="--c:#55705a"><i></i>stand.scad</span></div><div class="kg-ed"><span class="ln"><span class="cm">// Simple phone stand, in millimetres</span></span><span class="ln">lean_angle = <span class="nu">54</span>;  <span class="cm">// degrees back</span></span><span class="ln">base_depth = <span class="nu">90</span>;</span><span class="ln">width = <span class="nu">80</span>;</span><span class="ln">&nbsp;</span><span class="ln"><span class="fn">cube</span>([width, base_depth, <span class="nu">6</span>]);</span><span class="ln"><span class="fn">translate</span>([<span class="nu">0</span>, base_depth - <span class="nu">30</span>, <span class="nu">6</span>])</span><span class="ln">  <span class="fn">rotate</span>([lean_angle - <span class="nu">90</span>, <span class="nu">0</span>, <span class="nu">0</span>])</span><span class="ln">    <span class="fn">cube</span>([width, <span class="nu">6</span>, <span class="nu">92</span>]);</span><span class="ln"><span class="fn">translate</span>([<span class="nu">0</span>, base_depth - <span class="nu">7</span>, <span class="nu">6</span>])</span><span class="ln">  <span class="fn">cube</span>([width, <span class="nu">7</span>, <span class="nu">11</span>]);</span><span class="kg-caret"></span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Engineering and code</span>
+          <h2>Build it in steps you can test.</h2>
+          <p>
+            For builds, Gausyn breaks the work into milestones you can check as you go. When the draft holds code, a preview sits right under the page: press Run and HTML renders, JavaScript and Python execute, all in a sealed sandbox, so you see the result before you ask the next question.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+
+        <div class="stage" data-reveal>
+          <div class="xw fade-kc">
+            <div class="xw-head"><span class="back">&larr; Projects</span><b>Projectile range sim</b><span class="eyebrow">Engineering &amp; code &middot; Physics</span><span class="del">Delete project</span></div>
+            <div class="xw-split">
+              <div class="xw-chat">
+                <div class="xw-msgs">
+<div class="xw-it k kc-y1"><div class="xw-user"><span>Physics project: simulate a ball launched at 20 m/s and find the angle that goes the farthest.</span></div></div>
+<div class="xw-it tr kc-t1"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
+<div class="xw-it tr kc-w1"><div class="xw-card writing"><span class="ic">&para;</span>Writing the draft&hellip;</div></div>
+<div class="xw-it k kc-g1"><div class="xw-g"><span class="xw-orb"></span><div><p>Step one is on the right: one launch, five angles. Press Run and read the output.</p><div class="xw-card"><span class="ic">&para;</span>Updated the draft</div></div></div></div>
+<div class="xw-it k kc-y2"><div class="xw-user"><span>Why do 30 and 60 land in exactly the same place?</span></div></div>
+<div class="xw-it tr kc-t2"><div class="xw-g"><span class="xw-orb thinking"></span><div><span class="xw-think">Thinking&hellip;</span></div></div></div>
+<div class="xw-it k kc-g2"><div class="xw-g"><span class="xw-orb"></span><div><p>Nice catch. Range depends on <span class="m">sin 2&theta;</span>, and <span class="m">sin 60&deg; = sin 120&deg;</span>. Next: add air resistance, run it again, and watch that symmetry break.</p></div></div></div>
+<div class="xw-it k kc-y3"><div class="xw-user"><span>Adding drag now.</span></div></div>
+<div class="xw-it k kc-g3"><div class="xw-g"><span class="xw-orb"></span><div><p>Change one thing, run it, compare. That is the whole method.</p></div></div></div>
+                </div>
+                <div class="xw-composer">Ask about Projectile range sim&hellip;<span class="send">&uarr;</span></div>
+              </div>
+              <div class="xw-viewer" style="--pt-bg:#fbfaf7;--pt-surface:#f1ede6;--pt-text:#1c1b19;--pt-muted:#6b675f;--pt-accent:#a06a56;--pt-on-accent:#ffffff;--pt-accent-soft:#ebe0da;--pt-heading-font:Georgia, 'Times New Roman', serif;--pt-body-font:'Helvetica Neue', Helvetica, Arial, sans-serif">
+                <div class="xw-toolbar">
+                  <div class="xw-tabs"><span class="xw-tab on">Draft</span><span class="xw-tab">Files</span>
+                    <span class="xw-live"><span class="tr kc-lv"><i></i>Live</span></span></div>
+                  <div class="xw-tools"><span class="xw-tool th"><span class="sw"></span>Theme</span><span class="xw-tool">DOCX</span><span class="xw-tool pdf">PDF</span><span class="xw-tool fw">Full width</span></div>
+                </div>
+                <div class="xw-scroll">
+                  <div class="xv-empty tr kc-em"><span class="art page"></span><p>Your draft appears here as Gausyn writes it.</p><small>Ask for an outline or a first draft to begin.</small></div>
+                  <div class="xv-docwrap">
+                    <article class="xv-doc k kc-pg">
+                      <div class="xv-blk k kc-b1"><div class="in"><h1>Projectile range sim</h1></div></div>
+                      <div class="xv-blk k kc-b2"><div class="in"><h2>Step 1: one launch, five angles</h2></div></div>
+                      <div class="xv-blk k kc-b3"><i class="xv-hl kc-h3"></i><div class="in"><div class="xv-code"><span class="kw">import</span> math
+
+<span class="kw">def</span> <span class="fn">range_at</span>(angle, v=<span class="nu">20.0</span>, g=<span class="nu">9.81</span>):
+    t = <span class="nu">2</span> * v * math.sin(math.radians(angle)) / g
+    <span class="kw">return</span> v * math.cos(math.radians(angle)) * t
+
+<span class="kw">for</span> a <span class="kw">in</span> (<span class="nu">15</span>, <span class="nu">30</span>, <span class="nu">45</span>, <span class="nu">60</span>, <span class="nu">75</span>):
+    <span class="fn">print</span>(a, <span class="fn">round</span>(range_at(a), <span class="nu">1</span>))</div></div></div>
+                    </article>
+                    <div class="xv-run k kc-pv">
+                      <div class="xv-run-h"><span class="eyebrow">Preview</span><span class="lang">Python</span>
+                        <span class="runb kc-rb"><span class="tr kc-r0">Run</span><span class="tr kc-rn">Running...</span><span class="k kc-r1">Run</span></span></div>
+                      <div class="xv-con"><span class="ph tr kc-ph">Press Run to execute the draft and see its output here.</span><div class="k kc-o1">15 20.4</div><div class="k kc-o2">30 35.3</div><div class="k kc-o3">45 40.8</div><div class="k kc-o4">60 35.3</div><div class="k kc-o5">75 20.4</div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -619,8 +637,8 @@
           <h2>One teacher, four places to find it.</h2>
           <p>
             The whiteboard is where lessons happen. Learning is where questions
-            go between them. Projects is where the long work lives. Collaborate
-            is where you learn with friends. It is the same teacher in all four,
+            go between them. Collaborate is where you learn with friends. Projects
+            is where the long work lives. It is the same teacher in all four,
             working from the same picture of you: your level, your subjects, and
             how you like to learn.
           </p>
@@ -638,18 +656,18 @@
             <p>A teacher for every subject, pitched to your level, aware of your week, and one tap away from opening a whiteboard session.</p>
             <span class="go">Explore Learning &rarr;</span>
           </a>
-          <div class="mode rose here" data-reveal>
-            <span class="tag">Projects</span>
-            <h3>Where the long work lives.</h3>
-            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
-            <span class="go">You are here</span>
-          </div>
           <a class="mode sage" href="temp-collaborate.html" data-reveal>
             <span class="tag">Collaborate</span>
             <h3>Where friends learn together.</h3>
             <p>Shared boards, named cursors, voice and video, a Friends room, and a friend&rsquo;s lesson you can join with one tap, with your own Gausyn beside you.</p>
             <span class="go">Explore Collaborate &rarr;</span>
           </a>
+          <div class="mode rose here" data-reveal>
+            <span class="tag">Projects</span>
+            <h3>Where the long work lives.</h3>
+            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
+            <span class="go">You are here</span>
+          </div>
         </div>
       </div>
     </section>
@@ -659,7 +677,7 @@
         <h2 data-reveal>The big assignments, never alone.</h2>
         <div class="cta-row" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
-          <a class="btn-quiet" href="temp-collaborate.html">Next: Collaborate &rarr;</a>
+          <a class="btn-quiet" href="temp-whiteboard.html">Next: Whiteboard &rarr;</a>
         </div>
       </div>
     </section>
@@ -691,8 +709,8 @@
           <ul>
             <li><a href="temp-whiteboard.html">Whiteboard</a></li>
             <li><a href="temp-learning.html">Learning</a></li>
-            <li><a href="temp-projects.html">Projects</a></li>
             <li><a href="temp-collaborate.html">Collaborate</a></li>
+            <li><a href="temp-projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -739,6 +757,10 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=29"></script>
+  <dialog class="film-dialog" aria-label="The gausyn launch film">
+    <button class="film-close" type="button">Close</button>
+    <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
+  </dialog>
+  <script src="assets/gausyn.js?v=30"></script>
 </body>
 </html>

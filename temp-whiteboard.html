@@ -6,10 +6,10 @@
   <title>Whiteboard, Gausyn</title>
   <meta name="description" content="One shared board, three ways to learn on it: lessons taught out loud, problems worked by hand with help beside the question, and any hard problem pulled aside into its own workspace." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=29" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=30" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="has-film-hero">
   <div class="aurora aurora-fix" aria-hidden="true">
     <i></i><i></i><i></i>
     <div class="grain"></div>
@@ -17,9 +17,15 @@
   <header class="site-header">
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
-      <nav>
-        <ul class="nav">
+      <nav aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <ul class="nav" id="site-menu">
+          <li><a class="current" aria-current="page" href="temp-whiteboard.html">Whiteboard</a></li>
+          <li><a href="temp-learning.html">Learning</a></li>
+          <li><a href="temp-collaborate.html">Collaborate</a></li>
+          <li><a href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
+          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -27,14 +33,26 @@
 
   <main>
 
-    <section class="page-head">
-      <div class="wrap">
+    <!-- the opening: the whole window, a silent loop of this part of the product -->
+    <section class="hero-full" data-film="whiteboard">
+      <div class="hero-media" aria-hidden="true"><video muted loop playsinline preload="none"></video></div>
+      <div class="hero-copy">
         <span class="eyebrow" data-reveal>Product &middot; Whiteboard</span>
         <h1 data-reveal>One board. Three ways to learn on it.</h1>
-        <p class="lede" data-reveal>Every Gausyn session happens on one shared board. Be taught a real lesson out loud, work the problem yourself with help beside the exact question you are stuck on, or pull a hard problem aside into a room of its own. Move between all three by simply saying so.</p>
-        <div class="cta-row" data-reveal>
+        <div class="hero-actions" data-reveal>
           <a class="btn" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+          <a class="hero-watch" href="assets/GAUSYN-LAUNCH-VIDEO.mp4#t=33.6,92.6">Watch this part</a>
         </div>
+      </div>
+      <div class="hero-foot" data-reveal>
+        <a class="hero-more" href="#how">See how it works</a>
+        <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+      </div>
+    </section>
+
+    <section class="hero-intro" id="how">
+      <div class="wrap">
+        <p class="lede" data-reveal>Every Gausyn session happens on one shared board. Be taught a real lesson out loud, work the problem yourself with help beside the exact question you are stuck on, or pull a hard problem aside into a room of its own. Move between all three by simply saying so.</p>
         <nav class="chapnav" aria-label="On this page" data-reveal>
           <a href="#teacher">Teacher mode</a>
           <a href="#practice">Practice mode</a>
@@ -51,7 +69,6 @@
         <p class="lede" data-reveal>Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud, page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practice&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
       </div>
     </section>
-
 
     <!-- scene 1: the schedule already chose the topic -->
     <section class="scene rule-top" data-scene>
@@ -304,112 +321,6 @@
       </div>
     </section>
 
-    <!-- scene 3b: breadth -->
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Kindergarten to a doctorate</span>
-          <h2>The same teacher, at every level, in every subject.</h2>
-          <p>
-            A tutor who can only do Grade 9 algebra is a tutor you outgrow.
-            Gausyn teaches the fraction bar to an eight-year-old and the
-            eigenvector to a graduate student with the same patience and the
-            same method: one idea per page, in plain words, with a picture when
-            a picture helps. Because it is one teacher rather than a shelf of
-            courses, it can follow a student for a decade, and it already
-            knows how they like to be taught when the material gets hard.
-          </p>
-        </div>
-      </div>
-      <div class="wrapw">
-        <div class="stage" data-reveal>
-          <div class="chrome">
-            <span class="dot"></span>
-            <span class="title">Lesson bank</span>
-            <span class="spacer"></span>
-            <span class="pill">Matched to your session</span>
-          </div>
-          <div class="showcase fade-tl">
-
-            <div class="shot k tl-s1">
-              <span class="shotcap">Grade 3 &middot; Mathematics</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 2 of 5</span>
-                <h4>What a fraction actually says</h4>
-                <ul>
-                  <li>The bottom number names the size of the pieces.</li>
-                  <li>The top number just counts how many you have.</li>
-                  <li>Same whole, different cuts, the bar never changes length.</li>
-                </ul>
-                <div class="fracbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="eq">3/8 of the bar</div>
-              </div>
-            </div>
-
-            <div class="shot k tl-s2">
-              <span class="shotcap">Grade 9 &middot; Mathematics</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 3 of 6</span>
-                <h4>Keeping an equation balanced</h4>
-                <ul>
-                  <li>An equals sign is a promise that both sides weigh the same.</li>
-                  <li>Whatever you do to one side, do to the other, or the promise breaks.</li>
-                  <li>Undo the last thing that happened to x, first.</li>
-                </ul>
-                <div class="eq">3x &minus; 7 = 14 &nbsp;&rarr;&nbsp; 3x = 21 &nbsp;&rarr;&nbsp; x = 7</div>
-              </div>
-            </div>
-
-            <div class="shot k tl-s3">
-              <span class="shotcap">Grade 10 &middot; English</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 1 of 4</span>
-                <h4>What a thesis has to do</h4>
-                <ul>
-                  <li>It makes a claim someone reasonable could disagree with.</li>
-                  <li>It says <em>why</em>, not just <em>what</em>, the because is the argument.</li>
-                  <li>If your whole essay could not fail to prove it, it is a summary.</li>
-                </ul>
-                <div class="work">
-                  <b>Weak:</b> Macbeth is about ambition.<br />
-                  <b>Arguable:</b> Macbeth&rsquo;s ambition only becomes fatal once it is witnessed, he kills to be seen as king, not to be one.
-                </div>
-              </div>
-            </div>
-
-            <div class="shot k tl-s4">
-              <span class="shotcap">Grade 12 &middot; Calculus</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 2 of 8</span>
-                <h4>What a derivative measures</h4>
-                <ul>
-                  <li>The slope of the curve at a single instant, not over a stretch.</li>
-                  <li>Take the average rate, then shrink the interval to nothing.</li>
-                  <li>Whatever the average settles on as h vanishes is the derivative.</li>
-                </ul>
-                <div class="eq">f&prime;(x) = lim<sub>h&rarr;0</sub> [ f(x+h) &minus; f(x) ] / h</div>
-              </div>
-            </div>
-
-            <div class="shot k tl-s5">
-              <span class="shotcap">University &middot; Linear algebra</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 5 of 9</span>
-                <h4>Eigenvectors: the directions that survive</h4>
-                <ul>
-                  <li>A matrix knocks almost every vector off the line it was on.</li>
-                  <li>A few directions are only stretched or squashed, never turned.</li>
-                  <li>Those are the eigenvectors; the amount of stretch is &lambda;.</li>
-                </ul>
-                <div class="eq">A v = &lambda; v</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- scene 4: say the word -->
     <section class="rule-top">
       <div class="wrap">
@@ -601,7 +512,6 @@
         <p class="lede" data-reveal>Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
       </div>
     </section>
-
 
     <!-- scene 1: the classic socratic loop -->
     <section class="scene rule-top" data-scene>
@@ -1191,7 +1101,6 @@
       </div>
     </section>
 
-
     <!-- scene 1: crop -> workspace, calculus -->
     <section class="scene rule-top" data-scene>
       <div class="wrap">
@@ -1556,6 +1465,112 @@
       </div>
     </section>
 
+    <!-- after all three, as in the film: every level -->
+    <section class="scene rule-top" data-scene>
+      <div class="wrap">
+        <div class="scene-head" data-reveal>
+          <span class="eyebrow">Kindergarten to a doctorate</span>
+          <h2>The same teacher, at every level, in every subject.</h2>
+          <p>
+            A tutor who can only do Grade 9 algebra is a tutor you outgrow.
+            Gausyn teaches the fraction bar to an eight-year-old and the
+            eigenvector to a graduate student with the same patience and the
+            same method: one idea per page, in plain words, with a picture when
+            a picture helps. Because it is one teacher rather than a shelf of
+            courses, it can follow a student for a decade, and it already
+            knows how they like to be taught when the material gets hard.
+          </p>
+        </div>
+      </div>
+      <div class="wrapw">
+        <div class="stage" data-reveal>
+          <div class="chrome">
+            <span class="dot"></span>
+            <span class="title">Lesson bank</span>
+            <span class="spacer"></span>
+            <span class="pill">Matched to your session</span>
+          </div>
+          <div class="showcase fade-tl">
+
+            <div class="shot k tl-s1">
+              <span class="shotcap">Grade 3 &middot; Mathematics</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 2 of 5</span>
+                <h4>What a fraction actually says</h4>
+                <ul>
+                  <li>The bottom number names the size of the pieces.</li>
+                  <li>The top number just counts how many you have.</li>
+                  <li>Same whole, different cuts, the bar never changes length.</li>
+                </ul>
+                <div class="fracbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="eq">3/8 of the bar</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s2">
+              <span class="shotcap">Grade 9 &middot; Mathematics</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 3 of 6</span>
+                <h4>Keeping an equation balanced</h4>
+                <ul>
+                  <li>An equals sign is a promise that both sides weigh the same.</li>
+                  <li>Whatever you do to one side, do to the other, or the promise breaks.</li>
+                  <li>Undo the last thing that happened to x, first.</li>
+                </ul>
+                <div class="eq">3x &minus; 7 = 14 &nbsp;&rarr;&nbsp; 3x = 21 &nbsp;&rarr;&nbsp; x = 7</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s3">
+              <span class="shotcap">Grade 10 &middot; English</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 1 of 4</span>
+                <h4>What a thesis has to do</h4>
+                <ul>
+                  <li>It makes a claim someone reasonable could disagree with.</li>
+                  <li>It says <em>why</em>, not just <em>what</em>, the because is the argument.</li>
+                  <li>If your whole essay could not fail to prove it, it is a summary.</li>
+                </ul>
+                <div class="work">
+                  <b>Weak:</b> Macbeth is about ambition.<br />
+                  <b>Arguable:</b> Macbeth&rsquo;s ambition only becomes fatal once it is witnessed, he kills to be seen as king, not to be one.
+                </div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s4">
+              <span class="shotcap">Grade 12 &middot; Calculus</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 2 of 8</span>
+                <h4>What a derivative measures</h4>
+                <ul>
+                  <li>The slope of the curve at a single instant, not over a stretch.</li>
+                  <li>Take the average rate, then shrink the interval to nothing.</li>
+                  <li>Whatever the average settles on as h vanishes is the derivative.</li>
+                </ul>
+                <div class="eq">f&prime;(x) = lim<sub>h&rarr;0</sub> [ f(x+h) &minus; f(x) ] / h</div>
+              </div>
+            </div>
+
+            <div class="shot k tl-s5">
+              <span class="shotcap">University &middot; Linear algebra</span>
+              <div class="lesson-page">
+                <span class="num">Lesson &middot; page 5 of 9</span>
+                <h4>Eigenvectors: the directions that survive</h4>
+                <ul>
+                  <li>A matrix knocks almost every vector off the line it was on.</li>
+                  <li>A few directions are only stretched or squashed, never turned.</li>
+                  <li>Those are the eigenvectors; the amount of stretch is &lambda;.</li>
+                </ul>
+                <div class="eq">A v = &lambda; v</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- the product, in a loop -->
     <section class="rule-top" id="explore">
       <div class="wrap">
@@ -1564,8 +1579,8 @@
           <h2>One teacher, four places to find it.</h2>
           <p>
             The whiteboard is where lessons happen. Learning is where questions
-            go between them. Projects is where the long work lives. Collaborate
-            is where you learn with friends. It is the same teacher in all four,
+            go between them. Collaborate is where you learn with friends. Projects
+            is where the long work lives. It is the same teacher in all four,
             working from the same picture of you: your level, your subjects, and
             how you like to learn.
           </p>
@@ -1583,17 +1598,17 @@
             <p>A teacher for every subject, pitched to your level, aware of your week, and one tap away from opening a whiteboard session.</p>
             <span class="go">Explore Learning &rarr;</span>
           </a>
-          <a class="mode rose" href="temp-projects.html" data-reveal>
-            <span class="tag">Projects</span>
-            <h3>Where the long work lives.</h3>
-            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
-            <span class="go">Explore Projects &rarr;</span>
-          </a>
           <a class="mode sage" href="temp-collaborate.html" data-reveal>
             <span class="tag">Collaborate</span>
             <h3>Where friends learn together.</h3>
             <p>Shared boards, named cursors, voice and video, a Friends room, and a friend&rsquo;s lesson you can join with one tap, with your own Gausyn beside you.</p>
             <span class="go">Explore Collaborate &rarr;</span>
+          </a>
+          <a class="mode rose" href="temp-projects.html" data-reveal>
+            <span class="tag">Projects</span>
+            <h3>Where the long work lives.</h3>
+            <p>Essays, decks, games, and 3D parts built live beside the chat: real slides, themes, a running preview, Present mode, and export when it is ready.</p>
+            <span class="go">Explore Projects &rarr;</span>
           </a>
         </div>
       </div>
@@ -1636,8 +1651,8 @@
           <ul>
             <li><a href="temp-whiteboard.html">Whiteboard</a></li>
             <li><a href="temp-learning.html">Learning</a></li>
-            <li><a href="temp-projects.html">Projects</a></li>
             <li><a href="temp-collaborate.html">Collaborate</a></li>
+            <li><a href="temp-projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -1684,6 +1699,10 @@
       </div>
     </div>
   </footer>
-  <script src="assets/gausyn.js?v=29"></script>
+  <dialog class="film-dialog" aria-label="The gausyn launch film">
+    <button class="film-close" type="button">Close</button>
+    <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
+  </dialog>
+  <script src="assets/gausyn.js?v=30"></script>
 </body>
 </html>
