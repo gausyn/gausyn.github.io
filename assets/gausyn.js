@@ -307,12 +307,87 @@
     show(0);
   }
 
-  // the launch film in the hero: a large play button until it first plays
-  var launch = document.querySelector('.herovideo');
-  if (launch) {
-    var launchVideo = launch.querySelector('video');
-    launch.querySelector('.herovideo-play').addEventListener('click', function () { launchVideo.play(); });
-    launchVideo.addEventListener('play', function () { launch.classList.add('started'); });
+  // The homepage's opening: a short silent loop behind the headline, the header sitting
+  // on it until you scroll past, and the full film, with sound, one click away.
+  var hero = document.querySelector('.hero-full');
+  if (hero) {
+    var heroVideo = hero.querySelector('video'), heroPause = hero.querySelector('.hero-pause');
+    var tall = window.matchMedia('(max-aspect-ratio: 3/4)');
+    var saveData = navigator.connection && navigator.connection.saveData;
+    var wantsLoop = !reduce && !saveData, heldByVisitor = false, heroInView = true, filmOpen = false;
+
+    function syncLoop() {
+      if (!wantsLoop) return;
+      if (heldByVisitor || !heroInView || filmOpen) { heroVideo.pause(); return; }
+      var playing = heroVideo.play();
+      if (playing && playing.catch) playing.catch(function () { /* the poster stays */ });
+    }
+    // phones get their own vertical cut: cropping the wide one leaves a sliver of it
+    function chooseLoop() {
+      var src = 'assets/hero-loop' + (tall.matches ? '-tall' : '') + '.mp4';
+      if (heroVideo.getAttribute('src') !== src) { heroVideo.setAttribute('src', src); syncLoop(); }
+    }
+    if (wantsLoop) {
+      heroVideo.muted = true;
+      chooseLoop();
+      if (tall.addEventListener) tall.addEventListener('change', chooseLoop);
+      heroPause.hidden = false;
+      heroPause.addEventListener('click', function () {
+        heldByVisitor = !heldByVisitor;
+        heroPause.classList.toggle('held', heldByVisitor);
+        heroPause.setAttribute('aria-label', (heldByVisitor ? 'Play' : 'Pause') + ' the background video');
+        syncLoop();
+      });
+    }
+
+    if (hasIO) {
+      new IntersectionObserver(function (entries) {
+        heroInView = entries[entries.length - 1].isIntersecting;
+        document.body.classList.toggle('past-hero', !heroInView);
+        syncLoop();
+      }, { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
+    } else {
+      document.body.classList.add('past-hero');
+    }
+
+    // without a dialog the link simply opens the film file
+    var filmDialog = document.querySelector('.film-dialog'), heroWatch = hero.querySelector('.hero-watch');
+    if (filmDialog && filmDialog.showModal) {
+      var filmPlayer = filmDialog.querySelector('video');
+      heroWatch.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!filmPlayer.getAttribute('src')) filmPlayer.setAttribute('src', heroWatch.getAttribute('href'));
+        filmOpen = true;
+        syncLoop();
+        document.body.classList.add('film-open');
+        filmDialog.showModal();
+        var playing = filmPlayer.play();
+        if (playing && playing.catch) playing.catch(function () { /* the controls are there */ });
+      });
+      filmDialog.querySelector('.film-close').addEventListener('click', function () { filmDialog.close(); });
+      filmDialog.addEventListener('close', function () {
+        filmPlayer.pause();
+        filmOpen = false;
+        document.body.classList.remove('film-open');
+        syncLoop();
+      });
+    }
+  }
+
+  // the header's menu on small screens
+  var menuButton = document.querySelector('.nav-toggle');
+  if (menuButton) {
+    var siteMenu = document.getElementById('site-menu');
+    function setMenu(open) {
+      siteMenu.classList.toggle('open', open);
+      menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setMenu(!siteMenu.classList.contains('open'));
+    });
+    document.addEventListener('click', function (e) { if (!siteMenu.contains(e.target)) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
 
   // contact form: compose an email in the visitor's mail app
