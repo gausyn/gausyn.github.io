@@ -307,6 +307,14 @@
     show(0);
   }
 
+  // the launch film in the hero: a large play button until it first plays
+  var launch = document.querySelector('.herovideo');
+  if (launch) {
+    var launchVideo = launch.querySelector('video');
+    launch.querySelector('.herovideo-play').addEventListener('click', function () { launchVideo.play(); });
+    launchVideo.addEventListener('play', function () { launch.classList.add('started'); });
+  }
+
   // contact form: compose an email in the visitor's mail app
   var cf = document.getElementById('contact-form');
   if (cf) {

@@ -815,6 +815,32 @@ html.js .te-li{animation:te-listen 25s steps(1) infinite}
 .side-meta .val { font-size: 13px; color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .da-dim { display: none !important; } }
 
+/* ── the launch film in the hero: large, with the headline and the waitlist
+   button still on the same screen ─────────────────────────────────────── */
+.herovideo {
+  position: relative;
+  width: min(100%, 1240px, max(640px, calc((100vh - 350px) * 16 / 9)));
+  width: min(100%, 1240px, max(640px, calc((100svh - 350px) * 16 / 9)));
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--rule); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float); overflow: hidden; background: #0a0a0a;
+}
+.herovideo video { display: block; width: 100%; height: 100%; }
+.herovideo-play { display: none; }
+html.js .herovideo-play {
+  display: flex; align-items: center; justify-content: center;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: clamp(60px, 7vw, 84px); height: clamp(60px, 7vw, 84px); padding: 0;
+  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-float); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;
+}
+html.js .herovideo-play::before {
+  content: ""; width: 0; height: 0; margin-left: 5px;
+  border-left: 20px solid var(--ink); border-top: 12px solid transparent; border-bottom: 12px solid transparent;
+}
+html.js .herovideo-play:hover { transform: translate(-50%, -50%) scale(1.06); background: #fff; }
+html.js .herovideo.started .herovideo-play { display: none; }
+
 /* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
 .herofilm {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
