@@ -6,7 +6,7 @@
   <title>Whiteboard, Gausyn</title>
   <meta name="description" content="One shared board, three ways to learn on it: lessons taught out loud, problems worked by hand with help beside the question, and any hard problem pulled aside into its own workspace." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=30" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=31" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="has-film-hero">
@@ -57,16 +57,23 @@
           <a href="#teacher">Teacher mode</a>
           <a href="#practice">Practice mode</a>
           <a href="#ask">Ask Gausyn</a>
+          <a href="#levels">Every level</a>
         </nav>
       </div>
     </section>
 
-    <!-- ════ Teacher mode ════ -->
-    <section class="chapter rule-top" id="teacher">
-      <div class="wrap">
-        <span class="eyebrow" data-reveal>Part one &middot; Teacher mode</span>
-        <h2 data-reveal>A lesson that stops when you say wait.</h2>
-        <p class="lede" data-reveal>Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud, page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practice&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
+    <!-- â•â•â•â• Teacher mode â•â•â•â• -->
+    <section class="chapter" id="teacher">
+      <div class="wrapw">
+        <div class="part" data-part="teacher">
+          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-teacher-poster.jpg"></video></div>
+          <div class="part-copy">
+            <span class="eyebrow" data-reveal>Part one &middot; Teacher mode</span>
+            <h2 data-reveal>A lesson that stops when you say wait.</h2>
+            <p class="lede" data-reveal>Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud, page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practice&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
+          </div>
+          <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+        </div>
       </div>
     </section>
 
@@ -504,12 +511,18 @@
       </div>
     </section>
 
-    <!-- ════ Practice mode ════ -->
-    <section class="chapter rule-top" id="practice">
-      <div class="wrap">
-        <span class="eyebrow" data-reveal>Part two &middot; Practice mode</span>
-        <h2 data-reveal>You work. It watches.</h2>
-        <p class="lede" data-reveal>Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
+    <!-- â•â•â•â• Practice mode â•â•â•â• -->
+    <section class="chapter" id="practice">
+      <div class="wrapw">
+        <div class="part" data-part="practice">
+          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-practice-poster.jpg"></video></div>
+          <div class="part-copy">
+            <span class="eyebrow" data-reveal>Part two &middot; Practice mode</span>
+            <h2 data-reveal>You work. It watches.</h2>
+            <p class="lede" data-reveal>Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
+          </div>
+          <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+        </div>
       </div>
     </section>
 
@@ -1092,12 +1105,18 @@
       </div>
     </section>
 
-    <!-- ════ Ask Gausyn ════ -->
-    <section class="chapter rule-top" id="ask">
-      <div class="wrap">
-        <span class="eyebrow" data-reveal>Part three &middot; Ask Gausyn</span>
-        <h2 data-reveal>Drag a box. Get a room.</h2>
-        <p class="lede" data-reveal>Worksheets give you two inches of margin for a problem that needs a full page of thinking. Ask Gausyn fixes that: drag a box around any problem and it becomes its own workspace, the question pinned at the top, clean grid below, a pin left behind so you can jump straight back.</p>
+    <!-- â•â•â•â• Ask Gausyn â•â•â•â• -->
+    <section class="chapter" id="ask">
+      <div class="wrapw">
+        <div class="part" data-part="ask">
+          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-ask-poster.jpg"></video></div>
+          <div class="part-copy">
+            <span class="eyebrow" data-reveal>Part three &middot; Ask Gausyn</span>
+            <h2 data-reveal>Drag a box. Get a room.</h2>
+            <p class="lede" data-reveal>Worksheets give you two inches of margin for a problem that needs a full page of thinking. Ask Gausyn fixes that: drag a box around any problem and it becomes its own workspace, the question pinned at the top, clean grid below, a pin left behind so you can jump straight back.</p>
+          </div>
+          <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
+        </div>
       </div>
     </section>
 
@@ -1465,23 +1484,22 @@
       </div>
     </section>
 
-    <!-- after all three, as in the film: every level -->
-    <section class="scene rule-top" data-scene>
-      <div class="wrap">
-        <div class="scene-head" data-reveal>
-          <span class="eyebrow">Kindergarten to a doctorate</span>
-          <h2>The same teacher, at every level, in every subject.</h2>
-          <p>
-            A tutor who can only do Grade 9 algebra is a tutor you outgrow.
-            Gausyn teaches the fraction bar to an eight-year-old and the
-            eigenvector to a graduate student with the same patience and the
-            same method: one idea per page, in plain words, with a picture when
-            a picture helps. Because it is one teacher rather than a shelf of
-            courses, it can follow a student for a decade, and it already
-            knows how they like to be taught when the material gets hard.
-          </p>
+    <!-- â•â•â•â• Every level, after all three as in the film â•â•â•â• -->
+    <section class="chapter" id="levels">
+      <div class="wrapw">
+        <div class="part" data-part="levels">
+          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-levels-poster.jpg"></video></div>
+          <div class="part-copy">
+            <span class="eyebrow" data-reveal>Kindergarten to a doctorate</span>
+            <h2 data-reveal>The same teacher, at every level, in every subject.</h2>
+            <p class="lede" data-reveal>A tutor who can only do Grade 9 algebra is a tutor you outgrow. Gausyn teaches the fraction bar to an eight-year-old and the eigenvector to a graduate student with the same patience and the same method: one idea per page, in plain words, with a picture when a picture helps. Because it is one teacher rather than a shelf of courses, it can follow a student for a decade, and it already knows how they like to be taught when the material gets hard.</p>
+          </div>
+          <button class="hero-pause" type="button" aria-label="Pause the background video" hidden></button>
         </div>
       </div>
+    </section>
+
+    <section class="scene" data-scene>
       <div class="wrapw">
         <div class="stage" data-reveal>
           <div class="chrome">
@@ -1703,6 +1721,6 @@
     <button class="film-close" type="button">Close</button>
     <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
   </dialog>
-  <script src="assets/gausyn.js?v=30"></script>
+  <script src="assets/gausyn.js?v=31"></script>
 </body>
 </html>

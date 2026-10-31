@@ -1,7 +1,8 @@
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
-  var now = function () { return window.performance && performance.now ? performance.now() : Date.now(); };
+  var saveData = navigator.connection && navigator.connection.saveData;
+  var now =function () { return window.performance && performance.now ? performance.now() : Date.now(); };
 
   // How the page is moving, shared by the fade-in and the demos: which way, how quickly
   // (px per ms), and whether fast: about a screen and a half a second or more, as in a
@@ -313,7 +314,6 @@
   if (hero) {
     var heroVideo = hero.querySelector('video'), heroPause = hero.querySelector('.hero-pause');
     var tall = window.matchMedia('(max-aspect-ratio: 3/4)');
-    var saveData = navigator.connection && navigator.connection.saveData;
     var wantsLoop = !reduce && !saveData, heldByVisitor = false, heroInView = true, filmOpen = false;
 
     function syncLoop() {
@@ -372,6 +372,36 @@
         syncLoop();
       });
     }
+  }
+
+  // The boxes that open each part of a long page: a short silent loop (data-part names it),
+  // fetched on the way to it and playing only while on screen. Otherwise the poster stays.
+  if (hasIO && !reduce && !saveData) {
+    function syncPart(part) {
+      var video = part.querySelector('video');
+      if (part.gzHeld || !part.gzNear) { video.pause(); return; }
+      if (!video.getAttribute('src')) video.setAttribute('src', 'assets/part-' + part.getAttribute('data-part') + '.mp4');
+      var playing = video.play();
+      if (playing && playing.catch) playing.catch(function () { /* the poster stays */ });
+    }
+    var partIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.gzNear = entry.isIntersecting;
+        syncPart(entry.target);
+      });
+    }, { rootMargin: '100px 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('.part'), function (part) {
+      var pause = part.querySelector('.hero-pause');
+      part.querySelector('video').muted = true;
+      pause.hidden = false;
+      pause.addEventListener('click', function () {
+        part.gzHeld = !part.gzHeld;
+        pause.classList.toggle('held', part.gzHeld);
+        pause.setAttribute('aria-label', (part.gzHeld ? 'Play' : 'Pause') + ' the background video');
+        syncPart(part);
+      });
+      partIO.observe(part);
+    });
   }
 
   // the header's menu on small screens
