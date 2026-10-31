@@ -322,9 +322,9 @@
       var playing = heroVideo.play();
       if (playing && playing.catch) playing.catch(function () { /* the poster stays */ });
     }
-    // phones get their own vertical cut: cropping the wide one leaves a sliver of it
+    // phones get their own version: the whole screen across the width, over a soft copy of itself
     function chooseLoop() {
-      var src = 'assets/hero-loop' + (tall.matches ? '-tall' : '') + '.mp4';
+      var src = 'assets/hero-film' + (tall.matches ? '-tall' : '') + '.mp4';
       if (heroVideo.getAttribute('src') !== src) { heroVideo.setAttribute('src', src); syncLoop(); }
     }
     if (wantsLoop) {

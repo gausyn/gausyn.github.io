@@ -825,12 +825,12 @@ html.js .te-li{animation:te-listen 25s steps(1) infinite}
   min-height: 100vh; min-height: 100svh; overflow: hidden; color: #fff; background: #171310;
   padding: 92px var(--hero-pad) clamp(28px, 5vh, 52px);
 }
-.hero-media { position: absolute; inset: 0; background: #171310 url("hero-poster.jpg") center / cover no-repeat; }
+.hero-media { position: absolute; inset: 0; background: #171310 url("hero-film-poster.jpg") center / cover no-repeat; }
 .hero-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* dark enough at the top and the bottom for white type, even over a white board */
 .hero-media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 11, 9, 0.46) 0%, rgba(14, 11, 9, 0.22) 15%, rgba(14, 11, 9, 0.1) 34%, rgba(14, 11, 9, 0.14) 50%, rgba(14, 11, 9, 0.46) 72%, rgba(14, 11, 9, 0.74) 100%);
+  background: linear-gradient(to bottom, rgba(14, 11, 9, 0.46) 0%, rgba(14, 11, 9, 0.22) 15%, rgba(14, 11, 9, 0.1) 34%, rgba(14, 11, 9, 0.14) 48%, rgba(14, 11, 9, 0.6) 70%, rgba(14, 11, 9, 0.82) 100%);
 }
 .hero-copy, .hero-foot { position: relative; }
 .hero-copy h1 { color: #fff; font-size: 56px; line-height: 1.08; max-width: 15em; text-wrap: balance; }
@@ -887,7 +887,7 @@ html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 
   .hero-copy h1 { font-size: 34px; }
   .hero-foot { position: relative; right: auto; bottom: auto; justify-content: space-between; margin-top: 18px; }
 }
-@media (max-aspect-ratio: 3/4) { .hero-media { background-image: url("hero-poster-tall.jpg"); } }
+@media (max-aspect-ratio: 3/4) { .hero-media { background-image: url("hero-film-poster-tall.jpg"); } }
 
 /* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
 .herofilm {
