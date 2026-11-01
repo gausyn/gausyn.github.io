@@ -675,9 +675,9 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Sheet loads|4.5:You stall|11:First try|18.6:Second try|29:A harder one|36:More room|40.2:In the workspace">
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
+            <span class="tab active pr-t1">Board 1</span>
             <span class="tab pr k pr-tpr">Practice</span>
             <span class="tab ws k pr-tws">Q1</span>
           </div>
@@ -690,34 +690,56 @@
                   <div class="tp-btn on">Draw</div>
                   <div class="tp-btn">Select</div>
                   <div class="tp-btn">Upload</div>
-                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-btn ask pr-ask">Ask Gausyn</div>
                   <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
                 </div>
 
-                <div class="sheet">
-                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x + 5 = 13. Show every step.</p>
+                <div class="sheet pr-sheet">
+                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x <span class="pr-mark">+ 5</span> = 13. Show every step.</p>
+                  <div class="pr-state">
+                    <span class="tr pr-s0">Working the sheet out first&hellip;</span>
+                    <span class="k pr-s1">12 problems solved, reference ready &#10003;</span>
+                    <span class="tr pr-s2">Checking line 1 against the reference&hellip;</span>
+                    <span class="tr pr-s3">Line 1 does not match yet</span>
+                    <span class="tr pr-s4">Line 2 matches the reference &#10003;</span>
+                    <span class="tr pr-s5">x = 4 matches the reference &#10003;</span>
+                  </div>
 
-                  <svg class="ink" viewBox="0 0 260 150" width="260" height="150" style="left:clamp(140px,13vw,160px);top:clamp(76px,9vw,110px)" aria-hidden="true">
-                    <path class="pr-a1" pathLength="240" d="M14,26 C20,18 30,16 34,24 C37,31 26,40 16,48 C28,46 38,46 46,47"></path>
-                    <path class="pr-a2" pathLength="240" d="M60,24 C70,34 80,44 88,50 M88,24 C80,34 70,42 60,50"></path>
-                    <path class="pr-a3" pathLength="240" d="M104,32 C116,30 130,30 140,32 M104,44 C116,42 130,42 140,44"></path>
-                    <path class="pr-a4" pathLength="240" d="M170,26 C160,30 158,40 168,44 C158,48 158,60 170,62 C182,60 184,48 172,44 C184,40 182,30 170,26"></path>
-                    <path class="pr-b1" pathLength="240" d="M28,92 C40,104 52,116 62,126 M62,92 C52,104 40,114 28,126"></path>
-                    <path class="pr-b2" pathLength="240" d="M84,102 C96,100 110,100 120,102 M84,116 C96,114 110,114 120,116"></path>
-                    <path class="pr-b3" pathLength="240" d="M152,94 C142,106 136,116 132,126 C144,124 158,124 168,124 M158,100 C157,114 156,126 155,140"></path>
+                  <svg class="ink pr-hand pr-ink" viewBox="0 0 330 220" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <line class="pr-rule" x1="0" y1="66" x2="330" y2="66"></line><line class="pr-rule" x1="0" y1="138" x2="330" y2="138"></line><line class="pr-rule" x1="0" y1="210" x2="330" y2="210"></line>
+                    <g class="pr-l1"><path pathLength="34.3" style="stroke-dasharray:240 2000" d="M9.2,24.8C12.3,13.4,32.1,11.3,33.2,23.8C34.2,34.2,16.5,45.7,9.2,56.1C18.6,54,29,54,37.3,55"></path><path pathLength="34.3" style="stroke-dasharray:205.7 2000" d="M45,29.7C54.2,38.9,62.4,48.1,70.5,58.3"></path><path pathLength="34.3" style="stroke-dasharray:171.4 2000" d="M70.5,28.7C62.4,37.9,53.2,48.1,45,58.3"></path><path pathLength="34.3" style="stroke-dasharray:137.1 2000" d="M100.3,35.1C108.7,34,119.1,34,127.5,35.1"></path><path pathLength="34.3" style="stroke-dasharray:102.9 2000" d="M100.3,47.7C108.7,46.6,119.1,46.6,127.5,47.7"></path><path pathLength="34.3" style="stroke-dasharray:68.6 2000" d="M155.4,22.5C159.7,19.3,164,16,166.2,12.8C166.2,26.8,165.1,43.9,165.1,56.8"></path><path pathLength="34.3" style="stroke-dasharray:34.3 2000" d="M191.4,14.6C180.8,14.6,179.7,27.3,191.4,33.7C204.1,40,203,58.1,190.3,58.1C177.6,58.1,177.6,40,191.4,33.7C202,27.3,202,14.6,191.4,14.6"></path></g>
+                    <g class="pr-st"><path pathLength="240" style="stroke-dasharray:240 2000" d="M2,42 C63,34 143,50 211,36"></path></g>
+                    <g class="pr-l2"><path pathLength="40" style="stroke-dasharray:240 2000" d="M9.6,97.3C12.8,85.5,33.1,83.4,34.2,96.2C35.3,106.9,17.1,118.7,9.6,129.3C19.2,127.2,29.9,127.2,38.5,128.3"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M45.3,101.3C55,111,63.6,120.7,72.2,131.5"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M72.2,100.3C63.6,110,53.9,120.7,45.3,131.5"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M100,109C108.2,107.9,118.5,107.9,126.7,109"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M100,121.3C108.2,120.2,118.5,120.2,126.7,121.3"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M166.6,87.9C156.3,87.9,155.2,100.3,166.6,106.5C179,112.7,178,130.2,165.6,130.2C153.2,130.2,153.2,112.7,166.6,106.5C176.9,100.3,176.9,87.9,166.6,87.9"></path></g>
+                    <g class="pr-l3"><path pathLength="40" style="stroke-dasharray:240 2000" d="M8.6,171.7C18.1,181.3,26.6,190.8,35.1,201.4"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M35.1,170.7C26.6,180.2,17.1,190.8,8.6,201.4"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M63.6,179.1C71.8,178.1,82,178.1,90.2,179.1"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M63.6,191.3C71.8,190.3,82,190.3,90.2,191.3"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M136.3,159.7C130.1,171,124,181.2,118.8,187.4C128.1,186.4,140.4,186.4,147.6,186.4"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M140.4,168.9C139.4,179.2,139.4,190.5,138.3,202.8"></path></g>
                   </svg>
 
-                  <div class="hint k pr-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">What was done to x last, the &times;2 or the +5?</div>
-                  <div class="hint tex k pr-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(112px,13vw,150px)">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
+                  <div class="hint k pr-h1">What was done to x last, the &times;2 or the +5?</div>
+                  <div class="hint k pr-h2">To undo a +5, what do you do to both sides?</div>
+                  <div class="hint tex k pr-h3">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
 
-                  <div class="crop tr pr-crop" style="left:clamp(130px,12vw,150px);top:clamp(66px,8vw,96px);width:min(300px,54%);height:clamp(90px,11vw,120px)">
-                    <span class="lbl">Ask Gausyn</span>
+                  <div class="pr-p1 k">
+                    <span class="tr pr-gen">Writing a fresh problem&hellip;</span>
+                    <div class="pq k pr-pq">
+                      <span class="lbl">Practice &middot; P1</span>
+                      A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
+                    </div>
+                    <svg class="ink pr-hand pr-cink" viewBox="0 0 145 60" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                      <g class="pr-l4"><path pathLength="60" style="stroke-dasharray:240 2000" d="M7,16.9C13.2,10.7,25.8,12.3,24.2,20.1C23.4,25.6,16.4,27.9,12.4,27.9C19.5,27.9,27.3,31,25.8,38.1C24.2,46.7,10.1,47.5,5.4,41.2"></path><path pathLength="60" style="stroke-dasharray:180 2000" d="M32.2,25.3C33,32.5,33,40.5,32.2,46.9C34.6,35.7,39.4,24.5,45.8,24.5C51.4,24.5,51.4,35.7,52.2,46.9"></path><path pathLength="60" style="stroke-dasharray:120 2000" d="M73.8,34.4C79.3,33.6,86.5,33.6,92.1,34.4"></path><path pathLength="60" style="stroke-dasharray:60 2000" d="M113.2,14.7C120.2,13.1,128.1,13.1,133.5,13.9C128.1,23.2,122.6,34.2,120.2,45.9"></path></g>
+                    </svg>
+                    <div class="crop tr pr-crop"><span class="lbl">Ask Gausyn</span></div>
                   </div>
+                </div>
 
-                  <div class="pq k pr-pq" style="top:clamp(200px,24vw,300px)">
-                    <span class="lbl">Practice &middot; P1</span>
+                <div class="tr pr-ws">
+                  <div class="pq">
+                    <span class="lbl">Q1 &middot; Pinned</span>
                     A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
                   </div>
+                  <svg class="ink pr-hand pr-wsink" viewBox="0 0 334 170" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pr-l5"><path pathLength="30" style="stroke-dasharray:240 2000" d="M10.4,26C19,17.4,36.2,19.5,34.1,30.3C33,37.8,23.3,41.1,17.9,41.1C27.6,41.1,38.4,45.4,36.2,55.1C34.1,66.9,14.7,68,8.3,59.4"></path><path pathLength="30" style="stroke-dasharray:210 2000" d="M43.8,37.4C44.9,46.9,44.9,57.4,43.8,65.9C47,51.1,53.3,36.3,61.8,36.3C69.2,36.3,69.2,51.1,70.2,65.9"></path><path pathLength="30" style="stroke-dasharray:180 2000" d="M97.7,51.4C104.9,50.4,114.3,50.4,121.5,51.4"></path><path pathLength="30" style="stroke-dasharray:150 2000" d="M150.7,22.4C160.5,20.2,171.3,20.2,178.8,21.3C171.3,34.2,163.7,49.4,160.5,65.5"></path><path pathLength="30" style="stroke-dasharray:120 2000" d="M203.3,42.9C211.5,41.9,221.7,41.9,229.9,42.9"></path><path pathLength="30" style="stroke-dasharray:90 2000" d="M203.3,55.2C211.5,54.1,221.7,54.1,229.9,55.2"></path><path pathLength="30" style="stroke-dasharray:60 2000" d="M258,32.7C261.2,20.9,281.5,18.7,282.6,31.6C283.7,42.3,265.5,54.1,258,64.8C267.6,62.7,278.3,62.7,286.9,63.7"></path><path pathLength="30" style="stroke-dasharray:30 2000" d="M316,23C303.4,28.3,295,43,296,54.5C297.1,68.2,318.1,68.2,318.1,53.5C318.1,43,301.3,41.9,296,52.4"></path></g>
+                    <g class="pr-l6"><path pathLength="40" style="stroke-dasharray:240 2000" d="M10.6,107.9C19.1,99.4,36,101.5,33.9,112.2C32.9,119.6,23.3,122.8,18,122.8C27.5,122.8,38.2,127,36,136.6C33.9,148.3,14.8,149.3,8.4,140.8"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M43.2,121.3C44.3,130.6,44.3,140.9,43.2,149.2C46.3,134.7,52.5,120.2,60.8,120.2C68,120.2,68,134.7,69,149.2"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M98.4,125.1C106.6,124.1,117,124.1,125.2,125.1"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M98.4,137.5C106.6,136.4,117,136.4,125.2,137.5"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M153.2,110C161.5,101.7,178,103.8,176,114.2C174.9,121.4,165.6,124.5,160.4,124.5C169.8,124.5,180.1,128.7,178,138C176,149.4,157.3,150.4,151.1,142.1"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M189.4,107.2C198,98.7,215.1,100.8,212.9,111.5C211.9,119,202.2,122.2,196.9,122.2C206.5,122.2,217.2,126.5,215.1,136.1C212.9,147.9,193.7,149,187.3,140.4"></path></g>
+                  </svg>
+                  <div class="hint tex k pr-h4">3n = 33 &nbsp;&#10003;&nbsp; one move left</div>
                 </div>
               </div>
             </div>
@@ -732,9 +754,13 @@
                 <div><span class="lbl">Files</span><span class="val">worksheet.pdf</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g"><span class="who">Gausyn</span>Your sheet is on the board. Give me a moment to work it through.</div>
+                <div class="line g k pr-g1"><span class="who">Gausyn</span>Done. You write, I watch. Problem 3 is next.</div>
                 <div class="line you k pr-c1"><span class="who">You</span>Where do I even start?</div>
                 <div class="line g k pr-c2"><span class="who">Gausyn</span>Look at the left side. What happened to x last?</div>
                 <div class="line you k pr-c3"><span class="who">You</span>The plus five. So I undo that first.</div>
+                <div class="line g k pr-g2"><span class="who">Gausyn</span>Nearly. Have a look at the note beside that line.</div>
+                <div class="line you k pr-y2"><span class="who">You</span>Oh. I added it. It has to come off.</div>
                 <div class="line g k pr-c4"><span class="who">Gausyn</span>x = 4, and this time you can say why. Want to make it stick?</div>
                 <div class="line you k pr-c5"><span class="who">You</span>Give me a harder one.</div>
                 <div class="line g k pr-c6"><span class="who">Gausyn</span>Same skeleton, new coat of paint. Talk me through your first move.</div>
@@ -765,40 +791,57 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Just words|6.4:A quick sketch|13.4:Yours to move|16.4:Which side|22.6:Your working|28.6:Checked|32:What next">
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
+            <span class="tab pr k pg-tpr">Practice</span>
             <span class="spacer" style="flex:1"></span>
           </div>
           <div class="board-shell fade-pg">
             <div>
               <div class="boardarea graph">
                 <div class="camthumb" aria-hidden="true"></div>
+                <div class="toolspanel" aria-hidden="true">
+                  <div class="tp-h">Tools</div>
+                  <div class="tp-btn on pg-drw">Draw</div>
+                  <div class="tp-btn pg-sel">Select</div>
+                  <div class="tp-btn">Upload</div>
+                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+                </div>
 
-                <div class="sheet">
+                <div class="sheet pg-sheet">
                   <p class="q"><span class="n">5.</span>A ladder leans against a wall, reaching 12 ft up, with its base 5 ft from the wall. How long is the ladder?</p>
 
-                  <div class="sketch tr pg-sk" style="left:clamp(140px,13vw,160px);top:clamp(80px,9vw,110px)">Sketching<i></i><i></i><i></i></div>
+                  <div class="pg-dg" data-box>
+                    <div class="sketch tr pg-sk">Sketching<i></i><i></i><i></i></div>
+                    <div class="pg-move">
+                      <svg class="diagram" viewBox="0 0 200 170" aria-hidden="true">
+                        <path class="pg-d1" pathLength="240" d="M64,10 L64,146"></path>
+                        <path class="pg-d2" pathLength="240" d="M34,146 L172,146"></path>
+                        <path class="pg-d3" pathLength="240" d="M64,12 L121,146"></path>
+                        <path class="pg-d4" pathLength="240" d="M64,134 L76,134 L76,146" style="stroke-width:1.2"></path>
+                        <path class="tr pg-lad" d="M64,12 L121,146"></path>
+                        <text class="k pg-lb" x="57" y="82" text-anchor="end">12</text>
+                        <text class="k pg-lb" x="92" y="163" text-anchor="middle">5</text>
+                        <text class="tr pg-qm" x="102" y="72">?</text>
+                        <text class="k pg-ans" x="102" y="72">13</text>
+                      </svg>
+                      <div class="tr pg-frame"><span>Drag to move, corner to resize</span><i></i><i></i><i></i><i></i></div>
+                    </div>
+                  </div>
 
-                  <svg class="diagram" viewBox="0 0 200 150" width="200" height="150" style="left:clamp(140px,13vw,160px);top:clamp(64px,8vw,92px)" aria-hidden="true">
-                    <path class="pg-d1" pathLength="240" d="M40,10 L40,130"></path>
-                    <path class="pg-d2" pathLength="240" d="M40,130 L160,130"></path>
-                    <path class="pg-d3" pathLength="240" d="M40,14 L156,130"></path>
-                    <text class="k pg-lb" x="20" y="74">12</text>
-                    <text class="k pg-lb" x="92" y="145">5</text>
-                    <text class="k pg-lb" x="108" y="62">?</text>
-                    <path class="pg-d2" pathLength="240" d="M40,118 L52,118 L52,130" style="stroke-width:1.2"></path>
+                  <div class="hint k pg-h0">The wall and the ground meet at a right angle.</div>
+                  <div class="hint k pg-h1">The ladder is the longest side, the hypotenuse.</div>
+                  <div class="hint tex k pg-h2">a&sup2; + b&sup2; = c&sup2;</div>
+
+                  <svg class="ink pg-hand" viewBox="0 0 330 140" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pg-l1"><path pathLength="21.8" style="stroke-dasharray:240 2000" d="M23.8,8.2C18.7,8.2,12.9,8.2,10,8.9L8.6,19.8C13.7,16.2,23.1,16.9,23.8,26.3C24.5,35.8,11.5,38.7,6.4,32.9"></path><path pathLength="21.8" style="stroke-dasharray:218.2 2000" d="M28,9.2C29,5.5,35.3,4.9,35.7,8.9C36,12.2,30.4,15.8,28,19.1C31,18.5,34.3,18.5,37,18.8"></path><path pathLength="21.8" style="stroke-dasharray:196.4 2000" d="M63.8,18.5C63.8,24.3,63.8,30.1,63.8,37.3"></path><path pathLength="21.8" style="stroke-dasharray:174.5 2000" d="M54.4,27.9C60.2,27.2,67.4,27.2,73.1,27.9"></path><path pathLength="21.8" style="stroke-dasharray:152.7 2000" d="M92.1,14.8C95,12.6,98,10.4,99.4,8.2C99.4,17.7,98.7,29.4,98.7,38.2"></path><path pathLength="21.8" style="stroke-dasharray:130.9 2000" d="M107.3,15.7C109.4,8,122.7,6.6,123.4,15C124.1,22,112.2,29.7,107.3,36.7C113.6,35.3,120.6,35.3,126.2,36"></path><path pathLength="21.8" style="stroke-dasharray:109.1 2000" d="M130.3,9.2C131.3,5.5,137.6,4.9,137.9,8.9C138.2,12.2,132.6,15.8,130.3,19.1C133.3,18.5,136.6,18.5,139.2,18.8"></path><path pathLength="21.8" style="stroke-dasharray:87.3 2000" d="M156.1,23.3C161.8,22.6,168.9,22.6,174.6,23.3"></path><path pathLength="21.8" style="stroke-dasharray:65.5 2000" d="M156.1,31.9C161.8,31.1,168.9,31.1,174.6,31.9"></path><path pathLength="21.8" style="stroke-dasharray:43.6 2000" d="M210.6,19.4C201.8,14.2,193.7,21.6,194.5,28.9C195.2,37.7,206.2,39.2,211.3,33.3"></path><path pathLength="21.8" style="stroke-dasharray:21.8 2000" d="M214.5,9.2C215.5,5.5,221.8,4.9,222.1,8.9C222.5,12.2,216.8,15.8,214.5,19.1C217.5,18.5,220.8,18.5,223.5,18.8"></path></g>
+                    <g class="pg-l2"><path pathLength="17.1" style="stroke-dasharray:240 2000" d="M6.7,62.1C8.9,54,22.9,52.6,23.7,61.4C24.4,68.8,11.9,76.9,6.7,84.2C13.4,82.8,20.7,82.8,26.6,83.5"></path><path pathLength="17.1" style="stroke-dasharray:222.9 2000" d="M47.9,54.4C42.9,54.4,37.2,54.4,34.3,55.1L32.9,65.8C37.9,62.3,47.2,63,47.9,72.3C48.7,81.6,35.8,84.5,30.7,78.7"></path><path pathLength="17.1" style="stroke-dasharray:205.7 2000" d="M76.4,63.8C76.4,69.5,76.4,75.3,76.4,82.4"></path><path pathLength="17.1" style="stroke-dasharray:188.6 2000" d="M67,73.1C72.8,72.4,80,72.4,85.7,73.1"></path><path pathLength="17.1" style="stroke-dasharray:171.4 2000" d="M105.6,60.5C108.5,58.3,111.4,56.1,112.9,53.9C112.9,63.4,112.1,75.1,112.1,83.8"></path><path pathLength="17.1" style="stroke-dasharray:154.3 2000" d="M132.6,53.7C128.2,61.7,123.8,69,120.2,73.4C126.8,72.7,135.5,72.7,140.7,72.7"></path><path pathLength="17.1" style="stroke-dasharray:137.1 2000" d="M135.5,60.2C134.8,67.6,134.8,75.6,134.1,84.4"></path><path pathLength="17.1" style="stroke-dasharray:120 2000" d="M157.6,54.5C153.3,62.4,148.9,69.7,145.3,74.1C151.8,73.3,160.5,73.3,165.6,73.3"></path><path pathLength="17.1" style="stroke-dasharray:102.9 2000" d="M160.5,61C159.8,68.3,159.8,76.2,159.1,84.9"></path><path pathLength="17.1" style="stroke-dasharray:85.7 2000" d="M182.7,68.4C188.5,67.7,195.8,67.7,201.6,68.4"></path><path pathLength="17.1" style="stroke-dasharray:68.6 2000" d="M182.7,77.2C188.5,76.4,195.8,76.4,201.6,77.2"></path><path pathLength="17.1" style="stroke-dasharray:51.4 2000" d="M220.8,61.5C223.7,59.4,226.6,57.2,228,55.1C228,64.4,227.3,75.9,227.3,84.5"></path><path pathLength="17.1" style="stroke-dasharray:34.3 2000" d="M250.3,55.4C241.8,58.9,236.1,68.8,236.8,76.6C237.6,85.7,251.7,85.7,251.7,75.9C251.7,68.8,240.4,68.1,236.8,75.1"></path><path pathLength="17.1" style="stroke-dasharray:17.1 2000" d="M275.5,61.7C274,53.9,261.3,53.9,260.6,61.7C259.9,69.5,272.6,69.5,275.5,61.7C276.2,70.9,274,77.9,271.2,84.3"></path></g>
+                    <g class="pg-l3"><path pathLength="48" style="stroke-dasharray:240 2000" d="M23.6,111.3C14.8,106.2,6.7,113.6,7.4,120.9C8.2,129.7,19.2,131.2,24.3,125.3"></path><path pathLength="48" style="stroke-dasharray:192 2000" d="M41.9,114C47.6,113.3,54.7,113.3,60.4,114"></path><path pathLength="48" style="stroke-dasharray:144 2000" d="M41.9,122.6C47.6,121.9,54.7,121.9,60.4,122.6"></path><path pathLength="48" style="stroke-dasharray:96 2000" d="M79.9,105.6C82.8,103.4,85.7,101.2,87.2,99C87.2,108.6,86.5,120.3,86.5,129.1"></path><path pathLength="48" style="stroke-dasharray:48 2000" d="M95.8,103.2C101.6,97.4,113.2,98.8,111.8,106.1C111,111.2,104.5,113.3,100.9,113.3C107.4,113.3,114.7,116.2,113.2,122.8C111.8,130.8,98.7,131.5,94.4,125.7"></path></g>
                   </svg>
 
-                  <div class="hint k pg-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">The ladder is the longest side, the hypotenuse.</div>
-                  <div class="hint tex k pg-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(104px,12vw,140px)">a&sup2; + b&sup2; = c&sup2;</div>
-
-                  <svg class="ink" viewBox="0 0 140 70" width="140" height="70" style="left:clamp(360px,34vw,420px);top:clamp(120px,13vw,170px)" aria-hidden="true">
-                    <path class="pg-i1" pathLength="240" d="M28,16 C34,12 38,10 40,10 L40,58"></path>
-                    <path class="pg-i2" pathLength="240" d="M66,12 C82,6 94,14 84,26 C80,31 72,32 68,32 C74,32 86,34 88,44 C90,58 70,64 58,54"></path>
-                  </svg>
-
-                  <div class="hint tex k pg-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(156px,19vw,215px)">5&ndash;12&ndash;13, a classic triple &#10003;</div>
+                  <div class="hint tex k pg-h3">5&ndash;12&ndash;13, a classic triple&nbsp;&#10003;</div>
                 </div>
               </div>
             </div>
@@ -813,14 +856,18 @@
                 <div><span class="lbl">Files</span><span class="val">homework.pdf</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g"><span class="who">Gausyn</span>Problem 5 is all words. Read it through, and tell me what you see.</div>
                 <div class="line you k pg-y1"><span class="who">You</span>I can&rsquo;t picture what this looks like.</div>
+                <div class="line g k pg-gw"><span class="who">Gausyn</span>Think of a wall and the ground, with the ladder resting between them.</div>
+                <div class="line you k pg-yw"><span class="who">You</span>I still can&rsquo;t see it.</div>
                 <div class="line g k pg-g1"><span class="who">Gausyn</span>Then let&rsquo;s not do it blind, give me a second to sketch it.</div>
-                <div class="line g k pg-h1"><span class="who">Gausyn</span>Wall, ground, ladder. Which side is the ladder?</div>
+                <div class="line g k pg-c1"><span class="who">Gausyn</span>Wall, ground, ladder. Which side is the ladder?</div>
                 <div class="line you k pg-y2"><span class="who">You</span>The slanted one. So&hellip; Pythagoras.</div>
-                <div class="line g k pg-h2"><span class="who">Gausyn</span>Go on, the board is yours.</div>
-                <div class="line g k pg-g2"><span class="who">Gausyn</span>13 feet, and you saw why before you calculated anything.</div>
+                <div class="line g k pg-c2"><span class="who">Gausyn</span>Go on, the board is yours.</div>
+                <div class="line g k pg-c3"><span class="who">Gausyn</span>13 feet, and you saw why before you calculated anything.</div>
                 <div class="line you k pg-y3"><span class="who">You</span>Give me one where the ladder is sliding.</div>
-                <div class="line g k pg-g3"><span class="who">Gausyn</span>That&rsquo;s related rates, want me to open a practice question on it?</div>
+                <div class="line g k pg-c4"><span class="who">Gausyn</span>That&rsquo;s related rates, want me to open a practice question on it?</div>
+                <div class="line you k pg-y4"><span class="who">You</span>Yes, open one.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -848,7 +895,7 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Your line|3.2:The check|6.4:One question|10.6:You find it|13.4:Strike and rewrite|18.8:To the end|27.4:Same shape">
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
             <span class="spacer" style="flex:1"></span>
@@ -857,20 +904,43 @@
             <div>
               <div class="boardarea graph">
                 <div class="camthumb" aria-hidden="true"></div>
-                <div class="sheet">
-                  <p class="q"><span class="n">7.</span>Solve for x: &nbsp;5(x &minus; 3) = 2x + 9</p>
-                  <div class="penwork">
-                    <span class="pen k pw-l1">5x &minus; 3 = 2x + 9
-                      <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true">
-                        <path class="pw-i2" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path>
+                <div class="toolspanel" aria-hidden="true">
+                  <div class="tp-h">Tools</div>
+                  <div class="tp-btn on">Draw</div>
+                  <div class="tp-btn">Select</div>
+                  <div class="tp-btn">Upload</div>
+                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+                </div>
+                <div class="sheet pw-sheet">
+                  <p class="q"><span class="n">7.</span>Solve for x: &nbsp;<span class="pw-br"><span class="pw-mk">5(x &minus; 3)</span><svg class="ink pw-hand pw-arcs" viewBox="0 0 60 14" preserveAspectRatio="none" aria-hidden="true"><g class="pw-arc"><path pathLength="240" d="M5,13 C10,1 18,1 25,12"></path><path pathLength="240" d="M5,13 C16,-5 40,-5 50,12"></path></g></svg></span> = 2x + 9</p>
+                  <svg class="ink pw-hand pw-ink" viewBox="0 0 382 250" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pw-l1"><path pathLength="18.5" style="stroke-dasharray:240 2000" d="M28.5,14.5C22.6,14.5,15.7,14.5,12.3,15.3L10.6,28.2C16.6,23.9,27.7,24.7,28.5,35.8C29.4,46.9,14,50.4,8,43.5"></path><path pathLength="18.5" style="stroke-dasharray:221.5 2000" d="M36.4,27C44,34.5,50.7,42.1,57.4,50.5"></path><path pathLength="18.5" style="stroke-dasharray:203.1 2000" d="M57.4,26.1C50.7,33.7,43.1,42.1,36.4,50.5"></path><path pathLength="18.5" style="stroke-dasharray:184.6 2000" d="M81.8,38C87.7,37.2,95.3,37.2,101.2,38"></path><path pathLength="18.5" style="stroke-dasharray:166.2 2000" d="M124,20.5C130.7,13.8,144.1,15.5,142.4,23.8C141.6,29.6,134,32.2,129.9,32.2C137.4,32.2,145.7,35.5,144.1,43C142.4,52.2,127.4,53,122.4,46.4"></path><path pathLength="18.5" style="stroke-dasharray:147.7 2000" d="M167.6,31C174.7,30.1,183.5,30.1,190.6,31"></path><path pathLength="18.5" style="stroke-dasharray:129.2 2000" d="M167.6,41.6C174.7,40.7,183.5,40.7,190.6,41.6"></path><path pathLength="18.5" style="stroke-dasharray:110.8 2000" d="M213.1,22.9C215.7,13.3,232.4,11.5,233.3,22.1C234.1,30.8,219.2,40.5,213.1,49.3C221,47.5,229.7,47.5,236.8,48.4"></path><path pathLength="18.5" style="stroke-dasharray:92.3 2000" d="M241.3,25C249.2,32.9,256.2,40.8,263.2,49.6"></path><path pathLength="18.5" style="stroke-dasharray:73.8 2000" d="M263.2,24.2C256.2,32.1,248.3,40.8,241.3,49.6"></path><path pathLength="18.5" style="stroke-dasharray:55.4 2000" d="M297.5,27.3C297.5,34.1,297.5,40.9,297.5,49.3"></path><path pathLength="18.5" style="stroke-dasharray:36.9 2000" d="M286.5,38.3C293.3,37.5,301.7,37.5,308.5,38.3"></path><path pathLength="18.5" style="stroke-dasharray:18.5 2000" d="M349.9,24.5C348.2,15.3,333.1,15.3,332.3,24.5C331.5,33.7,346.5,33.7,349.9,24.5C350.7,35.3,348.2,43.7,344.8,51.2"></path></g>
+                    <g class="pw-st"><path pathLength="240" style="stroke-dasharray:240 2000" d="M1,34 C108,26 244,42 360,28"></path></g>
+                    <g class="pw-l2"><path pathLength="17.1" style="stroke-dasharray:240 2000" d="M29.8,77.1C23.7,77.1,16.7,77.1,13.2,78L11.4,91.2C17.6,86.8,29,87.7,29.8,99C30.7,110.4,14.9,113.9,8.8,106.9"></path><path pathLength="17.1" style="stroke-dasharray:222.9 2000" d="M37.2,86.7C45.2,94.7,52.2,102.6,59.2,111.4"></path><path pathLength="17.1" style="stroke-dasharray:205.7 2000" d="M59.2,85.9C52.2,93.8,44.3,102.6,37.2,111.4"></path><path pathLength="17.1" style="stroke-dasharray:188.6 2000" d="M81.8,99.1C88,98.2,95.9,98.2,102.1,99.1"></path><path pathLength="17.1" style="stroke-dasharray:171.4 2000" d="M124.4,85.2C127.8,82.6,131.2,80.1,132.9,77.5C132.9,88.6,132,102.2,132,112.4"></path><path pathLength="17.1" style="stroke-dasharray:154.3 2000" d="M162.9,77.4C156.9,77.4,149.9,77.4,146.5,78.2L144.7,91.2C150.8,86.9,162,87.8,162.9,99C163.8,110.3,148.2,113.7,142.1,106.8"></path><path pathLength="17.1" style="stroke-dasharray:137.1 2000" d="M186.7,94.9C193.7,94.1,202.4,94.1,209.3,94.9"></path><path pathLength="17.1" style="stroke-dasharray:120 2000" d="M186.7,105.4C193.7,104.5,202.4,104.5,209.3,105.4"></path><path pathLength="17.1" style="stroke-dasharray:102.9 2000" d="M231,84.1C233.6,74.4,250.4,72.7,251.2,83.2C252.1,92,237.2,101.7,231,110.5C238.9,108.8,247.7,108.8,254.8,109.6"></path><path pathLength="17.1" style="stroke-dasharray:85.7 2000" d="M260,88.9C267.7,96.5,274.5,104.2,281.3,112.7"></path><path pathLength="17.1" style="stroke-dasharray:68.6 2000" d="M281.3,88C274.5,95.7,266.8,104.2,260,112.7"></path><path pathLength="17.1" style="stroke-dasharray:51.4 2000" d="M316.1,88.1C316.1,95,316.1,101.8,316.1,110.4"></path><path pathLength="17.1" style="stroke-dasharray:34.3 2000" d="M305,99.2C311.8,98.4,320.4,98.4,327.2,99.2"></path><path pathLength="17.1" style="stroke-dasharray:17.1 2000" d="M370.2,86.3C368.5,76.8,352.9,76.8,352.1,86.3C351.2,95.8,366.7,95.8,370.2,86.3C371.1,97.5,368.5,106.1,365,113.9"></path></g>
+                    <g class="pw-l3"><path pathLength="30" style="stroke-dasharray:240 2000" d="M9.8,141.8C16.8,134.9,30.8,136.6,29,145.3C28.2,151.4,20.3,154.1,15.9,154.1C23.8,154.1,32.5,157.6,30.8,165.4C29,175,13.3,175.9,8.1,168.9"></path><path pathLength="30" style="stroke-dasharray:210 2000" d="M36.7,150.3C44.7,158.2,51.8,166.2,58.8,175"></path><path pathLength="30" style="stroke-dasharray:180 2000" d="M58.8,149.4C51.8,157.3,43.8,166.2,36.7,175"></path><path pathLength="30" style="stroke-dasharray:150 2000" d="M81.3,157.3C88.2,156.4,96.7,156.4,103.5,157.3"></path><path pathLength="30" style="stroke-dasharray:120 2000" d="M81.3,167.5C88.2,166.6,96.7,166.6,103.5,167.5"></path><path pathLength="30" style="stroke-dasharray:90 2000" d="M127,147.7C129.5,138.6,145.3,136.9,146.2,146.9C147,155.3,132.8,164.4,127,172.8C134.5,171.1,142.8,171.1,149.5,172"></path><path pathLength="30" style="stroke-dasharray:60 2000" d="M169.6,140.4C164.6,149.5,159.6,157.9,155.4,162.9C162.9,162.1,172.9,162.1,178.8,162.1"></path><path pathLength="30" style="stroke-dasharray:30 2000" d="M172.9,147.9C172.1,156.2,172.1,165.4,171.3,175.4"></path></g>
+                    <g class="pw-l4"><path pathLength="48" style="stroke-dasharray:240 2000" d="M8,212.3C15.8,220,22.8,227.8,29.7,236.5"></path><path pathLength="48" style="stroke-dasharray:192 2000" d="M29.7,211.4C22.8,219.2,15,227.8,8,236.5"></path><path pathLength="48" style="stroke-dasharray:144 2000" d="M53.1,218.3C60,217.4,68.6,217.4,75.5,218.3"></path><path pathLength="48" style="stroke-dasharray:96 2000" d="M53.1,228.6C60,227.7,68.6,227.7,75.5,228.6"></path><path pathLength="48" style="stroke-dasharray:48 2000" d="M109.2,199.6C100.5,199.6,99.6,210.1,109.2,215.3C119.7,220.6,118.8,235.4,108.4,235.4C97.9,235.4,97.9,220.6,109.2,215.3C117.9,210.1,117.9,199.6,109.2,199.6"></path></g>
+                  </svg>
+                  <div class="hint k pw-h1">The bracket holds two terms. Did both of them get the 5?</div>
+                  <div class="hint tex k pw-h2">3x = 24 &nbsp;&#10003;&nbsp; one step left</div>
+                  <div class="hint tex k pw-h3">Both terms got the 4 &nbsp;&#10003;</div>
+
+                  <div class="pw-panel" data-box>
+                    <div class="tr pw-ref">
+                      <span class="pw-t">Reference, worked when the sheet loaded</span>
+                      <div class="pw-cells">
+                        <div class="pw-cell pw-c1"><b>Line 1</b><i></i><span class="pw-mark"><em class="tr pw-m0">Checking</em><em class="tr pw-m1">No match</em><em class="tr pw-v1">&#10003;</em></span></div>
+                        <div class="pw-cell pw-c2"><b>Line 2</b><i></i><span class="pw-mark"><em class="tr pw-v2">&#10003;</em></span></div>
+                        <div class="pw-cell pw-c3"><b>Line 3</b><i></i><span class="pw-mark"><em class="tr pw-v3">&#10003;</em></span></div>
+                      </div>
+                    </div>
+                    <div class="k pw-next">
+                      <div class="pq"><span class="lbl">Practice &middot; P1</span>Solve for x: &nbsp;2x + 8 = 4(x &minus; 3)</div>
+                      <svg class="ink pw-hand pw-nink" viewBox="0 0 322 60" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                        <g class="pw-l5"><path pathLength="16" style="stroke-dasharray:240 2000" d="M6,25.4C8.1,17.6,21.5,16.2,22.2,24.7C23,31.8,10.9,39.6,6,46.6C12.3,45.2,19.4,45.2,25.1,45.9"></path><path pathLength="16" style="stroke-dasharray:224 2000" d="M30.7,27.4C37.3,34,43.1,40.5,48.9,47.8"></path><path pathLength="16" style="stroke-dasharray:208 2000" d="M48.9,26.7C43.1,33.2,36.5,40.5,30.7,47.8"></path><path pathLength="16" style="stroke-dasharray:192 2000" d="M77.5,28.1C77.5,34,77.5,39.9,77.5,47.3"></path><path pathLength="16" style="stroke-dasharray:176 2000" d="M67.9,37.7C73.8,36.9,81.2,36.9,87.1,37.7"></path><path pathLength="16" style="stroke-dasharray:160 2000" d="M115.4,17.7C108.1,17.7,107.3,26.5,115.4,30.9C124.3,35.3,123.5,47.8,114.7,47.8C105.9,47.8,105.9,35.3,115.4,30.9C122.8,26.5,122.8,17.7,115.4,17.7"></path><path pathLength="16" style="stroke-dasharray:144 2000" d="M141.2,33C146.9,32.2,154,32.2,159.7,33"></path><path pathLength="16" style="stroke-dasharray:128 2000" d="M141.2,41.5C146.9,40.8,154,40.8,159.7,41.5"></path><path pathLength="16" style="stroke-dasharray:112 2000" d="M191.4,17.5C187.1,25.5,182.7,32.8,179.1,37.1C185.6,36.4,194.3,36.4,199.4,36.4"></path><path pathLength="16" style="stroke-dasharray:96 2000" d="M194.3,24.1C193.6,31.3,193.6,39.3,192.9,48"></path><path pathLength="16" style="stroke-dasharray:80 2000" d="M203.6,27.7C210.2,34.3,216.1,40.9,222,48.3"></path><path pathLength="16" style="stroke-dasharray:64 2000" d="M222,27C216.1,33.6,209.5,40.9,203.6,48.3"></path><path pathLength="16" style="stroke-dasharray:48 2000" d="M240.4,36.9C245.5,36.2,251.9,36.2,256.9,36.9"></path><path pathLength="16" style="stroke-dasharray:32 2000" d="M277.1,24.1C280,21.9,283,19.7,284.4,17.5C284.4,27,283.7,38.6,283.7,47.4"></path><path pathLength="16" style="stroke-dasharray:16 2000" d="M292.4,24.4C294.6,16.4,308.4,15,309.2,23.7C309.9,31,297.5,39,292.4,46.3C299,44.9,306.3,44.9,312.1,45.6"></path></g>
                       </svg>
-                    </span>
-                    <span class="pen k pw-l2">5x &minus; 15 = 2x + 9</span>
-                    <span class="pen k pw-l3">3x = 24</span>
-                    <span class="pen k pw-l4">x = 8</span>
+                    </div>
                   </div>
-                  <div class="hint k pw-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(58px,7vw,84px)">The bracket holds two terms. Did both of them get the 5?</div>
-                  <div class="hint tex k pw-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(126px,15vw,180px)">3x = 24 &nbsp;&#10003;&nbsp; one step left</div>
                 </div>
               </div>
             </div>
@@ -885,12 +955,14 @@
                 <div><span class="lbl">Checked against</span><span class="val">Reference &#10003;</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g"><span class="who">Gausyn</span>Problem 7. The worked solution stays with me, the board is yours.</div>
                 <div class="line you k pw-y1"><span class="who">You</span>Is this right so far?</div>
                 <div class="line g k pw-g1"><span class="who">Gausyn</span>Before we go further, what exactly is the 5 multiplying?</div>
                 <div class="line you k pw-y2"><span class="who">You</span>Oh. The three as well. I only gave it the x.</div>
                 <div class="line g k pw-g2"><span class="who">Gausyn</span>That&rsquo;s the one. Strike it and rewrite, now both sides balance again.</div>
                 <div class="line you k pw-y3"><span class="who">You</span>x = 8. And I know why this time.</div>
                 <div class="line g k pw-g3"><span class="who">Gausyn</span>That&rsquo;s the difference between finishing and learning. Want one with the bracket on the other side?</div>
+                <div class="line you k pw-y4"><span class="who">You</span>Yes, same shape.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -917,7 +989,7 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Mapping the page|8.2:The blanks|13.6:The options|19.8:Room to work|23.8:A wrong try|28.6:Second try">
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
             <span class="spacer" style="flex:1"></span>
@@ -926,23 +998,47 @@
             <div>
               <div class="boardarea plain">
                 <div class="camthumb" aria-hidden="true"></div>
+                <div class="toolspanel" aria-hidden="true">
+                  <div class="tp-h">Tools</div>
+                  <div class="tp-btn on">Draw</div>
+                  <div class="tp-btn">Select</div>
+                  <div class="tp-btn">Upload</div>
+                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
+                </div>
 
-                <div class="sheet">
-                  <div class="wsq">
-                    <p><span class="n">2.</span>Balance: <span class="bl"></span> H&#8322; &nbsp;+&nbsp; O&#8322; &nbsp;&rarr;&nbsp; <span class="bl"></span> H&#8322;O</p>
-                    <p style="margin-top:18px"><span class="n">3.</span>Which of these is a noble gas?</p>
-                    <span class="opts"><span>(A) O&#8322;</span><span>(B) Ne</span><span>(C) CO&#8322;</span><span>(D) H&#8322;</span></span>
+                <div class="sheet pb-sheet">
+                  <div class="pb-head">
+                    <span class="tr pb-s0">Reading the page&hellip;</span>
+                    <span class="k pb-s1">3 questions, 3 blanks and 4 options mapped</span>
+                    <span class="tr pb-s2">Every answer space filled, all of them by you &#10003;</span>
                   </div>
 
-                  <svg class="ink" viewBox="0 0 300 140" width="300" height="140" style="left:clamp(130px,12vw,150px);top:clamp(8px,1vw,14px)" aria-hidden="true">
-                    <path class="pb-i1" pathLength="240" d="M108,26 C108,16 122,14 122,22 C122,29 109,33 108,40 L124,40"></path>
-                    <path class="pb-i2" pathLength="240" d="M258,26 C258,16 272,14 272,22 C272,29 259,33 258,40 L274,40"></path>
-                    <path class="pb-i3" pathLength="240" d="M100,98 C78,96 70,112 84,122 C100,130 126,124 126,110 C126,100 112,97 100,98" style="stroke-width:2.6"></path>
-                  </svg>
+                  <div class="wsq pb-q pb-q2">
+                    <i class="tr pb-box pb-m1"><u>question</u></i>
+                    <p><span class="n">2.</span>Balance: <span class="bl"><i class="tr pb-box pb-m4"></i><svg class="ink pb-hand" viewBox="0 0 28 38" aria-hidden="true"><g class="pb-i1"><path pathLength="240" style="stroke-dasharray:240 2000" d="M4.8,11.9C6.9,4.1,20.3,2.7,21,11.1C21.7,18.2,9.7,26,4.8,33C11.2,31.6,18.2,31.6,23.9,32.3"></path></g></svg></span> H&#8322; &nbsp;+&nbsp; O&#8322; &nbsp;&rarr;&nbsp; <span class="bl"><i class="tr pb-box pb-m5"></i><svg class="ink pb-hand" viewBox="0 0 28 38" aria-hidden="true"><g class="pb-i2"><path pathLength="240" style="stroke-dasharray:240 2000" d="M5.3,11.1C7.5,3.3,20.8,1.9,21.5,10.4C22.3,17.4,10.3,25.2,5.3,32.2C11.7,30.8,18.7,30.8,24.4,31.5"></path></g></svg></span> H&#8322;O</p>
+                  </div>
+                  <div class="hint tr pb-h1">Count the H atoms on each side first.</div>
+                  <div class="hint tex k pb-h2">H: 4 = 4 &#10003; &nbsp; O: 2 = 2 &#10003;</div>
 
-                  <div class="hint k pb-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(6px,1vw,14px)">Count the H atoms on each side first.</div>
-                  <div class="hint tex k pb-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,70px)">H: 4 = 4 &#10003; &nbsp; O: 2 = 2 &#10003;</div>
-                  <div class="hint k pb-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(104px,12.5vw,142px)">One of these already has a full outer shell.</div>
+                  <div class="wsq pb-q pb-q3">
+                    <i class="tr pb-box pb-m2"><u>question</u></i>
+                    <p><span class="n">3.</span>Which of these is a noble gas?</p>
+                    <span class="opts"><i class="tr pb-box pb-m7"><u>options</u></i><span>(A) O&#8322;</span><span class="pb-b">(B) Ne<svg class="ink pb-hand pb-ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="pb-i3" pathLength="240" d="M42,3 C16,2 3,12 4,22 C5,36 34,38 58,37 C84,36 98,28 96,17 C94,5 66,1 34,5"></path></svg></span><span>(C) CO&#8322;</span><span>(D) H&#8322;</span></span>
+                  </div>
+                  <div class="hint k pb-h3">One of these already has a full outer shell.</div>
+
+                  <div class="pb-room"><i class="tr pb-box pb-m8"><u>room to work</u></i></div>
+                  <div class="hint tex k pb-h4">2 H&#8322; &rarr; 2 H&#8322;O, a ratio of 1 : 1</div>
+
+                  <div class="wsq pb-q pb-q4">
+                    <i class="tr pb-box pb-m3"><u>question</u></i>
+                    <p><span class="n">4.</span>3 mol of H&#8322; react. How many mol of H&#8322;O form? Show your work.</p>
+                    <p class="pb-ans">Answer: <span class="bl"><i class="tr pb-box pb-m6"></i><svg class="ink pb-hand tr" viewBox="0 0 28 38" aria-hidden="true"><g class="pb-i4"><path pathLength="240" style="stroke-dasharray:240 2000" d="M19.8,4.7C11.4,8.2,5.8,18,6.5,25.8C7.2,34.9,21.2,34.9,21.2,25.1C21.2,18,10,17.3,6.5,24.3"></path></g></svg><svg class="ink pb-hand" viewBox="0 0 28 38" aria-hidden="true"><g class="pb-i5"><path pathLength="240" style="stroke-dasharray:240 2000" d="M5.8,7.1C11.5,1.3,23,2.8,21.6,10C20.9,15,14.4,17.1,10.8,17.1C17.3,17.1,24.5,20,23,26.5C21.6,34.4,8.7,35.1,4.4,29.4"></path></g></svg></span> mol H&#8322;O</p>
+                  </div>
+                  <div class="hint tr pb-h5">How many H&#8322;O does each H&#8322; make?</div>
+                  <div class="hint tex k pb-h6">3 mol H&#8322;O &nbsp;&#10003;&nbsp; yours</div>
+
                 </div>
               </div>
             </div>
@@ -957,11 +1053,14 @@
                 <div><span class="lbl">Files</span><span class="val">unit-3-review.pdf</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g"><span class="who">Gausyn</span>unit-3-review.pdf is on the board. Let me read the page first.</div>
                 <div class="line g k pb-g1"><span class="who">Gausyn</span>Your sheet has fill-ins and multiple choice, I place help differently for each. Start with the blanks.</div>
                 <div class="line you k pb-y1"><span class="who">You</span>Is 3 argon? No wait, that&rsquo;s not even an option.</div>
                 <div class="line g k pb-g2"><span class="who">Gausyn</span>Ne it is, and notice I never wrote in your blanks. The pen stays yours.</div>
+                <div class="line you k pb-y3"><span class="who">You</span>Can you start me off on 4?</div>
+                <div class="line g k pb-g3"><span class="who">Gausyn</span>One step, in the room beside your work. The rest is yours.</div>
                 <div class="line you k pb-y2"><span class="who">You</span>What happens if I get one wrong?</div>
-                <div class="line g k pb-g3"><span class="who">Gausyn</span>Then I ask the question that shows you why, you erase, and you try again. Wrong answers are where the learning is.</div>
+                <div class="line g k pb-g4"><span class="who">Gausyn</span>Then I ask the question that shows you why, you erase, and you try again. Wrong answers are where the learning is.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -989,14 +1088,24 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
-          <div class="chrome">
+        <div class="stage" data-reveal data-steps="0:Rate table|6.6:Stoichiometry|13.2:Kinematics|19.8:Probability|26.4:Related rates|33:French">
+          <div class="chrome pv-chrome">
             <span class="dot"></span>
             <span class="title">Practice board</span>
             <span class="spacer"></span>
             <span class="pill">One loop, every subject</span>
           </div>
-          <div class="showcase fade-pv">
+          <div class="showcase pv-shell fade-pv">
+            <ol class="pv-list" aria-hidden="true">
+              <li class="pv-l1"><span><b>Grade 5</b>Mathematics</span><i class="k pv-t1">&#10003;</i></li>
+              <li class="pv-l2"><span><b>Grade 11</b>Chemistry</span><i class="k pv-t2">&#10003;</i></li>
+              <li class="pv-l3"><span><b>Grade 11</b>Physics</span><i class="k pv-t3">&#10003;</i></li>
+              <li class="pv-l4"><span><b>Grade 12</b>Data management</span><i class="k pv-t4">&#10003;</i></li>
+              <li class="pv-l5"><span><b>University</b>Calculus</span><i class="k pv-t5">&#10003;</i></li>
+              <li class="pv-l6"><span><b>Grade 10</b>French</span><i class="k pv-t6">&#10003;</i></li>
+            </ol>
+            <div class="pv-main">
+              <div class="pv-shots">
 
             <div class="shot k pv-s1">
               <span class="shotcap">Grade 5 &middot; Mathematics</span>
@@ -1005,43 +1114,86 @@
                 <span class="h">minutes</span><span class="h">2</span><span class="h">4</span><span class="h">6</span>
                 <span class="h">litres</span><span>3</span><span>6</span><span>9</span>
               </div>
-              <div class="hint k pv-h1">There is a litres-per-minute hiding in that table. What is it?</div>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a1"><path pathLength="26.7" style="stroke-dasharray:240 2000" d="M8.3,33.7C10.6,25.3,25.1,23.7,25.9,32.9C26.6,40.5,13.6,49,8.3,56.6C15.2,55.1,22.8,55.1,28.9,55.8"></path><path pathLength="26.7" style="stroke-dasharray:213.3 2000" d="M34.5,28.3C41.6,26.7,49.4,26.7,54.9,27.5C49.4,36.9,43.9,47.8,41.6,59.6"></path><path pathLength="26.7" style="stroke-dasharray:186.7 2000" d="M74.7,46.8C81,46,88.9,46,95.2,46.8"></path><path pathLength="26.7" style="stroke-dasharray:160 2000" d="M84.9,36.6C84.9,37.4,85.7,38.1,85.7,37.4"></path><path pathLength="26.7" style="stroke-dasharray:133.3 2000" d="M84.9,54.6C84.9,55.4,85.7,56.2,85.7,55.4"></path><path pathLength="26.7" style="stroke-dasharray:106.7 2000" d="M116.6,28.3C123,21.9,135.8,23.5,134.2,31.5C133.4,37.1,126.2,39.4,122.2,39.4C129.4,39.4,137.4,42.6,135.8,49.8C134.2,58.6,119.8,59.4,115.1,53"></path><path pathLength="26.7" style="stroke-dasharray:80 2000" d="M154.6,42.3C160.9,41.5,168.7,41.5,175,42.3"></path><path pathLength="26.7" style="stroke-dasharray:53.3 2000" d="M154.6,51.7C160.9,50.9,168.7,50.9,175,51.7"></path><path pathLength="26.7" style="stroke-dasharray:26.7 2000" d="M213.4,34.1C211.8,25.4,197.6,25.4,196.8,34.1C196,42.8,210.2,42.8,213.4,34.1C214.2,44.4,211.8,52.3,208.7,59.4"></path></g>
+                  <g class="pv-b1"><path pathLength="15" style="stroke-dasharray:240 2000" d="M8.5,121.4C10.8,112.6,25.9,111,26.7,120.6C27.5,128.5,14,137.2,8.5,145.2C15.6,143.6,23.5,143.6,29.9,144.4"></path><path pathLength="15" style="stroke-dasharray:225 2000" d="M34.7,114.8C41.8,113.2,49.7,113.2,55.2,114C49.7,123.5,44.1,134.5,41.8,146.3"></path><path pathLength="15" style="stroke-dasharray:210 2000" d="M74.2,133.8C80.5,133,88.4,133,94.7,133.8"></path><path pathLength="15" style="stroke-dasharray:195 2000" d="M84.5,123.6C84.5,124.3,85.3,125.1,85.3,124.3"></path><path pathLength="15" style="stroke-dasharray:180 2000" d="M84.5,141.6C84.5,142.4,85.3,143.2,85.3,142.4"></path><path pathLength="15" style="stroke-dasharray:165 2000" d="M115.8,121.2C118.9,118.9,121.9,116.6,123.5,114.3C123.5,124.2,122.7,136.4,122.7,145.6"></path><path pathLength="15" style="stroke-dasharray:150 2000" d="M133.6,145C133.6,145.8,134.4,146.6,134.4,145.8"></path><path pathLength="15" style="stroke-dasharray:135 2000" d="M161.6,115.1C156,115.1,149.6,115.1,146.4,115.9L144.8,127.9C150.4,123.9,160.8,124.7,161.6,135.2C162.4,145.6,148,148.8,142.4,142.4"></path><path pathLength="15" style="stroke-dasharray:120 2000" d="M182.5,129.1C188.7,128.3,196.3,128.3,202.5,129.1"></path><path pathLength="15" style="stroke-dasharray:105 2000" d="M182.5,138.3C188.7,137.5,196.3,137.5,202.5,138.3"></path><path pathLength="15" style="stroke-dasharray:90 2000" d="M223,120.9C226.1,118.6,229.2,116.2,230.7,113.9C230.7,124,230,136.4,230,145.7"></path><path pathLength="15" style="stroke-dasharray:75 2000" d="M250.7,115C242.9,115,242.2,124.4,250.7,129C260,133.7,259.2,146.9,249.9,146.9C240.6,146.9,240.6,133.7,250.7,129C258.5,124.4,258.5,115,250.7,115"></path><path pathLength="15" style="stroke-dasharray:60 2000" d="M278.4,124.1C279.2,131.2,279.2,139,278.4,145.3C280,134.3,283.9,123.3,289.4,123.3C294.1,123.3,293.3,134.3,293.3,145.3C294.1,134.3,298.8,123.3,302.7,123.3C307.5,123.3,306.7,134.3,307.5,145.3"></path><path pathLength="15" style="stroke-dasharray:45 2000" d="M314.8,123.9C314.8,130.9,314.8,138.6,315.6,144.8"></path><path pathLength="15" style="stroke-dasharray:30 2000" d="M314.8,115.3C314.8,116.1,315.6,116.9,315.6,116.1"></path><path pathLength="15" style="stroke-dasharray:15 2000" d="M323.8,124.8C324.5,131.8,324.5,139.5,323.8,145.7C326.1,134.9,330.7,124,336.9,124C342.4,124,342.4,134.9,343.1,145.7"></path></g>
+                </svg>
+                <div class="hint k pv-h1">There is a litres-per-minute hiding in that table. What is it?</div>
+              </div>
             </div>
 
             <div class="shot k pv-s2">
               <span class="shotcap">Grade 11 &middot; Chemistry</span>
               <p class="q"><span class="n">2.</span>How many grams of NaCl are in 0.25 mol? &nbsp;(M = 58.44 g/mol)</p>
               <div class="work">0.25 mol &times; 58.44 g/mol = <b>?</b></div>
-              <div class="hint k pv-h2">Write the units under each other and see which one cancels.</div>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a2"><path pathLength="17.1" style="stroke-dasharray:240 2000" d="M18.1,26.8C9.4,26.8,7.8,40.2,8.6,46.5C9.4,59.2,25.2,60.8,26.8,45C27.6,33.9,24.4,26,17.3,26.8"></path><path pathLength="17.1" style="stroke-dasharray:222.9 2000" d="M35.4,56.4C35.4,57.2,36.2,58,36.2,57.2"></path><path pathLength="17.1" style="stroke-dasharray:205.7 2000" d="M43.1,34.1C45.5,25.3,60.8,23.7,61.6,33.3C62.4,41.4,48.7,50.2,43.1,58.2C50.3,56.6,58.3,56.6,64.8,57.4"></path><path pathLength="17.1" style="stroke-dasharray:188.6 2000" d="M88.1,26.9C82.7,26.9,76.5,26.9,73.4,27.6L71.9,39.2C77.3,35.4,87.3,36.1,88.1,46.2C88.9,56.2,75,59.3,69.5,53.1"></path><path pathLength="17.1" style="stroke-dasharray:171.4 2000" d="M109.1,45.3C115.3,44.5,122.9,44.5,129,45.3"></path><path pathLength="17.1" style="stroke-dasharray:154.3 2000" d="M119.1,35.4C119.1,36.1,119.8,36.9,119.8,36.1"></path><path pathLength="17.1" style="stroke-dasharray:137.1 2000" d="M119.1,53C119.1,53.7,119.8,54.5,119.8,53.7"></path><path pathLength="17.1" style="stroke-dasharray:120 2000" d="M170,25.8C164.4,25.8,158,25.8,154.8,26.6L153.2,38.6C158.8,34.6,169.2,35.4,170,45.8C170.8,56.2,156.4,59.4,150.8,53"></path><path pathLength="17.1" style="stroke-dasharray:102.9 2000" d="M186.8,26.9C179,26.9,178.2,36.3,186.8,41C196.2,45.7,195.4,59,186,59C176.6,59,176.6,45.7,186.8,41C194.6,36.3,194.6,26.9,186.8,26.9"></path><path pathLength="17.1" style="stroke-dasharray:85.7 2000" d="M203,56.9C203,57.6,203.8,58.4,203.8,57.6"></path><path pathLength="17.1" style="stroke-dasharray:68.6 2000" d="M224.5,25.1C219.8,33.7,215.1,41.5,211.2,46.2C218.2,45.4,227.6,45.4,233,45.4"></path><path pathLength="17.1" style="stroke-dasharray:51.4 2000" d="M227.6,32.1C226.8,39.9,226.8,48.5,226,57.9"></path><path pathLength="17.1" style="stroke-dasharray:34.3 2000" d="M250.1,25.8C245.5,34.2,240.9,41.9,237.1,46.5C244,45.7,253.2,45.7,258.5,45.7"></path><path pathLength="17.1" style="stroke-dasharray:17.1 2000" d="M253.2,32.7C252.4,40.4,252.4,48.8,251.6,58"></path></g>
+                  <g class="pv-b2"><path pathLength="10.9" style="stroke-dasharray:240 2000" d="M18.4,114.2C9.6,114.2,8,127.8,8.8,134.2C9.6,147.1,25.6,148.7,27.2,132.6C28,121.4,24.8,113.4,17.6,114.2"></path><path pathLength="10.9" style="stroke-dasharray:229.1 2000" d="M34.9,143.7C34.9,144.5,35.7,145.3,35.7,144.5"></path><path pathLength="10.9" style="stroke-dasharray:218.2 2000" d="M43.4,122C45.7,113.5,60.2,112,61,121.2C61.7,128.8,48.8,137.2,43.4,144.9C50.3,143.3,57.9,143.3,64,144.1"></path><path pathLength="10.9" style="stroke-dasharray:207.3 2000" d="M88.9,116.6C83.5,116.6,77.4,116.6,74.3,117.3L72.8,128.8C78.2,125,88.1,125.7,88.9,135.7C89.6,145.6,75.9,148.7,70.5,142.6"></path><path pathLength="10.9" style="stroke-dasharray:196.4 2000" d="M110.3,127.1C115.1,132.6,119.8,138.1,124.5,143.6"></path><path pathLength="10.9" style="stroke-dasharray:185.5 2000" d="M124.5,127.1C119.8,132.6,115.1,138.1,110.3,143.6"></path><path pathLength="10.9" style="stroke-dasharray:174.5 2000" d="M164.6,114.7C159.1,114.7,152.8,114.7,149.6,115.5L148.1,127.3C153.6,123.3,163.8,124.1,164.6,134.3C165.4,144.5,151.2,147.7,145.7,141.4"></path><path pathLength="10.9" style="stroke-dasharray:163.6 2000" d="M181.1,115.4C173.4,115.4,172.6,124.7,181.1,129.3C190.4,134,189.6,147.1,180.4,147.1C171.1,147.1,171.1,134,181.1,129.3C188.9,124.7,188.9,115.4,181.1,115.4"></path><path pathLength="10.9" style="stroke-dasharray:152.7 2000" d="M198.4,144.4C198.4,145.1,199.2,145.9,199.2,145.1"></path><path pathLength="10.9" style="stroke-dasharray:141.8 2000" d="M219.8,113.1C215.1,121.8,210.3,129.7,206.4,134.4C213.5,133.6,223,133.6,228.5,133.6"></path><path pathLength="10.9" style="stroke-dasharray:130.9 2000" d="M223,120.2C222.2,128.1,222.2,136.8,221.4,146.3"></path><path pathLength="10.9" style="stroke-dasharray:120 2000" d="M246,113C241.3,121.7,236.6,129.6,232.6,134.4C239.7,133.6,249.2,133.6,254.7,133.6"></path><path pathLength="10.9" style="stroke-dasharray:109.1 2000" d="M249.2,120.1C248.4,128.1,248.4,136.8,247.6,146.2"></path><path pathLength="10.9" style="stroke-dasharray:98.2 2000" d="M273,129.1C279.2,128.4,286.9,128.4,293.1,129.1"></path><path pathLength="10.9" style="stroke-dasharray:87.3 2000" d="M273,138.4C279.2,137.6,286.9,137.6,293.1,138.4"></path><path pathLength="10.9" style="stroke-dasharray:76.4 2000" d="M315,120.1C318.2,117.7,321.4,115.3,323,112.9C323,123.3,322.2,136.1,322.2,145.7"></path><path pathLength="10.9" style="stroke-dasharray:65.5 2000" d="M344.6,113.2C339.9,121.9,335.1,129.8,331.2,134.5C338.3,133.8,347.8,133.8,353.3,133.8"></path><path pathLength="10.9" style="stroke-dasharray:54.5 2000" d="M347.8,120.3C347,128.2,347,136.9,346.2,146.4"></path><path pathLength="10.9" style="stroke-dasharray:43.6 2000" d="M359.3,144.1C359.3,144.8,360,145.6,360,144.8"></path><path pathLength="10.9" style="stroke-dasharray:32.7 2000" d="M383.9,115.6C374.7,119.4,368.6,130.1,369.4,138.4C370.2,148.3,385.4,148.3,385.4,137.7C385.4,130.1,373.2,129.3,369.4,136.9"></path><path pathLength="10.9" style="stroke-dasharray:21.8 2000" d="M393.8,120.4C396.8,118.1,399.9,115.8,401.4,113.5C401.4,123.5,400.6,135.6,400.6,144.8"></path><path pathLength="10.9" style="stroke-dasharray:10.9 2000" d="M440.2,125.8C431.8,119.7,423.4,130.4,425,135.7C427.3,142.6,437.9,139.5,440.2,127.3C441,139.5,441,148.7,436.4,153.2C431.8,157.8,425.7,154.8,425,150.2"></path></g>
+                </svg>
+                <div class="hint k pv-h2">Write the units under each other and see which one cancels.</div>
+              </div>
             </div>
 
             <div class="shot k pv-s3">
               <span class="shotcap">Grade 11 &middot; Physics</span>
               <p class="q"><span class="n">6.</span>A car brakes from 25 m/s to rest in 4.0 s. How far does it travel while stopping?</p>
               <div class="work">v&#8320; = 25 m/s &nbsp; v = 0 &nbsp; t = 4.0 s &nbsp; d = <b>?</b></div>
-              <div class="hint k pv-h3">The question never gives you <em>a</em>, but two speeds and a time do.</div>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a3"><path pathLength="16" style="stroke-dasharray:240 2000" d="M25.2,39.6C15.8,33.4,8.8,42.7,10.4,50.5C11.9,58.3,23.6,56.7,25.9,42.7"></path><path pathLength="16" style="stroke-dasharray:224 2000" d="M25.9,25.6C25.9,36.5,25.9,49,28.3,58.3"></path><path pathLength="16" style="stroke-dasharray:208 2000" d="M48.5,41.9C54.8,41.1,62.8,41.1,69.2,41.9"></path><path pathLength="16" style="stroke-dasharray:192 2000" d="M48.5,51.4C54.8,50.6,62.8,50.6,69.2,51.4"></path><path pathLength="16" style="stroke-dasharray:176 2000" d="M88.4,34.1C90.8,25.4,105.8,23.8,106.6,33.3C107.4,41.2,94,49.9,88.4,57.8C95.5,56.2,103.5,56.2,109.8,57"></path><path pathLength="16" style="stroke-dasharray:160 2000" d="M133.7,26.1C128.2,26.1,122,26.1,118.9,26.9L117.3,38.5C122.8,34.6,132.9,35.4,133.7,45.5C134.4,55.6,120.5,58.7,115,52.5"></path><path pathLength="16" style="stroke-dasharray:144 2000" d="M155.6,38.7C160.3,44.2,165,49.7,169.7,55.2"></path><path pathLength="16" style="stroke-dasharray:128 2000" d="M169.7,38.7C165,44.2,160.3,49.7,155.6,55.2"></path><path pathLength="16" style="stroke-dasharray:112 2000" d="M204.3,25.2C199.6,33.7,194.9,41.5,191.1,46.1C198.1,45.3,207.4,45.3,212.8,45.3"></path><path pathLength="16" style="stroke-dasharray:96 2000" d="M207.4,32.1C206.6,39.9,206.6,48.4,205.8,57.8"></path><path pathLength="16" style="stroke-dasharray:80 2000" d="M231.4,41.9C237.8,41.2,245.7,41.2,252.1,41.9"></path><path pathLength="16" style="stroke-dasharray:64 2000" d="M231.4,51.5C237.8,50.7,245.7,50.7,252.1,51.5"></path><path pathLength="16" style="stroke-dasharray:48 2000" d="M272.2,33.1C275.3,30.8,278.3,28.5,279.8,26.2C279.8,36.1,279.1,48.2,279.1,57.3"></path><path pathLength="16" style="stroke-dasharray:32 2000" d="M299.3,27.3C291,27.3,289.5,40.2,290.2,46.3C291,58.4,306.2,59.9,307.7,44.8C308.5,34.1,305.4,26.6,298.6,27.3"></path><path pathLength="16" style="stroke-dasharray:16 2000" d="M324,26.3C315.5,26.3,313.9,39.4,314.7,45.6C315.5,57.9,330.9,59.5,332.5,44.1C333.2,33.2,330.2,25.5,323.2,26.3"></path></g>
+                  <g class="pv-b3"><path pathLength="15" style="stroke-dasharray:240 2000" d="M25.7,125.1C16.9,118.7,8.1,129.9,9.7,137.9C11.3,145.9,23.3,144.3,25.7,126.7C24.9,134.7,25.7,141.1,28.9,145.9"></path><path pathLength="15" style="stroke-dasharray:225 2000" d="M46.9,129C53,128.2,60.6,128.2,66.7,129"></path><path pathLength="15" style="stroke-dasharray:210 2000" d="M46.9,138.1C53,137.3,60.6,137.3,66.7,138.1"></path><path pathLength="15" style="stroke-dasharray:195 2000" d="M89.2,133.3C94.8,132.5,101.9,132.5,107.5,133.3"></path><path pathLength="15" style="stroke-dasharray:180 2000" d="M129.9,113.3C120.5,117.2,114.2,128.2,115,136.9C115.7,147.1,131.5,147.1,131.5,136.1C131.5,128.2,118.9,127.4,115,135.3"></path><path pathLength="15" style="stroke-dasharray:165 2000" d="M140.8,145.6C140.8,146.4,141.6,147.2,141.6,146.4"></path><path pathLength="15" style="stroke-dasharray:150 2000" d="M148.4,122.2C150.8,113.6,165.7,112,166.5,121.4C167.3,129.3,153.9,137.9,148.4,145.8C155.5,144.2,163.3,144.2,169.6,145"></path><path pathLength="15" style="stroke-dasharray:135 2000" d="M194.1,114.6C188.7,114.6,182.4,114.6,179.3,115.4L177.8,127.1C183.2,123.2,193.4,124,194.1,134.1C194.9,144.3,180.9,147.4,175.4,141.1"></path><path pathLength="15" style="stroke-dasharray:120 2000" d="M203.7,143C204.5,146,202.9,149.1,201.4,150.6"></path><path pathLength="15" style="stroke-dasharray:105 2000" d="M242.2,125.8C232.5,119.4,225.3,129,226.9,137C228.5,145,240.6,143.4,243,129"></path><path pathLength="15" style="stroke-dasharray:90 2000" d="M243,111.4C243,122.6,243,135.4,245.4,145"></path><path pathLength="15" style="stroke-dasharray:75 2000" d="M264.8,129.6C271,128.8,278.7,128.8,284.9,129.6"></path><path pathLength="15" style="stroke-dasharray:60 2000" d="M264.8,138.9C271,138.1,278.7,138.1,284.9,138.9"></path><path pathLength="15" style="stroke-dasharray:45 2000" d="M324.5,115.3C319,115.3,312.8,115.3,309.7,116.1L308.1,127.8C313.6,123.9,323.7,124.7,324.5,134.9C325.3,145,311.2,148.1,305.7,141.9"></path><path pathLength="15" style="stroke-dasharray:30 2000" d="M341.4,112.4C332.6,112.4,331,126,331.8,132.4C332.6,145.3,348.6,146.9,350.2,130.8C351,119.6,347.8,111.6,340.6,112.4"></path><path pathLength="15" style="stroke-dasharray:15 2000" d="M368.9,126.3C369.7,133.2,369.7,141,368.9,147.1C370.4,136.3,374.3,125.5,379.7,125.5C384.4,125.5,383.6,136.3,383.6,147.1C384.4,136.3,389,125.5,392.9,125.5C397.5,125.5,396.7,136.3,397.5,147.1"></path></g>
+                </svg>
+                <div class="hint k pv-h3">The question never gives you <em>a</em>, but two speeds and a time do.</div>
+              </div>
             </div>
 
             <div class="shot k pv-s4">
               <span class="shotcap">Grade 12 &middot; Data management</span>
               <p class="q"><span class="n">9.</span>Two cards are drawn from a standard deck without replacement. What is P(both hearts)?</p>
               <div class="work">P = (13/52) &times; (&nbsp;?&nbsp;/&nbsp;?&nbsp;)</div>
-              <div class="hint k pv-h4">By the second draw it is not the same deck. What changed, and by how much?</div>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a4"><path pathLength="15" style="stroke-dasharray:240 2000" d="M16.5,25.4C7.9,34.8,7.9,51.2,16.5,60.6"></path><path pathLength="15" style="stroke-dasharray:225 2000" d="M25.3,33.2C28.4,30.9,31.5,28.5,33,26.2C33,36.3,32.2,48.7,32.2,58"></path><path pathLength="15" style="stroke-dasharray:210 2000" d="M42,29.2C48.2,23,60.5,24.6,59,32.3C58.2,37.7,51.2,40.1,47.4,40.1C54.3,40.1,62.1,43.2,60.5,50.1C59,58.6,45.1,59.4,40.4,53.2"></path><path pathLength="15" style="stroke-dasharray:195 2000" d="M81.6,25.8C77.6,36.9,72.9,49.5,68.1,60.6"></path><path pathLength="15" style="stroke-dasharray:180 2000" d="M106.5,25.6C101,25.6,94.8,25.6,91.6,26.4L90.1,38.1C95.6,34.2,105.7,35,106.5,45.2C107.3,55.3,93.2,58.5,87.7,52.2"></path><path pathLength="15" style="stroke-dasharray:165 2000" d="M112.9,34C115.3,25.5,130.1,23.9,130.9,33.3C131.7,41.1,118.4,49.7,112.9,57.5C119.9,55.9,127.7,55.9,134,56.7"></path><path pathLength="15" style="stroke-dasharray:150 2000" d="M139.8,26.3C148.2,35.4,148.2,51.4,139.8,60.6"></path><path pathLength="15" style="stroke-dasharray:135 2000" d="M170.3,38.5C174.9,43.9,179.6,49.3,184.2,54.7"></path><path pathLength="15" style="stroke-dasharray:120 2000" d="M184.2,38.5C179.6,43.9,174.9,49.3,170.3,54.7"></path><path pathLength="15" style="stroke-dasharray:105 2000" d="M214.1,22.8C205.4,32.3,205.4,48.9,214.1,58.4"></path><path pathLength="15" style="stroke-dasharray:90 2000" d="M221,31.4C224.3,29,227.5,26.6,229.1,24.2C229.1,34.6,228.3,47.5,228.3,57.1"></path><path pathLength="15" style="stroke-dasharray:75 2000" d="M238.4,29.5C244.7,23.2,257.2,24.8,255.6,32.6C254.8,38.1,247.8,40.5,243.9,40.5C250.9,40.5,258.8,43.6,257.2,50.7C255.6,59.3,241.5,60.1,236.8,53.8"></path><path pathLength="15" style="stroke-dasharray:60 2000" d="M277.2,26.2C273.3,37.2,268.6,49.8,263.9,60.8"></path><path pathLength="15" style="stroke-dasharray:45 2000" d="M302,26.1C296.7,26.1,290.5,26.1,287.5,26.9L285.9,38.4C291.3,34.5,301.3,35.3,302,45.3C302.8,55.3,289,58.3,283.6,52.2"></path><path pathLength="15" style="stroke-dasharray:30 2000" d="M309.3,33.5C311.6,25,326.4,23.4,327.1,32.7C327.9,40.5,314.7,49.1,309.3,56.8C316.3,55.3,324,55.3,330.2,56"></path><path pathLength="15" style="stroke-dasharray:15 2000" d="M336.5,26.4C344.8,35.5,344.8,51.4,336.5,60.5"></path></g>
+                  <g class="pv-b4"><path pathLength="10.9" style="stroke-dasharray:240 2000" d="M17,112.6C8.5,121.9,8.5,138.2,17,147.5"></path><path pathLength="10.9" style="stroke-dasharray:229.1 2000" d="M24.2,121.4C27.4,118.9,30.6,116.5,32.2,114.1C32.2,124.6,31.4,137.4,31.4,147"></path><path pathLength="10.9" style="stroke-dasharray:218.2 2000" d="M42.3,117.1C48.7,110.8,61.4,112.4,59.8,120.3C59,125.9,51.8,128.2,47.9,128.2C55,128.2,63,131.4,61.4,138.6C59.8,147.3,45.5,148.1,40.7,141.7"></path><path pathLength="10.9" style="stroke-dasharray:207.3 2000" d="M81.4,112.2C77.5,123.2,72.8,135.8,68,146.8"></path><path pathLength="10.9" style="stroke-dasharray:196.4 2000" d="M106.2,114C100.8,114,94.6,114,91.4,114.8L89.9,126.5C95.3,122.6,105.4,123.4,106.2,133.5C107,143.6,93,146.7,87.6,140.5"></path><path pathLength="10.9" style="stroke-dasharray:185.5 2000" d="M112.4,122.1C114.7,113.4,129.7,111.9,130.5,121.3C131.3,129.2,117.9,137.9,112.4,145.8C119.5,144.2,127.3,144.2,133.7,145"></path><path pathLength="10.9" style="stroke-dasharray:174.5 2000" d="M139.5,112C147.9,121.2,147.9,137.2,139.5,146.3"></path><path pathLength="10.9" style="stroke-dasharray:163.6 2000" d="M170.3,125.4C175,131,179.8,136.5,184.5,142.1"></path><path pathLength="10.9" style="stroke-dasharray:152.7 2000" d="M184.5,125.4C179.8,131,175,136.5,170.3,142.1"></path><path pathLength="10.9" style="stroke-dasharray:141.8 2000" d="M213.2,113C204.7,122.2,204.7,138.4,213.2,147.7"></path><path pathLength="10.9" style="stroke-dasharray:130.9 2000" d="M221.2,121.2C224.3,118.9,227.3,116.6,228.9,114.3C228.9,124.2,228.1,136.5,228.1,145.7"></path><path pathLength="10.9" style="stroke-dasharray:120 2000" d="M237.6,121C239.9,112.6,254.4,111,255.2,120.2C256,127.9,242.9,136.3,237.6,144C244.5,142.5,252.1,142.5,258.3,143.2"></path><path pathLength="10.9" style="stroke-dasharray:109.1 2000" d="M278.1,111.8C274.2,122.8,269.4,135.4,264.7,146.5"></path><path pathLength="10.9" style="stroke-dasharray:98.2 2000" d="M303,115C297.4,115,291.1,115,287.9,115.8L286.3,127.8C291.9,123.8,302.2,124.6,303,134.9C303.8,145.2,289.5,148.4,283.9,142.1"></path><path pathLength="10.9" style="stroke-dasharray:87.3 2000" d="M311.5,120C314.7,117.6,317.9,115.2,319.5,112.8C319.5,123.2,318.7,135.9,318.7,145.5"></path><path pathLength="10.9" style="stroke-dasharray:76.4 2000" d="M328.3,111.8C336.9,121.2,336.9,137.7,328.3,147.1"></path><path pathLength="10.9" style="stroke-dasharray:65.5 2000" d="M356.5,131C362.7,130.2,370.4,130.2,376.5,131"></path><path pathLength="10.9" style="stroke-dasharray:54.5 2000" d="M356.5,140.2C362.7,139.4,370.4,139.4,376.5,140.2"></path><path pathLength="10.9" style="stroke-dasharray:43.6 2000" d="M398.7,120.8C401.8,118.5,404.9,116.2,406.4,113.8C406.4,123.9,405.6,136.2,405.6,145.4"></path><path pathLength="10.9" style="stroke-dasharray:32.7 2000" d="M428.7,111.5C424.7,122.7,419.9,135.5,415.1,146.7"></path><path pathLength="10.9" style="stroke-dasharray:21.8 2000" d="M435.3,120.2C438.4,117.9,441.5,115.5,443.1,113.2C443.1,123.3,442.3,135.6,442.3,144.9"></path><path pathLength="10.9" style="stroke-dasharray:10.9 2000" d="M452.6,114.9C459.9,113.3,467.9,113.3,473.5,114.1C467.9,123.7,462.3,134.9,459.9,147"></path></g>
+                </svg>
+                <div class="hint k pv-h4">By the second draw it is not the same deck. What changed, and by how much?</div>
+              </div>
             </div>
 
             <div class="shot k pv-s5">
               <span class="shotcap">University &middot; Calculus</span>
               <p class="q"><span class="n">3.</span>A spherical balloon is inflated at 40 cm&sup3;/s. How fast is the radius growing when r = 10 cm?</p>
               <div class="eq">V = (4/3)&pi;r&sup3;</div>
-              <div class="hint k pv-h5">Both sides change with time. Differentiate with respect to t before you solve anything.</div>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a5"><path pathLength="18.5" style="stroke-dasharray:240 2000" d="M8.9,25.7C12.7,36.4,15.7,47.1,18.8,57C22.6,47.1,25.7,36.4,29.5,24.9"></path><path pathLength="18.5" style="stroke-dasharray:221.5 2000" d="M49.5,40.9C55.9,40.1,63.8,40.1,70.1,40.9"></path><path pathLength="18.5" style="stroke-dasharray:203.1 2000" d="M49.5,50.4C55.9,49.6,63.8,49.6,70.1,50.4"></path><path pathLength="18.5" style="stroke-dasharray:184.6 2000" d="M103.6,25.3C98.8,34,94.1,41.9,90.2,46.7C97.3,45.9,106.7,45.9,112.3,45.9"></path><path pathLength="18.5" style="stroke-dasharray:166.2 2000" d="M106.7,32.4C106,40.3,106,49,105.2,58.5"></path><path pathLength="18.5" style="stroke-dasharray:147.7 2000" d="M127,25.6C118.4,25.6,116.8,39,117.6,45.2C118.4,57.8,134.1,59.4,135.7,43.7C136.5,32.7,133.3,24.8,126.3,25.6"></path><path pathLength="18.5" style="stroke-dasharray:129.2 2000" d="M151.1,26.9C142.6,26.9,141.1,39.9,141.9,46.1C142.6,58.3,158,59.9,159.5,44.5C160.3,33.8,157.2,26.1,150.3,26.9"></path><path pathLength="18.5" style="stroke-dasharray:110.8 2000" d="M177.2,25.9C168.4,25.9,166.8,39.4,167.6,45.8C168.4,58.5,184.3,60.1,185.9,44.2C186.7,33,183.5,25.1,176.4,25.9"></path><path pathLength="18.5" style="stroke-dasharray:92.3 2000" d="M191.3,38.2C198.3,35.8,206.1,35.8,213.1,37.4"></path><path pathLength="18.5" style="stroke-dasharray:73.8 2000" d="M198.3,37.4C198.3,44.4,197.5,50.6,196,56.9"></path><path pathLength="18.5" style="stroke-dasharray:55.4 2000" d="M206.9,37.4C206.9,44.4,207.7,52.2,210.8,56.9"></path><path pathLength="18.5" style="stroke-dasharray:36.9 2000" d="M233.6,25.3C229.7,36.4,224.9,49.1,220.2,60.2"></path><path pathLength="18.5" style="stroke-dasharray:18.5 2000" d="M240.6,28.3C247,22,259.7,23.6,258.1,31.5C257.3,37.1,250.1,39.5,246.2,39.5C253.3,39.5,261.3,42.7,259.7,49.8C258.1,58.6,243.8,59.4,239,53"></path></g>
+                  <g class="pv-b5"><path pathLength="9.6" style="stroke-dasharray:240 2000" d="M24.8,126.7C15.3,120.3,8.1,129.9,9.7,137.8C11.3,145.8,23.2,144.2,25.6,129.9"></path><path pathLength="9.6" style="stroke-dasharray:230.4 2000" d="M25.6,112.3C25.6,123.5,25.6,136.2,28,145.8"></path><path pathLength="9.6" style="stroke-dasharray:220.8 2000" d="M34.1,113.8C38,124.7,41.2,135.7,44.3,145.9C48.2,135.7,51.3,124.7,55.2,113"></path><path pathLength="9.6" style="stroke-dasharray:211.2 2000" d="M76,112.1C72,123.2,67.2,136,62.4,147.2"></path><path pathLength="9.6" style="stroke-dasharray:201.6 2000" d="M97.9,126.5C88.6,120.3,81.7,129.6,83.2,137.2C84.8,144.9,96.3,143.4,98.6,129.6"></path><path pathLength="9.6" style="stroke-dasharray:192 2000" d="M98.6,112.6C98.6,123.4,98.6,135.7,100.9,144.9"></path><path pathLength="9.6" style="stroke-dasharray:182.4 2000" d="M112.8,116C112.8,126.7,112,137.3,114.3,144.9C115.8,147.1,118.9,146.4,120.4,144.1"></path><path pathLength="9.6" style="stroke-dasharray:172.8 2000" d="M106.7,125.9C111.3,125.1,115.8,125.1,119.6,125.1"></path><path pathLength="9.6" style="stroke-dasharray:163.2 2000" d="M140.5,130.7C146.6,130,154.2,130,160.3,130.7"></path><path pathLength="9.6" style="stroke-dasharray:153.6 2000" d="M140.5,139.9C146.6,139.1,154.2,139.1,160.3,139.9"></path><path pathLength="9.6" style="stroke-dasharray:144 2000" d="M194.6,113.1C189.9,121.7,185.2,129.6,181.3,134.3C188.3,133.5,197.8,133.5,203.3,133.5"></path><path pathLength="9.6" style="stroke-dasharray:134.4 2000" d="M197.8,120.2C197,128,197,136.7,196.2,146.1"></path><path pathLength="9.6" style="stroke-dasharray:124.8 2000" d="M207.2,126.8C214.3,124.4,222.2,124.4,229.3,126"></path><path pathLength="9.6" style="stroke-dasharray:115.2 2000" d="M214.3,126C214.3,133.1,213.6,139.4,212,145.7"></path><path pathLength="9.6" style="stroke-dasharray:105.6 2000" d="M223,126C223,133.1,223.8,141,227,145.7"></path><path pathLength="9.6" style="stroke-dasharray:96 2000" d="M236.4,125.8C236.4,132.7,236.4,140.5,236.4,146.6C238,135.8,242.6,125.8,249.5,126.6"></path><path pathLength="9.6" style="stroke-dasharray:86.4 2000" d="M252.8,114.8C253.9,110.8,260.7,110.1,261,114.4C261.4,118,255.3,122,252.8,125.5C256,124.8,259.6,124.8,262.5,125.2"></path><path pathLength="9.6" style="stroke-dasharray:76.8 2000" d="M296.6,126.7C287.4,120.6,280.4,129.8,282,137.5C283.5,145.2,295,143.6,297.4,129.8"></path><path pathLength="9.6" style="stroke-dasharray:67.2 2000" d="M297.4,112.9C297.4,123.7,297.4,136,299.7,145.2"></path><path pathLength="9.6" style="stroke-dasharray:57.6 2000" d="M306.5,125.5C306.5,132.6,306.5,140.6,306.5,146.9C308.1,135.8,312.9,125.5,320,126.3"></path><path pathLength="9.6" style="stroke-dasharray:48 2000" d="M340.2,112.5C336.3,123.4,331.6,135.8,327,146.7"></path><path pathLength="9.6" style="stroke-dasharray:38.4 2000" d="M363,126.5C353.7,120.2,346.7,129.6,348.2,137.3C349.8,145.1,361.4,143.5,363.8,129.6"></path><path pathLength="9.6" style="stroke-dasharray:28.8 2000" d="M363.8,112.5C363.8,123.3,363.8,135.8,366.1,145.1"></path><path pathLength="9.6" style="stroke-dasharray:19.2 2000" d="M376.9,116.5C376.9,127.2,376.2,138,378.5,145.7C380,148,383.1,147.2,384.6,144.9"></path><path pathLength="9.6" style="stroke-dasharray:9.6 2000" d="M370.8,126.5C375.4,125.7,380,125.7,383.8,125.7"></path></g>
+                </svg>
+                <div class="hint k pv-h5">Both sides change with time. Differentiate with respect to t before you solve anything.</div>
+              </div>
             </div>
 
             <div class="shot k pv-s6">
               <span class="shotcap">Grade 10 &middot; French</span>
-              <p class="q"><span class="n">8.</span>Compl&egrave;te : Si j&rsquo;<span style="border-bottom:1.5px solid var(--ink);padding:0 22px"></span> (avoir) le temps, je <span style="border-bottom:1.5px solid var(--ink);padding:0 22px"></span> (venir).</p>
-              <div class="hint k pv-h6">Si takes the imparfait; the promise takes the conditionnel. Which half is the condition?</div>
+              <p class="q"><span class="n">8.</span>Compl&egrave;te : Si j&rsquo;<span class="pv-gap"><em class="k pv-f1">avais</em></span> (avoir) le temps, je <span class="pv-gap pv-gap2"><em class="k pv-f2">viendrais</em></span> (venir).</p>
+              <div class="pv-work">
+                <svg class="ink pv-hand" viewBox="0 0 560 170" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+                  <g class="pv-a6"><path pathLength="12" style="stroke-dasharray:240 2000" d="M8.4,37.4C11.5,45.1,14.6,52.9,17,59.2C20.1,51.4,23.2,43.6,26.3,36.6"></path><path pathLength="12" style="stroke-dasharray:228 2000" d="M33.7,46.8C40.2,46.8,47.4,44.4,47.4,39.6C46.6,33.2,33.7,34.8,32.9,46C32.9,56.5,44.2,59.7,49.8,53.2"></path><path pathLength="12" style="stroke-dasharray:216 2000" d="M54,36.9C54.8,43.9,54.8,51.6,54,57.8C56.3,47,61,36.1,67.2,36.1C72.6,36.1,72.6,47,73.4,57.8"></path><path pathLength="12" style="stroke-dasharray:204 2000" d="M83.5,35.2C83.5,42.5,83.5,50.5,84.3,56.9"></path><path pathLength="12" style="stroke-dasharray:192 2000" d="M83.5,26.4C83.5,27.2,84.3,28,84.3,27.2"></path><path pathLength="12" style="stroke-dasharray:180 2000" d="M93.6,36.6C93.6,43.5,93.6,51.1,93.6,57.3C95.2,46.5,99.8,36.6,106.7,37.3"></path><path pathLength="12" style="stroke-dasharray:168 2000" d="M127.4,40.9C127.4,41.7,128.2,42.4,128.2,41.7"></path><path pathLength="12" style="stroke-dasharray:156 2000" d="M127.4,52C127.4,52.8,128.2,53.6,128.2,52.8"></path><path pathLength="12" style="stroke-dasharray:144 2000" d="M149.7,36.5C152.8,44.1,155.8,51.8,158.1,57.9C161.2,50.2,164.2,42.6,167.3,35.7"></path><path pathLength="12" style="stroke-dasharray:132 2000" d="M174.6,37.7C174.6,44.6,174.6,52.3,175.4,58.4"></path><path pathLength="12" style="stroke-dasharray:120 2000" d="M174.6,29.3C174.6,30.1,175.4,30.8,175.4,30.1"></path><path pathLength="12" style="stroke-dasharray:108 2000" d="M185.7,47.8C191.8,47.8,198.7,45.5,198.7,40.9C197.9,34.8,185.7,36.3,184.9,47C184.9,56.9,195.6,60,201,53.9"></path><path pathLength="12" style="stroke-dasharray:96 2000" d="M207.3,37.6C208.1,44.4,208.1,51.9,207.3,58C209.6,47.4,214.2,36.8,220.2,36.8C225.5,36.8,225.5,47.4,226.3,58"></path><path pathLength="12" style="stroke-dasharray:84 2000" d="M249.7,40.3C240.6,34.2,233.8,43.3,235.3,50.9C236.8,58.4,248.2,56.9,250.4,43.3"></path><path pathLength="12" style="stroke-dasharray:72 2000" d="M250.4,26.7C250.4,37.3,250.4,49.4,252.7,58.4"></path><path pathLength="12" style="stroke-dasharray:60 2000" d="M259.7,37C259.7,44.1,259.7,51.9,259.7,58.2C261.2,47.2,265.9,37,273,37.8"></path><path pathLength="12" style="stroke-dasharray:48 2000" d="M295.9,38.2C287.3,32,278.8,42.8,280.4,50.5C281.9,58.3,293.5,56.7,295.9,39.7C295.1,47.4,295.9,53.6,298.9,58.3"></path><path pathLength="12" style="stroke-dasharray:36 2000" d="M305.9,37.7C305.9,44.7,305.9,52.5,306.7,58.7"></path><path pathLength="12" style="stroke-dasharray:24 2000" d="M305.9,29.2C305.9,29.9,306.7,30.7,306.7,29.9"></path><path pathLength="12" style="stroke-dasharray:12 2000" d="M331.1,37.2C325.5,32.4,316.7,34,317.5,40.4C318.3,46,330.3,44.4,330.3,51.6C330.3,58,318.3,58.8,315.1,53.2"></path></g>
+                  <g class="pv-b6"><path pathLength="17.1" style="stroke-dasharray:240 2000" d="M25.1,125C16.7,118.8,8.2,129.6,9.8,137.2C11.3,144.9,22.8,143.4,25.1,126.5C24.4,134.2,25.1,140.3,28.2,144.9"></path><path pathLength="17.1" style="stroke-dasharray:222.9 2000" d="M33,123.6C36.2,131.5,39.4,139.5,41.8,145.9C45,137.9,48.2,129.9,51.4,122.8"></path><path pathLength="17.1" style="stroke-dasharray:205.7 2000" d="M66.7,123C58.7,123,57.1,133.4,58.7,139C61.1,147.8,73.9,147,75.5,135.8C76.3,127,72.3,123,65.9,123"></path><path pathLength="17.1" style="stroke-dasharray:188.6 2000" d="M83.1,125.4C83.1,132.3,83.1,139.9,83.8,146"></path><path pathLength="17.1" style="stroke-dasharray:171.4 2000" d="M83.1,117C83.1,117.8,83.8,118.5,83.8,117.8"></path><path pathLength="17.1" style="stroke-dasharray:154.3 2000" d="M92.8,125.8C92.8,132.8,92.8,140.5,92.8,146.7C94.3,135.9,99,125.8,105.9,126.6"></path><path pathLength="17.1" style="stroke-dasharray:137.1 2000" d="M127.8,130.1C127.8,130.9,128.6,131.7,128.6,130.9"></path><path pathLength="17.1" style="stroke-dasharray:120 2000" d="M127.8,141.2C127.8,142,128.6,142.8,128.6,142"></path><path pathLength="17.1" style="stroke-dasharray:102.9 2000" d="M167.5,125.7C158.7,119.2,149.8,130.5,151.4,138.5C153,146.5,165.1,144.9,167.5,127.3C166.7,135.3,167.5,141.7,170.7,146.5"></path><path pathLength="17.1" style="stroke-dasharray:85.7 2000" d="M174.3,123.4C177.4,131.2,180.5,139,182.8,145.3C185.9,137.5,189.1,129.7,192.2,122.7"></path><path pathLength="17.1" style="stroke-dasharray:68.6 2000" d="M214.4,125.6C206,119.5,197.6,130.2,199.1,137.9C200.6,145.5,212.1,144,214.4,127.1C213.7,134.8,214.4,140.9,217.5,145.5"></path><path pathLength="17.1" style="stroke-dasharray:51.4 2000" d="M225.9,125.5C225.9,132.7,225.9,140.7,226.7,147.1"></path><path pathLength="17.1" style="stroke-dasharray:34.3 2000" d="M225.9,116.7C225.9,117.5,226.7,118.3,226.7,117.5"></path><path pathLength="17.1" style="stroke-dasharray:17.1 2000" d="M249.8,126.7C244.4,122.1,235.9,123.6,236.7,129.8C237.5,135.2,249,133.6,249,140.6C249,146.7,237.5,147.5,234.4,142.1"></path></g>
+                </svg>
+                <div class="hint k pv-h6">Si takes the imparfait; the promise takes the conditionnel. Which half is the condition?</div>
+              </div>
             </div>
 
+              </div>
+              <div class="pv-loop" aria-hidden="true">
+                <span class="pv-p1">Read<em> the page</em></span>
+                <span class="pv-p2">Watch<em> the student</em></span>
+                <span class="pv-p3">Ask<em> the unlocking question</em></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1067,32 +1219,100 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
-          <div class="chrome">
-            <span class="dot"></span>
-            <span class="title">Practice tab</span>
-            <span class="spacer"></span>
-            <span class="pill">Generated &middot; one at a time</span>
+        <div class="stage" data-reveal data-steps="0:Ask for practice|3.6:Harder|12.2:With fractions|19.8:Word problems|26.4:Easier|31:It keeps going">
+          <div class="tabsbar">
+            <span class="tab pr pgen-t1">P1</span>
+            <span class="tab pr tr pgen-t2">P2</span>
+            <span class="tab pr tr pgen-t3">P3</span>
+            <span class="tab pr tr pgen-t4">P4</span>
+            <span class="tab pr tr pgen-t5">P5</span>
+            <span class="spacer" style="flex:1"></span>
+            <span class="pgen-pill">Generated &middot; one at a time</span>
           </div>
-          <div class="fade-pgen" style="padding: clamp(18px, 2.6vw, 32px)">
-            <div class="pgencmd" aria-hidden="true">
-              <span class="k pgen-c1">&ldquo;Harder.&rdquo;</span>
-              <span class="k pgen-c2">&ldquo;Harder, with fractions.&rdquo;</span>
-              <span class="k pgen-c3">&ldquo;More like word problems.&rdquo;</span>
-              <span class="k pgen-c4">&ldquo;Easier.&rdquo;</span>
+          <div class="board-shell fade-pgen">
+            <div>
+              <div class="boardarea graph pgen-board">
+                <div class="sheet pgen-sheet k pgen-p1">
+                  <div class="pq"><span class="lbl">Practice &middot; P1</span>Solve: &nbsp;x + 7 = 12</div>
+                  <svg class="ink pgen-hand pgen-r1" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i1"><path pathLength="48" style="stroke-dasharray:240 2000" d="M8.9,30.5C16.9,38.5,24,46.6,31.2,55.5"></path><path pathLength="48" style="stroke-dasharray:192 2000" d="M31.2,29.6C24,37.6,16,46.6,8.9,55.5"></path><path pathLength="48" style="stroke-dasharray:144 2000" d="M56.1,36.5C63.2,35.6,72.2,35.6,79.3,36.5"></path><path pathLength="48" style="stroke-dasharray:96 2000" d="M56.1,47.2C63.2,46.3,72.2,46.3,79.3,47.2"></path><path pathLength="48" style="stroke-dasharray:48 2000" d="M127.4,18.2C120.8,18.2,113.4,18.2,109.6,19.2L107.8,33.2C114.3,28.5,126.4,29.4,127.4,41.6C128.3,53.7,111.5,57.5,104.9,50"></path></g>
+                  </svg>
+                  <div class="hint tex k pgen-h1">x = 5 &nbsp;&#10003;</div>
+                </div>
+                <div class="sheet pgen-sheet tr pgen-p2">
+                  <div class="pq"><span class="lbl">Practice &middot; P2</span>Solve: &nbsp;3(x &minus; 2) = 2x + 5</div>
+                  <svg class="ink pgen-hand pgen-r1" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i2a"><path pathLength="18.5" style="stroke-dasharray:240 2000" d="M9.7,22.1C16.8,15,30.9,16.8,29.1,25.6C28.3,31.8,20.3,34.5,15.9,34.5C23.8,34.5,32.7,38,30.9,46C29.1,55.7,13.2,56.6,7.9,49.5"></path><path pathLength="18.5" style="stroke-dasharray:221.5 2000" d="M37,31.7C44.7,39.4,51.5,47,58.3,55.6"></path><path pathLength="18.5" style="stroke-dasharray:203.1 2000" d="M58.3,30.8C51.5,38.5,43.8,47,37,55.6"></path><path pathLength="18.5" style="stroke-dasharray:184.6 2000" d="M81.9,44.5C87.9,43.7,95.6,43.7,101.5,44.5"></path><path pathLength="18.5" style="stroke-dasharray:166.2 2000" d="M142.2,20.1C132,24.4,125.1,36.4,126,45.8C126.8,56.9,144,56.9,144,44.9C144,36.4,130.2,35.5,126,44.1"></path><path pathLength="18.5" style="stroke-dasharray:147.7 2000" d="M166.7,36.9C173.4,36,181.9,36,188.7,36.9"></path><path pathLength="18.5" style="stroke-dasharray:129.2 2000" d="M166.7,47C173.4,46.2,181.9,46.2,188.7,47"></path><path pathLength="18.5" style="stroke-dasharray:110.8 2000" d="M211.3,29.7C213.9,20.3,230.3,18.5,231.1,28.9C232,37.5,217.4,46.9,211.3,55.5C219.1,53.8,227.7,53.8,234.5,54.7"></path><path pathLength="18.5" style="stroke-dasharray:92.3 2000" d="M241.5,30.5C249.4,38.4,256.4,46.3,263.5,55.1"></path><path pathLength="18.5" style="stroke-dasharray:73.8 2000" d="M263.5,29.6C256.4,37.5,248.5,46.3,241.5,55.1"></path><path pathLength="18.5" style="stroke-dasharray:55.4 2000" d="M296,31.3C296,38.1,296,45,296,53.5"></path><path pathLength="18.5" style="stroke-dasharray:36.9 2000" d="M284.9,42.4C291.7,41.5,300.3,41.5,307.1,42.4"></path><path pathLength="18.5" style="stroke-dasharray:18.5 2000" d="M350.1,21.3C344.3,21.3,337.6,21.3,334.3,22.2L332.6,34.7C338.4,30.5,349.3,31.4,350.1,42.2C351,53.1,335.9,56.5,330.1,49.8"></path></g>
+                  </svg>
+                  <svg class="ink pgen-hand pgen-r2" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i2b"><path pathLength="40" style="stroke-dasharray:240 2000" d="M8.6,31.2C16.4,39,23.3,46.8,30.2,55.4"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M30.2,30.4C23.3,38.1,15.5,46.8,8.6,55.4"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M52.8,38.4C59.5,37.6,67.9,37.6,74.6,38.4"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M52.8,48.5C59.5,47.7,67.9,47.7,74.6,48.5"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M98.8,28C102.2,25.4,105.7,22.8,107.4,20.2C107.4,31.4,106.5,45.2,106.5,55.6"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M118.4,27.6C121.9,24.9,125.4,22.3,127.2,19.6C127.2,31.1,126.3,45.2,126.3,55.8"></path></g>
+                  </svg>
+                  <div class="hint k pgen-h2a">Which side should the x terms live on?</div>
+                  <div class="hint tex k pgen-h2b">x = 11 &nbsp;&#10003;</div>
+                </div>
+                <div class="sheet pgen-sheet tr pgen-p3">
+                  <div class="pq"><span class="lbl">Practice &middot; P3</span>Solve: &nbsp;(2x + 1)/3 &minus; (x &minus; 4)/2 = 1</div>
+                  <svg class="ink pgen-hand pgen-r1" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i3a"><path pathLength="11.4" style="stroke-dasharray:240 2000" d="M7.8,37.9C9.6,31.3,21.2,30.1,21.8,37.3C22.4,43.4,12.1,50.1,7.8,56.1C13.3,54.9,19.3,54.9,24.2,55.5"></path><path pathLength="11.4" style="stroke-dasharray:228.6 2000" d="M35.8,28C28.8,35.6,28.8,48.9,35.8,56.5"></path><path pathLength="11.4" style="stroke-dasharray:217.1 2000" d="M41.2,37.7C43,30.9,54.8,29.7,55.4,37.1C56,43.3,45.5,50.1,41.2,56.2C46.7,55,52.9,55,57.9,55.6"></path><path pathLength="11.4" style="stroke-dasharray:205.7 2000" d="M62.8,38.6C68.4,44.2,73.3,49.7,78.3,55.9"></path><path pathLength="11.4" style="stroke-dasharray:194.3 2000" d="M78.3,38C73.3,43.6,67.8,49.7,62.8,55.9"></path><path pathLength="11.4" style="stroke-dasharray:182.9 2000" d="M102.6,38.3C102.6,43.4,102.6,48.4,102.6,54.8"></path><path pathLength="11.4" style="stroke-dasharray:171.4 2000" d="M94.3,46.5C99.4,45.9,105.7,45.9,110.8,46.5"></path><path pathLength="11.4" style="stroke-dasharray:160 2000" d="M128.1,35.3C130.6,33.4,133.1,31.5,134.4,29.6C134.4,37.8,133.8,47.9,133.8,55.5"></path><path pathLength="11.4" style="stroke-dasharray:148.6 2000" d="M141.7,27.8C148.7,35.4,148.7,48.7,141.7,56.3"></path><path pathLength="11.4" style="stroke-dasharray:137.1 2000" d="M163.9,47.4C168.1,46.8,173.5,46.8,177.7,47.4"></path><path pathLength="11.4" style="stroke-dasharray:125.7 2000" d="M195.1,33.6C200,28.7,209.9,29.9,208.6,36.1C208,40.4,202.5,42.2,199.4,42.2C204.9,42.2,211.1,44.7,209.9,50.2C208.6,57,197.5,57.6,193.8,52.7"></path><path pathLength="11.4" style="stroke-dasharray:114.3 2000" d="M222,29.3C215.1,36.8,215.1,50.1,222,57.7"></path><path pathLength="11.4" style="stroke-dasharray:102.9 2000" d="M227.3,38.4C232.9,44,237.9,49.6,242.9,55.9"></path><path pathLength="11.4" style="stroke-dasharray:91.4 2000" d="M242.9,37.7C237.9,43.4,232.3,49.6,227.3,55.9"></path><path pathLength="11.4" style="stroke-dasharray:80 2000" d="M259.2,47.6C263.4,47,268.9,47,273.1,47.6"></path><path pathLength="11.4" style="stroke-dasharray:68.6 2000" d="M300.5,30.6C296.7,37.5,292.9,43.8,289.8,47.6C295.4,47,303,47,307.4,47"></path><path pathLength="11.4" style="stroke-dasharray:57.1 2000" d="M303,36.3C302.4,42.6,302.4,49.5,301.7,57"></path><path pathLength="11.4" style="stroke-dasharray:45.7 2000" d="M311.5,29.6C318.1,36.9,318.1,49.6,311.5,56.9"></path><path pathLength="11.4" style="stroke-dasharray:34.3 2000" d="M334.8,43C339.7,42.4,345.8,42.4,350.6,43"></path><path pathLength="11.4" style="stroke-dasharray:22.9 2000" d="M334.8,50.3C339.7,49.7,345.8,49.7,350.6,50.3"></path><path pathLength="11.4" style="stroke-dasharray:11.4 2000" d="M379.5,30.4C372.2,33.4,367.4,41.9,368,48.6C368.6,56.5,380.7,56.5,380.7,48C380.7,41.9,371,41.3,368,47.4"></path></g>
+                  </svg>
+                  <svg class="ink pgen-hand pgen-r2" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i3b"><path pathLength="24" style="stroke-dasharray:240 2000" d="M8.3,33.1C15.9,40.7,22.7,48.4,29.5,56.8"></path><path pathLength="24" style="stroke-dasharray:216 2000" d="M29.5,32.3C22.7,39.9,15.1,48.4,8.3,56.8"></path><path pathLength="24" style="stroke-dasharray:192 2000" d="M64.3,32.6C64.3,39.3,64.3,46.1,64.3,54.5"></path><path pathLength="24" style="stroke-dasharray:168 2000" d="M53.4,43.5C60.1,42.7,68.5,42.7,75.3,43.5"></path><path pathLength="24" style="stroke-dasharray:144 2000" d="M99.4,27.7C102.8,25.2,106.2,22.7,107.9,20.1C107.9,31.1,107,44.6,107,54.7"></path><path pathLength="24" style="stroke-dasharray:120 2000" d="M131.9,20.9C126.7,30.5,121.4,39.3,117,44.6C124.9,43.7,135.4,43.7,141.6,43.7"></path><path pathLength="24" style="stroke-dasharray:96 2000" d="M135.4,28.8C134.5,37.6,134.5,47.2,133.7,57.7"></path><path pathLength="24" style="stroke-dasharray:72 2000" d="M161.6,39C168.4,38.2,176.9,38.2,183.6,39"></path><path pathLength="24" style="stroke-dasharray:48 2000" d="M161.6,49.2C168.4,48.3,176.9,48.3,183.6,49.2"></path><path pathLength="24" style="stroke-dasharray:24 2000" d="M224.6,20.5C214.2,24.8,207.2,37,208.1,46.6C208.9,57.9,226.3,57.9,226.3,45.7C226.3,37,212.4,36.1,208.1,44.8"></path></g>
+                  </svg>
+                  <div class="hint k pgen-h3a">What number clears both denominators?</div>
+                  <div class="hint tex k pgen-h3b">Both cleared &nbsp;&#10003;</div>
+                </div>
+                <div class="sheet pgen-sheet tr pgen-p4">
+                  <div class="pq"><span class="lbl">Practice &middot; P4</span>A phone plan costs $20 plus $3 per GB. After how many GB does it cost more than a $38 flat plan?</div>
+                  <svg class="ink pgen-hand pgen-r1" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i4"><path pathLength="26.7" style="stroke-dasharray:240 2000" d="M8.6,28.1C11.3,18.3,28.3,16.5,29.2,27.2C30.1,36.2,14.9,46,8.6,55C16.6,53.2,25.6,53.2,32.7,54.1"></path><path pathLength="26.7" style="stroke-dasharray:213.3 2000" d="M52.4,18.7C42.2,18.7,40.3,34.5,41.3,41.9C42.2,56.8,60.8,58.6,62.6,40.1C63.6,27,59.8,17.8,51.5,18.7"></path><path pathLength="26.7" style="stroke-dasharray:186.7 2000" d="M98.1,30.2C98.1,37.7,98.1,45.3,98.1,54.7"></path><path pathLength="26.7" style="stroke-dasharray:160 2000" d="M85.9,42.4C93.4,41.5,102.9,41.5,110.4,42.4"></path><path pathLength="26.7" style="stroke-dasharray:133.3 2000" d="M135.3,22.3C142.6,15,157.2,16.8,155.4,25.9C154.4,32.3,146.2,35,141.7,35C149.9,35,159,38.7,157.2,46.9C155.4,56.9,138.9,57.8,133.5,50.5"></path><path pathLength="26.7" style="stroke-dasharray:106.7 2000" d="M183.5,33.2C173.7,26.1,163.8,38.6,165.6,44.9C168.3,52.9,180.8,49.3,183.5,35C184.4,49.3,184.4,60.1,179,65.4C173.7,70.8,166.5,67.2,165.6,61.8"></path><path pathLength="26.7" style="stroke-dasharray:80 2000" d="M209.8,30.2C217.3,34.9,225.8,39.6,232.4,43.3C224.8,47.1,217.3,50.9,209.8,56.5"></path><path pathLength="26.7" style="stroke-dasharray:53.3 2000" d="M256.9,21.6C264.3,14.2,279.1,16.1,277.3,25.3C276.4,31.8,268,34.6,263.4,34.6C271.7,34.6,281,38.3,279.1,46.6C277.3,56.8,260.6,57.7,255,50.3"></path><path pathLength="26.7" style="stroke-dasharray:26.7 2000" d="M297.8,17.4C288.6,17.4,287.7,28.3,297.8,33.8C308.7,39.2,307.8,54.7,296.8,54.7C285.9,54.7,285.9,39.2,297.8,33.8C306.9,28.3,306.9,17.4,297.8,17.4"></path></g>
+                  </svg>
+                  <div class="hint k pgen-h4">That is the equation. What comes off first?</div>
+                </div>
+                <div class="sheet pgen-sheet tr pgen-p5">
+                  <div class="pq"><span class="lbl">Practice &middot; P5</span>Solve: &nbsp;2x = 10</div>
+                  <svg class="ink pgen-hand pgen-r1" viewBox="0 0 430 68" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pgen-i5"><path pathLength="48" style="stroke-dasharray:240 2000" d="M9.4,30.3C17.5,38.5,24.7,46.6,32,55.6"></path><path pathLength="48" style="stroke-dasharray:192 2000" d="M32,29.4C24.7,37.6,16.6,46.6,9.4,55.6"></path><path pathLength="48" style="stroke-dasharray:144 2000" d="M57.1,36.1C64.5,35.2,73.6,35.2,81,36.1"></path><path pathLength="48" style="stroke-dasharray:96 2000" d="M57.1,47.1C64.5,46.2,73.6,46.2,81,47.1"></path><path pathLength="48" style="stroke-dasharray:48 2000" d="M126.1,19.7C119.6,19.7,112.2,19.7,108.5,20.6L106.6,34.6C113.1,29.9,125.2,30.8,126.1,42.9C127,55,110.3,58.7,103.8,51.3"></path></g>
+                  </svg>
+                  <div class="hint tex k pgen-h5">x = 5 &nbsp;&#10003;</div>
+                </div>
+                <div class="pgen-shelf" aria-hidden="true">
+                  <span class="k pgen-m1"><b>P1</b>Linear equations</span>
+                  <span class="k pgen-m2"><b>P2</b>Harder</span>
+                  <span class="k pgen-m3"><b>P3</b>Harder, with fractions</span>
+                  <span class="k pgen-m4"><b>P4</b>Word problems</span>
+                  <span class="k pgen-m5"><b>P5</b>Easier</span>
+                </div>
+              </div>
             </div>
-            <div class="pqcyc">
-              <div class="pq k pgen-p1"><span class="lbl">Practice &middot; P1</span>Solve: &nbsp;x + 7 = 12</div>
-              <div class="pq k pgen-p2"><span class="lbl">Practice &middot; P2</span>Solve: &nbsp;3(x &minus; 2) = 2x + 5</div>
-              <div class="pq k pgen-p3"><span class="lbl">Practice &middot; P3</span>Solve: &nbsp;(2x + 1)/3 &minus; (x &minus; 4)/2 = 1</div>
-              <div class="pq k pgen-p4"><span class="lbl">Practice &middot; P4</span>A phone plan costs $20 plus $3 per GB. After how many GB does it cost more than a $38 flat plan?</div>
-              <div class="pq k pgen-p5"><span class="lbl">Practice &middot; P5</span>Solve: &nbsp;2x = 10</div>
+
+            <div class="side">
+              <div class="side-dark">
+                <i></i><b>Gausyn</b>
+                <span class="mode-pill">Practice &middot; 22:15 left</span>
+              </div>
+              <div class="side-meta">
+                <div><span class="lbl">Subject</span><span class="val">Algebra</span></div>
+                <div><span class="lbl">Topic</span><span class="val">Linear equations</span></div>
+              </div>
+              <div class="side-lines">
+                <div class="line you"><span class="who">You</span>Practice on linear equations, please.</div>
+                <div class="line g"><span class="who">Gausyn</span>P1 is pinned at the top of your board.</div>
+                <div class="line you k pgen-c1"><span class="who">You</span>Harder.</div>
+                <div class="line g k pgen-g1"><span class="who">Gausyn</span>P2. It climbs by one bracket.</div>
+                <div class="line you k pgen-c2"><span class="who">You</span>Harder, with fractions.</div>
+                <div class="line g k pgen-g2"><span class="who">Gausyn</span>P3, two denominators this time.</div>
+                <div class="line you k pgen-c3"><span class="who">You</span>More like word problems.</div>
+                <div class="line g k pgen-g3"><span class="who">Gausyn</span>P4. Same skeleton, different clothes.</div>
+                <div class="line you k pgen-c4"><span class="who">You</span>Easier.</div>
+                <div class="line g k pgen-g4"><span class="who">Gausyn</span>P5, stepping back down.</div>
+                <p class="film-line k pgen-g">One question at a time, on your topic, at your level, forever.</p>
+              </div>
+              <div class="dial pgen-dial" aria-hidden="true">
+                <div class="kk"><span>easier</span><span>difficulty</span><span>harder</span></div>
+                <div class="m"><i class="pgen-meter"></i></div>
+              </div>
+              <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
-            <div class="dial" aria-hidden="true">
-              <div class="kk"><span>easier</span><span>difficulty</span><span>harder</span></div>
-              <div class="m"><i class="pgen-meter"></i></div>
-            </div>
-            <p class="film-line k pgen-g" style="margin-top:22px">One question at a time, on your topic, at your level, forever.</p>
           </div>
         </div>
       </div>

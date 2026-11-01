@@ -971,50 +971,84 @@ html.js .da-e7{animation:da-e7 46s ease-in-out infinite both}
 html.js .da-m7{animation:da-m7 46s ease-in-out infinite both}
 @keyframes fade-da{0%{opacity:1}97.174%{opacity:1}99.457%{opacity:0}100%{opacity:0}}
 html.js .fade-da{animation:fade-da 46s linear infinite}
-@keyframes pr-c1{0%{opacity:0;transform:translateY(10px)}5.56%{opacity:0;transform:translateY(10px)}6.85%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c1{animation:pr-c1 27s ease-in-out infinite both}
-@keyframes pr-c2{0%{opacity:0;transform:translateY(10px)}12.04%{opacity:0;transform:translateY(10px)}13.33%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c2{animation:pr-c2 27s ease-in-out infinite both}
-@keyframes pr-h1{0%{opacity:0;transform:translateY(10px)}12.96%{opacity:0;transform:translateY(10px)}14.26%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-h1{animation:pr-h1 27s ease-in-out infinite both}
-@keyframes pr-c3{0%{opacity:0;transform:translateY(10px)}20.37%{opacity:0;transform:translateY(10px)}21.67%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c3{animation:pr-c3 27s ease-in-out infinite both}
-@keyframes pr-h2{0%{opacity:0;transform:translateY(10px)}35.19%{opacity:0;transform:translateY(10px)}36.48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-h2{animation:pr-h2 27s ease-in-out infinite both}
-@keyframes pr-c4{0%{opacity:0;transform:translateY(10px)}50.00%{opacity:0;transform:translateY(10px)}51.30%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c4{animation:pr-c4 27s ease-in-out infinite both}
-@keyframes pr-c5{0%{opacity:0;transform:translateY(10px)}57.41%{opacity:0;transform:translateY(10px)}58.70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c5{animation:pr-c5 27s ease-in-out infinite both}
-@keyframes pr-tpr{0%{opacity:0;transform:translateY(10px)}62.04%{opacity:0;transform:translateY(10px)}63.33%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-tpr{animation:pr-tpr 27s ease-in-out infinite both}
-@keyframes pr-pq{0%{opacity:0;transform:translateY(10px)}64.81%{opacity:0;transform:translateY(10px)}66.11%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-pq{animation:pr-pq 27s ease-in-out infinite both}
-@keyframes pr-c6{0%{opacity:0;transform:translateY(10px)}70.37%{opacity:0;transform:translateY(10px)}71.67%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c6{animation:pr-c6 27s ease-in-out infinite both}
-@keyframes pr-c7{0%{opacity:0;transform:translateY(10px)}77.78%{opacity:0;transform:translateY(10px)}79.07%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c7{animation:pr-c7 27s ease-in-out infinite both}
-@keyframes pr-crop{0%{opacity:0;transform:translateY(10px)}81.48%{opacity:0;transform:translateY(10px)}82.78%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-crop{animation:pr-crop 27s ease-in-out infinite both}
-@keyframes pr-tws{0%{opacity:0;transform:translateY(10px)}85.19%{opacity:0;transform:translateY(10px)}86.48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-tws{animation:pr-tws 27s ease-in-out infinite both}
-@keyframes pr-c8{0%{opacity:0;transform:translateY(10px)}88.89%{opacity:0;transform:translateY(10px)}90.19%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pr-c8{animation:pr-c8 27s ease-in-out infinite both}
-@keyframes fade-pr{0%{opacity:1}94%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pr{animation:fade-pr 27s linear infinite}
-@keyframes pr-a1{0%{stroke-dashoffset:242}24.07%{stroke-dashoffset:242}26.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a1{animation:pr-a1 27s linear infinite both}
-@keyframes pr-a2{0%{stroke-dashoffset:242}26.30%{stroke-dashoffset:242}28.15%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a2{animation:pr-a2 27s linear infinite both}
-@keyframes pr-a3{0%{stroke-dashoffset:242}28.15%{stroke-dashoffset:242}29.63%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a3{animation:pr-a3 27s linear infinite both}
-@keyframes pr-a4{0%{stroke-dashoffset:242}29.63%{stroke-dashoffset:242}31.85%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-a4{animation:pr-a4 27s linear infinite both}
-@keyframes pr-b1{0%{stroke-dashoffset:242}38.89%{stroke-dashoffset:242}41.48%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b1{animation:pr-b1 27s linear infinite both}
-@keyframes pr-b2{0%{stroke-dashoffset:242}41.48%{stroke-dashoffset:242}43.33%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b2{animation:pr-b2 27s linear infinite both}
-@keyframes pr-b3{0%{stroke-dashoffset:242}43.33%{stroke-dashoffset:242}46.30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .pr-b3{animation:pr-b3 27s linear infinite both}
+@keyframes pr-s0{0%{opacity:1}2.4%{opacity:1}3%{opacity:0}100%{opacity:0}}
+html.js .pr-s0{animation:pr-s0 50s ease-in-out infinite both}
+@keyframes pr-s1{0%{opacity:0}2.4%{opacity:0}3%{opacity:1}28.8%{opacity:1}29.4%{opacity:0}100%{opacity:0}}
+html.js .pr-s1{animation:pr-s1 50s ease-in-out infinite both}
+@keyframes pr-g1{0%{opacity:0;transform:translateY(10px)}5.2%{opacity:0;transform:translateY(10px)}6%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-g1{animation:pr-g1 50s ease-in-out infinite both}
+@keyframes pr-c1{0%{opacity:0;transform:translateY(10px)}9%{opacity:0;transform:translateY(10px)}9.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c1{animation:pr-c1 50s ease-in-out infinite both}
+@keyframes pr-c2{0%{opacity:0;transform:translateY(10px)}12.4%{opacity:0;transform:translateY(10px)}13.2%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c2{animation:pr-c2 50s ease-in-out infinite both}
+@keyframes pr-h1{0%{opacity:0;transform:translateY(10px)}13.6%{opacity:0;transform:translateY(10px)}14.4%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-h1{animation:pr-h1 50s ease-in-out infinite both}
+@keyframes pr-mark{0%{background-color:rgba(204,34,34,0);color:var(--ink)}17.6%{background-color:rgba(204,34,34,0);color:var(--ink)}18.4%{background-color:rgba(204,34,34,0.1);color:var(--hint)}37.2%{background-color:rgba(204,34,34,0.1);color:var(--hint)}38%{background-color:rgba(204,34,34,0);color:var(--ink)}100%{background-color:rgba(204,34,34,0);color:var(--ink)}}
+html.js .pr-mark{animation:pr-mark 50s ease-in-out infinite both}
+@keyframes pr-c3{0%{opacity:0;transform:translateY(10px)}22%{opacity:0;transform:translateY(10px)}22.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c3{animation:pr-c3 50s ease-in-out infinite both}
+@keyframes pr-l1{0%{stroke-dashoffset:242}24.4%{stroke-dashoffset:242}28.2%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l1{animation:pr-l1 50s linear infinite both}
+@keyframes pr-s2{0%{opacity:0}29.2%{opacity:0}29.8%{opacity:1}32%{opacity:1}32.6%{opacity:0}100%{opacity:0}}
+html.js .pr-s2{animation:pr-s2 50s ease-in-out infinite both}
+@keyframes pr-s3{0%{opacity:0}32%{opacity:0}32.6%{opacity:1}46.2%{opacity:1}46.8%{opacity:0}100%{opacity:0}}
+html.js .pr-s3{animation:pr-s3 50s ease-in-out infinite both}
+@keyframes pr-h2{0%{opacity:0;transform:translateY(10px)}32.6%{opacity:0;transform:translateY(10px)}33.4%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-h2{animation:pr-h2 50s ease-in-out infinite both}
+@keyframes pr-g2{0%{opacity:0;transform:translateY(10px)}34%{opacity:0;transform:translateY(10px)}34.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-g2{animation:pr-g2 50s ease-in-out infinite both}
+@keyframes pr-y2{0%{opacity:0;transform:translateY(10px)}37.2%{opacity:0;transform:translateY(10px)}38%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-y2{animation:pr-y2 50s ease-in-out infinite both}
+@keyframes pr-st{0%{stroke-dashoffset:242}39.6%{stroke-dashoffset:242}41%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-st{animation:pr-st 50s linear infinite both}
+@keyframes pr-l2{0%{stroke-dashoffset:242}42%{stroke-dashoffset:242}45.6%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l2{animation:pr-l2 50s linear infinite both}
+@keyframes pr-s4{0%{opacity:0}46.4%{opacity:0}47%{opacity:1}52.8%{opacity:1}53.4%{opacity:0}100%{opacity:0}}
+html.js .pr-s4{animation:pr-s4 50s ease-in-out infinite both}
+@keyframes pr-h3{0%{opacity:0;transform:translateY(10px)}47.2%{opacity:0;transform:translateY(10px)}48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-h3{animation:pr-h3 50s ease-in-out infinite both}
+@keyframes pr-l3{0%{stroke-dashoffset:242}49.6%{stroke-dashoffset:242}52.4%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l3{animation:pr-l3 50s linear infinite both}
+@keyframes pr-s5{0%{opacity:0}53%{opacity:0}53.6%{opacity:1}100%{opacity:1}}
+html.js .pr-s5{animation:pr-s5 50s ease-in-out infinite both}
+@keyframes pr-c4{0%{opacity:0;transform:translateY(10px)}54%{opacity:0;transform:translateY(10px)}54.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c4{animation:pr-c4 50s ease-in-out infinite both}
+@keyframes pr-c5{0%{opacity:0;transform:translateY(10px)}58%{opacity:0;transform:translateY(10px)}58.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c5{animation:pr-c5 50s ease-in-out infinite both}
+@keyframes pr-tpr{0%{opacity:0;transform:translateY(10px)}60.4%{opacity:0;transform:translateY(10px)}61.2%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-tpr{animation:pr-tpr 50s ease-in-out infinite both}
+@keyframes pr-p1{0%{opacity:0}61.2%{opacity:0}62%{opacity:1}100%{opacity:1}}
+html.js .pr-p1{animation:pr-p1 50s ease-in-out infinite both}
+@keyframes pr-gen{0%{opacity:1}64%{opacity:1}64.6%{opacity:0}100%{opacity:0}}
+html.js .pr-gen{animation:pr-gen 50s ease-in-out infinite both}
+@keyframes pr-pq{0%{opacity:0;transform:translateY(10px)}64%{opacity:0;transform:translateY(10px)}64.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-pq{animation:pr-pq 50s ease-in-out infinite both}
+@keyframes pr-c6{0%{opacity:0;transform:translateY(10px)}65.6%{opacity:0;transform:translateY(10px)}66.4%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c6{animation:pr-c6 50s ease-in-out infinite both}
+@keyframes pr-l4{0%{stroke-dashoffset:242}68%{stroke-dashoffset:242}70.6%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l4{animation:pr-l4 50s linear infinite both}
+@keyframes pr-c7{0%{opacity:0;transform:translateY(10px)}72%{opacity:0;transform:translateY(10px)}72.8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c7{animation:pr-c7 50s ease-in-out infinite both}
+@keyframes pr-ask{0%{background:var(--warm-soft);color:var(--warm-ink);border-color:var(--warm-line)}73.6%{background:var(--warm-soft);color:var(--warm-ink);border-color:var(--warm-line)}74.2%{background:var(--warm-ink);color:#fff;border-color:var(--warm-ink)}79.2%{background:var(--warm-ink);color:#fff;border-color:var(--warm-ink)}79.8%{background:var(--warm-soft);color:var(--warm-ink);border-color:var(--warm-line)}100%{background:var(--warm-soft);color:var(--warm-ink);border-color:var(--warm-line)}}
+html.js .pr-ask{animation:pr-ask 50s ease-in-out infinite both}
+@keyframes pr-crop{0%{opacity:0}74.6%{opacity:0}75.4%{opacity:1}81.2%{opacity:1}82%{opacity:0}100%{opacity:0}}
+html.js .pr-crop{animation:pr-crop 50s ease-in-out infinite both}
+@keyframes pr-tws{0%{opacity:0;transform:translateY(10px);border-color:var(--warm-line);color:var(--warm-ink)}77.6%{opacity:0;transform:translateY(10px);border-color:var(--warm-line);color:var(--warm-ink)}78.4%{opacity:1;transform:none;border-color:var(--warm-line);color:var(--warm-ink)}80.4%{opacity:1;transform:none;border-color:var(--warm-line);color:var(--warm-ink)}81.2%{opacity:1;transform:none;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;border-color:var(--ink);color:var(--ink)}}
+html.js .pr-tws{animation:pr-tws 50s ease-in-out infinite both}
+@keyframes pr-c8{0%{opacity:0;transform:translateY(10px)}78.4%{opacity:0;transform:translateY(10px)}79.2%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-c8{animation:pr-c8 50s ease-in-out infinite both}
+@keyframes pr-ws{0%{opacity:0}80.4%{opacity:0}81.6%{opacity:1}100%{opacity:1}}
+html.js .pr-ws{animation:pr-ws 50s ease-in-out infinite both}
+@keyframes pr-t1{0%{background:#fff;border-color:var(--ink);color:var(--ink)}80.4%{background:#fff;border-color:var(--ink);color:var(--ink)}81.2%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fafafa;border-color:var(--rule);color:var(--muted)}}
+html.js .pr-t1{animation:pr-t1 50s ease-in-out infinite both}
+@keyframes pr-l5{0%{stroke-dashoffset:242}83.2%{stroke-dashoffset:242}86.8%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l5{animation:pr-l5 50s linear infinite both}
+@keyframes pr-l6{0%{stroke-dashoffset:242}87.2%{stroke-dashoffset:242}89.8%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pr-l6{animation:pr-l6 50s linear infinite both}
+@keyframes pr-h4{0%{opacity:0;transform:translateY(10px)}90.4%{opacity:0;transform:translateY(10px)}91.2%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pr-h4{animation:pr-h4 50s ease-in-out infinite both}
+@keyframes fade-pr{0%{opacity:1}97.4%{opacity:1}99.5%{opacity:0}100%{opacity:0}}
+html.js .fade-pr{animation:fade-pr 50s linear infinite}
 
 
 /* teacher demos (te, tp, th): the taught page fills its window, a figure takes what the text leaves.
@@ -1503,68 +1537,262 @@ html.js .th-pb{animation:th-pb 36s linear infinite both}
 html.js .th-wa{animation:th-wa 36s linear infinite both}
 @keyframes fade-th{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
 html.js .fade-th{animation:fade-th 36s linear infinite}
-@keyframes pg-y1{0%{opacity:0;transform:translateY(10px)}4.762%{opacity:0;transform:translateY(10px)}6.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y1{animation:pg-y1 21s ease-in-out infinite both}
-@keyframes pg-g1{0%{opacity:0;transform:translateY(10px)}9.524%{opacity:0;transform:translateY(10px)}11.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g1{animation:pg-g1 21s ease-in-out infinite both}
-@keyframes pg-lb{0%{opacity:0;transform:translateY(10px)}31.429%{opacity:0;transform:translateY(10px)}33.571%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-lb{animation:pg-lb 21s ease-in-out infinite both}
-@keyframes pg-h1{0%{opacity:0;transform:translateY(10px)}35.714%{opacity:0;transform:translateY(10px)}37.857%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h1{animation:pg-h1 21s ease-in-out infinite both}
-@keyframes pg-y2{0%{opacity:0;transform:translateY(10px)}42.857%{opacity:0;transform:translateY(10px)}45%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y2{animation:pg-y2 21s ease-in-out infinite both}
-@keyframes pg-h2{0%{opacity:0;transform:translateY(10px)}47.619%{opacity:0;transform:translateY(10px)}49.762%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h2{animation:pg-h2 21s ease-in-out infinite both}
-@keyframes pg-h3{0%{opacity:0;transform:translateY(10px)}66.667%{opacity:0;transform:translateY(10px)}68.81%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-h3{animation:pg-h3 21s ease-in-out infinite both}
-@keyframes pg-g2{0%{opacity:0;transform:translateY(10px)}71.429%{opacity:0;transform:translateY(10px)}73.571%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g2{animation:pg-g2 21s ease-in-out infinite both}
-@keyframes pg-y3{0%{opacity:0;transform:translateY(10px)}79.762%{opacity:0;transform:translateY(10px)}81.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-y3{animation:pg-y3 21s ease-in-out infinite both}
-@keyframes pg-g3{0%{opacity:0;transform:translateY(10px)}84.524%{opacity:0;transform:translateY(10px)}86.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pg-g3{animation:pg-g3 21s ease-in-out infinite both}
-@keyframes pb-g1{0%{opacity:0;transform:translateY(10px)}5.263%{opacity:0;transform:translateY(10px)}7.632%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g1{animation:pb-g1 19s ease-in-out infinite both}
-@keyframes pb-h1{0%{opacity:0;transform:translateY(10px)}11.842%{opacity:0;transform:translateY(10px)}14.211%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h1{animation:pb-h1 19s ease-in-out infinite both}
-@keyframes pb-h2{0%{opacity:0;transform:translateY(10px)}34.211%{opacity:0;transform:translateY(10px)}36.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h2{animation:pb-h2 19s ease-in-out infinite both}
-@keyframes pb-y1{0%{opacity:0;transform:translateY(10px)}42.105%{opacity:0;transform:translateY(10px)}44.474%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-y1{animation:pb-y1 19s ease-in-out infinite both}
-@keyframes pb-h3{0%{opacity:0;transform:translateY(10px)}47.368%{opacity:0;transform:translateY(10px)}49.737%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-h3{animation:pb-h3 19s ease-in-out infinite both}
-@keyframes pb-g2{0%{opacity:0;transform:translateY(10px)}65.789%{opacity:0;transform:translateY(10px)}68.158%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g2{animation:pb-g2 19s ease-in-out infinite both}
-@keyframes pb-y2{0%{opacity:0;transform:translateY(10px)}78.947%{opacity:0;transform:translateY(10px)}81.316%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-y2{animation:pb-y2 19s ease-in-out infinite both}
-@keyframes pb-g3{0%{opacity:0;transform:translateY(10px)}84.211%{opacity:0;transform:translateY(10px)}86.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pb-g3{animation:pb-g3 19s ease-in-out infinite both}
-@keyframes pgen-g{0%{opacity:0;transform:translateY(10px)}86.111%{opacity:0;transform:translateY(10px)}88.611%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pgen-g{animation:pgen-g 18s ease-in-out infinite both}
-@keyframes pw-l1{0%{opacity:0;transform:translateY(10px)}5%{opacity:0;transform:translateY(10px)}8%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l1{animation:pw-l1 15s ease-in-out infinite both}
-@keyframes pw-y1{0%{opacity:0;transform:translateY(10px)}10%{opacity:0;transform:translateY(10px)}13%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y1{animation:pw-y1 15s ease-in-out infinite both}
-@keyframes pw-g1{0%{opacity:0;transform:translateY(10px)}16.667%{opacity:0;transform:translateY(10px)}19.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g1{animation:pw-g1 15s ease-in-out infinite both}
-@keyframes pw-h1{0%{opacity:0;transform:translateY(10px)}21.667%{opacity:0;transform:translateY(10px)}24.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-h1{animation:pw-h1 15s ease-in-out infinite both}
-@keyframes pw-y2{0%{opacity:0;transform:translateY(10px)}33.333%{opacity:0;transform:translateY(10px)}36.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y2{animation:pw-y2 15s ease-in-out infinite both}
-@keyframes pw-l2{0%{opacity:0;transform:translateY(10px)}45%{opacity:0;transform:translateY(10px)}48%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l2{animation:pw-l2 15s ease-in-out infinite both}
-@keyframes pw-l3{0%{opacity:0;transform:translateY(10px)}51.667%{opacity:0;transform:translateY(10px)}54.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l3{animation:pw-l3 15s ease-in-out infinite both}
-@keyframes pw-g2{0%{opacity:0;transform:translateY(10px)}56.667%{opacity:0;transform:translateY(10px)}59.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g2{animation:pw-g2 15s ease-in-out infinite both}
-@keyframes pw-l4{0%{opacity:0;transform:translateY(10px)}58.333%{opacity:0;transform:translateY(10px)}61.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-l4{animation:pw-l4 15s ease-in-out infinite both}
-@keyframes pw-h2{0%{opacity:0;transform:translateY(10px)}61.667%{opacity:0;transform:translateY(10px)}64.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-h2{animation:pw-h2 15s ease-in-out infinite both}
-@keyframes pw-y3{0%{opacity:0;transform:translateY(10px)}70%{opacity:0;transform:translateY(10px)}73%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-y3{animation:pw-y3 15s ease-in-out infinite both}
-@keyframes pw-g3{0%{opacity:0;transform:translateY(10px)}76.667%{opacity:0;transform:translateY(10px)}79.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pw-g3{animation:pw-g3 15s ease-in-out infinite both}
+@keyframes pg-y1{0%{opacity:0;transform:translateY(10px)}2.381%{opacity:0;transform:translateY(10px)}3.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-y1{animation:pg-y1 42s ease-in-out infinite both}
+@keyframes pg-gw{0%{opacity:0;transform:translateY(10px)}6.19%{opacity:0;transform:translateY(10px)}7.143%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-gw{animation:pg-gw 42s ease-in-out infinite both}
+@keyframes pg-h0{0%{opacity:0;transform:translateY(10px)}7.619%{opacity:0;transform:translateY(10px)}8.571%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-h0{animation:pg-h0 42s ease-in-out infinite both}
+@keyframes pg-yw{0%{opacity:0;transform:translateY(10px)}11.905%{opacity:0;transform:translateY(10px)}12.857%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-yw{animation:pg-yw 42s ease-in-out infinite both}
+@keyframes pg-g1{0%{opacity:0;transform:translateY(10px)}15.238%{opacity:0;transform:translateY(10px)}16.19%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-g1{animation:pg-g1 42s ease-in-out infinite both}
+@keyframes pg-sk{0%{opacity:0;transform:translateY(8px)}16.667%{opacity:0;transform:translateY(8px)}17.619%{opacity:1;transform:none}21.429%{opacity:1;transform:none}22.143%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pg-sk{animation:pg-sk 42s ease-in-out infinite both}
+@keyframes pg-d1{0%{stroke-dashoffset:242}21.429%{stroke-dashoffset:242}23.81%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-d1{animation:pg-d1 42s linear infinite both}
+@keyframes pg-d2{0%{stroke-dashoffset:242}23.333%{stroke-dashoffset:242}25.714%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-d2{animation:pg-d2 42s linear infinite both}
+@keyframes pg-d3{0%{stroke-dashoffset:242}25.238%{stroke-dashoffset:242}28.095%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-d3{animation:pg-d3 42s linear infinite both}
+@keyframes pg-d4{0%{stroke-dashoffset:242}27.619%{stroke-dashoffset:242}28.571%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-d4{animation:pg-d4 42s linear infinite both}
+@keyframes pg-lb{0%{opacity:0}28.571%{opacity:0}29.524%{opacity:1}100%{opacity:1}}
+html.js .pg-lb{animation:pg-lb 42s ease-in-out infinite both}
+@keyframes pg-drw{0%{background:var(--ink);color:#fff;border-color:var(--ink)}31.905%{background:var(--ink);color:#fff;border-color:var(--ink)}32.619%{background:#fff;color:var(--muted);border-color:var(--rule)}37.857%{background:#fff;color:var(--muted);border-color:var(--rule)}38.571%{background:var(--ink);color:#fff;border-color:var(--ink)}100%{background:var(--ink);color:#fff;border-color:var(--ink)}}
+html.js .pg-drw{animation:pg-drw 42s ease-in-out infinite both}
+@keyframes pg-sel{0%{background:#fff;color:var(--muted);border-color:var(--rule)}31.905%{background:#fff;color:var(--muted);border-color:var(--rule)}32.619%{background:var(--ink);color:#fff;border-color:var(--ink)}37.857%{background:var(--ink);color:#fff;border-color:var(--ink)}38.571%{background:#fff;color:var(--muted);border-color:var(--rule)}100%{background:#fff;color:var(--muted);border-color:var(--rule)}}
+html.js .pg-sel{animation:pg-sel 42s ease-in-out infinite both}
+@keyframes pg-frame{0%{opacity:0}32.143%{opacity:0}32.857%{opacity:1}37.619%{opacity:1}38.333%{opacity:0}100%{opacity:0}}
+html.js .pg-frame{animation:pg-frame 42s ease-in-out infinite both}
+@keyframes pg-move{0%{transform:translate(10%,-2%) scale(.8)}33.095%{transform:translate(10%,-2%) scale(.8)}36.905%{transform:none}100%{transform:none}}
+html.js .pg-move{animation:pg-move 42s ease-in-out infinite both}
+@keyframes pg-c1{0%{opacity:0;transform:translateY(10px)}39.048%{opacity:0;transform:translateY(10px)}40%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-c1{animation:pg-c1 42s ease-in-out infinite both}
+@keyframes pg-y2{0%{opacity:0;transform:translateY(10px)}42.857%{opacity:0;transform:translateY(10px)}43.81%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-y2{animation:pg-y2 42s ease-in-out infinite both}
+@keyframes pg-lad{0%{opacity:0}44.286%{opacity:0}45.476%{opacity:1}100%{opacity:1}}
+html.js .pg-lad{animation:pg-lad 42s ease-in-out infinite both}
+@keyframes pg-h1{0%{opacity:0;transform:translateY(10px)}45.714%{opacity:0;transform:translateY(10px)}46.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-h1{animation:pg-h1 42s ease-in-out infinite both}
+@keyframes pg-h2{0%{opacity:0;transform:translateY(10px)}49.524%{opacity:0;transform:translateY(10px)}50.476%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-h2{animation:pg-h2 42s ease-in-out infinite both}
+@keyframes pg-c2{0%{opacity:0;transform:translateY(10px)}50.952%{opacity:0;transform:translateY(10px)}51.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-c2{animation:pg-c2 42s ease-in-out infinite both}
+@keyframes pg-l1{0%{stroke-dashoffset:242}53.81%{stroke-dashoffset:242}58.571%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-l1{animation:pg-l1 42s linear infinite both}
+@keyframes pg-l2{0%{stroke-dashoffset:242}59.524%{stroke-dashoffset:242}63.333%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-l2{animation:pg-l2 42s linear infinite both}
+@keyframes pg-l3{0%{stroke-dashoffset:242}64.286%{stroke-dashoffset:242}66.429%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pg-l3{animation:pg-l3 42s linear infinite both}
+@keyframes pg-h3{0%{opacity:0;transform:translateY(10px)}68.095%{opacity:0;transform:translateY(10px)}69.048%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-h3{animation:pg-h3 42s ease-in-out infinite both}
+@keyframes pg-qm{0%{opacity:0}28.571%{opacity:0}29.524%{opacity:1}68.571%{opacity:1}69.524%{opacity:0}100%{opacity:0}}
+html.js .pg-qm{animation:pg-qm 42s ease-in-out infinite both}
+@keyframes pg-ans{0%{opacity:0}69.048%{opacity:0}70%{opacity:1}100%{opacity:1}}
+html.js .pg-ans{animation:pg-ans 42s ease-in-out infinite both}
+@keyframes pg-c3{0%{opacity:0;transform:translateY(10px)}70.476%{opacity:0;transform:translateY(10px)}71.429%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-c3{animation:pg-c3 42s ease-in-out infinite both}
+@keyframes pg-y3{0%{opacity:0;transform:translateY(10px)}76.19%{opacity:0;transform:translateY(10px)}77.143%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-y3{animation:pg-y3 42s ease-in-out infinite both}
+@keyframes pg-c4{0%{opacity:0;transform:translateY(10px)}80.952%{opacity:0;transform:translateY(10px)}81.905%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-c4{animation:pg-c4 42s ease-in-out infinite both}
+@keyframes pg-y4{0%{opacity:0;transform:translateY(10px)}85.714%{opacity:0;transform:translateY(10px)}86.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-y4{animation:pg-y4 42s ease-in-out infinite both}
+@keyframes pg-tpr{0%{opacity:0;transform:translateY(10px)}88.571%{opacity:0;transform:translateY(10px)}89.524%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pg-tpr{animation:pg-tpr 42s ease-in-out infinite both}
+@keyframes pb-s0{0%{opacity:1}15.556%{opacity:1}16.389%{opacity:0}100%{opacity:0}}
+html.js .pb-s0{animation:pb-s0 36s ease-in-out infinite both}
+@keyframes pb-s1{0%{opacity:0}15.556%{opacity:0}16.389%{opacity:1}86.389%{opacity:1}87.222%{opacity:0}100%{opacity:0}}
+html.js .pb-s1{animation:pb-s1 36s ease-in-out infinite both}
+@keyframes pb-s2{0%{opacity:0}86.389%{opacity:0}87.222%{opacity:1}100%{opacity:1}}
+html.js .pb-s2{animation:pb-s2 36s ease-in-out infinite both}
+@keyframes pb-m1{0%{opacity:0}2.5%{opacity:0}3.472%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m1{animation:pb-m1 36s ease-in-out infinite both}
+@keyframes pb-m2{0%{opacity:0}4.444%{opacity:0}5.417%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m2{animation:pb-m2 36s ease-in-out infinite both}
+@keyframes pb-m3{0%{opacity:0}6.389%{opacity:0}7.361%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m3{animation:pb-m3 36s ease-in-out infinite both}
+@keyframes pb-m4{0%{opacity:0}8.333%{opacity:0}9.306%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m4{animation:pb-m4 36s ease-in-out infinite both}
+@keyframes pb-m5{0%{opacity:0}9.167%{opacity:0}10.139%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m5{animation:pb-m5 36s ease-in-out infinite both}
+@keyframes pb-m6{0%{opacity:0}10%{opacity:0}10.972%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m6{animation:pb-m6 36s ease-in-out infinite both}
+@keyframes pb-m7{0%{opacity:0}11.667%{opacity:0}12.639%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m7{animation:pb-m7 36s ease-in-out infinite both}
+@keyframes pb-m8{0%{opacity:0}13.611%{opacity:0}14.583%{opacity:1}20.556%{opacity:1}21.944%{opacity:.32}100%{opacity:.32}}
+html.js .pb-m8{animation:pb-m8 36s ease-in-out infinite both}
+@keyframes pb-g1{0%{opacity:0;transform:translateY(10px)}17.222%{opacity:0;transform:translateY(10px)}18.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-g1{animation:pb-g1 36s ease-in-out infinite both}
+@keyframes pb-h1{0%{opacity:0;transform:translateY(10px)}22.778%{opacity:0;transform:translateY(10px)}23.889%{opacity:1;transform:none}33.611%{opacity:1;transform:none}34.722%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pb-h1{animation:pb-h1 36s ease-in-out infinite both}
+@keyframes pb-i1{0%{stroke-dashoffset:242}27.222%{stroke-dashoffset:242}29.167%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pb-i1{animation:pb-i1 36s linear infinite both}
+@keyframes pb-i2{0%{stroke-dashoffset:242}30.556%{stroke-dashoffset:242}32.5%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pb-i2{animation:pb-i2 36s linear infinite both}
+@keyframes pb-h2{0%{opacity:0;transform:translateY(10px)}33.611%{opacity:0;transform:translateY(10px)}34.722%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-h2{animation:pb-h2 36s ease-in-out infinite both}
+@keyframes pb-y1{0%{opacity:0;transform:translateY(10px)}37.778%{opacity:0;transform:translateY(10px)}38.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-y1{animation:pb-y1 36s ease-in-out infinite both}
+@keyframes pb-h3{0%{opacity:0;transform:translateY(10px)}41.111%{opacity:0;transform:translateY(10px)}42.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-h3{animation:pb-h3 36s ease-in-out infinite both}
+@keyframes pb-i3{0%{stroke-dashoffset:242}45.556%{stroke-dashoffset:242}48.333%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pb-i3{animation:pb-i3 36s linear infinite both}
+@keyframes pb-g2{0%{opacity:0;transform:translateY(10px)}49.444%{opacity:0;transform:translateY(10px)}50.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-g2{animation:pb-g2 36s ease-in-out infinite both}
+@keyframes pb-y3{0%{opacity:0;transform:translateY(10px)}55%{opacity:0;transform:translateY(10px)}56.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-y3{animation:pb-y3 36s ease-in-out infinite both}
+@keyframes pb-h4{0%{opacity:0;transform:translateY(10px)}58.333%{opacity:0;transform:translateY(10px)}59.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-h4{animation:pb-h4 36s ease-in-out infinite both}
+@keyframes pb-g3{0%{opacity:0;transform:translateY(10px)}60%{opacity:0;transform:translateY(10px)}61.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-g3{animation:pb-g3 36s ease-in-out infinite both}
+@keyframes pb-y2{0%{opacity:0;transform:translateY(10px)}66.111%{opacity:0;transform:translateY(10px)}67.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-y2{animation:pb-y2 36s ease-in-out infinite both}
+@keyframes pb-i4{0%{stroke-dashoffset:242;opacity:1}69.444%{stroke-dashoffset:242;opacity:1}71.111%{stroke-dashoffset:0;opacity:1}79.444%{stroke-dashoffset:0;opacity:1}80.833%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:0;opacity:0}}
+html.js .pb-i4{animation:pb-i4 36s linear infinite both}
+@keyframes pb-g4{0%{opacity:0;transform:translateY(10px)}71.667%{opacity:0;transform:translateY(10px)}72.778%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-g4{animation:pb-g4 36s ease-in-out infinite both}
+@keyframes pb-h5{0%{opacity:0;transform:translateY(10px)}74.444%{opacity:0;transform:translateY(10px)}75.556%{opacity:1;transform:none}84.444%{opacity:1;transform:none}85.556%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pb-h5{animation:pb-h5 36s ease-in-out infinite both}
+@keyframes pb-i5{0%{stroke-dashoffset:242}81.667%{stroke-dashoffset:242}83.611%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pb-i5{animation:pb-i5 36s linear infinite both}
+@keyframes pb-h6{0%{opacity:0;transform:translateY(10px)}84.444%{opacity:0;transform:translateY(10px)}85.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pb-h6{animation:pb-h6 36s ease-in-out infinite both}
+@keyframes pgen-p1{0%{opacity:1}12.778%{opacity:1}13.889%{opacity:0}100%{opacity:0}}
+html.js .pgen-p1{animation:pgen-p1 36s ease-in-out infinite both}
+@keyframes pgen-t1{0%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}12.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}13.889%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
+html.js .pgen-t1{animation:pgen-t1 36s ease-in-out infinite both}
+@keyframes pgen-p2{0%{opacity:0;transform:translateY(10px)}12.778%{opacity:0;transform:translateY(10px)}13.889%{opacity:1;transform:none}36.667%{opacity:1;transform:none}37.778%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pgen-p2{animation:pgen-p2 36s ease-in-out infinite both}
+@keyframes pgen-t2{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}12.778%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}13.889%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}36.667%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}37.778%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
+html.js .pgen-t2{animation:pgen-t2 36s ease-in-out infinite both}
+@keyframes pgen-p3{0%{opacity:0;transform:translateY(10px)}36.667%{opacity:0;transform:translateY(10px)}37.778%{opacity:1;transform:none}57.778%{opacity:1;transform:none}58.889%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pgen-p3{animation:pgen-p3 36s ease-in-out infinite both}
+@keyframes pgen-t3{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}36.667%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}37.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}57.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}58.889%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
+html.js .pgen-t3{animation:pgen-t3 36s ease-in-out infinite both}
+@keyframes pgen-p4{0%{opacity:0;transform:translateY(10px)}57.778%{opacity:0;transform:translateY(10px)}58.889%{opacity:1;transform:none}76.111%{opacity:1;transform:none}77.222%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pgen-p4{animation:pgen-p4 36s ease-in-out infinite both}
+@keyframes pgen-t4{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}57.778%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}58.889%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}76.111%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}77.222%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
+html.js .pgen-t4{animation:pgen-t4 36s ease-in-out infinite both}
+@keyframes pgen-p5{0%{opacity:0;transform:translateY(10px)}76.111%{opacity:0;transform:translateY(10px)}77.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-p5{animation:pgen-p5 36s ease-in-out infinite both}
+@keyframes pgen-t5{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}76.111%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}77.222%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
+html.js .pgen-t5{animation:pgen-t5 36s ease-in-out infinite both}
+@keyframes pgen-m1{0%{opacity:1;border-color:var(--ink)}12.778%{opacity:1;border-color:var(--ink)}13.889%{opacity:1;border-color:var(--rule)}100%{opacity:1;border-color:var(--rule)}}
+html.js .pgen-m1{animation:pgen-m1 36s ease-in-out infinite both}
+@keyframes pgen-m2{0%{opacity:.35;border-color:var(--rule)}12.778%{opacity:.35;border-color:var(--rule)}13.889%{opacity:1;border-color:var(--ink)}36.667%{opacity:1;border-color:var(--ink)}37.778%{opacity:1;border-color:var(--rule)}100%{opacity:1;border-color:var(--rule)}}
+html.js .pgen-m2{animation:pgen-m2 36s ease-in-out infinite both}
+@keyframes pgen-m3{0%{opacity:.35;border-color:var(--rule)}36.667%{opacity:.35;border-color:var(--rule)}37.778%{opacity:1;border-color:var(--ink)}57.778%{opacity:1;border-color:var(--ink)}58.889%{opacity:1;border-color:var(--rule)}100%{opacity:1;border-color:var(--rule)}}
+html.js .pgen-m3{animation:pgen-m3 36s ease-in-out infinite both}
+@keyframes pgen-m4{0%{opacity:.35;border-color:var(--rule)}57.778%{opacity:.35;border-color:var(--rule)}58.889%{opacity:1;border-color:var(--ink)}76.111%{opacity:1;border-color:var(--ink)}77.222%{opacity:1;border-color:var(--rule)}100%{opacity:1;border-color:var(--rule)}}
+html.js .pgen-m4{animation:pgen-m4 36s ease-in-out infinite both}
+@keyframes pgen-m5{0%{opacity:.35;border-color:var(--rule)}76.111%{opacity:.35;border-color:var(--rule)}77.222%{opacity:1;border-color:var(--ink)}100%{opacity:1;border-color:var(--ink)}}
+html.js .pgen-m5{animation:pgen-m5 36s ease-in-out infinite both}
+@keyframes pgen-i1{0%{stroke-dashoffset:242}2.5%{stroke-dashoffset:242}5.278%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i1{animation:pgen-i1 36s linear infinite both}
+@keyframes pgen-h1{0%{opacity:0;transform:translateY(10px)}6.389%{opacity:0;transform:translateY(10px)}7.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h1{animation:pgen-h1 36s ease-in-out infinite both}
+@keyframes pgen-c1{0%{opacity:0;transform:translateY(10px)}10%{opacity:0;transform:translateY(10px)}11.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-c1{animation:pgen-c1 36s ease-in-out infinite both}
+@keyframes pgen-g1{0%{opacity:0;transform:translateY(10px)}14.444%{opacity:0;transform:translateY(10px)}15.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-g1{animation:pgen-g1 36s ease-in-out infinite both}
+@keyframes pgen-i2a{0%{stroke-dashoffset:242}17.222%{stroke-dashoffset:242}22.778%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i2a{animation:pgen-i2a 36s linear infinite both}
+@keyframes pgen-h2a{0%{opacity:0;transform:translateY(10px)}23.611%{opacity:0;transform:translateY(10px)}24.722%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h2a{animation:pgen-h2a 36s ease-in-out infinite both}
+@keyframes pgen-i2b{0%{stroke-dashoffset:242}27.778%{stroke-dashoffset:242}30.278%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i2b{animation:pgen-i2b 36s linear infinite both}
+@keyframes pgen-h2b{0%{opacity:0;transform:translateY(10px)}30.833%{opacity:0;transform:translateY(10px)}31.944%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h2b{animation:pgen-h2b 36s ease-in-out infinite both}
+@keyframes pgen-c2{0%{opacity:0;transform:translateY(10px)}33.889%{opacity:0;transform:translateY(10px)}35%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-c2{animation:pgen-c2 36s ease-in-out infinite both}
+@keyframes pgen-g2{0%{opacity:0;transform:translateY(10px)}38.333%{opacity:0;transform:translateY(10px)}39.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-g2{animation:pgen-g2 36s ease-in-out infinite both}
+@keyframes pgen-h3a{0%{opacity:0;transform:translateY(10px)}40%{opacity:0;transform:translateY(10px)}41.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h3a{animation:pgen-h3a 36s ease-in-out infinite both}
+@keyframes pgen-i3a{0%{stroke-dashoffset:242}43.333%{stroke-dashoffset:242}48.056%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i3a{animation:pgen-i3a 36s linear infinite both}
+@keyframes pgen-i3b{0%{stroke-dashoffset:242}48.333%{stroke-dashoffset:242}50.556%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i3b{animation:pgen-i3b 36s linear infinite both}
+@keyframes pgen-h3b{0%{opacity:0;transform:translateY(10px)}51.111%{opacity:0;transform:translateY(10px)}52.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h3b{animation:pgen-h3b 36s ease-in-out infinite both}
+@keyframes pgen-c3{0%{opacity:0;transform:translateY(10px)}55%{opacity:0;transform:translateY(10px)}56.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-c3{animation:pgen-c3 36s ease-in-out infinite both}
+@keyframes pgen-g3{0%{opacity:0;transform:translateY(10px)}59.444%{opacity:0;transform:translateY(10px)}60.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-g3{animation:pgen-g3 36s ease-in-out infinite both}
+@keyframes pgen-i4{0%{stroke-dashoffset:242}63.333%{stroke-dashoffset:242}68.056%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i4{animation:pgen-i4 36s linear infinite both}
+@keyframes pgen-h4{0%{opacity:0;transform:translateY(10px)}68.889%{opacity:0;transform:translateY(10px)}70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h4{animation:pgen-h4 36s ease-in-out infinite both}
+@keyframes pgen-c4{0%{opacity:0;transform:translateY(10px)}73.333%{opacity:0;transform:translateY(10px)}74.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-c4{animation:pgen-c4 36s ease-in-out infinite both}
+@keyframes pgen-g4{0%{opacity:0;transform:translateY(10px)}77.778%{opacity:0;transform:translateY(10px)}78.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-g4{animation:pgen-g4 36s ease-in-out infinite both}
+@keyframes pgen-i5{0%{stroke-dashoffset:242}80%{stroke-dashoffset:242}82.5%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pgen-i5{animation:pgen-i5 36s linear infinite both}
+@keyframes pgen-h5{0%{opacity:0;transform:translateY(10px)}83.333%{opacity:0;transform:translateY(10px)}84.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-h5{animation:pgen-h5 36s ease-in-out infinite both}
+@keyframes pgen-g{0%{opacity:0;transform:translateY(10px)}86.111%{opacity:0;transform:translateY(10px)}87.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pgen-g{animation:pgen-g 36s ease-in-out infinite both}
+@keyframes pgen-meter{0%{transform:scaleX(0.18)}11.389%{transform:scaleX(0.18)}13.889%{transform:scaleX(0.44)}35.278%{transform:scaleX(0.44)}37.778%{transform:scaleX(0.66)}56.389%{transform:scaleX(0.66)}58.889%{transform:scaleX(0.84)}74.722%{transform:scaleX(0.84)}77.222%{transform:scaleX(0.22)}100%{transform:scaleX(0.22)}}
+html.js .pgen-meter{animation:pgen-meter 36s ease-in-out infinite both}
+@keyframes pw-l1{0%{stroke-dashoffset:242}2.432%{stroke-dashoffset:242}8.108%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-l1{animation:pw-l1 37s linear infinite both}
+@keyframes pw-y1{0%{opacity:0;transform:translateY(10px)}8.649%{opacity:0;transform:translateY(10px)}9.73%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-y1{animation:pw-y1 37s ease-in-out infinite both}
+@keyframes pw-c1{0%{border-color:var(--rule);background:#fff}10.811%{border-color:var(--rule);background:#fff}11.622%{border-color:var(--ink);background:#fff}15.135%{border-color:var(--ink);background:#fff}15.946%{border-color:rgba(204,34,34,0.55);background:rgba(204,34,34,0.04)}48.108%{border-color:rgba(204,34,34,0.55);background:rgba(204,34,34,0.04)}48.919%{border-color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);background:var(--surface)}}
+html.js .pw-c1{animation:pw-c1 37s ease-in-out infinite both}
+@keyframes pw-m0{0%{opacity:0}10.811%{opacity:0}11.622%{opacity:1}15.135%{opacity:1}15.946%{opacity:0}100%{opacity:0}}
+html.js .pw-m0{animation:pw-m0 37s ease-in-out infinite both}
+@keyframes pw-m1{0%{opacity:0}15.135%{opacity:0}15.946%{opacity:1}48.108%{opacity:1}48.919%{opacity:0}100%{opacity:0}}
+html.js .pw-m1{animation:pw-m1 37s ease-in-out infinite both}
+@keyframes pw-v1{0%{opacity:0}48.108%{opacity:0}48.919%{opacity:1}100%{opacity:1}}
+html.js .pw-v1{animation:pw-v1 37s ease-in-out infinite both}
+@keyframes pw-g1{0%{opacity:0;transform:translateY(10px)}17.297%{opacity:0;transform:translateY(10px)}18.378%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-g1{animation:pw-g1 37s ease-in-out infinite both}
+@keyframes pw-h1{0%{opacity:0;transform:translateY(10px)}19.459%{opacity:0;transform:translateY(10px)}20.541%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-h1{animation:pw-h1 37s ease-in-out infinite both}
+@keyframes pw-mk{0%{background-color:rgba(204,34,34,0);color:var(--ink)}23.243%{background-color:rgba(204,34,34,0);color:var(--ink)}24.324%{background-color:rgba(204,34,34,0.1);color:var(--hint)}45.946%{background-color:rgba(204,34,34,0.1);color:var(--hint)}47.027%{background-color:rgba(204,34,34,0);color:var(--ink)}100%{background-color:rgba(204,34,34,0);color:var(--ink)}}
+html.js .pw-mk{animation:pw-mk 37s ease-in-out infinite both}
+@keyframes pw-arc{0%{stroke-dashoffset:242}28.649%{stroke-dashoffset:242}31.892%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-arc{animation:pw-arc 37s linear infinite both}
+@keyframes pw-y2{0%{opacity:0;transform:translateY(10px)}32.432%{opacity:0;transform:translateY(10px)}33.514%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-y2{animation:pw-y2 37s ease-in-out infinite both}
+@keyframes pw-g2{0%{opacity:0;transform:translateY(10px)}36.216%{opacity:0;transform:translateY(10px)}37.297%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-g2{animation:pw-g2 37s ease-in-out infinite both}
+@keyframes pw-st{0%{stroke-dashoffset:242}38.919%{stroke-dashoffset:242}41.081%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-st{animation:pw-st 37s linear infinite both}
+@keyframes pw-l2{0%{stroke-dashoffset:242}41.622%{stroke-dashoffset:242}47.568%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-l2{animation:pw-l2 37s linear infinite both}
+@keyframes pw-l3{0%{stroke-dashoffset:242}50.811%{stroke-dashoffset:242}54.054%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-l3{animation:pw-l3 37s linear infinite both}
+@keyframes pw-c2{0%{border-color:var(--rule);background:#fff}54.595%{border-color:var(--rule);background:#fff}55.405%{border-color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);background:var(--surface)}}
+html.js .pw-c2{animation:pw-c2 37s ease-in-out infinite both}
+@keyframes pw-v2{0%{opacity:0}54.595%{opacity:0}55.405%{opacity:1}100%{opacity:1}}
+html.js .pw-v2{animation:pw-v2 37s ease-in-out infinite both}
+@keyframes pw-h2{0%{opacity:0;transform:translateY(10px)}55.676%{opacity:0;transform:translateY(10px)}56.757%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-h2{animation:pw-h2 37s ease-in-out infinite both}
+@keyframes pw-l4{0%{stroke-dashoffset:242}59.459%{stroke-dashoffset:242}62.162%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-l4{animation:pw-l4 37s linear infinite both}
+@keyframes pw-c3{0%{border-color:var(--rule);background:#fff}62.703%{border-color:var(--rule);background:#fff}63.514%{border-color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);background:var(--surface)}}
+html.js .pw-c3{animation:pw-c3 37s ease-in-out infinite both}
+@keyframes pw-v3{0%{opacity:0}62.703%{opacity:0}63.514%{opacity:1}100%{opacity:1}}
+html.js .pw-v3{animation:pw-v3 37s ease-in-out infinite both}
+@keyframes pw-y3{0%{opacity:0;transform:translateY(10px)}64.865%{opacity:0;transform:translateY(10px)}65.946%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-y3{animation:pw-y3 37s ease-in-out infinite both}
+@keyframes pw-g3{0%{opacity:0;transform:translateY(10px)}68.649%{opacity:0;transform:translateY(10px)}69.73%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-g3{animation:pw-g3 37s ease-in-out infinite both}
+@keyframes pw-y4{0%{opacity:0;transform:translateY(10px)}74.054%{opacity:0;transform:translateY(10px)}75.135%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-y4{animation:pw-y4 37s ease-in-out infinite both}
+@keyframes pw-ref{0%{opacity:1}76.757%{opacity:1}77.838%{opacity:0}100%{opacity:0}}
+html.js .pw-ref{animation:pw-ref 37s ease-in-out infinite both}
+@keyframes pw-next{0%{opacity:0}76.757%{opacity:0}77.838%{opacity:1}100%{opacity:1}}
+html.js .pw-next{animation:pw-next 37s ease-in-out infinite both}
+@keyframes pw-l5{0%{stroke-dashoffset:242}80%{stroke-dashoffset:242}84.865%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pw-l5{animation:pw-l5 37s linear infinite both}
+@keyframes pw-h3{0%{opacity:0;transform:translateY(10px)}85.946%{opacity:0;transform:translateY(10px)}87.027%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pw-h3{animation:pw-h3 37s ease-in-out infinite both}
 @keyframes ps-f{0%{opacity:0;transform:translateY(10px)}4.167%{opacity:0;transform:translateY(10px)}11.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ps-f{animation:ps-f 6s ease-in-out infinite both}
 @keyframes ps-done{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}57.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
@@ -1581,68 +1809,88 @@ html.js .agt-q2{animation:agt-q2 5s ease-in-out infinite both}
 html.js .agt-q3{animation:agt-q3 5s ease-in-out infinite both}
 @keyframes agp-cap{0%{opacity:0;transform:translateY(10px)}20%{opacity:0;transform:translateY(10px)}29%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .agp-cap{animation:agp-cap 5s ease-in-out infinite both}
-@keyframes pg-d1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}19.048%{stroke-dasharray:240 600;stroke-dashoffset:242}23.81%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pg-d1{animation:pg-d1 21s linear infinite both}
-@keyframes pg-d2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}22.619%{stroke-dasharray:240 600;stroke-dashoffset:242}27.381%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pg-d2{animation:pg-d2 21s linear infinite both}
-@keyframes pg-d3{0%{stroke-dasharray:240 600;stroke-dashoffset:242}26.19%{stroke-dasharray:240 600;stroke-dashoffset:242}32.143%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pg-d3{animation:pg-d3 21s linear infinite both}
-@keyframes pg-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}54.762%{stroke-dasharray:240 600;stroke-dashoffset:242}61.905%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pg-i1{animation:pg-i1 21s linear infinite both}
-@keyframes pg-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}63.095%{stroke-dasharray:240 600;stroke-dashoffset:242}66.667%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pg-i2{animation:pg-i2 21s linear infinite both}
-@keyframes pb-i1{0%{stroke-dasharray:240 600;stroke-dashoffset:242}21.053%{stroke-dasharray:240 600;stroke-dashoffset:242}26.316%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pb-i1{animation:pb-i1 19s linear infinite both}
-@keyframes pb-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}28.947%{stroke-dasharray:240 600;stroke-dashoffset:242}34.211%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pb-i2{animation:pb-i2 19s linear infinite both}
-@keyframes pb-i3{0%{stroke-dasharray:240 600;stroke-dashoffset:242}57.895%{stroke-dasharray:240 600;stroke-dashoffset:242}63.158%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pb-i3{animation:pb-i3 19s linear infinite both}
-@keyframes pw-i2{0%{stroke-dasharray:240 600;stroke-dashoffset:242}36.667%{stroke-dasharray:240 600;stroke-dashoffset:242}42%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
-html.js .pw-i2{animation:pw-i2 15s linear infinite both}
-@keyframes pg-sk{0%{opacity:0;transform:translateY(8px)}10.714%{opacity:0;transform:translateY(8px)}12.381%{opacity:1;transform:none}19.048%{opacity:1;transform:none}20.714%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pg-sk{animation:pg-sk 21s ease-in-out infinite both}
-@keyframes pgen-p1{0%{opacity:0;transform:translateY(8px)}2.778%{opacity:0;transform:translateY(8px)}4.722%{opacity:1;transform:none}19.444%{opacity:1;transform:none}21.389%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p1{animation:pgen-p1 18s ease-in-out infinite both}
-@keyframes pgen-p2{0%{opacity:0;transform:translateY(8px)}19.444%{opacity:0;transform:translateY(8px)}21.389%{opacity:1;transform:none}38.889%{opacity:1;transform:none}40.833%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p2{animation:pgen-p2 18s ease-in-out infinite both}
-@keyframes pgen-p3{0%{opacity:0;transform:translateY(8px)}38.889%{opacity:0;transform:translateY(8px)}40.833%{opacity:1;transform:none}58.333%{opacity:1;transform:none}60.278%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p3{animation:pgen-p3 18s ease-in-out infinite both}
-@keyframes pgen-p4{0%{opacity:0;transform:translateY(8px)}58.333%{opacity:0;transform:translateY(8px)}60.278%{opacity:1;transform:none}77.778%{opacity:1;transform:none}79.722%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-p4{animation:pgen-p4 18s ease-in-out infinite both}
-@keyframes pgen-c1{0%{opacity:0;transform:translateY(8px)}13.889%{opacity:0;transform:translateY(8px)}15.833%{opacity:1;transform:none}20.833%{opacity:1;transform:none}22.778%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c1{animation:pgen-c1 18s ease-in-out infinite both}
-@keyframes pgen-c2{0%{opacity:0;transform:translateY(8px)}33.333%{opacity:0;transform:translateY(8px)}35.278%{opacity:1;transform:none}40.278%{opacity:1;transform:none}42.222%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c2{animation:pgen-c2 18s ease-in-out infinite both}
-@keyframes pgen-c3{0%{opacity:0;transform:translateY(8px)}52.778%{opacity:0;transform:translateY(8px)}54.722%{opacity:1;transform:none}59.722%{opacity:1;transform:none}61.667%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c3{animation:pgen-c3 18s ease-in-out infinite both}
-@keyframes pgen-c4{0%{opacity:0;transform:translateY(8px)}72.222%{opacity:0;transform:translateY(8px)}74.167%{opacity:1;transform:none}79.167%{opacity:1;transform:none}81.111%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pgen-c4{animation:pgen-c4 18s ease-in-out infinite both}
-@keyframes pv-s1{0%{opacity:0;transform:translateY(8px)}0%{opacity:0;transform:translateY(8px)}1.458%{opacity:1;transform:none}15%{opacity:1;transform:none}16.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s1{animation:pv-s1 24s ease-in-out infinite both}
-@keyframes pv-h1{0%{opacity:0;transform:translateY(8px)}5.417%{opacity:0;transform:translateY(8px)}6.875%{opacity:1;transform:none}15%{opacity:1;transform:none}16.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h1{animation:pv-h1 24s ease-in-out infinite both}
-@keyframes pv-s2{0%{opacity:0;transform:translateY(8px)}16.667%{opacity:0;transform:translateY(8px)}18.125%{opacity:1;transform:none}31.667%{opacity:1;transform:none}33.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s2{animation:pv-s2 24s ease-in-out infinite both}
-@keyframes pv-h2{0%{opacity:0;transform:translateY(8px)}22.083%{opacity:0;transform:translateY(8px)}23.542%{opacity:1;transform:none}31.667%{opacity:1;transform:none}33.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h2{animation:pv-h2 24s ease-in-out infinite both}
-@keyframes pv-s3{0%{opacity:0;transform:translateY(8px)}33.333%{opacity:0;transform:translateY(8px)}34.792%{opacity:1;transform:none}48.333%{opacity:1;transform:none}49.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s3{animation:pv-s3 24s ease-in-out infinite both}
-@keyframes pv-h3{0%{opacity:0;transform:translateY(8px)}38.75%{opacity:0;transform:translateY(8px)}40.208%{opacity:1;transform:none}48.333%{opacity:1;transform:none}49.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h3{animation:pv-h3 24s ease-in-out infinite both}
-@keyframes pv-s4{0%{opacity:0;transform:translateY(8px)}50%{opacity:0;transform:translateY(8px)}51.458%{opacity:1;transform:none}65%{opacity:1;transform:none}66.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s4{animation:pv-s4 24s ease-in-out infinite both}
-@keyframes pv-h4{0%{opacity:0;transform:translateY(8px)}55.417%{opacity:0;transform:translateY(8px)}56.875%{opacity:1;transform:none}65%{opacity:1;transform:none}66.458%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h4{animation:pv-h4 24s ease-in-out infinite both}
-@keyframes pv-s5{0%{opacity:0;transform:translateY(8px)}66.667%{opacity:0;transform:translateY(8px)}68.125%{opacity:1;transform:none}81.667%{opacity:1;transform:none}83.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s5{animation:pv-s5 24s ease-in-out infinite both}
-@keyframes pv-h5{0%{opacity:0;transform:translateY(8px)}72.083%{opacity:0;transform:translateY(8px)}73.542%{opacity:1;transform:none}81.667%{opacity:1;transform:none}83.125%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h5{animation:pv-h5 24s ease-in-out infinite both}
-@keyframes pv-s6{0%{opacity:0;transform:translateY(8px)}83.333%{opacity:0;transform:translateY(8px)}84.792%{opacity:1;transform:none}98.333%{opacity:1;transform:none}99.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-s6{animation:pv-s6 24s ease-in-out infinite both}
-@keyframes pv-h6{0%{opacity:0;transform:translateY(8px)}88.75%{opacity:0;transform:translateY(8px)}90.208%{opacity:1;transform:none}98.333%{opacity:1;transform:none}99.792%{opacity:0;transform:none}100%{opacity:0}}
-html.js .pv-h6{animation:pv-h6 24s ease-in-out infinite both}
-@keyframes pgen-p5{0%{opacity:0;transform:translateY(10px)}77.778%{opacity:0;transform:translateY(10px)}80.278%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .pgen-p5{animation:pgen-p5 18s ease-in-out infinite both}
+@keyframes pv-s1{0%{opacity:1}14.368%{opacity:1}15.172%{opacity:0}100%{opacity:0}}
+html.js .pv-s1{animation:pv-s1 43.5s ease-in-out infinite both}
+@keyframes pv-a1{0%{stroke-dashoffset:242}2.989%{stroke-dashoffset:242}5.977%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a1{animation:pv-a1 43.5s linear infinite both}
+@keyframes pv-h1{0%{opacity:0;transform:translateY(10px)}6.437%{opacity:0;transform:translateY(10px)}7.356%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h1{animation:pv-h1 43.5s ease-in-out infinite both}
+@keyframes pv-b1{0%{stroke-dashoffset:242}9.655%{stroke-dashoffset:242}12.414%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b1{animation:pv-b1 43.5s linear infinite both}
+@keyframes pv-l1{0%{color:var(--ink);background:var(--surface)}14.943%{color:var(--ink);background:var(--surface)}15.747%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
+html.js .pv-l1{animation:pv-l1 43.5s ease-in-out infinite both}
+@keyframes pv-t1{0%{opacity:0}12.874%{opacity:0}13.563%{opacity:1}100%{opacity:1}}
+html.js .pv-t1{animation:pv-t1 43.5s ease-in-out infinite both}
+@keyframes pv-s2{0%{opacity:0;transform:translateY(8px)}15.057%{opacity:0;transform:translateY(8px)}15.977%{opacity:1;transform:none}29.54%{opacity:1;transform:none}30.345%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pv-s2{animation:pv-s2 43.5s ease-in-out infinite both}
+@keyframes pv-a2{0%{stroke-dashoffset:242}18.161%{stroke-dashoffset:242}21.149%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a2{animation:pv-a2 43.5s linear infinite both}
+@keyframes pv-h2{0%{opacity:0;transform:translateY(10px)}21.609%{opacity:0;transform:translateY(10px)}22.529%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h2{animation:pv-h2 43.5s ease-in-out infinite both}
+@keyframes pv-b2{0%{stroke-dashoffset:242}24.828%{stroke-dashoffset:242}27.586%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b2{animation:pv-b2 43.5s linear infinite both}
+@keyframes pv-l2{0%{color:var(--faint);background:rgba(245,245,244,0)}14.943%{color:var(--faint);background:rgba(245,245,244,0)}15.747%{color:var(--ink);background:var(--surface)}30.115%{color:var(--ink);background:var(--surface)}30.92%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
+html.js .pv-l2{animation:pv-l2 43.5s ease-in-out infinite both}
+@keyframes pv-t2{0%{opacity:0}28.046%{opacity:0}28.736%{opacity:1}100%{opacity:1}}
+html.js .pv-t2{animation:pv-t2 43.5s ease-in-out infinite both}
+@keyframes pv-s3{0%{opacity:0;transform:translateY(8px)}30.23%{opacity:0;transform:translateY(8px)}31.149%{opacity:1;transform:none}44.713%{opacity:1;transform:none}45.517%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pv-s3{animation:pv-s3 43.5s ease-in-out infinite both}
+@keyframes pv-a3{0%{stroke-dashoffset:242}33.333%{stroke-dashoffset:242}36.322%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a3{animation:pv-a3 43.5s linear infinite both}
+@keyframes pv-h3{0%{opacity:0;transform:translateY(10px)}36.782%{opacity:0;transform:translateY(10px)}37.701%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h3{animation:pv-h3 43.5s ease-in-out infinite both}
+@keyframes pv-b3{0%{stroke-dashoffset:242}40%{stroke-dashoffset:242}42.759%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b3{animation:pv-b3 43.5s linear infinite both}
+@keyframes pv-l3{0%{color:var(--faint);background:rgba(245,245,244,0)}30.115%{color:var(--faint);background:rgba(245,245,244,0)}30.92%{color:var(--ink);background:var(--surface)}45.287%{color:var(--ink);background:var(--surface)}46.092%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
+html.js .pv-l3{animation:pv-l3 43.5s ease-in-out infinite both}
+@keyframes pv-t3{0%{opacity:0}43.218%{opacity:0}43.908%{opacity:1}100%{opacity:1}}
+html.js .pv-t3{animation:pv-t3 43.5s ease-in-out infinite both}
+@keyframes pv-s4{0%{opacity:0;transform:translateY(8px)}45.402%{opacity:0;transform:translateY(8px)}46.322%{opacity:1;transform:none}59.885%{opacity:1;transform:none}60.69%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pv-s4{animation:pv-s4 43.5s ease-in-out infinite both}
+@keyframes pv-a4{0%{stroke-dashoffset:242}48.506%{stroke-dashoffset:242}51.494%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a4{animation:pv-a4 43.5s linear infinite both}
+@keyframes pv-h4{0%{opacity:0;transform:translateY(10px)}51.954%{opacity:0;transform:translateY(10px)}52.874%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h4{animation:pv-h4 43.5s ease-in-out infinite both}
+@keyframes pv-b4{0%{stroke-dashoffset:242}55.172%{stroke-dashoffset:242}57.931%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b4{animation:pv-b4 43.5s linear infinite both}
+@keyframes pv-l4{0%{color:var(--faint);background:rgba(245,245,244,0)}45.287%{color:var(--faint);background:rgba(245,245,244,0)}46.092%{color:var(--ink);background:var(--surface)}60.46%{color:var(--ink);background:var(--surface)}61.264%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
+html.js .pv-l4{animation:pv-l4 43.5s ease-in-out infinite both}
+@keyframes pv-t4{0%{opacity:0}58.391%{opacity:0}59.08%{opacity:1}100%{opacity:1}}
+html.js .pv-t4{animation:pv-t4 43.5s ease-in-out infinite both}
+@keyframes pv-s5{0%{opacity:0;transform:translateY(8px)}60.575%{opacity:0;transform:translateY(8px)}61.494%{opacity:1;transform:none}75.057%{opacity:1;transform:none}75.862%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+html.js .pv-s5{animation:pv-s5 43.5s ease-in-out infinite both}
+@keyframes pv-a5{0%{stroke-dashoffset:242}63.678%{stroke-dashoffset:242}66.667%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a5{animation:pv-a5 43.5s linear infinite both}
+@keyframes pv-h5{0%{opacity:0;transform:translateY(10px)}67.126%{opacity:0;transform:translateY(10px)}68.046%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h5{animation:pv-h5 43.5s ease-in-out infinite both}
+@keyframes pv-b5{0%{stroke-dashoffset:242}70.345%{stroke-dashoffset:242}73.103%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b5{animation:pv-b5 43.5s linear infinite both}
+@keyframes pv-l5{0%{color:var(--faint);background:rgba(245,245,244,0)}60.46%{color:var(--faint);background:rgba(245,245,244,0)}61.264%{color:var(--ink);background:var(--surface)}75.632%{color:var(--ink);background:var(--surface)}76.437%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
+html.js .pv-l5{animation:pv-l5 43.5s ease-in-out infinite both}
+@keyframes pv-t5{0%{opacity:0}73.563%{opacity:0}74.253%{opacity:1}100%{opacity:1}}
+html.js .pv-t5{animation:pv-t5 43.5s ease-in-out infinite both}
+@keyframes pv-s6{0%{opacity:0;transform:translateY(8px)}75.747%{opacity:0;transform:translateY(8px)}76.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-s6{animation:pv-s6 43.5s ease-in-out infinite both}
+@keyframes pv-a6{0%{stroke-dashoffset:242}78.851%{stroke-dashoffset:242}81.839%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-a6{animation:pv-a6 43.5s linear infinite both}
+@keyframes pv-h6{0%{opacity:0;transform:translateY(10px)}82.299%{opacity:0;transform:translateY(10px)}83.218%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-h6{animation:pv-h6 43.5s ease-in-out infinite both}
+@keyframes pv-b6{0%{stroke-dashoffset:242}85.517%{stroke-dashoffset:242}88.276%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .pv-b6{animation:pv-b6 43.5s linear infinite both}
+@keyframes pv-l6{0%{color:var(--faint);background:rgba(245,245,244,0)}75.632%{color:var(--faint);background:rgba(245,245,244,0)}76.437%{color:var(--ink);background:var(--surface)}100%{color:var(--ink);background:var(--surface)}}
+html.js .pv-l6{animation:pv-l6 43.5s ease-in-out infinite both}
+@keyframes pv-t6{0%{opacity:0}88.736%{opacity:0}89.425%{opacity:1}100%{opacity:1}}
+html.js .pv-t6{animation:pv-t6 43.5s ease-in-out infinite both}
+@keyframes pv-f1{0%{opacity:0;transform:translateY(10px)}88.276%{opacity:0;transform:translateY(10px)}89.195%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-f1{animation:pv-f1 43.5s ease-in-out infinite both}
+@keyframes pv-f2{0%{opacity:0;transform:translateY(10px)}88.276%{opacity:0;transform:translateY(10px)}89.195%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .pv-f2{animation:pv-f2 43.5s ease-in-out infinite both}
+@keyframes pv-p1{0%{color:var(--ink);border-color:var(--ink);background:var(--surface)}2.759%{color:var(--ink);border-color:var(--ink);background:var(--surface)}3.448%{color:var(--faint);border-color:var(--rule);background:#fff}15.057%{color:var(--faint);border-color:var(--rule);background:#fff}15.747%{color:var(--ink);border-color:var(--ink);background:var(--surface)}17.931%{color:var(--ink);border-color:var(--ink);background:var(--surface)}18.621%{color:var(--faint);border-color:var(--rule);background:#fff}30.23%{color:var(--faint);border-color:var(--rule);background:#fff}30.92%{color:var(--ink);border-color:var(--ink);background:var(--surface)}33.103%{color:var(--ink);border-color:var(--ink);background:var(--surface)}33.793%{color:var(--faint);border-color:var(--rule);background:#fff}45.402%{color:var(--faint);border-color:var(--rule);background:#fff}46.092%{color:var(--ink);border-color:var(--ink);background:var(--surface)}48.276%{color:var(--ink);border-color:var(--ink);background:var(--surface)}48.966%{color:var(--faint);border-color:var(--rule);background:#fff}60.575%{color:var(--faint);border-color:var(--rule);background:#fff}61.264%{color:var(--ink);border-color:var(--ink);background:var(--surface)}63.448%{color:var(--ink);border-color:var(--ink);background:var(--surface)}64.138%{color:var(--faint);border-color:var(--rule);background:#fff}75.747%{color:var(--faint);border-color:var(--rule);background:#fff}76.437%{color:var(--ink);border-color:var(--ink);background:var(--surface)}78.621%{color:var(--ink);border-color:var(--ink);background:var(--surface)}79.31%{color:var(--faint);border-color:var(--rule);background:#fff}100%{color:var(--faint);border-color:var(--rule);background:#fff}}
+html.js .pv-p1{animation:pv-p1 43.5s ease-in-out infinite both}
+@keyframes pv-p2{0%{color:var(--faint);border-color:var(--rule);background:#fff}2.759%{color:var(--faint);border-color:var(--rule);background:#fff}3.448%{color:var(--ink);border-color:var(--ink);background:var(--surface)}6.207%{color:var(--ink);border-color:var(--ink);background:var(--surface)}6.897%{color:var(--faint);border-color:var(--rule);background:#fff}9.425%{color:var(--faint);border-color:var(--rule);background:#fff}10.115%{color:var(--ink);border-color:var(--ink);background:var(--surface)}14.483%{color:var(--ink);border-color:var(--ink);background:var(--surface)}15.057%{color:var(--faint);border-color:var(--rule);background:#fff}17.931%{color:var(--faint);border-color:var(--rule);background:#fff}18.621%{color:var(--ink);border-color:var(--ink);background:var(--surface)}21.379%{color:var(--ink);border-color:var(--ink);background:var(--surface)}22.069%{color:var(--faint);border-color:var(--rule);background:#fff}24.598%{color:var(--faint);border-color:var(--rule);background:#fff}25.287%{color:var(--ink);border-color:var(--ink);background:var(--surface)}29.655%{color:var(--ink);border-color:var(--ink);background:var(--surface)}30.23%{color:var(--faint);border-color:var(--rule);background:#fff}33.103%{color:var(--faint);border-color:var(--rule);background:#fff}33.793%{color:var(--ink);border-color:var(--ink);background:var(--surface)}36.552%{color:var(--ink);border-color:var(--ink);background:var(--surface)}37.241%{color:var(--faint);border-color:var(--rule);background:#fff}39.77%{color:var(--faint);border-color:var(--rule);background:#fff}40.46%{color:var(--ink);border-color:var(--ink);background:var(--surface)}44.828%{color:var(--ink);border-color:var(--ink);background:var(--surface)}45.402%{color:var(--faint);border-color:var(--rule);background:#fff}48.276%{color:var(--faint);border-color:var(--rule);background:#fff}48.966%{color:var(--ink);border-color:var(--ink);background:var(--surface)}51.724%{color:var(--ink);border-color:var(--ink);background:var(--surface)}52.414%{color:var(--faint);border-color:var(--rule);background:#fff}54.943%{color:var(--faint);border-color:var(--rule);background:#fff}55.632%{color:var(--ink);border-color:var(--ink);background:var(--surface)}60%{color:var(--ink);border-color:var(--ink);background:var(--surface)}60.575%{color:var(--faint);border-color:var(--rule);background:#fff}63.448%{color:var(--faint);border-color:var(--rule);background:#fff}64.138%{color:var(--ink);border-color:var(--ink);background:var(--surface)}66.897%{color:var(--ink);border-color:var(--ink);background:var(--surface)}67.586%{color:var(--faint);border-color:var(--rule);background:#fff}70.115%{color:var(--faint);border-color:var(--rule);background:#fff}70.805%{color:var(--ink);border-color:var(--ink);background:var(--surface)}75.172%{color:var(--ink);border-color:var(--ink);background:var(--surface)}75.747%{color:var(--faint);border-color:var(--rule);background:#fff}78.621%{color:var(--faint);border-color:var(--rule);background:#fff}79.31%{color:var(--ink);border-color:var(--ink);background:var(--surface)}82.069%{color:var(--ink);border-color:var(--ink);background:var(--surface)}82.759%{color:var(--faint);border-color:var(--rule);background:#fff}85.287%{color:var(--faint);border-color:var(--rule);background:#fff}85.977%{color:var(--ink);border-color:var(--ink);background:var(--surface)}100%{color:var(--ink);border-color:var(--ink);background:var(--surface)}}
+html.js .pv-p2{animation:pv-p2 43.5s ease-in-out infinite both}
+@keyframes pv-p3{0%{color:var(--faint);border-color:var(--rule);background:#fff}6.207%{color:var(--faint);border-color:var(--rule);background:#fff}6.897%{color:var(--ink);border-color:var(--ink);background:var(--surface)}9.425%{color:var(--ink);border-color:var(--ink);background:var(--surface)}10.115%{color:var(--faint);border-color:var(--rule);background:#fff}21.379%{color:var(--faint);border-color:var(--rule);background:#fff}22.069%{color:var(--ink);border-color:var(--ink);background:var(--surface)}24.598%{color:var(--ink);border-color:var(--ink);background:var(--surface)}25.287%{color:var(--faint);border-color:var(--rule);background:#fff}36.552%{color:var(--faint);border-color:var(--rule);background:#fff}37.241%{color:var(--ink);border-color:var(--ink);background:var(--surface)}39.77%{color:var(--ink);border-color:var(--ink);background:var(--surface)}40.46%{color:var(--faint);border-color:var(--rule);background:#fff}51.724%{color:var(--faint);border-color:var(--rule);background:#fff}52.414%{color:var(--ink);border-color:var(--ink);background:var(--surface)}54.943%{color:var(--ink);border-color:var(--ink);background:var(--surface)}55.632%{color:var(--faint);border-color:var(--rule);background:#fff}66.897%{color:var(--faint);border-color:var(--rule);background:#fff}67.586%{color:var(--ink);border-color:var(--ink);background:var(--surface)}70.115%{color:var(--ink);border-color:var(--ink);background:var(--surface)}70.805%{color:var(--faint);border-color:var(--rule);background:#fff}82.069%{color:var(--faint);border-color:var(--rule);background:#fff}82.759%{color:var(--ink);border-color:var(--ink);background:var(--surface)}85.287%{color:var(--ink);border-color:var(--ink);background:var(--surface)}85.977%{color:var(--faint);border-color:var(--rule);background:#fff}100%{color:var(--faint);border-color:var(--rule);background:#fff}}
+html.js .pv-p3{animation:pv-p3 43.5s ease-in-out infinite both}
 @keyframes tm-r1{0%{opacity:0;transform:translateY(10px)}10.526%{opacity:0;transform:translateY(10px)}11.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .tm-r1{animation:tm-r1 38s ease-in-out infinite both}
 @keyframes tm-r2{0%{opacity:0;transform:translateY(10px)}23.684%{opacity:0;transform:translateY(10px)}24.737%{opacity:1;transform:none}100%{opacity:1;transform:none}}
@@ -1679,14 +1927,6 @@ html.js .tm-c3{animation:tm-c3 38s ease-in-out infinite both}
 html.js .mday.tonight{animation:tm-tn 38s ease-in-out infinite both}
 @keyframes fade-tm{0%{opacity:1}96.579%{opacity:1}99.342%{opacity:0}100%{opacity:0}}
 html.js .fade-tm{animation:fade-tm 38s linear infinite}
-@keyframes fade-pg{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pg{animation:fade-pg 21s linear infinite}
-@keyframes fade-pb{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pb{animation:fade-pb 19s linear infinite}
-@keyframes fade-pgen{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pgen{animation:fade-pgen 18s linear infinite}
-@keyframes fade-pw{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pw{animation:fade-pw 15s linear infinite}
 /* ask gausyn, one gesture: the worksheet and the workspace share one room on every screen */
 .fade-ag .bstate { position: absolute; inset: 0; }
 .fade-ag .bstate + .bstate { border-top: 0; }
@@ -2200,8 +2440,16 @@ html.js .tl-k4{animation:tl-k4 40s ease-in-out infinite both}
 html.js .tl-k5{animation:tl-k5 40s ease-in-out infinite both}
 @keyframes fade-tl{0%{opacity:1}96.75%{opacity:1}99.375%{opacity:0}100%{opacity:0}}
 html.js .fade-tl{animation:fade-tl 40s linear infinite}
-@keyframes fade-pv{0%{opacity:1}92%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
-html.js .fade-pv{animation:fade-pv 24s linear infinite}
+@keyframes fade-pg{0%{opacity:1}96.905%{opacity:1}99.405%{opacity:0}100%{opacity:0}}
+html.js .fade-pg{animation:fade-pg 42s linear infinite}
+@keyframes fade-pb{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
+html.js .fade-pb{animation:fade-pb 36s linear infinite}
+@keyframes fade-pgen{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
+html.js .fade-pgen{animation:fade-pgen 36s linear infinite}
+@keyframes fade-pw{0%{opacity:1}96.486%{opacity:1}99.324%{opacity:0}100%{opacity:0}}
+html.js .fade-pw{animation:fade-pw 37s linear infinite}
+@keyframes fade-pv{0%{opacity:1}97.011%{opacity:1}99.425%{opacity:0}100%{opacity:0}}
+html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
 
 /* === mode pages: structure ============================================== */
 
@@ -2367,8 +2615,6 @@ html.js .fade-pv{animation:fade-pv 24s linear infinite}
 .dial .kk { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
 .dial .m { height: 3px; background: var(--rule); border-radius: 999px; position: relative; overflow: hidden; }
 .dial .m i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: var(--ink); width: 18%; }
-@keyframes pgen-meter{0%,12%{width:18%}20%{width:44%}37%{width:44%}42%{width:66%}56%{width:66%}61%{width:84%}76%{width:84%}81%{width:22%}100%{width:22%}}
-html.js .pgen-meter{animation:pgen-meter 18s ease-in-out infinite both}
 
 /* showcase: many shots share one cell, one visible at a time */
 .showcase { display: grid; padding: clamp(20px, 2.6vw, 34px); min-height: clamp(300px, 33vw, 400px); }
@@ -2392,6 +2638,255 @@ html.js .pgen-meter{animation:pgen-meter 18s ease-in-out infinite both}
 .pen { position: relative; display: inline-block; font-family: var(--mono); font-size: clamp(14px, 1.25vw, 18px); color: #3b6fd4; letter-spacing: 0.01em; }
 .strike { position: absolute; left: -5px; right: -5px; top: 44%; height: 14px; overflow: visible; }
 .strike path { fill: none; stroke: #3b6fd4; stroke-width: 2.4; stroke-linecap: round; }
+/* pr: the board is a grid, so every hint stands beside the line it belongs to */
+.sheet.pr-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto auto repeat(3, minmax(0, 1fr)) auto; column-gap: clamp(24px, 2.6vw, 36px); row-gap: 4px; }
+.pr-sheet .q { grid-column: 1; max-width: none; font-size: clamp(15px, 1.25vw, 18px); }
+.pr-mark { padding: 0 3px; border-radius: 4px; }
+.pr-state { grid-column: 1; display: grid; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+.pr-state span { grid-area: 1 / 1; }
+.pr-s3 { color: var(--hint); }
+.pr-gen { grid-area: 1 / 1; align-self: center; font-size: 13px; color: var(--faint); }
+.pr-ink, .pr-wsink, .pr-cink { position: static; width: 100%; height: 100%; min-height: 0; }
+.pr-ink { grid-column: 1; grid-row: 3 / span 3; }
+.pr-hand path { stroke-dashoffset: inherit; }
+.pr-rule { stroke: rgba(10,10,10,0.1); stroke-width: 1; }
+.pr-sheet .hint, .pr-ws .hint { position: relative; grid-column: 2; align-self: center; max-width: none; }
+.pr-sheet .hint::before, .pr-ws .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pr-h1 { grid-row: 1 / span 2; }
+.pr-h2 { grid-row: 3; }
+.pr-h3 { grid-row: 4; }
+.pr-p1 { position: relative; grid-column: 1 / -1; grid-row: 6; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 200px); column-gap: 18px; align-items: center; min-height: 112px; margin-top: 8px; }
+.pr-p1 .pq, .pr-ws .pq { position: static; left: auto; transform: none; width: auto; }
+.pr-p1 .pq { grid-area: 1 / 1; }
+.pr-cink { grid-area: 1 / 2; height: 60px; }
+.pr-p1 .crop { position: absolute; inset: -6px -8px; width: auto; height: auto; margin: 0; }
+.pr-ws { position: absolute; inset: 0; z-index: 4; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto minmax(0, 1fr); column-gap: clamp(24px, 2.6vw, 36px); row-gap: 14px; padding: clamp(20px, 2.6vw, 34px) clamp(20px, 2.6vw, 34px) clamp(20px, 2.6vw, 34px) clamp(140px, 13vw, 160px); background: inherit; }
+.pr-ws .pq { grid-column: 1 / -1; }
+.pr-wsink { grid-column: 1; grid-row: 2; }
+.pr-h4 { grid-row: 2; }
+@media (max-width: 900px) {
+  .sheet.pr-sheet { padding: 14px 16px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr) auto; row-gap: 6px; }
+  .pr-sheet .q { font-size: 14px; }
+  .pr-ink { grid-row: 3; margin: 0; width: 100%; height: 100%; }
+  .pr-sheet .hint, .pr-ws .hint { grid-column: 1; align-self: stretch; margin-top: 0; background: #fff; }
+  .pr-sheet .hint::before, .pr-ws .hint::before { display: none; }
+  .pr-h1, .pr-h2, .pr-h3 { grid-row: 4; }
+  .pr-p1 { position: absolute; inset: 0; z-index: 3; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; row-gap: 8px; margin: 0; padding: 14px 16px; background: linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px) 0 0 / 26px 26px, linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px) 0 0 / 26px 26px, #fff; }
+  .pr-p1 .pq { margin: 0; }
+  .pr-gen { padding: 12px 0; }
+  .pr-cink { grid-area: 2 / 1; width: 100%; margin: 0; }
+  .pr-p1 .crop { inset: 8px 10px auto; height: 132px; }
+  .pr-ws { padding: 14px 16px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; row-gap: 8px; }
+  .pr-ws .pq { margin: 0; }
+  .pr-wsink { margin: 0; width: 100%; height: 100%; }
+  .pr-h4 { grid-row: 3; }
+}
+/* pg: the sketch stands beside the problem, with the hints beside it */
+.sheet.pg-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto repeat(3, minmax(0, 1fr)) minmax(0, 132px); column-gap: clamp(24px, 2.6vw, 36px); row-gap: 8px; }
+.pg-sheet .q { grid-column: 1 / -1; max-width: 62ch; font-size: clamp(14.5px, 1.2vw, 17px); }
+.pg-dg { position: relative; grid-column: 1; grid-row: 2 / span 3; min-width: 0; min-height: 0; }
+.pg-move { position: absolute; inset: 0; }
+.pg-dg .diagram { position: absolute; inset: 0; display: block; width: 100%; height: 100%; margin: 0; }
+.pg-dg .diagram text { font-size: 12px; }
+.diagram .pg-lad { stroke: var(--hint); stroke-width: 4; stroke-dasharray: none; stroke-dashoffset: 0; }
+.pg-dg .sketch { position: absolute; left: 50%; top: 50%; margin: -17px 0 0 -58px; z-index: 2; }
+.pg-frame { position: absolute; inset: -6px; border: 1px dashed var(--cool-ink); border-radius: 4px; }
+.pg-frame span { position: absolute; left: 0; bottom: 100%; margin-bottom: 5px; font-size: 11.5px; color: var(--cool-ink); white-space: nowrap; }
+.pg-frame i { position: absolute; width: 9px; height: 9px; background: #fff; border: 1.5px solid var(--cool-ink); border-radius: 2px; }
+.pg-frame i:nth-of-type(1) { left: -5px; top: -5px; }
+.pg-frame i:nth-of-type(2) { right: -5px; top: -5px; }
+.pg-frame i:nth-of-type(3) { left: -5px; bottom: -5px; }
+.pg-frame i:nth-of-type(4) { right: -5px; bottom: -5px; }
+.pg-sheet .hint { position: relative; grid-column: 2; align-self: center; max-width: none; }
+.pg-sheet .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pg-h0 { grid-row: 2; }
+.pg-h1 { grid-row: 3; }
+.pg-h2 { grid-row: 4; }
+.pg-h3 { grid-row: 5; }
+.pg-hand { position: static; grid-column: 1; grid-row: 5; width: 100%; height: 100%; min-height: 0; }
+.pg-hand path { stroke-dashoffset: inherit; }
+@media (max-width: 900px) {
+  .sheet.pg-sheet { padding: 14px 16px; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; column-gap: 10px; row-gap: 6px; }
+  .pg-sheet .q { font-size: 13.5px; line-height: 1.5; }
+  .pg-dg { grid-row: 2; }
+  .pg-dg .diagram { position: absolute; margin: 0; width: 100%; height: 100%; }
+  .pg-dg .diagram text { font-size: 20px; }
+  .pg-dg .sketch { display: inline-flex; position: absolute; margin: -17px 0 0 -58px; }
+  .pg-frame { inset: -3px; }
+  .pg-frame span { display: none; }
+  .pg-hand { grid-column: 2; grid-row: 2; margin: 0; width: 100%; height: 100%; }
+  .pg-sheet .hint { grid-column: 1 / -1; grid-row: 3; align-self: stretch; margin-top: 0; background: #fff; }
+  .pg-sheet .hint::before { display: none; }
+}
+/* pw: your lines down the page, each hint beside its line, the reference along the foot */
+.sheet.pw-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto repeat(4, minmax(0, 1fr)) auto; column-gap: clamp(24px, 2.6vw, 36px); row-gap: 2px; }
+.pw-sheet .q { grid-column: 1; max-width: none; margin-top: 8px; font-size: clamp(15px, 1.25vw, 18px); }
+.pw-br { position: relative; display: inline-block; }
+.pw-mk { padding: 0 3px; border-radius: 4px; }
+.pw-arcs.ink { position: absolute; left: 3px; right: 6px; bottom: 100%; width: calc(100% - 9px); height: 13px; margin: 0 0 -3px; overflow: visible; }
+.pw-arcs path { stroke-width: 1.7; vector-effect: non-scaling-stroke; }
+.pw-hand path { stroke-dashoffset: inherit; }
+.pw-ink { position: static; grid-column: 1; grid-row: 2 / span 4; width: 100%; height: 100%; min-height: 0; margin-top: 4px; }
+.pw-sheet .hint { position: relative; grid-column: 2; align-self: center; max-width: none; }
+.pw-sheet .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pw-h1 { grid-row: 2; }
+.pw-h2 { grid-row: 4; }
+.pw-h3 { grid-row: 5; }
+.pw-panel { grid-column: 1 / -1; grid-row: 6; display: grid; min-height: 108px; margin-top: 8px; }
+.pw-ref, .pw-next { grid-area: 1 / 1; min-width: 0; }
+.pw-ref { display: flex; flex-direction: column; justify-content: center; gap: 9px; padding: 11px 14px; background: #fff; border: 1px solid var(--rule); border-radius: 10px; }
+.pw-t { font-size: 11.5px; color: var(--muted); }
+.pw-cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.pw-cell { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 40px; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 8px; font-size: 11.5px; color: var(--muted); }
+.pw-cell b { font-weight: 400; white-space: nowrap; }
+.pw-cell > i { display: block; height: 8px; border-radius: 3px; background: repeating-linear-gradient(90deg, #e4e4e2 0 9px, #efefed 9px 12px); }
+.pw-mark { display: grid; justify-items: end; }
+.pw-mark em { grid-area: 1 / 1; font-style: normal; white-space: nowrap; }
+.pw-m1 { color: var(--hint); }
+.pw-v1, .pw-v2, .pw-v3 { color: var(--ink); }
+.pw-next { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; align-items: center; }
+.pw-next .pq { position: static; left: auto; transform: none; width: auto; margin: 0; }
+.pw-nink { position: static; width: 100%; height: 60px; margin: 0; }
+@media (max-width: 900px) {
+  .sheet.pw-sheet { padding: 14px 16px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto auto; row-gap: 6px; }
+  .pw-sheet .q { margin-top: 6px; font-size: 14px; }
+  .pw-ink { grid-row: 2; margin: 0; width: 100%; height: 100%; }
+  .pw-sheet .hint { grid-column: 1; grid-row: 3; align-self: stretch; margin-top: 0; background: #fff; }
+  .pw-sheet .hint::before { display: none; }
+  .pw-panel { grid-row: 4; min-height: 74px; margin: 0; }
+  .pw-ref { padding: 7px 9px; gap: 5px; }
+  .pw-t { display: none; }
+  .pw-cells { gap: 5px; }
+  .pw-cell { grid-template-columns: minmax(0, 1fr) auto; gap: 3px; min-height: 58px; padding: 5px 7px; font-size: 11px; }
+  .pw-cell > i { grid-column: 1 / -1; grid-row: 2; }
+  .pw-next { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
+  .pw-next .pq { padding: 6px 10px 7px; }
+  .pw-nink { height: 34px; }
+}
+/* pb: a worksheet whose every question, blank and option has a known place */
+.sheet.pb-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto auto auto auto minmax(0, 1fr); column-gap: clamp(24px, 2.6vw, 36px); row-gap: clamp(14px, 1.7vw, 24px); align-items: start; }
+.pb-head { grid-column: 1 / -1; display: grid; font-size: 12.5px; color: var(--muted); }
+.pb-head span { grid-area: 1 / 1; }
+.pb-q { position: relative; grid-column: 1; max-width: none; font-size: clamp(14px, 1.15vw, 16.5px); line-height: 1.7; }
+.pb-q2 { grid-row: 2; }
+.pb-q3 { grid-row: 3; }
+.pb-q4 { grid-row: 4; }
+.pb-q .n { margin-right: 8px; }
+.pb-q .opts { position: relative; margin-top: 8px; gap: clamp(12px, 1.5vw, 22px); font-size: clamp(13px, 1.05vw, 15px); }
+.pb-q .bl { position: relative; min-width: 42px; margin: 0 6px; }
+.pb-ans { margin-top: 8px; }
+.pb-b { position: relative; }
+.pb-hand path { stroke-dashoffset: inherit; }
+.pb-q .bl .ink { position: absolute; left: 50%; bottom: 0; width: 26px; height: 35px; margin: 0 0 0 -13px; overflow: visible; }
+.pb-ring.ink { position: absolute; left: -9px; top: -6px; width: calc(100% + 18px); height: calc(100% + 12px); margin: 0; overflow: visible; }
+.pb-ring path { stroke-width: 2.4; vector-effect: non-scaling-stroke; stroke-dashoffset: 242; }
+.pb-box { position: absolute; inset: -6px -8px; border: 1px dashed var(--cool-ink); border-radius: 7px; background: rgba(74,95,134,0.05); pointer-events: none; }
+.bl .pb-box { inset: -3px -3px -4px; }
+.opts .pb-box { inset: -5px -8px; }
+.pb-box u { position: absolute; right: 7px; top: -9px; padding: 0 5px; font-size: 11px; line-height: 16px; text-decoration: none; color: var(--cool-ink); background: #fff; }
+.pb-sheet .hint { position: relative; grid-column: 2; align-self: center; max-width: none; }
+.pb-sheet .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pb-h1, .pb-h2 { grid-row: 2; }
+.pb-h3 { grid-row: 3; }
+.pb-h5, .pb-h6 { grid-row: 4; }
+.pb-room { position: relative; grid-column: 1; grid-row: 5; align-self: stretch; min-height: 0; border: 1px dashed var(--rule); border-radius: 8px; }
+.pb-sheet .pb-h4 { grid-column: 1; grid-row: 5; justify-self: center; align-self: center; }
+.pb-sheet .pb-h4::before { display: none; }
+@media (max-width: 900px) {
+  .sheet.pb-sheet { padding: 12px 16px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto auto minmax(0, 1fr); row-gap: 10px; }
+  .pb-head { font-size: 11.5px; }
+  .pb-q { font-size: 13.5px; line-height: 1.6; }
+  .pb-q .opts { margin-top: 4px; gap: 11px; font-size: 12.5px; flex-wrap: nowrap; white-space: nowrap; }
+  .pb-q .bl { min-width: 34px; margin: 0 4px; }
+  .pb-q .bl .ink { width: 17px; height: 23px; margin-left: -8px; }
+  .pb-ans { margin-top: 2px; }
+  .pb-room { display: none; }
+  .pb-box u { display: none; }
+  .pb-box { inset: -3px -5px; }
+  .pb-sheet .hint, .pb-sheet .pb-h4 { grid-column: 1; grid-row: 5; justify-self: stretch; align-self: end; margin-top: 0; min-height: 42px; background: #fff; }
+  .pb-sheet .hint::before { display: none; }
+}
+/* pv: one loop along the foot, six subjects down the side */
+.showcase.pv-shell { grid-template-columns: minmax(0, clamp(190px, 17vw, 236px)) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: clamp(20px, 2.8vw, 40px); padding: clamp(18px, 2.2vw, 28px); }
+.pv-list { display: flex; flex-direction: column; gap: 4px; list-style: none; margin: 0; padding: 0; min-height: 0; }
+.pv-list li { flex: 1 1 0; display: flex; align-items: center; justify-content: space-between; min-height: 0; padding: 0 13px; border-radius: 10px; font-size: 14px; color: var(--faint); }
+.pv-list b { display: block; font-weight: 400; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+.pv-list i { font-style: normal; color: var(--ink); }
+.pv-main { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.pv-shots { flex: 1 1 0; display: grid; min-height: 0; }
+.pv-shell .shot { display: flex; flex-direction: column; min-height: 0; }
+.pv-shell .shot .shotcap { font-size: 11px; margin-bottom: 12px; }
+.pv-shell .q { max-width: 58ch; font-size: clamp(16px, 1.45vw, 20px); line-height: 1.5; }
+.pv-shell .shot .tbl { align-self: flex-start; margin-top: 16px; font-size: 14px; }
+.pv-shell .shot .tbl span { padding: 7px 16px; }
+.pv-shell .shot .tbl span.h { font-size: 11px; }
+.pv-shell .shot .work { margin-top: 16px; font-size: clamp(14px, 1.2vw, 17px); }
+.pv-shell .eq { align-self: flex-start; margin-top: 16px; font-size: clamp(15px, 1.25vw, 18px); }
+.pv-work { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(200px, 23vw, 300px)); column-gap: clamp(20px, 2.6vw, 34px); align-items: center; min-height: 0; margin-top: 12px; }
+.pv-hand { position: static; width: 100%; height: 100%; min-height: 0; margin: 0; }
+.pv-hand path { stroke-dashoffset: inherit; }
+.pv-shell .hint { position: relative; align-self: start; margin: 12px 0 0; max-width: none; font-size: clamp(13px, 1.02vw, 15px); }
+.pv-shell .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pv-gap { position: relative; display: inline-block; min-width: 72px; margin: 0 4px; padding: 0 6px; border-bottom: 1.5px solid var(--ink); text-align: center; line-height: 1.1; }
+.pv-gap2 { min-width: 98px; }
+.pv-gap em { font-style: normal; color: #3b6fd4; }
+.pv-loop { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.pv-loop span { padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px; font-size: 12.5px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--faint); }
+.pv-loop em { font-style: normal; }
+@media (max-width: 900px) {
+  .showcase.pv-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 12px; padding: 14px 16px; }
+  .pv-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; }
+  .pv-list li { padding: 5px 7px; font-size: 11.5px; line-height: 1.25; }
+  .pv-list b { font-size: 11px; letter-spacing: 0; text-transform: none; }
+  .pv-list i { display: none; }
+  .pv-shell .q { font-size: 14.5px; }
+  .pv-work { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; row-gap: 6px; margin-top: 8px; }
+  .pv-hand { margin: 0; width: 100%; height: 100%; }
+  .pv-shell .hint { margin: 0; width: auto; }
+  .pv-shell .hint::before { display: none; }
+  .pv-loop em { display: none; }
+  .pv-loop { gap: 5px; margin-top: 8px; }
+  .pv-loop span { padding: 5px 8px; font-size: 12px; }
+  .pv-chrome .pill { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pv-shell .shot ~ .shot { display: none; }
+}
+/* pgen: each question in its own tab, your work under it, the difficulty beside the conversation */
+.pgen-pill { align-self: center; margin: 0 2px 5px 0; padding: 3px 10px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; white-space: nowrap; }
+.sheet.pgen-sheet { position: absolute; inset: 0 0 104px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto auto auto minmax(0, 1fr); column-gap: clamp(24px, 2.6vw, 36px); row-gap: 10px; padding: clamp(20px, 2.6vw, 34px) clamp(20px, 2.6vw, 34px) 8px; }
+.pgen-shelf { position: absolute; left: clamp(20px, 2.6vw, 34px); right: clamp(20px, 2.6vw, 34px); bottom: 20px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; height: 78px; }
+.pgen-shelf span { padding: 9px 11px; background: #fff; border: 1px solid var(--rule); border-radius: 9px; font-size: 12.5px; line-height: 1.3; color: var(--muted); overflow: hidden; }
+.pgen-shelf b { display: block; margin-bottom: 3px; font-weight: 400; font-size: 11px; letter-spacing: 0.1em; color: var(--faint); }
+.pgen-sheet .pq { grid-column: 1 / -1; position: static; left: auto; transform: none; width: auto; margin: 0; padding: 16px 20px 18px; font-size: clamp(14px, 1.2vw, 17px); }
+.pgen-hand { position: static; grid-column: 1; width: 100%; height: auto; margin: 0; }
+.pgen-r1 { grid-row: 2; }
+.pgen-r2 { grid-row: 3; }
+.pgen-hand path { stroke-dashoffset: inherit; }
+.pgen-sheet .hint { position: relative; grid-column: 2; grid-row: 2; align-self: center; max-width: none; }
+.pgen-sheet .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
+.pgen-sheet .pgen-h2b, .pgen-sheet .pgen-h3b { grid-row: 3; }
+.pgen-dial { width: auto; max-width: none; margin: 0 14px 14px; }
+.pgen-dial .m i { width: 100%; transform-origin: left center; transform: scaleX(0.18); }
+.fade-pgen .film-line { margin-top: 2px; text-align: left; font-size: 14px; color: var(--ink); }
+@media (max-width: 900px) {
+  .pgen-pill { display: none; }
+  .sheet.pgen-sheet { inset: 0; padding: 14px 16px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto minmax(0, 1fr) auto; row-gap: 6px; }
+  .pgen-shelf { display: none; }
+  .pgen-sheet .pq { padding: 10px 13px 12px; font-size: 13px; }
+  .pgen-hand { width: 100%; max-width: 400px; height: auto; margin: 0; }
+  .pgen-sheet .hint, .pgen-sheet .pgen-h2b, .pgen-sheet .pgen-h3b { grid-column: 1; grid-row: 5; align-self: stretch; margin-top: 0; background: #fff; }
+  .pgen-sheet .hint::before { display: none; }
+  .pgen-dial { margin: 0 14px 10px; }
+  .pgen-dial .kk { font-size: 11px; letter-spacing: 0.04em; }
+}
+/* these demos on narrow windows: the conversation gets the room, and nothing reads under 11px */
+@media (max-width: 900px) {
+  .fade-pr .side-meta, .fade-pr .camthumb, .fade-pg .side-meta, .fade-pg .camthumb, .fade-pw .side-meta, .fade-pw .camthumb, .fade-pb .side-meta, .fade-pb .camthumb, .fade-pgen .side-meta, .fade-pgen .camthumb { display: none; }
+}
+@media (max-width: 760px) {
+  .fade-pr .line .who, .fade-pr .mode-pill, .fade-pr .pq .lbl, .fade-pr .crop .lbl, .fade-pg .line .who, .fade-pg .mode-pill, .fade-pg .pq .lbl, .fade-pg .crop .lbl, .fade-pw .line .who, .fade-pw .mode-pill, .fade-pw .pq .lbl, .fade-pw .crop .lbl, .fade-pb .line .who, .fade-pb .mode-pill, .fade-pb .pq .lbl, .fade-pb .crop .lbl, .fade-pgen .line .who, .fade-pgen .mode-pill, .fade-pgen .pq .lbl, .fade-pgen .crop .lbl { font-size: 11px; }
+}
 
 
 /* pen working inside the ask-gausyn workspaces */
