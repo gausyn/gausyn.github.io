@@ -1661,23 +1661,23 @@ html.js .pb-h5{animation:pb-h5 36s ease-in-out infinite both}
 html.js .pb-i5{animation:pb-i5 36s linear infinite both}
 @keyframes pb-h6{0%{opacity:0;transform:translateY(10px)}84.444%{opacity:0;transform:translateY(10px)}85.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pb-h6{animation:pb-h6 36s ease-in-out infinite both}
-@keyframes pgen-p1{0%{opacity:1}12.778%{opacity:1}13.889%{opacity:0}100%{opacity:0}}
+@keyframes pgen-p1{0%{opacity:1}12.778%{opacity:1}13.333%{opacity:0}100%{opacity:0}}
 html.js .pgen-p1{animation:pgen-p1 36s ease-in-out infinite both}
 @keyframes pgen-t1{0%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}12.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}13.889%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
 html.js .pgen-t1{animation:pgen-t1 36s ease-in-out infinite both}
-@keyframes pgen-p2{0%{opacity:0;transform:translateY(10px)}12.778%{opacity:0;transform:translateY(10px)}13.889%{opacity:1;transform:none}36.667%{opacity:1;transform:none}37.778%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+@keyframes pgen-p2{0%{opacity:0;transform:translateY(10px)}13.333%{opacity:0;transform:translateY(10px)}14.028%{opacity:1;transform:none}36.667%{opacity:1;transform:none}37.222%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pgen-p2{animation:pgen-p2 36s ease-in-out infinite both}
 @keyframes pgen-t2{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}12.778%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}13.889%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}36.667%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}37.778%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
 html.js .pgen-t2{animation:pgen-t2 36s ease-in-out infinite both}
-@keyframes pgen-p3{0%{opacity:0;transform:translateY(10px)}36.667%{opacity:0;transform:translateY(10px)}37.778%{opacity:1;transform:none}57.778%{opacity:1;transform:none}58.889%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+@keyframes pgen-p3{0%{opacity:0;transform:translateY(10px)}37.222%{opacity:0;transform:translateY(10px)}37.917%{opacity:1;transform:none}57.778%{opacity:1;transform:none}58.333%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pgen-p3{animation:pgen-p3 36s ease-in-out infinite both}
 @keyframes pgen-t3{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}36.667%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}37.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}57.778%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}58.889%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
 html.js .pgen-t3{animation:pgen-t3 36s ease-in-out infinite both}
-@keyframes pgen-p4{0%{opacity:0;transform:translateY(10px)}57.778%{opacity:0;transform:translateY(10px)}58.889%{opacity:1;transform:none}76.111%{opacity:1;transform:none}77.222%{opacity:0;transform:none}100%{opacity:0;transform:none}}
+@keyframes pgen-p4{0%{opacity:0;transform:translateY(10px)}58.333%{opacity:0;transform:translateY(10px)}59.028%{opacity:1;transform:none}76.111%{opacity:1;transform:none}76.667%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pgen-p4{animation:pgen-p4 36s ease-in-out infinite both}
 @keyframes pgen-t4{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}57.778%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}58.889%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}76.111%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}77.222%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}100%{opacity:1;transform:none;background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}}
 html.js .pgen-t4{animation:pgen-t4 36s ease-in-out infinite both}
-@keyframes pgen-p5{0%{opacity:0;transform:translateY(10px)}76.111%{opacity:0;transform:translateY(10px)}77.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes pgen-p5{0%{opacity:0;transform:translateY(10px)}76.667%{opacity:0;transform:translateY(10px)}77.361%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pgen-p5{animation:pgen-p5 36s ease-in-out infinite both}
 @keyframes pgen-t5{0%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}76.111%{opacity:0;transform:translateY(10px);background:var(--cool-soft);border-color:var(--cool-line);color:var(--cool-ink)}77.222%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
 html.js .pgen-t5{animation:pgen-t5 36s ease-in-out infinite both}
@@ -1813,11 +1813,11 @@ html.js .agt-q3{animation:agt-q3 5s ease-in-out infinite both}
 html.js .agp-cap{animation:agp-cap 5s ease-in-out infinite both}
 @keyframes pv-s1{0%{opacity:1}14.368%{opacity:1}15.172%{opacity:0}100%{opacity:0}}
 html.js .pv-s1{animation:pv-s1 43.5s ease-in-out infinite both}
-@keyframes pv-a1{0%{stroke-dashoffset:242}2.989%{stroke-dashoffset:242}5.977%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a1{0%{stroke-dashoffset:242}1.839%{stroke-dashoffset:242}5.517%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a1{animation:pv-a1 43.5s linear infinite both}
 @keyframes pv-h1{0%{opacity:0;transform:translateY(10px)}6.437%{opacity:0;transform:translateY(10px)}7.356%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h1{animation:pv-h1 43.5s ease-in-out infinite both}
-@keyframes pv-b1{0%{stroke-dashoffset:242}9.655%{stroke-dashoffset:242}12.414%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b1{0%{stroke-dashoffset:242}8.966%{stroke-dashoffset:242}12.644%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b1{animation:pv-b1 43.5s linear infinite both}
 @keyframes pv-l1{0%{color:var(--ink);background:var(--surface)}14.943%{color:var(--ink);background:var(--surface)}15.747%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
 html.js .pv-l1{animation:pv-l1 43.5s ease-in-out infinite both}
@@ -1825,11 +1825,11 @@ html.js .pv-l1{animation:pv-l1 43.5s ease-in-out infinite both}
 html.js .pv-t1{animation:pv-t1 43.5s ease-in-out infinite both}
 @keyframes pv-s2{0%{opacity:0;transform:translateY(8px)}15.057%{opacity:0;transform:translateY(8px)}15.977%{opacity:1;transform:none}29.54%{opacity:1;transform:none}30.345%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pv-s2{animation:pv-s2 43.5s ease-in-out infinite both}
-@keyframes pv-a2{0%{stroke-dashoffset:242}18.161%{stroke-dashoffset:242}21.149%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a2{0%{stroke-dashoffset:242}17.011%{stroke-dashoffset:242}20.69%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a2{animation:pv-a2 43.5s linear infinite both}
 @keyframes pv-h2{0%{opacity:0;transform:translateY(10px)}21.609%{opacity:0;transform:translateY(10px)}22.529%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h2{animation:pv-h2 43.5s ease-in-out infinite both}
-@keyframes pv-b2{0%{stroke-dashoffset:242}24.828%{stroke-dashoffset:242}27.586%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b2{0%{stroke-dashoffset:242}24.138%{stroke-dashoffset:242}27.816%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b2{animation:pv-b2 43.5s linear infinite both}
 @keyframes pv-l2{0%{color:var(--faint);background:rgba(245,245,244,0)}14.943%{color:var(--faint);background:rgba(245,245,244,0)}15.747%{color:var(--ink);background:var(--surface)}30.115%{color:var(--ink);background:var(--surface)}30.92%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
 html.js .pv-l2{animation:pv-l2 43.5s ease-in-out infinite both}
@@ -1837,11 +1837,11 @@ html.js .pv-l2{animation:pv-l2 43.5s ease-in-out infinite both}
 html.js .pv-t2{animation:pv-t2 43.5s ease-in-out infinite both}
 @keyframes pv-s3{0%{opacity:0;transform:translateY(8px)}30.23%{opacity:0;transform:translateY(8px)}31.149%{opacity:1;transform:none}44.713%{opacity:1;transform:none}45.517%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pv-s3{animation:pv-s3 43.5s ease-in-out infinite both}
-@keyframes pv-a3{0%{stroke-dashoffset:242}33.333%{stroke-dashoffset:242}36.322%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a3{0%{stroke-dashoffset:242}32.184%{stroke-dashoffset:242}35.862%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a3{animation:pv-a3 43.5s linear infinite both}
 @keyframes pv-h3{0%{opacity:0;transform:translateY(10px)}36.782%{opacity:0;transform:translateY(10px)}37.701%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h3{animation:pv-h3 43.5s ease-in-out infinite both}
-@keyframes pv-b3{0%{stroke-dashoffset:242}40%{stroke-dashoffset:242}42.759%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b3{0%{stroke-dashoffset:242}39.31%{stroke-dashoffset:242}42.989%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b3{animation:pv-b3 43.5s linear infinite both}
 @keyframes pv-l3{0%{color:var(--faint);background:rgba(245,245,244,0)}30.115%{color:var(--faint);background:rgba(245,245,244,0)}30.92%{color:var(--ink);background:var(--surface)}45.287%{color:var(--ink);background:var(--surface)}46.092%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
 html.js .pv-l3{animation:pv-l3 43.5s ease-in-out infinite both}
@@ -1849,11 +1849,11 @@ html.js .pv-l3{animation:pv-l3 43.5s ease-in-out infinite both}
 html.js .pv-t3{animation:pv-t3 43.5s ease-in-out infinite both}
 @keyframes pv-s4{0%{opacity:0;transform:translateY(8px)}45.402%{opacity:0;transform:translateY(8px)}46.322%{opacity:1;transform:none}59.885%{opacity:1;transform:none}60.69%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pv-s4{animation:pv-s4 43.5s ease-in-out infinite both}
-@keyframes pv-a4{0%{stroke-dashoffset:242}48.506%{stroke-dashoffset:242}51.494%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a4{0%{stroke-dashoffset:242}47.356%{stroke-dashoffset:242}51.034%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a4{animation:pv-a4 43.5s linear infinite both}
 @keyframes pv-h4{0%{opacity:0;transform:translateY(10px)}51.954%{opacity:0;transform:translateY(10px)}52.874%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h4{animation:pv-h4 43.5s ease-in-out infinite both}
-@keyframes pv-b4{0%{stroke-dashoffset:242}55.172%{stroke-dashoffset:242}57.931%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b4{0%{stroke-dashoffset:242}54.483%{stroke-dashoffset:242}58.161%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b4{animation:pv-b4 43.5s linear infinite both}
 @keyframes pv-l4{0%{color:var(--faint);background:rgba(245,245,244,0)}45.287%{color:var(--faint);background:rgba(245,245,244,0)}46.092%{color:var(--ink);background:var(--surface)}60.46%{color:var(--ink);background:var(--surface)}61.264%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
 html.js .pv-l4{animation:pv-l4 43.5s ease-in-out infinite both}
@@ -1861,11 +1861,11 @@ html.js .pv-l4{animation:pv-l4 43.5s ease-in-out infinite both}
 html.js .pv-t4{animation:pv-t4 43.5s ease-in-out infinite both}
 @keyframes pv-s5{0%{opacity:0;transform:translateY(8px)}60.575%{opacity:0;transform:translateY(8px)}61.494%{opacity:1;transform:none}75.057%{opacity:1;transform:none}75.862%{opacity:0;transform:none}100%{opacity:0;transform:none}}
 html.js .pv-s5{animation:pv-s5 43.5s ease-in-out infinite both}
-@keyframes pv-a5{0%{stroke-dashoffset:242}63.678%{stroke-dashoffset:242}66.667%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a5{0%{stroke-dashoffset:242}62.529%{stroke-dashoffset:242}66.207%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a5{animation:pv-a5 43.5s linear infinite both}
 @keyframes pv-h5{0%{opacity:0;transform:translateY(10px)}67.126%{opacity:0;transform:translateY(10px)}68.046%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h5{animation:pv-h5 43.5s ease-in-out infinite both}
-@keyframes pv-b5{0%{stroke-dashoffset:242}70.345%{stroke-dashoffset:242}73.103%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b5{0%{stroke-dashoffset:242}69.655%{stroke-dashoffset:242}73.333%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b5{animation:pv-b5 43.5s linear infinite both}
 @keyframes pv-l5{0%{color:var(--faint);background:rgba(245,245,244,0)}60.46%{color:var(--faint);background:rgba(245,245,244,0)}61.264%{color:var(--ink);background:var(--surface)}75.632%{color:var(--ink);background:var(--surface)}76.437%{color:var(--muted);background:rgba(245,245,244,0)}100%{color:var(--muted);background:rgba(245,245,244,0)}}
 html.js .pv-l5{animation:pv-l5 43.5s ease-in-out infinite both}
@@ -1873,19 +1873,19 @@ html.js .pv-l5{animation:pv-l5 43.5s ease-in-out infinite both}
 html.js .pv-t5{animation:pv-t5 43.5s ease-in-out infinite both}
 @keyframes pv-s6{0%{opacity:0;transform:translateY(8px)}75.747%{opacity:0;transform:translateY(8px)}76.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-s6{animation:pv-s6 43.5s ease-in-out infinite both}
-@keyframes pv-a6{0%{stroke-dashoffset:242}78.851%{stroke-dashoffset:242}81.839%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-a6{0%{stroke-dashoffset:242}77.701%{stroke-dashoffset:242}81.379%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-a6{animation:pv-a6 43.5s linear infinite both}
 @keyframes pv-h6{0%{opacity:0;transform:translateY(10px)}82.299%{opacity:0;transform:translateY(10px)}83.218%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .pv-h6{animation:pv-h6 43.5s ease-in-out infinite both}
-@keyframes pv-b6{0%{stroke-dashoffset:242}85.517%{stroke-dashoffset:242}88.276%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+@keyframes pv-b6{0%{stroke-dashoffset:242}84.828%{stroke-dashoffset:242}88.506%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
 html.js .pv-b6{animation:pv-b6 43.5s linear infinite both}
 @keyframes pv-l6{0%{color:var(--faint);background:rgba(245,245,244,0)}75.632%{color:var(--faint);background:rgba(245,245,244,0)}76.437%{color:var(--ink);background:var(--surface)}100%{color:var(--ink);background:var(--surface)}}
 html.js .pv-l6{animation:pv-l6 43.5s ease-in-out infinite both}
 @keyframes pv-t6{0%{opacity:0}88.736%{opacity:0}89.425%{opacity:1}100%{opacity:1}}
 html.js .pv-t6{animation:pv-t6 43.5s ease-in-out infinite both}
-@keyframes pv-f1{0%{opacity:0;transform:translateY(10px)}88.276%{opacity:0;transform:translateY(10px)}89.195%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes pv-f1{0%{opacity:1}57.471%{opacity:1}58.391%{opacity:0}100%{opacity:0}}
 html.js .pv-f1{animation:pv-f1 43.5s ease-in-out infinite both}
-@keyframes pv-f2{0%{opacity:0;transform:translateY(10px)}88.276%{opacity:0;transform:translateY(10px)}89.195%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes pv-f2{0%{opacity:0}57.931%{opacity:0}58.851%{opacity:1}100%{opacity:1}}
 html.js .pv-f2{animation:pv-f2 43.5s ease-in-out infinite both}
 @keyframes pv-p1{0%{color:var(--ink);border-color:var(--ink);background:var(--surface)}2.759%{color:var(--ink);border-color:var(--ink);background:var(--surface)}3.448%{color:var(--faint);border-color:var(--rule);background:#fff}15.057%{color:var(--faint);border-color:var(--rule);background:#fff}15.747%{color:var(--ink);border-color:var(--ink);background:var(--surface)}17.931%{color:var(--ink);border-color:var(--ink);background:var(--surface)}18.621%{color:var(--faint);border-color:var(--rule);background:#fff}30.23%{color:var(--faint);border-color:var(--rule);background:#fff}30.92%{color:var(--ink);border-color:var(--ink);background:var(--surface)}33.103%{color:var(--ink);border-color:var(--ink);background:var(--surface)}33.793%{color:var(--faint);border-color:var(--rule);background:#fff}45.402%{color:var(--faint);border-color:var(--rule);background:#fff}46.092%{color:var(--ink);border-color:var(--ink);background:var(--surface)}48.276%{color:var(--ink);border-color:var(--ink);background:var(--surface)}48.966%{color:var(--faint);border-color:var(--rule);background:#fff}60.575%{color:var(--faint);border-color:var(--rule);background:#fff}61.264%{color:var(--ink);border-color:var(--ink);background:var(--surface)}63.448%{color:var(--ink);border-color:var(--ink);background:var(--surface)}64.138%{color:var(--faint);border-color:var(--rule);background:#fff}75.747%{color:var(--faint);border-color:var(--rule);background:#fff}76.437%{color:var(--ink);border-color:var(--ink);background:var(--surface)}78.621%{color:var(--ink);border-color:var(--ink);background:var(--surface)}79.31%{color:var(--faint);border-color:var(--rule);background:#fff}100%{color:var(--faint);border-color:var(--rule);background:#fff}}
 html.js .pv-p1{animation:pv-p1 43.5s ease-in-out infinite both}
@@ -2170,11 +2170,12 @@ html.js .ag2-lv{animation:ag2-lv 36s ease-in-out infinite both}
 html.js .ag2-g4{animation:ag2-g4 36s ease-in-out infinite both}
 @keyframes fade-ag2{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
 html.js .fade-ag2{animation:fade-ag2 36s linear infinite}
-/* ask gausyn, a proof: the argument runs down the page, the marker's standard stays beside it */
+/* ask gausyn, an essay: the argument runs down the page, the marker's standard stays beside it */
 .ag3-page { padding-left: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); }
-.ag3-page .penwork { gap: 22px; }
-.ag3-page .pen { font-size: 20px; }
-.ag3-qed { color: var(--ink); }
+.ag3-page { grid-template-rows: minmax(0, 1fr); }
+.ag3-page .penwork { gap: 15px; min-height: 0; overflow: hidden; }
+.ag3-page .pen { flex: none; max-width: 100%; font-size: 17px; line-height: 1.4; }
+.ag3-foot { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); }
 .ag3-mark { border: 1px solid var(--rule); border-radius: var(--radius-md); background: #fff; padding: 14px 16px; }
 .ag3-mark .lbl { display: block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
 .ag3-row { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink); padding: 5px 0; }
@@ -2182,21 +2183,22 @@ html.js .fade-ag2{animation:fade-ag2 36s linear infinite}
 .ag3-row::before { content: ""; position: absolute; width: 19px; height: 19px; border-radius: 50%; border: 1px solid var(--rule); }
 @media (max-width: 1180px) {
   .ag3-page { grid-template-columns: minmax(0, 1fr) minmax(0, 230px); gap: 16px; }
-  .ag3-page .pen { font-size: 16.5px; }
+  .ag3-page .pen { font-size: 15px; }
   .ag3-row { font-size: 13.5px; }
-  .ag3-page .penwork { gap: 16px; }
+  .ag3-page .penwork { gap: 12px; }
 }
 @media (max-width: 900px) {
   .ag3-page .ag-notes { position: static; visibility: visible; padding-top: 0; }
   .ag3-page .hint { position: absolute; visibility: hidden; }
-  .ag3-page .penwork { gap: 7px; }
-  .ag3-page .pen { font-size: 15px; }
+  .ag3-page .penwork { gap: 8px; padding-top: 4px; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8px); mask-image: linear-gradient(to bottom, transparent 0, #000 8px); }
+  .ag3-page .pen { font-size: 14px; }
+  .ag3-foot { position: absolute; visibility: hidden; }
 }
 @media (max-width: 760px) {
   .fade-ag3 .side-meta { display: none; }
-  .ag3-page { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: space-between; gap: 6px; }
+  .ag3-page { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 6px; }
   .ag3-page .penwork { gap: 5px; }
-  .ag3-page .pen { font-size: 13px; }
+  .ag3-page .pen { font-size: 13px; line-height: 1.3; }
   .ag3-page .ag-notes { gap: 0; }
   .ag3-mark { padding: 6px 12px; border-radius: var(--radius-sm); }
   .ag3-mark .lbl { position: absolute; visibility: hidden; }
@@ -2204,47 +2206,54 @@ html.js .fade-ag2{animation:fade-ag2 36s linear infinite}
   .ag3-row i { width: 16px; height: 16px; font-size: 11px; }
   .ag3-row::before { width: 16px; height: 16px; }
 }
-@keyframes ag3-y0{0%{opacity:0;transform:translateY(10px)}3.333%{opacity:0;transform:translateY(10px)}4.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+  .ag3-page .penwork { justify-content: flex-end; }
+}
+@keyframes ag3-c1{0%{opacity:0;transform:scale(0.6)}2.222%{opacity:0;transform:scale(0.6)}3.056%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-c1{animation:ag3-c1 36s ease-in-out infinite both}
+@keyframes ag3-y0{0%{opacity:0;transform:translateY(10px)}3.889%{opacity:0;transform:translateY(10px)}5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-y0{animation:ag3-y0 36s ease-in-out infinite both}
-@keyframes ag3-l0{0%{opacity:0;transform:translateY(6px)}7.778%{opacity:0;transform:translateY(6px)}8.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l0{animation:ag3-l0 36s ease-in-out infinite both}
+@keyframes ag3-l1{0%{opacity:0;transform:translateY(6px)}7.778%{opacity:0;transform:translateY(6px)}8.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-l1{animation:ag3-l1 36s ease-in-out infinite both}
 @keyframes ag3-h0{0%{opacity:0;transform:translateY(10px)}12.778%{opacity:0;transform:translateY(10px)}13.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-h0{animation:ag3-h0 36s ease-in-out infinite both}
 @keyframes ag3-g2{0%{opacity:0;transform:translateY(10px)}15%{opacity:0;transform:translateY(10px)}16.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-g2{animation:ag3-g2 36s ease-in-out infinite both}
 @keyframes ag3-s0{0%{stroke-dasharray:240 600;stroke-dashoffset:242}20%{stroke-dasharray:240 600;stroke-dashoffset:242}21.944%{stroke-dasharray:240 600;stroke-dashoffset:0}100%{stroke-dasharray:240 600;stroke-dashoffset:0}}
 html.js .ag3-s0{animation:ag3-s0 36s linear infinite both}
-@keyframes ag3-l1{0%{opacity:0;transform:translateY(6px)}24.444%{opacity:0;transform:translateY(6px)}25.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l1{animation:ag3-l1 36s ease-in-out infinite both}
+@keyframes ag3-l2{0%{opacity:0;transform:translateY(6px)}24.444%{opacity:0;transform:translateY(6px)}25.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-l2{animation:ag3-l2 36s ease-in-out infinite both}
 @keyframes ag3-h1{0%{opacity:0;transform:translateY(10px)}29.444%{opacity:0;transform:translateY(10px)}30.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-h1{animation:ag3-h1 36s ease-in-out infinite both}
 @keyframes ag3-g4{0%{opacity:0;transform:translateY(10px)}31.667%{opacity:0;transform:translateY(10px)}32.778%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-g4{animation:ag3-g4 36s ease-in-out infinite both}
-@keyframes ag3-l5{0%{opacity:0;transform:translateY(6px)}37.778%{opacity:0;transform:translateY(6px)}38.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l5{animation:ag3-l5 36s ease-in-out infinite both}
-@keyframes ag3-c1{0%{opacity:0;transform:scale(0.6)}40.556%{opacity:0;transform:scale(0.6)}41.389%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-c1{animation:ag3-c1 36s ease-in-out infinite both}
-@keyframes ag3-l2{0%{opacity:0;transform:translateY(6px)}45%{opacity:0;transform:translateY(6px)}46.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-l2{animation:ag3-l2 36s ease-in-out infinite both}
-@keyframes ag3-l3{0%{opacity:0;transform:translateY(6px)}50%{opacity:0;transform:translateY(6px)}51.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes ag3-l3{0%{opacity:0;transform:translateY(6px)}37.222%{opacity:0;transform:translateY(6px)}38.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-l3{animation:ag3-l3 36s ease-in-out infinite both}
-@keyframes ag3-h2{0%{opacity:0;transform:translateY(10px)}53.889%{opacity:0;transform:translateY(10px)}55%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-h2{animation:ag3-h2 36s ease-in-out infinite both}
-@keyframes ag3-c2{0%{opacity:0;transform:scale(0.6)}56.667%{opacity:0;transform:scale(0.6)}57.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes ag3-c2{0%{opacity:0;transform:scale(0.6)}40.556%{opacity:0;transform:scale(0.6)}41.389%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-c2{animation:ag3-c2 36s ease-in-out infinite both}
-@keyframes ag3-g5{0%{opacity:0;transform:translateY(10px)}61.111%{opacity:0;transform:translateY(10px)}62.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ag3-g5{animation:ag3-g5 36s ease-in-out infinite both}
-@keyframes ag3-l4{0%{opacity:0;transform:translateY(6px)}66.111%{opacity:0;transform:translateY(6px)}67.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes ag3-g6{0%{opacity:0;transform:translateY(10px)}44.444%{opacity:0;transform:translateY(10px)}45.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-g6{animation:ag3-g6 36s ease-in-out infinite both}
+@keyframes ag3-l4{0%{opacity:0;transform:translateY(6px)}47.778%{opacity:0;transform:translateY(6px)}48.889%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-l4{animation:ag3-l4 36s ease-in-out infinite both}
-@keyframes ag3-c3{0%{opacity:0;transform:scale(0.6)}70%{opacity:0;transform:scale(0.6)}70.833%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes ag3-l5{0%{opacity:0;transform:translateY(6px)}52.222%{opacity:0;transform:translateY(6px)}53.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-l5{animation:ag3-l5 36s ease-in-out infinite both}
+@keyframes ag3-h2{0%{opacity:0;transform:translateY(10px)}54.444%{opacity:0;transform:translateY(10px)}55.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-h2{animation:ag3-h2 36s ease-in-out infinite both}
+@keyframes ag3-c3{0%{opacity:0;transform:scale(0.6)}57.222%{opacity:0;transform:scale(0.6)}58.056%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-c3{animation:ag3-c3 36s ease-in-out infinite both}
+@keyframes ag3-g5{0%{opacity:0;transform:translateY(10px)}60.556%{opacity:0;transform:translateY(10px)}61.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-g5{animation:ag3-g5 36s ease-in-out infinite both}
+@keyframes ag3-l6{0%{opacity:0;transform:translateY(6px)}65%{opacity:0;transform:translateY(6px)}66.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-l6{animation:ag3-l6 36s ease-in-out infinite both}
+@keyframes ag3-c4{0%{opacity:0;transform:scale(0.6)}69.167%{opacity:0;transform:scale(0.6)}70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ag3-c4{animation:ag3-c4 36s ease-in-out infinite both}
 @keyframes ag3-y1{0%{opacity:0;transform:translateY(10px)}73.889%{opacity:0;transform:translateY(10px)}75%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-y1{animation:ag3-y1 36s ease-in-out infinite both}
 @keyframes ag3-g3{0%{opacity:0;transform:translateY(10px)}78.333%{opacity:0;transform:translateY(10px)}79.444%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .ag3-g3{animation:ag3-g3 36s ease-in-out infinite both}
-@keyframes ag3-qed{0%{opacity:0}82.778%{opacity:0}83.889%{opacity:1}100%{opacity:1}}
-html.js .ag3-qed{animation:ag3-qed 36s ease-in-out infinite both}
-@keyframes ag3-box{0%{border-color:var(--rule)}85%{border-color:var(--rule)}86.111%{border-color:var(--ink)}100%{border-color:var(--ink)}}
+@keyframes ag3-done{0%{opacity:0}82.778%{opacity:0}83.889%{opacity:1}100%{opacity:1}}
+html.js .ag3-done{animation:ag3-done 36s ease-in-out infinite both}
+@keyframes ag3-box{0%{border-color:var(--rule)}83.889%{border-color:var(--rule)}85%{border-color:var(--ink)}100%{border-color:var(--ink)}}
 html.js .ag3-box{animation:ag3-box 36s ease-in-out infinite both}
 @keyframes fade-ag3{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
 html.js .fade-ag3{animation:fade-ag3 36s linear infinite}
@@ -2722,31 +2731,33 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
   .pg-sheet .hint::before { display: none; }
 }
 /* pw: your lines down the page, each hint beside its line, the reference along the foot */
-.sheet.pw-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto repeat(4, minmax(0, 1fr)) auto; column-gap: clamp(24px, 2.6vw, 36px); row-gap: 2px; }
+.sheet.pw-sheet { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(170px, 18vw, 240px)); grid-template-rows: auto repeat(5, minmax(0, 1fr)) auto; column-gap: clamp(24px, 2.6vw, 36px); row-gap: 2px; }
 .pw-sheet .q { grid-column: 1; max-width: none; margin-top: 8px; font-size: clamp(15px, 1.25vw, 18px); }
 .pw-br { position: relative; display: inline-block; }
 .pw-mk { padding: 0 3px; border-radius: 4px; }
-.pw-arcs.ink { position: absolute; left: 3px; right: 6px; bottom: 100%; width: calc(100% - 9px); height: 13px; margin: 0 0 -3px; overflow: visible; }
+.pw-arcs.ink { position: absolute; left: -7px; top: -4px; width: calc(100% + 14px); height: calc(100% + 8px); max-width: none; margin: 0; overflow: visible; }
+.pw-hand path { stroke-dashoffset: inherit; stroke-width: 3.8; }
 .pw-arcs path { stroke-width: 1.7; vector-effect: non-scaling-stroke; }
-.pw-hand path { stroke-dashoffset: inherit; }
-.pw-ink { position: static; grid-column: 1; grid-row: 2 / span 4; width: 100%; height: 100%; min-height: 0; margin-top: 4px; }
+.pw-l0 { stroke-dashoffset: 0; }
+.pw-ink { position: static; grid-column: 1; grid-row: 2 / span 5; width: 100%; height: 100%; min-height: 0; margin-top: 4px; }
 .pw-sheet .hint { position: relative; grid-column: 2; align-self: center; max-width: none; }
 .pw-sheet .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
-.pw-h1 { grid-row: 2; }
-.pw-h2 { grid-row: 4; }
-.pw-h3 { grid-row: 5; }
-.pw-panel { grid-column: 1 / -1; grid-row: 6; display: grid; min-height: 108px; margin-top: 8px; }
+.pw-h1 { grid-row: 3; }
+.pw-h2 { grid-row: 5; }
+.pw-h3 { grid-row: 6; }
+.pw-panel { grid-column: 1 / -1; grid-row: 7; display: grid; min-height: 108px; margin-top: 8px; }
 .pw-ref, .pw-next { grid-area: 1 / 1; min-width: 0; }
 .pw-ref { display: flex; flex-direction: column; justify-content: center; gap: 9px; padding: 11px 14px; background: #fff; border: 1px solid var(--rule); border-radius: 10px; }
 .pw-t { font-size: 11.5px; color: var(--muted); }
-.pw-cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.pw-cells { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 .pw-cell { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 40px; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 8px; font-size: 11.5px; color: var(--muted); }
 .pw-cell b { font-weight: 400; white-space: nowrap; }
 .pw-cell > i { display: block; height: 8px; border-radius: 3px; background: repeating-linear-gradient(90deg, #e4e4e2 0 9px, #efefed 9px 12px); }
 .pw-mark { display: grid; justify-items: end; }
 .pw-mark em { grid-area: 1 / 1; font-style: normal; white-space: nowrap; }
 .pw-m1 { color: var(--hint); }
-.pw-v1, .pw-v2, .pw-v3 { color: var(--ink); }
+.pw-v1, .pw-v2, .pw-v3, .pw-ok .pw-mark em { color: var(--ink); }
+.pw-ok { border-color: var(--ink); background: var(--surface); }
 .pw-next { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; align-items: center; }
 .pw-next .pq { position: static; left: auto; transform: none; width: auto; margin: 0; }
 .pw-nink { position: static; width: 100%; height: 60px; margin: 0; }
@@ -2760,8 +2771,10 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
   .pw-ref { padding: 7px 9px; gap: 5px; }
   .pw-t { display: none; }
   .pw-cells { gap: 5px; }
-  .pw-cell { grid-template-columns: minmax(0, 1fr) auto; gap: 3px; min-height: 58px; padding: 5px 7px; font-size: 11px; }
-  .pw-cell > i { grid-column: 1 / -1; grid-row: 2; }
+  .pw-arcs.ink { left: -5px; top: -2px; width: calc(100% + 10px); height: calc(100% + 4px); }
+  .pw-cell { grid-template-columns: minmax(0, 1fr); gap: 3px; min-height: 58px; padding: 5px 7px; font-size: 11px; }
+  .pw-cell > i { display: none; }
+  .pw-mark { justify-items: start; }
   .pw-next { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
   .pw-next .pq { padding: 6px 10px 7px; }
   .pw-nink { height: 34px; }
@@ -2823,16 +2836,45 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
 .pv-shell .shot .tbl { align-self: flex-start; margin-top: 16px; font-size: 14px; }
 .pv-shell .shot .tbl span { padding: 7px 16px; }
 .pv-shell .shot .tbl span.h { font-size: 11px; }
-.pv-shell .shot .work { margin-top: 16px; font-size: clamp(14px, 1.2vw, 17px); }
-.pv-shell .eq { align-self: flex-start; margin-top: 16px; font-size: clamp(15px, 1.25vw, 18px); }
+.pv-src { margin: 14px 0 0; padding: 2px 0 2px 16px; max-width: 62ch; border-left: 2px solid var(--rule); font-size: clamp(15px, 1.2vw, 17px); line-height: 1.5; color: var(--ink); }
+.pv-src cite { display: block; margin-top: 6px; font-style: normal; font-size: 13px; color: var(--muted); }
+.pv-shell .shot .pv-tbl { display: inline-grid; grid-template-columns: auto repeat(4, minmax(58px, auto)); }
+.pv-shell .shot .tbl .pv-hl { background: var(--warm-soft); color: var(--warm-ink); }
+.pv-deck { display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); gap: 12px; margin-top: 14px; }
+.pv-card { display: flex; align-items: center; gap: 11px; padding: 10px 16px 10px 12px; border: 1px solid var(--rule); border-radius: 10px; background: #fff; font-size: 15px; color: var(--ink); }
+.pv-card svg { flex: none; width: 24px; height: 22px; }
+.pv-card path { fill: #c8504f; }
+.pv-card b { display: block; font-weight: 400; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 2px; }
+.pv-dk { display: grid; }
+.pv-dk em { grid-area: 1 / 1; font-style: normal; }
+.pv-code { align-self: flex-start; display: block; margin-top: 14px; padding: 12px 18px; white-space: pre; font-family: var(--mono); font-size: clamp(14px, 1.2vw, 17px); line-height: 1.5; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 9px; }
 .pv-work { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, clamp(200px, 23vw, 300px)); column-gap: clamp(20px, 2.6vw, 34px); align-items: center; min-height: 0; margin-top: 12px; }
 .pv-hand { position: static; width: 100%; height: 100%; min-height: 0; margin: 0; }
 .pv-hand path { stroke-dashoffset: inherit; }
+.pv-fig { position: relative; align-self: stretch; width: 100%; max-width: 520px; height: 100%; min-height: 0; }
+.pv-fig > svg { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; }
+.pv-fig .pv-hand path { stroke-width: 3.4; }
+.pv-art text { font-family: var(--serif); font-size: 16.5px; fill: var(--ink); }
+.pv-art text.pv-mono { font-family: var(--mono); fill: var(--muted); }
+.pv-wall { fill: #eef3e8; stroke: var(--ink); stroke-width: 2.4; }
+.pv-memb { fill: #f6f8f2; stroke: #8fa886; stroke-width: 1.2; }
+.pv-vac { fill: var(--cool-soft); stroke: var(--cool-line); stroke-width: 1.6; }
+.pv-nuc { fill: var(--warm-soft); stroke: var(--warm-ink); stroke-width: 1.6; }
+.pv-nuo { fill: var(--warm-line); }
+.pv-chl ellipse { fill: #c4dcb6; stroke: #6f9a61; stroke-width: 1.4; }
+.pv-chl path { fill: none; stroke: #6f9a61; stroke-width: 1.2; }
+.pv-lead { fill: none; stroke: var(--muted); stroke-width: 1.1; }
+.pv-tag { fill: #fff; stroke: var(--ink); stroke-width: 1.3; }
+.pv-sea { fill: var(--cool-soft); }
+.pv-land { fill: #f4f0e6; stroke: #cfc8b4; stroke-width: 1; }
+.pv-peak { fill: none; stroke: #b8ad92; stroke-width: 1.3; }
+.pv-river { fill: none; stroke: var(--cool-ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.pv-lake { fill: var(--cool); stroke: var(--cool-ink); stroke-width: 1.2; }
+.pv-city { fill: var(--ink); }
+.pv-grid { fill: #fff; stroke: var(--rule); stroke-width: 1.3; }
+path.pv-grid { fill: none; }
 .pv-shell .hint { position: relative; align-self: start; margin: 12px 0 0; max-width: none; font-size: clamp(13px, 1.02vw, 15px); }
 .pv-shell .hint::before { content: ""; position: absolute; right: 100%; top: 50%; width: clamp(14px, 1.9vw, 28px); border-top: 1px dashed rgba(204,34,34,0.45); }
-.pv-gap { position: relative; display: inline-block; min-width: 72px; margin: 0 4px; padding: 0 6px; border-bottom: 1.5px solid var(--ink); text-align: center; line-height: 1.1; }
-.pv-gap2 { min-width: 98px; }
-.pv-gap em { font-style: normal; color: #3b6fd4; }
 .pv-loop { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
 .pv-loop span { padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px; font-size: 12.5px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--faint); }
 .pv-loop em { font-style: normal; }
@@ -2862,6 +2904,7 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
 .pgen-shelf span { padding: 9px 11px; background: #fff; border: 1px solid var(--rule); border-radius: 9px; font-size: 12.5px; line-height: 1.3; color: var(--muted); overflow: hidden; }
 .pgen-shelf b { display: block; margin-bottom: 3px; font-weight: 400; font-size: 11px; letter-spacing: 0.1em; color: var(--faint); }
 .pgen-sheet .pq { grid-column: 1 / -1; position: static; left: auto; transform: none; width: auto; margin: 0; padding: 16px 20px 18px; font-size: clamp(14px, 1.2vw, 17px); }
+.pgen-code { display: block; white-space: pre; line-height: 1.42; }
 .pgen-hand { position: static; grid-column: 1; width: 100%; height: auto; margin: 0; }
 .pgen-r1 { grid-row: 2; }
 .pgen-r2 { grid-row: 3; }
