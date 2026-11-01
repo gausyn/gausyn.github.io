@@ -1911,28 +1911,35 @@ html.js .ld-g3{animation:ld-g3 22s ease-in-out infinite both}
 html.js .fade-ld{animation:fade-ld 22s linear infinite}
 
 /* ── Whiteboard page: chapters, jump row, and the loop's current card ──── */
-.chapter { padding-top: 0; padding-bottom: 0; }
+.chapter { padding-top: 0; padding-bottom: 0; scroll-margin-top: var(--header-h); }
 .chapter + .scene { border-top: 0; padding-top: clamp(48px, 8vh, 88px); }
-/* a box with the part's clip behind white type. The whole screen stands at the box's
-   full height, never cropped to fill it, and sinks into the dark under the words */
-.part { position: relative; overflow: hidden; display: flex; align-items: center; min-height: 500px; padding: clamp(48px, 8vh, 72px) clamp(28px, 4.4vw, 64px); border-radius: var(--radius-lg); background: #171310; color: #fff; }
-.part-media { position: absolute; inset: 0; }
-.part-media video { position: absolute; top: 0; left: 0; height: calc(100% + 1px); aspect-ratio: 16 / 9; }
-.part-media::after { content: ""; position: absolute; inset: 0 0 -1px; background: linear-gradient(to right, rgba(23, 19, 16, 0) 40%, rgba(23, 19, 16, 0.05) 43%, rgba(23, 19, 16, 0.16) 46%, rgba(23, 19, 16, 0.34) 49%, rgba(23, 19, 16, 0.55) 52%, rgba(23, 19, 16, 0.74) 55%, rgba(23, 19, 16, 0.89) 58%, rgba(23, 19, 16, 0.97) 61%, #171310 64%); }
-.part-copy { position: relative; width: 40%; min-width: 300px; max-width: 480px; margin-left: auto; }
+/* a dark band across the whole window with the part's clip behind white type. The whole
+   screen stands at the band's full height, never cropped to fill it, reaches out past
+   the page's margin on wide windows, and sinks into the dark on both sides */
+.part { overflow: hidden; background: #171310; color: #fff; }
+.part-inner { position: relative; display: flex; align-items: center; min-height: clamp(520px, 33vw, 620px); max-width: var(--widew); margin: 0 auto; padding: clamp(48px, 8vh, 72px) var(--pad); }
+.part-media { --reach: clamp(0px, (100vw - var(--widew)) / 2, 180px); position: absolute; inset: 0; }
+.part-media video { position: absolute; top: 0; left: calc(-1 * var(--reach)); height: calc(100% + 1px); aspect-ratio: 16 / 9; }
+.part-media::before { content: ""; position: absolute; z-index: 1; top: 0; bottom: -1px; left: calc(-1 * var(--reach)); width: 84px; background: linear-gradient(to right, #171310, rgba(23, 19, 16, 0.8) 14%, rgba(23, 19, 16, 0.48) 32%, rgba(23, 19, 16, 0.2) 54%, rgba(23, 19, 16, 0.06) 76%, rgba(23, 19, 16, 0)); }
+.part-media::after { content: ""; position: absolute; inset: 0 0 -1px; background: linear-gradient(to right, rgba(23, 19, 16, 0) 38%, rgba(23, 19, 16, 0.05) 41%, rgba(23, 19, 16, 0.16) 44%, rgba(23, 19, 16, 0.34) 47%, rgba(23, 19, 16, 0.55) 50%, rgba(23, 19, 16, 0.74) 53%, rgba(23, 19, 16, 0.89) 56%, rgba(23, 19, 16, 0.97) 59%, #171310 61.5%); }
+.part-copy { position: relative; z-index: 1; width: 38%; min-width: 360px; max-width: 480px; margin-left: auto; }
 .part .eyebrow { display: block; margin-bottom: 14px; color: #fff; }
 .part h2 { font-size: clamp(30px, 3.4vw, 46px); text-wrap: balance; }
 .part .lede { margin-top: 16px; font-size: clamp(17px, 1.3vw, 19px); color: #fff; }
-.part .hero-pause { position: absolute; right: 16px; bottom: 16px; }
+.part .hero-pause { position: absolute; z-index: 1; right: var(--pad); bottom: 16px; }
 /* narrower, the whole screen runs across the top and the words go under it: any crop
    that kept them on the clip would read as zoomed in */
-@media (max-width: 900px) {
-  .part { display: block; min-height: 0; padding: calc(56.25% + 16px) 24px 36px; }
-  .part-media { bottom: auto; aspect-ratio: 16 / 9; }
-  .part-media video { width: 100%; height: 100%; }
+@media (max-width: 1100px) {
+  .part-inner { display: block; min-height: 0; max-width: none; padding: 0 0 36px; }
+  .part-media { position: relative; inset: auto; max-width: 760px; margin: 0 auto; aspect-ratio: 16 / 9; }
+  .part-media video { left: 0; width: 100%; height: 100%; }
+  .part-media::before { display: none; }
   .part-media::after { inset: 0 0 -2px; background: linear-gradient(to bottom, rgba(23, 19, 16, 0) 78%, #171310 97%); }
-  .part-copy { width: auto; min-width: 0; max-width: none; }
+  .part-copy { width: auto; min-width: 0; max-width: 760px; margin: 14px auto 0; padding: 0 var(--pad); }
   .part .hero-pause { top: 10px; right: 10px; bottom: auto; background: rgba(14, 11, 9, 0.4); }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .part-media::before { display: block; left: 0; width: 100%; background: linear-gradient(to right, #171310, rgba(23, 19, 16, 0) 8%, rgba(23, 19, 16, 0) 92%, #171310); }
 }
 .chapnav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: clamp(22px, 3.4vh, 34px); }
 .chapnav a { border: 1px solid var(--rule); border-radius: 999px; padding: 7px 16px; font-size: 13px; color: var(--muted); text-decoration: none; background: rgba(255, 255, 255, 0.7); transition: color 0.25s ease, border-color 0.25s ease; }
