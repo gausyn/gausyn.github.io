@@ -162,7 +162,7 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Page one|8:Following the curve|12:Mid-word stop|17:A drawn answer|23:Page turn|32:Slower|41:Any language">
           <div class="tabsbar">
             <span class="tab active">Lesson &middot; Reaction Rates</span>
             <span class="spacer" style="flex:1"></span>
@@ -172,37 +172,56 @@
               <div class="boardarea plain">
                 <div class="camthumb" aria-hidden="true"></div>
 
-                <div class="lesson-page te-p1">
+                <div class="lesson-page te-pg te-p1">
                   <span class="num">Lesson &middot; page 1 of 6</span>
+                  <span class="te-pin tr te-wait">Waiting for you</span>
                   <h4>What a rate actually measures</h4>
                   <ul>
-                    <li>How much of something appears or disappears, per unit of time.</li>
-                    <li>Always a change divided by an interval, never a single reading.</li>
-                    <li>The sign tells you which side of the arrow you are standing on.</li>
+                    <li class="te-b1">How much of something appears or disappears, per unit of time.</li>
+                    <li class="te-b2">Always a change divided by an interval, never a single reading.</li>
+                    <li class="te-b3">The sign tells you which side of the arrow you are standing on.</li>
                   </ul>
-                  <div class="eq">rate = &Delta;[A] / &Delta;t</div>
-                  <svg class="curve k" width="240" height="120" viewBox="0 0 240 120" style="margin-top:16px" aria-hidden="true">
-                    <line x1="8" y1="104" x2="228" y2="104"></line>
-                    <line x1="8" y1="104" x2="8" y2="8"></line>
-                    <path class="te-curve" pathLength="320" d="M10,16 C60,20 90,52 120,76 C150,94 190,102 226,103"></path>
-                    <text x="176" y="94">flattens here</text>
-                  </svg>
+                  <div class="eq te-q1">rate = &Delta;[A] / &Delta;t</div>
+                  <div class="te-fig" aria-hidden="true">
+                    <svg viewBox="0 0 640 240" preserveAspectRatio="none">
+                      <path class="ax" d="M16,8 V224 H628"></path>
+                      <path class="te-ride tr" pathLength="320" d="M20,20 L45,44.466 L70,65.878 L95,84.617 L120,101.017 L145,115.37 L170,127.932 L195,138.925 L220,148.546 L245,156.966 L270,164.335 L295,170.784 L320,176.428 L345,181.368 L370,185.691 L395,189.474 L420,192.785 L445,195.683 L470,198.219 L495,200.439 L520,202.381 L545,204.081 L570,205.569 L595,206.871 L620,208.011"></path>
+                      <path class="cv" d="M20,20 L45,44.466 L70,65.878 L95,84.617 L120,101.017 L145,115.37 L170,127.932 L195,138.925 L220,148.546 L245,156.966 L270,164.335 L295,170.784 L320,176.428 L345,181.368 L370,185.691 L395,189.474 L420,192.785 L445,195.683 L470,198.219 L495,200.439 L520,202.381 L545,204.081 L570,205.569 L595,206.871 L620,208.011"></path>
+                      <path class="te-tan te-tg1" pathLength="240" d="M20,26 L150,131"></path>
+                      <path class="te-tan te-tg2" pathLength="240" d="M330,184 L580,210"></path>
+                    </svg>
+                    <span class="te-lb te-lbc">[A]</span>
+                    <span class="te-lb te-lbt">time</span>
+                    <span class="te-lb te-lbf k te-fl">flattens here</span>
+                    <span class="te-lb te-lb1 k te-la">steep: plenty of collisions</span>
+                    <span class="te-lb te-lb2 k te-lc">flat: few particles left</span>
+                  </div>
                 </div>
 
-                <div class="lesson-page te-p2">
+                <div class="lesson-page te-pg te-p2">
                   <span class="num">Lesson &middot; page 2 of 6</span>
                   <h4>Why concentration changes the rate</h4>
                   <ul>
-                    <li>More particles in the same space collide more often.</li>
-                    <li>More collisions means more of them clear the energy barrier.</li>
-                    <li>Second order in A: doubling [A] quadruples the rate.</li>
+                    <li class="te-c1">More particles in the same space collide more often.</li>
+                    <li class="te-c2">More collisions means more of them clear the energy barrier.</li>
+                    <li class="te-c3">Second order in A: doubling [A] quadruples the rate.</li>
                   </ul>
-                  <div class="eq">rate = k[A]&sup2;[B]</div>
+                  <div class="eq te-q2">rate = k[A]&sup2;[B]</div>
+                  <div class="te-fig te-fig2" aria-hidden="true">
+                    <div class="te-box"><span class="te-dots"></span><span class="te-cap">[A]</span></div>
+                    <div class="te-box"><span class="te-dots"></span><span class="te-dots te-more k"></span><span class="te-cap k te-c2a">2[A]</span></div>
+                    <div class="te-rows">
+                      <div class="te-row k te-r1"><span>Double [A]</span><b>2[A]</b></div>
+                      <div class="te-row k te-r2"><span>Square it</span><b>2&sup2; = 4</b></div>
+                      <div class="te-row k te-r3"><span>So the rate</span><b><span class="pen te-pen">&times; 2 ?<svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="te-st" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg></span> <span class="k te-x4">&times; 4</span></b></div>
+                      <div class="te-row k te-r4"><span>Triple [A]</span><b>3&sup2; = 9</b></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="voice">
-                <div class="wave" aria-hidden="true">
+                <div class="wave te-wv te-wave" aria-hidden="true">
                   <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
                   <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
                   <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
@@ -210,7 +229,7 @@
                   <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
                 </div>
                 <div class="say">
-                  <span>&ldquo;Go back&rdquo;</span><span>&ldquo;Slower&rdquo;</span><span>&ldquo;Let&rsquo;s practice&rdquo;</span>
+                  <span>&ldquo;Go back&rdquo;</span><span class="te-s2">&ldquo;Slower&rdquo;</span><span class="te-s3">&ldquo;Let&rsquo;s practice&rdquo;</span>
                 </div>
               </div>
             </div>
@@ -221,6 +240,7 @@
                 <div class="status-wrap" aria-hidden="true">
                   <span class="te-sp">Speaking</span>
                   <span class="te-li">Listening</span>
+                  <span class="te-wt">Waiting</span>
                 </div>
                 <span class="mode-pill">Teacher</span>
               </div>
@@ -229,16 +249,23 @@
                 <div><span class="lbl">Time left</span><span class="val">41:08</span></div>
               </div>
               <div class="side-lines">
-                <div class="line g k te-l1"><span class="who">Gausyn</span>A rate is how much changes, divided by how long it took. Watch the curve on the left.</div>
-                <div class="line you k te-l2"><span class="who">You</span>Wait, why does it flatten near the end?</div>
-                <div class="line g k te-l3"><span class="who">Gausyn</span>Good catch. Fewer particles left means fewer collisions. Let me draw what that does to the slope.</div>
-                <div class="line you k te-l4"><span class="who">You</span>Got it. Keep going.</div>
-                <div class="line g k te-l5"><span class="who">Gausyn</span>Next page: concentration. More particles in the same space collide more often.</div>
-                <div class="line you k te-l6"><span class="who">You</span>Slower on this part.</div>
-                <div class="line g k te-l7"><span class="who">Gausyn</span>Of course. Second order means doubling A quadruples the rate. One piece at a time.</div>
-                <div class="line you k te-l8"><span class="who">You</span>Okay. Let&rsquo;s practice.</div>
+                <div class="line g k"><span class="who">Gausyn</span>A rate is how much changes, divided by how long it took. Watch the curve on the left.</div>
+                <div class="line g tr te-l1"><span class="who">Gausyn</span>It starts steep, then eases off.</div>
+                <div class="line g tr te-l2"><span class="who">Gausyn</span><span class="k te-w1">Near the end,</span> <span class="k te-w2">the slope</span> <span class="k te-w3">gets sma&hellip;</span><span class="te-cut k te-l2c">Stopped to listen</span></div>
+                <div class="line you k te-l3"><span class="who">You</span>Wait, why does it flatten near the end?</div>
+                <div class="line g k te-l4"><span class="who">Gausyn</span>Good catch. Fewer particles left means fewer collisions. Let me draw what that does to the slope.</div>
+                <div class="line g tr te-l5"><span class="who">Gausyn</span>Steep while the space is crowded, flat once it empties. Ready for the next page?</div>
+                <div class="line you k te-l6"><span class="who">You</span>Got it. Keep going.</div>
+                <div class="line g k te-l7"><span class="who">Gausyn</span>Next page: concentration. More particles in the same space collide more often.</div>
+                <div class="line you tr te-l8"><span class="who">You</span>Slower on this part.</div>
+                <div class="line g tr te-l9"><span class="who">Gausyn</span>Of course. One piece at a time. Double A first, then square it.</div>
+                <div class="line you tr te-l10"><span class="who">You</span>So doubling A doubles the rate?</div>
+                <div class="line g tr te-l11"><span class="who">Gausyn</span>Close. A is squared here, so two times two. Doubling A quadruples the rate.</div>
+                <div class="line you tr te-l12"><span class="who">You</span>&iquest;Y si triplico A?</div>
+                <div class="line g tr te-l13"><span class="who">Gausyn</span>Entonces la velocidad se multiplica por nueve, porque tres al cuadrado es nueve.</div>
+                <div class="line you k te-l14"><span class="who">You</span>Okay. Let&rsquo;s practice.</div>
               </div>
-              <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
+              <div class="side-input te-inp"><span class="te-stk"><span class="k te-ph">Interrupt any time, out loud or here</span><span class="te-say tr te-sy1">Wait, why does it flatten near the end?</span></span><span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
@@ -262,7 +289,7 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Narrating|6:You cut in|9:A drawn answer|16:One more why|22:Resumes|28:Page 4|36:Slower on &theta;">
           <div class="tabsbar">
             <span class="tab active">Lesson &middot; Projectile Motion</span>
             <span class="spacer" style="flex:1"></span>
@@ -272,37 +299,80 @@
               <div class="boardarea plain">
                 <div class="camthumb" aria-hidden="true"></div>
 
-                <div class="lesson-page tp-p1">
+                <div class="lesson-page te-pg tp-p1">
                   <span class="num">Lesson &middot; page 3 of 7</span>
+                  <span class="te-stk te-pins">
+                    <span class="te-pin tr tp-pa">Paused on this page</span>
+                    <span class="te-pin tr tp-pb">Resumed, same place</span>
+                    <span class="te-pin tr tp-pc">Waiting for you</span>
+                  </span>
                   <h4>Why projectiles curve</h4>
                   <ul>
-                    <li>Gravity only ever pulls straight down, nothing pulls sideways.</li>
-                    <li>So the horizontal speed never changes; only the vertical one does.</li>
-                    <li>A steady sideways drift plus a growing fall traces a parabola.</li>
+                    <li class="tp-b1">Gravity only ever pulls straight down, nothing pulls sideways.</li>
+                    <li class="tp-b2">So the horizontal speed never changes; only the vertical one does.</li>
+                    <li class="tp-b3">A steady sideways drift plus a growing fall traces a parabola.</li>
                   </ul>
-                  <svg class="curve k" width="260" height="130" viewBox="0 0 260 130" style="margin-top:14px" aria-hidden="true">
-                    <line x1="8" y1="116" x2="250" y2="116"></line>
-                    <line x1="8" y1="116" x2="8" y2="10"></line>
-                    <path class="tp-curve" pathLength="320" d="M10,112 C50,30 110,14 140,26 C180,44 220,86 246,114"></path>
-                    <path class="k tp-dsh" style="stroke-dasharray:6 6;stroke-dashoffset:0" d="M10,112 L200,18"></path>
-                    <text class="k tp-lb" x="188" y="14">no gravity</text>
-                  </svg>
+                  <div class="te-fig" aria-hidden="true">
+                    <svg viewBox="0 0 640 240" preserveAspectRatio="none">
+                      <defs><mask id="tp-m" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="240"><path class="tp-dm" pathLength="320" d="M20,216 L300,20"></path></mask></defs>
+                      <path class="ax" d="M16,8 V224 H628"></path>
+                      <path class="te-gd" d="M20,216 Q310,13 600,216"></path>
+                      <path class="cv tp-curve" pathLength="320" d="M20,216 Q310,13 600,216"></path>
+                      <path class="tp-ds" mask="url(#tp-m)" d="M20,216 L300,20"></path>
+                      <path class="tp-ar tp-a1" pathLength="240" d="M110,153 V163 M106,157 L110,163 L114,157"></path>
+                      <path class="tp-ar tp-a2" pathLength="240" d="M200,90 V129 M196,123 L200,129 L204,123"></path>
+                      <path class="tp-ar tp-a3" pathLength="240" d="M290,27 V115 M286,109 L290,115 L294,109"></path>
+                    </svg>
+                    <div class="tp-bl tp-ball tr"><i></i></div>
+                    <div class="tp-bl tp-ball2 tr"><i></i></div>
+                    <span class="te-lb tp-l1 k tp-nog">no gravity</span>
+                    <span class="te-lb tp-l2 k tp-wig">with gravity</span>
+                    <span class="te-lb tp-n1 k tp-t1">1</span>
+                    <span class="te-lb tp-n2 k tp-t2">4</span>
+                    <span class="te-lb tp-n3 k tp-t3">9</span>
+                  </div>
                 </div>
 
-                <div class="lesson-page tp-p2">
+                <div class="lesson-page te-pg tp-p2">
                   <span class="num">Lesson &middot; page 4 of 7</span>
                   <h4>Splitting the launch velocity</h4>
                   <ul>
-                    <li>Every launch hides two motions: one sideways, one up.</li>
-                    <li>The angle decides how the speed is shared between them.</li>
-                    <li>Treat them separately and every projectile problem opens.</li>
+                    <li class="tp-c1">Every launch hides two motions: one sideways, one up.</li>
+                    <li class="tp-c2">The angle decides how the speed is shared between them.</li>
+                    <li class="tp-c3">Treat them separately and every projectile problem opens.</li>
                   </ul>
-                  <div class="eq">v&#8339; = v cos &theta; &nbsp;&nbsp; v&#7524; = v sin &theta;</div>
+                  <div class="eq tp-q">v<sub>x</sub> = v cos &theta; &nbsp;&nbsp; v<sub>y</sub> = v sin &theta;</div>
+                  <div class="te-fig tp-f2" aria-hidden="true">
+                    <div class="tp-tri">
+                      <svg viewBox="0 0 300 240" preserveAspectRatio="none">
+                        <path class="ax" d="M12,8 V224 H292"></path>
+                        <g class="tr tp-s1">
+                          <path class="tp-v" d="M20,216 L168,20"></path>
+                          <path class="tp-vx tp-vxa" pathLength="240" d="M20,216 H168"></path>
+                          <path class="tp-vy tp-vya" pathLength="240" d="M168,216 V20"></path>
+                        </g>
+                        <g class="k tp-s2">
+                          <path class="tp-v" d="M20,216 L240,112"></path>
+                          <path class="tp-vx" d="M20,216 H240"></path>
+                          <path class="tp-vy" d="M240,216 V112"></path>
+                        </g>
+                        <path class="tp-th" pathLength="240" d="M64,216 A44,44 0 0 0 54,186"></path>
+                      </svg>
+                      <span class="te-lb tp-lv k tp-lv1">your dashed line</span>
+                      <span class="te-lb tp-lt">&theta;</span>
+                    </div>
+                    <div class="tp-mt">
+                      <span class="tp-ml k tp-m0">How the speed is shared</span>
+                      <div class="tp-m k tp-m1"><span>Sideways, v cos &theta;</span><div class="tp-bar"><i class="tp-bx"></i></div></div>
+                      <div class="tp-m k tp-m2"><span>Up, v sin &theta;</span><div class="tp-bar"><i class="tp-by"></i></div></div>
+                      <span class="tp-ml k tp-m3">Aim flatter, and sideways grows</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="voice">
-                <div class="wave" aria-hidden="true">
+                <div class="wave te-wv tp-wave" aria-hidden="true">
                   <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
                   <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
                   <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
@@ -310,7 +380,7 @@
                   <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
                 </div>
                 <div class="say">
-                  <span>&ldquo;Pause&rdquo;</span><span>&ldquo;Go back&rdquo;</span><span>&ldquo;Continue lesson&rdquo;</span>
+                  <span>&ldquo;Pause&rdquo;</span><span>&ldquo;Go back&rdquo;</span><span class="tp-s3">&ldquo;Continue lesson&rdquo;</span>
                 </div>
               </div>
             </div>
@@ -321,6 +391,7 @@
                 <div class="status-wrap" aria-hidden="true">
                   <span class="tp-sn">Narrating</span>
                   <span class="tp-sp">Paused</span>
+                  <span class="tp-wt">Waiting</span>
                 </div>
                 <span class="mode-pill">Teacher</span>
               </div>
@@ -329,16 +400,22 @@
                 <div><span class="lbl">Time left</span><span class="val">33:52</span></div>
               </div>
               <div class="side-lines">
-                <div class="line g k tp-g1"><span class="who">Gausyn</span>Watch the ball. Gravity only pulls straight down, so only the vertical part of the motion ever changes.</div>
-                <div class="line you k tp-y1"><span class="who">You</span>Wait, what would it look like with no gravity at all?</div>
+                <div class="line g k"><span class="who">Gausyn</span>Watch the ball. Gravity only pulls straight down, so only the vertical part of the motion ever changes.</div>
+                <div class="line g tr tp-g1"><span class="who">Gausyn</span>So the sideways speed stays the sa&hellip;<span class="te-cut k tp-g1c">Paused for your question</span></div>
+                <div class="line you k tp-y1"><span class="who">You</span>Wait, what if there were no gravity at all?</div>
                 <div class="line g k tp-g2"><span class="who">Gausyn</span>Then nothing would bend it, it would sail along the dashed line forever. Gravity is the whole difference between the two paths.</div>
-                <div class="line you k tp-y2"><span class="who">You</span>Got it, continue lesson.</div>
-                <div class="line g k tp-g3"><span class="who">Gausyn</span>Page 4. Every launch hides two motions, we split the velocity with cos and sin of the angle.</div>
-                <div class="line you k tp-y3"><span class="who">You</span>Slower on the &theta; part.</div>
-                <div class="line g k tp-g4"><span class="who">Gausyn</span>No rush. cos &theta; is just &ldquo;how much of the speed points sideways.&rdquo; Aim flatter, and it grows. One piece at a time.</div>
-                <div class="line you k tp-y4"><span class="who">You</span>Okay, that clicked. Keep going.</div>
+                <div class="line you tr tp-y2"><span class="who">You</span>So it falls further every second?</div>
+                <div class="line g tr tp-g3"><span class="who">Gausyn</span>Yes. Equal steps of time, and the gap goes one, four, nine. That growing fall is the curve.</div>
+                <div class="line you k tp-y3"><span class="who">You</span>Got it, continue lesson.</div>
+                <div class="line g k tp-g4"><span class="who">Gausyn</span>Back on page 3. The sideways speed stays the same, so a steady drift plus a growing fall traces a parabola.</div>
+                <div class="line g tr tp-g5"><span class="who">Gausyn</span>Your dashed line stays on the page. Ready for page 4?</div>
+                <div class="line you tr tp-y4"><span class="who">You</span>Next page.</div>
+                <div class="line g tr tp-g6"><span class="who">Gausyn</span>Page 4. Your dashed line is the launch itself. Every launch hides two motions, we split the velocity with cos and sin of the angle.</div>
+                <div class="line you tr tp-y5"><span class="who">You</span>Slower on the &theta; part.</div>
+                <div class="line g tr tp-g7"><span class="who">Gausyn</span>No rush. cos &theta; is just &ldquo;how much of the speed points sideways.&rdquo; Aim flatter, and it grows. One piece at a time.</div>
+                <div class="line you k tp-y6"><span class="who">You</span>Okay, that clicked. Keep going.</div>
               </div>
-              <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
+              <div class="side-input tp-inp"><span class="te-stk"><span class="k tp-ph">Interrupt any time, out loud or here</span><span class="te-say tr"><span class="tp-ty1">Wait, what if</span> <span class="tp-ty2">there were</span> <span class="tp-ty3">no gravity at all?</span></span></span><span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
@@ -396,9 +473,9 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:On page 4|4:Let&rsquo;s practice|9:Your pen|12:A hint|16:Second try|26:Lesson back">
           <div class="tabsbar">
-            <span class="tab active">Lesson &middot; Reaction Rates</span>
+            <span class="tab active th-t1">Lesson &middot; Reaction Rates</span>
             <span class="tab pr k th-tab">Practice &middot; Rates</span>
             <span class="spacer" style="flex:1"></span>
           </div>
@@ -407,14 +484,26 @@
               <div class="boardarea swap">
                 <div class="camthumb" aria-hidden="true"></div>
                 <div class="bstate th-les">
-                  <div class="lesson-page">
+                  <div class="lesson-page te-pg">
                     <span class="num">Lesson &middot; page 4 of 6</span>
                     <h4>Reading a rate from a graph</h4>
                     <ul>
-                      <li>The slope of the tangent is the rate at that instant.</li>
-                      <li>Steep early, flat late, the reaction is running out of fuel.</li>
+                      <li class="th-b1">The slope of the tangent is the rate at that instant.</li>
+                      <li class="th-b2">Steep early, flat late, the reaction is running out of fuel.</li>
                     </ul>
                     <div class="eq">rate &asymp; slope of tangent</div>
+                    <div class="te-fig" aria-hidden="true">
+                      <svg viewBox="0 0 640 240" preserveAspectRatio="none">
+                        <path class="ax" d="M16,8 V224 H628"></path>
+                        <path class="cv" d="M20,20 L45,44.466 L70,65.878 L95,84.617 L120,101.017 L145,115.37 L170,127.932 L195,138.925 L220,148.546 L245,156.966 L270,164.335 L295,170.784 L320,176.428 L345,181.368 L370,185.691 L395,189.474 L420,192.785 L445,195.683 L470,198.219 L495,200.439 L520,202.381 L545,204.081 L570,205.569 L595,206.871 L620,208.011"></path>
+                        <path class="te-tan th-tg" pathLength="240" d="M20,26 L150,131"></path>
+                        <path class="te-tan th-tg2" pathLength="240" d="M330,184 L580,210"></path>
+                      </svg>
+                      <span class="te-lb te-lbc">[N&#8322;O&#8325;]</span>
+                      <span class="te-lb te-lbt">time</span>
+                      <span class="te-lb te-lb1 k th-la">steep, a fast rate</span>
+                      <span class="te-lb te-lb2 k th-lb">flat, a slow rate</span>
+                    </div>
                   </div>
                 </div>
                 <div class="bstate graph th-pr">
@@ -426,9 +515,28 @@
                     <div class="tp-btn ask">Ask Gausyn</div>
                     <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
                   </div>
-                  <div class="sheet" style="padding-top: clamp(18px, 2.4vw, 30px)">
-                    <p class="q"><span class="n">1.</span>2 N&#8322;O&#8325; &rarr; 4 NO&#8322; + O&#8322;. If O&#8322; appears at 0.30 M/s, how fast is N&#8322;O&#8325; disappearing?</p>
-                    <div class="hint k th-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(72px,9vw,110px)">Two moles of N&#8322;O&#8325; go for every one O&#8322; that shows up.</div>
+                  <div class="sheet th-sheet" style="padding-top: clamp(18px, 2.4vw, 30px)">
+                    <p class="q th-q1"><span class="n">1.</span>2 N&#8322;O&#8325; &rarr; 4 NO&#8322; + O&#8322;. If O&#8322; appears at 0.30 M/s, how fast is N&#8322;O&#8325; disappearing?</p>
+                    <div class="th-ws">
+                      <div class="th-pw">
+                        <div class="penwork">
+                          <span class="pen"><span class="k th-w1">0.30 &divide; 2</span> <span class="k th-w2">= 0.15 M/s</span>
+                            <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="th-st" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg>
+                          </span>
+                          <span class="pen k th-w5">N&#8322;O&#8325; : O&#8322; = 2 : 1</span>
+                          <span class="pen"><span class="k th-w3">0.30 &times; 2</span> <span class="k th-w4">= 0.60 M/s</span> <span class="k th-ok">&#10003;</span></span>
+                        </div>
+                        <span class="th-scan tr"><span>Reading your work</span></span>
+                      </div>
+                      <div class="th-hs">
+                        <div class="hint tr th-h1">Two moles of N&#8322;O&#8325; go for every one O&#8322; that shows up.</div>
+                        <div class="hint tex k th-h2">0.60 M/s &#10003; number two is next</div>
+                      </div>
+                    </div>
+                    <div class="th-next">
+                      <p class="q th-q2"><span class="n">2.</span>In the same reaction, NO&#8322; appears at 0.80 M/s. How fast does O&#8322; appear?</p>
+                      <p class="q th-q3"><span class="n">3.</span>A tangent to the [N&#8322;O&#8325;] curve has a slope of &minus;0.12 M/s. What is the rate at that instant?</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -438,20 +546,27 @@
               <div class="side-dark">
                 <i></i><b>Gausyn</b>
                 <div class="status-wrap" aria-hidden="true">
-                  <span class="th-pa" style="position:absolute;inset:0;display:inline-flex;align-items:center;justify-content:flex-end;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">Teacher</span>
-                  <span class="th-pb" style="position:absolute;inset:0;display:inline-flex;align-items:center;justify-content:flex-end;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">Practice</span>
+                  <span class="th-pa">Teacher</span>
+                  <span class="th-pb">Practice</span>
+                  <span class="th-wa">Watching</span>
                 </div>
-                <span class="mode-pill">Session &middot; 22:15 left</span>
+                <span class="mode-pill"><span class="th-ms">Session &middot; </span>22:15 left</span>
               </div>
               <div class="side-meta">
                 <div><span class="lbl">Subject</span><span class="val">Chemistry</span></div>
                 <div><span class="lbl">Worksheet</span><span class="val">Paired &middot; 8 problems</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g tr"><span class="who">Gausyn</span>Steep early, flat late. That slope is the rate at that instant.</div>
                 <div class="line you k th-y1"><span class="who">You</span>Let&rsquo;s practice.</div>
                 <div class="line g k th-g1"><span class="who">Gausyn</span>Here&rsquo;s the paired worksheet, eight problems, matched to the pages we just did. Number one is on the board.</div>
-                <div class="line you k th-y2"><span class="who">You</span>And if I want the lesson back?</div>
-                <div class="line g k th-g2"><span class="who">Gausyn</span>Say &ldquo;switch to teacher mode&rdquo;, we pick up on page 4, right where we left it.</div>
+                <div class="line g tr th-g2"><span class="who">Gausyn</span>Not quite. Check the ratio, I left a note beside your work.</div>
+                <div class="line you tr th-y2"><span class="who">You</span>Oh, it should be double, not half.</div>
+                <div class="line g k th-g3"><span class="who">Gausyn</span>That&rsquo;s it. Number two is ready when you are.</div>
+                <div class="line you k th-y3"><span class="who">You</span>And if I want the lesson back?</div>
+                <div class="line g k th-g4"><span class="who">Gausyn</span>Say &ldquo;switch to teacher mode&rdquo;, we pick up on page 4, right where we left it.</div>
+                <div class="line you tr th-y4"><span class="who">You</span>Switch to teacher mode.</div>
+                <div class="line g tr th-g5"><span class="who">Gausyn</span>Page 4, just as you left it.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>

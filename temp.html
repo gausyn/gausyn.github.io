@@ -339,7 +339,7 @@
       </div>
       <div class="wrapw">
 
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Page one|8:Following the curve|12:Mid-word stop|17:A drawn answer|23:Page turn|32:Slower|41:Any language">
           <div class="tabsbar">
             <span class="tab active">Board 1</span>
             <span class="spacer" style="flex:1"></span>
@@ -349,37 +349,56 @@
               <div class="boardarea plain">
                 <div class="camthumb" aria-hidden="true"></div>
 
-                <div class="lesson-page te-p1">
+                <div class="lesson-page te-pg te-p1">
                   <span class="num">Lesson &middot; page 1 of 6</span>
+                  <span class="te-pin tr te-wait">Waiting for you</span>
                   <h4>What a rate actually measures</h4>
                   <ul>
-                    <li>How much of something appears or disappears, per unit of time.</li>
-                    <li>Always a change divided by an interval, never a single reading.</li>
-                    <li>The sign tells you which side of the arrow you are standing on.</li>
+                    <li class="te-b1">How much of something appears or disappears, per unit of time.</li>
+                    <li class="te-b2">Always a change divided by an interval, never a single reading.</li>
+                    <li class="te-b3">The sign tells you which side of the arrow you are standing on.</li>
                   </ul>
-                  <div class="eq">rate = &Delta;[A] / &Delta;t</div>
-                  <svg class="curve k" width="240" height="120" viewBox="0 0 240 120" style="margin-top:16px" aria-hidden="true">
-                    <line x1="8" y1="104" x2="228" y2="104"></line>
-                    <line x1="8" y1="104" x2="8" y2="8"></line>
-                    <path class="te-curve" pathLength="320" d="M10,16 C60,20 90,52 120,76 C150,94 190,102 226,103"></path>
-                    <text x="176" y="94">flattens here</text>
-                  </svg>
+                  <div class="eq te-q1">rate = &Delta;[A] / &Delta;t</div>
+                  <div class="te-fig" aria-hidden="true">
+                    <svg viewBox="0 0 640 240" preserveAspectRatio="none">
+                      <path class="ax" d="M16,8 V224 H628"></path>
+                      <path class="te-ride tr" pathLength="320" d="M20,20 L45,44.466 L70,65.878 L95,84.617 L120,101.017 L145,115.37 L170,127.932 L195,138.925 L220,148.546 L245,156.966 L270,164.335 L295,170.784 L320,176.428 L345,181.368 L370,185.691 L395,189.474 L420,192.785 L445,195.683 L470,198.219 L495,200.439 L520,202.381 L545,204.081 L570,205.569 L595,206.871 L620,208.011"></path>
+                      <path class="cv" d="M20,20 L45,44.466 L70,65.878 L95,84.617 L120,101.017 L145,115.37 L170,127.932 L195,138.925 L220,148.546 L245,156.966 L270,164.335 L295,170.784 L320,176.428 L345,181.368 L370,185.691 L395,189.474 L420,192.785 L445,195.683 L470,198.219 L495,200.439 L520,202.381 L545,204.081 L570,205.569 L595,206.871 L620,208.011"></path>
+                      <path class="te-tan te-tg1" pathLength="240" d="M20,26 L150,131"></path>
+                      <path class="te-tan te-tg2" pathLength="240" d="M330,184 L580,210"></path>
+                    </svg>
+                    <span class="te-lb te-lbc">[A]</span>
+                    <span class="te-lb te-lbt">time</span>
+                    <span class="te-lb te-lbf k te-fl">flattens here</span>
+                    <span class="te-lb te-lb1 k te-la">steep: plenty of collisions</span>
+                    <span class="te-lb te-lb2 k te-lc">flat: few particles left</span>
+                  </div>
                 </div>
 
-                <div class="lesson-page te-p2">
+                <div class="lesson-page te-pg te-p2">
                   <span class="num">Lesson &middot; page 2 of 6</span>
                   <h4>Why concentration changes the rate</h4>
                   <ul>
-                    <li>More particles in the same space collide more often.</li>
-                    <li>More collisions means more of them clear the energy barrier.</li>
-                    <li>Second order in A: doubling [A] quadruples the rate.</li>
+                    <li class="te-c1">More particles in the same space collide more often.</li>
+                    <li class="te-c2">More collisions means more of them clear the energy barrier.</li>
+                    <li class="te-c3">Second order in A: doubling [A] quadruples the rate.</li>
                   </ul>
-                  <div class="eq">rate = k[A]&sup2;[B]</div>
+                  <div class="eq te-q2">rate = k[A]&sup2;[B]</div>
+                  <div class="te-fig te-fig2" aria-hidden="true">
+                    <div class="te-box"><span class="te-dots"></span><span class="te-cap">[A]</span></div>
+                    <div class="te-box"><span class="te-dots"></span><span class="te-dots te-more k"></span><span class="te-cap k te-c2a">2[A]</span></div>
+                    <div class="te-rows">
+                      <div class="te-row k te-r1"><span>Double [A]</span><b>2[A]</b></div>
+                      <div class="te-row k te-r2"><span>Square it</span><b>2&sup2; = 4</b></div>
+                      <div class="te-row k te-r3"><span>So the rate</span><b><span class="pen te-pen">&times; 2 ?<svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="te-st" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg></span> <span class="k te-x4">&times; 4</span></b></div>
+                      <div class="te-row k te-r4"><span>Triple [A]</span><b>3&sup2; = 9</b></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="voice">
-                <div class="wave" aria-hidden="true">
+                <div class="wave te-wv te-wave" aria-hidden="true">
                   <i style="animation-delay:0s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.16s"></i>
                   <i style="animation-delay:.24s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.4s"></i>
                   <i style="animation-delay:.48s"></i><i style="animation-delay:.56s"></i><i style="animation-delay:.64s"></i>
@@ -387,7 +406,7 @@
                   <i style="animation-delay:.96s"></i><i style="animation-delay:1.04s"></i><i style="animation-delay:1.12s"></i>
                 </div>
                 <div class="say">
-                  <span>&ldquo;Go back&rdquo;</span><span>&ldquo;Slower&rdquo;</span><span>&ldquo;Let&rsquo;s practice&rdquo;</span>
+                  <span>&ldquo;Go back&rdquo;</span><span class="te-s2">&ldquo;Slower&rdquo;</span><span class="te-s3">&ldquo;Let&rsquo;s practice&rdquo;</span>
                 </div>
               </div>
             </div>
@@ -398,6 +417,7 @@
                 <div class="status-wrap" aria-hidden="true">
                   <span class="te-sp">Speaking</span>
                   <span class="te-li">Listening</span>
+                  <span class="te-wt">Waiting</span>
                 </div>
                 <span class="mode-pill">Teacher</span>
               </div>
@@ -406,16 +426,23 @@
                 <div><span class="lbl">Time left</span><span class="val">41:08</span></div>
               </div>
               <div class="side-lines">
-                <div class="line g k te-l1"><span class="who">Gausyn</span>A rate is how much changes, divided by how long it took. Watch the curve on the left.</div>
-                <div class="line you k te-l2"><span class="who">You</span>Wait, why does it flatten near the end?</div>
-                <div class="line g k te-l3"><span class="who">Gausyn</span>Good catch. Fewer particles left means fewer collisions. Let me draw what that does to the slope.</div>
-                <div class="line you k te-l4"><span class="who">You</span>Got it. Keep going.</div>
-                <div class="line g k te-l5"><span class="who">Gausyn</span>Next page: concentration. More particles in the same space collide more often.</div>
-                <div class="line you k te-l6"><span class="who">You</span>Slower on this part.</div>
-                <div class="line g k te-l7"><span class="who">Gausyn</span>Of course. Second order means doubling A quadruples the rate. One piece at a time.</div>
-                <div class="line you k te-l8"><span class="who">You</span>Okay. Let&rsquo;s practice.</div>
+                <div class="line g k"><span class="who">Gausyn</span>A rate is how much changes, divided by how long it took. Watch the curve on the left.</div>
+                <div class="line g tr te-l1"><span class="who">Gausyn</span>It starts steep, then eases off.</div>
+                <div class="line g tr te-l2"><span class="who">Gausyn</span><span class="k te-w1">Near the end,</span> <span class="k te-w2">the slope</span> <span class="k te-w3">gets sma&hellip;</span><span class="te-cut k te-l2c">Stopped to listen</span></div>
+                <div class="line you k te-l3"><span class="who">You</span>Wait, why does it flatten near the end?</div>
+                <div class="line g k te-l4"><span class="who">Gausyn</span>Good catch. Fewer particles left means fewer collisions. Let me draw what that does to the slope.</div>
+                <div class="line g tr te-l5"><span class="who">Gausyn</span>Steep while the space is crowded, flat once it empties. Ready for the next page?</div>
+                <div class="line you k te-l6"><span class="who">You</span>Got it. Keep going.</div>
+                <div class="line g k te-l7"><span class="who">Gausyn</span>Next page: concentration. More particles in the same space collide more often.</div>
+                <div class="line you tr te-l8"><span class="who">You</span>Slower on this part.</div>
+                <div class="line g tr te-l9"><span class="who">Gausyn</span>Of course. One piece at a time. Double A first, then square it.</div>
+                <div class="line you tr te-l10"><span class="who">You</span>So doubling A doubles the rate?</div>
+                <div class="line g tr te-l11"><span class="who">Gausyn</span>Close. A is squared here, so two times two. Doubling A quadruples the rate.</div>
+                <div class="line you tr te-l12"><span class="who">You</span>&iquest;Y si triplico A?</div>
+                <div class="line g tr te-l13"><span class="who">Gausyn</span>Entonces la velocidad se multiplica por nueve, porque tres al cuadrado es nueve.</div>
+                <div class="line you k te-l14"><span class="who">You</span>Okay. Let&rsquo;s practice.</div>
               </div>
-              <div class="side-input">Interrupt any time, out loud or here<span class="mic">&#127908;</span></div>
+              <div class="side-input te-inp"><span class="te-stk"><span class="k te-ph">Interrupt any time, out loud or here</span><span class="te-say tr te-sy1">Wait, why does it flatten near the end?</span></span><span class="mic">&#127908;</span></div>
             </div>
           </div>
         </div>
