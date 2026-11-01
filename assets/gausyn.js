@@ -124,6 +124,9 @@
     el.classList.remove('restart');
   }
 
+  // How fast every demo plays, one number: 1 is as timed in gausyn.css, 2 is twice as fast.
+  var PACE = 1.7;
+
   // Demos. Each is one fixed window telling one story in steps. It waits on its opening
   // frame until the window is properly on screen, plays from the top, and goes back to the
   // opening once it has left the screen, so nobody meets one halfway through or at its end.
@@ -146,7 +149,7 @@
     var L = loopOf(stage);
     if (!L || !stage.getAnimations) return;
     stage.getAnimations({ subtree: true }).forEach(function (a) {
-      if (a.animationName && Math.abs(a.effect.getComputedTiming().duration - L.D) < 1) a.currentTime = t;
+      if (a.animationName && Math.abs(a.effect.getComputedTiming().duration - L.D) < 1) { a.currentTime = t; a.playbackRate = PACE; }
     });
   }
 
@@ -231,6 +234,10 @@
     stage.gzScene.classList.add('play');
     if (!tick.on) { tick.on = true; requestAnimationFrame(tick); }
   }
+  // a window crossing a breakpoint can rebuild a demo's animations: bring them back in step
+  window.addEventListener('resize', function () {
+    running.forEach(function (st) { var t = where(st); if (t != null) seek(st, t); });
+  });
   function rest(stage) {
     if (!stage.gzPlaying) return;
     stage.gzPlaying = false;
