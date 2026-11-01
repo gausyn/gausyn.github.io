@@ -3250,11 +3250,6 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 .lx-switch .ask { display: inline-block; background: var(--si); color: #fff; border-radius: 999px; padding: 5px 15px; font-size: 11.5px; }
 .lx-switch .stay { font-size: 11.5px; color: var(--muted); }
 .lx-img { margin: 0 0 0 35px; width: min(300px, 82%); border: 1px solid var(--rule); border-radius: 10px; background: #fff; padding: 8px; }
-.lx-img svg { display: block; width: 100%; height: auto; }
-.lx-img .ax { fill: none; stroke: var(--rule); stroke-width: 1.4; }
-.lx-img .cv { fill: none; stroke: var(--hint); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
-.lx-img text { font-size: 10px; fill: var(--hint); font-family: var(--serif); }
-.lx-img .axl { fill: var(--faint); }
 .lx-drawing { margin-left: 35px; width: min(300px, 82%); height: 118px; border-radius: 10px; border: 1px dashed var(--rule); background: linear-gradient(90deg, var(--surface) 0%, #fff 50%, var(--surface) 100%); background-size: 200% 100%; animation: lx-shimmer 1.4s linear infinite; display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); }
 .lx-drawing i { width: 4px; height: 4px; border-radius: 50%; background: var(--faint); animation: skdot 1.2s ease-in-out infinite; }
 @keyframes lx-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
@@ -3295,14 +3290,29 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
   .fade-lc .lx-input .ic, .fade-la .lx-input .ic, .fade-ld .lx-input .ic { display: none; }
   .fade-lc .lx-input, .fade-ld .lx-input { font-size: 12px; }
   .lx-who span { font-size: 11px; letter-spacing: 0.1em; }
-  .fade-la .lx-img text, .fade-ld .lx-img text { font-size: 13px; }
 }
 .lx.fade-la { grid-template-columns: 206px minmax(0, 1fr) 248px; }
 .fade-la .lx-msgs { padding: 4px clamp(16px, 5%, 44px) 16px; }
 .fade-la .lx-input { margin-left: clamp(16px, 5%, 44px); margin-right: clamp(16px, 5%, 44px); }
-.fade-la .lx-img, .fade-la .lx-drawing { width: min(320px, 82%); }
+.fade-la .lx-img, .fade-la .lx-drawing { width: min(440px, calc(100% - 35px)); }
 .fade-la .lx-img { margin-top: 14px; }
-.fade-la .lx-drawing { height: 186px; margin-top: 14px; margin-left: 35px; }
+.fade-la .lx-drawing { height: 150px; margin-top: 14px; margin-left: 35px; }
+/* the timeline Clara draws: to scale, with labels above and below the line */
+.la-tl { position: relative; height: 134px; }
+.la-ax { position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: var(--hint); transform-origin: left center; }
+.la-ev { --d: 62px; position: absolute; left: var(--x); width: 124px; margin-left: calc(-1 * var(--d)); text-align: center; font-size: 13px; line-height: 1.3; color: var(--hint); }
+.la-ev b { display: block; }
+.la-ev.up { bottom: calc(50% + 14px); }
+.la-ev.dn { top: calc(50% + 14px); }
+.la-ev.first { --d: 34px; text-align: left; }
+.la-ev.last { --d: 96px; text-align: right; }
+.la-ev::before { content: ""; position: absolute; left: var(--d); width: 1.5px; height: 12px; margin-left: -0.75px; background: var(--hint); }
+.la-ev.up::before { top: 100%; }
+.la-ev.dn::before { bottom: 100%; }
+.la-ev::after { content: ""; position: absolute; left: var(--d); width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; border: 2px solid var(--hint); background: #fff; box-sizing: border-box; }
+.la-ev.up::after { top: calc(100% + 9px); }
+.la-ev.dn::after { bottom: calc(100% + 9px); }
+.la-ev.key::after { background: var(--hint); }
 .la-ctx { display: flex; flex-direction: column; gap: 9px; padding: 18px 14px; background: rgba(250,250,249,0.7); }
 .la-ctx-h { font-size: 15px; color: var(--ink); margin-bottom: 8px; }
 .la-row { border: 1px solid var(--rule); border-radius: 10px; padding: 11px 13px; font-size: 13.5px; line-height: 1.42; color: var(--ink); background: #fff; }
@@ -3318,6 +3328,16 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
 @media (max-width: 900px) {
   .lx.fade-la { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 760px) {
+  .fade-la .lx-drawing { height: 130px; }
+  .la-tl { display: grid; gap: 7px; height: auto; padding: 2px 0; }
+  .la-ax { left: 5px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; margin: 0; transform-origin: center top; }
+  html.js .fade-la .la-ink { animation-name: la-inkv; }
+  .la-ev, .la-ev.up, .la-ev.dn, .la-ev.first, .la-ev.last { --d: 0px; position: relative; left: auto; top: auto; bottom: auto; width: auto; margin: 0; padding-left: 20px; text-align: left; }
+  .la-ev b { display: inline; margin-right: 7px; }
+  .la-ev::before { display: none; }
+  .la-ev.up::after, .la-ev.dn::after { left: 0; top: 4px; bottom: auto; margin-left: 0; }
+}
 .lx.fade-ld { grid-template-columns: minmax(0, 1fr) 264px; }
 .fade-ld .lx-msgs { padding: 4px clamp(16px, 8%, 84px) 16px; }
 .fade-ld .lx-input { margin-left: clamp(16px, 8%, 84px); margin-right: clamp(16px, 8%, 84px); }
@@ -3328,10 +3348,15 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
 .fade-ld .lx-pick .pl { margin: 34px 0 13px; }
 .fade-ld .lx-chips { gap: 10px; }
 .fade-ld .lx-chip { padding: 9px 16px; font-size: 13.5px; }
-.fade-ld .lx-img { width: min(380px, 100%); margin: 14px 0 0 35px; }
-.fade-ld .lx-img text { font-size: 11.5px; }
-.ld-dash { fill: none; stroke: var(--hint); stroke-width: 1.2; stroke-dasharray: 240 600; stroke-dashoffset: 242; opacity: 0.65; }
-.ld-hole { fill: #fff; stroke: var(--hint); stroke-width: 2; }
+.ld-tri { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; margin-left: 35px; }
+.ld-bx { display: flex; flex-direction: column; gap: 6px; border: 1.5px solid var(--hint); border-radius: 10px; background: #fff; padding: 11px 13px 13px; }
+.ld-bx small { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hint); }
+.ld-sw { display: grid; font-size: 14.5px; line-height: 1.42; }
+.ld-sw > span { grid-area: 1 / 1; }
+.ld-sw > .tr { color: var(--hint); }
+.ld-sw > .k { color: var(--ink); }
+.ld-ar { align-self: center; width: 24px; height: 16px; }
+.ld-ar path { fill: none; stroke: var(--hint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
 .ld-rec { display: flex; flex-direction: column; gap: 8px; padding: 18px 16px; background: rgba(250,250,249,0.7); }
 .ld-rec-h { font-size: 17px; color: var(--ink); margin-bottom: 12px; }
 .ld-rec .eyebrow { display: block; margin: 8px 0 2px; }
@@ -3351,8 +3376,9 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
   .fade-ld .lx-tiles span { padding: 13px 14px; font-size: 13.5px; }
   .fade-ld .lx-pick .pl { margin: 20px 0 10px; }
   .fade-ld .lx-chip { padding: 7px 13px; font-size: 12.5px; }
-  .fade-ld .lx-img { margin-left: 0; }
-  .fade-ld .lx-img text { font-size: 13.5px; }
+  .ld-tri { grid-template-columns: minmax(0, 1fr); gap: 3px; margin-left: 0; }
+  .ld-ar { justify-self: center; transform: rotate(90deg); }
+  .ld-bx { gap: 3px; padding: 8px 12px 10px; }
 }
 
 /* ── same question, four levels ────────────────────────────────────────── */
@@ -3382,21 +3408,28 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
 .fade-lv .lv-ans > div > .lv-fig { flex: 0 0 37%; min-width: 0; align-self: center; }
 .lv-fig svg { display: block; width: 100%; height: auto; }
 .lv-fig text { font-family: Georgia, serif; font-size: 13px; fill: var(--muted); }
-.lv-arc { fill: none; stroke: var(--rule); stroke-width: 7; stroke-linecap: round; }
-.lv-tick path { stroke: var(--faint); stroke-width: 1.6; }
-.lv-nd { stroke: var(--si); stroke-width: 3.5; stroke-linecap: round; transform-origin: 150px 170px; transform: rotate(-80deg); }
-.lv-hub { fill: var(--si); }
-.lv-axs { fill: none; stroke: var(--rule); stroke-width: 1.4; }
-.lv-cv { fill: none; stroke: var(--si); stroke-width: 2.4; stroke-linecap: round; }
-.lv-sl { stroke: var(--hint); stroke-width: 1.6; transform-origin: 124px 164.4px; }
-.lv-pp { fill: var(--hint); }
+.lv-sun { fill: #e0a340; }
+.lv-dots circle { fill: var(--rule); }
+.lv-mol { fill: var(--muted); }
+.lv-ink { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
+.lv-grey { stroke: var(--faint); }
+.lv-blue { stroke: #3f7fbf; }
+.lv-red { stroke: #cc2222; }
+.lv-fig text.lv-tb { fill: #3f7fbf; }
+.lv-fig text.lv-tr { fill: #cc2222; }
+.lv-gnd { fill: none; stroke: var(--rule); stroke-width: 1.6; }
+.lv-you { fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; }
+.lv-bar { transform-box: fill-box; transform-origin: center bottom; }
 .lv-fu { margin-top: 14px; }
 .lv-how { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 .lv-how small { font-size: 12px; color: var(--faint); margin-right: 4px; }
 .lv-how span { border: 1px solid var(--sl); border-radius: 999px; padding: 5px 13px; font-size: 13px; color: var(--si); background: var(--sf); }
 .lv-y { display: table; margin-left: auto; background: var(--sf); border: 1px solid var(--sl); border-radius: 10px; padding: 8px 14px; font-size: 15px; }
 .lv-fu p { margin-top: 10px; }
-.lv-mx { display: inline-grid; grid-template-columns: auto auto; gap: 26px 40px; padding: 26px 30px; border-left: 1.5px solid var(--ink); border-right: 1.5px solid var(--ink); border-radius: 12px; font-size: 22px; font-style: italic; }
+.lv-chain { display: flex; flex-direction: column; gap: 3px; }
+.lv-st { border: 1px solid var(--rule); border-radius: 10px; padding: 9px 14px 10px; font-size: 16px; line-height: 1.35; background: #fff; }
+.lv-st small { display: block; font-size: 13px; color: var(--muted); }
+.lv-dn { align-self: center; font-size: 14px; line-height: 1.1; color: var(--faint); }
 .lv-cmp { display: flex; flex-direction: column; gap: 12px; }
 .lv-cr { border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.5; }
 .lv-cr small { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
@@ -3425,80 +3458,116 @@ html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: no
   .lv-cs p { font-size: 15.5px; }
   .lv-cs .lx-think { font-size: 13.5px; }
 }
-@keyframes lv-b1{0%{border-color:var(--rule);color:var(--muted);background:#fff}2.778%{border-color:var(--rule);color:var(--muted);background:#fff}3.611%{border-color:var(--ink);color:var(--ink);background:var(--surface)}25.833%{border-color:var(--ink);color:var(--ink);background:var(--surface)}26.667%{border-color:var(--rule);color:var(--muted);background:#fff}80%{border-color:var(--rule);color:var(--muted);background:#fff}80.833%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
-html.js .lv-b1{animation:lv-b1 36s ease-in-out infinite both}
-@keyframes lv-b2{0%{border-color:var(--rule);color:var(--muted);background:#fff}26.111%{border-color:var(--rule);color:var(--muted);background:#fff}26.944%{border-color:var(--ink);color:var(--ink);background:var(--surface)}44.722%{border-color:var(--ink);color:var(--ink);background:var(--surface)}45.556%{border-color:var(--rule);color:var(--muted);background:#fff}81.944%{border-color:var(--rule);color:var(--muted);background:#fff}82.778%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
-html.js .lv-b2{animation:lv-b2 36s ease-in-out infinite both}
-@keyframes lv-b3{0%{border-color:var(--rule);color:var(--muted);background:#fff}45%{border-color:var(--rule);color:var(--muted);background:#fff}45.833%{border-color:var(--ink);color:var(--ink);background:var(--surface)}61.944%{border-color:var(--ink);color:var(--ink);background:var(--surface)}62.778%{border-color:var(--rule);color:var(--muted);background:#fff}83.889%{border-color:var(--rule);color:var(--muted);background:#fff}84.722%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
-html.js .lv-b3{animation:lv-b3 36s ease-in-out infinite both}
-@keyframes lv-b4{0%{border-color:var(--rule);color:var(--muted);background:#fff}62.222%{border-color:var(--rule);color:var(--muted);background:#fff}63.056%{border-color:var(--ink);color:var(--ink);background:var(--surface)}78.889%{border-color:var(--ink);color:var(--ink);background:var(--surface)}79.722%{border-color:var(--rule);color:var(--muted);background:#fff}85.833%{border-color:var(--rule);color:var(--muted);background:#fff}86.667%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
-html.js .lv-b4{animation:lv-b4 36s ease-in-out infinite both}
-@keyframes lv-a1{0%{opacity:0;transform:translateY(8px)}7.778%{opacity:0;transform:translateY(8px)}9.167%{opacity:1;transform:none}25.556%{opacity:1;transform:none}26.667%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
-html.js .lv-ans > .a1{animation:lv-a1 36s ease-in-out infinite both}
-@keyframes lv-a2{0%{opacity:0;transform:translateY(8px)}26.667%{opacity:0;transform:translateY(8px)}28.056%{opacity:1;transform:none}44.444%{opacity:1;transform:none}45.556%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
-html.js .lv-ans > .a2{animation:lv-a2 36s ease-in-out infinite both}
-@keyframes lv-a3{0%{opacity:0;transform:translateY(8px)}45.556%{opacity:0;transform:translateY(8px)}46.944%{opacity:1;transform:none}61.667%{opacity:1;transform:none}62.778%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
-html.js .lv-ans > .a3{animation:lv-a3 36s ease-in-out infinite both}
-@keyframes lv-a4{0%{opacity:0;transform:translateY(8px)}62.778%{opacity:0;transform:translateY(8px)}64.167%{opacity:1;transform:none}78.889%{opacity:1;transform:none}80%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
-html.js .lv-ans > .a4{animation:lv-a4 36s ease-in-out infinite both}
-@keyframes lv-al{0%{opacity:1}6.944%{opacity:1}8.056%{opacity:0}79.722%{opacity:0}80.833%{opacity:1}100%{opacity:1}}
-html.js .lv-ans > .lv-all{animation:lv-al 36s ease-in-out infinite both}
-@keyframes lv-ct1{0%{opacity:1}7.222%{opacity:1}8.056%{opacity:0}100%{opacity:0}}
-html.js .lv-ct1{animation:lv-ct1 36s ease-in-out infinite both}
-@keyframes lv-ca1{0%{opacity:0;transform:translateY(10px)}80.833%{opacity:0;transform:translateY(10px)}82.083%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-ca1{animation:lv-ca1 36s ease-in-out infinite both}
-@keyframes lv-ct2{0%{opacity:1}7.222%{opacity:1}8.056%{opacity:0}100%{opacity:0}}
-html.js .lv-ct2{animation:lv-ct2 36s ease-in-out infinite both}
-@keyframes lv-ca2{0%{opacity:0;transform:translateY(10px)}82.778%{opacity:0;transform:translateY(10px)}84.028%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-ca2{animation:lv-ca2 36s ease-in-out infinite both}
-@keyframes lv-ct3{0%{opacity:1}7.222%{opacity:1}8.056%{opacity:0}100%{opacity:0}}
-html.js .lv-ct3{animation:lv-ct3 36s ease-in-out infinite both}
-@keyframes lv-ca3{0%{opacity:0;transform:translateY(10px)}84.722%{opacity:0;transform:translateY(10px)}85.972%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-ca3{animation:lv-ca3 36s ease-in-out infinite both}
-@keyframes lv-ct4{0%{opacity:1}7.222%{opacity:1}8.056%{opacity:0}100%{opacity:0}}
-html.js .lv-ct4{animation:lv-ct4 36s ease-in-out infinite both}
-@keyframes lv-ca4{0%{opacity:0;transform:translateY(10px)}86.667%{opacity:0;transform:translateY(10px)}87.917%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-ca4{animation:lv-ca4 36s ease-in-out infinite both}
-@keyframes lv-h1{0%{opacity:0}11.111%{opacity:0}12.5%{opacity:1}100%{opacity:1}}
-html.js .lv-h1{animation:lv-h1 36s ease-in-out infinite both}
-@keyframes lv-h2{0%{opacity:0}31.111%{opacity:0}32.5%{opacity:1}100%{opacity:1}}
-html.js .lv-h2{animation:lv-h2 36s ease-in-out infinite both}
-@keyframes lv-h3{0%{opacity:0}50.556%{opacity:0}51.944%{opacity:1}100%{opacity:1}}
-html.js .lv-h3{animation:lv-h3 36s ease-in-out infinite both}
-@keyframes lv-h4{0%{opacity:0}67.778%{opacity:0}69.167%{opacity:1}100%{opacity:1}}
-html.js .lv-h4{animation:lv-h4 36s ease-in-out infinite both}
-@keyframes lv-n1{0%{transform:rotate(-80deg)}8.889%{transform:rotate(-80deg)}12.222%{transform:rotate(-15deg)}15%{transform:rotate(38deg)}17.222%{transform:rotate(14deg)}20.556%{transform:rotate(14deg)}23.333%{transform:rotate(-80deg)}100%{transform:rotate(-80deg)}}
-html.js .lv-n1{animation:lv-n1 36s ease-in-out infinite both}
-@keyframes lv-y1{0%{opacity:0;transform:translateY(10px)}17.5%{opacity:0;transform:translateY(10px)}18.611%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-y1{animation:lv-y1 36s ease-in-out infinite both}
-@keyframes lv-r1{0%{opacity:0}20.278%{opacity:0}21.528%{opacity:1}100%{opacity:1}}
-html.js .lv-r1{animation:lv-r1 36s ease-in-out infinite both}
-@keyframes lv-sl{0%{transform:rotate(-39.72deg)}29.167%{transform:rotate(-39.72deg)}31.389%{transform:rotate(-35.29deg)}32.5%{transform:rotate(-35.29deg)}34.722%{transform:rotate(-30.31deg)}35.833%{transform:rotate(-30.31deg)}38.056%{transform:rotate(-26.21deg)}100%{transform:rotate(-26.21deg)}}
-html.js .lv-sl{animation:lv-sl 36s ease-in-out infinite both}
-@keyframes lv-qq{0%{transform:translate(0,0);opacity:1}29.167%{transform:translate(0px,0px);opacity:1}31.389%{transform:translate(-52px,54.4px);opacity:1}32.5%{transform:translate(-52px,54.4px);opacity:1}34.722%{transform:translate(-104px,96px);opacity:1}35.833%{transform:translate(-104px,96px);opacity:1}38.056%{transform:translate(-143px,118.8px);opacity:1}100%{transform:translate(-143px,118.8px);opacity:1}}
-html.js .lv-qq{animation:lv-qq 36s ease-in-out infinite both}
-@keyframes lv-tn{0%{opacity:0}39.444%{opacity:0}40.556%{opacity:1}100%{opacity:1}}
-html.js .lv-tn{animation:lv-tn 36s ease-in-out infinite both}
-@keyframes lv-y2{0%{opacity:0;transform:translateY(10px)}36.667%{opacity:0;transform:translateY(10px)}37.778%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-y2{animation:lv-y2 36s ease-in-out infinite both}
-@keyframes lv-r2{0%{opacity:0}39.722%{opacity:0}40.972%{opacity:1}100%{opacity:1}}
-html.js .lv-r2{animation:lv-r2 36s ease-in-out infinite both}
-@keyframes lv-m1{0%{opacity:0;transform:translateY(10px)}48.333%{opacity:0;transform:translateY(10px)}49.722%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-m1{animation:lv-m1 36s ease-in-out infinite both}
-@keyframes lv-y3{0%{opacity:0;transform:translateY(10px)}54.444%{opacity:0;transform:translateY(10px)}55.556%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-y3{animation:lv-y3 36s ease-in-out infinite both}
-@keyframes lv-r3{0%{opacity:0}57.222%{opacity:0}58.472%{opacity:1}100%{opacity:1}}
-html.js .lv-r3{animation:lv-r3 36s ease-in-out infinite both}
-@keyframes lv-m2{0%{opacity:0;transform:translateY(10px)}65.556%{opacity:0;transform:translateY(10px)}66.944%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-m2{animation:lv-m2 36s ease-in-out infinite both}
-@keyframes lv-y4{0%{opacity:0;transform:translateY(10px)}70%{opacity:0;transform:translateY(10px)}71.111%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-y4{animation:lv-y4 36s ease-in-out infinite both}
-@keyframes lv-m3{0%{opacity:0;transform:translateY(10px)}72.222%{opacity:0;transform:translateY(10px)}73.611%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .lv-m3{animation:lv-m3 36s ease-in-out infinite both}
-@keyframes lv-r4{0%{opacity:0}73.333%{opacity:0}74.583%{opacity:1}100%{opacity:1}}
-html.js .lv-r4{animation:lv-r4 36s ease-in-out infinite both}
-@keyframes fade-lv{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
-html.js .fade-lv{animation:fade-lv 36s linear infinite}
+@keyframes lv-b1{0%{border-color:var(--rule);color:var(--muted);background:#fff}0.966%{border-color:var(--rule);color:var(--muted);background:#fff}1.691%{border-color:var(--ink);color:var(--ink);background:var(--surface)}23.43%{border-color:var(--ink);color:var(--ink);background:var(--surface)}24.155%{border-color:var(--rule);color:var(--muted);background:#fff}81.401%{border-color:var(--rule);color:var(--muted);background:#fff}82.126%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
+html.js .lv-b1{animation:lv-b1 41.4s ease-in-out infinite both}
+@keyframes lv-b2{0%{border-color:var(--rule);color:var(--muted);background:#fff}23.671%{border-color:var(--rule);color:var(--muted);background:#fff}24.396%{border-color:var(--ink);color:var(--ink);background:var(--surface)}42.754%{border-color:var(--ink);color:var(--ink);background:var(--surface)}43.478%{border-color:var(--rule);color:var(--muted);background:#fff}83.333%{border-color:var(--rule);color:var(--muted);background:#fff}84.058%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
+html.js .lv-b2{animation:lv-b2 41.4s ease-in-out infinite both}
+@keyframes lv-b3{0%{border-color:var(--rule);color:var(--muted);background:#fff}42.995%{border-color:var(--rule);color:var(--muted);background:#fff}43.72%{border-color:var(--ink);color:var(--ink);background:var(--surface)}62.56%{border-color:var(--ink);color:var(--ink);background:var(--surface)}63.285%{border-color:var(--rule);color:var(--muted);background:#fff}85.266%{border-color:var(--rule);color:var(--muted);background:#fff}85.99%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
+html.js .lv-b3{animation:lv-b3 41.4s ease-in-out infinite both}
+@keyframes lv-b4{0%{border-color:var(--rule);color:var(--muted);background:#fff}62.802%{border-color:var(--rule);color:var(--muted);background:#fff}63.527%{border-color:var(--ink);color:var(--ink);background:var(--surface)}80.435%{border-color:var(--ink);color:var(--ink);background:var(--surface)}81.159%{border-color:var(--rule);color:var(--muted);background:#fff}87.198%{border-color:var(--rule);color:var(--muted);background:#fff}87.923%{border-color:var(--ink);color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);color:var(--ink);background:var(--surface)}}
+html.js .lv-b4{animation:lv-b4 41.4s ease-in-out infinite both}
+@keyframes lv-a1{0%{opacity:0;transform:translateY(8px)}4.589%{opacity:0;transform:translateY(8px)}5.797%{opacity:1;transform:none}23.43%{opacity:1;transform:none}24.155%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
+html.js .lv-ans > .a1{animation:lv-a1 41.4s ease-in-out infinite both}
+@keyframes lv-a2{0%{opacity:0;transform:translateY(8px)}24.155%{opacity:0;transform:translateY(8px)}25.362%{opacity:1;transform:none}42.754%{opacity:1;transform:none}43.478%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
+html.js .lv-ans > .a2{animation:lv-a2 41.4s ease-in-out infinite both}
+@keyframes lv-a3{0%{opacity:0;transform:translateY(8px)}43.478%{opacity:0;transform:translateY(8px)}44.686%{opacity:1;transform:none}62.56%{opacity:1;transform:none}63.285%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
+html.js .lv-ans > .a3{animation:lv-a3 41.4s ease-in-out infinite both}
+@keyframes lv-a4{0%{opacity:0;transform:translateY(8px)}63.285%{opacity:0;transform:translateY(8px)}64.493%{opacity:1;transform:none}80.435%{opacity:1;transform:none}81.159%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(-8px)}}
+html.js .lv-ans > .a4{animation:lv-a4 41.4s ease-in-out infinite both}
+@keyframes lv-al{0%{opacity:1}3.623%{opacity:1}4.589%{opacity:0}80.676%{opacity:0}81.643%{opacity:1}100%{opacity:1}}
+html.js .lv-ans > .lv-all{animation:lv-al 41.4s ease-in-out infinite both}
+@keyframes lv-ct1{0%{opacity:1}3.623%{opacity:1}4.348%{opacity:0}100%{opacity:0}}
+html.js .lv-ct1{animation:lv-ct1 41.4s ease-in-out infinite both}
+@keyframes lv-ct2{0%{opacity:1}3.623%{opacity:1}4.348%{opacity:0}100%{opacity:0}}
+html.js .lv-ct2{animation:lv-ct2 41.4s ease-in-out infinite both}
+@keyframes lv-ct3{0%{opacity:1}3.623%{opacity:1}4.348%{opacity:0}100%{opacity:0}}
+html.js .lv-ct3{animation:lv-ct3 41.4s ease-in-out infinite both}
+@keyframes lv-ct4{0%{opacity:1}3.623%{opacity:1}4.348%{opacity:0}100%{opacity:0}}
+html.js .lv-ct4{animation:lv-ct4 41.4s ease-in-out infinite both}
+@keyframes lv-ca1{0%{opacity:0;transform:translateY(10px)}82.126%{opacity:0;transform:translateY(10px)}83.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-ca1{animation:lv-ca1 41.4s ease-in-out infinite both}
+@keyframes lv-ca2{0%{opacity:0;transform:translateY(10px)}84.058%{opacity:0;transform:translateY(10px)}85.266%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-ca2{animation:lv-ca2 41.4s ease-in-out infinite both}
+@keyframes lv-ca3{0%{opacity:0;transform:translateY(10px)}85.99%{opacity:0;transform:translateY(10px)}87.198%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-ca3{animation:lv-ca3 41.4s ease-in-out infinite both}
+@keyframes lv-ca4{0%{opacity:0;transform:translateY(10px)}87.923%{opacity:0;transform:translateY(10px)}89.13%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-ca4{animation:lv-ca4 41.4s ease-in-out infinite both}
+@keyframes lv-i0{0%{stroke-dashoffset:242}5.797%{stroke-dashoffset:242}7.729%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i0{animation:lv-i0 41.4s linear infinite both}
+@keyframes lv-i1{0%{stroke-dashoffset:242}7.729%{stroke-dashoffset:242}9.179%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i1{animation:lv-i1 41.4s linear infinite both}
+@keyframes lv-i2{0%{stroke-dashoffset:242}8.454%{stroke-dashoffset:242}9.903%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i2{animation:lv-i2 41.4s linear infinite both}
+@keyframes lv-i3{0%{stroke-dashoffset:242}9.179%{stroke-dashoffset:242}10.628%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i3{animation:lv-i3 41.4s linear infinite both}
+@keyframes lv-i4{0%{stroke-dashoffset:242}9.903%{stroke-dashoffset:242}11.353%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i4{animation:lv-i4 41.4s linear infinite both}
+@keyframes lv-i5{0%{stroke-dashoffset:242}10.628%{stroke-dashoffset:242}12.56%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .lv-i5{animation:lv-i5 41.4s linear infinite both}
+@keyframes lv-t1{0%{opacity:0}12.077%{opacity:0}13.043%{opacity:1}100%{opacity:1}}
+html.js .lv-t1{animation:lv-t1 41.4s ease-in-out infinite both}
+@keyframes lv-t2{0%{opacity:0}10.628%{opacity:0}11.594%{opacity:1}100%{opacity:1}}
+html.js .lv-t2{animation:lv-t2 41.4s ease-in-out infinite both}
+@keyframes lv-y1{0%{opacity:0;transform:translateY(10px)}14.493%{opacity:0;transform:translateY(10px)}15.7%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-y1{animation:lv-y1 41.4s ease-in-out infinite both}
+@keyframes lv-r1{0%{opacity:0}17.391%{opacity:0}18.599%{opacity:1}100%{opacity:1}}
+html.js .lv-r1{animation:lv-r1 41.4s ease-in-out infinite both}
+@keyframes lv-h1{0%{opacity:0}20.773%{opacity:0}21.981%{opacity:1}100%{opacity:1}}
+html.js .lv-h1{animation:lv-h1 41.4s ease-in-out infinite both}
+@keyframes lv-p1{0%{transform:scaleY(0)}25.845%{transform:scaleY(0)}27.536%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .lv-p1{animation:lv-p1 41.4s ease-in-out infinite both}
+@keyframes lv-v1{0%{opacity:0}27.295%{opacity:0}28.019%{opacity:1}100%{opacity:1}}
+html.js .lv-v1{animation:lv-v1 41.4s ease-in-out infinite both}
+@keyframes lv-p2{0%{transform:scaleY(0)}27.053%{transform:scaleY(0)}28.744%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .lv-p2{animation:lv-p2 41.4s ease-in-out infinite both}
+@keyframes lv-v2{0%{opacity:0}28.502%{opacity:0}29.227%{opacity:1}100%{opacity:1}}
+html.js .lv-v2{animation:lv-v2 41.4s ease-in-out infinite both}
+@keyframes lv-p3{0%{transform:scaleY(0)}28.261%{transform:scaleY(0)}29.952%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .lv-p3{animation:lv-p3 41.4s ease-in-out infinite both}
+@keyframes lv-v3{0%{opacity:0}29.71%{opacity:0}30.435%{opacity:1}100%{opacity:1}}
+html.js .lv-v3{animation:lv-v3 41.4s ease-in-out infinite both}
+@keyframes lv-p4{0%{transform:scaleY(0)}29.469%{transform:scaleY(0)}31.159%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .lv-p4{animation:lv-p4 41.4s ease-in-out infinite both}
+@keyframes lv-v4{0%{opacity:0}30.918%{opacity:0}31.643%{opacity:1}100%{opacity:1}}
+html.js .lv-v4{animation:lv-v4 41.4s ease-in-out infinite both}
+@keyframes lv-y2{0%{opacity:0;transform:translateY(10px)}33.333%{opacity:0;transform:translateY(10px)}34.541%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-y2{animation:lv-y2 41.4s ease-in-out infinite both}
+@keyframes lv-r2{0%{opacity:0}36.232%{opacity:0}37.44%{opacity:1}100%{opacity:1}}
+html.js .lv-r2{animation:lv-r2 41.4s ease-in-out infinite both}
+@keyframes lv-h2{0%{opacity:0}39.614%{opacity:0}40.821%{opacity:1}100%{opacity:1}}
+html.js .lv-h2{animation:lv-h2 41.4s ease-in-out infinite both}
+@keyframes lv-c1{0%{opacity:0;transform:translateY(10px)}45.169%{opacity:0;transform:translateY(10px)}46.377%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-c1{animation:lv-c1 41.4s ease-in-out infinite both}
+@keyframes lv-d1{0%{opacity:0}46.377%{opacity:0}47.101%{opacity:1}100%{opacity:1}}
+html.js .lv-d1{animation:lv-d1 41.4s ease-in-out infinite both}
+@keyframes lv-c2{0%{opacity:0;transform:translateY(10px)}47.101%{opacity:0;transform:translateY(10px)}48.309%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-c2{animation:lv-c2 41.4s ease-in-out infinite both}
+@keyframes lv-d2{0%{opacity:0}48.309%{opacity:0}49.034%{opacity:1}100%{opacity:1}}
+html.js .lv-d2{animation:lv-d2 41.4s ease-in-out infinite both}
+@keyframes lv-c3{0%{opacity:0;transform:translateY(10px)}49.034%{opacity:0;transform:translateY(10px)}50.242%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-c3{animation:lv-c3 41.4s ease-in-out infinite both}
+@keyframes lv-d3{0%{opacity:0}50.242%{opacity:0}50.966%{opacity:1}100%{opacity:1}}
+html.js .lv-d3{animation:lv-d3 41.4s ease-in-out infinite both}
+@keyframes lv-c4{0%{opacity:0;transform:translateY(10px)}50.966%{opacity:0;transform:translateY(10px)}52.174%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-c4{animation:lv-c4 41.4s ease-in-out infinite both}
+@keyframes lv-y3{0%{opacity:0;transform:translateY(10px)}53.623%{opacity:0;transform:translateY(10px)}54.831%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-y3{animation:lv-y3 41.4s ease-in-out infinite both}
+@keyframes lv-r3{0%{opacity:0}56.522%{opacity:0}57.729%{opacity:1}100%{opacity:1}}
+html.js .lv-r3{animation:lv-r3 41.4s ease-in-out infinite both}
+@keyframes lv-h3{0%{opacity:0}59.903%{opacity:0}61.111%{opacity:1}100%{opacity:1}}
+html.js .lv-h3{animation:lv-h3 41.4s ease-in-out infinite both}
+@keyframes lv-m1{0%{opacity:0;transform:translateY(10px)}65.217%{opacity:0;transform:translateY(10px)}66.425%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-m1{animation:lv-m1 41.4s ease-in-out infinite both}
+@keyframes lv-m2{0%{opacity:0;transform:translateY(10px)}68.116%{opacity:0;transform:translateY(10px)}69.324%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-m2{animation:lv-m2 41.4s ease-in-out infinite both}
+@keyframes lv-y4{0%{opacity:0;transform:translateY(10px)}71.014%{opacity:0;transform:translateY(10px)}72.222%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .lv-y4{animation:lv-y4 41.4s ease-in-out infinite both}
+@keyframes lv-r4{0%{opacity:0}73.913%{opacity:0}75.121%{opacity:1}100%{opacity:1}}
+html.js .lv-r4{animation:lv-r4 41.4s ease-in-out infinite both}
+@keyframes lv-h4{0%{opacity:0}77.778%{opacity:0}78.986%{opacity:1}100%{opacity:1}}
+html.js .lv-h4{animation:lv-h4 41.4s ease-in-out infinite both}
+@keyframes fade-lv{0%{opacity:1}96.86%{opacity:1}99.396%{opacity:0}100%{opacity:0}}
+html.js .fade-lv{animation:fade-lv 41.4s linear infinite}
 
 /* ── teachers ──────────────────────────────────────────────────────────── */
 .tgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 18px); }
@@ -3546,7 +3615,7 @@ html.js .fade-lv{animation:fade-lv 36s linear infinite}
 
 /* ── reduced motion: every scene resolves to one composed frame ────────── */
 @media (prefers-reduced-motion: reduce) {
-  .lx-img .cv, .ld-dash { stroke-dashoffset: 0 !important; }
+  .ld-ar path { stroke-dashoffset: 0 !important; }
   .fade-lv .lv-ans > div:not(.lv-all) { display: none; }
   .fade-lv .lv-ans > .lv-all { opacity: 1 !important; transform: none !important; }
   .lv-tab { border-color: var(--ink); color: var(--ink); background: var(--surface); }
@@ -3554,92 +3623,102 @@ html.js .fade-lv{animation:fade-lv 36s linear infinite}
 }
 
 /* timelines */
-@keyframes la-rl{0%{border-color:var(--rule);background:#fff}1.731%{border-color:var(--rule);background:#fff}2.885%{border-color:var(--warm-line);background:var(--warm-soft)}50.769%{border-color:var(--warm-line);background:var(--warm-soft)}51.923%{border-color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);background:var(--surface)}}
-html.js .la-rl{animation:la-rl 52s ease-in-out infinite both}
-@keyframes la-s1{0%{transform:none;border-color:var(--sl)}1.923%{transform:none;border-color:var(--sl)}2.5%{transform:none;border-color:var(--si)}4.231%{transform:none;border-color:var(--si)}4.5%{transform:scale(0.95);border-color:var(--si)}5.038%{transform:none;border-color:var(--si)}100%{transform:none;border-color:var(--si)}}
-html.js .la-s1{animation:la-s1 52s ease-in-out infinite both}
-@keyframes la-sd{0%{opacity:1}5.577%{opacity:1}6.346%{opacity:0}100%{opacity:0}}
-html.js .la-sd{animation:la-sd 52s ease-in-out infinite both}
-@keyframes la-y1{0%{opacity:0;transform:translateY(10px)}5.769%{opacity:0;transform:translateY(10px)}6.731%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-y1{animation:la-y1 52s ease-in-out infinite both}
-@keyframes la-w1{0%{opacity:0}7.692%{opacity:0}8.077%{opacity:1}100%{opacity:1}}
-html.js .la-w1{animation:la-w1 52s ease-in-out infinite both}
-@keyframes la-t1{0%{opacity:0}7.692%{opacity:0}8.269%{opacity:1}11.346%{opacity:1}11.615%{opacity:0}100%{opacity:0}}
-html.js .la-t1{animation:la-t1 52s ease-in-out infinite both}
-@keyframes la-g2{0%{opacity:0}11.442%{opacity:0}12.404%{opacity:1}100%{opacity:1}}
-html.js .la-g2{animation:la-g2 52s ease-in-out infinite both}
-@keyframes la-c1{0%{opacity:0}16.154%{opacity:0}17.115%{opacity:1}100%{opacity:1}}
-html.js .la-c1{animation:la-c1 52s ease-in-out infinite both}
-@keyframes la-c2{0%{opacity:0}19.038%{opacity:0}20%{opacity:1}100%{opacity:1}}
-html.js .la-c2{animation:la-c2 52s ease-in-out infinite both}
-@keyframes la-c3{0%{opacity:0}21.923%{opacity:0}22.885%{opacity:1}100%{opacity:1}}
-html.js .la-c3{animation:la-c3 52s ease-in-out infinite both}
-@keyframes la-g4{0%{opacity:0}25.385%{opacity:0}26.346%{opacity:1}100%{opacity:1}}
-html.js .la-g4{animation:la-g4 52s ease-in-out infinite both}
-@keyframes la-i1{0%{opacity:0}28.462%{opacity:0}28.846%{opacity:1}32.212%{opacity:1}32.442%{opacity:0}100%{opacity:0}}
-html.js .la-i1{animation:la-i1 52s ease-in-out infinite both}
-@keyframes la-k1{0%{transform:none}28.654%{transform:none;animation-timing-function:steps(25,end)}31.731%{transform:translateX(101%)}100%{transform:translateX(101%)}}
-html.js .la-k1{animation:la-k1 52s linear infinite both}
-@keyframes la-se{0%{transform:none}31.923%{transform:none}32.192%{transform:scale(0.93)}32.731%{transform:none}44.423%{transform:none}44.692%{transform:scale(0.93)}45.231%{transform:none}53.365%{transform:none}53.635%{transform:scale(0.93)}54.173%{transform:none}100%{transform:none}}
-html.js .la-se{animation:la-se 52s ease-in-out infinite both}
-@keyframes la-ya{0%{opacity:0;transform:translateY(10px)}32.308%{opacity:0;transform:translateY(10px)}33.173%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-ya{animation:la-ya 52s ease-in-out infinite both}
-@keyframes la-w2{0%{opacity:0}33.654%{opacity:0}34.038%{opacity:1}100%{opacity:1}}
-html.js .la-w2{animation:la-w2 52s ease-in-out infinite both}
-@keyframes la-t2{0%{opacity:0}33.654%{opacity:0}34.231%{opacity:1}36.538%{opacity:1}36.808%{opacity:0}100%{opacity:0}}
-html.js .la-t2{animation:la-t2 52s ease-in-out infinite both}
-@keyframes la-ga{0%{opacity:0}36.635%{opacity:0}37.596%{opacity:1}100%{opacity:1}}
-html.js .la-ga{animation:la-ga 52s ease-in-out infinite both}
-@keyframes la-rw{0%{opacity:0;transform:translateY(10px)}38.846%{opacity:0;transform:translateY(10px)}39.808%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-rw{animation:la-rw 52s ease-in-out infinite both}
-@keyframes la-i2{0%{opacity:0}41.538%{opacity:0}41.923%{opacity:1}44.712%{opacity:1}44.942%{opacity:0}100%{opacity:0}}
-html.js .la-i2{animation:la-i2 52s ease-in-out infinite both}
-@keyframes la-k2{0%{transform:none}41.731%{transform:none;animation-timing-function:steps(27,end)}44.231%{transform:translateX(101%)}100%{transform:translateX(101%)}}
-html.js .la-k2{animation:la-k2 52s linear infinite both}
-@keyframes la-y2{0%{opacity:0;transform:translateY(10px)}44.808%{opacity:0;transform:translateY(10px)}45.673%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-y2{animation:la-y2 52s ease-in-out infinite both}
-@keyframes la-w3{0%{opacity:0}46.154%{opacity:0}46.538%{opacity:1}100%{opacity:1}}
-html.js .la-w3{animation:la-w3 52s ease-in-out infinite both}
-@keyframes la-t3{0%{opacity:0}46.154%{opacity:0}46.731%{opacity:1}48.654%{opacity:1}48.923%{opacity:0}100%{opacity:0}}
-html.js .la-t3{animation:la-t3 52s ease-in-out infinite both}
-@keyframes la-g5{0%{opacity:0}48.75%{opacity:0}49.712%{opacity:1}100%{opacity:1}}
-html.js .la-g5{animation:la-g5 52s ease-in-out infinite both}
-@keyframes la-l1{0%{opacity:1}50.962%{opacity:1}51.731%{opacity:0}100%{opacity:0}}
-html.js .la-l1{animation:la-l1 52s ease-in-out infinite both}
-@keyframes la-l2{0%{opacity:0}51.154%{opacity:0}51.923%{opacity:1}100%{opacity:1}}
-html.js .la-l2{animation:la-l2 52s ease-in-out infinite both}
-@keyframes la-i3{0%{opacity:0}51.346%{opacity:0}51.731%{opacity:1}53.654%{opacity:1}53.885%{opacity:0}100%{opacity:0}}
-html.js .la-i3{animation:la-i3 52s ease-in-out infinite both}
-@keyframes la-k3{0%{transform:none}51.442%{transform:none;animation-timing-function:steps(34,end)}53.269%{transform:translateX(101%)}100%{transform:translateX(101%)}}
-html.js .la-k3{animation:la-k3 52s linear infinite both}
-@keyframes la-y3{0%{opacity:0;transform:translateY(10px)}53.75%{opacity:0;transform:translateY(10px)}54.615%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-y3{animation:la-y3 52s ease-in-out infinite both}
-@keyframes la-w4{0%{opacity:0}55.192%{opacity:0}55.577%{opacity:1}100%{opacity:1}}
-html.js .la-w4{animation:la-w4 52s ease-in-out infinite both}
-@keyframes la-t4{0%{opacity:0}55.192%{opacity:0}55.769%{opacity:1}57.885%{opacity:1}58.154%{opacity:0}100%{opacity:0}}
-html.js .la-t4{animation:la-t4 52s ease-in-out infinite both}
-@keyframes la-dr{0%{opacity:0}57.885%{opacity:0}58.654%{opacity:1}63.077%{opacity:1}63.846%{opacity:0}100%{opacity:0}}
-html.js .la-dr{animation:la-dr 52s ease-in-out infinite both}
-@keyframes la-im{0%{opacity:0}63.077%{opacity:0}64.038%{opacity:1}100%{opacity:1}}
-html.js .la-im{animation:la-im 52s ease-in-out infinite both}
-@keyframes la-ink{0%{stroke-dashoffset:242}63.846%{stroke-dashoffset:242}68.462%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .la-ink{animation:la-ink 52s linear infinite both}
-@keyframes la-vx{0%{opacity:0}68.654%{opacity:0}69.615%{opacity:1}100%{opacity:1}}
-html.js .la-vx{animation:la-vx 52s ease-in-out infinite both}
-@keyframes la-g6{0%{opacity:0}72.308%{opacity:0}73.269%{opacity:1}100%{opacity:1}}
-html.js .la-g6{animation:la-g6 52s ease-in-out infinite both}
-@keyframes la-cd{0%{opacity:0;transform:translateY(10px)}76.538%{opacity:0;transform:translateY(10px)}77.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-cd{animation:la-cd 52s ease-in-out infinite both}
-@keyframes la-cp{0%{transform:none;border-color:var(--sl);background:var(--sf)}80.385%{transform:none;border-color:var(--sl);background:var(--sf)}80.769%{transform:none;border-color:var(--si);background:var(--sf)}82.5%{transform:none;border-color:var(--si);background:var(--sf)}82.788%{transform:scale(0.97);border-color:var(--si);background:var(--sf)}83.365%{transform:none;border-color:var(--si);background:var(--sf)}84.615%{transform:none;border-color:var(--si);background:#fff}100%{transform:none;border-color:var(--si);background:#fff}}
-html.js .la-cp{animation:la-cp 52s ease-in-out infinite both}
-@keyframes la-c-a{0%{opacity:1}83.654%{opacity:1}84.327%{opacity:0}100%{opacity:0}}
-html.js .la-c-a{animation:la-c-a 52s ease-in-out infinite both}
-@keyframes la-c-b{0%{opacity:0}84.038%{opacity:0}84.808%{opacity:1}100%{opacity:1}}
-html.js .la-c-b{animation:la-c-b 52s ease-in-out infinite both}
-@keyframes la-rc{0%{opacity:0;transform:translateY(10px)}86.154%{opacity:0;transform:translateY(10px)}87.115%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .la-rc{animation:la-rc 52s ease-in-out infinite both}
-@keyframes fade-la{0%{opacity:1}97.5%{opacity:1}99.519%{opacity:0}100%{opacity:0}}
-html.js .fade-la{animation:fade-la 52s linear infinite}
+@keyframes la-rl{0%{border-color:var(--rule);background:#fff}1.348%{border-color:var(--rule);background:#fff}2.472%{border-color:var(--warm-line);background:var(--warm-soft)}55.955%{border-color:var(--warm-line);background:var(--warm-soft)}57.079%{border-color:var(--ink);background:var(--surface)}100%{border-color:var(--ink);background:var(--surface)}}
+html.js .la-rl{animation:la-rl 44.5s ease-in-out infinite both}
+@keyframes la-s1{0%{transform:none;border-color:var(--sl)}2.921%{transform:none;border-color:var(--sl)}3.596%{transform:none;border-color:var(--si)}5.393%{transform:none;border-color:var(--si)}5.73%{transform:scale(0.95);border-color:var(--si)}6.404%{transform:none;border-color:var(--si)}100%{transform:none;border-color:var(--si)}}
+html.js .la-s1{animation:la-s1 44.5s ease-in-out infinite both}
+@keyframes la-sd{0%{opacity:1}6.517%{opacity:1}7.191%{opacity:0}100%{opacity:0}}
+html.js .la-sd{animation:la-sd 44.5s ease-in-out infinite both}
+@keyframes la-y1{0%{opacity:0;transform:translateY(10px)}6.742%{opacity:0;transform:translateY(10px)}7.865%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-y1{animation:la-y1 44.5s ease-in-out infinite both}
+@keyframes la-w1{0%{opacity:0}8.09%{opacity:0}8.539%{opacity:1}100%{opacity:1}}
+html.js .la-w1{animation:la-w1 44.5s ease-in-out infinite both}
+@keyframes la-t1{0%{opacity:0}8.09%{opacity:0}8.764%{opacity:1}11.573%{opacity:1}11.888%{opacity:0}100%{opacity:0}}
+html.js .la-t1{animation:la-t1 44.5s ease-in-out infinite both}
+@keyframes la-g2{0%{opacity:0}11.685%{opacity:0}12.809%{opacity:1}100%{opacity:1}}
+html.js .la-g2{animation:la-g2 44.5s ease-in-out infinite both}
+@keyframes la-c1{0%{opacity:0}14.831%{opacity:0}15.955%{opacity:1}100%{opacity:1}}
+html.js .la-c1{animation:la-c1 44.5s ease-in-out infinite both}
+@keyframes la-c2{0%{opacity:0}19.775%{opacity:0}20.899%{opacity:1}100%{opacity:1}}
+html.js .la-c2{animation:la-c2 44.5s ease-in-out infinite both}
+@keyframes la-c3{0%{opacity:0}24.719%{opacity:0}25.843%{opacity:1}100%{opacity:1}}
+html.js .la-c3{animation:la-c3 44.5s ease-in-out infinite both}
+@keyframes la-g4{0%{opacity:0}30.112%{opacity:0}31.236%{opacity:1}100%{opacity:1}}
+html.js .la-g4{animation:la-g4 44.5s ease-in-out infinite both}
+@keyframes la-i1{0%{opacity:0}33.258%{opacity:0}33.708%{opacity:1}36.854%{opacity:1}37.124%{opacity:0}100%{opacity:0}}
+html.js .la-i1{animation:la-i1 44.5s ease-in-out infinite both}
+@keyframes la-k1{0%{transform:none;animation-timing-function:steps(33,end)}33.483%{transform:none;animation-timing-function:steps(33,end)}36.404%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .la-k1{animation:la-k1 44.5s linear infinite both}
+@keyframes la-se{0%{transform:none}36.629%{transform:none}36.944%{transform:scale(0.93)}37.573%{transform:none}50.112%{transform:none}50.427%{transform:scale(0.93)}51.056%{transform:none}60.449%{transform:none}60.764%{transform:scale(0.93)}61.393%{transform:none}100%{transform:none}}
+html.js .la-se{animation:la-se 44.5s ease-in-out infinite both}
+@keyframes la-ya{0%{opacity:0;transform:translateY(10px)}37.303%{opacity:0;transform:translateY(10px)}38.427%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-ya{animation:la-ya 44.5s ease-in-out infinite both}
+@keyframes la-w2{0%{opacity:0}38.652%{opacity:0}39.101%{opacity:1}100%{opacity:1}}
+html.js .la-w2{animation:la-w2 44.5s ease-in-out infinite both}
+@keyframes la-t2{0%{opacity:0}38.652%{opacity:0}39.326%{opacity:1}41.685%{opacity:1}42%{opacity:0}100%{opacity:0}}
+html.js .la-t2{animation:la-t2 44.5s ease-in-out infinite both}
+@keyframes la-ga{0%{opacity:0}41.798%{opacity:0}42.921%{opacity:1}100%{opacity:1}}
+html.js .la-ga{animation:la-ga 44.5s ease-in-out infinite both}
+@keyframes la-rw{0%{opacity:0;transform:translateY(10px)}44.045%{opacity:0;transform:translateY(10px)}45.169%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-rw{animation:la-rw 44.5s ease-in-out infinite both}
+@keyframes la-i2{0%{opacity:0}46.292%{opacity:0}46.742%{opacity:1}50.337%{opacity:1}50.607%{opacity:0}100%{opacity:0}}
+html.js .la-i2{animation:la-i2 44.5s ease-in-out infinite both}
+@keyframes la-k2{0%{transform:none;animation-timing-function:steps(42,end)}46.517%{transform:none;animation-timing-function:steps(42,end)}49.888%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .la-k2{animation:la-k2 44.5s linear infinite both}
+@keyframes la-y2{0%{opacity:0;transform:translateY(10px)}50.787%{opacity:0;transform:translateY(10px)}51.91%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-y2{animation:la-y2 44.5s ease-in-out infinite both}
+@keyframes la-w3{0%{opacity:0}52.135%{opacity:0}52.584%{opacity:1}100%{opacity:1}}
+html.js .la-w3{animation:la-w3 44.5s ease-in-out infinite both}
+@keyframes la-t3{0%{opacity:0}52.135%{opacity:0}52.809%{opacity:1}54.719%{opacity:1}55.034%{opacity:0}100%{opacity:0}}
+html.js .la-t3{animation:la-t3 44.5s ease-in-out infinite both}
+@keyframes la-g5{0%{opacity:0}54.831%{opacity:0}55.955%{opacity:1}100%{opacity:1}}
+html.js .la-g5{animation:la-g5 44.5s ease-in-out infinite both}
+@keyframes la-l1{0%{opacity:1}55.955%{opacity:1}56.854%{opacity:0}100%{opacity:0}}
+html.js .la-l1{animation:la-l1 44.5s ease-in-out infinite both}
+@keyframes la-l2{0%{opacity:0}56.18%{opacity:0}57.079%{opacity:1}100%{opacity:1}}
+html.js .la-l2{animation:la-l2 44.5s ease-in-out infinite both}
+@keyframes la-i3{0%{opacity:0}57.978%{opacity:0}58.427%{opacity:1}60.674%{opacity:1}60.944%{opacity:0}100%{opacity:0}}
+html.js .la-i3{animation:la-i3 44.5s ease-in-out infinite both}
+@keyframes la-k3{0%{transform:none;animation-timing-function:steps(34,end)}58.202%{transform:none;animation-timing-function:steps(34,end)}60.225%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .la-k3{animation:la-k3 44.5s linear infinite both}
+@keyframes la-y3{0%{opacity:0;transform:translateY(10px)}61.124%{opacity:0;transform:translateY(10px)}62.247%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-y3{animation:la-y3 44.5s ease-in-out infinite both}
+@keyframes la-w4{0%{opacity:0}62.472%{opacity:0}62.921%{opacity:1}100%{opacity:1}}
+html.js .la-w4{animation:la-w4 44.5s ease-in-out infinite both}
+@keyframes la-t4{0%{opacity:0}62.472%{opacity:0}63.146%{opacity:1}64.831%{opacity:1}65.146%{opacity:0}100%{opacity:0}}
+html.js .la-t4{animation:la-t4 44.5s ease-in-out infinite both}
+@keyframes la-dr{0%{opacity:0}64.944%{opacity:0}65.618%{opacity:1}68.539%{opacity:1}69.213%{opacity:0}100%{opacity:0}}
+html.js .la-dr{animation:la-dr 44.5s ease-in-out infinite both}
+@keyframes la-im{0%{opacity:0}68.764%{opacity:0}69.663%{opacity:1}100%{opacity:1}}
+html.js .la-im{animation:la-im 44.5s ease-in-out infinite both}
+@keyframes la-ink{0%{transform:scaleX(0)}69.438%{transform:scaleX(0)}74.607%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+html.js .la-ink{animation:la-ink 44.5s linear infinite both}
+@keyframes la-inkv{0%{transform:scaleY(0)}69.438%{transform:scaleY(0)}74.607%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .la-inkv{animation:la-inkv 44.5s linear infinite both}
+@keyframes la-e1{0%{opacity:0}69.663%{opacity:0}70.562%{opacity:1}100%{opacity:1}}
+html.js .la-e1{animation:la-e1 44.5s ease-in-out infinite both}
+@keyframes la-e2{0%{opacity:0}70.787%{opacity:0}71.685%{opacity:1}100%{opacity:1}}
+html.js .la-e2{animation:la-e2 44.5s ease-in-out infinite both}
+@keyframes la-e3{0%{opacity:0}71.91%{opacity:0}72.809%{opacity:1}100%{opacity:1}}
+html.js .la-e3{animation:la-e3 44.5s ease-in-out infinite both}
+@keyframes la-e4{0%{opacity:0}73.034%{opacity:0}73.933%{opacity:1}100%{opacity:1}}
+html.js .la-e4{animation:la-e4 44.5s ease-in-out infinite both}
+@keyframes la-e5{0%{opacity:0}74.157%{opacity:0}75.056%{opacity:1}100%{opacity:1}}
+html.js .la-e5{animation:la-e5 44.5s ease-in-out infinite both}
+@keyframes la-g6{0%{opacity:0}76.854%{opacity:0}77.978%{opacity:1}100%{opacity:1}}
+html.js .la-g6{animation:la-g6 44.5s ease-in-out infinite both}
+@keyframes la-cd{0%{opacity:0;transform:translateY(10px)}80.449%{opacity:0;transform:translateY(10px)}81.573%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-cd{animation:la-cd 44.5s ease-in-out infinite both}
+@keyframes la-cp{0%{transform:none;border-color:var(--sl);background:var(--sf)}83.146%{transform:none;border-color:var(--sl);background:var(--sf)}83.82%{transform:none;border-color:var(--si);background:var(--sf)}85.393%{transform:none;border-color:var(--si);background:var(--sf)}85.73%{transform:scale(0.97);border-color:var(--si);background:var(--sf)}86.404%{transform:none;border-color:var(--si);background:var(--sf)}87.64%{transform:none;border-color:var(--si);background:#fff}100%{transform:none;border-color:var(--si);background:#fff}}
+html.js .la-cp{animation:la-cp 44.5s ease-in-out infinite both}
+@keyframes la-c-a{0%{opacity:1}86.292%{opacity:1}87.079%{opacity:0}100%{opacity:0}}
+html.js .la-c-a{animation:la-c-a 44.5s ease-in-out infinite both}
+@keyframes la-c-b{0%{opacity:0}86.742%{opacity:0}87.64%{opacity:1}100%{opacity:1}}
+html.js .la-c-b{animation:la-c-b 44.5s ease-in-out infinite both}
+@keyframes la-rc{0%{opacity:0;transform:translateY(10px)}88.539%{opacity:0;transform:translateY(10px)}89.663%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .la-rc{animation:la-rc 44.5s ease-in-out infinite both}
+@keyframes fade-la{0%{opacity:1}97.079%{opacity:1}99.438%{opacity:0}100%{opacity:0}}
+html.js .fade-la{animation:fade-la 44.5s linear infinite}
 @keyframes lc-i1{0%{opacity:0}2.368%{opacity:0}2.895%{opacity:1}9.868%{opacity:1}10.184%{opacity:0}100%{opacity:0}}
 html.js .lc-i1{animation:lc-i1 38s ease-in-out infinite both}
 @keyframes lc-c1{0%{transform:none}2.632%{transform:none;animation-timing-function:steps(47,end)}9.211%{transform:translateX(101%)}100%{transform:translateX(101%)}}
@@ -3708,86 +3787,100 @@ html.js .lc-g3{animation:lc-g3 38s ease-in-out infinite both}
 html.js .lc-se{animation:lc-se 38s ease-in-out infinite both}
 @keyframes fade-lc{0%{opacity:1}96.579%{opacity:1}99.342%{opacity:0}100%{opacity:0}}
 html.js .fade-lc{animation:fade-lc 38s linear infinite}
-@keyframes ld-p1{0%{border-color:var(--sl);box-shadow:none}2.25%{border-color:var(--sl);box-shadow:none}2.875%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}4.75%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}5.375%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
-html.js .ld-p1{animation:ld-p1 40s ease-in-out infinite both}
-@keyframes ld-x1{0%{border-color:var(--rule);background:#fff}2.25%{border-color:var(--rule);background:#fff}2.875%{border-color:var(--ink);background:var(--surface)}4.75%{border-color:var(--ink);background:var(--surface)}5.375%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
-html.js .ld-x1{animation:ld-x1 40s ease-in-out infinite both}
-@keyframes ld-p3{0%{border-color:var(--sl);box-shadow:none}5.25%{border-color:var(--sl);box-shadow:none}5.875%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}7.75%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}8.375%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
-html.js .ld-p3{animation:ld-p3 40s ease-in-out infinite both}
-@keyframes ld-x2{0%{border-color:var(--rule);background:#fff}5.25%{border-color:var(--rule);background:#fff}5.875%{border-color:var(--ink);background:var(--surface)}7.75%{border-color:var(--ink);background:var(--surface)}8.375%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
-html.js .ld-x2{animation:ld-x2 40s ease-in-out infinite both}
-@keyframes ld-p4{0%{border-color:var(--sl);box-shadow:none}8.25%{border-color:var(--sl);box-shadow:none}8.875%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}10.75%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}11.375%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
-html.js .ld-p4{animation:ld-p4 40s ease-in-out infinite both}
-@keyframes ld-x4{0%{border-color:var(--rule);background:#fff}8.25%{border-color:var(--rule);background:#fff}8.875%{border-color:var(--ink);background:var(--surface)}10.75%{border-color:var(--ink);background:var(--surface)}11.375%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
-html.js .ld-x4{animation:ld-x4 40s ease-in-out infinite both}
-@keyframes ld-pc{0%{transform:none;border-color:var(--sl);box-shadow:none}11.25%{transform:none;border-color:var(--sl);box-shadow:none}12%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}16.25%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}16.625%{transform:scale(0.95);border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}17.375%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}100%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}}
-html.js .ld-pc{animation:ld-pc 40s ease-in-out infinite both}
-@keyframes ld-x3{0%{border-color:var(--rule);background:#fff}11.25%{border-color:var(--rule);background:#fff}12%{border-color:var(--ink);background:var(--surface)}26%{border-color:var(--ink);background:var(--surface)}27.25%{border-color:var(--rule);background:#fff}85.5%{opacity:1;border-color:var(--rule);background:#fff}86.5%{opacity:0;border-color:var(--rule);background:#fff}100%{opacity:0;border-color:var(--rule);background:#fff}}
-html.js .ld-x3{animation:ld-x3 40s ease-in-out infinite both}
-@keyframes ld-hp{0%{opacity:1}18.25%{opacity:1}19.375%{opacity:0}100%{opacity:0}}
-html.js .ld-hp{animation:ld-hp 40s ease-in-out infinite both}
-@keyframes ld-pk{0%{opacity:1}18.25%{opacity:1}19.375%{opacity:0}100%{opacity:0}}
-html.js .ld-pk{animation:ld-pk 40s ease-in-out infinite both}
-@keyframes ld-ha{0%{opacity:0}18.75%{opacity:0}19.875%{opacity:1}100%{opacity:1}}
-html.js .ld-ha{animation:ld-ha 40s ease-in-out infinite both}
-@keyframes ld-in{0%{opacity:0}18.75%{opacity:0}19.875%{opacity:1}27%{opacity:1}28%{opacity:0}100%{opacity:0}}
-html.js .ld-in{animation:ld-in 40s ease-in-out infinite both}
-@keyframes ld-il{0%{opacity:0}22.25%{opacity:0}23.5%{opacity:1}100%{opacity:1}}
-html.js .ld-il{animation:ld-il 40s ease-in-out infinite both}
-@keyframes ld-ii{0%{opacity:0}27.25%{opacity:0}28.25%{opacity:1}100%{opacity:1}}
-html.js .ld-ii{animation:ld-ii 40s ease-in-out infinite both}
-@keyframes ld-g1{0%{opacity:0}27.5%{opacity:0}28.75%{opacity:1}100%{opacity:1}}
-html.js .ld-g1{animation:ld-g1 40s ease-in-out infinite both}
-@keyframes ld-sd{0%{opacity:0;transform:translateY(10px)}33%{opacity:0;transform:translateY(10px)}34%{opacity:1;transform:none}39.25%{opacity:1;transform:none}40%{opacity:0;transform:translateY(10px)}100%{opacity:0;transform:translateY(10px)}}
-html.js .ld-sd{animation:ld-sd 40s ease-in-out infinite both}
-@keyframes ld-s1{0%{transform:none}38%{transform:none}38.35%{transform:scale(0.93)}39.05%{transform:none}100%{transform:none}}
-html.js .ld-s1{animation:ld-s1 40s ease-in-out infinite both}
-@keyframes ld-y1{0%{opacity:0;transform:translateY(10px)}39.5%{opacity:0;transform:translateY(10px)}40.625%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ld-y1{animation:ld-y1 40s ease-in-out infinite both}
-@keyframes ld-w1{0%{opacity:0}41.25%{opacity:0}41.75%{opacity:1}100%{opacity:1}}
-html.js .ld-w1{animation:ld-w1 40s ease-in-out infinite both}
-@keyframes ld-t1{0%{opacity:0}41.25%{opacity:0}42%{opacity:1}45%{opacity:1}45.35%{opacity:0}100%{opacity:0}}
-html.js .ld-t1{animation:ld-t1 40s ease-in-out infinite both}
-@keyframes ld-g2{0%{opacity:0}45.125%{opacity:0}46.375%{opacity:1}100%{opacity:1}}
-html.js .ld-g2{animation:ld-g2 40s ease-in-out infinite both}
-@keyframes ld-fg{0%{opacity:0}49.75%{opacity:0}50.75%{opacity:1}100%{opacity:1}}
-html.js .ld-fg{animation:ld-fg 40s ease-in-out infinite both}
-@keyframes ld-ink{0%{stroke-dashoffset:242}50.5%{stroke-dashoffset:242}55.25%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .ld-ink{animation:ld-ink 40s linear infinite both}
-@keyframes ld-ho{0%{opacity:0}55%{opacity:0}55.875%{opacity:1}100%{opacity:1}}
-html.js .ld-ho{animation:ld-ho 40s ease-in-out infinite both}
-@keyframes ld-lx{0%{opacity:0}55.75%{opacity:0}56.75%{opacity:1}100%{opacity:1}}
-html.js .ld-lx{animation:ld-lx 40s ease-in-out infinite both}
-@keyframes ld-dv{0%{stroke-dashoffset:242}56.25%{stroke-dashoffset:242}57.75%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .ld-dv{animation:ld-dv 40s linear infinite both}
-@keyframes ld-dh{0%{stroke-dashoffset:242}57.5%{stroke-dashoffset:242}59.75%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .ld-dh{animation:ld-dh 40s linear infinite both}
-@keyframes ld-ly{0%{opacity:0}59%{opacity:0}60%{opacity:1}100%{opacity:1}}
-html.js .ld-ly{animation:ld-ly 40s ease-in-out infinite both}
-@keyframes ld-g3{0%{opacity:0}63.5%{opacity:0}64.75%{opacity:1}100%{opacity:1}}
-html.js .ld-g3{animation:ld-g3 40s ease-in-out infinite both}
-@keyframes ld-pb{0%{opacity:0}67.5%{opacity:0}68.75%{opacity:1}100%{opacity:1}}
-html.js .ld-pb{animation:ld-pb 40s ease-in-out infinite both}
-@keyframes ld-i1{0%{opacity:0}70.5%{opacity:0}71%{opacity:1}76.375%{opacity:1}76.675%{opacity:0}100%{opacity:0}}
-html.js .ld-i1{animation:ld-i1 40s ease-in-out infinite both}
-@keyframes ld-k1{0%{transform:none}70.75%{transform:none;animation-timing-function:steps(46,end)}75.75%{transform:translateX(101%)}100%{transform:translateX(101%)}}
-html.js .ld-k1{animation:ld-k1 40s linear infinite both}
-@keyframes ld-se{0%{transform:none}76%{transform:none}76.35%{transform:scale(0.93)}77.05%{transform:none}100%{transform:none}}
-html.js .ld-se{animation:ld-se 40s ease-in-out infinite both}
-@keyframes ld-y2{0%{opacity:0;transform:translateY(10px)}76.5%{opacity:0;transform:translateY(10px)}77.625%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ld-y2{animation:ld-y2 40s ease-in-out infinite both}
-@keyframes ld-w2{0%{opacity:0}78%{opacity:0}78.5%{opacity:1}100%{opacity:1}}
-html.js .ld-w2{animation:ld-w2 40s ease-in-out infinite both}
-@keyframes ld-t2{0%{opacity:0}78%{opacity:0}78.75%{opacity:1}81.25%{opacity:1}81.6%{opacity:0}100%{opacity:0}}
-html.js .ld-t2{animation:ld-t2 40s ease-in-out infinite both}
-@keyframes ld-g4{0%{opacity:0}81.375%{opacity:0}82.625%{opacity:1}100%{opacity:1}}
-html.js .ld-g4{animation:ld-g4 40s ease-in-out infinite both}
-@keyframes ld-xn{0%{opacity:0;transform:translateY(10px)}86.5%{opacity:0;transform:translateY(10px)}87.75%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ld-xn{animation:ld-xn 40s ease-in-out infinite both}
-@keyframes ld-nt{0%{opacity:0}88%{opacity:0}89.25%{opacity:1}100%{opacity:1}}
-html.js .ld-nt{animation:ld-nt 40s ease-in-out infinite both}
-@keyframes fade-ld{0%{opacity:1}96.75%{opacity:1}99.375%{opacity:0}100%{opacity:0}}
-html.js .fade-ld{animation:fade-ld 40s linear infinite}
+@keyframes ld-p1{0%{border-color:var(--sl);box-shadow:none}1.923%{border-color:var(--sl);box-shadow:none}2.61%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}4.258%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}4.945%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
+html.js .ld-p1{animation:ld-p1 36.4s ease-in-out infinite both}
+@keyframes ld-x1{0%{border-color:var(--rule);background:#fff}1.923%{border-color:var(--rule);background:#fff}2.61%{border-color:var(--ink);background:var(--surface)}4.258%{border-color:var(--ink);background:var(--surface)}4.945%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
+html.js .ld-x1{animation:ld-x1 36.4s ease-in-out infinite both}
+@keyframes ld-p3{0%{border-color:var(--sl);box-shadow:none}5.22%{border-color:var(--sl);box-shadow:none}5.907%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}7.555%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}8.242%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
+html.js .ld-p3{animation:ld-p3 36.4s ease-in-out infinite both}
+@keyframes ld-x2{0%{border-color:var(--rule);background:#fff}5.22%{border-color:var(--rule);background:#fff}5.907%{border-color:var(--ink);background:var(--surface)}7.555%{border-color:var(--ink);background:var(--surface)}8.242%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
+html.js .ld-x2{animation:ld-x2 36.4s ease-in-out infinite both}
+@keyframes ld-p4{0%{border-color:var(--sl);box-shadow:none}8.516%{border-color:var(--sl);box-shadow:none}9.203%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}10.852%{border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}11.538%{border-color:var(--sl);box-shadow:none}100%{border-color:var(--sl);box-shadow:none}}
+html.js .ld-p4{animation:ld-p4 36.4s ease-in-out infinite both}
+@keyframes ld-x4{0%{border-color:var(--rule);background:#fff}8.516%{border-color:var(--rule);background:#fff}9.203%{border-color:var(--ink);background:var(--surface)}10.852%{border-color:var(--ink);background:var(--surface)}11.538%{border-color:var(--rule);background:#fff}100%{border-color:var(--rule);background:#fff}}
+html.js .ld-x4{animation:ld-x4 36.4s ease-in-out infinite both}
+@keyframes ld-pc{0%{transform:none;border-color:var(--sl);box-shadow:none}11.813%{transform:none;border-color:var(--sl);box-shadow:none}12.637%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}15.385%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}15.797%{transform:scale(0.95);border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}16.621%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}100%{transform:none;border-color:var(--si);box-shadow:0 0 0 3px var(--sl)}}
+html.js .ld-pc{animation:ld-pc 36.4s ease-in-out infinite both}
+@keyframes ld-x3{0%{border-color:var(--rule);background:#fff;opacity:1}11.813%{border-color:var(--rule);background:#fff;opacity:1}12.637%{border-color:var(--ink);background:var(--surface);opacity:1}34.341%{border-color:var(--ink);background:var(--surface);opacity:1}35.714%{border-color:var(--rule);background:#fff;opacity:1}83.516%{border-color:var(--rule);background:#fff;opacity:1}84.615%{border-color:var(--rule);background:#fff;opacity:0}100%{border-color:var(--rule);background:#fff;opacity:0}}
+html.js .ld-x3{animation:ld-x3 36.4s ease-in-out infinite both}
+@keyframes ld-hp{0%{opacity:1}17.033%{opacity:1}18.132%{opacity:0}100%{opacity:0}}
+html.js .ld-hp{animation:ld-hp 36.4s ease-in-out infinite both}
+@keyframes ld-pk{0%{opacity:1}17.033%{opacity:1}18.132%{opacity:0}100%{opacity:0}}
+html.js .ld-pk{animation:ld-pk 36.4s ease-in-out infinite both}
+@keyframes ld-ha{0%{opacity:0}17.308%{opacity:0}18.407%{opacity:1}100%{opacity:1}}
+html.js .ld-ha{animation:ld-ha 36.4s ease-in-out infinite both}
+@keyframes ld-in{0%{opacity:0}17.308%{opacity:0}18.407%{opacity:1}24.725%{opacity:1}25.824%{opacity:0}100%{opacity:0}}
+html.js .ld-in{animation:ld-in 36.4s ease-in-out infinite both}
+@keyframes ld-il{0%{opacity:0}20.33%{opacity:0}21.703%{opacity:1}100%{opacity:1}}
+html.js .ld-il{animation:ld-il 36.4s ease-in-out infinite both}
+@keyframes ld-ii{0%{opacity:0}25.275%{opacity:0}26.374%{opacity:1}100%{opacity:1}}
+html.js .ld-ii{animation:ld-ii 36.4s ease-in-out infinite both}
+@keyframes ld-g1{0%{opacity:0}25.549%{opacity:0}26.923%{opacity:1}100%{opacity:1}}
+html.js .ld-g1{animation:ld-g1 36.4s ease-in-out infinite both}
+@keyframes ld-sd{0%{opacity:0;transform:translateY(10px)}29.945%{opacity:0;transform:translateY(10px)}31.044%{opacity:1;transform:none}34.89%{opacity:1;transform:none}35.714%{opacity:0;transform:translateY(10px)}100%{opacity:0;transform:translateY(10px)}}
+html.js .ld-sd{animation:ld-sd 36.4s ease-in-out infinite both}
+@keyframes ld-s1{0%{transform:none}33.791%{transform:none}34.176%{transform:scale(0.93)}34.945%{transform:none}100%{transform:none}}
+html.js .ld-s1{animation:ld-s1 36.4s ease-in-out infinite both}
+@keyframes ld-y1{0%{opacity:0;transform:translateY(10px)}35.714%{opacity:0;transform:translateY(10px)}37.088%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ld-y1{animation:ld-y1 36.4s ease-in-out infinite both}
+@keyframes ld-w1{0%{opacity:0}37.637%{opacity:0}38.187%{opacity:1}100%{opacity:1}}
+html.js .ld-w1{animation:ld-w1 36.4s ease-in-out infinite both}
+@keyframes ld-t1{0%{opacity:0}37.637%{opacity:0}38.462%{opacity:1}41.621%{opacity:1}42.005%{opacity:0}100%{opacity:0}}
+html.js .ld-t1{animation:ld-t1 36.4s ease-in-out infinite both}
+@keyframes ld-g2{0%{opacity:0}41.758%{opacity:0}43.132%{opacity:1}100%{opacity:1}}
+html.js .ld-g2{animation:ld-g2 36.4s ease-in-out infinite both}
+@keyframes ld-fg{0%{opacity:0}45.055%{opacity:0}45.604%{opacity:1}100%{opacity:1}}
+html.js .ld-fg{animation:ld-fg 36.4s ease-in-out infinite both}
+@keyframes ld-b1{0%{opacity:0}45.33%{opacity:0}46.429%{opacity:1}100%{opacity:1}}
+html.js .ld-b1{animation:ld-b1 36.4s ease-in-out infinite both}
+@keyframes ld-n1{0%{stroke-dashoffset:242}46.703%{stroke-dashoffset:242}47.802%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ld-n1{animation:ld-n1 36.4s linear infinite both}
+@keyframes ld-b2{0%{opacity:0}47.802%{opacity:0}48.901%{opacity:1}100%{opacity:1}}
+html.js .ld-b2{animation:ld-b2 36.4s ease-in-out infinite both}
+@keyframes ld-n2{0%{stroke-dashoffset:242}49.176%{stroke-dashoffset:242}50.275%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ld-n2{animation:ld-n2 36.4s linear infinite both}
+@keyframes ld-b3{0%{opacity:0}50.275%{opacity:0}51.374%{opacity:1}100%{opacity:1}}
+html.js .ld-b3{animation:ld-b3 36.4s ease-in-out infinite both}
+@keyframes ld-g3{0%{opacity:0}54.396%{opacity:0}55.769%{opacity:1}100%{opacity:1}}
+html.js .ld-g3{animation:ld-g3 36.4s ease-in-out infinite both}
+@keyframes ld-i1{0%{opacity:0}57.418%{opacity:0}57.967%{opacity:1}62.088%{opacity:1}62.418%{opacity:0}100%{opacity:0}}
+html.js .ld-i1{animation:ld-i1 36.4s ease-in-out infinite both}
+@keyframes ld-k1{0%{transform:none;animation-timing-function:steps(37,end)}57.692%{transform:none;animation-timing-function:steps(37,end)}61.538%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .ld-k1{animation:ld-k1 36.4s linear infinite both}
+@keyframes ld-a1{0%{opacity:1}62.088%{opacity:1}62.775%{opacity:0}100%{opacity:0}}
+html.js .ld-a1{animation:ld-a1 36.4s ease-in-out infinite both}
+@keyframes ld-u1{0%{opacity:0}62.363%{opacity:0}63.324%{opacity:1}100%{opacity:1}}
+html.js .ld-u1{animation:ld-u1 36.4s ease-in-out infinite both}
+@keyframes ld-i2{0%{opacity:0}63.462%{opacity:0}64.011%{opacity:1}68.132%{opacity:1}68.462%{opacity:0}100%{opacity:0}}
+html.js .ld-i2{animation:ld-i2 36.4s ease-in-out infinite both}
+@keyframes ld-k2{0%{transform:none;animation-timing-function:steps(38,end)}63.736%{transform:none;animation-timing-function:steps(38,end)}67.582%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .ld-k2{animation:ld-k2 36.4s linear infinite both}
+@keyframes ld-a2{0%{opacity:1}68.132%{opacity:1}68.819%{opacity:0}100%{opacity:0}}
+html.js .ld-a2{animation:ld-a2 36.4s ease-in-out infinite both}
+@keyframes ld-u2{0%{opacity:0}68.407%{opacity:0}69.368%{opacity:1}100%{opacity:1}}
+html.js .ld-u2{animation:ld-u2 36.4s ease-in-out infinite both}
+@keyframes ld-i3{0%{opacity:0}69.505%{opacity:0}70.055%{opacity:1}74.176%{opacity:1}74.505%{opacity:0}100%{opacity:0}}
+html.js .ld-i3{animation:ld-i3 36.4s ease-in-out infinite both}
+@keyframes ld-k3{0%{transform:none;animation-timing-function:steps(36,end)}69.78%{transform:none;animation-timing-function:steps(36,end)}73.626%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+html.js .ld-k3{animation:ld-k3 36.4s linear infinite both}
+@keyframes ld-a3{0%{opacity:1}74.176%{opacity:1}74.863%{opacity:0}100%{opacity:0}}
+html.js .ld-a3{animation:ld-a3 36.4s ease-in-out infinite both}
+@keyframes ld-u3{0%{opacity:0}74.451%{opacity:0}75.412%{opacity:1}100%{opacity:1}}
+html.js .ld-u3{animation:ld-u3 36.4s ease-in-out infinite both}
+@keyframes ld-se{0%{transform:none}61.813%{transform:none}62.198%{transform:scale(0.93)}62.967%{transform:none}67.857%{transform:none}68.242%{transform:scale(0.93)}69.011%{transform:none}73.901%{transform:none}74.286%{transform:scale(0.93)}75.055%{transform:none}100%{transform:none}}
+html.js .ld-se{animation:ld-se 36.4s ease-in-out infinite both}
+@keyframes ld-w2{0%{opacity:0}76.099%{opacity:0}76.648%{opacity:1}100%{opacity:1}}
+html.js .ld-w2{animation:ld-w2 36.4s ease-in-out infinite both}
+@keyframes ld-t2{0%{opacity:0}76.099%{opacity:0}76.923%{opacity:1}80.082%{opacity:1}80.467%{opacity:0}100%{opacity:0}}
+html.js .ld-t2{animation:ld-t2 36.4s ease-in-out infinite both}
+@keyframes ld-g4{0%{opacity:0}80.22%{opacity:0}81.593%{opacity:1}100%{opacity:1}}
+html.js .ld-g4{animation:ld-g4 36.4s ease-in-out infinite both}
+@keyframes ld-xn{0%{opacity:0;transform:translateY(10px)}84.341%{opacity:0;transform:translateY(10px)}85.714%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ld-xn{animation:ld-xn 36.4s ease-in-out infinite both}
+@keyframes ld-nt{0%{opacity:0}86.813%{opacity:0}88.187%{opacity:1}100%{opacity:1}}
+html.js .ld-nt{animation:ld-nt 36.4s ease-in-out infinite both}
+@keyframes fade-ld{0%{opacity:1}96.429%{opacity:1}99.313%{opacity:0}100%{opacity:0}}
+html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 
 /* ── Whiteboard page: chapters, jump row, and the loop's current card ──── */
 .chapter { padding-top: 0; padding-bottom: 0; scroll-margin-top: var(--header-h); }
@@ -3831,6 +3924,7 @@ html.js .fade-ld{animation:fade-ld 40s linear infinite}
   .stage .lv-tab { padding: 7px 10px; }
   .stage .lv-tab small { display: none; }
   .stage .lv-body { padding: 16px; }
+  .stage .lv-how { display: none; }
   .stage .lv-ans .m { white-space: normal; }
 }
 .chapnav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: clamp(22px, 3.4vh, 34px); }
@@ -4731,7 +4825,6 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 .co-lcard p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
 .co-draw svg { width: 100%; height: auto; display: block; }
 .co-draw path.cv { fill: none; stroke: var(--hint); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
-.co-draw .ax { fill: none; stroke: var(--hint); stroke-width: 1.4; opacity: 0.6; }
 .co-draw text { font-size: 10px; fill: var(--hint); font-family: Georgia, serif; }
 .co-check { position: absolute; left: clamp(16px, 2vw, 26px); bottom: 16px; width: min(400px, 64%); border: 1.5px solid rgba(74,95,134,0.35); background: rgba(238,241,247,0.97); border-radius: 10px; padding: 10px 14px 12px; font-size: 12.5px; line-height: 1.5; color: var(--cool-deep); z-index: 4; }
 .co-check .lbl { display: flex; justify-content: space-between; align-items: center; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cool-ink); margin-bottom: 4px; }
@@ -4788,16 +4881,26 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 .co-side { min-height: 0; overflow: hidden; }
 .stage .boardarea.co-board { min-height: 0; }
 .fade-ch .co-mine { right: 8%; top: 24px; }
-.fade-ch .co-mine .q { font-size: 17px; max-width: 56ch; }
+.fade-ch .co-mine .q { font-size: 17px; max-width: 74ch; }
 .ch-work { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0 34px 22px; font-size: 16px; color: var(--muted); }
 .ch-work svg { width: 62px; height: 44px; flex-shrink: 0; }
 .ch-work .bl { fill: none; stroke: var(--ink); stroke-width: 1.2; }
-.ch-work .in { fill: none; stroke: #2e86ab; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
+.ch-work .in { fill: none; stroke: #2e86ab; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
 .ch-ok { border: 1px solid rgba(204,34,34,0.3); border-radius: 6px; padding: 5px 11px; font-size: 13px; color: var(--hint); background: #fff; }
 .fade-ch .co-lcard { padding: 18px 20px; }
 .fade-ch .co-lcard p { font-size: 15px; }
 .fade-ch .co-lcard h4 { font-size: 20px; }
-.fade-ch .co-check { font-size: 14px; }
+.fade-ch .co-check { right: clamp(16px, 2vw, 26px); width: auto; font-size: 15px; }
+.fade-ch .co-lesson { bottom: 126px; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr); }
+.fade-ch .co-draw { align-self: center; }
+.ch-sec { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule-soft); }
+.ch-sec small { display: block; margin-bottom: 7px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.ch-sec > div { display: flex; gap: 24px; }
+.ch-sec span { font-size: 13.5px; line-height: 1.35; color: var(--muted); }
+.ch-sec b { display: block; font-size: 22px; color: var(--ink); }
+.ch-earth { fill: #fff; stroke: var(--hint); stroke-width: 1.6; }
+.ch-moon { fill: var(--hint); }
+.ch-dash { fill: none; stroke: var(--hint); stroke-width: 1.6; stroke-dasharray: 5 5; }
 .ch-lb { position: relative; display: grid; }
 .ch-lb > span { grid-area: 1 / 1; }
 .ch-res { display: block; margin-top: 4px; color: #2f8a4c; }
@@ -4808,12 +4911,23 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
   .ch-work svg { width: 46px; height: 32px; }
   .ch-ok { padding: 3px 9px; font-size: 12.5px; }
   .fade-ch .co-toast { bottom: 12px; }
+}
+/* the orbit is the lesson, so it stays when the card has to shrink */
+@media (max-width: 1180px) {
+  .ch-sec { display: none; }
+}
+@media (max-width: 1000px) {
+  .fade-ch .co-lesson { bottom: auto; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .fade-ch .co-lesson .co-draw { display: block; width: min(100%, 470px); margin: 0 auto; }
+}
+@media (max-width: 900px) {
   .fade-ch .co-lesson { left: 14px; right: 14px; top: 10px; }
   .fade-ch .co-lcard { padding: 9px 13px; }
-  .fade-ch .co-lcard .eyebrow { display: none; }
-  .fade-ch .co-lcard h4 { font-size: 16px; margin-bottom: 3px; }
-  .fade-ch .co-lcard p { font-size: 13px; line-height: 1.45; }
+  .fade-ch .co-lcard .eyebrow, .fade-ch .co-lcard p { display: none; }
+  .fade-ch .co-lcard h4 { margin-bottom: 0; font-size: 16px; }
   .fade-ch .co-check { left: 14px; right: 14px; bottom: 8px; padding: 7px 12px 8px; font-size: 13px; line-height: 1.4; }
+  .fade-ch .co-lesson .co-draw { width: min(100%, 290px); }
+  .fade-ch .co-lesson .co-draw text { font-size: 13.5px; }
 }
 .fade-cf { position: relative; align-content: start; padding: 22px 26px; }
 .fade-cf .cf-seg { display: none; }
@@ -5073,6 +5187,7 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 /* ── responsive ── */
 @media (max-width: 900px) {
   .stage .board-shell.fade-ca, .stage .board-shell.fade-ch { grid-template-rows: minmax(0, 47%) minmax(0, 53%); }
+  .stage .board-shell.fade-ch { grid-template-rows: minmax(0, 52%) minmax(0, 48%); }
   .co-tiles { display: none; }
   .co-svg { width: 72%; }
   .co-side .side-dark { padding: 7px 12px; }
@@ -5327,106 +5442,112 @@ html.js .caf-s{animation:caf-s 48.8s ease-out infinite both}
 html.js .caf-m{animation:caf-m 48.8s ease-out infinite both}
 @keyframes fade-ca{0%{opacity:1}97.337%{opacity:1}99.488%{opacity:0}100%{opacity:0}}
 html.js .fade-ca{animation:fade-ca 48.8s linear infinite}
-@keyframes cho-1{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cho-1{animation:cho-1 39.2s ease-in-out infinite both}
-@keyframes chn{0%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .chn{animation:chn 39.2s linear infinite both}
-@keyframes cho-w{0%{opacity:1}100%{opacity:1}}
-html.js .cho-w{animation:cho-w 39.2s ease-in-out infinite both}
-@keyframes cho-t{0%{opacity:0}100%{opacity:0}}
-html.js .cho-t{animation:cho-t 39.2s ease-in-out infinite both}
-@keyframes cho-2{0%{opacity:1}100%{opacity:1}}
-html.js .cho-2{animation:cho-2 39.2s ease-in-out infinite both}
-@keyframes chr-k{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .chr-k{animation:chr-k 39.2s ease-in-out infinite both}
-@keyframes chd-m{0%{opacity:0}0%{opacity:0}1.02%{opacity:1}100%{opacity:1}}
-html.js .chd-m{animation:chd-m 39.2s ease-in-out infinite both}
-@keyframes cht-2{0%{opacity:0;transform:translateY(10px);background:#fafafa;border-color:var(--rule);color:var(--muted)}0%{opacity:0;transform:translateY(10px);background:#fafafa;border-color:var(--rule);color:var(--muted)}1.276%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}19.133%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}20.154%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
-html.js .cht-2{animation:cht-2 39.2s ease-in-out infinite both}
-@keyframes cho{0%{opacity:0}1.02%{opacity:0}2.041%{opacity:1}19.387%{opacity:1}20.408%{opacity:0}100%{opacity:0}}
-html.js .cho{animation:cho 39.2s ease-in-out infinite both}
-@keyframes chw-m1{0%{opacity:1}0.255%{opacity:1}1.276%{opacity:0}100%{opacity:0}}
-html.js .chw-m1{animation:chw-m1 39.2s ease-in-out infinite both}
-@keyframes chw-m2{0%{opacity:0}0.766%{opacity:0}1.785%{opacity:1}100%{opacity:1}}
-html.js .chw-m2{animation:chw-m2 39.2s ease-in-out infinite both}
-@keyframes chd-l{0%{opacity:0}4.847%{opacity:0}5.868%{opacity:1}100%{opacity:1}}
-html.js .chd-l{animation:chd-l 39.2s ease-in-out infinite both}
-@keyframes chw-l1{0%{opacity:1}4.847%{opacity:1}5.868%{opacity:0}100%{opacity:0}}
-html.js .chw-l1{animation:chw-l1 39.2s ease-in-out infinite both}
-@keyframes chw-l2{0%{opacity:0}5.357%{opacity:0}6.377%{opacity:1}100%{opacity:1}}
-html.js .chw-l2{animation:chw-l2 39.2s ease-in-out infinite both}
-@keyframes ch-q4{0%{opacity:0;transform:translateY(10px)}8.163%{opacity:0;transform:translateY(10px)}9.439%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .ch-q4{animation:ch-q4 39.2s ease-in-out infinite both}
-@keyframes cho-3{0%{opacity:0}10.204%{opacity:0}11.353%{opacity:1}100%{opacity:1}}
-html.js .cho-3{animation:cho-3 39.2s ease-in-out infinite both}
-@keyframes chj{0%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}13.265%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}14.286%{transform:none;box-shadow:0 0 0 3px rgba(255,255,255,0.35)}16.836%{transform:none;box-shadow:0 0 0 3px rgba(255,255,255,0.35)}17.194%{transform:scale(0.93);box-shadow:0 0 0 3px rgba(255,255,255,0.35)}17.908%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}100%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-html.js .chj{animation:chj 39.2s ease-in-out infinite both}
-@keyframes cht-1{0%{background:#fff;border-color:var(--ink);color:var(--ink)}18.878%{background:#fff;border-color:var(--ink);color:var(--ink)}19.898%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fafafa;border-color:var(--rule);color:var(--muted)}}
-html.js .cht-1{animation:cht-1 39.2s ease-in-out infinite both}
-@keyframes chd-s1{0%{opacity:1}18.878%{opacity:1}19.898%{opacity:0}100%{opacity:0}}
-html.js .chd-s1{animation:chd-s1 39.2s ease-in-out infinite both}
-@keyframes chd-s2{0%{opacity:0}19.643%{opacity:0}20.663%{opacity:1}100%{opacity:1}}
-html.js .chd-s2{animation:chd-s2 39.2s ease-in-out infinite both}
-@keyframes chb-1{0%{opacity:1}18.878%{opacity:1}19.898%{opacity:0}100%{opacity:0}}
-html.js .chb-1{animation:chb-1 39.2s ease-in-out infinite both}
-@keyframes chh-1{0%{opacity:1}18.878%{opacity:1}19.898%{opacity:0}100%{opacity:0}}
-html.js .chh-1{animation:chh-1 39.2s ease-in-out infinite both}
-@keyframes chw-1{0%{opacity:1}18.878%{opacity:1}19.898%{opacity:0}100%{opacity:0}}
-html.js .chw-1{animation:chw-1 39.2s ease-in-out infinite both}
-@keyframes chp-1{0%{opacity:1}18.878%{opacity:1}19.898%{opacity:0}100%{opacity:0}}
-html.js .chp-1{animation:chp-1 39.2s ease-in-out infinite both}
-@keyframes chb-2{0%{opacity:0}19.387%{opacity:0}20.408%{opacity:1}100%{opacity:1}}
-html.js .chb-2{animation:chb-2 39.2s ease-in-out infinite both}
-@keyframes chh-2{0%{opacity:0}19.387%{opacity:0}20.408%{opacity:1}100%{opacity:1}}
-html.js .chh-2{animation:chh-2 39.2s ease-in-out infinite both}
-@keyframes chw-2{0%{opacity:0}19.387%{opacity:0}20.408%{opacity:1}100%{opacity:1}}
-html.js .chw-2{animation:chw-2 39.2s ease-in-out infinite both}
-@keyframes chp-2{0%{opacity:0}19.387%{opacity:0}20.408%{opacity:1}100%{opacity:1}}
-html.js .chp-2{animation:chp-2 39.2s ease-in-out infinite both}
-@keyframes chi{0%{stroke-dashoffset:150}20.408%{stroke-dashoffset:150}28.062%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .chi{animation:chi 39.2s linear infinite both}
-@keyframes chf{0%{opacity:0}27.551%{opacity:0}28.571%{opacity:1}100%{opacity:1}}
-html.js .chf{animation:chf 39.2s ease-in-out infinite both}
-@keyframes chg-1{0%{opacity:0}23.47%{opacity:0}24.617%{opacity:1}100%{opacity:1}}
-html.js .chg-1{animation:chg-1 39.2s ease-in-out infinite both}
-@keyframes chy-1{0%{opacity:0;transform:translateY(10px)}32.653%{opacity:0;transform:translateY(10px)}33.673%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .chy-1{animation:chy-1 39.2s ease-in-out infinite both}
-@keyframes chg-w{0%{opacity:0}34.694%{opacity:0}35.205%{opacity:1}100%{opacity:1}}
-html.js .chg-w{animation:chg-w 39.2s ease-in-out infinite both}
-@keyframes chg-t{0%{opacity:0}34.694%{opacity:0}35.459%{opacity:1}38.775%{opacity:1}39.132%{opacity:0}100%{opacity:0}}
-html.js .chg-t{animation:chg-t 39.2s ease-in-out infinite both}
-@keyframes chg-2{0%{opacity:0}38.903%{opacity:0}40.051%{opacity:1}100%{opacity:1}}
-html.js .chg-2{animation:chg-2 39.2s ease-in-out infinite both}
-@keyframes chm-0{0%{opacity:0}43.878%{opacity:0}45.025%{opacity:1}100%{opacity:1}}
-html.js .chm-0{animation:chm-0 39.2s ease-in-out infinite both}
-@keyframes chk{0%{opacity:0;transform:translateY(10px)}47.959%{opacity:0;transform:translateY(10px)}49.235%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .chk{animation:chk 39.2s ease-in-out infinite both}
-@keyframes chk-c{0%{--p:100%}47.959%{--p:100%}83.674%{--p:0%}100%{--p:0%}}
-html.js .chk-c{animation:chk-c 39.2s linear infinite both}
-@keyframes chm-1{0%{opacity:0}54.082%{opacity:0}55.23%{opacity:1}100%{opacity:1}}
-html.js .chm-1{animation:chm-1 39.2s ease-in-out infinite both}
-@keyframes chn-w{0%{opacity:0}56.377%{opacity:0}56.888%{opacity:1}100%{opacity:1}}
-html.js .chn-w{animation:chn-w 39.2s ease-in-out infinite both}
-@keyframes chn-t{0%{opacity:0}56.377%{opacity:0}57.143%{opacity:1}60.459%{opacity:1}60.817%{opacity:0}100%{opacity:0}}
-html.js .chn-t{animation:chn-t 39.2s ease-in-out infinite both}
-@keyframes chn-2{0%{opacity:0}60.587%{opacity:0}61.734%{opacity:1}100%{opacity:1}}
-html.js .chn-2{animation:chn-2 39.2s ease-in-out infinite both}
-@keyframes chl-1{0%{opacity:0}68.877%{opacity:0}70.026%{opacity:1}100%{opacity:1}}
-html.js .chl-1{animation:chl-1 39.2s ease-in-out infinite both}
-@keyframes chz-w{0%{opacity:0}71.174%{opacity:0}71.684%{opacity:1}100%{opacity:1}}
-html.js .chz-w{animation:chz-w 39.2s ease-in-out infinite both}
-@keyframes chz-t{0%{opacity:0}71.174%{opacity:0}71.939%{opacity:1}75.255%{opacity:1}75.612%{opacity:0}100%{opacity:0}}
-html.js .chz-t{animation:chz-t 39.2s ease-in-out infinite both}
-@keyframes chg-3{0%{opacity:0}75.383%{opacity:0}76.531%{opacity:1}100%{opacity:1}}
-html.js .chg-3{animation:chg-3 39.2s ease-in-out infinite both}
-@keyframes chk-a{0%{opacity:1}80.101%{opacity:1}80.994%{opacity:0}100%{opacity:0}}
-html.js .chk-a{animation:chk-a 39.2s ease-in-out infinite both}
-@keyframes chk-b{0%{opacity:0}80.612%{opacity:0}81.505%{opacity:1}100%{opacity:1}}
-html.js .chk-b{animation:chk-b 39.2s ease-in-out infinite both}
-@keyframes chk-r{0%{opacity:0}81.122%{opacity:0}82.27%{opacity:1}100%{opacity:1}}
-html.js .chk-r{animation:chk-r 39.2s ease-in-out infinite both}
-@keyframes fade-ch{0%{opacity:1}96.684%{opacity:1}99.363%{opacity:0}100%{opacity:0}}
-html.js .fade-ch{animation:fade-ch 39.2s linear infinite}
+@keyframes cht-2{0%{opacity:0;transform:translateY(10px);background:#fafafa;border-color:var(--rule);color:var(--muted)}1.515%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}22.727%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}23.939%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
+html.js .cht-2{animation:cht-2 33s ease-in-out infinite both}
+@keyframes cht-1{0%{background:#fff;border-color:var(--ink);color:var(--ink)}22.424%{background:#fff;border-color:var(--ink);color:var(--ink)}23.636%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fafafa;border-color:var(--rule);color:var(--muted)}}
+html.js .cht-1{animation:cht-1 33s ease-in-out infinite both}
+@keyframes chd-m{0%{opacity:0}1.212%{opacity:1}100%{opacity:1}}
+html.js .chd-m{animation:chd-m 33s ease-in-out infinite both}
+@keyframes cho{0%{opacity:0}1.212%{opacity:0}2.424%{opacity:1}23.03%{opacity:1}24.242%{opacity:0}100%{opacity:0}}
+html.js .cho{animation:cho 33s ease-in-out infinite both}
+@keyframes chw-m1{0%{opacity:1}0.303%{opacity:1}1.515%{opacity:0}100%{opacity:0}}
+html.js .chw-m1{animation:chw-m1 33s ease-in-out infinite both}
+@keyframes chw-m2{0%{opacity:0}0.909%{opacity:0}2.121%{opacity:1}100%{opacity:1}}
+html.js .chw-m2{animation:chw-m2 33s ease-in-out infinite both}
+@keyframes chd-a{0%{opacity:0}5.758%{opacity:0}6.97%{opacity:1}100%{opacity:1}}
+html.js .chd-a{animation:chd-a 33s ease-in-out infinite both}
+@keyframes chw-a1{0%{opacity:1}5.758%{opacity:1}6.97%{opacity:0}100%{opacity:0}}
+html.js .chw-a1{animation:chw-a1 33s ease-in-out infinite both}
+@keyframes chw-a2{0%{opacity:0}6.364%{opacity:0}7.576%{opacity:1}100%{opacity:1}}
+html.js .chw-a2{animation:chw-a2 33s ease-in-out infinite both}
+@keyframes ch-q4{0%{opacity:0;transform:translateY(10px)}9.697%{opacity:0;transform:translateY(10px)}11.212%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ch-q4{animation:ch-q4 33s ease-in-out infinite both}
+@keyframes cho-3{0%{opacity:0}12.121%{opacity:0}13.485%{opacity:1}100%{opacity:1}}
+html.js .cho-3{animation:cho-3 33s ease-in-out infinite both}
+@keyframes chj{0%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}15.758%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}16.97%{transform:none;box-shadow:0 0 0 3px rgba(255,255,255,0.35)}20%{transform:none;box-shadow:0 0 0 3px rgba(255,255,255,0.35)}20.424%{transform:scale(0.93);box-shadow:0 0 0 3px rgba(255,255,255,0.35)}21.273%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}100%{transform:none;box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+html.js .chj{animation:chj 33s ease-in-out infinite both}
+@keyframes chd-s1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chd-s1{animation:chd-s1 33s ease-in-out infinite both}
+@keyframes chb-1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chb-1{animation:chb-1 33s ease-in-out infinite both}
+@keyframes chh-1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chh-1{animation:chh-1 33s ease-in-out infinite both}
+@keyframes chw-1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chw-1{animation:chw-1 33s ease-in-out infinite both}
+@keyframes chp-1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chp-1{animation:chp-1 33s ease-in-out infinite both}
+@keyframes chi-1{0%{opacity:1}22.424%{opacity:1}23.636%{opacity:0}100%{opacity:0}}
+html.js .chi-1{animation:chi-1 33s ease-in-out infinite both}
+@keyframes chb-2{0%{opacity:0}23.03%{opacity:0}24.242%{opacity:1}100%{opacity:1}}
+html.js .chb-2{animation:chb-2 33s ease-in-out infinite both}
+@keyframes chh-2{0%{opacity:0}23.03%{opacity:0}24.242%{opacity:1}100%{opacity:1}}
+html.js .chh-2{animation:chh-2 33s ease-in-out infinite both}
+@keyframes chw-2{0%{opacity:0}23.03%{opacity:0}24.242%{opacity:1}100%{opacity:1}}
+html.js .chw-2{animation:chw-2 33s ease-in-out infinite both}
+@keyframes chp-2{0%{opacity:0}23.03%{opacity:0}24.242%{opacity:1}100%{opacity:1}}
+html.js .chp-2{animation:chp-2 33s ease-in-out infinite both}
+@keyframes chi-2{0%{opacity:0}23.03%{opacity:0}24.242%{opacity:1}100%{opacity:1}}
+html.js .chi-2{animation:chi-2 33s ease-in-out infinite both}
+@keyframes chd-s2{0%{opacity:0}23.333%{opacity:0}24.545%{opacity:1}100%{opacity:1}}
+html.js .chd-s2{animation:chd-s2 33s ease-in-out infinite both}
+@keyframes chi{0%{stroke-dashoffset:150}24.242%{stroke-dashoffset:150}30.909%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .chi{animation:chi 33s linear infinite both}
+@keyframes chg-1{0%{opacity:0}26.667%{opacity:0}28.03%{opacity:1}100%{opacity:1}}
+html.js .chg-1{animation:chg-1 33s ease-in-out infinite both}
+@keyframes cha-g{0%{stroke-dashoffset:242}29.091%{stroke-dashoffset:242}31.515%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cha-g{animation:cha-g 33s linear infinite both}
+@keyframes chl-g{0%{opacity:0}31.212%{opacity:0}32.424%{opacity:1}100%{opacity:1}}
+html.js .chl-g{animation:chl-g 33s ease-in-out infinite both}
+@keyframes cha-v{0%{stroke-dashoffset:242}31.818%{stroke-dashoffset:242}34.242%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cha-v{animation:cha-v 33s linear infinite both}
+@keyframes chl-v{0%{opacity:0}33.939%{opacity:0}35.152%{opacity:1}100%{opacity:1}}
+html.js .chl-v{animation:chl-v 33s ease-in-out infinite both}
+@keyframes chf{0%{opacity:0}30.303%{opacity:0}31.515%{opacity:1}100%{opacity:1}}
+html.js .chf{animation:chf 33s ease-in-out infinite both}
+@keyframes chs{0%{opacity:0;transform:translateY(10px)}35.152%{opacity:0;transform:translateY(10px)}36.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .chs{animation:chs 33s ease-in-out infinite both}
+@keyframes chy-1{0%{opacity:0;transform:translateY(10px)}37.576%{opacity:0;transform:translateY(10px)}38.788%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .chy-1{animation:chy-1 33s ease-in-out infinite both}
+@keyframes chg-w{0%{opacity:0}39.394%{opacity:0}40%{opacity:1}100%{opacity:1}}
+html.js .chg-w{animation:chg-w 33s ease-in-out infinite both}
+@keyframes chg-t{0%{opacity:0}39.394%{opacity:0}40.303%{opacity:1}44.091%{opacity:1}44.515%{opacity:0}100%{opacity:0}}
+html.js .chg-t{animation:chg-t 33s ease-in-out infinite both}
+@keyframes chg-2{0%{opacity:0}44.242%{opacity:0}45.758%{opacity:1}100%{opacity:1}}
+html.js .chg-2{animation:chg-2 33s ease-in-out infinite both}
+@keyframes chk{0%{opacity:0;transform:translateY(10px)}48.485%{opacity:0;transform:translateY(10px)}50%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .chk{animation:chk 33s ease-in-out infinite both}
+@keyframes chk-c{0%{--p:100%}48.485%{--p:100%}83.03%{--p:0%}100%{--p:0%}}
+html.js .chk-c{animation:chk-c 33s linear infinite both}
+@keyframes chm-0{0%{opacity:0}51.515%{opacity:0}52.879%{opacity:1}100%{opacity:1}}
+html.js .chm-0{animation:chm-0 33s ease-in-out infinite both}
+@keyframes chm-1{0%{opacity:0}57.576%{opacity:0}58.939%{opacity:1}100%{opacity:1}}
+html.js .chm-1{animation:chm-1 33s ease-in-out infinite both}
+@keyframes chn-w{0%{opacity:0}59.394%{opacity:0}60%{opacity:1}100%{opacity:1}}
+html.js .chn-w{animation:chn-w 33s ease-in-out infinite both}
+@keyframes chn-t{0%{opacity:0}59.394%{opacity:0}60.303%{opacity:1}63.485%{opacity:1}63.909%{opacity:0}100%{opacity:0}}
+html.js .chn-t{animation:chn-t 33s ease-in-out infinite both}
+@keyframes chn-2{0%{opacity:0}63.636%{opacity:0}65.152%{opacity:1}100%{opacity:1}}
+html.js .chn-2{animation:chn-2 33s ease-in-out infinite both}
+@keyframes cha-1{0%{opacity:0}69.091%{opacity:0}70.455%{opacity:1}100%{opacity:1}}
+html.js .cha-1{animation:cha-1 33s ease-in-out infinite both}
+@keyframes chz-w{0%{opacity:0}70.909%{opacity:0}71.515%{opacity:1}100%{opacity:1}}
+html.js .chz-w{animation:chz-w 33s ease-in-out infinite both}
+@keyframes chz-t{0%{opacity:0}70.909%{opacity:0}71.818%{opacity:1}75%{opacity:1}75.424%{opacity:0}100%{opacity:0}}
+html.js .chz-t{animation:chz-t 33s ease-in-out infinite both}
+@keyframes chg-3{0%{opacity:0}75.152%{opacity:0}76.667%{opacity:1}100%{opacity:1}}
+html.js .chg-3{animation:chg-3 33s ease-in-out infinite both}
+@keyframes chz-d{0%{opacity:0}79.394%{opacity:0}80.909%{opacity:1}100%{opacity:1}}
+html.js .chz-d{animation:chz-d 33s ease-in-out infinite both}
+@keyframes chz-l{0%{opacity:0}80.303%{opacity:0}81.515%{opacity:1}100%{opacity:1}}
+html.js .chz-l{animation:chz-l 33s ease-in-out infinite both}
+@keyframes chk-a{0%{opacity:1}83.03%{opacity:1}84.091%{opacity:0}100%{opacity:0}}
+html.js .chk-a{animation:chk-a 33s ease-in-out infinite both}
+@keyframes chk-b{0%{opacity:0}83.333%{opacity:0}84.394%{opacity:1}100%{opacity:1}}
+html.js .chk-b{animation:chk-b 33s ease-in-out infinite both}
+@keyframes chk-r{0%{opacity:0}83.939%{opacity:0}85.303%{opacity:1}100%{opacity:1}}
+html.js .chk-r{animation:chk-r 33s ease-in-out infinite both}
+@keyframes fade-ch{0%{opacity:1}96.061%{opacity:1}99.242%{opacity:0}100%{opacity:0}}
+html.js .fade-ch{animation:fade-ch 33s linear infinite}
 @keyframes pk-ca{0%{border-color:var(--rule)}100%{border-color:var(--rule)}}
 html.js .pk-ca{animation:pk-ca 31.2s ease-in-out infinite both}
 @keyframes pk-cb{0%{border-color:var(--rule)}100%{border-color:var(--rule)}}
