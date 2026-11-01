@@ -2239,13 +2239,13 @@ html.js .fade-ld{animation:fade-ld 22s linear infinite}
   .fade-kb .xv-bar.sm { margin: 1cqw 0 1.6cqw; }
   .fade-kb .xv-bul { padding: 4cqw 5.5cqw; }
   .fade-kb .xv-bul ul { gap: 0.8cqw; }
-  .fade-kb .xv-bul li, .fade-kb .xv-slide.dense .xv-bul li { padding-left: 3.4cqw; font-size: 3.7cqw; line-height: 1.32; }
+  .fade-kb .xv-bul li, .fade-kb .xv-slide.dense .xv-bul li { padding-left: 3.4cqw; font-size: max(11px, 3.7cqw); line-height: 1.32; }
   .fade-kb .xv-bul li::before { width: 1.3cqw; height: 1.3cqw; }
   .fade-kb .xv-bul .body { display: none; }
   .fade-kb .xv-title.img .tx { padding: 5cqw 3cqw 5cqw 5.5cqw; }
   .fade-kb .xv-title.img .xv-h1 { font-size: 6cqw; }
-  .fade-kb .xv-sub, .fade-xk .xv-sub { font-size: 3.7cqw; }
-  .fade-kb .xv-section .num, .fade-kb .xv-quote .by { font-size: 3.7cqw; }
+  .fade-kb .xv-sub, .fade-xk .xv-sub { font-size: max(11px, 3.7cqw); }
+  .fade-kb .xv-section .num, .fade-kb .xv-quote .by { font-size: max(11px, 3.7cqw); }
   .fade-kb .xv-section .xv-h1 { font-size: 7cqw; }
   .fade-kb .xv-quote { padding: 5cqw 8cqw; }
   .fade-kb .xv-quote .q { font-size: 5.6cqw; }
@@ -2443,6 +2443,13 @@ html.js .fade-kb{animation:fade-kb 60s linear infinite}
   html.js .ka-pb { animation: ka-pb 54s ease-in-out infinite both; }
 }
 @media (max-width: 460px) { .fade-ka { --ka-lift: -60px; } }
+@media (max-width: 380px) {
+  .fade-ka .xv-docwrap { padding-top: 4px; }
+  .fade-ka .xv-doc { padding: 6px 12px 8px; }
+  .ka-pb h2 { margin-top: 2px; }
+  .ka-o7 h2 { margin-top: 6px; }
+  .fade-ka .xv-doc p, .ka-li { line-height: 1.55; }
+}
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) { .ka-pa { display: none; } }
 @keyframes ka-t1{0%{opacity:0}0.926%{opacity:0}1.481%{opacity:1}4.074%{opacity:1}4.63%{opacity:0}100%{opacity:0}}
 html.js .ka-t1{animation:ka-t1 54s ease-in-out infinite both}
@@ -3096,10 +3103,15 @@ html.js .fade-xk{animation:fade-xk 36s linear infinite}
 .fade-kg .xw-tool.pdf { display: inline-flex; }
 @media (max-width: 760px) {
   .kg-up { display: none; }
+  .kg-con { height: 106px; }
   .kg-bar, .kg-ch { font-size: 11px; }
   .kg-err { font-size: 11px; }
   .kg-ed { padding: 10px 12px; }
   .kg-fixed { gap: 10px; }
+}
+@media (max-width: 380px) {
+  .kg-gut { display: none; }
+  .kg-fixed { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* a part designed in 3D */
