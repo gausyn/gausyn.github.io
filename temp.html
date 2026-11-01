@@ -145,7 +145,7 @@
       </div>
       <div class="wrapw">
 
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Check-in|4.6:Working it out|10.4:First plan|15.6:What each covers|23.2:Change of plan|32:The essay|37.6:Your week">
           <div class="chrome">
             <span class="dot"></span>
             <span class="title">Dashboard</span>
@@ -175,55 +175,70 @@
 
               <div class="cal-grid">
                 <div class="hd"></div>
-                <div class="hd today">Mon</div><div class="hd">Tue</div><div class="hd">Wed</div><div class="hd">Thu</div><div class="hd">Fri</div>
+                <div class="hd today">Mon</div><div class="hd">Tue</div><div class="hd da-wedh">Wed</div><div class="hd">Thu</div><div class="hd">Fri</div>
 
                 <div class="tm">5pm</div>
-                <div class="cell off"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-                <div class="cell"><div class="dl k da-e5">Chem exam &middot; Fri 9:00</div></div>
+                <div class="cell off"></div><div class="cell da-free"></div><div class="cell da-free da-wed"></div>
+                <div class="cell da-free"><div class="dl k da-e7">Essay<span class="da-more"> &middot; Thu 11:59</span></div></div>
+                <div class="cell"><div class="dl k da-e5">Chem exam<span class="da-more"> &middot; Fri 9:00</span></div></div>
 
                 <div class="tm">6pm</div>
-                <div class="cell"></div>
-                <div class="cell"><div class="ev chem k da-e2"><b>Chemistry</b><em>Moles &middot; 45m</em></div></div>
-                <div class="cell"></div>
-                <div class="cell"><div class="ev chem k da-e4"><b>Chemistry</b><em>Rates &middot; 45m</em></div></div>
+                <div class="cell off"></div>
+                <div class="cell da-free">
+                  <div class="ev chem k da-e2"><b>Chem<span class="da-more">istry</span></b><em>Moles<span class="da-len"> &middot; 45m</span></em></div>
+                  <div class="da-pop tr da-p1"><b>Tuesday, 6:00 PM</b>Moles and stoichiometry</div>
+                </div>
+                <div class="cell da-free da-wed"></div>
+                <div class="cell da-free"><div class="ev chem k da-e4"><b>Chem<span class="da-more">istry</span></b><em>Rates<span class="da-len"> &middot; 45m</span></em></div></div>
                 <div class="cell off"></div>
 
                 <div class="tm">7pm</div>
-                <div class="cell"><div class="ev math k da-e1"><b>Math</b><em>Homework &middot; 30m</em></div></div>
-                <div class="cell"></div>
-                <div class="cell">
-                  <div class="ev chem da-dim"><b>Chemistry</b><em>Rates &middot; 45m</em></div>
-                  <div class="ev chem da-ghost tr"><b>Chemistry</b><em>Rates &middot; 45m</em></div>
-                  <div class="ev eng k da-e6"><b>English</b><em>Essay outline &middot; 45m</em></div>
+                <div class="cell da-free"><div class="ev math k da-e1"><b>Math</b><em>Homework<span class="da-len"> &middot; 30m</span></em></div></div>
+                <div class="cell da-free"><div class="ev eng k da-e6"><b>English</b><em>Essay outline<span class="da-len"> &middot; 45m</span></em></div>
+                  <div class="ev da-sug tr">Essay?</div></div>
+                <div class="cell da-free da-wed">
+                  <div class="ev chem da-dim"><b>Chem<span class="da-more">istry</span></b><em>Rates<span class="da-len"> &middot; 45m</span></em></div>
+                  <div class="ev chem da-ghost tr"><b>Chem<span class="da-more">istry</span></b><em>Rates<span class="da-len"> &middot; 45m</span></em></div>
+                  <div class="da-pop tr da-p2"><b>Wednesday, 7:00 PM</b>Reaction rates</div>
                 </div>
-                <div class="cell"></div>
+                <div class="cell da-free"></div>
                 <div class="cell off"></div>
 
                 <div class="tm">8pm</div>
-                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell off"></div>
+                <div class="cell da-free"></div><div class="cell da-free"></div><div class="cell da-free da-wed"></div><div class="cell da-free"></div><div class="cell off"></div>
+                <div class="da-sweep tr" aria-hidden="true"><i class="da-sw"></i></div>
               </div>
 
               <div class="dockchat">
-                <div class="dockmsgs">
-                  <div class="dm g k da-m1"><i>G</i><span>Hey, tell me about your day, upcoming exams, availability, or ask to reschedule.</span></div>
-                  <div class="dm you k da-m2"><span>I have a chemistry exam next Friday, and math homework due tomorrow I haven&rsquo;t started.</span></div>
-                  <div class="dm g k da-m3"><i>G</i><span>Tonight is free after 7, so the math is booked for 7:00. Three chemistry reviews go in across the week, ending Thursday so Friday stays clear.</span></div>
+                <div class="dockmsgs" data-feed>
+                  <div class="dm g"><i>G</i><span>Hey, tell me about your day, upcoming exams, availability, or ask to reschedule.</span></div>
+                  <div class="dm you k da-m2"><span>I have a chemistry exam Friday, and math homework due tomorrow I haven&rsquo;t started.</span></div>
+                  <div class="dm g k da-w"><i>G</i><span>Working out your week&hellip; <span class="da-ok k da-z1">exam Friday &#10003;</span> <span class="da-ok k da-z2">math due tomorrow &#10003;</span> <span class="da-ok k da-z3">free after 7 tonight &#10003;</span> <span class="da-ok k da-z4">two reviews &#10003;</span></span></div>
+                  <div class="dm g k da-m3"><i>G</i><span>Tonight is free after 7, so the math is booked for 7:00. Two chemistry reviews go in across the week, so Friday stays clear.</span></div>
+                  <div class="dm you k da-q"><span>What does each one cover?</span></div>
+                  <div class="dm g k da-a"><i>G</i><span>Tuesday is moles and stoichiometry. Wednesday is reaction rates. 45 minutes each.</span></div>
                   <div class="dm you k da-m4"><span>Wednesdays are actually bad for me.</span></div>
-                  <div class="dm g k da-m5"><i>G</i><span>Moved, Wednesday&rsquo;s review is now Thursday at 6. That frees Wednesday for the essay you mentioned last week. Want it in?</span></div>
+                  <div class="dm g k da-m5"><i>G</i><span>Moved, Wednesday&rsquo;s review is now Thursday at 6. That leaves Tuesday at 7 for the essay you mentioned last week. Want it in?</span></div>
                   <div class="dm you k da-m6"><span>Yes, and track the essay deadline too.</span></div>
                   <div class="dm g k da-m7"><i>G</i><span>Done. Four sessions this week, two deadlines tracked, Friday morning clear for the exam.</span></div>
                 </div>
-                <div class="dockinput">+ <span>How can I help you today?</span><span class="caret tr"></span><span class="up">&uarr;</span></div>
+                <div class="dockinput">+ <span class="da-field"><span class="da-ph">How can I help you today?</span><span class="da-typed tr da-t1x">I have a chemistry exam Friday, and math homework due tomorrow I haven&rsquo;t started.</span><span class="da-typed tr da-t2x">What does each one cover?</span><span class="da-typed tr da-t3x">Wednesdays are actually bad for me.</span><span class="da-typed tr da-t4x">Yes, and track the essay deadline too.</span></span><span class="da-cw"><span class="caret tr"></span></span><span class="up">&uarr;</span></div>
               </div>
             </div>
 
             <div class="apprail" aria-hidden="true">
-              <div class="statcard"><b>4</b><span>lessons this week</span></div>
+              <div class="statcard"><b class="da-count"><span class="tr da-n0">0</span><span class="tr da-n1">1</span><span class="tr da-n2">2</span><span class="tr da-n3">3</span><span class="k da-n4">4</span></b><span>lessons this week</span></div>
               <span class="railhead">Upcoming deadlines</span>
-              <div class="dl-card k da-d1"><b>Chemistry exam</b><span>Friday &middot; 9:00 AM</span></div>
+              <div class="da-slot">
+                <div class="da-none tr da-dn">Nothing tracked yet</div>
+                <div class="dl-card k da-d1"><b>Chemistry exam</b><span>Friday &middot; 9:00 AM</span></div>
+              </div>
               <div class="dl-card k da-d2"><b>English essay</b><span>Thursday &middot; 11:59 PM</span></div>
               <span class="railhead">Today</span>
-              <div class="today-card k da-t1"><b>Math &middot; Homework</b><span>7:00 PM &middot; 30 min</span><span class="join">Join opens 6:50</span></div>
+              <div class="da-slot">
+                <div class="da-none tr da-tn">Nothing booked yet</div>
+                <div class="today-card k da-t1"><b>Math &middot; Homework</b><span>7:00 PM &middot; 30 min</span><span class="join">Join opens 6:50</span></div>
+              </div>
               <span class="railhead">Collaborate</span>
               <div class="rail-space"><span class="co-faceset"><i class="co-av live" style="--c:#e4572e">MA</i><i class="co-av live" style="--c:#8f5bd6">LE</i></span><span><b>Chem study group</b><small><i class="co-dot"></i>2 here now</small></span></div>
             </div>

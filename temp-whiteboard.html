@@ -1155,9 +1155,9 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Cramped margin|6:Drag a box|12:A new room|18:First attempt|24:Second attempt|31:Back to sheet|35:Still there">
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
+            <span class="tab ag-t1">Board 1</span>
             <span class="tab ws k ag-tab">Q4</span>
             <span class="spacer" style="flex:1"></span>
           </div>
@@ -1165,34 +1165,63 @@
             <div>
               <div class="boardarea swap">
                 <div class="camthumb" aria-hidden="true"></div>
+                <div class="toolspanel" aria-hidden="true">
+                  <div class="tp-h">Tools</div>
+                  <div class="tp-btn on">Draw</div>
+                  <div class="tp-btn">Select</div>
+                  <div class="tp-btn">Upload</div>
+                  <div class="tp-btn ask ag-ask">Ask Gausyn</div>
+                </div>
 
                 <div class="bstate ag-src">
-                  <div class="sheet">
-                    <p class="wsfaint">2.&nbsp; Differentiate g(x) = 3x&sup2; &minus; 4x + 1<br />3.&nbsp; Differentiate h(x) = (x&sup3; + 1)&#8309;</p>
-                    <p class="q" style="margin-top:8px"><span class="n">4.</span>Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2). Show every step.</p>
-                    <p class="wsfaint" style="margin-top:8px">5.&nbsp; Find the tangent line to y = ln x at x = e</p>
-
-                    <div class="crop ag-cropin" style="left:clamp(120px,11vw,140px);top:clamp(56px,7vw,86px);width:min(380px,62%);height:clamp(54px,6.5vw,74px)">
-                      <span class="lbl">Ask Gausyn</span>
+                  <div class="sheet ag-sheet">
+                    <span class="ag-sheethead">Calculus worksheet</span>
+                    <div class="ag-q">
+                      <p class="wsfaint">2.&nbsp; Differentiate g(x) = 3x&sup2; &minus; 4x + 1</p>
+                      <span class="pen ag-was">g&prime;(x) = 6x &minus; 4</span>
+                    </div>
+                    <div class="ag-q">
+                      <p class="wsfaint">3.&nbsp; Differentiate h(x) = (x&sup3; + 1)&#8309;</p>
+                      <span class="pen ag-was">h&prime;(x) = 15x&sup2;(x&sup3; + 1)&#8308;</span>
+                    </div>
+                    <div class="ag-q ag-q4">
+                      <p class="q"><span class="n">4.</span>Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2). Show every step.</p>
+                      <div class="ag-margin"><span class="pen">f&prime;(x) = 2x</span><span class="pen ag-m2"> sin x +</span></div>
+                      <div class="ag-cropbox">
+                        <div class="crop ag-cropin"></div>
+                        <span class="ag-cl">Ask Gausyn</span>
+                        <div class="ag-cur" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1,1 L1,12 L4.4,9.2 L6.6,14.4 L9,13.4 L6.8,8.3 L11.4,8.1 Z"></path></svg></div>
+                      </div>
+                      <span class="ag-anchor"><i></i>Q4 workspace</span>
+                    </div>
+                    <div class="ag-q">
+                      <p class="wsfaint">5.&nbsp; Find the tangent line to y = ln x at x = e</p>
+                      <div class="ag-blank"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="bstate graph ag-ws">
-                  <div class="pincard">
+                <div class="bstate graph ag-ws ag-room">
+                  <div class="pincard ag-pin">
                     <span class="lbl">Q4 &middot; pinned reference</span>
-                    4.&nbsp; Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2).
+                    4.&nbsp; Differentiate f(x) = x&sup2; sin x, then evaluate f&prime;(&pi;/2). Show every step.
                   </div>
-                  <div class="sheet" style="padding-top: clamp(76px, 8.5vw, 104px)">
-                    <div class="hint k ag-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(80px,9vw,116px)">Product rule, two pieces, and each keeps its identity.</div>
-                    <div class="hint tex k ag-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(128px,15vw,186px)">(uv)&prime; = u&prime;v + uv&prime;</div>
-
-                    <div class="penwork" style="position:absolute;left:clamp(140px,13vw,158px);top:clamp(96px,11vw,140px)">
-                      <span class="pen k ag-l1">f&#8242;(x) = 2x sin x + x&sup2; cos x</span>
-                      <span class="pen k ag-l2">f&#8242;(&pi;/2) = &pi;</span>
+                  <div class="ag-page">
+                    <div class="penwork ag-scroll">
+                      <span class="pen k ag-l0">f&prime;(x) = 2x cos x
+                        <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="ag-st" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg>
+                      </span>
+                      <span class="pen k ag-l3">u = x&sup2; &nbsp; &nbsp; v = sin x</span>
+                      <span class="pen k ag-l4">u&prime; = 2x &nbsp; v&prime; = cos x</span>
+                      <span class="pen k ag-l1">f&prime;(x) = 2x sin x + x&sup2; cos x</span>
+                      <span class="pen k ag-l5">f&prime;(&pi;/2) = 2(&pi;/2)(1) + (&pi;&sup2;/4)(0)</span>
+                      <span class="pen k ag-l2">f&prime;(&pi;/2) = &pi;</span>
                     </div>
-
-                    <div class="hint tex k ag-h3" style="right:clamp(18px,2.4vw,30px);top:clamp(176px,21vw,258px)">at &pi;/2: cos(&pi;/2) = 0, one term survives</div>
+                    <div class="ag-notes">
+                      <div class="hint k ag-h1">Product rule, two pieces, and each keeps its identity.</div>
+                      <div class="hint tex k ag-h2">(uv)&prime; = u&prime;v + uv&prime;</div>
+                      <div class="hint tex k ag-h3">at &pi;/2: cos(&pi;/2) = 0, one term survives</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1205,12 +1234,14 @@
               </div>
               <div class="side-meta">
                 <div><span class="lbl">Subject</span><span class="val">Calculus</span></div>
-                <div><span class="lbl">Workspace</span><span class="val">Q4</span></div>
+                <div><span class="lbl">Workspace</span><span class="val ag-mv"><span class="tr ag-mv1">Board 1</span><span class="k ag-mv2">Q4</span></span></div>
               </div>
               <div class="side-lines">
-                <div class="line you k ag-y1"><span class="who">You</span>Number 4 needs way more space than this margin.</div>
+                <div class="line you"><span class="who">You</span>Number 4 needs way more space than this margin.</div>
                 <div class="line g k ag-g1"><span class="who">Gausyn</span>Drag a box around it, I&rsquo;ll open a workspace.</div>
                 <div class="line g k ag-g2"><span class="who">Gausyn</span>There. Your problem is pinned up top, and all the room below is ours.</div>
+                <div class="line you k ag-y3"><span class="who">You</span>Okay, the derivative of each piece, then.</div>
+                <div class="line g k ag-g5"><span class="who">Gausyn</span>Not quite, that differentiates both pieces at once. Product rule, one at a time.</div>
                 <div class="line g k ag-g3"><span class="who">Gausyn</span>&pi;, clean. The pin on Board 1 takes you straight back to the sheet.</div>
                 <div class="line you k ag-y2"><span class="who">You</span>And Q4 stays here if I come back?</div>
                 <div class="line g k ag-g4"><span class="who">Gausyn</span>This tab keeps everything, your work, my notes, exactly as we left them.</div>
@@ -1239,47 +1270,67 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:The question|4.5:Forces drawn|9:Your pen|14:First try|18.5:Why sin|25:Second try|28.5:Checked">
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
-            <span class="tab ws">Q7</span>
+            <span class="tab">Board 1</span>
+            <span class="tab ws ag-tabon">Q7</span>
             <span class="spacer" style="flex:1"></span>
           </div>
           <div class="board-shell fade-ag2">
             <div>
-              <div class="boardarea graph" style="min-height: clamp(320px, 34vw, 430px)">
+              <div class="boardarea graph">
                 <div class="camthumb" aria-hidden="true"></div>
-
-                <div class="pincard k ag2-pin">
-                  <span class="lbl">Q7 &middot; pinned reference</span>
-                  7.&nbsp; A 4 kg block rests on a 30&deg; incline. Find the friction force holding it in place.
-                </div>
-
-                <div class="sheet" style="padding-top: clamp(80px, 9vw, 110px)">
-                  <svg class="diagram" viewBox="0 0 260 175" width="330" height="222" style="left:clamp(150px,14vw,180px);top:clamp(80px,9vw,106px)" aria-hidden="true">
-                    <!-- the incline, with the ground hatched under it -->
-                    <path class="ag2-d1" pathLength="320" d="M20,155 L228,155 L228,35 Z M40,155 L32,164 M80,155 L72,164 M120,155 L112,164 M160,155 L152,164 M200,155 L192,164"></path>
-                    <path class="ag2-d6" pathLength="320" d="M58,155 A38,38 0 0 0 52.9,136"></path>
-                    <!-- the block, sitting flush on the slope -->
-                    <path class="ag2-d2" pathLength="320" d="M98,110 L150,80 L133,50.6 L81,80.6 Z"></path>
-                    <!-- weight, normal, friction: all from the centre of mass -->
-                    <path class="ag2-d3" pathLength="320" d="M116,80 L116,148 M116,148 L110.5,138 M116,148 L121.5,138"></path>
-                    <path class="ag2-d4" pathLength="320" d="M116,80 L90,35 M90,35 L98.7,41.8 M90,35 L91.5,45.9"></path>
-                    <path class="ag2-d5" pathLength="320" d="M116,80 L161,54 M161,54 L150.1,55.5 M161,54 L154.2,62.7"></path>
-                    <text class="k ag2-lb" x="124" y="141">mg</text>
-                    <text class="k ag2-lb" x="72" y="30">N</text>
-                    <text class="k ag2-lb" x="167" y="50">f</text>
-                    <text class="k ag2-lb" x="64" y="147">30&deg;</text>
-                  </svg>
-
-                  <div class="hint k ag2-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(84px,10vw,120px)">Three forces. Which one balances the pull along the slope?</div>
-
-                  <div class="penwork" style="position:absolute;left:clamp(150px,36vw,540px);top:clamp(238px,26vw,292px)">
-                    <span class="pen k ag2-l1">f = mg sin 30&deg;</span>
-                    <span class="pen k ag2-l2">= 4(9.8)(0.5) = 19.6 N</span>
+                <div class="ag-room">
+                  <div class="pincard">
+                    <span class="lbl">Q7 &middot; pinned reference</span>
+                    7.&nbsp; A 4 kg block rests on a 30&deg; incline. Find the friction force holding it in place.
                   </div>
-
-                  <div class="hint tex k ag2-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(150px,17.5vw,224px)">f = mg sin &theta; &asymp; 19.6 N &#10003;</div>
+                  <div class="ag-page ag2-page">
+                    <div class="ag2-fig">
+                      <span class="sketch tr ag2-sk">Sketching<i></i><i></i><i></i></span>
+                      <span class="ag2-handed k">Your pen</span>
+                      <svg class="diagram" viewBox="0 0 260 175" aria-hidden="true">
+                        <!-- the incline, with the ground hatched under it -->
+                        <path class="ag2-d1" pathLength="320" d="M20,155 L228,155 L228,35 Z M40,155 L32,164 M80,155 L72,164 M120,155 L112,164 M160,155 L152,164 M200,155 L192,164"></path>
+                        <path class="ag2-d6" pathLength="320" d="M58,155 A38,38 0 0 0 52.9,136"></path>
+                        <!-- the block, sitting flush on the slope -->
+                        <path class="ag2-d2" pathLength="320" d="M98,110 L150,80 L133,50.6 L81,80.6 Z"></path>
+                        <!-- weight, normal, friction: all from the centre of mass -->
+                        <path class="ag2-d3" pathLength="320" d="M116,80 L116,148 M116,148 L110.5,138 M116,148 L121.5,138"></path>
+                        <path class="ag2-d4" pathLength="320" d="M116,80 L90,35 M90,35 L98.7,41.8 M90,35 L91.5,45.9"></path>
+                        <path class="ag2-d5" pathLength="320" d="M116,80 L161,54 M161,54 L150.1,55.5 M161,54 L154.2,62.7"></path>
+                        <!-- gravity split along and into the slope, added when the student argues -->
+                        <path class="ag2-cmp k ag2-c1" d="M116,80 L86.6,97 M86.6,97 L95.5,96.5 M86.6,97 L91.5,89.5"></path>
+                        <path class="ag2-cmp k ag2-c2" d="M116,80 L145.4,131 M145.4,131 L144.9,122.1 M145.4,131 L137.9,126.1"></path>
+                        <!-- the student rings the force that matters -->
+                        <path class="ag2-ring" pathLength="320" d="M171,41 C183,41 186,56 172,58 C158,60 156,42 171,41"></path>
+                        <text class="k ag2-la" x="64" y="147">30&deg;</text>
+                        <text class="k ag2-lm" x="124" y="147">mg</text>
+                        <text class="k ag2-ln" x="72" y="30">N</text>
+                        <text class="k ag2-lf" x="168" y="52">f</text>
+                        <text class="k ag2-lv" x="150" y="36">19.6 N</text>
+                        <text class="k ag2-t1" x="80" y="94" text-anchor="end">mg sin &theta;</text>
+                        <text class="k ag2-t2" x="152" y="128">mg cos &theta;</text>
+                      </svg>
+                    </div>
+                    <div class="ag2-right">
+                      <div class="penwork">
+                        <span class="pen k ag2-w1">f = mg cos 30&deg;
+                          <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="ag2-s1" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg>
+                        </span>
+                        <span class="pen k ag2-w2">= 4(9.8)(0.87) = 34.1 N
+                          <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="ag2-s2" pathLength="240" d="M3,7 C70,11 130,3 197,8"></path></svg>
+                        </span>
+                        <span class="pen k ag2-l1">f = mg sin 30&deg;</span>
+                        <span class="pen k ag2-l2">= 4(9.8)(0.5) = 19.6 N</span>
+                      </div>
+                      <div class="ag-notes">
+                        <div class="hint k ag2-h1">Three forces. Which one balances the pull along the slope?</div>
+                        <div class="hint k ag2-h3">At 0&deg; the block sits flat, and there is nothing to hold.</div>
+                        <div class="hint tex k ag2-h2">f = mg sin &theta; &asymp; 19.6 N &#10003;</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1294,10 +1345,12 @@
                 <div><span class="lbl">Workspace</span><span class="val">Q7</span></div>
               </div>
               <div class="side-lines">
-                <div class="line g k ag2-g1"><span class="who">Gausyn</span>Sixty words of setup, let&rsquo;s draw what they describe instead.</div>
-                <div class="line g k ag2-h1"><span class="who">Gausyn</span>Block, slope, three forces. Which one is fighting the slide?</div>
+                <div class="line g"><span class="who">Gausyn</span>Sixty words of setup, let&rsquo;s draw what they describe instead.</div>
+                <div class="line g k ag2-g3"><span class="who">Gausyn</span>Block, slope, three forces. Which one is fighting the slide?</div>
+                <div class="line you k ag2-y2"><span class="who">You</span>Friction. So I want the part of gravity pulling it down the slope.</div>
                 <div class="line you k ag2-y1"><span class="who">You</span>Why sin and not cos?</div>
                 <div class="line g k ag2-g2"><span class="who">Gausyn</span>sin &theta; picks out the part of gravity that points along the slope. Tilt the triangle in your head, at 0&deg; there is nothing to hold.</div>
+                <div class="line g k ag2-g4"><span class="who">Gausyn</span>That balances it, 19.6 N up the slope, and the block stays put.</div>
               </div>
               <div class="side-input">Ask anything&hellip;<span class="mic">&#127908;</span></div>
             </div>
@@ -1324,28 +1377,44 @@
         </div>
       </div>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:The claim|2.6:One example|8.4:General case|16:The algebra|21.8:Closing sentence|26.4:Proved">
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
-            <span class="tab ws">Q2</span>
+            <span class="tab">Board 1</span>
+            <span class="tab ws ag-tabon">Q2</span>
             <span class="spacer" style="flex:1"></span>
           </div>
           <div class="board-shell fade-ag3">
             <div>
-              <div class="boardarea plain" style="min-height: clamp(300px, 32vw, 400px)">
+              <div class="boardarea plain">
                 <div class="camthumb" aria-hidden="true"></div>
-                <div class="pincard k ag3-pin">
-                  <span class="lbl">Q2 &middot; pinned reference</span>
-                  2.&nbsp; Prove that the sum of any two odd integers is even.
-                </div>
-                <div class="sheet" style="padding-top: clamp(80px, 9vw, 112px)">
-                  <div class="penwork">
-                    <span class="pen k ag3-l1">let a = 2m + 1, &nbsp; b = 2n + 1</span>
-                    <span class="pen k ag3-l2">a + b = 2m + 2n + 2</span>
-                    <span class="pen k ag3-l3">= 2(m + n + 1) &nbsp; &#8756; even</span>
+                <div class="ag-room">
+                  <div class="pincard">
+                    <span class="lbl">Q2 &middot; pinned reference</span>
+                    2.&nbsp; Prove that the sum of any two odd integers is even.
                   </div>
-                  <div class="hint k ag3-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(84px,10vw,118px)">Good, but say what m and n are, or the proof only covers your two numbers.</div>
-                  <div class="hint tex k ag3-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(150px,17.5vw,206px)">m, n &isin; &#8484; &nbsp;&rarr;&nbsp; m + n + 1 &isin; &#8484; &#10003;</div>
+                  <div class="ag-page ag3-page">
+                    <div class="penwork">
+                      <span class="pen k ag3-l0">3 + 5 = 8, even
+                        <svg class="strike" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path class="ag3-s0" pathLength="240" d="M3,9 C56,4 138,11 197,6"></path></svg>
+                      </span>
+                      <span class="pen k ag3-l1">let a = 2m + 1, &nbsp; b = 2n + 1</span>
+                      <span class="pen k ag3-l5">where m and n are integers</span>
+                      <span class="pen k ag3-l2">a + b = 2m + 2n + 2</span>
+                      <span class="pen k ag3-l3">= 2(m + n + 1)</span>
+                      <span class="pen k ag3-l4">&#8756; a + b is even, for any odd a and b. <span class="k ag3-qed">&#8718;</span></span>
+                    </div>
+                    <div class="ag-notes">
+                      <div class="ag3-mark ag3-box">
+                        <span class="lbl">The standard a marker holds</span>
+                        <div class="ag3-row"><i class="k ag3-c1">&#10003;</i>Set up the general case</div>
+                        <div class="ag3-row"><i class="k ag3-c2">&#10003;</i>Do the algebra</div>
+                        <div class="ag3-row"><i class="k ag3-c3">&#10003;</i>Say the sentence that closes it</div>
+                      </div>
+                      <div class="hint k ag3-h0">One pair is an example. The claim says any two.</div>
+                      <div class="hint k ag3-h1">Good, but say what m and n are, or the proof only covers your two numbers.</div>
+                      <div class="hint tex k ag3-h2">m, n &isin; &#8484; &nbsp;&rarr;&nbsp; m + n + 1 &isin; &#8484; &#10003;</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1360,8 +1429,11 @@
                 <div><span class="lbl">Workspace</span><span class="val">Q2</span></div>
               </div>
               <div class="side-lines">
-                <div class="line g k ag3-g1"><span class="who">Gausyn</span>A proof needs the whole page. Start with what &ldquo;odd&rdquo; lets you write down.</div>
-                <div class="line g k ag3-h1"><span class="who">Gausyn</span>Careful, if m and n are never named as integers, you have only proved it for the two you picked.</div>
+                <div class="line g"><span class="who">Gausyn</span>A proof needs the whole page. Start with what &ldquo;odd&rdquo; lets you write down.</div>
+                <div class="line you k ag3-y0"><span class="who">You</span>Easy, 3 and 5 are odd, and 8 is even.</div>
+                <div class="line g k ag3-g2"><span class="who">Gausyn</span>That shows one pair. Odd means one more than an even number, so write that down for any pair.</div>
+                <div class="line g k ag3-g4"><span class="who">Gausyn</span>Careful, if m and n are never named as integers, you have only proved it for the two you picked.</div>
+                <div class="line g k ag3-g5"><span class="who">Gausyn</span>The algebra is done. Now say what it shows, in a sentence.</div>
                 <div class="line you k ag3-y1"><span class="who">You</span>So the factor of 2 is the whole proof?</div>
                 <div class="line g k ag3-g3"><span class="who">Gausyn</span>That is the proof. Everything before it was getting into a form where 2 could be pulled out.</div>
               </div>
@@ -1518,7 +1590,7 @@
 
     <section class="scene" data-scene>
       <div class="wrapw">
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Grade 3|7:Grade 9|13.5:Grade 10|20:Grade 12|26.5:University|33:Same method">
           <div class="chrome">
             <span class="dot"></span>
             <span class="title">Lesson bank</span>
@@ -1526,81 +1598,152 @@
             <span class="pill">Matched to your session</span>
           </div>
           <div class="showcase fade-tl">
-
-            <div class="shot k tl-s1">
-              <span class="shotcap">Grade 3 &middot; Mathematics</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 2 of 5</span>
-                <h4>What a fraction actually says</h4>
-                <ul>
-                  <li>The bottom number names the size of the pieces.</li>
-                  <li>The top number just counts how many you have.</li>
-                  <li>Same whole, different cuts, the bar never changes length.</li>
-                </ul>
-                <div class="fracbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="eq">3/8 of the bar</div>
-              </div>
+            <div class="tl-rail" aria-hidden="true">
+              <div class="tl-lv tl-v1"><b>Grade 3</b><span>Mathematics</span><i class="k tl-d1">&#10003;</i></div>
+              <div class="tl-lv tl-v2"><b>Grade 9</b><span>Mathematics</span><i class="k tl-d2">&#10003;</i></div>
+              <div class="tl-lv tl-v3"><b>Grade 10</b><span>English</span><i class="k tl-d3">&#10003;</i></div>
+              <div class="tl-lv tl-v4"><b>Grade 12</b><span>Calculus</span><i class="k tl-d4">&#10003;</i></div>
+              <div class="tl-lv tl-v5"><b>University</b><span>Linear algebra</span><i class="k tl-d5">&#10003;</i></div>
             </div>
+            <div class="tl-shots">
 
-            <div class="shot k tl-s2">
-              <span class="shotcap">Grade 9 &middot; Mathematics</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 3 of 6</span>
-                <h4>Keeping an equation balanced</h4>
-                <ul>
-                  <li>An equals sign is a promise that both sides weigh the same.</li>
-                  <li>Whatever you do to one side, do to the other, or the promise breaks.</li>
-                  <li>Undo the last thing that happened to x, first.</li>
-                </ul>
-                <div class="eq">3x &minus; 7 = 14 &nbsp;&rarr;&nbsp; 3x = 21 &nbsp;&rarr;&nbsp; x = 7</div>
-              </div>
-            </div>
-
-            <div class="shot k tl-s3">
-              <span class="shotcap">Grade 10 &middot; English</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 1 of 4</span>
-                <h4>What a thesis has to do</h4>
-                <ul>
-                  <li>It makes a claim someone reasonable could disagree with.</li>
-                  <li>It says <em>why</em>, not just <em>what</em>, the because is the argument.</li>
-                  <li>If your whole essay could not fail to prove it, it is a summary.</li>
-                </ul>
-                <div class="work">
-                  <b>Weak:</b> Macbeth is about ambition.<br />
-                  <b>Arguable:</b> Macbeth&rsquo;s ambition only becomes fatal once it is witnessed, he kills to be seen as king, not to be one.
+              <div class="shot k tl-s1">
+                <span class="shotcap">Grade 3 &middot; Mathematics</span>
+                <div class="lesson-page tl-page">
+                  <div class="tl-text">
+                    <span class="num">Lesson &middot; page 2 of 5</span>
+                    <h4>What a fraction actually says</h4>
+                    <ul>
+                      <li>The bottom number names the size of the pieces.</li>
+                      <li class="k tl-a2">The top number just counts how many you have.</li>
+                      <li class="k tl-a3">Same whole, different cuts, the bar never changes length.</li>
+                    </ul>
+                  </div>
+                  <div class="tl-fig">
+                    <div class="fracbar" aria-hidden="true"><i class="on tl-f1"></i><i class="on tl-f2"></i><i class="on tl-f3"></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="eq k tl-a4">3/8 of the bar</div>
+                    <div class="fracbar tl-bar2 k tl-a5" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+                    <div class="eq k tl-a6">2/4 of the same bar</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="shot k tl-s4">
-              <span class="shotcap">Grade 12 &middot; Calculus</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 2 of 8</span>
-                <h4>What a derivative measures</h4>
-                <ul>
-                  <li>The slope of the curve at a single instant, not over a stretch.</li>
-                  <li>Take the average rate, then shrink the interval to nothing.</li>
-                  <li>Whatever the average settles on as h vanishes is the derivative.</li>
-                </ul>
-                <div class="eq">f&prime;(x) = lim<sub>h&rarr;0</sub> [ f(x+h) &minus; f(x) ] / h</div>
+              <div class="shot k tl-s2">
+                <span class="shotcap">Grade 9 &middot; Mathematics</span>
+                <div class="lesson-page tl-page">
+                  <div class="tl-text">
+                    <span class="num">Lesson &middot; page 3 of 6</span>
+                    <h4>Keeping an equation balanced</h4>
+                    <ul>
+                      <li>An equals sign is a promise that both sides weigh the same.</li>
+                      <li class="k tl-b2">Whatever you do to one side, do to the other, or the promise breaks.</li>
+                      <li class="k tl-b3">Undo the last thing that happened to x, first.</li>
+                    </ul>
+                  </div>
+                  <div class="tl-fig">
+                    <div class="eq k tl-b4">3x &minus; 7 = 14</div>
+                    <span class="tl-op k tl-b5">add 7 to both sides</span>
+                    <div class="eq k tl-b6">3x = 21</div>
+                    <span class="tl-op k tl-b7">divide both sides by 3</span>
+                    <div class="eq k tl-b8">x = 7</div>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="shot k tl-s5">
-              <span class="shotcap">University &middot; Linear algebra</span>
-              <div class="lesson-page">
-                <span class="num">Lesson &middot; page 5 of 9</span>
-                <h4>Eigenvectors: the directions that survive</h4>
-                <ul>
-                  <li>A matrix knocks almost every vector off the line it was on.</li>
-                  <li>A few directions are only stretched or squashed, never turned.</li>
-                  <li>Those are the eigenvectors; the amount of stretch is &lambda;.</li>
-                </ul>
-                <div class="eq">A v = &lambda; v</div>
+              <div class="shot k tl-s3">
+                <span class="shotcap">Grade 10 &middot; English</span>
+                <div class="lesson-page tl-page">
+                  <div class="tl-text">
+                    <span class="num">Lesson &middot; page 1 of 4</span>
+                    <h4>What a thesis has to do</h4>
+                    <ul>
+                      <li>It makes a claim someone reasonable could disagree with.</li>
+                      <li class="k tl-c2">It says <em>why</em>, not just <em>what</em>, the because is the argument.</li>
+                      <li class="k tl-c3">If your whole essay could not fail to prove it, it is a summary.</li>
+                    </ul>
+                  </div>
+                  <div class="tl-fig">
+                    <div class="work tl-claim k tl-c4"><b>Weak:</b> Macbeth is about ambition.</div>
+                    <div class="work tl-claim k tl-c5"><b>Arguable:</b> Macbeth&rsquo;s ambition only becomes fatal once it is witnessed, <span class="k tl-c6">he kills to be seen as king, not to be one.</span></div>
+                  </div>
+                </div>
               </div>
-            </div>
 
+              <div class="shot k tl-s4">
+                <span class="shotcap">Grade 12 &middot; Calculus</span>
+                <div class="lesson-page tl-page">
+                  <div class="tl-text">
+                    <span class="num">Lesson &middot; page 2 of 8</span>
+                    <h4>What a derivative measures</h4>
+                    <ul>
+                      <li>The slope of the curve at a single instant, not over a stretch.</li>
+                      <li class="k tl-g2">Take the average rate, then shrink the interval to nothing.</li>
+                      <li class="k tl-g3">Whatever the average settles on as h vanishes is the derivative.</li>
+                    </ul>
+                  </div>
+                  <div class="tl-fig">
+                    <svg class="tl-svg" viewBox="0 0 300 190" aria-hidden="true">
+                      <path class="tl-ax" d="M20,10 L20,170 L285,170"></path>
+                      <path class="tl-cv" d="M20,170 Q150,170 280,20"></path>
+                      <path class="tl-sec tl-g4" d="M110,152 L250,52.6"></path>
+                      <path class="tl-sec tl-g5" d="M110,152 L190,105.9"></path>
+                      <path class="tl-sec tl-g6" d="M110,152 L140,138"></path>
+                      <path class="tl-tan k tl-g7" d="M66,169.6 L230,104.1"></path>
+                      <text class="tl-g4" x="170" y="86" text-anchor="end">average rate</text>
+                      <text class="k tl-g7" x="150" y="160">slope at one instant</text>
+                      <circle class="tl-dot" cx="110" cy="152" r="3.4"></circle>
+                      <circle class="tl-dot2 tl-g4" cx="250" cy="52.6" r="3"></circle>
+                      <circle class="tl-dot2 tl-g5" cx="190" cy="105.9" r="3"></circle>
+                      <circle class="tl-dot2 tl-g6" cx="140" cy="138" r="3"></circle>
+                    </svg>
+                    <div class="eq k tl-g8">f&prime;(x) = lim<sub>h&rarr;0</sub> [ f(x+h) &minus; f(x) ] / h</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shot k tl-s5">
+                <span class="shotcap">University &middot; Linear algebra</span>
+                <div class="lesson-page tl-page">
+                  <div class="tl-text">
+                    <span class="num">Lesson &middot; page 5 of 9</span>
+                    <h4>Eigenvectors: the directions that survive</h4>
+                    <ul>
+                      <li>A matrix knocks almost every vector off the line it was on.</li>
+                      <li class="k tl-h2">A few directions are only stretched or squashed, never turned.</li>
+                      <li class="k tl-h3">Those are the eigenvectors; the amount of stretch is &lambda;.</li>
+                    </ul>
+                  </div>
+                  <div class="tl-fig">
+                    <svg class="tl-svg" viewBox="0 0 300 190" aria-hidden="true">
+                      <path class="tl-ax" d="M90,10 L90,186 M10,150 L292,150"></path>
+                      <path class="tl-vec k tl-h4" d="M90,150 L110,80 M110,80 L111.4,89.8 M110,80 L103.7,87.6"></path>
+                      <path class="tl-sec k tl-h5" d="M90,150 L184.4,64.4 M184.4,64.4 L180.4,73.4 M184.4,64.4 L175,67.4"></path>
+                      <path class="tl-eig k tl-h6" d="M20,192 L285,33"></path>
+                      <path class="tl-vec k tl-h7" d="M90,150 L150,114 M150,114 L144.3,122.1 M150,114 L140.2,115.2"></path>
+                      <path class="tl-tan k tl-h8" d="M90,150 L210,78 M210,78 L204.3,86.1 M210,78 L200.2,79.2"></path>
+                      <text class="k tl-h4" x="96" y="72">v</text>
+                      <text class="k tl-h5" x="189" y="58">A v</text>
+                      <text class="k tl-h7" x="140" y="132">e</text>
+                      <text class="k tl-h8" x="214" y="94">A e = &lambda; e</text>
+                    </svg>
+                    <div class="eq k tl-h9">A v = &lambda; v</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shot tl-s6">
+                <span class="shotcap">Five levels, one teacher</span>
+                <h4 class="tl-sum">One idea per page, in plain words, with a picture when a picture helps.</h4>
+                <div class="tl-cards">
+                  <div class="tl-card tl-k1"><span>Grade 3 &middot; Mathematics</span><b>What a fraction actually says</b></div>
+                  <div class="tl-card tl-k2"><span>Grade 9 &middot; Mathematics</span><b>Keeping an equation balanced</b></div>
+                  <div class="tl-card tl-k3"><span>Grade 10 &middot; English</span><b>What a thesis has to do</b></div>
+                  <div class="tl-card tl-k4"><span>Grade 12 &middot; Calculus</span><b>What a derivative measures</b></div>
+                  <div class="tl-card tl-k5"><span>University &middot; Linear algebra</span><b>Eigenvectors: the directions that survive</b></div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
