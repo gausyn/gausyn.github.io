@@ -1951,42 +1951,42 @@ html.js .pv-p1{animation:pv-p1 43.5s ease-in-out infinite both}
 html.js .pv-p2{animation:pv-p2 43.5s ease-in-out infinite both}
 @keyframes pv-p3{0%{color:var(--faint);border-color:var(--rule);background:#fff}6.207%{color:var(--faint);border-color:var(--rule);background:#fff}6.897%{color:var(--ink);border-color:var(--ink);background:var(--surface)}9.425%{color:var(--ink);border-color:var(--ink);background:var(--surface)}10.115%{color:var(--faint);border-color:var(--rule);background:#fff}21.379%{color:var(--faint);border-color:var(--rule);background:#fff}22.069%{color:var(--ink);border-color:var(--ink);background:var(--surface)}24.598%{color:var(--ink);border-color:var(--ink);background:var(--surface)}25.287%{color:var(--faint);border-color:var(--rule);background:#fff}36.552%{color:var(--faint);border-color:var(--rule);background:#fff}37.241%{color:var(--ink);border-color:var(--ink);background:var(--surface)}39.77%{color:var(--ink);border-color:var(--ink);background:var(--surface)}40.46%{color:var(--faint);border-color:var(--rule);background:#fff}51.724%{color:var(--faint);border-color:var(--rule);background:#fff}52.414%{color:var(--ink);border-color:var(--ink);background:var(--surface)}54.943%{color:var(--ink);border-color:var(--ink);background:var(--surface)}55.632%{color:var(--faint);border-color:var(--rule);background:#fff}66.897%{color:var(--faint);border-color:var(--rule);background:#fff}67.586%{color:var(--ink);border-color:var(--ink);background:var(--surface)}70.115%{color:var(--ink);border-color:var(--ink);background:var(--surface)}70.805%{color:var(--faint);border-color:var(--rule);background:#fff}82.069%{color:var(--faint);border-color:var(--rule);background:#fff}82.759%{color:var(--ink);border-color:var(--ink);background:var(--surface)}85.287%{color:var(--ink);border-color:var(--ink);background:var(--surface)}85.977%{color:var(--faint);border-color:var(--rule);background:#fff}100%{color:var(--faint);border-color:var(--rule);background:#fff}}
 html.js .pv-p3{animation:pv-p3 43.5s ease-in-out infinite both}
-@keyframes tm-r1{0%{opacity:0;transform:translateY(10px)}10.526%{opacity:0;transform:translateY(10px)}11.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r1{animation:tm-r1 38s ease-in-out infinite both}
-@keyframes tm-r2{0%{opacity:0;transform:translateY(10px)}23.684%{opacity:0;transform:translateY(10px)}24.737%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r2{animation:tm-r2 38s ease-in-out infinite both}
-@keyframes tm-z1{0%{opacity:0;transform:translateY(10px)}26.316%{opacity:0;transform:translateY(10px)}27.368%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-z1{animation:tm-z1 38s ease-in-out infinite both}
-@keyframes tm-z2{0%{opacity:0;transform:translateY(10px)}30.263%{opacity:0;transform:translateY(10px)}31.316%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-z2{animation:tm-z2 38s ease-in-out infinite both}
-@keyframes tm-z3{0%{opacity:0;transform:translateY(10px)}34.211%{opacity:0;transform:translateY(10px)}35.263%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-z3{animation:tm-z3 38s ease-in-out infinite both}
-@keyframes tm-w1{0%{opacity:0;transform:translateY(10px)}42.632%{opacity:0;transform:translateY(10px)}43.684%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-w1{animation:tm-w1 38s ease-in-out infinite both}
-@keyframes tm-w2{0%{opacity:0;transform:translateY(10px)}46.579%{opacity:0;transform:translateY(10px)}47.632%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-w2{animation:tm-w2 38s ease-in-out infinite both}
-@keyframes tm-w3{0%{opacity:0;transform:translateY(10px)}50.526%{opacity:0;transform:translateY(10px)}51.579%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-w3{animation:tm-w3 38s ease-in-out infinite both}
-@keyframes tm-pp{0%{opacity:0;transform:translateY(10px)}63.158%{opacity:0;transform:translateY(10px)}64.211%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-pp{animation:tm-pp 38s ease-in-out infinite both}
-@keyframes tm-r3{0%{opacity:0;transform:translateY(10px)}71.053%{opacity:0;transform:translateY(10px)}72.105%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-r3{animation:tm-r3 38s ease-in-out infinite both}
-@keyframes tm-pv{0%{opacity:0;transform:translateY(10px)}75%{opacity:0;transform:translateY(10px)}76.053%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-pv{animation:tm-pv 38s ease-in-out infinite both}
-@keyframes tm-nv{0%{opacity:0;transform:translateY(10px)}80.263%{opacity:0;transform:translateY(10px)}81.316%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .tm-nv{animation:tm-nv 38s ease-in-out infinite both}
-@keyframes tm-idle{0%{opacity:1}39.474%{opacity:1}40.526%{opacity:0}100%{opacity:0}}
-html.js .tm-idle{animation:tm-idle 38s ease-in-out infinite both}
-@keyframes tm-c1{0%{opacity:0;transform:translateY(10px);border-color:var(--rule);background:#fff}40.789%{opacity:0;transform:translateY(10px);border-color:var(--rule);background:#fff}41.842%{opacity:1;transform:none;border-color:var(--rule);background:#fff}57.895%{opacity:1;transform:none;border-color:var(--rule);background:#fff}59.474%{opacity:1;transform:none;border-color:var(--ink);background:var(--surface)}100%{opacity:1;transform:none;border-color:var(--ink);background:var(--surface)}}
-html.js .tm-c1{animation:tm-c1 38s ease-in-out infinite both}
-@keyframes tm-c2{0%{opacity:0;transform:translateY(10px)}44.737%{opacity:0;transform:translateY(10px)}45.789%{opacity:1;transform:none}57.895%{opacity:1}59.474%{opacity:.45}100%{opacity:.45}}
-html.js .tm-c2{animation:tm-c2 38s ease-in-out infinite both}
-@keyframes tm-c3{0%{opacity:0;transform:translateY(10px)}48.684%{opacity:0;transform:translateY(10px)}49.737%{opacity:1;transform:none}57.895%{opacity:1}59.474%{opacity:.45}100%{opacity:.45}}
-html.js .tm-c3{animation:tm-c3 38s ease-in-out infinite both}
-@keyframes tm-tn{0%,10.526%{border-color:var(--rule);background:#fff;color:var(--faint)}11.842%,100%{border-color:var(--ink);background:var(--surface);color:var(--ink)}}
-html.js .mday.tonight{animation:tm-tn 38s ease-in-out infinite both}
-@keyframes fade-tm{0%{opacity:1}96.579%{opacity:1}99.342%{opacity:0}100%{opacity:0}}
-html.js .fade-tm{animation:fade-tm 38s linear infinite}
+@keyframes tm-r1{0%{opacity:0;transform:translateY(10px)}4.348%{opacity:0;transform:translateY(10px)}6.087%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-r1{animation:tm-r1 23s ease-in-out infinite both}
+@keyframes tm-r2{0%{opacity:0;transform:translateY(10px)}14.782%{opacity:0;transform:translateY(10px)}15.826%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-r2{animation:tm-r2 23s ease-in-out infinite both}
+@keyframes tm-z1{0%{opacity:0;transform:translateY(10px)}17.392%{opacity:0;transform:translateY(10px)}18.55%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-z1{animation:tm-z1 23s ease-in-out infinite both}
+@keyframes tm-z2{0%{opacity:0;transform:translateY(10px)}21.739%{opacity:0;transform:translateY(10px)}22.899%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-z2{animation:tm-z2 23s ease-in-out infinite both}
+@keyframes tm-z3{0%{opacity:0;transform:translateY(10px)}26.087%{opacity:0;transform:translateY(10px)}27.13%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-z3{animation:tm-z3 23s ease-in-out infinite both}
+@keyframes tm-w1{0%{opacity:0;transform:translateY(10px)}35.615%{opacity:0;transform:translateY(10px)}37.051%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-w1{animation:tm-w1 23s ease-in-out infinite both}
+@keyframes tm-w2{0%{opacity:0;transform:translateY(10px)}41.002%{opacity:0;transform:translateY(10px)}42.439%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-w2{animation:tm-w2 23s ease-in-out infinite both}
+@keyframes tm-w3{0%{opacity:0;transform:translateY(10px)}46.389%{opacity:0;transform:translateY(10px)}47.826%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-w3{animation:tm-w3 23s ease-in-out infinite both}
+@keyframes tm-pp{0%{opacity:0;transform:translateY(10px)}59.71%{opacity:0;transform:translateY(10px)}60.87%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-pp{animation:tm-pp 23s ease-in-out infinite both}
+@keyframes tm-r3{0%{opacity:0;transform:translateY(10px)}66.957%{opacity:0;transform:translateY(10px)}68.116%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-r3{animation:tm-r3 23s ease-in-out infinite both}
+@keyframes tm-pv{0%{opacity:0;transform:translateY(10px)}71.304%{opacity:0;transform:translateY(10px)}72.464%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-pv{animation:tm-pv 23s ease-in-out infinite both}
+@keyframes tm-nv{0%{opacity:0;transform:translateY(10px)}77.101%{opacity:0;transform:translateY(10px)}78.261%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .tm-nv{animation:tm-nv 23s ease-in-out infinite both}
+@keyframes tm-idle{0%{opacity:1}31.305%{opacity:1}32.741%{opacity:0}100%{opacity:0}}
+html.js .tm-idle{animation:tm-idle 23s ease-in-out infinite both}
+@keyframes tm-c1{0%{opacity:0;transform:translateY(10px);border-color:var(--rule);background:#fff}33.1%{opacity:0;transform:translateY(10px);border-color:var(--rule);background:#fff}34.537%{opacity:1;transform:none;border-color:var(--rule);background:#fff}53.913%{opacity:1;transform:none;border-color:var(--rule);background:#fff}55.653%{opacity:1;transform:none;border-color:var(--ink);background:var(--surface)}100%{opacity:1;transform:none;border-color:var(--ink);background:var(--surface)}}
+html.js .tm-c1{animation:tm-c1 23s ease-in-out infinite both}
+@keyframes tm-c2{0%{opacity:0;transform:translateY(10px)}38.488%{opacity:0;transform:translateY(10px)}39.924%{opacity:1;transform:none}53.913%{opacity:1}55.653%{opacity:.45}100%{opacity:.45}}
+html.js .tm-c2{animation:tm-c2 23s ease-in-out infinite both}
+@keyframes tm-c3{0%{opacity:0;transform:translateY(10px)}43.875%{opacity:0;transform:translateY(10px)}45.312%{opacity:1;transform:none}53.913%{opacity:1}55.653%{opacity:.45}100%{opacity:.45}}
+html.js .tm-c3{animation:tm-c3 23s ease-in-out infinite both}
+@keyframes tm-tn{0%,4.348%{border-color:var(--rule);background:#fff;color:var(--faint)}6.522%,100%{border-color:var(--ink);background:var(--surface);color:var(--ink)}}
+html.js .mday.tonight{animation:tm-tn 23s ease-in-out infinite both}
+@keyframes fade-tm{0%{opacity:1}94.348%{opacity:1}98.913%{opacity:0}100%{opacity:0}}
+html.js .fade-tm{animation:fade-tm 23s linear infinite}
 /* ask gausyn, one gesture: the worksheet and the workspace share one room on every screen */
 .fade-ag .bstate { position: absolute; inset: 0; }
 .fade-ag .bstate + .bstate { border-top: 0; }
