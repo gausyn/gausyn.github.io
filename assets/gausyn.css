@@ -173,11 +173,11 @@ section { padding: var(--section) 0; scroll-margin-top: calc(var(--header-h) + 2
 .steps { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 2px; height: 44px; padding: 0 10px; background: #fff; border-top: 1px solid var(--rule-soft); overflow: hidden; }
 .steps-bar { position: absolute; left: 0; top: 0; width: 100%; height: 2px; background: var(--ink); transform: scaleX(0); transform-origin: left center; }
 .step { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; font: inherit; font-size: 12px; color: var(--faint); background: none; border: 0; border-radius: 999px; white-space: nowrap; cursor: pointer; transition: color 0.2s ease; }
-.step i { font-style: normal; font-size: 10.5px; }
+.step i { font-style: normal; font-size: 11px; }
 .step em { display: none; font-style: normal; }
 .step:hover, .step.on { color: var(--ink); }
 @media (max-width: 1080px) { .step:not(.on) { display: none; } .step em { display: inline; } .steps { justify-content: flex-start; } }
-@media (max-width: 760px) { .stage { --stage-h: 700px; } }
+@media (max-width: 760px) { .stage { --stage-h: 700px; } .stage .chrome .pill { font-size: 11px; } }
 
 /* a demo waits while it is off screen, and in the film only the act on screen runs.
    !important because every timeline rule below is an `animation:` shorthand, which
@@ -2482,7 +2482,8 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
   .mboard p, .bankcard .why, .bankidle { display: none; }
   .match .bankcard { flex: none; padding: 8px 12px; }
   .match .bankcard b { font-size: 13.5px; margin-bottom: 0; }
-  .match .bankcard .pp { margin-top: 4px; }
+  .match .bankcard .pp { margin-top: 4px; font-size: 11px; letter-spacing: 0.06em; }
+  .fade-tm .mday b, .fade-tm .bankhead, .fade-tm .mboard .num, .fade-tm .mrow i, .fade-tm .mnow { font-size: 11px; letter-spacing: 0.06em; }
 }
 .mrow { display: flex; gap: 9px; font-size: clamp(12.5px, 0.95vw, 14px); line-height: 1.5; color: var(--muted); }
 .mrow i { width: 19px; height: 19px; border-radius: 50%; background: var(--ink); color: #fff; font-style: normal; font-size: 9.5px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -2691,7 +2692,7 @@ html.js .fade-pv{animation:fade-pv 43.5s linear infinite}
 .diagram .pg-lad { stroke: var(--hint); stroke-width: 4; stroke-dasharray: none; stroke-dashoffset: 0; }
 .pg-dg .sketch { position: absolute; left: 50%; top: 50%; margin: -17px 0 0 -58px; z-index: 2; }
 .pg-frame { position: absolute; inset: -6px; border: 1px dashed var(--cool-ink); border-radius: 4px; }
-.pg-frame span { position: absolute; left: 0; bottom: 100%; margin-bottom: 5px; font-size: 11.5px; color: var(--cool-ink); white-space: nowrap; }
+.pg-frame span { position: absolute; left: 0; top: 100%; margin-top: 5px; font-size: 11.5px; color: var(--cool-ink); white-space: nowrap; }
 .pg-frame i { position: absolute; width: 9px; height: 9px; background: #fff; border: 1.5px solid var(--cool-ink); border-radius: 2px; }
 .pg-frame i:nth-of-type(1) { left: -5px; top: -5px; }
 .pg-frame i:nth-of-type(2) { right: -5px; top: -5px; }
@@ -5204,8 +5205,6 @@ html.js .caf-s{animation:caf-s 54s ease-out infinite both}
 html.js .caf-m{animation:caf-m 54s ease-out infinite both}
 @keyframes fade-ca{0%{opacity:1}97.593%{opacity:1}99.537%{opacity:0}100%{opacity:0}}
 html.js .fade-ca{animation:fade-ca 54s linear infinite}
-@keyframes chm-t{0%{opacity:0;transform:translateY(10px)}5.714%{opacity:0;transform:translateY(10px)}7.857%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .chm-t{animation:chm-t 28s ease-in-out infinite both}
 @keyframes cho-1{0%{opacity:0;transform:translateY(10px)}1.957%{opacity:0;transform:translateY(10px)}2.826%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 html.js .cho-1{animation:cho-1 46s ease-in-out infinite both}
 @keyframes chn{0%{stroke-dashoffset:242}4.13%{stroke-dashoffset:242}6.304%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
@@ -5522,14 +5521,14 @@ html.js .kg-cv3{animation:kg-cv3 54s ease-in-out infinite both}
 html.js .kg-w3{animation:kg-w3 54s ease-in-out infinite both}
 @keyframes kg-lv3{0%{opacity:0}73.704%{opacity:0}74.444%{opacity:1}78.889%{opacity:1}79.63%{opacity:0}100%{opacity:0}}
 html.js .kg-lv3{animation:kg-lv3 54s ease-in-out infinite both}
-@keyframes kg-g1{0%{opacity:0}74.444%{opacity:0}74.907%{opacity:1}100%{opacity:1}}
-html.js .kg-g1{animation:kg-g1 54s ease-in-out infinite both}
-@keyframes kg-g2{0%{opacity:0}75.37%{opacity:0}75.833%{opacity:1}100%{opacity:1}}
-html.js .kg-g2{animation:kg-g2 54s ease-in-out infinite both}
-@keyframes kg-g3{0%{opacity:0}76.296%{opacity:0}76.759%{opacity:1}100%{opacity:1}}
-html.js .kg-g3{animation:kg-g3 54s ease-in-out infinite both}
-@keyframes kg-g4{0%{opacity:0}77.222%{opacity:0}77.685%{opacity:1}100%{opacity:1}}
-html.js .kg-g4{animation:kg-g4 54s ease-in-out infinite both}
+@keyframes kg-gc1{0%{opacity:0}74.444%{opacity:0}74.907%{opacity:1}100%{opacity:1}}
+html.js .kg-gc1{animation:kg-gc1 54s ease-in-out infinite both}
+@keyframes kg-gc2{0%{opacity:0}75.37%{opacity:0}75.833%{opacity:1}100%{opacity:1}}
+html.js .kg-gc2{animation:kg-gc2 54s ease-in-out infinite both}
+@keyframes kg-gc3{0%{opacity:0}76.296%{opacity:0}76.759%{opacity:1}100%{opacity:1}}
+html.js .kg-gc3{animation:kg-gc3 54s ease-in-out infinite both}
+@keyframes kg-gc4{0%{opacity:0}77.222%{opacity:0}77.685%{opacity:1}100%{opacity:1}}
+html.js .kg-gc4{animation:kg-gc4 54s ease-in-out infinite both}
 @keyframes kg-d3{0%{opacity:0}78.704%{opacity:0}79.444%{opacity:1}100%{opacity:1}}
 html.js .kg-d3{animation:kg-d3 54s ease-in-out infinite both}
 @keyframes kg-gl{0%{opacity:0}79.259%{opacity:0}80%{opacity:1}100%{opacity:1}}
