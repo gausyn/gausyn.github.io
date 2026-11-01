@@ -4641,152 +4641,219 @@ html.js .fade-kp{animation:fade-kp 37s linear infinite}
 .kc-ml em { font-style: normal; font-size: 11px; color: var(--pt-accent); }
 .kc-head { display: grid; }
 .kc-head h2 { grid-area: 1 / 1; margin-top: 8px; }
-.kc-code { display: grid; line-height: 1.5; margin-top: 4px; }
-.kc-code > div { grid-area: 1 / 1; min-width: 0; }
+.fade-kc .kc-code { display: grid; line-height: 1.5; margin-top: 4px; padding: 0; background: none; }
+.kc-code > div { grid-area: 1 / 1; align-self: start; min-width: 0; padding: 10px 12px; border-radius: 6px; background: var(--pt-surface); }
+.kc-code .st { color: #3f7d4e; }
 .kc-ln { display: block; border-radius: 3px; }
-.fade-kc .xv-run { margin-top: 10px; }
-.fade-kc .xv-con { min-height: 0; padding: 7px 13px 8px; line-height: 1.5; }
-.kc-row { display: grid; grid-template-columns: 5em 7em minmax(0, 1fr); }
+.kc-tl { display: inline-block; border-radius: 3px; }
+.kc-tok { display: inline-grid; }
+.kc-tok > span { grid-area: 1 / 1; white-space: pre; }
+.kc-sc { position: absolute; left: 6%; right: 6%; bottom: 10px; z-index: 2; --kc-dock: 30px; --kc-half: 110px; }
+.fade-kc .xv-run { margin-top: 0; box-shadow: 0 -8px 22px rgba(0,0,0,0.1); }
+.fade-kc .xv-con { display: grid; min-height: 0; padding: 7px 13px 8px; line-height: 1.5; }
+.kc-con > * { grid-area: 1 / 1; min-width: 0; }
+.kc-con .ph { position: static; }
+.kc-row { display: block; white-space: pre; }
 .kc-hd { color: rgba(255,255,255,0.45); }
-.kc-err { position: absolute; left: calc(13px + 12em); right: 13px; top: 7px; color: #ff9b8a; }
+.kc-err { color: #ff9b8a; }
 @media (max-width: 860px) {
   .fade-kc .xw-split { grid-template-rows: minmax(0, 38%) minmax(0, 1fr); }
   .fade-kc .xv-docwrap { padding: 8px 8px 0; }
   .fade-kc .xv-doc { padding: 6px 10px 10px; }
   .fade-kc .kc-b1 { display: none; }
-  .fade-kc .xv-code { padding: 8px; }
-  .kc-sc { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 2; }
-  .fade-kc .xv-run { margin-top: 0; box-shadow: 0 -8px 22px rgba(0,0,0,0.12); }
-  html.js .kc-sc { animation: kc-sc 41.9s ease-in-out infinite both; }
+  .fade-kc .kc-code { line-height: 1.42; }
+  .kc-code > div { padding: 6px 8px; }
+  .kc-sc { left: 8px; right: 8px; bottom: 8px; --kc-dock: -14px; --kc-half: 92px; }
 }
 @media (max-width: 760px) {
   .kc-miles { gap: 5px; margin-top: 4px; }
   .kc-ml { padding: 3px 7px; font-size: 11px; gap: 4px; }
   .fade-kc .xv-run-h .eyebrow, .fade-kc .xv-run-h .lang { font-size: 11px; }
-  .kc-row { grid-template-columns: 4em 5.5em minmax(0, 1fr); }
-  .kc-err { left: calc(13px + 9.5em); }
 }
-@keyframes kc-t1{0%{opacity:1}0.477%{opacity:0}100%{opacity:0}}
-html.js .kc-t1{animation:kc-t1 41.9s ease-in-out infinite both}
-@keyframes kc-g0{0%{opacity:0}0%{opacity:0}0.955%{opacity:1}100%{opacity:1}}
-html.js .kc-g0{animation:kc-g0 41.9s ease-in-out infinite both}
-@keyframes kc-w1{0%{opacity:0}0.716%{opacity:0}1.671%{opacity:1}13.604%{opacity:1}14.558%{opacity:0}100%{opacity:0}}
-html.js .kc-w1{animation:kc-w1 41.9s ease-in-out infinite both}
-@keyframes kc-lv{0%{opacity:0}0.716%{opacity:0}1.671%{opacity:1}14.081%{opacity:1}15.036%{opacity:0}100%{opacity:0}}
-html.js .kc-lv{animation:kc-lv 41.9s ease-in-out infinite both}
-@keyframes kc-em{0%{opacity:1}0.716%{opacity:1}1.671%{opacity:0}100%{opacity:0}}
-html.js .kc-em{animation:kc-em 41.9s ease-in-out infinite both}
-@keyframes kc-pg{0%{opacity:0;transform:translateY(10px)}0.955%{opacity:0;transform:translateY(10px)}1.909%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kc-pg{animation:kc-pg 41.9s ease-in-out infinite both}
-@keyframes kc-b1{0%{opacity:0}1.671%{opacity:0}2.626%{opacity:1}100%{opacity:1}}
-html.js .kc-b1{animation:kc-b1 41.9s ease-in-out infinite both}
-@keyframes kc-m1{0%{opacity:0;transform:translateY(10px);border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}2.626%{opacity:0;transform:translateY(10px)}3.58%{opacity:1;transform:none}5.489%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}6.324%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}25.059%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}25.895%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
-html.js .kc-m1{animation:kc-m1 41.9s ease-in-out infinite both}
-@keyframes kc-m2{0%{opacity:0;transform:translateY(10px);border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}3.58%{opacity:0;transform:translateY(10px)}4.535%{opacity:1;transform:none}45.107%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}45.943%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}71.838%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}72.673%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
-html.js .kc-m2{animation:kc-m2 41.9s ease-in-out infinite both}
-@keyframes kc-m3{0%{opacity:0;transform:translateY(10px);border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}4.535%{opacity:0;transform:translateY(10px)}5.489%{opacity:1;transform:none}72.315%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}73.151%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}81.385%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}82.219%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
-html.js .kc-m3{animation:kc-m3 41.9s ease-in-out infinite both}
-@keyframes kc-c1{0%{opacity:0}25.059%{opacity:0}26.014%{opacity:1}100%{opacity:1}}
-html.js .kc-c1{animation:kc-c1 41.9s ease-in-out infinite both}
-@keyframes kc-c2{0%{opacity:0}71.838%{opacity:0}72.792%{opacity:1}100%{opacity:1}}
-html.js .kc-c2{animation:kc-c2 41.9s ease-in-out infinite both}
-@keyframes kc-c3{0%{opacity:0}81.385%{opacity:0}82.339%{opacity:1}100%{opacity:1}}
-html.js .kc-c3{animation:kc-c3 41.9s ease-in-out infinite both}
-@keyframes kc-s1{0%{opacity:0}5.489%{opacity:0}6.205%{opacity:1}45.107%{opacity:1}45.823%{opacity:0}100%{opacity:0}}
-html.js .kc-s1{animation:kc-s1 41.9s ease-in-out infinite both}
-@keyframes kc-s2{0%{opacity:0}45.107%{opacity:0}45.823%{opacity:1}100%{opacity:1}}
-html.js .kc-s2{animation:kc-s2 41.9s ease-in-out infinite both}
-@keyframes kc-b3{0%{opacity:0}6.205%{opacity:0}6.922%{opacity:1}100%{opacity:1}}
-html.js .kc-b3{animation:kc-b3 41.9s ease-in-out infinite both}
-@keyframes kc-h3{0%{opacity:0}6.205%{opacity:0}7.16%{opacity:1}13.604%{opacity:1}14.558%{opacity:0}100%{opacity:0}}
-html.js .kc-h3{animation:kc-h3 41.9s ease-in-out infinite both}
-@keyframes kc-p1{0%{opacity:0}6.682%{opacity:0}7.28%{opacity:1}100%{opacity:1}}
-html.js .kc-p1{animation:kc-p1 41.9s ease-in-out infinite both}
-@keyframes kc-p2{0%{opacity:0}7.398%{opacity:0}7.995%{opacity:1}100%{opacity:1}}
-html.js .kc-p2{animation:kc-p2 41.9s ease-in-out infinite both}
-@keyframes kc-p3{0%{opacity:0}8.115%{opacity:0}8.711%{opacity:1}100%{opacity:1}}
-html.js .kc-p3{animation:kc-p3 41.9s ease-in-out infinite both}
-@keyframes kc-p4{0%{opacity:0}8.831%{opacity:0}9.427%{opacity:1}100%{opacity:1}}
-html.js .kc-p4{animation:kc-p4 41.9s ease-in-out infinite both}
-@keyframes kc-p5{0%{opacity:0}9.547%{opacity:0}10.143%{opacity:1}100%{opacity:1}}
-html.js .kc-p5{animation:kc-p5 41.9s ease-in-out infinite both}
-@keyframes kc-p6{0%{opacity:0}10.262%{opacity:0}10.86%{opacity:1}100%{opacity:1}}
-html.js .kc-p6{animation:kc-p6 41.9s ease-in-out infinite both}
-@keyframes kc-p7{0%{opacity:0}10.978%{opacity:0}11.575%{opacity:1}100%{opacity:1}}
-html.js .kc-p7{animation:kc-p7 41.9s ease-in-out infinite both}
-@keyframes kc-p8{0%{opacity:0}11.694%{opacity:0}12.291%{opacity:1}100%{opacity:1}}
-html.js .kc-p8{animation:kc-p8 41.9s ease-in-out infinite both}
-@keyframes kc-p9{0%{opacity:0}12.411%{opacity:0}13.007%{opacity:1}100%{opacity:1}}
-html.js .kc-p9{animation:kc-p9 41.9s ease-in-out infinite both}
-@keyframes kc-g1{0%{opacity:0}13.604%{opacity:0}14.558%{opacity:1}100%{opacity:1}}
-html.js .kc-g1{animation:kc-g1 41.9s ease-in-out infinite both}
-@keyframes kc-pv{0%{opacity:0;transform:translateY(10px)}14.081%{opacity:0;transform:translateY(10px)}15.036%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kc-pv{animation:kc-pv 41.9s ease-in-out infinite both}
-@keyframes kc-rb{0%{border-color:var(--rule);color:var(--muted);transform:none}17.9%{border-color:var(--rule);color:var(--muted)}18.496%{border-color:var(--ink);color:var(--ink)}18.616%{transform:none}19.045%{transform:scale(0.93)}19.809%{transform:none}23.389%{border-color:var(--ink);color:var(--ink)}23.986%{border-color:var(--rule);color:var(--muted)}50.358%{border-color:var(--rule);color:var(--muted)}50.954%{border-color:var(--ink);color:var(--ink)}51.074%{transform:none}51.503%{transform:scale(0.93)}52.267%{transform:none}53.938%{border-color:var(--ink);color:var(--ink)}54.535%{border-color:var(--rule);color:var(--muted)}65.155%{border-color:var(--rule);color:var(--muted)}65.751%{border-color:var(--ink);color:var(--ink)}65.871%{transform:none}66.301%{transform:scale(0.93)}67.064%{transform:none}70.644%{border-color:var(--ink);color:var(--ink)}71.241%{border-color:var(--rule);color:var(--muted)}100%{border-color:var(--rule);color:var(--muted)}}
-html.js .kc-rb{animation:kc-rb 41.9s ease-in-out infinite both}
-@keyframes kc-r0{0%{opacity:1}19.094%{opacity:1}19.57%{opacity:0}100%{opacity:0}}
-html.js .kc-r0{animation:kc-r0 41.9s ease-in-out infinite both}
-@keyframes kc-rn{0%{opacity:0}19.094%{opacity:0}19.57%{opacity:1}23.15%{opacity:1}23.628%{opacity:0}51.552%{opacity:0}52.028%{opacity:1}53.699%{opacity:1}54.177%{opacity:0}66.349%{opacity:0}66.826%{opacity:1}70.406%{opacity:1}70.883%{opacity:0}100%{opacity:0}}
-html.js .kc-rn{animation:kc-rn 41.9s ease-in-out infinite both}
-@keyframes kc-r1{0%{opacity:0}23.15%{opacity:0}23.628%{opacity:1}51.552%{opacity:1}52.028%{opacity:0}53.699%{opacity:0}54.177%{opacity:1}66.349%{opacity:1}66.826%{opacity:0}70.406%{opacity:0}70.883%{opacity:1}100%{opacity:1}}
-html.js .kc-r1{animation:kc-r1 41.9s ease-in-out infinite both}
-@keyframes kc-ph{0%{opacity:1}19.332%{opacity:1}19.928%{opacity:0}100%{opacity:0}}
-html.js .kc-ph{animation:kc-ph 41.9s ease-in-out infinite both}
-@keyframes kc-hh{0%{opacity:0}19.57%{opacity:0}20.048%{opacity:1}100%{opacity:1}}
-html.js .kc-hh{animation:kc-hh 41.9s ease-in-out infinite both}
-@keyframes kc-o1{0%{opacity:0;color:#e8e8e8}20.048%{opacity:0}20.525%{opacity:1}100%{opacity:1}}
-html.js .kc-o1{animation:kc-o1 41.9s ease-in-out infinite both}
-@keyframes kc-o2{0%{opacity:0;color:#e8e8e8}20.645%{opacity:0}21.121%{opacity:1}30.788%{color:#e8e8e8}31.504%{color:#f2c14e}45.107%{color:#f2c14e}45.823%{color:#e8e8e8}71.838%{color:#e8e8e8}72.554%{color:#f2c14e}100%{color:#f2c14e}}
-html.js .kc-o2{animation:kc-o2 41.9s ease-in-out infinite both}
-@keyframes kc-o3{0%{opacity:0;color:#e8e8e8}21.241%{opacity:0}21.719%{opacity:1}100%{opacity:1}}
-html.js .kc-o3{animation:kc-o3 41.9s ease-in-out infinite both}
-@keyframes kc-o4{0%{opacity:0;color:#e8e8e8}21.838%{opacity:0}22.315%{opacity:1}30.788%{color:#e8e8e8}31.504%{color:#f2c14e}45.107%{color:#f2c14e}45.823%{color:#e8e8e8}71.838%{color:#e8e8e8}72.554%{color:#f2c14e}100%{color:#f2c14e}}
-html.js .kc-o4{animation:kc-o4 41.9s ease-in-out infinite both}
-@keyframes kc-o5{0%{opacity:0;color:#e8e8e8}22.434%{opacity:0}22.912%{opacity:1}100%{opacity:1}}
-html.js .kc-o5{animation:kc-o5 41.9s ease-in-out infinite both}
-@keyframes kc-y2{0%{opacity:0}29.833%{opacity:0}30.788%{opacity:1}100%{opacity:1}}
-html.js .kc-y2{animation:kc-y2 41.9s ease-in-out infinite both}
-@keyframes kc-t2{0%{opacity:0}31.264%{opacity:0}31.981%{opacity:1}34.606%{opacity:1}35.322%{opacity:0}100%{opacity:0}}
-html.js .kc-t2{animation:kc-t2 41.9s ease-in-out infinite both}
-@keyframes kc-g2{0%{opacity:0}34.845%{opacity:0}35.8%{opacity:1}100%{opacity:1}}
-html.js .kc-g2{animation:kc-g2 41.9s ease-in-out infinite both}
-@keyframes kc-y3{0%{opacity:0}42.721%{opacity:0}43.676%{opacity:1}100%{opacity:1}}
-html.js .kc-y3{animation:kc-y3 41.9s ease-in-out infinite both}
-@keyframes kc-v1{0%{opacity:1}45.107%{opacity:1}45.823%{opacity:0}100%{opacity:0}}
-html.js .kc-v1{animation:kc-v1 41.9s ease-in-out infinite both}
-@keyframes kc-v2{0%{opacity:0}45.585%{opacity:0}46.301%{opacity:1}100%{opacity:1}}
-html.js .kc-v2{animation:kc-v2 41.9s ease-in-out infinite both}
-@keyframes kc-dl{0%{background-color:rgba(160,106,86,0)}46.062%{background-color:rgba(160,106,86,0)}46.898%{background-color:rgba(160,106,86,.16)}50.358%{background-color:rgba(160,106,86,.16)}51.194%{background-color:rgba(160,106,86,0)}100%{background-color:rgba(160,106,86,0)}}
-html.js .kc-dl{animation:kc-dl 41.9s ease-in-out infinite both}
-@keyframes kc-er{0%{opacity:0}53.461%{opacity:0}54.057%{opacity:1}66.349%{opacity:1}66.945%{opacity:0}100%{opacity:0}}
-html.js .kc-er{animation:kc-er 41.9s ease-in-out infinite both}
-@keyframes kc-t3{0%{opacity:0}55.132%{opacity:0}55.848%{opacity:1}58.473%{opacity:1}59.188%{opacity:0}100%{opacity:0}}
-html.js .kc-t3{animation:kc-t3 41.9s ease-in-out infinite both}
-@keyframes kc-g4{0%{opacity:0}58.711%{opacity:0}59.666%{opacity:1}100%{opacity:1}}
-html.js .kc-g4{animation:kc-g4 41.9s ease-in-out infinite both}
-@keyframes kc-y5{0%{opacity:0}62.53%{opacity:0}63.484%{opacity:1}100%{opacity:1}}
-html.js .kc-y5{animation:kc-y5 41.9s ease-in-out infinite both}
-@keyframes kc-kl{0%{opacity:0;background-color:rgba(160,106,86,0)}63.484%{opacity:0;background-color:rgba(160,106,86,0)}64.2%{opacity:1}64.32%{background-color:rgba(160,106,86,.16)}67.542%{background-color:rgba(160,106,86,.16)}68.377%{background-color:rgba(160,106,86,0)}100%{background-color:rgba(160,106,86,0)}}
-html.js .kc-kl{animation:kc-kl 41.9s ease-in-out infinite both}
-@keyframes kc-hq{0%{opacity:0}67.303%{opacity:0}67.78%{opacity:1}100%{opacity:1}}
-html.js .kc-hq{animation:kc-hq 41.9s ease-in-out infinite both}
-@keyframes kc-q1{0%{opacity:0}67.78%{opacity:0}68.258%{opacity:1}100%{opacity:1}}
-html.js .kc-q1{animation:kc-q1 41.9s ease-in-out infinite both}
-@keyframes kc-q2{0%{opacity:0}68.377%{opacity:0}68.855%{opacity:1}100%{opacity:1}}
-html.js .kc-q2{animation:kc-q2 41.9s ease-in-out infinite both}
-@keyframes kc-q3{0%{opacity:0}68.974%{opacity:0}69.451%{opacity:1}100%{opacity:1}}
-html.js .kc-q3{animation:kc-q3 41.9s ease-in-out infinite both}
-@keyframes kc-q4{0%{opacity:0}69.571%{opacity:0}70.047%{opacity:1}100%{opacity:1}}
-html.js .kc-q4{animation:kc-q4 41.9s ease-in-out infinite both}
-@keyframes kc-q5{0%{opacity:0}70.167%{opacity:0}70.644%{opacity:1}100%{opacity:1}}
-html.js .kc-q5{animation:kc-q5 41.9s ease-in-out infinite both}
-@keyframes kc-g5{0%{opacity:0}72.792%{opacity:0}73.747%{opacity:1}100%{opacity:1}}
-html.js .kc-g5{animation:kc-g5 41.9s ease-in-out infinite both}
-@keyframes kc-g3{0%{opacity:0}79.952%{opacity:0}80.907%{opacity:1}100%{opacity:1}}
-html.js .kc-g3{animation:kc-g3 41.9s ease-in-out infinite both}
-@keyframes kc-sc{0%{transform:translateY(calc(100% + 14px))}16.229%{transform:translateY(calc(100% + 14px))}17.9%{transform:translateY(0)}43.914%{transform:translateY(0)}45.585%{transform:translateY(calc(100% + 14px))}49.403%{transform:translateY(calc(100% + 14px))}51.074%{transform:translateY(0)}61.098%{transform:translateY(0)}62.768%{transform:translateY(calc(100% + 14px))}64.2%{transform:translateY(calc(100% + 14px))}65.871%{transform:translateY(0)}100%{transform:translateY(0)}}
-@keyframes fade-kc{0%{opacity:1}96.897%{opacity:1}99.404%{opacity:0}100%{opacity:0}}
-html.js .fade-kc{animation:fade-kc 41.9s linear infinite}
+@keyframes kc-m1{0%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}5.238%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}6.071%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
+html.js .kc-m1{animation:kc-m1 42s ease-in-out infinite both}
+@keyframes kc-m2{0%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}7.143%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}7.976%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}25.714%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}26.548%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
+html.js .kc-m2{animation:kc-m2 42s ease-in-out infinite both}
+@keyframes kc-m3{0%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}71.905%{border-color:var(--rule);background-color:rgba(160,106,86,0);color:var(--pt-muted)}72.738%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}83.333%{border-color:var(--pt-text);background-color:rgba(160,106,86,0);color:var(--pt-text)}84.167%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}100%{border-color:var(--pt-accent);background-color:var(--pt-accent-soft);color:var(--pt-text)}}
+html.js .kc-m3{animation:kc-m3 42s ease-in-out infinite both}
+@keyframes kc-c1{0%{opacity:0}5.238%{opacity:0}6.19%{opacity:1}100%{opacity:1}}
+html.js .kc-c1{animation:kc-c1 42s ease-in-out infinite both}
+@keyframes kc-c2{0%{opacity:0}25.714%{opacity:0}26.667%{opacity:1}100%{opacity:1}}
+html.js .kc-c2{animation:kc-c2 42s ease-in-out infinite both}
+@keyframes kc-c3{0%{opacity:0}83.333%{opacity:0}84.286%{opacity:1}100%{opacity:1}}
+html.js .kc-c3{animation:kc-c3 42s ease-in-out infinite both}
+@keyframes kc-s1{0%{opacity:1}7.143%{opacity:1}7.857%{opacity:0}100%{opacity:0}}
+html.js .kc-s1{animation:kc-s1 42s ease-in-out infinite both}
+@keyframes kc-s2{0%{opacity:0}7.143%{opacity:0}7.857%{opacity:1}71.905%{opacity:1}72.619%{opacity:0}100%{opacity:0}}
+html.js .kc-s2{animation:kc-s2 42s ease-in-out infinite both}
+@keyframes kc-s3{0%{opacity:0}71.905%{opacity:0}72.619%{opacity:1}100%{opacity:1}}
+html.js .kc-s3{animation:kc-s3 42s ease-in-out infinite both}
+@keyframes kc-v1{0%{opacity:1}7.143%{opacity:1}7.857%{opacity:0}100%{opacity:0}}
+html.js .kc-v1{animation:kc-v1 42s ease-in-out infinite both}
+@keyframes kc-v2{0%{opacity:0}7.619%{opacity:0}8.333%{opacity:1}72.381%{opacity:1}73.095%{opacity:0}100%{opacity:0}}
+html.js .kc-v2{animation:kc-v2 42s ease-in-out infinite both}
+@keyframes kc-v3{0%{opacity:0}72.381%{opacity:0}73.095%{opacity:1}100%{opacity:1}}
+html.js .kc-v3{animation:kc-v3 42s ease-in-out infinite both}
+@keyframes kc-p1{0%{opacity:0}7.857%{opacity:0}8.333%{opacity:1}100%{opacity:1}}
+html.js .kc-p1{animation:kc-p1 42s ease-in-out infinite both}
+@keyframes kc-p2{0%{opacity:0}8.31%{opacity:0}8.786%{opacity:1}100%{opacity:1}}
+html.js .kc-p2{animation:kc-p2 42s ease-in-out infinite both}
+@keyframes kc-p3{0%{opacity:0}8.762%{opacity:0}9.238%{opacity:1}100%{opacity:1}}
+html.js .kc-p3{animation:kc-p3 42s ease-in-out infinite both}
+@keyframes kc-p4{0%{opacity:0}9.214%{opacity:0}9.69%{opacity:1}100%{opacity:1}}
+html.js .kc-p4{animation:kc-p4 42s ease-in-out infinite both}
+@keyframes kc-p5{0%{opacity:0}9.667%{opacity:0}10.143%{opacity:1}100%{opacity:1}}
+html.js .kc-p5{animation:kc-p5 42s ease-in-out infinite both}
+@keyframes kc-p6{0%{opacity:0}10.119%{opacity:0}10.595%{opacity:1}100%{opacity:1}}
+html.js .kc-p6{animation:kc-p6 42s ease-in-out infinite both}
+@keyframes kc-p7{0%{opacity:0}10.571%{opacity:0}11.048%{opacity:1}100%{opacity:1}}
+html.js .kc-p7{animation:kc-p7 42s ease-in-out infinite both}
+@keyframes kc-p8{0%{opacity:0}11.024%{opacity:0}11.5%{opacity:1}100%{opacity:1}}
+html.js .kc-p8{animation:kc-p8 42s ease-in-out infinite both}
+@keyframes kc-p9{0%{opacity:0}11.476%{opacity:0}11.952%{opacity:1}100%{opacity:1}}
+html.js .kc-p9{animation:kc-p9 42s ease-in-out infinite both}
+@keyframes kc-p10{0%{opacity:0}11.929%{opacity:0}12.405%{opacity:1}100%{opacity:1}}
+html.js .kc-p10{animation:kc-p10 42s ease-in-out infinite both}
+@keyframes kc-p11{0%{opacity:0}12.381%{opacity:0}12.857%{opacity:1}100%{opacity:1}}
+html.js .kc-p11{animation:kc-p11 42s ease-in-out infinite both}
+@keyframes kc-p12{0%{opacity:0}12.833%{opacity:0}13.31%{opacity:1}100%{opacity:1}}
+html.js .kc-p12{animation:kc-p12 42s ease-in-out infinite both}
+@keyframes kc-p13{0%{opacity:0}13.286%{opacity:0}13.762%{opacity:1}100%{opacity:1}}
+html.js .kc-p13{animation:kc-p13 42s ease-in-out infinite both}
+@keyframes kc-lv{0%{opacity:0}7.143%{opacity:0}7.738%{opacity:1}15%{opacity:1}15.595%{opacity:0}40.476%{opacity:0}41.071%{opacity:1}43.81%{opacity:1}44.405%{opacity:0}60%{opacity:0}60.595%{opacity:1}62.381%{opacity:1}62.976%{opacity:0}71.429%{opacity:0}72.024%{opacity:1}75.714%{opacity:1}76.31%{opacity:0}100%{opacity:0}}
+html.js .kc-lv{animation:kc-lv 42s ease-in-out infinite both}
+@keyframes kc-h3{0%{opacity:0}7.381%{opacity:0}8.333%{opacity:1}14.762%{opacity:1}15.714%{opacity:0}40.952%{opacity:0}41.905%{opacity:1}43.571%{opacity:1}44.524%{opacity:0}60.476%{opacity:0}61.429%{opacity:1}62.381%{opacity:1}63.333%{opacity:0}71.905%{opacity:0}72.857%{opacity:1}75.476%{opacity:1}76.429%{opacity:0}100%{opacity:0}}
+html.js .kc-h3{animation:kc-h3 42s ease-in-out infinite both}
+@keyframes kc-k1{0%{opacity:1}42.143%{opacity:1}42.738%{opacity:0}100%{opacity:0}}
+html.js .kc-k1{animation:kc-k1 42s ease-in-out infinite both}
+@keyframes kc-k2{0%{opacity:0}42.143%{opacity:0}42.738%{opacity:1}61.429%{opacity:1}62.024%{opacity:0}100%{opacity:0}}
+html.js .kc-k2{animation:kc-k2 42s ease-in-out infinite both}
+@keyframes kc-k3{0%{opacity:0}61.429%{opacity:0}62.024%{opacity:1}100%{opacity:1}}
+html.js .kc-k3{animation:kc-k3 42s ease-in-out infinite both}
+@keyframes kc-tl{0%{background-color:rgba(160,106,86,0)}41.667%{background-color:rgba(160,106,86,0)}42.5%{background-color:rgba(160,106,86,.2)}45.714%{background-color:rgba(160,106,86,.2)}46.548%{background-color:rgba(160,106,86,0)}60.952%{background-color:rgba(160,106,86,0)}61.786%{background-color:rgba(160,106,86,.2)}64.286%{background-color:rgba(160,106,86,.2)}65.119%{background-color:rgba(160,106,86,0)}100%{background-color:rgba(160,106,86,0)}}
+html.js .kc-tl{animation:kc-tl 42s ease-in-out infinite both}
+@keyframes kc-dl{0%{background-color:rgba(160,106,86,0)}72.857%{background-color:rgba(160,106,86,0)}73.69%{background-color:rgba(160,106,86,.2)}76.667%{background-color:rgba(160,106,86,.2)}77.5%{background-color:rgba(160,106,86,0)}100%{background-color:rgba(160,106,86,0)}}
+html.js .kc-dl{animation:kc-dl 42s ease-in-out infinite both}
+@keyframes kc-rb{0%{border-color:var(--rule);color:var(--muted);transform:none}0.952%{border-color:var(--rule);color:var(--muted)}1.429%{border-color:var(--ink);color:var(--ink)}1.667%{transform:none}2.095%{transform:scale(0.93)}2.857%{transform:none}3.81%{border-color:var(--ink);color:var(--ink)}4.286%{border-color:var(--rule);color:var(--muted)}16.905%{border-color:var(--rule);color:var(--muted)}17.381%{border-color:var(--ink);color:var(--ink)}17.619%{transform:none}18.048%{transform:scale(0.93)}18.81%{transform:none}20.238%{border-color:var(--ink);color:var(--ink)}20.714%{border-color:var(--rule);color:var(--muted)}45.476%{border-color:var(--rule);color:var(--muted)}45.952%{border-color:var(--ink);color:var(--ink)}46.19%{transform:none}46.619%{transform:scale(0.93)}47.381%{transform:none}47.857%{border-color:var(--ink);color:var(--ink)}48.333%{border-color:var(--rule);color:var(--muted)}64.048%{border-color:var(--rule);color:var(--muted)}64.524%{border-color:var(--ink);color:var(--ink)}64.762%{transform:none}65.19%{transform:scale(0.93)}65.952%{transform:none}66.429%{border-color:var(--ink);color:var(--ink)}66.905%{border-color:var(--rule);color:var(--muted)}76.905%{border-color:var(--rule);color:var(--muted)}77.381%{border-color:var(--ink);color:var(--ink)}77.619%{transform:none}78.048%{transform:scale(0.93)}78.81%{transform:none}79.286%{border-color:var(--ink);color:var(--ink)}79.762%{border-color:var(--rule);color:var(--muted)}100%{border-color:var(--rule);color:var(--muted)}}
+html.js .kc-rb{animation:kc-rb 42s ease-in-out infinite both}
+@keyframes kc-rn{0%{opacity:0}1.905%{opacity:0}2.262%{opacity:1}3.571%{opacity:1}3.929%{opacity:0}17.857%{opacity:0}18.214%{opacity:1}20%{opacity:1}20.357%{opacity:0}46.429%{opacity:0}46.786%{opacity:1}47.619%{opacity:1}47.976%{opacity:0}65%{opacity:0}65.357%{opacity:1}66.429%{opacity:1}66.786%{opacity:0}77.857%{opacity:0}78.214%{opacity:1}79.286%{opacity:1}79.643%{opacity:0}100%{opacity:0}}
+html.js .kc-rn{animation:kc-rn 42s ease-in-out infinite both}
+@keyframes kc-r1{0%{opacity:1}1.905%{opacity:1}2.262%{opacity:0}3.571%{opacity:0}3.929%{opacity:1}17.857%{opacity:1}18.214%{opacity:0}20%{opacity:0}20.357%{opacity:1}46.429%{opacity:1}46.786%{opacity:0}47.619%{opacity:0}47.976%{opacity:1}65%{opacity:1}65.357%{opacity:0}66.429%{opacity:0}66.786%{opacity:1}77.857%{opacity:1}78.214%{opacity:0}79.286%{opacity:0}79.643%{opacity:1}100%{opacity:1}}
+html.js .kc-r1{animation:kc-r1 42s ease-in-out infinite both}
+@keyframes kc-ph{0%{opacity:1}2.143%{opacity:1}2.619%{opacity:0}100%{opacity:0}}
+html.js .kc-ph{animation:kc-ph 42s ease-in-out infinite both}
+@keyframes kc-o0{0%{opacity:0}3.571%{opacity:0}4.048%{opacity:1}6.905%{opacity:1}7.381%{opacity:0}100%{opacity:0}}
+html.js .kc-o0{animation:kc-o0 42s ease-in-out infinite both}
+@keyframes kc-oa{0%{opacity:0}18.095%{opacity:0}18.571%{opacity:1}46.429%{opacity:1}46.905%{opacity:0}100%{opacity:0}}
+html.js .kc-oa{animation:kc-oa 42s ease-in-out infinite both}
+@keyframes kc-ra1{0%{opacity:0;color:#e8e8e8}20.238%{opacity:0}20.595%{opacity:1}32.857%{color:#e8e8e8}33.571%{color:#f2c14e}100%{color:#f2c14e}}
+html.js .kc-ra1{animation:kc-ra1 42s ease-in-out infinite both}
+@keyframes kc-ra2{0%{opacity:0;color:#e8e8e8}20.714%{opacity:0}21.071%{opacity:1}100%{opacity:1}}
+html.js .kc-ra2{animation:kc-ra2 42s ease-in-out infinite both}
+@keyframes kc-ra3{0%{opacity:0;color:#e8e8e8}21.19%{opacity:0}21.548%{opacity:1}100%{opacity:1}}
+html.js .kc-ra3{animation:kc-ra3 42s ease-in-out infinite both}
+@keyframes kc-ra4{0%{opacity:0;color:#e8e8e8}21.667%{opacity:0}22.024%{opacity:1}100%{opacity:1}}
+html.js .kc-ra4{animation:kc-ra4 42s ease-in-out infinite both}
+@keyframes kc-ra5{0%{opacity:0;color:#e8e8e8}22.143%{opacity:0}22.5%{opacity:1}100%{opacity:1}}
+html.js .kc-ra5{animation:kc-ra5 42s ease-in-out infinite both}
+@keyframes kc-ra6{0%{opacity:0;color:#e8e8e8}22.619%{opacity:0}22.976%{opacity:1}27.619%{color:#e8e8e8}28.333%{color:#f2c14e}100%{color:#f2c14e}}
+html.js .kc-ra6{animation:kc-ra6 42s ease-in-out infinite both}
+@keyframes kc-ra7{0%{opacity:0;color:#e8e8e8}23.095%{opacity:0}23.452%{opacity:1}100%{opacity:1}}
+html.js .kc-ra7{animation:kc-ra7 42s ease-in-out infinite both}
+@keyframes kc-ra8{0%{opacity:0;color:#e8e8e8}23.571%{opacity:0}23.929%{opacity:1}100%{opacity:1}}
+html.js .kc-ra8{animation:kc-ra8 42s ease-in-out infinite both}
+@keyframes kc-ra9{0%{opacity:0;color:#e8e8e8}24.048%{opacity:0}24.405%{opacity:1}100%{opacity:1}}
+html.js .kc-ra9{animation:kc-ra9 42s ease-in-out infinite both}
+@keyframes kc-ra10{0%{opacity:0;color:#e8e8e8}24.524%{opacity:0}24.881%{opacity:1}100%{opacity:1}}
+html.js .kc-ra10{animation:kc-ra10 42s ease-in-out infinite both}
+@keyframes kc-ra11{0%{opacity:0;color:#e8e8e8}25%{opacity:0}25.357%{opacity:1}32.857%{color:#e8e8e8}33.571%{color:#f2c14e}100%{color:#f2c14e}}
+html.js .kc-ra11{animation:kc-ra11 42s ease-in-out infinite both}
+@keyframes kc-ob{0%{opacity:0}65.238%{opacity:0}65.714%{opacity:1}77.857%{opacity:1}78.333%{opacity:0}100%{opacity:0}}
+html.js .kc-ob{animation:kc-ob 42s ease-in-out infinite both}
+@keyframes kc-rc1{0%{opacity:0}66.429%{opacity:0}66.714%{opacity:1}100%{opacity:1}}
+html.js .kc-rc1{animation:kc-rc1 42s ease-in-out infinite both}
+@keyframes kc-rc2{0%{opacity:0}66.714%{opacity:0}67%{opacity:1}100%{opacity:1}}
+html.js .kc-rc2{animation:kc-rc2 42s ease-in-out infinite both}
+@keyframes kc-rc3{0%{opacity:0}67%{opacity:0}67.286%{opacity:1}100%{opacity:1}}
+html.js .kc-rc3{animation:kc-rc3 42s ease-in-out infinite both}
+@keyframes kc-rc4{0%{opacity:0}67.286%{opacity:0}67.571%{opacity:1}100%{opacity:1}}
+html.js .kc-rc4{animation:kc-rc4 42s ease-in-out infinite both}
+@keyframes kc-rc5{0%{opacity:0}67.571%{opacity:0}67.857%{opacity:1}100%{opacity:1}}
+html.js .kc-rc5{animation:kc-rc5 42s ease-in-out infinite both}
+@keyframes kc-rc6{0%{opacity:0}67.857%{opacity:0}68.143%{opacity:1}100%{opacity:1}}
+html.js .kc-rc6{animation:kc-rc6 42s ease-in-out infinite both}
+@keyframes kc-rc7{0%{opacity:0}68.143%{opacity:0}68.429%{opacity:1}100%{opacity:1}}
+html.js .kc-rc7{animation:kc-rc7 42s ease-in-out infinite both}
+@keyframes kc-rc8{0%{opacity:0}68.429%{opacity:0}68.714%{opacity:1}100%{opacity:1}}
+html.js .kc-rc8{animation:kc-rc8 42s ease-in-out infinite both}
+@keyframes kc-rc9{0%{opacity:0}68.714%{opacity:0}69%{opacity:1}100%{opacity:1}}
+html.js .kc-rc9{animation:kc-rc9 42s ease-in-out infinite both}
+@keyframes kc-rc10{0%{opacity:0}69%{opacity:0}69.286%{opacity:1}100%{opacity:1}}
+html.js .kc-rc10{animation:kc-rc10 42s ease-in-out infinite both}
+@keyframes kc-rc11{0%{opacity:0}69.286%{opacity:0}69.571%{opacity:1}100%{opacity:1}}
+html.js .kc-rc11{animation:kc-rc11 42s ease-in-out infinite both}
+@keyframes kc-oc{0%{opacity:0}77.857%{opacity:0}78.333%{opacity:1}100%{opacity:1}}
+html.js .kc-oc{animation:kc-oc 42s ease-in-out infinite both}
+@keyframes kc-rd1{0%{opacity:0;color:#e8e8e8}79.286%{opacity:0}79.571%{opacity:1}100%{opacity:1}}
+html.js .kc-rd1{animation:kc-rd1 42s ease-in-out infinite both}
+@keyframes kc-rd2{0%{opacity:0;color:#e8e8e8}79.571%{opacity:0}79.857%{opacity:1}100%{opacity:1}}
+html.js .kc-rd2{animation:kc-rd2 42s ease-in-out infinite both}
+@keyframes kc-rd3{0%{opacity:0;color:#e8e8e8}79.857%{opacity:0}80.143%{opacity:1}100%{opacity:1}}
+html.js .kc-rd3{animation:kc-rd3 42s ease-in-out infinite both}
+@keyframes kc-rd4{0%{opacity:0;color:#e8e8e8}80.143%{opacity:0}80.429%{opacity:1}100%{opacity:1}}
+html.js .kc-rd4{animation:kc-rd4 42s ease-in-out infinite both}
+@keyframes kc-rd5{0%{opacity:0;color:#e8e8e8}80.429%{opacity:0}80.714%{opacity:1}100%{opacity:1}}
+html.js .kc-rd5{animation:kc-rd5 42s ease-in-out infinite both}
+@keyframes kc-rd6{0%{opacity:0;color:#e8e8e8}80.714%{opacity:0}81%{opacity:1}84.048%{color:#e8e8e8}84.762%{color:#f2c14e}100%{color:#f2c14e}}
+html.js .kc-rd6{animation:kc-rd6 42s ease-in-out infinite both}
+@keyframes kc-rd7{0%{opacity:0;color:#e8e8e8}81%{opacity:0}81.286%{opacity:1}100%{opacity:1}}
+html.js .kc-rd7{animation:kc-rd7 42s ease-in-out infinite both}
+@keyframes kc-rd8{0%{opacity:0;color:#e8e8e8}81.286%{opacity:0}81.571%{opacity:1}100%{opacity:1}}
+html.js .kc-rd8{animation:kc-rd8 42s ease-in-out infinite both}
+@keyframes kc-rd9{0%{opacity:0;color:#e8e8e8}81.571%{opacity:0}81.857%{opacity:1}100%{opacity:1}}
+html.js .kc-rd9{animation:kc-rd9 42s ease-in-out infinite both}
+@keyframes kc-rd10{0%{opacity:0;color:#e8e8e8}81.857%{opacity:0}82.143%{opacity:1}100%{opacity:1}}
+html.js .kc-rd10{animation:kc-rd10 42s ease-in-out infinite both}
+@keyframes kc-rd11{0%{opacity:0;color:#e8e8e8}82.143%{opacity:0}82.429%{opacity:1}100%{opacity:1}}
+html.js .kc-rd11{animation:kc-rd11 42s ease-in-out infinite both}
+@keyframes kc-er{0%{opacity:0}47.619%{opacity:0}48.095%{opacity:1}65%{opacity:1}65.476%{opacity:0}100%{opacity:0}}
+html.js .kc-er{animation:kc-er 42s ease-in-out infinite both}
+@keyframes kc-w1{0%{opacity:0}7.143%{opacity:0}8.095%{opacity:1}15%{opacity:1}15.952%{opacity:0}100%{opacity:0}}
+html.js .kc-w1{animation:kc-w1 42s ease-in-out infinite both}
+@keyframes kc-g1{0%{opacity:0}15.238%{opacity:0}16.19%{opacity:1}100%{opacity:1}}
+html.js .kc-g1{animation:kc-g1 42s ease-in-out infinite both}
+@keyframes kc-y2{0%{opacity:0}27.143%{opacity:0}28.095%{opacity:1}100%{opacity:1}}
+html.js .kc-y2{animation:kc-y2 42s ease-in-out infinite both}
+@keyframes kc-t2{0%{opacity:0}28.571%{opacity:0}29.286%{opacity:1}31.905%{opacity:1}32.619%{opacity:0}100%{opacity:0}}
+html.js .kc-t2{animation:kc-t2 42s ease-in-out infinite both}
+@keyframes kc-g2{0%{opacity:0}32.143%{opacity:0}33.095%{opacity:1}100%{opacity:1}}
+html.js .kc-g2{animation:kc-g2 42s ease-in-out infinite both}
+@keyframes kc-y3{0%{opacity:0}38.333%{opacity:0}39.286%{opacity:1}100%{opacity:1}}
+html.js .kc-y3{animation:kc-y3 42s ease-in-out infinite both}
+@keyframes kc-w3{0%{opacity:0}40.714%{opacity:0}41.429%{opacity:1}43.81%{opacity:1}44.524%{opacity:0}100%{opacity:0}}
+html.js .kc-w3{animation:kc-w3 42s ease-in-out infinite both}
+@keyframes kc-g3{0%{opacity:0}44.048%{opacity:0}45%{opacity:1}100%{opacity:1}}
+html.js .kc-g3{animation:kc-g3 42s ease-in-out infinite both}
+@keyframes kc-y4{0%{opacity:0}50.952%{opacity:0}51.905%{opacity:1}100%{opacity:1}}
+html.js .kc-y4{animation:kc-y4 42s ease-in-out infinite both}
+@keyframes kc-t4{0%{opacity:0}52.143%{opacity:0}52.857%{opacity:1}55%{opacity:1}55.714%{opacity:0}100%{opacity:0}}
+html.js .kc-t4{animation:kc-t4 42s ease-in-out infinite both}
+@keyframes kc-g4{0%{opacity:0}55.238%{opacity:0}56.19%{opacity:1}100%{opacity:1}}
+html.js .kc-g4{animation:kc-g4 42s ease-in-out infinite both}
+@keyframes kc-y5{0%{opacity:0}70.476%{opacity:0}71.429%{opacity:1}100%{opacity:1}}
+html.js .kc-y5{animation:kc-y5 42s ease-in-out infinite both}
+@keyframes kc-w5{0%{opacity:0}71.667%{opacity:0}72.381%{opacity:1}75.476%{opacity:1}76.19%{opacity:0}100%{opacity:0}}
+html.js .kc-w5{animation:kc-w5 42s ease-in-out infinite both}
+@keyframes kc-g5{0%{opacity:0}75.714%{opacity:0}76.667%{opacity:1}100%{opacity:1}}
+html.js .kc-g5{animation:kc-g5 42s ease-in-out infinite both}
+@keyframes kc-g6{0%{opacity:0}84.286%{opacity:0}85.238%{opacity:1}100%{opacity:1}}
+html.js .kc-g6{animation:kc-g6 42s ease-in-out infinite both}
+@keyframes kc-g7{0%{opacity:0}87.619%{opacity:0}88.571%{opacity:1}100%{opacity:1}}
+html.js .kc-g7{animation:kc-g7 42s ease-in-out infinite both}
+@keyframes kc-sc{0%{transform:translateY(calc(100% - var(--kc-half)))}7.143%{transform:translateY(calc(100% - var(--kc-half)))}8.452%{transform:translateY(calc(100% - var(--kc-dock)))}16.19%{transform:translateY(calc(100% - var(--kc-dock)))}17.5%{transform:translateY(0)}40.476%{transform:translateY(0)}41.786%{transform:translateY(calc(100% - var(--kc-dock)))}45.238%{transform:translateY(calc(100% - var(--kc-dock)))}46.548%{transform:translateY(0)}60%{transform:translateY(0)}61.31%{transform:translateY(calc(100% - var(--kc-dock)))}63.333%{transform:translateY(calc(100% - var(--kc-dock)))}64.643%{transform:translateY(0)}71.429%{transform:translateY(0)}72.738%{transform:translateY(calc(100% - var(--kc-dock)))}76.19%{transform:translateY(calc(100% - var(--kc-dock)))}77.5%{transform:translateY(0)}100%{transform:translateY(0)}}
+html.js .kc-sc{animation:kc-sc 42s ease-in-out infinite both}
+@keyframes fade-kc{0%{opacity:1}96.905%{opacity:1}99.405%{opacity:0}100%{opacity:0}}
+html.js .fade-kc{animation:fade-kc 42s linear infinite}
 @media (max-width: 760px) {
   .xk-pl { display: none; }
   .fade-xk .xk { gap: 10px; padding: 12px 14px; align-items: start; align-content: start; }
@@ -5981,6 +6048,878 @@ html.js .kg-zp{animation:kg-zp 50.4s ease-in-out infinite both}
 html.js .kg-sv{animation:kg-sv 50.4s ease-in-out infinite both}
 @keyframes fade-kg{0%{opacity:1}97.421%{opacity:1}99.504%{opacity:0}100%{opacity:0}}
 html.js .fade-kg{animation:fade-kg 50.4s linear infinite}
+/* a 3D game: a real scene, a camera rig on the demo's clock, nothing painted flat */
+.kt-up { display: inline-block; }
+.kt-bar .addr { font-family: var(--mono); }
+.kt-ic { width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; color: var(--faint); }
+.kt-ic svg { width: 12px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; }
+.kt-vp { position: relative; flex: 1; min-height: 0; overflow: hidden; perspective: 560px; perspective-origin: 50% 44%; background: linear-gradient(#0c1020, #1d2644 58%, #10162a); }
+.kt-fit, .kt-tilt, .kt-pan, .kt-w, .kt-o, .kt-bm { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; }
+.kt-fit { left: 50%; top: 66%; transform: scale(var(--kt-s, 1)); }
+.kt-tilt { transform: translate3d(0, 0, 34px) rotateX(61deg); }
+.kt-pan { transform: rotateZ(-179.9deg) translate3d(-715.0px, -571.4px, 0); }
+.kt-floor { position: absolute; left: 0; top: 0; width: 780px; height: 780px; background: radial-gradient(170px 170px at 260px 260px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 520px 130px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 130px 520px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 520px 520px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 390px 390px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 130px 130px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 650px 390px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 390px 650px, rgba(255,186,110,0.2), rgba(255,186,110,0)), radial-gradient(170px 170px at 260px 520px, rgba(255,186,110,0.2), rgba(255,186,110,0)), repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, rgba(255,255,255,0) 1px 65px), repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, rgba(255,255,255,0) 1px 65px), #1a2138; }
+.kt-ground { position: absolute; left: -520px; top: -520px; width: 1820px; height: 1820px; background: #121829; transform: translateZ(-1px); }
+.kt-w { transform: translate3d(var(--x), var(--y), 0) rotateZ(var(--r)); }
+.kt-w i { position: absolute; left: 0; top: 0; display: block; transform-origin: 0 0; backface-visibility: hidden; }
+.kt-w i:nth-child(1) { width: var(--l); height: 12px; background: #65719f; transform: translate3d(calc(var(--l) / -2), -6px, 46px); }
+.kt-w i:nth-child(2), .kt-w i:nth-child(3) { width: var(--l); height: 46px; }
+.kt-w i:nth-child(2) { background: radial-gradient(120px 70px at var(--g) 100%, rgba(255,186,110,0.55), rgba(255,186,110,0)), linear-gradient(#3b4670, #2b3454); transform: translate3d(calc(var(--l) / -2), 6px, 46px) rotateX(-90deg); }
+.kt-w i:nth-child(3) { background: radial-gradient(120px 70px at calc(100% - var(--g)) 100%, rgba(255,186,110,0.55), rgba(255,186,110,0)), linear-gradient(#333e65, #252d4a); transform: rotateZ(180deg) translate3d(calc(var(--l) / -2), 6px, 46px) rotateX(-90deg); }
+.kt-w i:nth-child(4), .kt-w i:nth-child(5) { width: 12px; height: 46px; background: #2f3a5e; }
+.kt-w i:nth-child(4) { transform: rotateZ(90deg) translate3d(-6px, calc(var(--l) / 2), 46px) rotateX(-90deg); }
+.kt-w i:nth-child(5) { transform: rotateZ(-90deg) translate3d(-6px, calc(var(--l) / 2), 46px) rotateX(-90deg); }
+.kt-lamp { position: absolute; left: 0; top: 0; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: radial-gradient(closest-side, #fff4e0 14%, rgba(255,194,122,0.85) 26%, rgba(255,186,110,0) 100%); transform: translate3d(var(--x), var(--y), 50px); }
+.kt-o { transform: translate3d(var(--x), var(--y), 24px); }
+.kt-bb { position: absolute; left: -15px; top: -15px; width: 30px; height: 30px; transform-origin: 15px 15px; }
+.kt-bb i { display: block; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(closest-side, #f2fffb 18%, #7ff0dc 34%, rgba(127,240,220,0.28) 60%, rgba(127,240,220,0) 100%); }
+.kt-bm { transform: translateZ(18px) rotateX(-61deg); }
+.kt-ball { position: absolute; left: -18px; top: -18px; width: 36px; height: 36px; border-radius: 50%; background: radial-gradient(circle at 36% 30%, #ffffff 0, #f6dcc4 16%, #d99a6c 46%, #8f5a3a 78%, #5c3826 100%); }
+.kt-shade { position: absolute; left: -46px; top: -46px; width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,0.5), rgba(255,186,120,0.12) 60%, rgba(255,186,110,0)); transform: translateZ(1px); }
+.kt-fog { position: absolute; left: 0; right: 0; top: 0; height: 34%; background: linear-gradient(#0c1020, rgba(12,16,32,0)); pointer-events: none; }
+.kt-hud { position: absolute; left: 50%; top: 9%; transform: translateX(-50%); font-family: var(--mono); font-size: 13px; color: #e8ecf7; white-space: nowrap; }
+.kt-hint { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); font-size: 11px; color: rgba(255,255,255,0.7); white-space: nowrap; }
+.kt-dev { position: absolute; left: 50%; top: 2%; height: 96%; aspect-ratio: 1 / 2; transform: translateX(-50%); border-radius: 24px; box-shadow: 0 0 0 5px #0a0a0a, 0 0 0 6px rgba(255,255,255,0.3), 0 0 0 900px rgba(240,239,235,0.86); }
+.kt-pads { position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; justify-content: space-between; }
+.kt-pad { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.45); color: #fff; font-size: 15px; }
+.kt-con { display: flex; align-items: center; justify-content: space-between; height: 32px; flex-shrink: 0; padding: 0 12px; border: 1px solid var(--rule); border-radius: 10px; background: #fff; font-size: 11.5px; color: var(--muted); }
+.kt-con i { width: 7px; height: 7px; border-right: 1px solid var(--faint); border-bottom: 1px solid var(--faint); transform: rotate(-45deg); }
+.fade-kt .xw-tool.pdf { display: inline-flex; }
+@media (max-width: 860px) {
+  .fade-kt .xw-split { grid-template-rows: minmax(0, 36%) minmax(0, 1fr); }
+  .kt-vp { --kt-s: .72; }
+  .fade-kt .kt-con { display: none; }
+  .kt-pad { width: 38px; height: 38px; }
+}
+@media (max-width: 760px) {
+  .kt-up { display: none; }
+  .fade-kt .xw-effort { display: none; }
+  .fade-kt .xw-composer .send { margin-left: auto; }
+  .kt-bar .addr { font-size: 11px; }
+  .kt-code { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .kt-code .kg-tree { flex-direction: row; gap: 4px; padding: 6px 8px; border-right: 0; border-bottom: 1px solid var(--rule-soft); overflow: hidden; }
+  .kt-code .kg-tree .f { white-space: nowrap; padding: 3px 6px; }
+  .kt-code .kg-tree .f:first-child { display: none; }
+}
+@keyframes kt-pan{0%{transform:rotateZ(-26.0deg) translate3d(-715.0px,-571.4px,0)}2.375%{transform:rotateZ(-26.0deg) translate3d(-714.9px,-675.0px,0)}2.875%{transform:rotateZ(-26.0deg) translate3d(-710.4px,-696.2px,0)}3.25%{transform:rotateZ(-26.0deg) translate3d(-699.8px,-708.3px,0)}3.625%{transform:rotateZ(-26.0deg) translate3d(-684.6px,-714.1px,0)}5.25%{transform:rotateZ(-26.0deg) translate3d(-613.8px,-713.7px,0)}5.75%{transform:rotateZ(-26.0deg) translate3d(-594.8px,-703.8px,0)}6.25%{transform:rotateZ(-26.0deg) translate3d(-585.9px,-684.2px,0)}10.625%{transform:rotateZ(-26.0deg) translate3d(-584.9px,-493.4px,0)}11%{transform:rotateZ(-26.0deg) translate3d(-581.9px,-477.4px,0)}11.375%{transform:rotateZ(-26.0deg) translate3d(-572.9px,-464.0px,0)}11.75%{transform:rotateZ(-26.0deg) translate3d(-558.4px,-456.8px,0)}13.375%{transform:rotateZ(-26.0deg) translate3d(-487.7px,-455.6px,0)}13.875%{transform:rotateZ(-26.0deg) translate3d(-467.7px,-463.6px,0)}14.5%{transform:rotateZ(-26.0deg) translate3d(-455.7px,-487.3px,0)}18.75%{transform:rotateZ(-26.0deg) translate3d(-455.0px,-672.7px,0)}19.375%{transform:rotateZ(-26.0deg) translate3d(-448.9px,-698.9px,0)}19.75%{transform:rotateZ(-26.0deg) translate3d(-437.1px,-709.9px,0)}20.25%{transform:rotateZ(-26.0deg) translate3d(-416.1px,-714.9px,0)}27.125%{transform:rotateZ(-25.7deg) translate3d(-116.2px,-715.0px,0)}27.5%{transform:rotateZ(-22.1deg) translate3d(-99.8px,-714.6px,0)}28%{transform:rotateZ(-12.8deg) translate3d(-79.4px,-707.7px,0)}28.5%{transform:rotateZ(-5.0deg) translate3d(-67.3px,-690.1px,0)}29%{transform:rotateZ(-2.2deg) translate3d(-65.0px,-668.5px,0)}30%{transform:rotateZ(-0.4deg) translate3d(-65.1px,-624.9px,0)}30.375%{transform:rotateZ(-3.6deg) translate3d(-67.6px,-608.8px,0)}30.625%{transform:rotateZ(-9.8deg) translate3d(-72.5px,-599.1px,0)}31%{transform:rotateZ(-26.6deg) translate3d(-85.1px,-589.0px,0)}31.5%{transform:rotateZ(-52.6deg) translate3d(-106.3px,-585.0px,0)}31.875%{transform:rotateZ(-66.6deg) translate3d(-122.7px,-585.0px,0)}32.5%{transform:rotateZ(-79.3deg) translate3d(-150.0px,-585.0px,0)}33.375%{transform:rotateZ(-86.4deg) translate3d(-188.1px,-585.0px,0)}34.75%{transform:rotateZ(-89.4deg) translate3d(-248.1px,-585.0px,0)}35.75%{transform:rotateZ(-88.4deg) translate3d(-291.7px,-584.5px,0)}36%{transform:rotateZ(-84.1deg) translate3d(-302.3px,-582.0px,0)}36.25%{transform:rotateZ(-76.8deg) translate3d(-311.8px,-576.8px,0)}36.625%{transform:rotateZ(-59.6deg) translate3d(-321.4px,-563.8px,0)}37%{transform:rotateZ(-40.6deg) translate3d(-324.8px,-547.9px,0)}37.25%{transform:rotateZ(-29.9deg) translate3d(-325.0px,-537.0px,0)}37.5%{transform:rotateZ(-21.9deg) translate3d(-325.0px,-526.1px,0)}37.875%{transform:rotateZ(-13.7deg) translate3d(-325.0px,-509.7px,0)}38.375%{transform:rotateZ(-5.8deg) translate3d(-324.4px,-488.0px,0)}38.75%{transform:rotateZ(4.8deg) translate3d(-319.7px,-472.4px,0)}39%{transform:rotateZ(15.2deg) translate3d(-312.8px,-464.0px,0)}39.25%{transform:rotateZ(28.5deg) translate3d(-303.5px,-458.4px,0)}39.75%{transform:rotateZ(54.1deg) translate3d(-282.1px,-455.0px,0)}40%{transform:rotateZ(63.8deg) translate3d(-271.2px,-455.0px,0)}40.375%{transform:rotateZ(73.6deg) translate3d(-254.8px,-455.0px,0)}40.875%{transform:rotateZ(81.2deg) translate3d(-233.0px,-455.0px,0)}41.5%{transform:rotateZ(86.0deg) translate3d(-205.8px,-455.0px,0)}43.625%{transform:rotateZ(89.7deg) translate3d(-113.1px,-455.0px,0)}44%{transform:rotateZ(88.0deg) translate3d(-96.8px,-454.3px,0)}44.375%{transform:rotateZ(79.8deg) translate3d(-81.4px,-449.0px,0)}44.875%{transform:rotateZ(57.9deg) translate3d(-68.0px,-432.4px,0)}45.25%{transform:rotateZ(39.0deg) translate3d(-65.1px,-416.4px,0)}45.5%{transform:rotateZ(28.6deg) translate3d(-65.0px,-405.4px,0)}45.875%{transform:rotateZ(17.9deg) translate3d(-65.0px,-389.1px,0)}46.25%{transform:rotateZ(11.2deg) translate3d(-65.0px,-372.7px,0)}46.875%{transform:rotateZ(5.1deg) translate3d(-65.0px,-345.5px,0)}47.75%{transform:rotateZ(1.7deg) translate3d(-65.0px,-307.3px,0)}52.5%{transform:rotateZ(-1.5deg) translate3d(-65.4px,-99.0px,0)}52.75%{transform:rotateZ(-5.3deg) translate3d(-67.8px,-88.3px,0)}53%{transform:rotateZ(-12.6deg) translate3d(-72.8px,-78.7px,0)}53.375%{transform:rotateZ(-29.8deg) translate3d(-85.5px,-68.8px,0)}53.875%{transform:rotateZ(-54.5deg) translate3d(-106.9px,-65.0px,0)}54.375%{transform:rotateZ(-71.0deg) translate3d(-128.7px,-65.0px,0)}55.125%{transform:rotateZ(-84.0deg) translate3d(-161.4px,-65.5px,0)}55.375%{transform:rotateZ(-90.1deg) translate3d(-172.0px,-67.9px,0)}55.875%{transform:rotateZ(-110.8deg) translate3d(-188.8px,-81.0px,0)}56.375%{transform:rotateZ(-137.5deg) translate3d(-194.8px,-101.8px,0)}56.75%{transform:rotateZ(-153.3deg) translate3d(-195.0px,-118.1px,0)}57.25%{transform:rotateZ(-165.7deg) translate3d(-195.0px,-139.9px,0)}57.75%{transform:rotateZ(-172.3deg) translate3d(-195.0px,-161.7px,0)}59%{transform:rotateZ(-178.4deg) translate3d(-195.0px,-216.3px,0)}60.375%{transform:rotateZ(-179.7deg) translate3d(-195.0px,-276.2px,0)}60.75%{transform:rotateZ(-178.2deg) translate3d(-195.6px,-292.6px,0)}61%{transform:rotateZ(-173.8deg) translate3d(-198.3px,-303.1px,0)}61.25%{transform:rotateZ(-166.0deg) translate3d(-203.7px,-312.5px,0)}61.625%{transform:rotateZ(-148.4deg) translate3d(-217.0px,-321.8px,0)}62%{transform:rotateZ(-129.5deg) translate3d(-233.0px,-324.9px,0)}62.25%{transform:rotateZ(-119.1deg) translate3d(-243.9px,-325.0px,0)}62.5%{transform:rotateZ(-111.3deg) translate3d(-254.8px,-325.0px,0)}63.375%{transform:rotateZ(-95.2deg) translate3d(-292.9px,-324.3px,0)}63.75%{transform:rotateZ(-84.7deg) translate3d(-308.3px,-319.2px,0)}64.25%{transform:rotateZ(-60.6deg) translate3d(-321.9px,-302.7px,0)}64.75%{transform:rotateZ(-34.9deg) translate3d(-325.0px,-281.2px,0)}65%{transform:rotateZ(-25.5deg) translate3d(-325.0px,-270.3px,0)}65.375%{transform:rotateZ(-16.0deg) translate3d(-325.0px,-254.0px,0)}65.875%{transform:rotateZ(-8.6deg) translate3d(-325.0px,-232.2px,0)}66.5%{transform:rotateZ(-3.9deg) translate3d(-325.0px,-204.9px,0)}68.5%{transform:rotateZ(-0.3deg) translate3d(-325.0px,-117.7px,0)}69%{transform:rotateZ(-2.3deg) translate3d(-325.9px,-95.9px,0)}69.25%{transform:rotateZ(-7.2deg) translate3d(-328.9px,-85.4px,0)}69.5%{transform:rotateZ(-15.6deg) translate3d(-334.7px,-76.3px,0)}69.875%{transform:rotateZ(-33.3deg) translate3d(-348.4px,-67.7px,0)}70.25%{transform:rotateZ(-52.0deg) translate3d(-364.5px,-65.1px,0)}70.5%{transform:rotateZ(-62.1deg) translate3d(-375.4px,-65.0px,0)}70.875%{transform:rotateZ(-72.6deg) translate3d(-391.8px,-65.0px,0)}71.375%{transform:rotateZ(-80.7deg) translate3d(-413.6px,-65.0px,0)}72%{transform:rotateZ(-85.7deg) translate3d(-440.9px,-65.0px,0)}73%{transform:rotateZ(-88.8deg) translate3d(-484.5px,-65.0px,0)}77.375%{transform:rotateZ(-90.4deg) translate3d(-675.3px,-65.1px,0)}77.625%{transform:rotateZ(-93.0deg) translate3d(-686.1px,-66.3px,0)}77.875%{transform:rotateZ(-98.4deg) translate3d(-696.4px,-69.8px,0)}78.125%{transform:rotateZ(-107.4deg) translate3d(-705.1px,-76.2px,0)}78.5%{transform:rotateZ(-125.8deg) translate3d(-712.9px,-90.4px,0)}78.875%{transform:rotateZ(-144.2deg) translate3d(-715.0px,-106.6px,0)}79.25%{transform:rotateZ(-157.5deg) translate3d(-715.0px,-122.9px,0)}80.25%{transform:rotateZ(-176.6deg) translate3d(-713.7px,-166.5px,0)}80.625%{transform:rotateZ(-188.5deg) translate3d(-707.2px,-181.3px,0)}81.125%{transform:rotateZ(-213.8deg) translate3d(-689.3px,-193.0px,0)}81.5%{transform:rotateZ(-233.1deg) translate3d(-673.1px,-195.0px,0)}81.75%{transform:rotateZ(-243.0deg) translate3d(-662.2px,-195.0px,0)}82.25%{transform:rotateZ(-255.5deg) translate3d(-640.4px,-195.0px,0)}83%{transform:rotateZ(-264.3deg) translate3d(-607.6px,-195.0px,0)}84.75%{transform:rotateZ(-269.4deg) translate3d(-531.3px,-195.0px,0)}85.5%{transform:rotateZ(-269.6deg) translate3d(-498.6px,-195.0px,0)}85.875%{transform:rotateZ(-266.5deg) translate3d(-482.4px,-196.6px,0)}86.125%{transform:rotateZ(-260.5deg) translate3d(-472.2px,-200.5px,0)}86.375%{transform:rotateZ(-251.0deg) translate3d(-463.8px,-207.3px,0)}86.75%{transform:rotateZ(-232.2deg) translate3d(-456.7px,-221.9px,0)}87.25%{transform:rotateZ(-209.3deg) translate3d(-455.0px,-243.6px,0)}87.625%{transform:rotateZ(-198.3deg) translate3d(-455.0px,-259.9px,0)}88.125%{transform:rotateZ(-189.6deg) translate3d(-455.0px,-281.7px,0)}88.625%{transform:rotateZ(-179.1deg) translate3d(-458.3px,-303.2px,0)}88.875%{transform:rotateZ(-169.8deg) translate3d(-463.8px,-312.5px,0)}89.125%{transform:rotateZ(-157.6deg) translate3d(-472.1px,-319.5px,0)}89.75%{transform:rotateZ(-125.3deg) translate3d(-498.5px,-325.0px,0)}90%{transform:rotateZ(-115.9deg) translate3d(-509.4px,-325.0px,0)}90.375%{transform:rotateZ(-106.2deg) translate3d(-525.7px,-325.0px,0)}90.875%{transform:rotateZ(-98.7deg) translate3d(-547.5px,-325.0px,0)}91.375%{transform:rotateZ(-94.6deg) translate3d(-569.4px,-325.0px,0)}93%{transform:rotateZ(-90.6deg) translate3d(-640.2px,-325.0px,0)}93.875%{transform:rotateZ(-91.0deg) translate3d(-678.4px,-325.2px,0)}94.25%{transform:rotateZ(-96.9deg) translate3d(-694.3px,-328.8px,0)}94.625%{transform:rotateZ(-110.7deg) translate3d(-707.1px,-338.6px,0)}94.875%{transform:rotateZ(-123.1deg) translate3d(-712.2px,-348.2px,0)}95.5%{transform:rotateZ(-151.9deg) translate3d(-715.0px,-375.1px,0)}95.875%{transform:rotateZ(-162.4deg) translate3d(-715.0px,-391.5px,0)}96.25%{transform:rotateZ(-169.0deg) translate3d(-715.0px,-407.8px,0)}96.75%{transform:rotateZ(-174.1deg) translate3d(-715.0px,-429.7px,0)}97.5%{transform:rotateZ(-177.7deg) translate3d(-715.0px,-462.4px,0)}100%{transform:rotateZ(-179.9deg) translate3d(-715.0px,-571.4px,0)}}
+html.js .kt-pan{animation:kt-pan 40s linear infinite both}
+@keyframes kt-tilt{0%{transform:translate3d(0,-64px,-210px) rotateX(41.0deg)}27.125%{transform:translate3d(0,-64px,-209px) rotateX(41.1deg)}27.5%{transform:translate3d(0,-62px,-200px) rotateX(41.9deg)}28%{transform:translate3d(0,-56px,-175px) rotateX(44.3deg)}28.5%{transform:translate3d(0,-47px,-137px) rotateX(47.7deg)}29%{transform:translate3d(0,-37px,-93px) rotateX(51.8deg)}30%{transform:translate3d(0,-17px,-3px) rotateX(60.3deg)}30.375%{transform:translate3d(0,-10px,26px) rotateX(62.9deg)}30.625%{transform:translate3d(0,-6px,42px) rotateX(64.4deg)}31%{transform:translate3d(0,-2px,60px) rotateX(66.1deg)}31.5%{transform:translate3d(0,-0px,70px) rotateX(67.0deg)}63.375%{transform:translate3d(0,-0px,70px) rotateX(67.0deg)}63.75%{transform:translate3d(0,-0px,69px) rotateX(66.9deg)}64.25%{transform:translate3d(0,-0px,66px) rotateX(66.3deg)}64.75%{transform:translate3d(0,-0px,60px) rotateX(65.3deg)}65%{transform:translate3d(0,-0px,56px) rotateX(64.6deg)}65.375%{transform:translate3d(0,-0px,50px) rotateX(63.7deg)}65.875%{transform:translate3d(0,-0px,43px) rotateX(62.5deg)}66.5%{transform:translate3d(0,-0px,36px) rotateX(61.3deg)}100%{transform:translate3d(0,-0px,36px) rotateX(61.3deg)}}
+html.js .kt-tilt{animation:kt-tilt 40s linear infinite both}
+@keyframes kt-bb{0%{transform:rotateZ(26deg) rotateX(-41deg)}27.125%{transform:rotateZ(26deg) rotateX(-41deg)}28.125%{transform:rotateZ(10deg) rotateX(-45deg)}30%{transform:rotateZ(0deg) rotateX(-60deg)}30.5%{transform:rotateZ(6deg) rotateX(-64deg)}31%{transform:rotateZ(27deg) rotateX(-66deg)}31.75%{transform:rotateZ(63deg) rotateX(-67deg)}32.5%{transform:rotateZ(79deg) rotateX(-67deg)}35.625%{transform:rotateZ(89deg) rotateX(-67deg)}36.25%{transform:rotateZ(77deg) rotateX(-67deg)}37.375%{transform:rotateZ(26deg) rotateX(-67deg)}38.625%{transform:rotateZ(-0deg) rotateX(-67deg)}40.375%{transform:rotateZ(-74deg) rotateX(-67deg)}41.5%{transform:rotateZ(-86deg) rotateX(-67deg)}43.75%{transform:rotateZ(-90deg) rotateX(-67deg)}44.375%{transform:rotateZ(-80deg) rotateX(-67deg)}45.625%{transform:rotateZ(-24deg) rotateX(-67deg)}46.5%{transform:rotateZ(-8deg) rotateX(-67deg)}52.625%{transform:rotateZ(3deg) rotateX(-67deg)}54.125%{transform:rotateZ(64deg) rotateX(-67deg)}55.5%{transform:rotateZ(94deg) rotateX(-67deg)}56.875%{transform:rotateZ(157deg) rotateX(-67deg)}58.25%{transform:rotateZ(176deg) rotateX(-67deg)}60.875%{transform:rotateZ(176deg) rotateX(-67deg)}62.375%{transform:rotateZ(115deg) rotateX(-67deg)}63.75%{transform:rotateZ(85deg) rotateX(-67deg)}65.25%{transform:rotateZ(19deg) rotateX(-64deg)}66.375%{transform:rotateZ(5deg) rotateX(-62deg)}68.625%{transform:rotateZ(0deg) rotateX(-61deg)}69.25%{transform:rotateZ(7deg) rotateX(-61deg)}70.5%{transform:rotateZ(62deg) rotateX(-61deg)}71.5%{transform:rotateZ(82deg) rotateX(-61deg)}77.75%{transform:rotateZ(95deg) rotateX(-61deg)}79.125%{transform:rotateZ(154deg) rotateX(-61deg)}80.5%{transform:rotateZ(184deg) rotateX(-61deg)}81.75%{transform:rotateZ(243deg) rotateX(-61deg)}83.125%{transform:rotateZ(265deg) rotateX(-61deg)}86%{transform:rotateZ(264deg) rotateX(-61deg)}87.375%{transform:rotateZ(205deg) rotateX(-61deg)}88.75%{transform:rotateZ(175deg) rotateX(-61deg)}90%{transform:rotateZ(116deg) rotateX(-61deg)}91.5%{transform:rotateZ(94deg) rotateX(-61deg)}94.125%{transform:rotateZ(94deg) rotateX(-61deg)}95.5%{transform:rotateZ(152deg) rotateX(-61deg)}96.5%{transform:rotateZ(172deg) rotateX(-61deg)}100%{transform:rotateZ(180deg) rotateX(-61deg)}}
+html.js .kt-bb{animation:kt-bb 40s linear infinite both}
+@keyframes kt-bm{0%{transform:translateZ(18px) rotateX(-41.0deg)}27.125%{transform:translateZ(18px) rotateX(-41.1deg)}27.5%{transform:translateZ(18px) rotateX(-41.9deg)}28%{transform:translateZ(18px) rotateX(-44.3deg)}28.5%{transform:translateZ(18px) rotateX(-47.7deg)}29%{transform:translateZ(18px) rotateX(-51.8deg)}30%{transform:translateZ(18px) rotateX(-60.3deg)}30.375%{transform:translateZ(18px) rotateX(-62.9deg)}30.625%{transform:translateZ(18px) rotateX(-64.4deg)}31%{transform:translateZ(18px) rotateX(-66.1deg)}31.5%{transform:translateZ(18px) rotateX(-67.0deg)}63.375%{transform:translateZ(18px) rotateX(-67.0deg)}63.75%{transform:translateZ(18px) rotateX(-66.9deg)}64.25%{transform:translateZ(18px) rotateX(-66.3deg)}64.75%{transform:translateZ(18px) rotateX(-65.3deg)}65%{transform:translateZ(18px) rotateX(-64.6deg)}65.375%{transform:translateZ(18px) rotateX(-63.7deg)}65.875%{transform:translateZ(18px) rotateX(-62.5deg)}66.5%{transform:translateZ(18px) rotateX(-61.3deg)}100%{transform:translateZ(18px) rotateX(-61.3deg)}}
+html.js .kt-bm{animation:kt-bm 40s linear infinite both}
+@keyframes kt-p1{0%{opacity:1;transform:scale(1)}2.45%{opacity:1;transform:scale(1)}3.3%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p1{animation:kt-p1 40s ease-out infinite both}
+@keyframes kt-p2{0%{opacity:1;transform:scale(1)}8.325%{opacity:1;transform:scale(1)}9.175%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p2{animation:kt-p2 40s ease-out infinite both}
+@keyframes kt-p3{0%{opacity:1;transform:scale(1)}14.2%{opacity:1;transform:scale(1)}15.05%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p3{animation:kt-p3 40s ease-out infinite both}
+@keyframes kt-p4{0%{opacity:1;transform:scale(1)}20.075%{opacity:1;transform:scale(1)}20.925%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p4{animation:kt-p4 40s ease-out infinite both}
+@keyframes kt-p5{0%{opacity:1;transform:scale(1)}25.95%{opacity:1;transform:scale(1)}26.8%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p5{animation:kt-p5 40s ease-out infinite both}
+@keyframes kt-p6{0%{opacity:1;transform:scale(1)}31.825%{opacity:1;transform:scale(1)}32.675%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p6{animation:kt-p6 40s ease-out infinite both}
+@keyframes kt-p7{0%{opacity:1;transform:scale(1)}37.7%{opacity:1;transform:scale(1)}38.55%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p7{animation:kt-p7 40s ease-out infinite both}
+@keyframes kt-p8{0%{opacity:1;transform:scale(1)}43.575%{opacity:1;transform:scale(1)}44.425%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p8{animation:kt-p8 40s ease-out infinite both}
+@keyframes kt-p9{0%{opacity:1;transform:scale(1)}49.45%{opacity:1;transform:scale(1)}50.3%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p9{animation:kt-p9 40s ease-out infinite both}
+@keyframes kt-p10{0%{opacity:1;transform:scale(1)}55.325%{opacity:1;transform:scale(1)}56.175%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p10{animation:kt-p10 40s ease-out infinite both}
+@keyframes kt-p11{0%{opacity:1;transform:scale(1)}61.2%{opacity:1;transform:scale(1)}62.05%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p11{animation:kt-p11 40s ease-out infinite both}
+@keyframes kt-p12{0%{opacity:1;transform:scale(1)}67.075%{opacity:1;transform:scale(1)}67.925%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p12{animation:kt-p12 40s ease-out infinite both}
+@keyframes kt-p13{0%{opacity:1;transform:scale(1)}72.95%{opacity:1;transform:scale(1)}73.8%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p13{animation:kt-p13 40s ease-out infinite both}
+@keyframes kt-p14{0%{opacity:1;transform:scale(1)}78.825%{opacity:1;transform:scale(1)}79.675%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p14{animation:kt-p14 40s ease-out infinite both}
+@keyframes kt-p15{0%{opacity:1;transform:scale(1)}84.7%{opacity:1;transform:scale(1)}85.55%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p15{animation:kt-p15 40s ease-out infinite both}
+@keyframes kt-p16{0%{opacity:1;transform:scale(1)}90.575%{opacity:1;transform:scale(1)}91.425%{opacity:0;transform:scale(1.9)}100%{opacity:0;transform:scale(1.9)}}
+html.js .kt-p16{animation:kt-p16 40s ease-out infinite both}
+@keyframes kt-n0{0%{opacity:1}2.75%{opacity:1}2.95%{opacity:0}100%{opacity:0}}
+html.js .kt-n0{animation:kt-n0 40s ease-in-out infinite both}
+@keyframes kt-n1{0%{opacity:0}2.75%{opacity:0}2.95%{opacity:1}8.625%{opacity:1}8.825%{opacity:0}100%{opacity:0}}
+html.js .kt-n1{animation:kt-n1 40s ease-in-out infinite both}
+@keyframes kt-n2{0%{opacity:0}8.625%{opacity:0}8.825%{opacity:1}14.5%{opacity:1}14.7%{opacity:0}100%{opacity:0}}
+html.js .kt-n2{animation:kt-n2 40s ease-in-out infinite both}
+@keyframes kt-n3{0%{opacity:0}14.5%{opacity:0}14.7%{opacity:1}20.375%{opacity:1}20.575%{opacity:0}100%{opacity:0}}
+html.js .kt-n3{animation:kt-n3 40s ease-in-out infinite both}
+@keyframes kt-n4{0%{opacity:0}20.375%{opacity:0}20.575%{opacity:1}26.25%{opacity:1}26.45%{opacity:0}100%{opacity:0}}
+html.js .kt-n4{animation:kt-n4 40s ease-in-out infinite both}
+@keyframes kt-n5{0%{opacity:0}26.25%{opacity:0}26.45%{opacity:1}32.125%{opacity:1}32.325%{opacity:0}100%{opacity:0}}
+html.js .kt-n5{animation:kt-n5 40s ease-in-out infinite both}
+@keyframes kt-n6{0%{opacity:0}32.125%{opacity:0}32.325%{opacity:1}38%{opacity:1}38.2%{opacity:0}100%{opacity:0}}
+html.js .kt-n6{animation:kt-n6 40s ease-in-out infinite both}
+@keyframes kt-n7{0%{opacity:0}38%{opacity:0}38.2%{opacity:1}43.875%{opacity:1}44.075%{opacity:0}100%{opacity:0}}
+html.js .kt-n7{animation:kt-n7 40s ease-in-out infinite both}
+@keyframes kt-n8{0%{opacity:0}43.875%{opacity:0}44.075%{opacity:1}49.75%{opacity:1}49.95%{opacity:0}100%{opacity:0}}
+html.js .kt-n8{animation:kt-n8 40s ease-in-out infinite both}
+@keyframes kt-n9{0%{opacity:0}49.75%{opacity:0}49.95%{opacity:1}55.625%{opacity:1}55.825%{opacity:0}100%{opacity:0}}
+html.js .kt-n9{animation:kt-n9 40s ease-in-out infinite both}
+@keyframes kt-n10{0%{opacity:0}55.625%{opacity:0}55.825%{opacity:1}61.5%{opacity:1}61.7%{opacity:0}100%{opacity:0}}
+html.js .kt-n10{animation:kt-n10 40s ease-in-out infinite both}
+@keyframes kt-n11{0%{opacity:0}61.5%{opacity:0}61.7%{opacity:1}67.375%{opacity:1}67.575%{opacity:0}100%{opacity:0}}
+html.js .kt-n11{animation:kt-n11 40s ease-in-out infinite both}
+@keyframes kt-n12{0%{opacity:0}67.375%{opacity:0}67.575%{opacity:1}73.25%{opacity:1}73.45%{opacity:0}100%{opacity:0}}
+html.js .kt-n12{animation:kt-n12 40s ease-in-out infinite both}
+@keyframes kt-n13{0%{opacity:0}73.25%{opacity:0}73.45%{opacity:1}79.125%{opacity:1}79.325%{opacity:0}100%{opacity:0}}
+html.js .kt-n13{animation:kt-n13 40s ease-in-out infinite both}
+@keyframes kt-n14{0%{opacity:0}79.125%{opacity:0}79.325%{opacity:1}85%{opacity:1}85.2%{opacity:0}100%{opacity:0}}
+html.js .kt-n14{animation:kt-n14 40s ease-in-out infinite both}
+@keyframes kt-n15{0%{opacity:0}85%{opacity:0}85.2%{opacity:1}90.875%{opacity:1}91.075%{opacity:0}100%{opacity:0}}
+html.js .kt-n15{animation:kt-n15 40s ease-in-out infinite both}
+@keyframes kt-n16{0%{opacity:0}90.875%{opacity:0}91.075%{opacity:1}100%{opacity:1}}
+html.js .kt-n16{animation:kt-n16 40s ease-in-out infinite both}
+@keyframes kt-y1{0%{opacity:0}12%{opacity:0}13%{opacity:1}100%{opacity:1}}
+html.js .kt-y1{animation:kt-y1 40s ease-in-out infinite both}
+@keyframes kt-t1{0%{opacity:0}13.5%{opacity:0}14.25%{opacity:1}15.5%{opacity:1}16.25%{opacity:0}100%{opacity:0}}
+html.js .kt-t1{animation:kt-t1 40s ease-in-out infinite both}
+@keyframes kt-w1{0%{opacity:0}15.5%{opacity:0}16.25%{opacity:1}26%{opacity:1}26.75%{opacity:0}100%{opacity:0}}
+html.js .kt-w1{animation:kt-w1 40s ease-in-out infinite both}
+@keyframes kt-g1{0%{opacity:0}26%{opacity:0}27%{opacity:1}100%{opacity:1}}
+html.js .kt-g1{animation:kt-g1 40s ease-in-out infinite both}
+@keyframes kt-g2{0%{opacity:0}37.5%{opacity:0}38.5%{opacity:1}100%{opacity:1}}
+html.js .kt-g2{animation:kt-g2 40s ease-in-out infinite both}
+@keyframes kt-y2{0%{opacity:0}49.5%{opacity:0}50.5%{opacity:1}100%{opacity:1}}
+html.js .kt-y2{animation:kt-y2 40s ease-in-out infinite both}
+@keyframes kt-w2{0%{opacity:0}51%{opacity:0}51.75%{opacity:1}61%{opacity:1}61.75%{opacity:0}100%{opacity:0}}
+html.js .kt-w2{animation:kt-w2 40s ease-in-out infinite both}
+@keyframes kt-g3{0%{opacity:0}61%{opacity:0}62%{opacity:1}100%{opacity:1}}
+html.js .kt-g3{animation:kt-g3 40s ease-in-out infinite both}
+@keyframes kt-g4{0%{opacity:0}77.5%{opacity:0}78.5%{opacity:1}100%{opacity:1}}
+html.js .kt-g4{animation:kt-g4 40s ease-in-out infinite both}
+@keyframes kt-tp{0%{color:var(--ink);border-color:var(--ink)}15.5%{color:var(--ink);border-color:var(--ink)}16%{color:var(--faint);border-color:transparent}26.25%{color:var(--faint);border-color:transparent}26.75%{color:var(--ink);border-color:var(--ink)}51%{color:var(--ink);border-color:var(--ink)}51.5%{color:var(--faint);border-color:transparent}61.25%{color:var(--faint);border-color:transparent}61.75%{color:var(--ink);border-color:var(--ink)}100%{color:var(--ink);border-color:var(--ink)}}
+html.js .kt-tp{animation:kt-tp 40s ease-in-out infinite both}
+@keyframes kt-tc{0%{color:var(--faint);border-color:transparent}15.5%{color:var(--faint);border-color:transparent}16%{color:var(--ink);border-color:var(--ink)}26.25%{color:var(--ink);border-color:var(--ink)}26.75%{color:var(--faint);border-color:transparent}51%{color:var(--faint);border-color:transparent}51.5%{color:var(--ink);border-color:var(--ink)}61.25%{color:var(--ink);border-color:var(--ink)}61.75%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
+html.js .kt-tc{animation:kt-tc 40s ease-in-out infinite both}
+@keyframes kt-cv{0%{opacity:0}15.5%{opacity:0}16.25%{opacity:1}26.25%{opacity:1}27%{opacity:0}100%{opacity:0}}
+html.js .kt-cv{animation:kt-cv 40s ease-in-out infinite both}
+@keyframes kt-cv2{0%{opacity:0}51%{opacity:0}51.75%{opacity:1}61.25%{opacity:1}62%{opacity:0}100%{opacity:0}}
+html.js .kt-cv2{animation:kt-cv2 40s ease-in-out infinite both}
+@keyframes kt-lv{0%{opacity:0}15.5%{opacity:0}16.125%{opacity:1}26%{opacity:1}26.625%{opacity:0}51%{opacity:0}51.625%{opacity:1}61%{opacity:1}61.625%{opacity:0}100%{opacity:0}}
+html.js .kt-lv{animation:kt-lv 40s ease-in-out infinite both}
+@keyframes kt-a1{0%{opacity:0}16.25%{opacity:0}16.75%{opacity:1}100%{opacity:1}}
+html.js .kt-a1{animation:kt-a1 40s ease-in-out infinite both}
+@keyframes kt-a2{0%{opacity:0}17%{opacity:0}17.5%{opacity:1}100%{opacity:1}}
+html.js .kt-a2{animation:kt-a2 40s ease-in-out infinite both}
+@keyframes kt-a3{0%{opacity:0}17.75%{opacity:0}18.25%{opacity:1}100%{opacity:1}}
+html.js .kt-a3{animation:kt-a3 40s ease-in-out infinite both}
+@keyframes kt-a4{0%{opacity:0}18.5%{opacity:0}19%{opacity:1}100%{opacity:1}}
+html.js .kt-a4{animation:kt-a4 40s ease-in-out infinite both}
+@keyframes kt-a5{0%{opacity:0}19.25%{opacity:0}19.75%{opacity:1}100%{opacity:1}}
+html.js .kt-a5{animation:kt-a5 40s ease-in-out infinite both}
+@keyframes kt-a6{0%{opacity:0}20%{opacity:0}20.5%{opacity:1}100%{opacity:1}}
+html.js .kt-a6{animation:kt-a6 40s ease-in-out infinite both}
+@keyframes kt-a7{0%{opacity:0}20.75%{opacity:0}21.25%{opacity:1}100%{opacity:1}}
+html.js .kt-a7{animation:kt-a7 40s ease-in-out infinite both}
+@keyframes kt-a8{0%{opacity:0}21.5%{opacity:0}22%{opacity:1}100%{opacity:1}}
+html.js .kt-a8{animation:kt-a8 40s ease-in-out infinite both}
+@keyframes kt-a9{0%{opacity:0}22.25%{opacity:0}22.75%{opacity:1}100%{opacity:1}}
+html.js .kt-a9{animation:kt-a9 40s ease-in-out infinite both}
+@keyframes kt-a10{0%{opacity:0}23%{opacity:0}23.5%{opacity:1}100%{opacity:1}}
+html.js .kt-a10{animation:kt-a10 40s ease-in-out infinite both}
+@keyframes kt-a11{0%{opacity:0}23.75%{opacity:0}24.25%{opacity:1}100%{opacity:1}}
+html.js .kt-a11{animation:kt-a11 40s ease-in-out infinite both}
+@keyframes kt-b1{0%{opacity:0}51.75%{opacity:0}52.25%{opacity:1}100%{opacity:1}}
+html.js .kt-b1{animation:kt-b1 40s ease-in-out infinite both}
+@keyframes kt-b2{0%{opacity:0}52.5%{opacity:0}53%{opacity:1}100%{opacity:1}}
+html.js .kt-b2{animation:kt-b2 40s ease-in-out infinite both}
+@keyframes kt-b3{0%{opacity:0}53.25%{opacity:0}53.75%{opacity:1}100%{opacity:1}}
+html.js .kt-b3{animation:kt-b3 40s ease-in-out infinite both}
+@keyframes kt-b4{0%{opacity:0}54%{opacity:0}54.5%{opacity:1}100%{opacity:1}}
+html.js .kt-b4{animation:kt-b4 40s ease-in-out infinite both}
+@keyframes kt-b5{0%{opacity:0}54.75%{opacity:0}55.25%{opacity:1}100%{opacity:1}}
+html.js .kt-b5{animation:kt-b5 40s ease-in-out infinite both}
+@keyframes kt-b6{0%{opacity:0}55.5%{opacity:0}56%{opacity:1}100%{opacity:1}}
+html.js .kt-b6{animation:kt-b6 40s ease-in-out infinite both}
+@keyframes kt-b7{0%{opacity:0}56.25%{opacity:0}56.75%{opacity:1}100%{opacity:1}}
+html.js .kt-b7{animation:kt-b7 40s ease-in-out infinite both}
+@keyframes kt-b8{0%{opacity:0}57%{opacity:0}57.5%{opacity:1}100%{opacity:1}}
+html.js .kt-b8{animation:kt-b8 40s ease-in-out infinite both}
+@keyframes kt-b9{0%{opacity:0}57.75%{opacity:0}58.25%{opacity:1}100%{opacity:1}}
+html.js .kt-b9{animation:kt-b9 40s ease-in-out infinite both}
+@keyframes kt-b10{0%{opacity:0}58.5%{opacity:0}59%{opacity:1}100%{opacity:1}}
+html.js .kt-b10{animation:kt-b10 40s ease-in-out infinite both}
+@keyframes kt-c3{0%{opacity:1}61%{opacity:1}61.5%{opacity:0}100%{opacity:0}}
+html.js .kt-c3{animation:kt-c3 40s ease-in-out infinite both}
+@keyframes kt-c4{0%{opacity:0}61%{opacity:0}61.5%{opacity:1}100%{opacity:1}}
+html.js .kt-c4{animation:kt-c4 40s ease-in-out infinite both}
+@keyframes kt-ip{0%{color:var(--faint);background-color:rgba(10,10,10,0);transform:none}62.25%{color:var(--faint);background-color:rgba(10,10,10,0)}62.5%{transform:none}62.75%{color:var(--ink);background-color:var(--surface)}62.95%{transform:scale(0.86)}63.75%{transform:none}100%{transform:none}}
+html.js .kt-ip{animation:kt-ip 40s ease-in-out infinite both}
+@keyframes kt-dv{0%{opacity:0}63.5%{opacity:0}65%{opacity:1}100%{opacity:1}}
+html.js .kt-dv{animation:kt-dv 40s ease-in-out infinite both}
+@keyframes kt-ps{0%{opacity:0}64.5%{opacity:0}65.75%{opacity:1}100%{opacity:1}}
+html.js .kt-ps{animation:kt-ps 40s ease-in-out infinite both}
+@keyframes kt-hn{0%{opacity:1}63%{opacity:1}64%{opacity:0}100%{opacity:0}}
+html.js .kt-hn{animation:kt-hn 40s ease-in-out infinite both}
+@keyframes kt-pl{0%{background-color:rgba(255,255,255,0.14);transform:none}85.125%{background-color:rgba(255,255,255,0.14);transform:none}85.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}86.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}87.25%{background-color:rgba(255,255,255,0.14);transform:none}88.125%{background-color:rgba(255,255,255,0.14);transform:none}88.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}89.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}90.25%{background-color:rgba(255,255,255,0.14);transform:none}100%{background-color:rgba(255,255,255,0.14);transform:none}}
+html.js .kt-pl{animation:kt-pl 40s ease-in-out infinite both}
+@keyframes kt-pr{0%{background-color:rgba(255,255,255,0.14);transform:none}68.125%{background-color:rgba(255,255,255,0.14);transform:none}68.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}69.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}70.25%{background-color:rgba(255,255,255,0.14);transform:none}77.125%{background-color:rgba(255,255,255,0.14);transform:none}77.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}78.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}79.25%{background-color:rgba(255,255,255,0.14);transform:none}80.125%{background-color:rgba(255,255,255,0.14);transform:none}80.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}81.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}82.25%{background-color:rgba(255,255,255,0.14);transform:none}93.125%{background-color:rgba(255,255,255,0.14);transform:none}93.5%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}94.875%{background-color:rgba(255,255,255,0.5);transform:scale(.92)}95.25%{background-color:rgba(255,255,255,0.14);transform:none}100%{background-color:rgba(255,255,255,0.14);transform:none}}
+html.js .kt-pr{animation:kt-pr 40s ease-in-out infinite both}
+@keyframes fade-kt{0%{opacity:1}96.75%{opacity:1}99.375%{opacity:0}100%{opacity:0}}
+html.js .fade-kt{animation:fade-kt 40s linear infinite}
+/* three quick builds in one window */
+.kw-ti { display: inline-grid; }
+.kw-ti > span { grid-area: 1 / 1; }
+.kw-chats { flex: 1; min-height: 0; display: grid; }
+.kw-chats > .xw-msgs { grid-area: 1 / 1; min-height: 0; }
+.kw-bar .addr { font-family: var(--mono); display: grid; }
+.kw-ad > span { grid-area: 1 / 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kw-page { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; }
+.kw-app { position: absolute; inset: 0; display: flex; flex-direction: column; min-height: 0; }
+.kw-nm { font-size: 17px; }
+.kw-page small { display: block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.62; }
+.kw-page p { margin: 0; }
+/* the flashcards */
+.kw-fl { --kw-3: -87px; background: #f5f1e8; color: #23301f; }
+.kw-app.kw-fl { padding: 16px 20px; gap: 11px; }
+.kw-fh { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.kw-save { font-size: 11px; color: #3f7d4e; border: 1px solid #c4d4c0; border-radius: 999px; padding: 3px 9px; white-space: nowrap; background: #fbf9f2; }
+.kw-prog { display: flex; align-items: center; gap: 12px; }
+.kw-pb { flex: 1; height: 6px; border-radius: 3px; background: #e2dccd; overflow: hidden; }
+.kw-pf { display: block; height: 100%; background: #3f7d4e; transform-origin: left center; transform: scaleX(.417); }
+.kw-kc { display: grid; font-size: 12px; white-space: nowrap; }
+.kw-kc > span { grid-area: 1 / 1; }
+.kw-fb { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 34fr) minmax(0, 66fr); gap: 18px; }
+.kw-list { display: flex; flex-direction: column; justify-content: space-between; min-height: 0; }
+.kw-rows { position: relative; display: flex; flex-direction: column; }
+.kw-rw { display: flex; align-items: center; gap: 9px; height: 29px; font-size: 13px; }
+.kw-rw i { width: 8px; height: 8px; border-radius: 50%; background: #d9d4c6; }
+.kw-rw i.y { background: #3f7d4e; }
+.kw-rw i.h { background: #d07a4a; }
+.kw-rw i.kw-m1 { background: #3f7d4e; }
+.kw-filt { display: flex; gap: 6px; flex-wrap: nowrap; }
+.kw-fbt { border: 1px solid #c4d4c0; border-radius: 999px; padding: 4px 11px; font-size: 12px; white-space: nowrap; }
+.kw-cw { display: flex; flex-direction: column; gap: 11px; min-height: 0; }
+.kw-stk { position: relative; flex: 1; min-height: 0; }
+.kw-fc { position: absolute; inset: 0; perspective: 1500px; }
+.kw-fi { position: absolute; inset: 0; transform-style: preserve-3d; }
+.kw-fs { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 14px; background: #fffdf7; box-shadow: 0 0 0 1px #e2dccd, 0 10px 26px rgba(50,40,20,0.08); font-size: 19px; line-height: 1.35; text-align: center; backface-visibility: hidden; }
+.kw-bk { transform: rotateY(180deg); background: #eef4ea; }
+.kw-bts { display: flex; gap: 10px; }
+.kw-btn { flex: 1; text-align: center; padding: 8px 0; border-radius: 10px; border: 1px solid #d9d4c6; font-size: 13px; background: #fffdf7; }
+.kw-btn.on { background: #3f7d4e; border-color: #3f7d4e; color: #fff; }
+.kw-blank { position: absolute; inset: 0; background: #fff; }
+/* the club's website */
+.kw-st { background: #fff; color: #1f2a3f; }
+.kw-nav { display: flex; align-items: center; gap: 18px; padding: 11px 20px; background: #1f2a3f; color: #fff; }
+.kw-logo { display: inline-flex; align-items: center; gap: 8px; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; white-space: nowrap; }
+.kw-logo i { width: 16px; height: 16px; border-radius: 2px; background: conic-gradient(#c9a24b 25%, #fff 0 50%, #c9a24b 0 75%, #fff 0) 0 0 / 8px 8px; }
+.kw-ln { display: flex; gap: 14px; font-size: 13px; }
+.kw-ln > span { padding-bottom: 2px; border-bottom: 1px solid transparent; }
+.kw-join { margin-left: auto; border: 1px solid #c9a24b; color: #c9a24b; border-radius: 999px; padding: 4px 12px; font-size: 12px; white-space: nowrap; }
+.kw-pgs { position: relative; flex: 1; min-height: 0; }
+.kw-home, .kw-sch { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.kw-hero { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 20px; background: linear-gradient(120deg, #26344e, #2f4a68); color: #fff; overflow: hidden; }
+.kw-h { font-family: Georgia, 'Times New Roman', serif; font-size: 25px; line-height: 1.2; }
+.kw-s { margin-top: 8px !important; font-size: 14px; opacity: 0.8; }
+.kw-chk { flex-shrink: 0; width: 124px; height: 124px; border-radius: 8px; background: conic-gradient(rgba(201,162,75,0.85) 25%, rgba(255,255,255,0.12) 0 50%, rgba(201,162,75,0.85) 0 75%, rgba(255,255,255,0.12) 0) 0 0 / 62px 62px; transform: rotate(8deg); }
+.kw-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 14px 20px 16px; font-size: 13.5px; line-height: 1.35; }
+.kw-three small { color: #9c7c2c; opacity: 1; margin-bottom: 4px; }
+.kw-sch { padding: 16px 20px; gap: 12px; }
+.kw-tb { display: flex; flex-direction: column; }
+.kw-tb span { display: grid; grid-template-columns: 6em minmax(0, 1fr) 6em; align-items: center; padding: 10px 2px; border-bottom: 1px solid #e8e6e0; font-size: 14px; }
+.kw-tb i { font-style: normal; }
+.kw-tb i:first-child { color: #9c7c2c; }
+/* the calculator */
+.kw-ca2 { background: #f6f6fb; color: #23233b; }
+.kw-app.kw-ca2 { padding: 16px 20px; gap: 12px; }
+.kw-cal { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 22px; }
+.kw-sl { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.kw-sl .k3-k { font-size: 13px; color: #55556f; font-family: inherit; }
+.kw-sl .k3-v > span { color: #23233b; }
+.kw-sl .k3-fill { background: #5b5bd6; }
+.kw-sl .k3-thumb { border-color: #5b5bd6; }
+.kw-sl .k3-track { background: #dcdcea; }
+.kw-out { position: relative; border-radius: 14px; background: #fff; box-shadow: 0 0 0 1px #e4e4ef, 0 10px 26px rgba(30,30,70,0.06); }
+.kw-ans, .kw-bars { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 16px 18px; }
+.kw-ans { align-items: center; justify-content: center; gap: 6px; }
+.kw-big { display: grid; font-size: 46px; line-height: 1.1; color: #4343c0; }
+.kw-big > span, .kw-sl .k3-v > span { justify-self: end; }
+.kw-big > span { grid-area: 1 / 1; justify-self: center; }
+.kw-bars { justify-content: center; gap: 13px; }
+.kw-br { display: grid; grid-template-columns: 1.3em minmax(0, 1fr) 6.2em; align-items: center; gap: 10px; font-size: 13.5px; }
+.kw-bt { height: 11px; border-radius: 6px; background: #ececf5; overflow: hidden; }
+.kw-bt i { display: block; height: 100%; background: #5b5bd6; transform-origin: left center; transform: scaleX(var(--w)); }
+.kw-bt i.out { background: #c9c9dc; }
+.kw-bv { text-align: right; white-space: nowrap; }
+/* gausyn at work, and the phone */
+.kw-bd { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-start; padding-top: 14px; background: rgba(255,255,255,0.3); }
+.kw-bd span { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; background: #fff; box-shadow: 0 0 0 1px var(--rule), 0 8px 20px rgba(0,0,0,0.1); font-family: var(--serif); font-size: 12px; color: var(--ink); white-space: nowrap; }
+.kw-bd i { width: 7px; height: 7px; border-radius: 50%; background: #e5484d; animation: xw-pulse 1.2s ease-in-out infinite; }
+.kw-ph { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(240,239,235,0.8); }
+.kw-dev { height: 94%; aspect-ratio: 1 / 2; border-radius: 24px; background: #fff; box-shadow: 0 0 0 5px #0a0a0a, 0 18px 40px rgba(0,0,0,0.22); overflow: hidden; }
+.kw-m { height: 100%; display: flex; flex-direction: column; gap: 11px; padding: 22px 14px 16px; min-height: 0; }
+.kw-m .kw-nm { font-size: 15px; line-height: 1.2; }
+.kw-kc2 { font-size: 12px; }
+.kw-mc { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 12px; background: #fffdf7; box-shadow: 0 0 0 1px #e2dccd; font-size: 15px; line-height: 1.3; text-align: center; }
+.kw-m .kw-bts { gap: 6px; }
+.kw-m .kw-btn { font-size: 12px; padding: 6px 0; }
+.kw-m.kw-st { padding: 0 0 12px; }
+.kw-mh { padding: 16px 12px 10px; background: #1f2a3f; color: #fff; }
+.kw-m .kw-h { font-size: 18px; padding: 0 12px; }
+.kw-tm { padding: 0 12px; }
+.kw-tm span { grid-template-columns: 3.6em minmax(0, 1fr); padding: 7px 0; font-size: 12.5px; }
+.kw-m .kw-bars { position: static; padding: 0; gap: 9px; }
+.kw-m .kw-br { grid-template-columns: 1.3em minmax(0, 1fr); row-gap: 3px; font-size: 13px; }
+.kw-m .kw-bv { text-align: right; }
+.kw-m .kw-bt { grid-column: 1 / -1; height: 8px; }
+.kw-m .kw-sl { gap: 12px; justify-content: flex-start; }
+.kw-mj { margin: auto 12px 0; text-align: center; padding: 7px 0; border-radius: 999px; background: #1f2a3f; color: #fff; font-size: 12.5px; }
+.fade-kw .xw-tool.pdf { display: inline-flex; }
+@media (max-width: 860px) {
+  .fade-kw .xw-split { grid-template-rows: minmax(0, 36%) minmax(0, 1fr); }
+  .fade-kw .kt-con { display: none; }
+  .kw-fb { grid-template-columns: minmax(0, 1fr); }
+  .kw-list { display: none; }
+  .kw-app.kw-fl, .kw-app.kw-ca2 { padding: 10px 12px; gap: 8px; }
+  .kw-nm { font-size: 15px; }
+  .kw-fs { font-size: 16px; padding: 10px 14px; gap: 6px; }
+  .kw-nav { padding: 8px 12px; gap: 12px; }
+  .kw-hero { padding: 10px 12px; }
+  .kw-h { font-size: 19px; }
+  .kw-s { font-size: 13px; margin-top: 5px !important; }
+  .kw-chk { width: 68px; height: 68px; background-size: 34px 34px; }
+  .kw-three { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 8px 12px; font-size: 12.5px; }
+  .kw-three div { display: flex; gap: 8px; }
+  .kw-three small { margin: 0; flex: 0 0 4.4em; }
+  .kw-sch { padding: 10px 12px; gap: 6px; }
+  .kw-tb span { grid-template-columns: 4em minmax(0, 1fr) auto; padding: 6px 2px; font-size: 13px; }
+  .kw-cal { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 8px; }
+  .kw-sl { gap: 6px; }
+  .kw-app.kw-ca2 { gap: 6px; }
+  .kw-sl .k3-track { margin-top: 6px; }
+  .kw-big { font-size: 32px; }
+  .kw-ans { gap: 2px; padding: 8px; }
+  .kw-bars { gap: 4px; padding: 6px 12px; }
+  .kw-bars > small { display: none; }
+  .kw-br { font-size: 13px; }
+  .kw-m .kw-bars { gap: 7px; }
+  .kw-dev { height: 96%; aspect-ratio: 10 / 18; border-radius: 18px; box-shadow: 0 0 0 4px #0a0a0a; }
+  .kw-m { padding: 14px 10px 10px; gap: 7px; }
+  .kw-m .kw-sl, .kw-mj { display: none; }
+  .kw-mh { padding: 10px 10px 7px; }
+  .kw-m .kw-h { font-size: 15px; padding: 0 10px; }
+  .kw-tm { padding: 0 10px; }
+  .kw-tm span { padding: 4px 0; font-size: 12px; grid-template-columns: 3.4em minmax(0, 1fr); }
+  .kw-mc { font-size: 13px; padding: 8px; }
+}
+@media (min-width: 561px) and (max-width: 860px) {
+  .kw-cal { grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); grid-template-rows: none; gap: 14px; }
+  .kw-sl { gap: 10px; }
+}
+@media (max-width: 760px) {
+  .fade-kw .xw-effort { display: none; }
+  .fade-kw .xw-composer .send { margin-left: auto; }
+  .kw-bar .addr { font-size: 11px; }
+}
+@keyframes kw-h1{0%{opacity:1}32.727%{opacity:1}33.409%{opacity:0}100%{opacity:0}}
+html.js .kw-h1{animation:kw-h1 44s ease-in-out infinite both}
+@keyframes kw-h2{0%{opacity:0}32.727%{opacity:0}33.409%{opacity:1}62.727%{opacity:1}63.409%{opacity:0}100%{opacity:0}}
+html.js .kw-h2{animation:kw-h2 44s ease-in-out infinite both}
+@keyframes kw-h3{0%{opacity:0}62.727%{opacity:0}63.409%{opacity:1}100%{opacity:1}}
+html.js .kw-h3{animation:kw-h3 44s ease-in-out infinite both}
+@keyframes kw-c1{0%{opacity:1}32.727%{opacity:1}33.409%{opacity:0}100%{opacity:0}}
+html.js .kw-c1{animation:kw-c1 44s ease-in-out infinite both}
+@keyframes kw-c2{0%{opacity:0}32.727%{opacity:0}33.409%{opacity:1}62.727%{opacity:1}63.409%{opacity:0}100%{opacity:0}}
+html.js .kw-c2{animation:kw-c2 44s ease-in-out infinite both}
+@keyframes kw-c3{0%{opacity:0}62.727%{opacity:0}63.409%{opacity:1}100%{opacity:1}}
+html.js .kw-c3{animation:kw-c3 44s ease-in-out infinite both}
+@keyframes kw-a1{0%{opacity:1}32.727%{opacity:1}33.409%{opacity:0}100%{opacity:0}}
+html.js .kw-a1{animation:kw-a1 44s ease-in-out infinite both}
+@keyframes kw-a2{0%{opacity:0}32.727%{opacity:0}33.409%{opacity:1}62.727%{opacity:1}63.409%{opacity:0}100%{opacity:0}}
+html.js .kw-a2{animation:kw-a2 44s ease-in-out infinite both}
+@keyframes kw-a3{0%{opacity:0}62.727%{opacity:0}63.409%{opacity:1}100%{opacity:1}}
+html.js .kw-a3{animation:kw-a3 44s ease-in-out infinite both}
+@keyframes kw-ax1{0%{opacity:1}32.727%{opacity:1}33.409%{opacity:0}100%{opacity:0}}
+html.js .kw-ax1{animation:kw-ax1 44s ease-in-out infinite both}
+@keyframes kw-ax2{0%{opacity:0}32.727%{opacity:0}33.295%{opacity:1}50.227%{opacity:1}50.795%{opacity:0}100%{opacity:0}}
+html.js .kw-ax2{animation:kw-ax2 44s ease-in-out infinite both}
+@keyframes kw-ax3{0%{opacity:0}50.227%{opacity:0}50.795%{opacity:1}62.727%{opacity:1}63.295%{opacity:0}100%{opacity:0}}
+html.js .kw-ax3{animation:kw-ax3 44s ease-in-out infinite both}
+@keyframes kw-ax4{0%{opacity:0}62.727%{opacity:0}63.409%{opacity:1}100%{opacity:1}}
+html.js .kw-ax4{animation:kw-ax4 44s ease-in-out infinite both}
+@keyframes kw-n3{0%{opacity:1}45.909%{opacity:1}46.364%{opacity:0}62.727%{opacity:0}63.182%{opacity:1}100%{opacity:1}}
+html.js .kw-n3{animation:kw-n3 44s ease-in-out infinite both}
+@keyframes kw-n4{0%{opacity:0}45.909%{opacity:0}46.364%{opacity:1}62.727%{opacity:1}63.182%{opacity:0}100%{opacity:0}}
+html.js .kw-n4{animation:kw-n4 44s ease-in-out infinite both}
+@keyframes kw-cf{0%{transform:rotateY(0deg)}1.818%{transform:rotateY(0deg)}3.182%{transform:rotateY(180deg)}100%{transform:rotateY(180deg)}}
+html.js .kw-cf{animation:kw-cf 44s ease-in-out infinite both}
+@keyframes kw-ca{0%{opacity:1;transform:none}5.909%{opacity:1;transform:none}6.818%{opacity:0;transform:translateX(-10%) rotate(-3deg)}100%{opacity:0;transform:translateX(-10%) rotate(-3deg)}}
+html.js .kw-ca{animation:kw-ca 44s ease-in-out infinite both}
+@keyframes kw-cb{0%{opacity:0;transform:translateX(30%)}6.364%{opacity:0;transform:translateX(30%)}7.159%{opacity:1;transform:none}25%{opacity:1;transform:none}25.795%{opacity:0;transform:translateX(30%)}100%{opacity:0;transform:translateX(30%)}}
+html.js .kw-cb{animation:kw-cb 44s ease-in-out infinite both}
+@keyframes kw-cc{0%{opacity:0;transform:translateX(30%)}25.227%{opacity:0;transform:translateX(30%)}26.023%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-cc{animation:kw-cc 44s ease-in-out infinite both}
+@keyframes kw-kn{0%{transform:none}5%{transform:none}5.409%{transform:scale(0.93)}6.136%{transform:none}100%{transform:none}}
+html.js .kw-kn{animation:kw-kn 44s ease-in-out infinite both}
+@keyframes kw-k4{0%{opacity:1}5.682%{opacity:1}6.023%{opacity:0}100%{opacity:0}}
+html.js .kw-k4{animation:kw-k4 44s ease-in-out infinite both}
+@keyframes kw-k5{0%{opacity:0}5.682%{opacity:0}6.023%{opacity:1}100%{opacity:1}}
+html.js .kw-k5{animation:kw-k5 44s ease-in-out infinite both}
+@keyframes kw-pf{0%{transform:scaleX(.333)}5.682%{transform:scaleX(.333)}6.364%{transform:scaleX(.417)}100%{transform:scaleX(.417)}}
+html.js .kw-pf{animation:kw-pf 44s ease-in-out infinite both}
+@keyframes kw-m1{0%{background-color:#d9d4c6}5.682%{background-color:#d9d4c6}6.25%{background-color:#3f7d4e}100%{background-color:#3f7d4e}}
+html.js .kw-m1{animation:kw-m1 44s ease-in-out infinite both}
+@keyframes kw-ir{0%{color:var(--faint);background-color:rgba(10,10,10,0);transform:none}8.636%{color:var(--faint);background-color:rgba(10,10,10,0)}8.864%{transform:none}8.977%{color:var(--ink);background-color:var(--surface)}9.273%{transform:scale(0.86)}9.773%{color:var(--ink);background-color:var(--surface)}10%{transform:none}10.114%{color:var(--faint);background-color:rgba(10,10,10,0)}100%{color:var(--faint);background-color:rgba(10,10,10,0)}}
+html.js .kw-ir{animation:kw-ir 44s ease-in-out infinite both}
+@keyframes kw-bl{0%{opacity:0}9.318%{opacity:0}9.773%{opacity:1}11.136%{opacity:1}11.591%{opacity:0}100%{opacity:0}}
+html.js .kw-bl{animation:kw-bl 44s ease-in-out infinite both}
+@keyframes kw-sv{0%{opacity:0;transform:translateY(10px)}11.364%{opacity:0;transform:translateY(10px)}12.273%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-sv{animation:kw-sv 44s ease-in-out infinite both}
+@keyframes kw-y1{0%{opacity:0}14.545%{opacity:0}15.455%{opacity:1}100%{opacity:1}}
+html.js .kw-y1{animation:kw-y1 44s ease-in-out infinite both}
+@keyframes kw-t1{0%{opacity:0}15.682%{opacity:0}16.25%{opacity:1}17.045%{opacity:1}17.614%{opacity:0}100%{opacity:0}}
+html.js .kw-t1{animation:kw-t1 44s ease-in-out infinite both}
+@keyframes kw-w1{0%{opacity:0}17.045%{opacity:0}17.614%{opacity:1}21.364%{opacity:1}21.932%{opacity:0}100%{opacity:0}}
+html.js .kw-w1{animation:kw-w1 44s ease-in-out infinite both}
+@keyframes kw-g1{0%{opacity:0}21.364%{opacity:0}22.273%{opacity:1}100%{opacity:1}}
+html.js .kw-g1{animation:kw-g1 44s ease-in-out infinite both}
+@keyframes kw-fa{0%{background-color:#3f7d4e;color:#ffffff;border-color:#3f7d4e}24.773%{background-color:#3f7d4e;color:#ffffff;border-color:#3f7d4e}25.227%{background-color:rgba(63,125,78,0);color:#3f7d4e;border-color:#c4d4c0}100%{background-color:rgba(63,125,78,0);color:#3f7d4e;border-color:#c4d4c0}}
+html.js .kw-fa{animation:kw-fa 44s ease-in-out infinite both}
+@keyframes kw-fz{0%{background-color:rgba(63,125,78,0);color:#3f7d4e;border-color:#c4d4c0;opacity:0;transform:scale(.9)}21.818%{opacity:0;transform:scale(.9)}22.614%{opacity:1;transform:none}24.773%{background-color:rgba(63,125,78,0);color:#3f7d4e;border-color:#c4d4c0}25.227%{background-color:#3f7d4e;color:#ffffff;border-color:#3f7d4e}100%{background-color:#3f7d4e;color:#ffffff;border-color:#3f7d4e}}
+html.js .kw-fz{animation:kw-fz 44s ease-in-out infinite both}
+@keyframes kw-r1{0%{opacity:1}25%{opacity:1}25.568%{opacity:0}100%{opacity:0}}
+html.js .kw-r1{animation:kw-r1 44s ease-in-out infinite both}
+@keyframes kw-r2{0%{opacity:1}25%{opacity:1}25.568%{opacity:0}100%{opacity:0}}
+html.js .kw-r2{animation:kw-r2 44s ease-in-out infinite both}
+@keyframes kw-r3{0%{opacity:1}25%{opacity:1}25.568%{opacity:0}100%{opacity:0}}
+html.js .kw-r3{animation:kw-r3 44s ease-in-out infinite both}
+@keyframes kw-r4{0%{transform:translateY(0)}25%{transform:translateY(0)}25.909%{transform:translateY(var(--kw-3))}100%{transform:translateY(var(--kw-3))}}
+html.js .kw-r4{animation:kw-r4 44s ease-in-out infinite both}
+@keyframes kw-r5{0%{transform:translateY(0)}25%{transform:translateY(0)}25.909%{transform:translateY(var(--kw-3))}100%{transform:translateY(var(--kw-3))}}
+html.js .kw-r5{animation:kw-r5 44s ease-in-out infinite both}
+@keyframes kw-r6{0%{transform:translateY(0)}25%{transform:translateY(0)}25.909%{transform:translateY(var(--kw-3))}100%{transform:translateY(var(--kw-3))}}
+html.js .kw-r6{animation:kw-r6 44s ease-in-out infinite both}
+@keyframes kw-ip{0%{color:var(--faint);background-color:rgba(10,10,10,0);transform:none}27.273%{color:var(--faint);background-color:rgba(10,10,10,0)}27.5%{transform:none}27.614%{color:var(--ink);background-color:var(--surface)}27.909%{transform:scale(0.86)}28.636%{transform:none}32.727%{color:var(--ink);background-color:var(--surface)}33.068%{color:var(--faint);background-color:rgba(10,10,10,0)}57.045%{color:var(--faint);background-color:rgba(10,10,10,0)}57.273%{transform:none}57.386%{color:var(--ink);background-color:var(--surface)}57.682%{transform:scale(0.86)}58.409%{transform:none}62.727%{color:var(--ink);background-color:var(--surface)}63.068%{color:var(--faint);background-color:rgba(10,10,10,0)}82.273%{color:var(--faint);background-color:rgba(10,10,10,0)}82.5%{transform:none}82.614%{color:var(--ink);background-color:var(--surface)}82.909%{transform:scale(0.86)}83.636%{transform:none}100%{transform:none}}
+html.js .kw-ip{animation:kw-ip 44s ease-in-out infinite both}
+@keyframes kw-p1{0%{opacity:0}27.955%{opacity:0}28.75%{opacity:1}32.727%{opacity:1}33.523%{opacity:0}100%{opacity:0}}
+html.js .kw-p1{animation:kw-p1 44s ease-in-out infinite both}
+@keyframes kw-p2{0%{opacity:0}57.727%{opacity:0}58.523%{opacity:1}62.727%{opacity:1}63.523%{opacity:0}100%{opacity:0}}
+html.js .kw-p2{animation:kw-p2 44s ease-in-out infinite both}
+@keyframes kw-p3{0%{opacity:0}82.955%{opacity:0}83.75%{opacity:1}100%{opacity:1}}
+html.js .kw-p3{animation:kw-p3 44s ease-in-out infinite both}
+@keyframes kw-lv{0%{opacity:0}17.045%{opacity:0}17.614%{opacity:1}21.364%{opacity:1}21.932%{opacity:0}41.818%{opacity:0}42.386%{opacity:1}45.909%{opacity:1}46.477%{opacity:0}72.727%{opacity:0}73.295%{opacity:1}76.818%{opacity:1}77.386%{opacity:0}100%{opacity:0}}
+html.js .kw-lv{animation:kw-lv 44s ease-in-out infinite both}
+@keyframes kw-bu{0%{opacity:0}17.045%{opacity:0}17.614%{opacity:1}21.364%{opacity:1}21.932%{opacity:0}41.818%{opacity:0}42.386%{opacity:1}45.909%{opacity:1}46.477%{opacity:0}72.727%{opacity:0}73.295%{opacity:1}76.818%{opacity:1}77.386%{opacity:0}100%{opacity:0}}
+html.js .kw-bu{animation:kw-bu 44s ease-in-out infinite both}
+@keyframes kw-jn{0%{transform:none}35.455%{transform:none}35.864%{transform:scale(0.93)}36.591%{transform:none}100%{transform:none}}
+html.js .kw-jn{animation:kw-jn 44s ease-in-out infinite both}
+@keyframes kw-y2{0%{opacity:0}40.455%{opacity:0}41.364%{opacity:1}100%{opacity:1}}
+html.js .kw-y2{animation:kw-y2 44s ease-in-out infinite both}
+@keyframes kw-t2{0%{opacity:0}40.909%{opacity:0}41.25%{opacity:1}41.818%{opacity:1}42.159%{opacity:0}100%{opacity:0}}
+html.js .kw-t2{animation:kw-t2 44s ease-in-out infinite both}
+@keyframes kw-w2{0%{opacity:0}41.818%{opacity:0}42.386%{opacity:1}45.909%{opacity:1}46.477%{opacity:0}100%{opacity:0}}
+html.js .kw-w2{animation:kw-w2 44s ease-in-out infinite both}
+@keyframes kw-g2{0%{opacity:0}45.909%{opacity:0}46.818%{opacity:1}100%{opacity:1}}
+html.js .kw-g2{animation:kw-g2 44s ease-in-out infinite both}
+@keyframes kw-l1{0%{color:#c9a24b;border-color:#c9a24b}50%{color:#c9a24b;border-color:#c9a24b}50.455%{color:rgba(255,255,255,0.72);border-color:rgba(201,162,75,0)}100%{color:rgba(255,255,255,0.72);border-color:rgba(201,162,75,0)}}
+html.js .kw-l1{animation:kw-l1 44s ease-in-out infinite both}
+@keyframes kw-l2{0%{color:rgba(255,255,255,0.72);border-color:rgba(201,162,75,0);opacity:0;transform:translateY(-6px)}46.364%{opacity:0;transform:translateY(-6px)}47.159%{opacity:1;transform:none}50%{color:rgba(255,255,255,0.72);border-color:rgba(201,162,75,0)}50.455%{color:#c9a24b;border-color:#c9a24b}100%{color:#c9a24b;border-color:#c9a24b}}
+html.js .kw-l2{animation:kw-l2 44s ease-in-out infinite both}
+@keyframes kw-pa{0%{opacity:1}50.227%{opacity:1}50.909%{opacity:0}100%{opacity:0}}
+html.js .kw-pa{animation:kw-pa 44s ease-in-out infinite both}
+@keyframes kw-pb2{0%{opacity:0}50.455%{opacity:0}51.136%{opacity:1}100%{opacity:1}}
+html.js .kw-pb2{animation:kw-pb2 44s ease-in-out infinite both}
+@keyframes kw-d1{0%{opacity:0;transform:translateY(10px)}51.136%{opacity:0;transform:translateY(10px)}51.818%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-d1{animation:kw-d1 44s ease-in-out infinite both}
+@keyframes kw-d2{0%{opacity:0;transform:translateY(10px)}51.818%{opacity:0;transform:translateY(10px)}52.5%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-d2{animation:kw-d2 44s ease-in-out infinite both}
+@keyframes kw-d3{0%{opacity:0;transform:translateY(10px)}52.5%{opacity:0;transform:translateY(10px)}53.182%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-d3{animation:kw-d3 44s ease-in-out infinite both}
+@keyframes kw-d4{0%{opacity:0;transform:translateY(10px)}53.182%{opacity:0;transform:translateY(10px)}53.864%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kw-d4{animation:kw-d4 44s ease-in-out infinite both}
+@keyframes kw-v0{0%{opacity:1}67%{opacity:1}67.227%{opacity:0}100%{opacity:0}}
+html.js .kw-v0{animation:kw-v0 44s ease-in-out infinite both}
+@keyframes kw-u0{0%{opacity:1}67%{opacity:1}67.227%{opacity:0}100%{opacity:0}}
+html.js .kw-u0{animation:kw-u0 44s ease-in-out infinite both}
+@keyframes kw-v1{0%{opacity:0}67%{opacity:0}67.227%{opacity:1}67.636%{opacity:1}67.864%{opacity:0}100%{opacity:0}}
+html.js .kw-v1{animation:kw-v1 44s ease-in-out infinite both}
+@keyframes kw-u1{0%{opacity:0}67%{opacity:0}67.227%{opacity:1}67.636%{opacity:1}67.864%{opacity:0}100%{opacity:0}}
+html.js .kw-u1{animation:kw-u1 44s ease-in-out infinite both}
+@keyframes kw-v2{0%{opacity:0}67.636%{opacity:0}67.864%{opacity:1}68.273%{opacity:1}68.5%{opacity:0}100%{opacity:0}}
+html.js .kw-v2{animation:kw-v2 44s ease-in-out infinite both}
+@keyframes kw-u2{0%{opacity:0}67.636%{opacity:0}67.864%{opacity:1}68.273%{opacity:1}68.5%{opacity:0}100%{opacity:0}}
+html.js .kw-u2{animation:kw-u2 44s ease-in-out infinite both}
+@keyframes kw-v3{0%{opacity:0}68.273%{opacity:0}68.5%{opacity:1}68.909%{opacity:1}69.136%{opacity:0}100%{opacity:0}}
+html.js .kw-v3{animation:kw-v3 44s ease-in-out infinite both}
+@keyframes kw-u3{0%{opacity:0}68.273%{opacity:0}68.5%{opacity:1}68.909%{opacity:1}69.136%{opacity:0}100%{opacity:0}}
+html.js .kw-u3{animation:kw-u3 44s ease-in-out infinite both}
+@keyframes kw-v4{0%{opacity:0}68.909%{opacity:0}69.136%{opacity:1}69.545%{opacity:1}69.773%{opacity:0}100%{opacity:0}}
+html.js .kw-v4{animation:kw-v4 44s ease-in-out infinite both}
+@keyframes kw-u4{0%{opacity:0}68.909%{opacity:0}69.136%{opacity:1}69.545%{opacity:1}69.773%{opacity:0}100%{opacity:0}}
+html.js .kw-u4{animation:kw-u4 44s ease-in-out infinite both}
+@keyframes kw-v5{0%{opacity:0}69.545%{opacity:0}69.773%{opacity:1}100%{opacity:1}}
+html.js .kw-v5{animation:kw-v5 44s ease-in-out infinite both}
+@keyframes kw-u5{0%{opacity:0}69.545%{opacity:0}69.773%{opacity:1}100%{opacity:1}}
+html.js .kw-u5{animation:kw-u5 44s ease-in-out infinite both}
+@keyframes kw-gf{0%{transform:scaleX(0.750)}66.364%{transform:scaleX(0.750)}69.545%{transform:scaleX(0.800)}100%{transform:scaleX(0.800)}}
+html.js .kw-gf{animation:kw-gf 44s ease-in-out infinite both}
+@keyframes kw-gr{0%{transform:translateX(75.0%)}66.364%{transform:translateX(75.0%)}69.545%{transform:translateX(80.0%)}100%{transform:translateX(80.0%)}}
+html.js .kw-gr{animation:kw-gr 44s ease-in-out infinite both}
+@keyframes kw-y3{0%{opacity:0}71.364%{opacity:0}72.273%{opacity:1}100%{opacity:1}}
+html.js .kw-y3{animation:kw-y3 44s ease-in-out infinite both}
+@keyframes kw-w3{0%{opacity:0}72.727%{opacity:0}73.295%{opacity:1}76.818%{opacity:1}77.386%{opacity:0}100%{opacity:0}}
+html.js .kw-w3{animation:kw-w3 44s ease-in-out infinite both}
+@keyframes kw-g3{0%{opacity:0}76.818%{opacity:0}77.727%{opacity:1}100%{opacity:1}}
+html.js .kw-g3{animation:kw-g3 44s ease-in-out infinite both}
+@keyframes kw-an{0%{opacity:1}77.5%{opacity:1}78.182%{opacity:0}100%{opacity:0}}
+html.js .kw-an{animation:kw-an 44s ease-in-out infinite both}
+@keyframes kw-bz{0%{opacity:0}77.727%{opacity:0}78.409%{opacity:1}100%{opacity:1}}
+html.js .kw-bz{animation:kw-bz 44s ease-in-out infinite both}
+@keyframes kw-b1{0%{opacity:0}77.955%{opacity:0}78.409%{opacity:1}100%{opacity:1}}
+html.js .kw-b1{animation:kw-b1 44s ease-in-out infinite both}
+@keyframes kw-bf1{0%{transform:scaleX(0)}78.182%{transform:scaleX(0)}79.318%{transform:scaleX(var(--w))}100%{transform:scaleX(var(--w))}}
+html.js .kw-bf1{animation:kw-bf1 44s ease-in-out infinite both}
+@keyframes kw-b2{0%{opacity:0}78.455%{opacity:0}78.909%{opacity:1}100%{opacity:1}}
+html.js .kw-b2{animation:kw-b2 44s ease-in-out infinite both}
+@keyframes kw-bf2{0%{transform:scaleX(0)}78.682%{transform:scaleX(0)}79.818%{transform:scaleX(var(--w))}100%{transform:scaleX(var(--w))}}
+html.js .kw-bf2{animation:kw-bf2 44s ease-in-out infinite both}
+@keyframes kw-b3{0%{opacity:0}78.955%{opacity:0}79.409%{opacity:1}100%{opacity:1}}
+html.js .kw-b3{animation:kw-b3 44s ease-in-out infinite both}
+@keyframes kw-bf3{0%{transform:scaleX(0)}79.182%{transform:scaleX(0)}80.318%{transform:scaleX(var(--w))}100%{transform:scaleX(var(--w))}}
+html.js .kw-bf3{animation:kw-bf3 44s ease-in-out infinite both}
+@keyframes kw-b4{0%{opacity:0}79.455%{opacity:0}79.909%{opacity:1}100%{opacity:1}}
+html.js .kw-b4{animation:kw-b4 44s ease-in-out infinite both}
+@keyframes kw-bf4{0%{transform:scaleX(0)}79.682%{transform:scaleX(0)}80.818%{transform:scaleX(var(--w))}100%{transform:scaleX(var(--w))}}
+html.js .kw-bf4{animation:kw-bf4 44s ease-in-out infinite both}
+@keyframes kw-g4{0%{opacity:0}85%{opacity:0}85.909%{opacity:1}100%{opacity:1}}
+html.js .kw-g4{animation:kw-g4 44s ease-in-out infinite both}
+@keyframes fade-kw{0%{opacity:1}97.045%{opacity:1}99.432%{opacity:0}100%{opacity:0}}
+html.js .fade-kw{animation:fade-kw 44s linear infinite}
+/* a simulation you can push on, and a chart from your own numbers */
+.ks-page { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; padding: 10px 14px 12px; overflow: hidden; background: #fbfaf7; color: #24262e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; }
+.ks-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; height: 28px; flex-shrink: 0; }
+.ks-tabs { display: flex; gap: 4px; }
+.ks-tabs > span { padding: 4px 12px; border-radius: 999px; font-size: 12px; white-space: nowrap; color: #6c6c76; }
+.ks-tabs .ks-n1 { background-color: #2a2b33; color: #fff; }
+.ks-note { display: grid; font-size: 12px; color: #a0612f; }
+.ks-note > span { grid-area: 1 / 1; justify-self: end; white-space: nowrap; }
+.ks-body { position: relative; flex: 1; min-height: 0; }
+.ks-sim { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) 208px; gap: 14px; }
+.ks-field { position: relative; min-height: 0; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px #e6e3da; overflow: hidden; }
+.ks-box { position: absolute; left: 8px; top: 8px; right: 21px; bottom: 21px; container-type: size; }
+.ks-x, .ks-y, .ks-dot { position: absolute; left: 0; top: 0; display: block; }
+.ks-x { transform: translateX(calc(var(--u) * 1cqw)); }
+.ks-y { transform: translateY(calc(var(--v) * 1cqh)); }
+.ks-dot { width: 13px; height: 13px; border-radius: 50%; }
+.ks-ctl { display: flex; flex-direction: column; gap: 12px; min-height: 0; justify-content: center; padding-right: 7px; }
+.ks-cnt { display: flex; align-items: baseline; gap: 8px; }
+.ks-big { display: inline-grid; font-family: Georgia, 'Times New Roman', serif; font-size: 38px; line-height: 1; color: #24262e; }
+.ks-big > span { grid-area: 1 / 1; justify-self: start; }
+.ks-of { font-size: 12.5px; color: #6c6c76; white-space: nowrap; }
+.ks-track { height: 9px; border-radius: 5px; background: #ecebe5; overflow: hidden; }
+.ks-hb { display: block; height: 100%; background: #e58a4e; transform-origin: left center; transform: scaleX(.625); }
+.ks-leg { display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: #55555f; }
+.ks-leg span { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.ks-leg i { width: 10px; height: 10px; border-radius: 50%; }
+.ks-sl { margin-top: 2px; }
+.ks-sl .k3-k { font-size: 12.5px; color: #55555f; }
+.ks-sl .k3-v { display: inline-grid; width: auto; height: auto; }
+.ks-sl .k3-v > span { position: static; grid-area: 1 / 1; justify-self: end; color: #24262e; }
+.ks-sl .k3-fill { background: #e58a4e; }
+.ks-sl .k3-thumb { border-color: #c56f35; }
+.ks-chart { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px 12px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px #e6e3da; }
+.ks-ch { display: flex; flex-direction: column; gap: 2px; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; }
+.ks-ch small { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; color: #6c6c76; }
+.ks-cols { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.ks-col { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+.ks-well { position: relative; flex: 1; min-height: 0; border-bottom: 1px solid #d9d6cc; }
+.ks-bar { position: absolute; left: 12%; right: 12%; bottom: 0; height: calc(var(--n) * 10%); border-radius: 5px 5px 0 0; background: #7d93bd; transform-origin: center bottom; }
+.ks-bar.hi { background: #e58a4e; }
+.ks-val { position: absolute; left: 0; right: 0; bottom: calc(var(--n) * 10% + 3px); text-align: center; font-size: 13px; }
+.ks-lab { display: block; min-height: 2.5em; line-height: 1.25; text-align: center; font-size: 12px; color: #55555f; }
+.ks-avg { position: absolute; right: 14px; top: 12px; padding: 3px 10px; border-radius: 999px; background: #fdf0e6; color: #a0612f; font-size: 12px; white-space: nowrap; }
+.fade-ks .xw-tool.pdf { display: inline-flex; }
+@media (max-width: 860px) {
+  .fade-ks .xw-split { grid-template-rows: minmax(0, 36%) minmax(0, 1fr); }
+  .ks-page { padding: 7px 9px 8px; gap: 5px; }
+  .ks-con { display: none; }
+  .ks-sim { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 7px; }
+  .ks-ctl { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px 12px; padding: 0 7px 7px; }
+  .ks-cnt { gap: 6px; }
+  .ks-big { font-size: 24px; }
+  .ks-of { font-size: 11.5px; }
+  .ks-track { height: 8px; }
+  .ks-leg { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; gap: 6px; font-size: 11px; }
+  .ks-leg i { width: 9px; height: 9px; }
+  .ks-leg span { gap: 4px; }
+  .ks-sl { grid-column: 1 / -1; margin-top: 0; }
+  .ks-s2w { display: none; }
+  .ks-dot { width: 11px; height: 11px; }
+  .ks-box { left: 6px; top: 6px; right: 17px; bottom: 17px; }
+  .ks-chart { padding: 9px 10px; gap: 6px; }
+  .ks-ch { font-size: 14px; }
+  .ks-ch small { display: none; }
+  .ks-cols { gap: 5px; }
+  .ks-lab { font-size: 11px; }
+  .ks-avg { position: static; align-self: flex-start; order: 2; }
+  .ks-note { font-size: 11px; }
+  .ks-tabs > span { padding: 3px 9px; }
+}
+@media (max-width: 760px) {
+  .fade-ks .xw-effort { display: none; }
+  .fade-ks .xw-composer .send { margin-left: auto; }
+}
+@keyframes ks-x5{0%{transform:translateX(0)}10%{transform:translateX(100cqw)}20%{transform:translateX(0)}30%{transform:translateX(100cqw)}40%{transform:translateX(0)}50%{transform:translateX(100cqw)}60%{transform:translateX(0)}70%{transform:translateX(100cqw)}80%{transform:translateX(0)}90%{transform:translateX(100cqw)}100%{transform:translateX(0)}}
+html.js .ks-x5{animation:ks-x5 42s linear infinite both}
+@keyframes ks-x6{0%{transform:translateX(0)}8.333%{transform:translateX(100cqw)}16.667%{transform:translateX(0)}25%{transform:translateX(100cqw)}33.333%{transform:translateX(0)}41.667%{transform:translateX(100cqw)}50%{transform:translateX(0)}58.333%{transform:translateX(100cqw)}66.667%{transform:translateX(0)}75%{transform:translateX(100cqw)}83.333%{transform:translateX(0)}91.667%{transform:translateX(100cqw)}100%{transform:translateX(0)}}
+html.js .ks-x6{animation:ks-x6 42s linear infinite both}
+@keyframes ks-x7{0%{transform:translateX(0)}7.143%{transform:translateX(100cqw)}14.286%{transform:translateX(0)}21.429%{transform:translateX(100cqw)}28.571%{transform:translateX(0)}35.714%{transform:translateX(100cqw)}42.857%{transform:translateX(0)}50%{transform:translateX(100cqw)}57.143%{transform:translateX(0)}64.286%{transform:translateX(100cqw)}71.429%{transform:translateX(0)}78.571%{transform:translateX(100cqw)}85.714%{transform:translateX(0)}92.857%{transform:translateX(100cqw)}100%{transform:translateX(0)}}
+html.js .ks-x7{animation:ks-x7 42s linear infinite both}
+@keyframes ks-x8{0%{transform:translateX(0)}6.25%{transform:translateX(100cqw)}12.5%{transform:translateX(0)}18.75%{transform:translateX(100cqw)}25%{transform:translateX(0)}31.25%{transform:translateX(100cqw)}37.5%{transform:translateX(0)}43.75%{transform:translateX(100cqw)}50%{transform:translateX(0)}56.25%{transform:translateX(100cqw)}62.5%{transform:translateX(0)}68.75%{transform:translateX(100cqw)}75%{transform:translateX(0)}81.25%{transform:translateX(100cqw)}87.5%{transform:translateX(0)}93.75%{transform:translateX(100cqw)}100%{transform:translateX(0)}}
+html.js .ks-x8{animation:ks-x8 42s linear infinite both}
+@keyframes ks-y6{0%{transform:translateY(0)}8.333%{transform:translateY(100cqh)}16.667%{transform:translateY(0)}25%{transform:translateY(100cqh)}33.333%{transform:translateY(0)}41.667%{transform:translateY(100cqh)}50%{transform:translateY(0)}58.333%{transform:translateY(100cqh)}66.667%{transform:translateY(0)}75%{transform:translateY(100cqh)}83.333%{transform:translateY(0)}91.667%{transform:translateY(100cqh)}100%{transform:translateY(0)}}
+html.js .ks-y6{animation:ks-y6 42s linear infinite both}
+@keyframes ks-y7{0%{transform:translateY(0)}7.143%{transform:translateY(100cqh)}14.286%{transform:translateY(0)}21.429%{transform:translateY(100cqh)}28.571%{transform:translateY(0)}35.714%{transform:translateY(100cqh)}42.857%{transform:translateY(0)}50%{transform:translateY(100cqh)}57.143%{transform:translateY(0)}64.286%{transform:translateY(100cqh)}71.429%{transform:translateY(0)}78.571%{transform:translateY(100cqh)}85.714%{transform:translateY(0)}92.857%{transform:translateY(100cqh)}100%{transform:translateY(0)}}
+html.js .ks-y7{animation:ks-y7 42s linear infinite both}
+@keyframes ks-y8{0%{transform:translateY(0)}6.25%{transform:translateY(100cqh)}12.5%{transform:translateY(0)}18.75%{transform:translateY(100cqh)}25%{transform:translateY(0)}31.25%{transform:translateY(100cqh)}37.5%{transform:translateY(0)}43.75%{transform:translateY(100cqh)}50%{transform:translateY(0)}56.25%{transform:translateY(100cqh)}62.5%{transform:translateY(0)}68.75%{transform:translateY(100cqh)}75%{transform:translateY(0)}81.25%{transform:translateY(100cqh)}87.5%{transform:translateY(0)}93.75%{transform:translateY(100cqh)}100%{transform:translateY(0)}}
+html.js .ks-y8{animation:ks-y8 42s linear infinite both}
+@keyframes ks-y9{0%{transform:translateY(0)}5.556%{transform:translateY(100cqh)}11.111%{transform:translateY(0)}16.667%{transform:translateY(100cqh)}22.222%{transform:translateY(0)}27.778%{transform:translateY(100cqh)}33.333%{transform:translateY(0)}38.889%{transform:translateY(100cqh)}44.444%{transform:translateY(0)}50%{transform:translateY(100cqh)}55.556%{transform:translateY(0)}61.111%{transform:translateY(100cqh)}66.667%{transform:translateY(0)}72.222%{transform:translateY(100cqh)}77.778%{transform:translateY(0)}83.333%{transform:translateY(100cqh)}88.889%{transform:translateY(0)}94.444%{transform:translateY(100cqh)}100%{transform:translateY(0)}}
+html.js .ks-y9{animation:ks-y9 42s linear infinite both}
+@keyframes ks-d1{0%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#e58a4e}19.952%{background-color:#e58a4e}20.333%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#e58a4e}71.762%{background-color:#e58a4e}72.143%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d1{animation:ks-d1 42s ease-in-out infinite both}
+@keyframes ks-d2{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}20.762%{background-color:#cfccc2}21.143%{background-color:#e58a4e}24.714%{background-color:#e58a4e}25.095%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}73.619%{background-color:#cfccc2}74%{background-color:#e58a4e}75.095%{background-color:#e58a4e}75.476%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d2{animation:ks-d2 42s ease-in-out infinite both}
+@keyframes ks-d3{0%{background-color:#cfccc2}1.81%{background-color:#cfccc2;background-color:#e58a4e}2.19%{background-color:#e58a4e;background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}25.429%{background-color:#cfccc2}25.81%{background-color:#e58a4e}30.905%{background-color:#e58a4e}31.286%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d3{animation:ks-d3 42s ease-in-out infinite both}
+@keyframes ks-d4{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.238%{background-color:#cfccc2}26.619%{background-color:#e58a4e}30.571%{background-color:#e58a4e}30.952%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d4{animation:ks-d4 42s ease-in-out infinite both}
+@keyframes ks-d5{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}25.81%{background-color:#cfccc2}26.19%{background-color:#e58a4e}27.762%{background-color:#e58a4e}28.143%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}81.143%{background-color:#cfccc2}81.524%{background-color:#e58a4e}83.476%{background-color:#e58a4e}83.857%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d5{animation:ks-d5 42s ease-in-out infinite both}
+@keyframes ks-d6{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}27.571%{background-color:#cfccc2}27.952%{background-color:#e58a4e}30%{background-color:#e58a4e}30.381%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.524%{background-color:#cfccc2}75.905%{background-color:#e58a4e}77.524%{background-color:#e58a4e}77.905%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d6{animation:ks-d6 42s ease-in-out infinite both}
+@keyframes ks-d7{0%{background-color:#e58a4e}1.81%{background-color:#e58a4e}2.19%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}25.095%{background-color:#cfccc2}25.476%{background-color:#e58a4e}31.19%{background-color:#e58a4e}31.571%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}74.857%{background-color:#cfccc2}75.238%{background-color:#e58a4e}78.333%{background-color:#e58a4e}78.714%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d7{animation:ks-d7 42s ease-in-out infinite both}
+@keyframes ks-d8{0%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}24.19%{background-color:#cfccc2}24.571%{background-color:#e58a4e}25.857%{background-color:#e58a4e}26.238%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.857%{background-color:#cfccc2}76.238%{background-color:#e58a4e}76.952%{background-color:#e58a4e}77.333%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d8{animation:ks-d8 42s ease-in-out infinite both}
+@keyframes ks-d9{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}19.571%{background-color:#cfccc2}19.952%{background-color:#e58a4e}21.095%{background-color:#e58a4e}21.476%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d9{animation:ks-d9 42s ease-in-out infinite both}
+@keyframes ks-d10{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}27.095%{background-color:#cfccc2}27.476%{background-color:#e58a4e}28.048%{background-color:#e58a4e}28.429%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}71%{background-color:#cfccc2}71.381%{background-color:#e58a4e}76.429%{background-color:#e58a4e}76.81%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d10{animation:ks-d10 42s ease-in-out infinite both}
+@keyframes ks-d11{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}25.619%{background-color:#cfccc2}26%{background-color:#e58a4e}27.095%{background-color:#e58a4e}27.476%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}74.048%{background-color:#cfccc2}74.429%{background-color:#e58a4e}75.143%{background-color:#e58a4e}75.524%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d11{animation:ks-d11 42s ease-in-out infinite both}
+@keyframes ks-d12{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}23.238%{background-color:#cfccc2}23.619%{background-color:#e58a4e}24.667%{background-color:#e58a4e}25.048%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d12{animation:ks-d12 42s ease-in-out infinite both}
+@keyframes ks-d13{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.619%{background-color:#cfccc2}27%{background-color:#e58a4e}27.857%{background-color:#e58a4e}28.238%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}79.238%{background-color:#cfccc2}79.619%{background-color:#e58a4e}80.286%{background-color:#e58a4e}80.667%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d13{animation:ks-d13 42s ease-in-out infinite both}
+@keyframes ks-d14{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.762%{background-color:#cfccc2}27.143%{background-color:#e58a4e}28.238%{background-color:#e58a4e}28.619%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}78.714%{background-color:#cfccc2}79.095%{background-color:#e58a4e}80.429%{background-color:#e58a4e}80.81%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d14{animation:ks-d14 42s ease-in-out infinite both}
+@keyframes ks-d15{0%{background-color:#cfccc2}9.619%{background-color:#cfccc2}10%{background-color:#e58a4e}10.286%{background-color:#e58a4e}10.667%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}23.714%{background-color:#cfccc2}24.095%{background-color:#e58a4e}25.429%{background-color:#e58a4e}25.81%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d15{animation:ks-d15 42s ease-in-out infinite both}
+@keyframes ks-d16{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}24.857%{background-color:#cfccc2}25.238%{background-color:#e58a4e}26.762%{background-color:#e58a4e}27.143%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}80.286%{background-color:#cfccc2}80.619%{background-color:#e58a4e}80.667%{background-color:#e58a4e}81%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d16{animation:ks-d16 42s ease-in-out infinite both}
+@keyframes ks-d17{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}28.762%{background-color:#cfccc2}29.143%{background-color:#e58a4e}30.619%{background-color:#e58a4e}31%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d17{animation:ks-d17 42s ease-in-out infinite both}
+@keyframes ks-d18{0%{background-color:#cfccc2}8.905%{background-color:#cfccc2}9.286%{background-color:#e58a4e}9.619%{background-color:#e58a4e}10%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}30.381%{background-color:#cfccc2}30.762%{background-color:#e58a4e}32.333%{background-color:#e58a4e}32.714%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.619%{background-color:#cfccc2}76%{background-color:#e58a4e}77.762%{background-color:#e58a4e}78.143%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d18{animation:ks-d18 42s ease-in-out infinite both}
+@keyframes ks-d19{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}27.762%{background-color:#cfccc2}28.143%{background-color:#e58a4e}29.762%{background-color:#e58a4e}30.143%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d19{animation:ks-d19 42s ease-in-out infinite both}
+@keyframes ks-d20{0%{background-color:#cfccc2}5.19%{background-color:#cfccc2}5.571%{background-color:#e58a4e}6.952%{background-color:#e58a4e}7.333%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}24.619%{background-color:#cfccc2}25%{background-color:#e58a4e}25.429%{background-color:#e58a4e}25.81%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d20{animation:ks-d20 42s ease-in-out infinite both}
+@keyframes ks-d21{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}20.857%{background-color:#cfccc2}21.238%{background-color:#e58a4e}21.333%{background-color:#e58a4e}21.714%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d21{animation:ks-d21 42s ease-in-out infinite both}
+@keyframes ks-d22{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.333%{background-color:#cfccc2}26.714%{background-color:#e58a4e}29.238%{background-color:#e58a4e}29.619%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}76.762%{background-color:#cfccc2}77.143%{background-color:#e58a4e}78.81%{background-color:#e58a4e}79.19%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d22{animation:ks-d22 42s ease-in-out infinite both}
+@keyframes ks-d23{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}23.762%{background-color:#cfccc2}24.143%{background-color:#e58a4e}24.714%{background-color:#e58a4e}25.095%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.714%{background-color:#cfccc2}76.095%{background-color:#e58a4e}79.238%{background-color:#e58a4e}79.619%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d23{animation:ks-d23 42s ease-in-out infinite both}
+@keyframes ks-d24{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}21.333%{background-color:#cfccc2}21.714%{background-color:#e58a4e}25.619%{background-color:#e58a4e}26%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.095%{background-color:#cfccc2}75.476%{background-color:#e58a4e}76.762%{background-color:#e58a4e}77.143%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d24{animation:ks-d24 42s ease-in-out infinite both}
+@keyframes ks-d25{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}20.81%{background-color:#cfccc2}21.19%{background-color:#e58a4e}24.238%{background-color:#e58a4e}24.619%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d25{animation:ks-d25 42s ease-in-out infinite both}
+@keyframes ks-d26{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}25.429%{background-color:#cfccc2}25.81%{background-color:#e58a4e}28.048%{background-color:#e58a4e}28.429%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}76.19%{background-color:#cfccc2}76.571%{background-color:#e58a4e}78.381%{background-color:#e58a4e}78.762%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d26{animation:ks-d26 42s ease-in-out infinite both}
+@keyframes ks-d27{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}20.429%{background-color:#cfccc2}20.81%{background-color:#e58a4e}21.238%{background-color:#e58a4e}21.619%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.143%{background-color:#cfccc2}75.524%{background-color:#e58a4e}75.571%{background-color:#e58a4e}75.952%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d27{animation:ks-d27 42s ease-in-out infinite both}
+@keyframes ks-d28{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.143%{background-color:#cfccc2}26.524%{background-color:#e58a4e}29.619%{background-color:#e58a4e}30%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}75.524%{background-color:#cfccc2}75.905%{background-color:#e58a4e}78.381%{background-color:#e58a4e}78.762%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d28{animation:ks-d28 42s ease-in-out infinite both}
+@keyframes ks-d29{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}19.952%{background-color:#cfccc2}20.333%{background-color:#e58a4e}25.286%{background-color:#e58a4e}25.667%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}80.571%{background-color:#cfccc2}80.952%{background-color:#e58a4e}81.143%{background-color:#e58a4e}81.524%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d29{animation:ks-d29 42s ease-in-out infinite both}
+@keyframes ks-d30{0%{background-color:#cfccc2}1.81%{background-color:#cfccc2}2.19%{background-color:#e58a4e}2.286%{background-color:#e58a4e}2.667%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}23.619%{background-color:#cfccc2}24%{background-color:#e58a4e}27.286%{background-color:#e58a4e}27.667%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}76.952%{background-color:#cfccc2}77.333%{background-color:#e58a4e}77.524%{background-color:#e58a4e}77.905%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d30{animation:ks-d30 42s ease-in-out infinite both}
+@keyframes ks-d31{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}28.381%{background-color:#cfccc2}28.762%{background-color:#e58a4e}30.238%{background-color:#e58a4e}30.619%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d31{animation:ks-d31 42s ease-in-out infinite both}
+@keyframes ks-d32{0%{background-color:#cfccc2}2.286%{background-color:#cfccc2}2.667%{background-color:#e58a4e}5.19%{background-color:#e58a4e}5.571%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}23.571%{background-color:#cfccc2}23.952%{background-color:#e58a4e}25.857%{background-color:#e58a4e}26.238%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}73.571%{background-color:#cfccc2}73.952%{background-color:#e58a4e}75.857%{background-color:#e58a4e}76.238%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d32{animation:ks-d32 42s ease-in-out infinite both}
+@keyframes ks-d33{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}20.667%{background-color:#cfccc2}21.048%{background-color:#e58a4e}22%{background-color:#e58a4e}22.381%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}74.381%{background-color:#cfccc2}74.762%{background-color:#e58a4e}75%{background-color:#e58a4e}75.381%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d33{animation:ks-d33 42s ease-in-out infinite both}
+@keyframes ks-d34{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}69.286%{background-color:#cfccc2}69.667%{background-color:#cfccc2}75.524%{background-color:#cfccc2}75.905%{background-color:#e58a4e}78.714%{background-color:#e58a4e}79.095%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d34{animation:ks-d34 42s ease-in-out infinite both}
+@keyframes ks-d35{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}19.048%{background-color:#cfccc2}19.429%{background-color:#e58a4e}20.429%{background-color:#e58a4e}20.81%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d35{animation:ks-d35 42s ease-in-out infinite both}
+@keyframes ks-d36{0%{background-color:#cfccc2}6.952%{background-color:#cfccc2}7.333%{background-color:#e58a4e}8.905%{background-color:#e58a4e}9.286%{background-color:#7d93bd}18.095%{background-color:#7d93bd}18.476%{background-color:#cfccc2}19.286%{background-color:#cfccc2}19.667%{background-color:#e58a4e}23.571%{background-color:#e58a4e}23.952%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}72.667%{background-color:#cfccc2}73.048%{background-color:#e58a4e}75.524%{background-color:#e58a4e}75.905%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d36{animation:ks-d36 42s ease-in-out infinite both}
+@keyframes ks-d37{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}29.381%{background-color:#cfccc2}29.762%{background-color:#e58a4e}33.619%{background-color:#e58a4e}34%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d37{animation:ks-d37 42s ease-in-out infinite both}
+@keyframes ks-d38{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}26.381%{background-color:#cfccc2}26.762%{background-color:#e58a4e}30.381%{background-color:#e58a4e}30.762%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d38{animation:ks-d38 42s ease-in-out infinite both}
+@keyframes ks-d39{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}19.286%{background-color:#cfccc2}19.667%{background-color:#e58a4e}20.857%{background-color:#e58a4e}21.238%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}100%{background-color:#cfccc2}}
+html.js .ks-d39{animation:ks-d39 42s ease-in-out infinite both}
+@keyframes ks-d40{0%{background-color:#cfccc2}18.095%{background-color:#cfccc2}18.476%{background-color:#cfccc2}25.286%{background-color:#cfccc2}25.667%{background-color:#e58a4e}29.857%{background-color:#e58a4e}30.238%{background-color:#7d93bd}69.286%{background-color:#7d93bd}69.667%{background-color:#cfccc2}71.762%{background-color:#cfccc2}72.143%{background-color:#e58a4e}73.619%{background-color:#e58a4e}74%{background-color:#7d93bd}100%{background-color:#7d93bd}}
+html.js .ks-d40{animation:ks-d40 42s ease-in-out infinite both}
+@keyframes ks-h1{0%{opacity:0}18.095%{opacity:0}18.286%{opacity:1}19.048%{opacity:1}19.238%{opacity:0}69.286%{opacity:0}69.476%{opacity:1}71%{opacity:1}71.19%{opacity:0}100%{opacity:0}}
+html.js .ks-h1{animation:ks-h1 42s ease-in-out infinite both}
+@keyframes ks-h2{0%{opacity:0}71%{opacity:0}71.19%{opacity:1}71.762%{opacity:1}71.952%{opacity:0}100%{opacity:0}}
+html.js .ks-h2{animation:ks-h2 42s ease-in-out infinite both}
+@keyframes ks-h3{0%{opacity:1}1.81%{opacity:1}2%{opacity:0}71.762%{opacity:0}71.952%{opacity:1}72.667%{opacity:1}72.857%{opacity:0}100%{opacity:0}}
+html.js .ks-h3{animation:ks-h3 42s ease-in-out infinite both}
+@keyframes ks-h4{0%{opacity:0}19.048%{opacity:0}19.238%{opacity:1}19.571%{opacity:1}19.762%{opacity:0}72.667%{opacity:0}72.857%{opacity:1}73.571%{opacity:1}73.762%{opacity:0}100%{opacity:0}}
+html.js .ks-h4{animation:ks-h4 42s ease-in-out infinite both}
+@keyframes ks-h5{0%{opacity:0}1.81%{opacity:0}2%{opacity:1}2.286%{opacity:1}2.476%{opacity:0}19.571%{opacity:0}19.762%{opacity:1}19.952%{opacity:1}20.143%{opacity:0}100%{opacity:0}}
+html.js .ks-h5{animation:ks-h5 42s ease-in-out infinite both}
+@keyframes ks-h6{0%{opacity:0}2.286%{opacity:0}2.476%{opacity:1}5.19%{opacity:1}5.381%{opacity:0}19.952%{opacity:0}20.143%{opacity:1}20.429%{opacity:1}20.619%{opacity:0}73.571%{opacity:0}73.762%{opacity:1}74.048%{opacity:1}74.238%{opacity:0}100%{opacity:0}}
+html.js .ks-h6{animation:ks-h6 42s ease-in-out infinite both}
+@keyframes ks-h7{0%{opacity:0}5.19%{opacity:0}5.381%{opacity:1}6.952%{opacity:1}7.143%{opacity:0}100%{opacity:0}}
+html.js .ks-h7{animation:ks-h7 42s ease-in-out infinite both}
+@keyframes ks-h8{0%{opacity:0}6.952%{opacity:0}7.143%{opacity:1}8.905%{opacity:1}9.095%{opacity:0}74.048%{opacity:0}74.238%{opacity:1}74.857%{opacity:1}75.048%{opacity:0}100%{opacity:0}}
+html.js .ks-h8{animation:ks-h8 42s ease-in-out infinite both}
+@keyframes ks-h9{0%{opacity:0}8.905%{opacity:0}9.095%{opacity:1}9.619%{opacity:1}9.81%{opacity:0}20.429%{opacity:0}20.619%{opacity:1}20.81%{opacity:1}21%{opacity:0}100%{opacity:0}}
+html.js .ks-h9{animation:ks-h9 42s ease-in-out infinite both}
+@keyframes ks-h10{0%{opacity:0}9.619%{opacity:0}9.81%{opacity:1}18.095%{opacity:1}18.286%{opacity:0}100%{opacity:0}}
+html.js .ks-h10{animation:ks-h10 42s ease-in-out infinite both}
+@keyframes ks-h11{0%{opacity:0}20.81%{opacity:0}21%{opacity:1}21.333%{opacity:1}21.524%{opacity:0}74.857%{opacity:0}75.048%{opacity:1}75.524%{opacity:1}75.714%{opacity:0}100%{opacity:0}}
+html.js .ks-h11{animation:ks-h11 42s ease-in-out infinite both}
+@keyframes ks-h12{0%{opacity:0}21.333%{opacity:0}21.524%{opacity:1}23.238%{opacity:1}23.429%{opacity:0}100%{opacity:0}}
+html.js .ks-h12{animation:ks-h12 42s ease-in-out infinite both}
+@keyframes ks-h14{0%{opacity:0}23.238%{opacity:0}23.429%{opacity:1}23.619%{opacity:1}23.81%{opacity:0}100%{opacity:0}}
+html.js .ks-h14{animation:ks-h14 42s ease-in-out infinite both}
+@keyframes ks-h17{0%{opacity:0}23.619%{opacity:0}23.81%{opacity:1}24.19%{opacity:1}24.381%{opacity:0}75.524%{opacity:0}75.714%{opacity:1}76.19%{opacity:1}76.381%{opacity:0}100%{opacity:0}}
+html.js .ks-h17{animation:ks-h17 42s ease-in-out infinite both}
+@keyframes ks-h18{0%{opacity:0}24.19%{opacity:0}24.381%{opacity:1}24.619%{opacity:1}24.81%{opacity:0}76.19%{opacity:0}76.381%{opacity:1}76.762%{opacity:1}76.952%{opacity:0}100%{opacity:0}}
+html.js .ks-h18{animation:ks-h18 42s ease-in-out infinite both}
+@keyframes ks-h20{0%{opacity:0}24.619%{opacity:0}24.81%{opacity:1}25.095%{opacity:1}25.286%{opacity:0}76.762%{opacity:0}76.952%{opacity:1}78.714%{opacity:1}78.905%{opacity:0}100%{opacity:0}}
+html.js .ks-h20{animation:ks-h20 42s ease-in-out infinite both}
+@keyframes ks-h21{0%{opacity:0}78.714%{opacity:0}78.905%{opacity:1}79.238%{opacity:1}79.429%{opacity:0}100%{opacity:0}}
+html.js .ks-h21{animation:ks-h21 42s ease-in-out infinite both}
+@keyframes ks-h22{0%{opacity:0}79.238%{opacity:0}79.429%{opacity:1}80.286%{opacity:1}80.476%{opacity:0}100%{opacity:0}}
+html.js .ks-h22{animation:ks-h22 42s ease-in-out infinite both}
+@keyframes ks-h24{0%{opacity:0}25.095%{opacity:0}25.286%{opacity:1}25.619%{opacity:1}25.81%{opacity:0}80.286%{opacity:0}80.476%{opacity:1}81.143%{opacity:1}81.333%{opacity:0}100%{opacity:0}}
+html.js .ks-h24{animation:ks-h24 42s ease-in-out infinite both}
+@keyframes ks-h25{0%{opacity:0}81.143%{opacity:0}81.333%{opacity:1}100%{opacity:1}}
+html.js .ks-h25{animation:ks-h25 42s ease-in-out infinite both}
+@keyframes ks-h26{0%{opacity:0}25.619%{opacity:0}25.81%{opacity:1}26.143%{opacity:1}26.333%{opacity:0}100%{opacity:0}}
+html.js .ks-h26{animation:ks-h26 42s ease-in-out infinite both}
+@keyframes ks-h30{0%{opacity:0}26.143%{opacity:0}26.333%{opacity:1}26.619%{opacity:1}26.81%{opacity:0}100%{opacity:0}}
+html.js .ks-h30{animation:ks-h30 42s ease-in-out infinite both}
+@keyframes ks-h32{0%{opacity:0}26.619%{opacity:0}26.81%{opacity:1}27.095%{opacity:1}27.286%{opacity:0}100%{opacity:0}}
+html.js .ks-h32{animation:ks-h32 42s ease-in-out infinite both}
+@keyframes ks-h33{0%{opacity:0}27.095%{opacity:0}27.286%{opacity:1}27.571%{opacity:1}27.762%{opacity:0}100%{opacity:0}}
+html.js .ks-h33{animation:ks-h33 42s ease-in-out infinite both}
+@keyframes ks-h35{0%{opacity:0}27.571%{opacity:0}27.762%{opacity:1}28.381%{opacity:1}28.571%{opacity:0}100%{opacity:0}}
+html.js .ks-h35{animation:ks-h35 42s ease-in-out infinite both}
+@keyframes ks-h36{0%{opacity:0}28.381%{opacity:0}28.571%{opacity:1}28.762%{opacity:1}28.952%{opacity:0}100%{opacity:0}}
+html.js .ks-h36{animation:ks-h36 42s ease-in-out infinite both}
+@keyframes ks-h37{0%{opacity:0}28.762%{opacity:0}28.952%{opacity:1}29.381%{opacity:1}29.571%{opacity:0}100%{opacity:0}}
+html.js .ks-h37{animation:ks-h37 42s ease-in-out infinite both}
+@keyframes ks-h38{0%{opacity:0}29.381%{opacity:0}29.571%{opacity:1}30.381%{opacity:1}30.571%{opacity:0}100%{opacity:0}}
+html.js .ks-h38{animation:ks-h38 42s ease-in-out infinite both}
+@keyframes ks-h39{0%{opacity:0}30.381%{opacity:0}30.571%{opacity:1}69.286%{opacity:1}69.476%{opacity:0}100%{opacity:0}}
+html.js .ks-h39{animation:ks-h39 42s ease-in-out infinite both}
+@keyframes ks-hb{0%{transform:scaleX(0.075)}1.81%{transform:scaleX(0.075)}2.238%{transform:scaleX(0.125)}2.286%{transform:scaleX(0.125)}2.714%{transform:scaleX(0.150)}5.19%{transform:scaleX(0.150)}5.619%{transform:scaleX(0.175)}6.952%{transform:scaleX(0.175)}7.381%{transform:scaleX(0.200)}8.905%{transform:scaleX(0.200)}9.333%{transform:scaleX(0.225)}9.619%{transform:scaleX(0.225)}10.048%{transform:scaleX(0.250)}18.095%{transform:scaleX(0.250)}18.524%{transform:scaleX(0.025)}19.048%{transform:scaleX(0.025)}19.476%{transform:scaleX(0.100)}19.571%{transform:scaleX(0.100)}19.952%{transform:scaleX(0.125)}20%{transform:scaleX(0.125)}20.381%{transform:scaleX(0.150)}20.429%{transform:scaleX(0.150)}20.81%{transform:scaleX(0.225)}20.857%{transform:scaleX(0.225)}21.238%{transform:scaleX(0.275)}21.333%{transform:scaleX(0.275)}21.762%{transform:scaleX(0.300)}23.238%{transform:scaleX(0.300)}23.619%{transform:scaleX(0.350)}23.667%{transform:scaleX(0.350)}24.048%{transform:scaleX(0.425)}24.19%{transform:scaleX(0.425)}24.619%{transform:scaleX(0.450);transform:scaleX(0.450)}25.048%{transform:scaleX(0.500)}25.095%{transform:scaleX(0.500)}25.524%{transform:scaleX(0.600)}25.619%{transform:scaleX(0.600)}26.048%{transform:scaleX(0.650)}26.143%{transform:scaleX(0.650)}26.571%{transform:scaleX(0.750)}26.619%{transform:scaleX(0.750)}27.048%{transform:scaleX(0.800)}27.095%{transform:scaleX(0.800)}27.524%{transform:scaleX(0.825)}27.571%{transform:scaleX(0.825)}28%{transform:scaleX(0.875)}28.381%{transform:scaleX(0.875)}28.762%{transform:scaleX(0.900)}28.81%{transform:scaleX(0.900)}29.19%{transform:scaleX(0.925)}29.381%{transform:scaleX(0.925)}29.81%{transform:scaleX(0.950)}30.381%{transform:scaleX(0.950)}30.81%{transform:scaleX(0.975)}69.286%{transform:scaleX(0.975)}69.714%{transform:scaleX(0.025)}71%{transform:scaleX(0.025)}71.429%{transform:scaleX(0.050)}71.762%{transform:scaleX(0.050)}72.19%{transform:scaleX(0.075)}72.667%{transform:scaleX(0.075)}73.095%{transform:scaleX(0.100)}73.571%{transform:scaleX(0.100)}74%{transform:scaleX(0.150)}74.048%{transform:scaleX(0.150)}74.476%{transform:scaleX(0.200)}74.857%{transform:scaleX(0.200)}75.286%{transform:scaleX(0.275)}75.524%{transform:scaleX(0.275)}75.952%{transform:scaleX(0.425)}76.19%{transform:scaleX(0.425)}76.619%{transform:scaleX(0.450)}76.762%{transform:scaleX(0.450)}77.19%{transform:scaleX(0.500)}78.714%{transform:scaleX(0.500)}79.143%{transform:scaleX(0.525)}79.238%{transform:scaleX(0.525)}79.667%{transform:scaleX(0.550)}80.286%{transform:scaleX(0.550)}80.714%{transform:scaleX(0.600)}81.143%{transform:scaleX(0.600)}81.571%{transform:scaleX(0.625)}100%{transform:scaleX(0.625)}}
+html.js .ks-hb{animation:ks-hb 42s ease-in-out infinite both}
+@keyframes ks-r1{0%{opacity:0}11%{opacity:0}11.595%{opacity:1}15.238%{opacity:1}15.833%{opacity:0}100%{opacity:0}}
+html.js .ks-r1{animation:ks-r1 42s ease-in-out infinite both}
+@keyframes ks-r2{0%{opacity:0}34.333%{opacity:0}34.929%{opacity:1}45%{opacity:1}45.595%{opacity:0}100%{opacity:0}}
+html.js .ks-r2{animation:ks-r2 42s ease-in-out infinite both}
+@keyframes ks-r3{0%{opacity:0}84.19%{opacity:0}84.786%{opacity:1}100%{opacity:1}}
+html.js .ks-r3{animation:ks-r3 42s ease-in-out infinite both}
+@keyframes ks-sf{0%{transform:scaleX(.333)}15.238%{transform:scaleX(.333)}17.619%{transform:scaleX(1)}65.714%{transform:scaleX(1)}68.095%{transform:scaleX(.667)}100%{transform:scaleX(.667)}}
+html.js .ks-sf{animation:ks-sf 42s ease-in-out infinite both}
+@keyframes ks-sr{0%{transform:translateX(33.3%)}15.238%{transform:translateX(33.3%)}17.619%{transform:translateX(100%)}65.714%{transform:translateX(100%)}68.095%{transform:translateX(66.7%)}100%{transform:translateX(66.7%)}}
+html.js .ks-sr{animation:ks-sr 42s ease-in-out infinite both}
+@keyframes ks-sh{0%{box-shadow:0 0 0 0 rgba(90,90,214,0)}14.762%{box-shadow:0 0 0 0 rgba(90,90,214,0)}15.238%{box-shadow:0 0 0 6px rgba(229,138,78,0.28)}17.857%{box-shadow:0 0 0 6px rgba(229,138,78,0.28)}18.333%{box-shadow:0 0 0 0 rgba(90,90,214,0)}65.238%{box-shadow:0 0 0 0 rgba(90,90,214,0)}65.714%{box-shadow:0 0 0 6px rgba(229,138,78,0.28)}68.333%{box-shadow:0 0 0 6px rgba(229,138,78,0.28)}68.81%{box-shadow:0 0 0 0 rgba(90,90,214,0)}100%{box-shadow:0 0 0 0 rgba(90,90,214,0)}}
+html.js .ks-sh{animation:ks-sh 42s ease-in-out infinite both}
+@keyframes ks-s1{0%{opacity:1}16.19%{opacity:1}16.429%{opacity:0}100%{opacity:0}}
+html.js .ks-s1{animation:ks-s1 42s ease-in-out infinite both}
+@keyframes ks-s2{0%{opacity:0}16.19%{opacity:0}16.429%{opacity:1}17.024%{opacity:1}17.262%{opacity:0}100%{opacity:0}}
+html.js .ks-s2{animation:ks-s2 42s ease-in-out infinite both}
+@keyframes ks-s3{0%{opacity:0}17.024%{opacity:0}17.262%{opacity:1}66.905%{opacity:1}67.143%{opacity:0}100%{opacity:0}}
+html.js .ks-s3{animation:ks-s3 42s ease-in-out infinite both}
+@keyframes ks-s4{0%{opacity:0}66.905%{opacity:0}67.143%{opacity:1}100%{opacity:1}}
+html.js .ks-s4{animation:ks-s4 42s ease-in-out infinite both}
+@keyframes ks-y1{0%{opacity:0}34.762%{opacity:0}35.714%{opacity:1}100%{opacity:1}}
+html.js .ks-y1{animation:ks-y1 42s ease-in-out infinite both}
+@keyframes ks-t1{0%{opacity:0}36.19%{opacity:0}36.786%{opacity:1}38.095%{opacity:1}38.69%{opacity:0}100%{opacity:0}}
+html.js .ks-t1{animation:ks-t1 42s ease-in-out infinite both}
+@keyframes ks-w1{0%{opacity:0}38.095%{opacity:0}38.69%{opacity:1}44.762%{opacity:1}45.357%{opacity:0}100%{opacity:0}}
+html.js .ks-w1{animation:ks-w1 42s ease-in-out infinite both}
+@keyframes ks-g1{0%{opacity:0}44.762%{opacity:0}45.714%{opacity:1}100%{opacity:1}}
+html.js .ks-g1{animation:ks-g1 42s ease-in-out infinite both}
+@keyframes ks-g2{0%{opacity:0}53.81%{opacity:0}54.762%{opacity:1}100%{opacity:1}}
+html.js .ks-g2{animation:ks-g2 42s ease-in-out infinite both}
+@keyframes ks-y2{0%{opacity:0}61.429%{opacity:0}62.381%{opacity:1}100%{opacity:1}}
+html.js .ks-y2{animation:ks-y2 42s ease-in-out infinite both}
+@keyframes ks-g3{0%{opacity:0}84.667%{opacity:0}85.619%{opacity:1}100%{opacity:1}}
+html.js .ks-g3{animation:ks-g3 42s ease-in-out infinite both}
+@keyframes ks-tp{0%{color:var(--ink);border-color:var(--ink)}38.095%{color:var(--ink);border-color:var(--ink)}38.571%{color:var(--faint);border-color:transparent}45%{color:var(--faint);border-color:transparent}45.476%{color:var(--ink);border-color:var(--ink)}100%{color:var(--ink);border-color:var(--ink)}}
+html.js .ks-tp{animation:ks-tp 42s ease-in-out infinite both}
+@keyframes ks-tc{0%{color:var(--faint);border-color:transparent}38.095%{color:var(--faint);border-color:transparent}38.571%{color:var(--ink);border-color:var(--ink)}45%{color:var(--ink);border-color:var(--ink)}45.476%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
+html.js .ks-tc{animation:ks-tc 42s ease-in-out infinite both}
+@keyframes ks-cv{0%{opacity:0}38.095%{opacity:0}38.81%{opacity:1}45%{opacity:1}45.714%{opacity:0}100%{opacity:0}}
+html.js .ks-cv{animation:ks-cv 42s ease-in-out infinite both}
+@keyframes ks-lv{0%{opacity:0}38.095%{opacity:0}38.69%{opacity:1}44.762%{opacity:1}45.357%{opacity:0}100%{opacity:0}}
+html.js .ks-lv{animation:ks-lv 42s ease-in-out infinite both}
+@keyframes ks-l1{0%{opacity:0}38.571%{opacity:0}39%{opacity:1}100%{opacity:1}}
+html.js .ks-l1{animation:ks-l1 42s ease-in-out infinite both}
+@keyframes ks-l2{0%{opacity:0}39.095%{opacity:0}39.524%{opacity:1}100%{opacity:1}}
+html.js .ks-l2{animation:ks-l2 42s ease-in-out infinite both}
+@keyframes ks-l3{0%{opacity:0}39.619%{opacity:0}40.048%{opacity:1}100%{opacity:1}}
+html.js .ks-l3{animation:ks-l3 42s ease-in-out infinite both}
+@keyframes ks-l4{0%{opacity:0}40.143%{opacity:0}40.571%{opacity:1}100%{opacity:1}}
+html.js .ks-l4{animation:ks-l4 42s ease-in-out infinite both}
+@keyframes ks-l5{0%{opacity:0}40.667%{opacity:0}41.095%{opacity:1}100%{opacity:1}}
+html.js .ks-l5{animation:ks-l5 42s ease-in-out infinite both}
+@keyframes ks-l6{0%{opacity:0}41.19%{opacity:0}41.619%{opacity:1}100%{opacity:1}}
+html.js .ks-l6{animation:ks-l6 42s ease-in-out infinite both}
+@keyframes ks-l7{0%{opacity:0}41.714%{opacity:0}42.143%{opacity:1}100%{opacity:1}}
+html.js .ks-l7{animation:ks-l7 42s ease-in-out infinite both}
+@keyframes ks-l8{0%{opacity:0}42.238%{opacity:0}42.667%{opacity:1}100%{opacity:1}}
+html.js .ks-l8{animation:ks-l8 42s ease-in-out infinite both}
+@keyframes ks-l9{0%{opacity:0}42.762%{opacity:0}43.19%{opacity:1}100%{opacity:1}}
+html.js .ks-l9{animation:ks-l9 42s ease-in-out infinite both}
+@keyframes ks-l10{0%{opacity:0}43.286%{opacity:0}43.714%{opacity:1}100%{opacity:1}}
+html.js .ks-l10{animation:ks-l10 42s ease-in-out infinite both}
+@keyframes ks-l11{0%{opacity:0}43.81%{opacity:0}44.238%{opacity:1}100%{opacity:1}}
+html.js .ks-l11{animation:ks-l11 42s ease-in-out infinite both}
+@keyframes ks-c3{0%{opacity:1}44.762%{opacity:1}45.238%{opacity:0}100%{opacity:0}}
+html.js .ks-c3{animation:ks-c3 42s ease-in-out infinite both}
+@keyframes ks-c4{0%{opacity:0}44.762%{opacity:0}45.238%{opacity:1}100%{opacity:1}}
+html.js .ks-c4{animation:ks-c4 42s ease-in-out infinite both}
+@keyframes ks-n1{0%{background-color:#2a2b33;color:#ffffff;opacity:1}45%{background-color:#2a2b33;color:#ffffff;opacity:1}45.476%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:1}63.81%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:1}64.286%{background-color:#2a2b33;color:#ffffff;opacity:1}100%{background-color:#2a2b33;color:#ffffff;opacity:1}}
+html.js .ks-n1{animation:ks-n1 42s ease-in-out infinite both}
+@keyframes ks-n2{0%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:0}44.762%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:0}45.238%{background-color:#2a2b33;color:#ffffff;opacity:1}63.81%{background-color:#2a2b33;color:#ffffff;opacity:1}64.286%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:1}100%{background-color:rgba(42,43,51,0);color:#6c6c76;opacity:1}}
+html.js .ks-n2{animation:ks-n2 42s ease-in-out infinite both}
+@keyframes ks-cp{0%{opacity:0}45%{opacity:0}45.833%{opacity:1}63.81%{opacity:1}64.643%{opacity:0}100%{opacity:0}}
+html.js .ks-cp{animation:ks-cp 42s ease-in-out infinite both}
+@keyframes ks-b1{0%{transform:scaleY(0)}45.952%{transform:scaleY(0)}47.143%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .ks-b1{animation:ks-b1 42s ease-in-out infinite both}
+@keyframes ks-v1{0%{opacity:0}46.905%{opacity:0}47.5%{opacity:1}100%{opacity:1}}
+html.js .ks-v1{animation:ks-v1 42s ease-in-out infinite both}
+@keyframes ks-b2{0%{transform:scaleY(0)}46.667%{transform:scaleY(0)}47.857%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .ks-b2{animation:ks-b2 42s ease-in-out infinite both}
+@keyframes ks-v2{0%{opacity:0}47.619%{opacity:0}48.214%{opacity:1}100%{opacity:1}}
+html.js .ks-v2{animation:ks-v2 42s ease-in-out infinite both}
+@keyframes ks-b3{0%{transform:scaleY(0)}47.381%{transform:scaleY(0)}48.571%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .ks-b3{animation:ks-b3 42s ease-in-out infinite both}
+@keyframes ks-v3{0%{opacity:0}48.333%{opacity:0}48.929%{opacity:1}100%{opacity:1}}
+html.js .ks-v3{animation:ks-v3 42s ease-in-out infinite both}
+@keyframes ks-b4{0%{transform:scaleY(0)}48.095%{transform:scaleY(0)}49.286%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .ks-b4{animation:ks-b4 42s ease-in-out infinite both}
+@keyframes ks-v4{0%{opacity:0}49.048%{opacity:0}49.643%{opacity:1}100%{opacity:1}}
+html.js .ks-v4{animation:ks-v4 42s ease-in-out infinite both}
+@keyframes ks-b5{0%{transform:scaleY(0)}48.81%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+html.js .ks-b5{animation:ks-b5 42s ease-in-out infinite both}
+@keyframes ks-v5{0%{opacity:0}49.762%{opacity:0}50.357%{opacity:1}100%{opacity:1}}
+html.js .ks-v5{animation:ks-v5 42s ease-in-out infinite both}
+@keyframes ks-av{0%{opacity:0;transform:translateY(10px)}53.81%{opacity:0;transform:translateY(10px)}54.762%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ks-av{animation:ks-av 42s ease-in-out infinite both}
+@keyframes fade-ks{0%{opacity:1}96.905%{opacity:1}99.405%{opacity:0}100%{opacity:0}}
+html.js .fade-ks{animation:fade-ks 42s linear infinite}
 @keyframes k3-tc{0%{color:var(--faint);border-color:transparent}0.718%{color:var(--ink);border-color:var(--ink)}12.44%{color:var(--ink);border-color:var(--ink)}13.158%{color:var(--faint);border-color:transparent}59.331%{color:var(--faint);border-color:transparent}60.047%{color:var(--ink);border-color:var(--ink)}66.507%{color:var(--ink);border-color:var(--ink)}67.225%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
 html.js .k3-tc{animation:k3-tc 41.8s ease-in-out infinite both}
 @keyframes k3-t3{0%{color:var(--faint);border-color:transparent}12.44%{color:var(--faint);border-color:transparent}13.158%{color:var(--ink);border-color:var(--ink)}59.331%{color:var(--ink);border-color:var(--ink)}60.047%{color:var(--faint);border-color:transparent}66.507%{color:var(--faint);border-color:transparent}67.225%{color:var(--ink);border-color:var(--ink)}100%{color:var(--ink);border-color:var(--ink)}}
