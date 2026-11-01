@@ -438,9 +438,9 @@
       </div>
       <div class="wrapw">
 
-        <div class="stage" data-reveal>
+        <div class="stage" data-reveal data-steps="0:Sheet loads|4.5:You stall|11:First try|18.6:Second try|29:A harder one|36:More room|40.2:In the workspace">
           <div class="tabsbar">
-            <span class="tab active">Board 1</span>
+            <span class="tab active pr-t1">Board 1</span>
             <span class="tab pr k pr-tpr">Practice</span>
             <span class="tab ws k pr-tws">Q1</span>
           </div>
@@ -453,34 +453,56 @@
                   <div class="tp-btn on">Draw</div>
                   <div class="tp-btn">Select</div>
                   <div class="tp-btn">Upload</div>
-                  <div class="tp-btn ask">Ask Gausyn</div>
+                  <div class="tp-btn ask pr-ask">Ask Gausyn</div>
                   <div class="tp-row"><span class="sw r"></span><span class="sw g"></span><span class="sw b"></span></div>
                 </div>
 
-                <div class="sheet">
-                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x + 5 = 13. Show every step.</p>
+                <div class="sheet pr-sheet">
+                  <p class="q"><span class="n">3.</span>Solve for x: &nbsp;2x <span class="pr-mark">+ 5</span> = 13. Show every step.</p>
+                  <div class="pr-state">
+                    <span class="tr pr-s0">Working the sheet out first&hellip;</span>
+                    <span class="k pr-s1">12 problems solved, reference ready &#10003;</span>
+                    <span class="tr pr-s2">Checking line 1 against the reference&hellip;</span>
+                    <span class="tr pr-s3">Line 1 does not match yet</span>
+                    <span class="tr pr-s4">Line 2 matches the reference &#10003;</span>
+                    <span class="tr pr-s5">x = 4 matches the reference &#10003;</span>
+                  </div>
 
-                  <svg class="ink" viewBox="0 0 260 150" width="260" height="150" style="left:clamp(140px,13vw,160px);top:clamp(76px,9vw,110px)" aria-hidden="true">
-                    <path class="pr-a1" pathLength="240" d="M14,26 C20,18 30,16 34,24 C37,31 26,40 16,48 C28,46 38,46 46,47"></path>
-                    <path class="pr-a2" pathLength="240" d="M60,24 C70,34 80,44 88,50 M88,24 C80,34 70,42 60,50"></path>
-                    <path class="pr-a3" pathLength="240" d="M104,32 C116,30 130,30 140,32 M104,44 C116,42 130,42 140,44"></path>
-                    <path class="pr-a4" pathLength="240" d="M170,26 C160,30 158,40 168,44 C158,48 158,60 170,62 C182,60 184,48 172,44 C184,40 182,30 170,26"></path>
-                    <path class="pr-b1" pathLength="240" d="M28,92 C40,104 52,116 62,126 M62,92 C52,104 40,114 28,126"></path>
-                    <path class="pr-b2" pathLength="240" d="M84,102 C96,100 110,100 120,102 M84,116 C96,114 110,114 120,116"></path>
-                    <path class="pr-b3" pathLength="240" d="M152,94 C142,106 136,116 132,126 C144,124 158,124 168,124 M158,100 C157,114 156,126 155,140"></path>
+                  <svg class="ink pr-hand pr-ink" viewBox="0 0 330 220" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <line class="pr-rule" x1="0" y1="66" x2="330" y2="66"></line><line class="pr-rule" x1="0" y1="138" x2="330" y2="138"></line><line class="pr-rule" x1="0" y1="210" x2="330" y2="210"></line>
+                    <g class="pr-l1"><path pathLength="34.3" style="stroke-dasharray:240 2000" d="M9.2,24.8C12.3,13.4,32.1,11.3,33.2,23.8C34.2,34.2,16.5,45.7,9.2,56.1C18.6,54,29,54,37.3,55"></path><path pathLength="34.3" style="stroke-dasharray:205.7 2000" d="M45,29.7C54.2,38.9,62.4,48.1,70.5,58.3"></path><path pathLength="34.3" style="stroke-dasharray:171.4 2000" d="M70.5,28.7C62.4,37.9,53.2,48.1,45,58.3"></path><path pathLength="34.3" style="stroke-dasharray:137.1 2000" d="M100.3,35.1C108.7,34,119.1,34,127.5,35.1"></path><path pathLength="34.3" style="stroke-dasharray:102.9 2000" d="M100.3,47.7C108.7,46.6,119.1,46.6,127.5,47.7"></path><path pathLength="34.3" style="stroke-dasharray:68.6 2000" d="M155.4,22.5C159.7,19.3,164,16,166.2,12.8C166.2,26.8,165.1,43.9,165.1,56.8"></path><path pathLength="34.3" style="stroke-dasharray:34.3 2000" d="M191.4,14.6C180.8,14.6,179.7,27.3,191.4,33.7C204.1,40,203,58.1,190.3,58.1C177.6,58.1,177.6,40,191.4,33.7C202,27.3,202,14.6,191.4,14.6"></path></g>
+                    <g class="pr-st"><path pathLength="240" style="stroke-dasharray:240 2000" d="M2,42 C63,34 143,50 211,36"></path></g>
+                    <g class="pr-l2"><path pathLength="40" style="stroke-dasharray:240 2000" d="M9.6,97.3C12.8,85.5,33.1,83.4,34.2,96.2C35.3,106.9,17.1,118.7,9.6,129.3C19.2,127.2,29.9,127.2,38.5,128.3"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M45.3,101.3C55,111,63.6,120.7,72.2,131.5"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M72.2,100.3C63.6,110,53.9,120.7,45.3,131.5"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M100,109C108.2,107.9,118.5,107.9,126.7,109"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M100,121.3C108.2,120.2,118.5,120.2,126.7,121.3"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M166.6,87.9C156.3,87.9,155.2,100.3,166.6,106.5C179,112.7,178,130.2,165.6,130.2C153.2,130.2,153.2,112.7,166.6,106.5C176.9,100.3,176.9,87.9,166.6,87.9"></path></g>
+                    <g class="pr-l3"><path pathLength="40" style="stroke-dasharray:240 2000" d="M8.6,171.7C18.1,181.3,26.6,190.8,35.1,201.4"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M35.1,170.7C26.6,180.2,17.1,190.8,8.6,201.4"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M63.6,179.1C71.8,178.1,82,178.1,90.2,179.1"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M63.6,191.3C71.8,190.3,82,190.3,90.2,191.3"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M136.3,159.7C130.1,171,124,181.2,118.8,187.4C128.1,186.4,140.4,186.4,147.6,186.4"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M140.4,168.9C139.4,179.2,139.4,190.5,138.3,202.8"></path></g>
                   </svg>
 
-                  <div class="hint k pr-h1" style="right:clamp(18px,2.4vw,30px);top:clamp(52px,6vw,72px)">What was done to x last, the &times;2 or the +5?</div>
-                  <div class="hint tex k pr-h2" style="right:clamp(18px,2.4vw,30px);top:clamp(112px,13vw,150px)">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
+                  <div class="hint k pr-h1">What was done to x last, the &times;2 or the +5?</div>
+                  <div class="hint k pr-h2">To undo a +5, what do you do to both sides?</div>
+                  <div class="hint tex k pr-h3">2x = 8 &nbsp;&#10003;&nbsp; one move left</div>
 
-                  <div class="crop tr pr-crop" style="left:clamp(130px,12vw,150px);top:clamp(66px,8vw,96px);width:min(300px,54%);height:clamp(90px,11vw,120px)">
-                    <span class="lbl">Ask Gausyn</span>
+                  <div class="pr-p1 k">
+                    <span class="tr pr-gen">Writing a fresh problem&hellip;</span>
+                    <div class="pq k pr-pq">
+                      <span class="lbl">Practice &middot; P1</span>
+                      A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
+                    </div>
+                    <svg class="ink pr-hand pr-cink" viewBox="0 0 145 60" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                      <g class="pr-l4"><path pathLength="60" style="stroke-dasharray:240 2000" d="M7,16.9C13.2,10.7,25.8,12.3,24.2,20.1C23.4,25.6,16.4,27.9,12.4,27.9C19.5,27.9,27.3,31,25.8,38.1C24.2,46.7,10.1,47.5,5.4,41.2"></path><path pathLength="60" style="stroke-dasharray:180 2000" d="M32.2,25.3C33,32.5,33,40.5,32.2,46.9C34.6,35.7,39.4,24.5,45.8,24.5C51.4,24.5,51.4,35.7,52.2,46.9"></path><path pathLength="60" style="stroke-dasharray:120 2000" d="M73.8,34.4C79.3,33.6,86.5,33.6,92.1,34.4"></path><path pathLength="60" style="stroke-dasharray:60 2000" d="M113.2,14.7C120.2,13.1,128.1,13.1,133.5,13.9C128.1,23.2,122.6,34.2,120.2,45.9"></path></g>
+                    </svg>
+                    <div class="crop tr pr-crop"><span class="lbl">Ask Gausyn</span></div>
                   </div>
+                </div>
 
-                  <div class="pq k pr-pq" style="top:clamp(200px,24vw,300px)">
-                    <span class="lbl">Practice &middot; P1</span>
+                <div class="tr pr-ws">
+                  <div class="pq">
+                    <span class="lbl">Q1 &middot; Pinned</span>
                     A number is tripled, then 7 is subtracted. The result is 26. Write the equation, then solve it.
                   </div>
+                  <svg class="ink pr-hand pr-wsink" viewBox="0 0 334 170" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+                    <g class="pr-l5"><path pathLength="30" style="stroke-dasharray:240 2000" d="M10.4,26C19,17.4,36.2,19.5,34.1,30.3C33,37.8,23.3,41.1,17.9,41.1C27.6,41.1,38.4,45.4,36.2,55.1C34.1,66.9,14.7,68,8.3,59.4"></path><path pathLength="30" style="stroke-dasharray:210 2000" d="M43.8,37.4C44.9,46.9,44.9,57.4,43.8,65.9C47,51.1,53.3,36.3,61.8,36.3C69.2,36.3,69.2,51.1,70.2,65.9"></path><path pathLength="30" style="stroke-dasharray:180 2000" d="M97.7,51.4C104.9,50.4,114.3,50.4,121.5,51.4"></path><path pathLength="30" style="stroke-dasharray:150 2000" d="M150.7,22.4C160.5,20.2,171.3,20.2,178.8,21.3C171.3,34.2,163.7,49.4,160.5,65.5"></path><path pathLength="30" style="stroke-dasharray:120 2000" d="M203.3,42.9C211.5,41.9,221.7,41.9,229.9,42.9"></path><path pathLength="30" style="stroke-dasharray:90 2000" d="M203.3,55.2C211.5,54.1,221.7,54.1,229.9,55.2"></path><path pathLength="30" style="stroke-dasharray:60 2000" d="M258,32.7C261.2,20.9,281.5,18.7,282.6,31.6C283.7,42.3,265.5,54.1,258,64.8C267.6,62.7,278.3,62.7,286.9,63.7"></path><path pathLength="30" style="stroke-dasharray:30 2000" d="M316,23C303.4,28.3,295,43,296,54.5C297.1,68.2,318.1,68.2,318.1,53.5C318.1,43,301.3,41.9,296,52.4"></path></g>
+                    <g class="pr-l6"><path pathLength="40" style="stroke-dasharray:240 2000" d="M10.6,107.9C19.1,99.4,36,101.5,33.9,112.2C32.9,119.6,23.3,122.8,18,122.8C27.5,122.8,38.2,127,36,136.6C33.9,148.3,14.8,149.3,8.4,140.8"></path><path pathLength="40" style="stroke-dasharray:200 2000" d="M43.2,121.3C44.3,130.6,44.3,140.9,43.2,149.2C46.3,134.7,52.5,120.2,60.8,120.2C68,120.2,68,134.7,69,149.2"></path><path pathLength="40" style="stroke-dasharray:160 2000" d="M98.4,125.1C106.6,124.1,117,124.1,125.2,125.1"></path><path pathLength="40" style="stroke-dasharray:120 2000" d="M98.4,137.5C106.6,136.4,117,136.4,125.2,137.5"></path><path pathLength="40" style="stroke-dasharray:80 2000" d="M153.2,110C161.5,101.7,178,103.8,176,114.2C174.9,121.4,165.6,124.5,160.4,124.5C169.8,124.5,180.1,128.7,178,138C176,149.4,157.3,150.4,151.1,142.1"></path><path pathLength="40" style="stroke-dasharray:40 2000" d="M189.4,107.2C198,98.7,215.1,100.8,212.9,111.5C211.9,119,202.2,122.2,196.9,122.2C206.5,122.2,217.2,126.5,215.1,136.1C212.9,147.9,193.7,149,187.3,140.4"></path></g>
+                  </svg>
+                  <div class="hint tex k pr-h4">3n = 33 &nbsp;&#10003;&nbsp; one move left</div>
                 </div>
               </div>
             </div>
@@ -495,9 +517,13 @@
                 <div><span class="lbl">Files</span><span class="val">worksheet.pdf</span></div>
               </div>
               <div class="side-lines">
+                <div class="line g"><span class="who">Gausyn</span>Your sheet is on the board. Give me a moment to work it through.</div>
+                <div class="line g k pr-g1"><span class="who">Gausyn</span>Done. You write, I watch. Problem 3 is next.</div>
                 <div class="line you k pr-c1"><span class="who">You</span>Where do I even start?</div>
                 <div class="line g k pr-c2"><span class="who">Gausyn</span>Look at the left side. What happened to x last?</div>
                 <div class="line you k pr-c3"><span class="who">You</span>The plus five. So I undo that first.</div>
+                <div class="line g k pr-g2"><span class="who">Gausyn</span>Nearly. Have a look at the note beside that line.</div>
+                <div class="line you k pr-y2"><span class="who">You</span>Oh. I added it. It has to come off.</div>
                 <div class="line g k pr-c4"><span class="who">Gausyn</span>x = 4, and this time you can say why. Want to make it stick?</div>
                 <div class="line you k pr-c5"><span class="who">You</span>Give me a harder one.</div>
                 <div class="line g k pr-c6"><span class="who">Gausyn</span>Same skeleton, new coat of paint. Talk me through your first move.</div>
