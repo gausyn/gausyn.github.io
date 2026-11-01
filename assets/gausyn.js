@@ -124,30 +124,19 @@
     el.classList.remove('restart');
   }
 
-  // Demos: each loops, and waits while it is off screen (gausyn.css pauses it). It is
-  // never met on an empty frame: off screen it waits on its full frame, just before the
-  // loop fades out, so a fling or a scroll back up always lands on a finished picture.
-  // Reading your way down to one at an ordinary pace, it starts its story from the top
-  // instead, out of sight, just before it scrolls into view.
-  var OPEN = 3000; // ms: the first seconds of a demo are still mostly empty
-
+  // Demos. Each is one fixed window telling one story in steps. It waits on its opening
+  // frame until the window is properly on screen, plays from the top, and goes back to the
+  // opening once it has left the screen, so nobody meets one halfway through or at its end.
   function loopAnim(wrap) {
     if (!wrap || !wrap.getAnimations) return null;
     return wrap.getAnimations().filter(function (a) { return a.animationName && a.animationName.indexOf('fade-') === 0; })[0] || null;
   }
-  // the loop a demo runs on: its length, and its full frame just before it fades out
+  // the loop a demo runs on, and its length
   function loopOf(stage) {
     if (stage.gzLoop) return stage.gzLoop;
     var wrap = stage.querySelector('[class*="fade-"]'), a = loopAnim(wrap);
     if (!a) return null;
-    var D = a.effect.getComputedTiming().duration, at = 0.9;
-    try {
-      var kf = a.effect.getKeyframes();
-      for (var i = 0; i + 1 < kf.length; i++) {
-        if (parseFloat(kf[i].opacity) >= 1 && parseFloat(kf[i + 1].opacity) < 1) at = kf[i].computedOffset;
-      }
-    } catch (e) { /* keep 0.9 */ }
-    return (stage.gzLoop = { wrap: wrap, D: D, full: Math.max(0, at * D - 400) });
+    return (stage.gzLoop = { wrap: wrap, D: a.effect.getComputedTiming().duration });
   }
   function where(stage) { // ms into its loop, or null
     var L = loopOf(stage), a = L && loopAnim(L.wrap);
@@ -160,62 +149,96 @@
       if (a.animationName && Math.abs(a.effect.getComputedTiming().duration - L.D) < 1) a.currentTime = t;
     });
   }
-  function emptyAt(stage, t) { return t < OPEN || t > loopOf(stage).full; }
-  function stagesIn(section) {
-    return Array.prototype.slice.call(section.querySelectorAll('.stage')).filter(function (st) {
-      var act = st.closest ? st.closest('.act') : null;
-      return !act || act.classList.contains('on');
+
+  // A conversation keeps its place in the window: messages hold their space from the
+  // start, and only the pane itself scrolls, once the newest would fall below its edge.
+  var FEEDS = '.lx-msgs, .xw-msgs, .co-pane, .side-lines, [data-feed]';
+  function follow(stage, jump) {
+    Array.prototype.forEach.call(stage.querySelectorAll(FEEDS), function (feed) {
+      if (!feed.clientHeight) return;
+      var kids = feed.children, top = feed.getBoundingClientRect().top, want = 0;
+      for (var i = kids.length - 1; i >= 0; i--) {
+        if (!kids[i].offsetHeight || +getComputedStyle(kids[i]).opacity < 0.4) continue;
+        want = kids[i].getBoundingClientRect().bottom - top + feed.scrollTop + 14 - feed.clientHeight;
+        break;
+      }
+      want = Math.max(0, Math.round(want));
+      if (jump || want < feed.scrollTop - 1) feed.scrollTop = want;
+      else if (want > feed.scrollTop + 1) feed.scrollTo({ top: want, behavior: 'smooth' });
     });
   }
-  function arrive(section) {
-    var vh = window.innerHeight;
-    stagesIn(section).forEach(function (st) {
+
+  // the numbered steps along the foot of a demo's window: the line shows how far it has got
+  function buildSteps(stage) {
+    var spec = stage.getAttribute('data-steps');
+    if (!spec || !loopOf(stage)) return;
+    var rail = document.createElement('div'), bar = document.createElement('i');
+    rail.className = 'steps';
+    rail.setAttribute('role', 'group');
+    rail.setAttribute('aria-label', 'Steps in this demo');
+    bar.className = 'steps-bar';
+    rail.appendChild(bar);
+    var list = spec.split('|').map(function (part, n) {
+      var b = document.createElement('button'), at = parseFloat(part) * 1000;
+      b.type = 'button';
+      b.className = 'step';
+      b.innerHTML = '<i>' + (n + 1) + '<em> of ' + spec.split('|').length + '</em></i><span></span>';
+      b.lastChild.textContent = part.slice(part.indexOf(':') + 1).trim();
+      b.addEventListener('click', function () {
+        if (!stage.gzPlaying) begin(stage);
+        seek(stage, at);
+        paint(stage, at);
+        follow(stage, true);
+      });
+      rail.appendChild(b);
+      return { at: at, el: b };
+    });
+    stage.appendChild(rail);
+    stage.gzSteps = { bar: bar, list: list, on: -1 };
+    paint(stage, 0);
+  }
+  function paint(stage, t) {
+    var rail = stage.gzSteps;
+    if (!rail) return;
+    rail.bar.style.transform = 'scaleX(' + (t / loopOf(stage).D).toFixed(4) + ')';
+    var on = 0;
+    rail.list.forEach(function (s, n) { if (t >= s.at) on = n; });
+    if (on === rail.on) return;
+    rail.on = on;
+    rail.list.forEach(function (s, n) {
+      s.el.classList.toggle('on', n === on);
+      if (n === on) s.el.setAttribute('aria-current', 'step'); else s.el.removeAttribute('aria-current');
+    });
+  }
+
+  var running = [], lastFollow = 0;
+  function tick(now) {
+    if (!running.length) { tick.on = false; return; }
+    var feeds = now - lastFollow > 240;
+    if (feeds) lastFollow = now;
+    running.forEach(function (st) {
       var t = where(st);
-      if (t == null) return;
-      if (st.getBoundingClientRect().top >= vh && !motion.up && !motion.fast) seek(st, 0);
-      else seek(st, emptyAt(st, t) ? loopOf(st).full : t);
+      if (t != null) paint(st, t);
+      if (feeds) follow(st);
     });
+    requestAnimationFrame(tick);
   }
-  function leave(section) {
-    stagesIn(section).forEach(function (st) {
-      var t = where(st);
-      if (t != null && emptyAt(st, t)) seek(st, loopOf(st).full);
-    });
+  function begin(stage) {
+    if (stage.gzPlaying) return;
+    stage.gzPlaying = true;
+    running.push(stage);
+    seek(stage, 0);
+    stage.gzScene.classList.add('play');
+    if (!tick.on) { tick.on = true; requestAnimationFrame(tick); }
   }
-  // as the page opens, a demo you can properly see starts its story; one only peeking
-  // in at the bottom edge waits on its full frame like any other off screen
-  function opening(section) {
-    var vh = window.innerHeight;
-    stagesIn(section).forEach(function (st) {
-      var r = st.getBoundingClientRect(), seen = Math.min(r.bottom, vh) - Math.max(r.top, 0);
-      if (seen < Math.min(r.height, vh) * 0.4 && where(st) != null) seek(st, loopOf(st).full);
-    });
-  }
-  // While the page moves fast, no demo on screen or about to be is left in its empty
-  // opening or its fade-out: it jumps to its full frame (mid-fling, nobody sees the cut)
-  // and plays on from there once the page settles.
-  var demos = Array.prototype.slice.call(document.querySelectorAll('[data-scene] .stage'));
-  function demoSweep() {
-    if (!motion.fast || !demos.length) return;
-    var vh = window.innerHeight, reach = Math.max(vh * 0.6, motion.v * 300);
-    demos.forEach(function (st) {
-      var act = st.closest ? st.closest('.act') : null;
-      if (act && !act.classList.contains('on')) return;
-      var r = st.getBoundingClientRect();
-      if (r.bottom < -reach || r.top > vh + reach) return;
-      var t = where(st);
-      if (t == null || !emptyAt(st, t)) return;
-      seek(st, loopOf(st).full);
-      if (filmSync && film && film.contains(st)) filmSync();
-    });
-  }
-  if (!reduce && hasIO) {
-    var demoQueued = false;
-    window.addEventListener('scroll', function () {
-      if (demoQueued || !motion.fast) return;
-      demoQueued = true;
-      requestAnimationFrame(function () { demoQueued = false; demoSweep(); });
-    }, { passive: true });
+  function rest(stage) {
+    if (!stage.gzPlaying) return;
+    stage.gzPlaying = false;
+    running.splice(running.indexOf(stage), 1);
+    stage.gzScene.classList.remove('play');
+    seek(stage, 0);
+    paint(stage, 0);
+    follow(stage, true);
   }
 
   var film = document.querySelector('.film');
@@ -224,21 +247,28 @@
   if (reduce || !hasIO) {
     scenes.forEach(function (el) { el.classList.add('play'); });
   } else {
+    // properly on screen: the window has reached the middle of the view, however tall it is
+    var reached = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) begin(entry.target); });
+    }, { rootMargin: '-30% 0px -30% 0px', threshold: 0 });
+    var gone = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (!entry.isIntersecting) rest(entry.target); });
+    }, { threshold: 0 });
+    // anything else that animates simply runs while it is on screen
     var sio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        var s = entry.target, first = !s.gzSeen;
-        s.gzSeen = true;
-        if (entry.isIntersecting) {
-          if (first) opening(s); else arrive(s);
-          s.classList.add('play');
-        } else {
-          s.classList.remove('play');
-          leave(s);
-        }
-        if (filmSync && film && s.contains(film)) filmSync();
+        entry.target.classList.toggle('play', entry.isIntersecting);
+        if (filmSync && film && entry.target.contains(film)) filmSync();
       });
     }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
-    scenes.forEach(function (el) { sio.observe(el); });
+    scenes.forEach(function (el) {
+      var stage = el.querySelector('.stage');
+      if (!stage || (film && el.contains(film))) { sio.observe(el); return; }
+      stage.gzScene = el;
+      buildSteps(stage);
+      reached.observe(stage);
+      gone.observe(stage);
+    });
   }
 
   // film: auto-advancing slideshow with prev/next and dots
