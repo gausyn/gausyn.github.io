@@ -416,7 +416,7 @@
   if (hasIO && !reduce && !saveData) {
     function syncPart(part) {
       var video = part.querySelector('video');
-      if (part.gzHeld || !part.gzNear) { video.pause(); return; }
+      if (!part.gzNear) { video.pause(); return; }
       if (!video.getAttribute('src')) video.setAttribute('src', 'assets/part-' + part.getAttribute('data-part') + '.mp4');
       var playing = video.play();
       if (playing && playing.catch) playing.catch(function () { /* the poster stays */ });
@@ -428,15 +428,7 @@
       });
     }, { rootMargin: '100px 0px' });
     Array.prototype.forEach.call(document.querySelectorAll('.part'), function (part) {
-      var pause = part.querySelector('.hero-pause');
       part.querySelector('video').muted = true;
-      pause.hidden = false;
-      pause.addEventListener('click', function () {
-        part.gzHeld = !part.gzHeld;
-        pause.classList.toggle('held', part.gzHeld);
-        pause.setAttribute('aria-label', (part.gzHeld ? 'Play' : 'Pause') + ' the background video');
-        syncPart(part);
-      });
       partIO.observe(part);
     });
   }

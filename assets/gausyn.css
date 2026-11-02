@@ -562,15 +562,48 @@ html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route 
 .plan.pop .plan-cta a { background: #fff; color: var(--ink); border-color: #fff; }
 
 /* careers */
-.role { border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: clamp(22px, 2.6vw, 34px); background: #fff; }
-.role + .role { margin-top: clamp(18px, 2.6vh, 26px); }
-.role .meta { font-size: 12px; color: var(--faint); letter-spacing: 0.04em; margin-bottom: 14px; }
-.role h3 { margin-bottom: 6px; }
-.role h4 { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin: 18px 0 8px; }
-.role ul { list-style: none; display: grid; gap: 7px; }
-.role li { font-size: clamp(14px, 1vw, 15.5px); color: var(--muted); padding-left: 16px; position: relative; }
-.role li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 7px; height: 1px; background: var(--rule); }
-.role .apply { margin-top: 22px; }
+/* careers: a row per role, and each role's own page */
+.jobs-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: clamp(20px, 3vh, 32px); }
+.jobs-head h2 { font-size: clamp(26px, 3vw, 40px); }
+.jobs-team { display: block; margin: clamp(26px, 4vh, 40px) 0 6px; }
+.job { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1.1fr) 20px; gap: 8px 24px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--rule); color: inherit; text-decoration: none; }
+.job:last-of-type { border-bottom: 1px solid var(--rule); }
+.job-title { font-size: clamp(17px, 1.4vw, 20px); color: var(--ink); }
+.job-where, .job-pay { font-size: 14px; color: var(--muted); }
+.job-go { color: var(--faint); text-align: right; transition: transform 0.2s ease; }
+.job:hover .job-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.job:hover .job-go { color: var(--ink); transform: translateX(3px); }
+.job-head { padding-top: clamp(48px, 9vh, 96px); padding-bottom: clamp(36px, 6vh, 64px); }
+.job-back { display: inline-block; margin-bottom: clamp(24px, 4vh, 40px); font-size: 14px; color: var(--muted); text-decoration: none; }
+.job-back::before { content: "\2190\00a0"; }
+.job-back:hover { color: var(--ink); }
+.job-head .eyebrow { display: block; margin-bottom: 14px; }
+.job-head h1 { font-size: clamp(32px, 4.4vw, 56px); line-height: 1.08; }
+.job-line { margin-top: 16px; font-size: 15px; color: var(--muted); }
+.job-head .lede { margin-top: clamp(16px, 2.6vh, 24px); max-width: none; }
+.job-head .cta-row { margin-top: clamp(20px, 3vh, 30px); }
+.job-body { padding-top: clamp(40px, 6vh, 64px); }
+.job-body h2 { font-size: clamp(22px, 2.2vw, 28px); margin: clamp(32px, 5vh, 48px) 0 12px; }
+.job-body h2:first-child { margin-top: 0; }
+.job-body p { color: var(--muted); }
+.job-body p + p { margin-top: 12px; }
+.job-body ul { list-style: none; display: grid; gap: 9px; }
+.job-body li { color: var(--muted); padding-left: 18px; position: relative; }
+.job-body li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--faint); }
+.glance { display: grid; grid-template-columns: 110px minmax(0, 1fr); margin: 0; border-top: 1px solid var(--rule); }
+.glance dt, .glance dd { margin: 0; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
+.glance dt { color: var(--faint); }
+.glance dd { color: var(--ink); }
+.glance + p { margin-top: 16px; }
+.job-more { margin-top: clamp(40px, 6vh, 60px); }
+.job-more .job { grid-template-columns: minmax(0, 1fr) 20px; }
+.job-more .job-where, .job-more .job-pay { display: none; }
+@media (max-width: 760px) {
+  .job { grid-template-columns: minmax(0, 1fr) 20px; gap: 3px 12px; }
+  .job-title { grid-column: 1; }
+  .job-where, .job-pay { grid-column: 1; }
+  .job-go { grid-column: 2; grid-row: 1; }
+}
 
 /* contact form */
 .cform { display: grid; gap: 16px; max-width: 560px; }
@@ -3143,18 +3176,36 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 }
 
 /* ── release notes ──────────────────────────────────────────────────────── */
-.release { padding-top: clamp(26px, 4vh, 40px); border-top: 1px solid var(--rule); }
-.release + .release { margin-top: clamp(40px, 6vh, 72px); }
-.release .stamp { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 14px; }
-.release .ver { font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -0.018em; }
-.release .when { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
-.release .tagline { color: var(--muted); font-size: clamp(15px, 1.2vw, 18px); max-width: 60ch; margin-bottom: clamp(22px, 3vh, 32px); }
-.release h3 { font-size: clamp(17px, 1.35vw, 20px); margin-bottom: 7px; }
-.notes { display: grid; gap: clamp(20px, 3vh, 30px); }
-.note { display: grid; grid-template-columns: 130px 1fr; gap: clamp(12px, 2.4vw, 28px); align-items: start; }
-.note .kind { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); padding-top: 5px; }
-.note p { color: var(--muted); font-size: clamp(14.5px, 1.05vw, 16.5px); }
-@media (max-width: 700px) { .note { grid-template-columns: 1fr; gap: 6px; } }
+/* blog: a lead story, a grid of posts, and each post as an article */
+.blog-head { text-align: left; padding-bottom: clamp(28px, 5vh, 56px); }
+.blog-head h1 { max-width: none; margin: 0; }
+.blog-head .lede { margin-left: 0; }
+.post-lead { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; color: inherit; text-decoration: none; }
+.post-cover { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); border-radius: var(--radius-md); background: var(--surface); }
+.post-tag { display: block; margin-bottom: 10px; }
+.post-lead h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.1; }
+.post-lead p { margin-top: 14px; color: var(--muted); }
+.post-by { display: block; margin-top: 14px; font-size: 13px; color: var(--faint); }
+.post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(32px, 4.4vh, 48px) clamp(20px, 2.6vw, 34px); }
+.post-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+.post-card .post-cover { margin-bottom: 14px; }
+.post-card h3 { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.2; }
+.post-card p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.post-lead:hover h2, .post-card:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.article-head { padding-top: clamp(48px, 9vh, 96px); padding-bottom: clamp(24px, 4vh, 40px); }
+.article-head h1 { font-size: clamp(32px, 4.4vw, 56px); line-height: 1.08; }
+.article-head .post-by { margin-top: 16px; font-size: 14px; }
+.article-cover { max-width: 1040px; margin: 0 auto; padding: 0 var(--pad); }
+.article-body { padding-top: clamp(32px, 5vh, 56px); padding-bottom: clamp(40px, 6vh, 72px); }
+.article-body p { font-size: clamp(17px, 1.25vw, 19px); line-height: 1.68; color: var(--ink); }
+.article-body p + p { margin-top: 1.05em; }
+.article-body h2 { font-size: clamp(23px, 2.2vw, 29px); margin: 1.5em 0 0.55em; }
+.article-more h2 { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: clamp(20px, 3vh, 30px); }
+@media (max-width: 900px) {
+  .post-lead { grid-template-columns: minmax(0, 1fr); }
+  .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) { .post-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* === trust pages: a document, not a landing page ======================== */
 /* deliberately free of reveals and drifting colour — these are read, not scrolled */
@@ -3904,7 +3955,6 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .part .eyebrow { display: block; margin-bottom: 14px; color: #fff; }
 .part h2 { font-size: clamp(30px, 3.4vw, 46px); text-wrap: balance; }
 .part .lede { margin-top: 16px; font-size: clamp(17px, 1.3vw, 19px); color: #fff; }
-.part .hero-pause { position: absolute; z-index: 1; right: var(--pad); bottom: 16px; }
 /* narrower, the whole screen runs across the top and the words go under it: any crop
    that kept them on the clip would read as zoomed in */
 @media (max-width: 1100px) {
@@ -3914,7 +3964,6 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
   .part-media::before { display: none; }
   .part-media::after { inset: 0 0 -2px; background: linear-gradient(to bottom, rgba(23, 19, 16, 0) 78%, #171310 97%); }
   .part-copy { width: auto; min-width: 0; max-width: 760px; margin: 14px auto 0; padding: 0 var(--pad); }
-  .part .hero-pause { top: 10px; right: 10px; bottom: auto; background: rgba(14, 11, 9, 0.4); }
 }
 @media (min-width: 761px) and (max-width: 1100px) {
   .part-media::before { display: block; left: 0; width: 100%; background: linear-gradient(to right, #171310, rgba(23, 19, 16, 0) 8%, rgba(23, 19, 16, 0) 92%, #171310); }
