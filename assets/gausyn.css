@@ -8674,7 +8674,10 @@ html.js .fade-k3{animation:fade-k3 42s linear infinite}
 .kh-nc { transform: translateY(-100px) scale3d(1, 1, 1); }
 .kh-rt { width: 94px; height: 94px; margin: -47px 0 0 -47px; box-sizing: border-box; border: 3px solid #e2ddd5; border-radius: 50%; transform: rotateX(90deg); }
 .kh-fins { transform: rotateY(-20deg); }
-.kh-fa, .kh-fb { width: 46px; height: 120px; transform-origin: 0 0; box-shadow: inset 0 0 0 1px rgba(110,104,95,0.5); }
+.kh-fa, .kh-fb { width: 46px; height: 120px; transform-origin: 0 0; box-shadow: inset 0 0 0 1px rgba(110,104,95,0.5); }
+/* the fins and cone faces draw their shape as an SVG polygon: cutting them out with clip-path
+   inside the 3D model made the first frame take seconds to draw */
+.kh-rk i > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
 .kh-fa { opacity: 0; }
 .kh-ck { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
 .kh-cb { position: relative; width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--rule); background: #fff; flex-shrink: 0; }
