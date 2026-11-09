@@ -453,43 +453,150 @@
     });
   }
 
-  // Chapter openers: as one rises up the window its heading wipes in line by line, the
-  // dots bloom in from the edges and the rest follows. Each moving piece gets a --v from 0
-  // to 1 from where it sits on the page and the styles do the rest. Until this runs, and
-  // with reduced motion, every piece simply stands finished.
+  // Chapter openers: each chapter opens on a whiteboard. As one rises up the window its
+  // heading comes up word by word, a red pen line runs under the key phrase, and the
+  // chapter's drawing sketches itself stroke by stroke with a pen tip at the end of the
+  // line being drawn. Every piece gets a --p from 0 (not yet) to 1 (done) from where it
+  // sits in the window, measured from layout so its own movement never counts.
   var openers = Array.prototype.slice.call(document.querySelectorAll('.op'));
+  // a teacher climbing the levels moves on its own: held at the top until its drawing is
+  // done and on screen, and for good with reduced motion
+  openers.forEach(function (op) {
+    var svg = op.querySelector('.op-art svg');
+    if (svg && svg.querySelector('animateMotion') && svg.pauseAnimations) {
+      svg.pauseAnimations();
+      try { svg.setCurrentTime(8); } catch (e) {}
+      op.gzSmil = svg;
+    }
+  });
   if (openers.length && !reduce) {
-    // each piece starts when its top is this far down the window, and finishes at the second
-    var OP_PARTS = [['.op-bg', 1, 0.5], ['.op-dots', 1, 0.15], ['.op-eb', 0.95, 0.74], ['.op-line', 0.94, 0.5], ['.op-lede', 0.97, 0.76], ['.op-item', 0.99, 0.8]];
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    // each piece starts when its top is this far down the window, and is done at the second
+    var OP_PARTS = [['.op-board', 1.02, 0.62], ['.op-eb', 0.95, 0.74], ['.op-title', 0.93, 0.46], ['.op-lede', 0.95, 0.66], ['.op-art', 0.92, 0.3]];
     var opPieces = [], opFrame = 0;
-    function pageTop(el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; }
+    var opClip = function (x) { return x <= 0 ? 0 : x >= 1 ? 1 : Math.round(x * 1000) / 1000; };
+    var opSet = function (o, p) { if (o.p !== p) { o.p = p; o.el.style.setProperty('--ov', p); } };
+    var pageTop = function (el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; };
+    openers.forEach(function (op) {
+      // the heading, a word at a time
+      var words = [];
+      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) {
+        (function walk(node) {
+          Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+            if (n.nodeType === 3) {
+              var frag = document.createDocumentFragment();
+              n.nodeValue.split(/(\s+)/).forEach(function (part) {
+                if (!part) return;
+                if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+                var w = document.createElement('span');
+                w.className = 'op-w';
+                w.textContent = part;
+                frag.appendChild(w);
+                words.push({ el: w, p: -1 });
+              });
+              n.parentNode.replaceChild(frag, n);
+            } else if (n.nodeType === 1 && n.namespaceURI !== SVGNS) {
+              walk(n);
+            }
+          });
+        })(line);
+      });
+      op.gzWords = words;
+      var ink = op.querySelector('.op-ink path');
+      op.gzInk = ink ? { el: ink, p: -1 } : null;
+      // the drawing, in the order it is drawn: each item takes a share of the way by its
+      // length, starts a little before the one ahead of it ends, or keeps a window of its own
+      op.gzArt = [];
+      var svg = op.querySelector('.op-art svg');
+      if (!svg) return;
+      var nib = document.createElementNS(SVGNS, 'circle');
+      nib.setAttribute('class', 'op-nib');
+      nib.setAttribute('r', '5.5');
+      svg.appendChild(nib);
+      op.gzNib = nib;
+      var t = 0, start = 0, end = 0, pinned = [];
+      Array.prototype.forEach.call(svg.querySelectorAll('.s, .f, .mv'), function (el) {
+        var stroke = el.classList.contains('s');
+        var len = stroke && el.getTotalLength ? el.getTotalLength() : 0;
+        var item = { el: el, len: len, stroke: stroke, color: '', p: -1 };
+        var at = el.getAttribute('data-at');
+        if (at) {
+          at = at.split(',');
+          item.s = +at[0]; item.w = +at[1] - +at[0];
+          pinned.push(item);
+        } else {
+          var w = parseFloat(el.getAttribute('data-w')) || (stroke ? Math.max(0.35, Math.min(2.2, len / 220)) : el.classList.contains('mv') ? 0.9 : 0.5);
+          if (!el.hasAttribute('data-j')) start = t;
+          t = Math.max(t, start + w * 0.8);
+          end = Math.max(end, start + w);
+          item.s = start; item.w = w;
+        }
+        op.gzArt.push(item);
+      });
+      op.gzArt.forEach(function (it) { if (pinned.indexOf(it) === -1) { it.s /= end; it.w /= end; } });
+    });
+    function opArt(op, v) {
+      var tip = null;
+      op.gzArt.forEach(function (it) {
+        var p = opClip((v - it.s) / it.w);
+        opSet(it, p);
+        if (it.stroke && p > 0 && p < 1 && (!tip || it.s >= tip.s)) tip = it;
+      });
+      var nib = op.gzNib;
+      if (tip) {
+        var pt = tip.el.getPointAtLength(tip.len * tip.p);
+        if (!tip.color) tip.color = window.getComputedStyle(tip.el).stroke;
+        nib.setAttribute('cx', pt.x.toFixed(1));
+        nib.setAttribute('cy', pt.y.toFixed(1));
+        nib.style.fill = tip.color;
+        if (!op.gzNibOn) { op.gzNibOn = true; nib.classList.add('on'); }
+      } else if (op.gzNibOn) {
+        op.gzNibOn = false;
+        nib.classList.remove('on');
+      }
+      var drawn = v >= 1;
+      if (drawn !== op.gzDrawn) { op.gzDrawn = drawn; op.classList.toggle('is-drawn', drawn); }
+    }
     function opUpdate() {
       opFrame = 0;
       var vh = window.innerHeight || 1, y = window.pageYOffset || 0;
       openers.forEach(function (op) {
-        var near = op.gzTop < y + vh * 2 && op.gzTop + op.gzHeight > y - vh;
+        var near = op.gzTop < y + vh * 1.5 && op.gzTop + op.gzHeight > y - vh * 0.5;
         if (near !== op.gzNear) { op.gzNear = near; op.classList.toggle('is-near', near); }
       });
-      opPieces.forEach(function (p) {
-        var v = (p.a - (p.top - y) / vh) / (p.a - p.b);
-        v = v <= 0 ? 0 : v >= 1 ? 1 : Math.round(v * 1000) / 1000;
-        if (v !== p.v) { p.v = v; p.el.style.setProperty('--v', v); }
+      opPieces.forEach(function (pc) {
+        var v = opClip((pc.a - (pc.top - y) / vh) / (pc.a - pc.b));
+        if (v === pc.v) return;
+        pc.v = v;
+        var op = pc.op;
+        if (pc.kind === 'title') {
+          var n = op.gzWords.length, span = n > 1 ? 0.62 / (n - 1) : 0;
+          op.gzWords.forEach(function (w, i) { opSet(w, opClip((v - span * i) / 0.3)); });
+          if (op.gzInk) opSet(op.gzInk, opClip((v - 0.8) / 0.2));
+        } else if (pc.kind === 'art') {
+          opArt(op, v);
+        } else {
+          opSet(pc, v);
+        }
+      });
+      // the climbing teacher waits for its drawing
+      openers.forEach(function (op) {
+        if (op.gzSmil) {
+          var run = !!op.gzNear && !!op.gzDrawn;
+          if (run !== op.gzRun) { op.gzRun = run; if (run) op.gzSmil.unpauseAnimations(); else op.gzSmil.pauseAnimations(); }
+        }
       });
     }
-    // where every piece sits, measured from layout so its own movement never counts
     function opMeasure() {
       opPieces = [];
       openers.forEach(function (op) {
         op.gzTop = pageTop(op);
         op.gzHeight = op.offsetHeight;
         OP_PARTS.forEach(function (spec) {
-          var row = null, col = 0;
-          Array.prototype.forEach.call(op.querySelectorAll(spec[0]), function (el) {
-            var top = pageTop(el);
-            // pieces side by side on one row follow each other, left to right
-            if (top === row) col++; else { row = top; col = 0; }
-            opPieces.push({ el: el, top: top, a: spec[1] - 0.04 * col, b: spec[2] - 0.04 * col, v: -1 });
-          });
+          var el = op.querySelector(spec[0]);
+          if (!el) return;
+          var kind = spec[0] === '.op-title' ? 'title' : spec[0] === '.op-art' ? 'art' : 'one';
+          opPieces.push({ op: op, el: el, kind: kind, top: pageTop(el), a: spec[1], b: spec[2], v: -1, p: -1 });
         });
       });
       opUpdate();
@@ -517,5 +624,86 @@
     document.addEventListener('click', function (e) { if (!siteMenu.contains(e.target)) setMenu(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
+
+  // Email links: plenty of computers have no mail app set up, and there a mailto link does
+  // nothing at all. So a click on one offers the ways to write: the mail app, a mail site
+  // in the browser with the message started, or the address copied (it is never shown).
+  var mail = null, mailFrom = null;
+  function mailParts(href) {
+    var bits = href.replace(/^mailto:/i, '').split('?'), q = {};
+    (bits[1] || '').split('&').forEach(function (kv) {
+      var i = kv.indexOf('=');
+      if (i > 0) q[decodeURIComponent(kv.slice(0, i)).toLowerCase()] = decodeURIComponent(kv.slice(i + 1).replace(/\+/g, ' '));
+    });
+    return { to: decodeURIComponent(bits[0]), subject: q.subject || '', body: q.body || '' };
+  }
+  function mailClose() {
+    if (!mail || !mail.classList.contains('open')) return;
+    mail.classList.remove('open');
+    mail.setAttribute('aria-hidden', 'true');
+    if (mailFrom) mailFrom.focus();
+  }
+  function mailOpen(link) {
+    var m = mailParts(link.getAttribute('href')), enc = encodeURIComponent;
+    if (!mail) {
+      mail = document.createElement('div');
+      mail.className = 'mail-sheet';
+      mail.setAttribute('aria-hidden', 'true');
+      mail.innerHTML =
+        '<div class="mail-card" role="dialog" aria-modal="true" aria-labelledby="mail-title">' +
+          '<p class="mail-title" id="mail-title">Write to us</p>' +
+          '<p class="mail-note">Choose how you would like to send it.</p>' +
+          '<a class="mail-opt mail-app" href="#">Open your email app</a>' +
+          '<a class="mail-opt" data-k="g" href="#" target="_blank" rel="noopener noreferrer">Write in Gmail</a>' +
+          '<a class="mail-opt" data-k="o" href="#" target="_blank" rel="noopener noreferrer">Write in Outlook</a>' +
+          '<button class="mail-opt mail-copy" type="button">Copy our address</button>' +
+          '<button class="mail-x" type="button">Close</button>' +
+        '</div>';
+      document.body.appendChild(mail);
+      mail.addEventListener('click', function (e) {
+        if (e.target === mail || e.target.classList.contains('mail-x')) { mailClose(); return; }
+        var opt = e.target.closest('.mail-opt');
+        if (!opt) return;
+        if (opt.classList.contains('mail-copy')) {
+          var to = opt.getAttribute('data-to'), done = function () { opt.textContent = 'Copied. Paste it into your email.'; };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(to).then(done, function () {});
+          else {
+            var ta = document.createElement('textarea');
+            ta.value = to; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { if (document.execCommand('copy')) done(); } catch (err) {}
+            document.body.removeChild(ta);
+          }
+          return;
+        }
+        setTimeout(mailClose, 0);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (!mail.classList.contains('open')) return;
+        if (e.key === 'Escape') { mailClose(); return; }
+        if (e.key === 'Tab') {
+          var f = mail.querySelectorAll('.mail-opt, .mail-x'), first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    }
+    mail.querySelector('.mail-app').setAttribute('href', link.getAttribute('href'));
+    mail.querySelector('[data-k="g"]').setAttribute('href', 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(m.to) + (m.subject ? '&su=' + enc(m.subject) : '') + (m.body ? '&body=' + enc(m.body) : ''));
+    mail.querySelector('[data-k="o"]').setAttribute('href', 'https://outlook.live.com/mail/0/deeplink/compose?to=' + enc(m.to) + (m.subject ? '&subject=' + enc(m.subject) : '') + (m.body ? '&body=' + enc(m.body) : ''));
+    var copy = mail.querySelector('.mail-copy');
+    copy.setAttribute('data-to', m.to);
+    copy.textContent = 'Copy our address';
+    mailFrom = link;
+    mail.setAttribute('aria-hidden', 'false');
+    mail.classList.add('open');
+    mail.querySelector('.mail-app').focus();
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="mailto:"]') : null;
+    if (!a || (mail && mail.contains(a)) || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    mailOpen(a);
+  });
 
 })();
