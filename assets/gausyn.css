@@ -1229,20 +1229,23 @@ html.js .fade-pr{animation:fade-pr 50s linear infinite}
   padding: 92px var(--hero-pad) clamp(28px, 5vh, 52px);
 }
 .hero-media { position: absolute; inset: 0; background: #171310 center / cover no-repeat; }
-[data-film="home"] .hero-media { background-image: url("hero-home-poster.jpg"); }
-[data-film="whiteboard"] .hero-media { background-image: url("hero-whiteboard-poster.jpg"); }
-[data-film="learning"] .hero-media { background-image: url("hero-learning-poster.jpg"); }
-[data-film="collaborate"] .hero-media { background-image: url("hero-collaborate-poster.jpg"); }
-[data-film="projects"] .hero-media { background-image: url("hero-projects-poster.jpg"); }
+[data-film="home"] .hero-media { background-image: url("film-home-poster.jpg"); }
+[data-film="whiteboard"] .hero-media { background-image: url("film-whiteboard-poster.jpg"); }
+[data-film="learning"] .hero-media { background-image: url("film-learning-poster.jpg"); }
+[data-film="collaborate"] .hero-media { background-image: url("film-collaborate-poster.jpg"); }
+[data-film="projects"] .hero-media { background-image: url("film-projects-poster.jpg"); }
 .hero-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* dark enough at the top and the bottom for white type, even over a white board */
 .hero-media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 11, 9, 0.66) 0%, rgba(14, 11, 9, 0.52) 7%, rgba(14, 11, 9, 0.2) 15%, rgba(14, 11, 9, 0.1) 34%, rgba(14, 11, 9, 0.14) 48%, rgba(14, 11, 9, 0.6) 70%, rgba(14, 11, 9, 0.82) 100%);
+  background:
+    linear-gradient(to bottom, rgba(14, 11, 9, 0.42) 0%, rgba(14, 11, 9, 0) 13%),
+    radial-gradient(ellipse 72% 62% at 0% 100%, rgba(14, 11, 9, 0.6) 0%, rgba(14, 11, 9, 0.38) 38%, rgba(14, 11, 9, 0) 72%),
+    linear-gradient(to top, rgba(14, 11, 9, 0.34) 0%, rgba(14, 11, 9, 0) 20%);
 }
 .hero-copy, .hero-foot { position: relative; }
-.hero-copy .eyebrow { display: block; margin-bottom: 14px; color: rgba(255, 255, 255, 0.86); }
-.hero-copy h1 { color: #fff; font-size: 56px; line-height: 1.08; max-width: 15em; text-wrap: balance; }
+.hero-copy .eyebrow { display: block; margin-bottom: 14px; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 12px rgba(14, 11, 9, 0.5); }
+.hero-copy h1 { text-shadow: 0 2px 28px rgba(14, 11, 9, 0.45); color: #fff; font-size: 56px; line-height: 1.08; max-width: 15em; text-wrap: balance; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 24px; }
 .hero-full .btn { background: #fff; color: var(--ink); }
 .hero-watch { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: #fff; text-decoration: none; }
@@ -1262,6 +1265,36 @@ html.js .fade-pr{animation:fade-pr 50s linear infinite}
    with the opening fully gone, or the header would stay white on a white page */
 .hero-intro { text-align: center; padding-top: calc(var(--header-h) + clamp(40px, 7vh, 80px)); padding-bottom: clamp(44px, 7vh, 80px); scroll-margin-top: 0; }
 .hero-intro .lede { margin: 0 auto; }
+/* ── the product pages come alive as you scroll ──────────────────────────
+   Scroll-linked, so it moves with the reader and never on its own; browsers without
+   it, and reduced motion, see every finished state */
+.hero-intro .lede { font-size: clamp(22px, 2.3vw, 33px); line-height: 1.38; letter-spacing: -0.01em; color: var(--ink); max-width: 40ch; }
+.hero-intro { background-image: linear-gradient(rgba(10, 10, 10, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 10, 10, 0.035) 1px, transparent 1px); background-size: 28px 28px; background-position: center top; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 55%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 80% at 50% 55%, #000 30%, transparent 75%); }
+.w2 { color: var(--warm-ink); }
+.ink { position: relative; white-space: nowrap; }
+.ink-mark { position: absolute; left: -3%; bottom: -0.2em; width: 106%; height: 0.45em; overflow: visible; pointer-events: none; }
+.ink-mark path { fill: none; stroke: var(--hint); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; opacity: 0.85; }
+@keyframes wf-in { from { opacity: 0.13; } to { opacity: 1; } }
+@keyframes ink-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes band-open { from { transform: scale(0.9); border-radius: 32px; } to { transform: none; border-radius: 0; } }
+@keyframes stage-rise { from { transform: translateY(48px) scale(0.965); } to { transform: none; } }
+@keyframes hero-drift { to { transform: translateY(18%); } }
+@keyframes hero-lift { to { opacity: 0; transform: translateY(-60px); } }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .wf { view-timeline: --wf block; }
+    html.js .scene .wf .w, html.js .scene .wf .ink-mark path, html.js .has-film-hero .scene .stage { animation-play-state: running !important; }
+    html.js .wf .w { animation: wf-in linear both; animation-timeline: --wf; animation-range: cover var(--a) cover var(--b); }
+    html.js .wf .ink-mark path { animation: ink-draw linear both; animation-timeline: --wf; animation-range: cover 34% cover 50%; }
+    html.js .wf-head[data-reveal] { opacity: 1; transform: none; }
+    html.js .has-film-hero .part { animation: band-open linear both; animation-timeline: view(); animation-range: entry 0% cover 38%; }
+    html.js .has-film-hero .scene .stage { animation: stage-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+    html.js .hero-full { view-timeline: --hero block; }
+    html.js .hero-full .hero-media { animation: hero-drift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+    html.js .hero-full .hero-copy { animation: hero-lift linear both; animation-timeline: --hero; animation-range: exit 0% exit 55%; }
+  }
+}
+
 
 /* the header sits on the film, then turns solid once the opening has scrolled away */
 .nav-toggle { display: none; padding: 7px 14px; font: inherit; font-size: 14px; color: inherit; background: none; border: 1px solid currentColor; border-radius: 999px; cursor: pointer; }
@@ -1303,11 +1336,12 @@ html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 
   .hero-foot { position: relative; right: auto; bottom: auto; justify-content: space-between; margin-top: 18px; }
 }
 @media (max-aspect-ratio: 3/4) {
-  [data-film="home"] .hero-media { background-image: url("hero-home-poster-tall.jpg"); }
-  [data-film="whiteboard"] .hero-media { background-image: url("hero-whiteboard-poster-tall.jpg"); }
-  [data-film="learning"] .hero-media { background-image: url("hero-learning-poster-tall.jpg"); }
-  [data-film="collaborate"] .hero-media { background-image: url("hero-collaborate-poster-tall.jpg"); }
-  [data-film="projects"] .hero-media { background-image: url("hero-projects-poster-tall.jpg"); }
+  .hero-media::after { background: linear-gradient(to bottom, rgba(14, 11, 9, 0.4) 0%, rgba(14, 11, 9, 0) 12%, rgba(14, 11, 9, 0) 50%, rgba(14, 11, 9, 0.66) 100%); }
+  [data-film="home"] .hero-media { background-image: url("film-home-poster-tall.jpg"); }
+  [data-film="whiteboard"] .hero-media { background-image: url("film-whiteboard-poster-tall.jpg"); }
+  [data-film="learning"] .hero-media { background-image: url("film-learning-poster-tall.jpg"); }
+  [data-film="collaborate"] .hero-media { background-image: url("film-collaborate-poster-tall.jpg"); }
+  [data-film="projects"] .hero-media { background-image: url("film-projects-poster-tall.jpg"); }
 }
 
 /* ── the film: an auto-advancing slideshow inside the hero ──────────────── */
@@ -3176,6 +3210,21 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 }
 
 /* ── release notes ──────────────────────────────────────────────────────── */
+/* investors: the round, what is built, the road to Seed */
+.inv-fine { font-size: 13px; color: var(--faint); }
+.inv-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.inv-stat { border-top: 1px solid var(--ink); padding-top: 16px; }
+.inv-stat b { display: block; font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+.inv-stat span { display: block; margin-top: 12px; font-size: 15px; color: var(--muted); }
+.inv-road { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2.6vw, 32px); }
+.inv-step { position: relative; padding-top: 22px; border-top: 1px solid var(--rule); }
+.inv-step::before { content: ""; position: absolute; left: 0; top: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
+.inv-step:last-child::before { background: var(--hint); }
+.inv-step .eyebrow { display: block; margin-bottom: 10px; }
+.inv-step h3 { font-size: clamp(19px, 1.6vw, 23px); margin-bottom: 8px; }
+.inv-step p { font-size: 15px; color: var(--muted); }
+@media (max-width: 900px) { .inv-stats, .inv-road { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .inv-stats, .inv-road { grid-template-columns: minmax(0, 1fr); } }
 /* blog: a lead story, a grid of posts, and each post as an article */
 .blog-head { text-align: left; padding-bottom: clamp(28px, 5vh, 56px); }
 .blog-head h1 { max-width: none; margin: 0; }

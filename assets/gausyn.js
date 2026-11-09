@@ -361,7 +361,7 @@
     }
     // phones get their own version: the whole screen across the width, over a soft copy of itself
     function chooseLoop() {
-      var src = 'assets/hero-' + hero.getAttribute('data-film') + (tall.matches ? '-tall' : '') + '.mp4';
+      var src = 'assets/film-' + hero.getAttribute('data-film') + (tall.matches ? '-tall' : '') + '.mp4';
       if (heroVideo.getAttribute('src') !== src) { heroVideo.setAttribute('src', src); syncLoop(); }
     }
     if (wantsLoop) {
@@ -433,6 +433,48 @@
     });
   }
 
+  // Headings that write themselves in as you scroll. Each word starts as a faint trace and
+  // fills in on its way to the middle of the view, a heading's second sentence takes the
+  // warm ink, and an .ink phrase gets a pen line drawn under it. Browsers without
+  // scroll-linked animation, and reduced motion, simply show the finished heading.
+  var canFill = !reduce && window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+  if (canFill && document.body.classList.contains('has-film-hero')) {
+    Array.prototype.forEach.call(document.querySelectorAll('.scene-head h2, .hero-intro .lede, [data-fill]'), function (el) {
+      var words = [], heading = /^H[1-3]$/.test(el.tagName), second = false;
+      (function walk(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            n.nodeValue.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+              var w = document.createElement('span');
+              w.className = 'w' + (heading && second ? ' w2' : '');
+              w.textContent = part;
+              frag.appendChild(w);
+              words.push(w);
+              if (/[.?!]$/.test(part)) second = true;
+            });
+            n.parentNode.replaceChild(frag, n);
+          } else if (n.nodeType === 1 && n.tagName !== 'svg') {
+            walk(n);
+          }
+        });
+      })(el);
+      words.forEach(function (w, i) {
+        var a = 4 + 34 * i / Math.max(words.length, 1);
+        w.style.setProperty('--a', a.toFixed(1) + '%');
+        w.style.setProperty('--b', (a + 12).toFixed(1) + '%');
+      });
+      Array.prototype.forEach.call(el.querySelectorAll('.ink'), function (ink) {
+        ink.insertAdjacentHTML('beforeend', '<svg class="ink-mark" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3,9 C38,4 76,12 116,7 S170,3 197,8"/></svg>');
+      });
+      el.classList.add('wf');
+      var head = el.closest('.scene-head');
+      if (head) head.classList.add('wf-head');
+    });
+  }
+
   // the header's menu on small screens
   var menuButton = document.querySelector('.nav-toggle');
   if (menuButton) {
@@ -449,28 +491,4 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
 
-  // contact form: compose an email in the visitor's mail app
-  var cf = document.getElementById('contact-form');
-  if (cf) {
-    cf.addEventListener('submit', function (e) {
-      e.preventDefault();
-      function v(name) {
-        var el = cf.querySelector('[name="' + name + '"]');
-        return el ? el.value.trim() : '';
-      }
-      var subject = '[' + (v('topic') || 'Hello') + '] ' + (v('name') || 'Website message');
-      // any field marked data-include leads the email as a labelled line
-      var extras = Array.prototype.slice.call(cf.querySelectorAll('[data-include]'))
-        .map(function (el) { var t = el.value.trim(); return t ? el.getAttribute('data-include') + ': ' + t : ''; })
-        .filter(Boolean);
-      var body = (extras.length ? extras.join('\n') + '\n\n' : '') + v('message') +
-        '\n\n- ' + v('name') + (v('email') ? ' (' + v('email') + ')' : '');
-      window.location.href = 'mailto:gausyninc@gmail.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      var note = document.getElementById('contact-note');
-      if (note) {
-        note.textContent = 'Your email app should now be open with the message ready to send. If nothing opened, write to gausyninc@gmail.com directly.';
-      }
-    });
-  }
 })();
