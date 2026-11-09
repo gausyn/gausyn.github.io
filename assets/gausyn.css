@@ -7081,33 +7081,82 @@ html.js .k3-sv{animation:k3-sv 41.8s ease-in-out infinite both}
 html.js .k3-g3{animation:k3-g3 41.8s ease-in-out infinite both}
 @keyframes fade-k3{0%{opacity:1}96.889%{opacity:1}99.402%{opacity:0}100%{opacity:0}}
 html.js .fade-k3{animation:fade-k3 41.8s linear infinite}
-/* a hobby build: parts with swaps, the steps, then a model to turn, resize and print */
+/* a hobby build: a water bottle rocket in 3D, its parts with swaps, a flight to replay, and a fin change kept */
 .kh-sets { display: inline-grid; justify-items: end; }
 .kh-sets > span { grid-area: 1 / 1; display: inline-flex; align-items: center; gap: 6px; }
 .kh-dv { position: absolute; inset: 0; overflow: hidden; }
-.kh-tb { font-size: clamp(11.5px, 0.85vw, 12.5px); line-height: 1.5; }
-.kh-r { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 16px; padding: 6px 0; border-top: 1px solid rgba(128,128,128,0.18); }
+.kh-tb { font-size: clamp(11.5px, 0.85vw, 12.5px); line-height: 1.45; }
+.kh-r { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 16px; padding: 5px 0; border-top: 1px solid rgba(128,128,128,0.18); }
 .kh-rh { padding-top: 0; border-top: 0; color: var(--pt-muted); }
-.kh-r .kh-sw { color: var(--pt-accent); }
+.kh-r .kh-sx { color: var(--pt-accent); }
 .kh-ol { margin-top: 2px; }
-.kh-li { display: grid; grid-template-columns: 20px minmax(0, 1fr); font-size: clamp(11.5px, 0.85vw, 12.5px); line-height: 1.7; }
+.kh-li { display: grid; grid-template-columns: 20px minmax(0, 1fr); font-size: clamp(11.5px, 0.85vw, 12.5px); line-height: 1.6; }
 .kh-li > span { color: var(--pt-accent); }
 .fade-kh .kg-toast { right: 196px; top: 18px; }
-.fade-kh .k3-floor { transform: translate3d(0, 165px, 0) rotateX(90deg); }
-.kh-turn { position: relative; width: 0; height: 0; transform-style: preserve-3d; transform: rotateX(-20deg) rotateY(-36deg) scale3d(.846, 1, .846); }
-.kh-turn > *, .kh-wl > *, .kh-rf > * { position: absolute; left: 0; top: 0; }
-.kh-wl, .kh-rf { transform-style: preserve-3d; }
-.kh-wl { transform: translate3d(0, 165px, 0) scale3d(1, 1.185, 1); }
-.kh-rf { transform: translate3d(0, -91px, 0) scale3d(1, .846, 1); }
-.kh-cb-w { --x: 208px; --y: 216px; --z: 208px; transform: translateY(-108px); }
-.kh-cb-w i:nth-child(1), .kh-cb-w i:nth-child(2) { box-shadow: inset 1px 0 0 #8d877d, inset -1px 0 0 #8d877d, inset 0 -1px 0 #8d877d; }
-.kh-gb { display: block; width: 208px; height: 108px; margin: -104px 0 0 -104px; background: #cbc5bb; clip-path: polygon(50% 0, 100% 96.3%, 100% 100%, 0 100%, 0 96.3%); backface-visibility: hidden; }
-.kh-gf { transform: translateZ(104px); }
-.kh-gk { transform: rotateY(180deg) translateZ(104px); }
-.kh-sl, .kh-sr { --x: 171px; --y: 7px; --z: 208px; }
-.kh-sl { transform: translate3d(-57.6px, -50.3px, 0) rotateZ(-45deg); }
-.kh-sr { transform: translate3d(57.6px, -50.3px, 0) rotateZ(45deg); }
-.kh-hl { display: block; width: 61px; height: 61px; margin: -30.5px 0 0 -30.5px; border-radius: 50%; background: #3b362e; box-shadow: inset 0 4px 8px rgba(0,0,0,0.6); backface-visibility: hidden; transform: translate3d(0, -40px, 104.6px) scale3d(.871, .737, 1); }
+/* the model: the bottle and the nose cone stay put (they are round), the fins turn */
+.fade-kh .k3-floor { transform: translate3d(0, 150px, 0) rotateX(90deg) scale(.55); }
+@media (min-width: 861px) { .fade-kh .k3-fit { transform: scale(1.18); } .kh-ship { transform: scale(1.2); transform-origin: 50% 100%; } }
+.kh-rk { position: relative; width: 0; height: 0; transform-style: preserve-3d; transform: rotateX(-14deg) translateY(30px); }
+.kh-rk > *, .kh-rk i { position: absolute; left: 0; top: 0; display: block; }
+.kh-bt, .kh-nc, .kh-ring, .kh-fins { width: 0; height: 0; transform-style: preserve-3d; }
+.kh-bo, .kh-cf { backface-visibility: hidden; }
+.kh-bo { opacity: 0; }
+.kh-nc { transform: translateY(-100px) scale3d(1, 1, 1); }
+.kh-rt { width: 94px; height: 94px; margin: -47px 0 0 -47px; box-sizing: border-box; border: 3px solid #e2ddd5; border-radius: 50%; transform: rotateX(90deg); }
+.kh-fins { transform: rotateY(-20deg); }
+.kh-fa, .kh-fb { width: 46px; height: 120px; transform-origin: 0 0; box-shadow: inset 0 0 0 1px rgba(110,104,95,0.5); }
+.kh-fa { opacity: 0; }
+.kh-ck { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+.kh-cb { position: relative; width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--rule); background: #fff; flex-shrink: 0; }
+.kh-cm { position: absolute; left: 4px; top: 1px; width: 3px; height: 7px; border: solid #fff; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); opacity: 0; }
+/* the flight, in the Preview */
+.kh-app { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 196px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.kh-sim { position: relative; overflow: hidden; background: linear-gradient(#9fd2ee, #d8eef8 70%, #eef8fb); }
+.kh-sim i { position: absolute; display: block; }
+.kh-far, .kh-wd { position: absolute; left: 0; right: 0; bottom: 0; height: 0; }
+.kh-hill { bottom: 26px; height: 46px; border-radius: 50% 50% 0 0; background: #9cc7a4; }
+.kh-cl { width: 64px; height: 18px; border-radius: 999px; background: rgba(255,255,255,0.9); box-shadow: 18px -8px 0 -2px rgba(255,255,255,0.9), -14px -4px 0 -4px rgba(255,255,255,0.9); }
+.kh-cf2 { opacity: 0.55; transform: scale(.7); }
+.kh-tk { left: 0; right: 0; height: 0; border-top: 1px dashed rgba(11,42,60,0.22); }
+.kh-tk::before { content: ""; position: absolute; left: 0; top: -1px; width: 16px; height: 2px; background: rgba(11,42,60,0.45); }
+.kh-gr { left: 0; right: 0; bottom: 0; height: 34px; background: linear-gradient(#6fae62, #4f8f47); }
+.kh-tree { bottom: 30px; width: 18px; height: 30px; border-radius: 50% 50% 40% 40%; background: #3f7a45; transform-origin: 50% 100%; }
+.kh-pad { left: 50%; bottom: 34px; width: 30px; height: 30px; margin-left: -15px; background: linear-gradient(90deg, transparent 13px, #59636b 13px 17px, transparent 17px), linear-gradient(transparent 26px, #59636b 26px); }
+.kh-ry { position: absolute; left: 50%; bottom: 64px; width: 0; height: 64px; }
+.kh-ship { position: absolute; left: -12px; bottom: 0; width: 24px; height: 64px; }
+.kh-nose { left: 3px; top: 0; width: 18px; height: 17px; background: #e4572e; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.kh-body2 { left: 3px; top: 16px; width: 18px; height: 40px; border-radius: 3px 3px 6px 6px; background: linear-gradient(90deg, rgba(190,225,240,0.95), rgba(240,250,255,0.98) 45%, rgba(170,210,230,0.95)); box-shadow: inset 0 0 0 1px rgba(11,42,60,0.25); overflow: hidden; }
+.kh-wt { left: 0; right: 0; bottom: 0; height: 30%; background: rgba(14,116,144,0.55); transform-origin: 50% 100%; }
+.kh-fn { bottom: 2px; width: 10px; height: 18px; background: #e4572e; }
+.kh-fn1 { left: -5px; clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.kh-fn2 { right: -5px; clip-path: polygon(0 0, 100% 100%, 0 100%); }
+.kh-ex { position: absolute; left: 12px; top: 100%; width: 0; height: 0; }
+.kh-ex i { left: -2.5px; top: 0; width: 5px; height: 5px; border-radius: 50%; background: rgba(110,190,225,0.95); animation: kh-drip 0.54s linear infinite; }
+@keyframes kh-drip { 0% { transform: translate(0, 0) scale(1); opacity: 0.95; } 100% { transform: translate(var(--dx), 42px) scale(.5); opacity: 0; } }
+.kh-chute { position: absolute; left: 12px; bottom: 100%; width: 0; height: 30px; transform-origin: 0 100%; }
+.kh-cn { left: -28px; top: -20px; width: 56px; height: 24px; border-radius: 28px 28px 4px 4px; background: repeating-linear-gradient(90deg, #f6f6f2 0 14px, #e4572e 14px 28px); box-shadow: 0 1px 0 rgba(0,0,0,0.12); }
+.kh-ln { top: 3px; width: 1px; height: 30px; background: rgba(11,42,60,0.5); transform-origin: 50% 0; }
+.kh-ln1 { left: -26px; transform: rotate(-38deg); }
+.kh-ln2 { left: 26px; transform: rotate(38deg); }
+.kh-hud, .kh-pk { position: absolute; left: 10px; display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,0.88); font-size: 12px; color: #0b2a3c; white-space: nowrap; }
+.kh-hud { top: 10px; }
+.kh-pk { top: 40px; background: #0b2a3c; color: #fff; }
+.kh-hud .kg-n, .kh-pk .kg-n { font-family: var(--mono); justify-items: end; min-width: 1.4em; }
+.kh-ctl { display: flex; flex-direction: column; gap: 11px; min-width: 0; padding: 12px 12px 10px; border-left: 1px solid var(--rule-soft); background: #fff; font-size: 12px; color: #0b2a3c; }
+.kh-ctl .k3-k { font-size: 12px; color: #0b2a3c; }
+.kh-wvw { justify-items: end; }
+.kh-ps { display: flex; justify-content: space-between; font-size: 12px; color: #4b6b7c; }
+.kh-go { display: block; text-align: center; padding: 6px 0; border-radius: 999px; background: #0e7490; color: #fff; font-size: 12px; }
+.kh-bars { display: grid; gap: 7px; margin-top: 2px; }
+.kh-bh { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4b6b7c; }
+.kh-br { display: grid; grid-template-columns: 2.8em minmax(0, 1fr) 2.7em; align-items: center; gap: 6px; font-size: 11.5px; }
+.kh-br em { font-style: normal; text-align: right; font-family: var(--mono); font-size: 11px; }
+.kh-trk { position: relative; height: 9px; border-radius: 5px; background: #e3eef3; overflow: hidden; }
+.kh-trk i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 5px; background: #0e7490; transform-origin: 0 50%; }
+.kh-b1 { transform: scaleX(.65); }
+.kh-b2 { transform: scaleX(.875); background-color: #e4572e; }
+.kh-b3 { transform: scaleX(.425); }
+.kh-bs { font-size: 11px; line-height: 1.4; color: #c4441f; }
 @media (max-width: 860px) {
   .fade-kh .xw-split { grid-template-rows: minmax(0, 38%) minmax(0, 1fr); }
   .fade-kh .xv-docwrap { padding: 8px 8px 0; }
@@ -7115,163 +7164,254 @@ html.js .fade-k3{animation:fade-k3 41.8s linear infinite}
   .kh-tt { display: none; }
   .kh-body { display: grid; }
   .kh-body > div { grid-area: 1 / 1; min-width: 0; }
-  .kh-r { gap: 10px; padding: 5px 0; }
+  .kh-r { gap: 10px; padding: 4px 0; }
   .fade-kh .kg-toast { right: 12px; top: 12px; }
-  .fade-kh .k3-fit { transform: scale(.4); }
+  .fade-kh .k3-fit { transform: scale(.5); }
+  .k3-meas .kh-ck { display: none; }
+  .fade-kh .kt-con { display: none; }
   .kh-li { line-height: 1.5; padding-bottom: 5px; }
 }
 @media (max-width: 560px) {
-  .fade-kh .k3-hint { display: none; }
+  .fade-kh .k3-hint, .fade-kh .kh-up { display: none; }
+  .kh-app { grid-template-columns: minmax(0, 1fr) 146px; }
+  .kh-ctl { gap: 8px; padding: 9px 9px 8px; }
+  .kh-br { grid-template-columns: 2.6em minmax(0, 1fr) 2.5em; gap: 4px; }
+  .kh-hud, .kh-pk { left: 6px; padding: 2px 8px; font-size: 11px; }
+  .kh-pk { top: 34px; }
+  .kh-wd { bottom: -16px; }
+  .kh-ry { bottom: 48px; }
+  .kh-ship { transform: scale(.85); transform-origin: 50% 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .kh-t3, .kr-td { color: var(--ink); border-color: var(--ink); }
 }
-@media (max-width: 380px) {
-  .kh-lc { display: none; }
-}
-@keyframes kh-p3{0%{opacity:0;transform:translateY(10px)}1.579%{opacity:0;transform:translateY(10px)}2.632%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-p3{animation:kh-p3 38s ease-in-out infinite both}
-@keyframes kh-s3{0%{opacity:0}2.895%{opacity:0}3.947%{opacity:1}100%{opacity:1}}
-html.js .kh-s3{animation:kh-s3 38s ease-in-out infinite both}
-@keyframes kh-p4{0%{opacity:0;transform:translateY(10px)}4.737%{opacity:0;transform:translateY(10px)}5.789%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-p4{animation:kh-p4 38s ease-in-out infinite both}
-@keyframes kh-s4{0%{opacity:0}6.053%{opacity:0}7.105%{opacity:1}100%{opacity:1}}
-html.js .kh-s4{animation:kh-s4 38s ease-in-out infinite both}
-@keyframes kh-p5{0%{opacity:0;transform:translateY(10px)}8.421%{opacity:0;transform:translateY(10px)}9.474%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-p5{animation:kh-p5 38s ease-in-out infinite both}
-@keyframes kh-w1{0%{opacity:1}20%{opacity:1}21.053%{opacity:0}100%{opacity:0}}
-html.js .kh-w1{animation:kh-w1 38s ease-in-out infinite both}
-@keyframes kh-lv1{0%{opacity:1}20.526%{opacity:1}21.579%{opacity:0}100%{opacity:0}}
-html.js .kh-lv1{animation:kh-lv1 38s ease-in-out infinite both}
-@keyframes kh-pa-p{0%{opacity:1}13.158%{opacity:1}14.211%{opacity:0}100%{opacity:0}}
-@keyframes kh-sh{0%{opacity:0;transform:translateY(10px)}13.158%{opacity:0;transform:translateY(10px)}14.211%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-sh{animation:kh-sh 38s ease-in-out infinite both}
-@keyframes kh-i1{0%{opacity:0;transform:translateY(10px)}14.474%{opacity:0;transform:translateY(10px)}15.526%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-i1{animation:kh-i1 38s ease-in-out infinite both}
-@keyframes kh-i2{0%{opacity:0;transform:translateY(10px)}16.053%{opacity:0;transform:translateY(10px)}17.105%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-i2{animation:kh-i2 38s ease-in-out infinite both}
-@keyframes kh-i3{0%{opacity:0;transform:translateY(10px)}17.632%{opacity:0;transform:translateY(10px)}18.684%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-i3{animation:kh-i3 38s ease-in-out infinite both}
-@keyframes kh-i4{0%{opacity:0;transform:translateY(10px)}19.211%{opacity:0;transform:translateY(10px)}20.263%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-i4{animation:kh-i4 38s ease-in-out infinite both}
-@keyframes kh-g1{0%{opacity:0}20.526%{opacity:0}21.579%{opacity:1}100%{opacity:1}}
-html.js .kh-g1{animation:kh-g1 38s ease-in-out infinite both}
-@keyframes kh-y2{0%{opacity:0}24.737%{opacity:0}25.789%{opacity:1}100%{opacity:1}}
-html.js .kh-y2{animation:kh-y2 38s ease-in-out infinite both}
-@keyframes kh-w2{0%{opacity:0}25.789%{opacity:0}26.842%{opacity:1}35%{opacity:1}36.053%{opacity:0}100%{opacity:0}}
-html.js .kh-w2{animation:kh-w2 38s ease-in-out infinite both}
-@keyframes kh-lv2{0%{opacity:0}25.789%{opacity:0}26.842%{opacity:1}35.526%{opacity:1}36.579%{opacity:0}100%{opacity:0}}
-html.js .kh-lv2{animation:kh-lv2 38s ease-in-out infinite both}
-@keyframes kh-td{0%{color:var(--ink);border-color:var(--ink)}26.316%{color:var(--ink);border-color:var(--ink)}27.105%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
-html.js .kh-td{animation:kh-td 38s ease-in-out infinite both}
-@keyframes kh-tc{0%{color:var(--faint);border-color:transparent}26.316%{color:var(--faint);border-color:transparent}27.105%{color:var(--ink);border-color:var(--ink)}35.526%{color:var(--ink);border-color:var(--ink)}36.316%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
-html.js .kh-tc{animation:kh-tc 38s ease-in-out infinite both}
-@keyframes kh-n1{0%{opacity:0}26.316%{opacity:0}27.368%{opacity:1}100%{opacity:1}}
-html.js .kh-n1{animation:kh-n1 38s ease-in-out infinite both}
-@keyframes kh-t3{0%{color:var(--faint);border-color:transparent}35.526%{color:var(--faint);border-color:transparent}36.316%{color:var(--ink);border-color:var(--ink)}100%{color:var(--ink);border-color:var(--ink)}}
-html.js .kh-t3{animation:kh-t3 38s ease-in-out infinite both}
-@keyframes kh-cv{0%{opacity:0}26.316%{opacity:0}27.368%{opacity:1}35.526%{opacity:1}36.579%{opacity:0}100%{opacity:0}}
-html.js .kh-cv{animation:kh-cv 38s ease-in-out infinite both}
-@keyframes kh-l1{0%{opacity:0}26.842%{opacity:0}27.5%{opacity:1}100%{opacity:1}}
-html.js .kh-l1{animation:kh-l1 38s ease-in-out infinite both}
-@keyframes kh-l2{0%{opacity:0}27.5%{opacity:0}28.158%{opacity:1}100%{opacity:1}}
-html.js .kh-l2{animation:kh-l2 38s ease-in-out infinite both}
-@keyframes kh-l3{0%{opacity:0}28.158%{opacity:0}28.816%{opacity:1}100%{opacity:1}}
-html.js .kh-l3{animation:kh-l3 38s ease-in-out infinite both}
-@keyframes kh-l4{0%{opacity:0}28.816%{opacity:0}29.474%{opacity:1}100%{opacity:1}}
-html.js .kh-l4{animation:kh-l4 38s ease-in-out infinite both}
-@keyframes kh-l5{0%{opacity:0}29.474%{opacity:0}30.132%{opacity:1}100%{opacity:1}}
-html.js .kh-l5{animation:kh-l5 38s ease-in-out infinite both}
-@keyframes kh-l6{0%{opacity:0}30.132%{opacity:0}30.789%{opacity:1}100%{opacity:1}}
-html.js .kh-l6{animation:kh-l6 38s ease-in-out infinite both}
-@keyframes kh-l7{0%{opacity:0}30.789%{opacity:0}31.447%{opacity:1}100%{opacity:1}}
-html.js .kh-l7{animation:kh-l7 38s ease-in-out infinite both}
-@keyframes kh-l8{0%{opacity:0}31.447%{opacity:0}32.105%{opacity:1}100%{opacity:1}}
-html.js .kh-l8{animation:kh-l8 38s ease-in-out infinite both}
-@keyframes kh-l9{0%{opacity:0}32.105%{opacity:0}32.763%{opacity:1}100%{opacity:1}}
-html.js .kh-l9{animation:kh-l9 38s ease-in-out infinite both}
-@keyframes kh-l10{0%{opacity:0}32.763%{opacity:0}33.421%{opacity:1}100%{opacity:1}}
-html.js .kh-l10{animation:kh-l10 38s ease-in-out infinite both}
-@keyframes kh-l11{0%{opacity:0}33.421%{opacity:0}34.079%{opacity:1}100%{opacity:1}}
-html.js .kh-l11{animation:kh-l11 38s ease-in-out infinite both}
-@keyframes kh-l12{0%{opacity:0}34.079%{opacity:0}34.737%{opacity:1}100%{opacity:1}}
-html.js .kh-l12{animation:kh-l12 38s ease-in-out infinite both}
-@keyframes kh-dr{0%{opacity:1}35.789%{opacity:1}36.842%{opacity:0}100%{opacity:0}}
-html.js .kh-dr{animation:kh-dr 38s ease-in-out infinite both}
-@keyframes kh-3d{0%{opacity:0}35.526%{opacity:0}36.579%{opacity:1}100%{opacity:1}}
-html.js .kh-3d{animation:kh-3d 38s ease-in-out infinite both}
-@keyframes kh-tl1{0%{opacity:1}26.316%{opacity:1}27.368%{opacity:0}100%{opacity:0}}
-html.js .kh-tl1{animation:kh-tl1 38s ease-in-out infinite both}
-@keyframes kh-tl2{0%{opacity:0}26.316%{opacity:0}27.368%{opacity:1}100%{opacity:1}}
-html.js .kh-tl2{animation:kh-tl2 38s ease-in-out infinite both}
-@keyframes kh-d2{0%{opacity:0}35.526%{opacity:0}36.579%{opacity:1}100%{opacity:1}}
-html.js .kh-d2{animation:kh-d2 38s ease-in-out infinite both}
-@keyframes kh-hn{0%{opacity:0}38.421%{opacity:0}39.474%{opacity:1}50%{opacity:1}51.053%{opacity:0}100%{opacity:0}}
-html.js .kh-hn{animation:kh-hn 38s ease-in-out infinite both}
-@keyframes kh-a1{0%{opacity:1}51.842%{opacity:1}52.105%{opacity:0}100%{opacity:0}}
-html.js .kh-a1{animation:kh-a1 38s ease-in-out infinite both}
-@keyframes kh-a2{0%{opacity:0}51.842%{opacity:0}52.105%{opacity:1}53.158%{opacity:1}53.421%{opacity:0}100%{opacity:0}}
-html.js .kh-a2{animation:kh-a2 38s ease-in-out infinite both}
-@keyframes kh-a3{0%{opacity:0}53.158%{opacity:0}53.421%{opacity:1}100%{opacity:1}}
-html.js .kh-a3{animation:kh-a3 38s ease-in-out infinite both}
-@keyframes kh-aa{0%{transform:translateX(57%)}50%{transform:translateX(57%)}54.211%{transform:translateX(29%)}100%{transform:translateX(29%)}}
-html.js .kh-aa{animation:kh-aa 38s ease-in-out infinite both}
-@keyframes kh-af{0%{transform:scaleX(0.57)}50%{transform:scaleX(0.57)}54.211%{transform:scaleX(0.29)}100%{transform:scaleX(0.29)}}
-html.js .kh-af{animation:kh-af 38s ease-in-out infinite both}
-@keyframes kh-b1{0%{opacity:1}56.579%{opacity:1}56.842%{opacity:0}100%{opacity:0}}
-html.js .kh-b1{animation:kh-b1 38s ease-in-out infinite both}
-@keyframes kh-b2{0%{opacity:0}56.579%{opacity:0}56.842%{opacity:1}57.895%{opacity:1}58.158%{opacity:0}100%{opacity:0}}
-html.js .kh-b2{animation:kh-b2 38s ease-in-out infinite both}
-@keyframes kh-b3{0%{opacity:0}57.895%{opacity:0}58.158%{opacity:1}100%{opacity:1}}
-html.js .kh-b3{animation:kh-b3 38s ease-in-out infinite both}
-@keyframes kh-ba{0%{transform:translateX(36%)}54.737%{transform:translateX(36%)}58.947%{transform:translateX(71%)}100%{transform:translateX(71%)}}
-html.js .kh-ba{animation:kh-ba 38s ease-in-out infinite both}
-@keyframes kh-bf{0%{transform:scaleX(0.36)}54.737%{transform:scaleX(0.36)}58.947%{transform:scaleX(0.71)}100%{transform:scaleX(0.71)}}
-html.js .kh-bf{animation:kh-bf 38s ease-in-out infinite both}
-@keyframes kh-z1{0%{opacity:1}52.368%{opacity:1}52.632%{opacity:0}100%{opacity:0}}
-html.js .kh-z1{animation:kh-z1 38s ease-in-out infinite both}
-@keyframes kh-z2{0%{opacity:0}52.368%{opacity:0}52.632%{opacity:1}57.105%{opacity:1}57.368%{opacity:0}100%{opacity:0}}
-html.js .kh-z2{animation:kh-z2 38s ease-in-out infinite both}
-@keyframes kh-z3{0%{opacity:0}57.105%{opacity:0}57.368%{opacity:1}100%{opacity:1}}
-html.js .kh-z3{animation:kh-z3 38s ease-in-out infinite both}
-@keyframes kh-tn{0%{transform:rotateX(-20deg) rotateY(-36deg) scale3d(1,1,1)}39.474%{transform:rotateX(-20deg) rotateY(-36deg) scale3d(1,1,1)}45.263%{transform:rotateX(-20deg) rotateY(34deg) scale3d(1,1,1)}50%{transform:rotateX(-20deg) rotateY(-36deg) scale3d(1,1,1)}54.211%{transform:rotateX(-20deg) rotateY(-36deg) scale3d(0.846,1,0.846)}100%{transform:rotateX(-20deg) rotateY(-36deg) scale3d(0.846,1,0.846)}}
-html.js .kh-tn{animation:kh-tn 38s ease-in-out infinite both}
-@keyframes kh-ww{0%{transform:translate3d(0,165px,0) scale3d(1,1,1)}54.737%{transform:translate3d(0,165px,0) scale3d(1,1,1)}58.947%{transform:translate3d(0,165px,0) scale3d(1,1.185,1)}100%{transform:translate3d(0,165px,0) scale3d(1,1.185,1)}}
-html.js .kh-ww{animation:kh-ww 38s ease-in-out infinite both}
-@keyframes kh-rr{0%{transform:translate3d(0,-51px,0) scale3d(1,1,1)}50%{transform:translate3d(0,-51px,0) scale3d(1,1,1)}54.211%{transform:translate3d(0,-51px,0) scale3d(1,0.846,1)}54.737%{transform:translate3d(0,-51px,0) scale3d(1,0.846,1)}58.947%{transform:translate3d(0,-91px,0) scale3d(1,0.846,1)}100%{transform:translate3d(0,-91px,0) scale3d(1,0.846,1)}}
-html.js .kh-rr{animation:kh-rr 38s ease-in-out infinite both}
-@keyframes kh-y3{0%{opacity:0}60.526%{opacity:0}61.579%{opacity:1}100%{opacity:1}}
-html.js .kh-y3{animation:kh-y3 38s ease-in-out infinite both}
-@keyframes kh-t1{0%{opacity:0}61.842%{opacity:0}62.895%{opacity:1}64.474%{opacity:1}65.526%{opacity:0}100%{opacity:0}}
-html.js .kh-t1{animation:kh-t1 38s ease-in-out infinite both}
-@keyframes kh-g3{0%{opacity:0}65%{opacity:0}66.053%{opacity:1}100%{opacity:1}}
-html.js .kh-g3{animation:kh-g3 38s ease-in-out infinite both}
-@keyframes kh-c1{0%{opacity:1}70.789%{opacity:1}71.053%{opacity:0}100%{opacity:0}}
-html.js .kh-c1{animation:kh-c1 38s ease-in-out infinite both}
-@keyframes kh-c2{0%{opacity:0}70.789%{opacity:0}71.053%{opacity:1}72.105%{opacity:1}72.368%{opacity:0}100%{opacity:0}}
-html.js .kh-c2{animation:kh-c2 38s ease-in-out infinite both}
-@keyframes kh-c3{0%{opacity:0}72.105%{opacity:0}72.368%{opacity:1}100%{opacity:1}}
-html.js .kh-c3{animation:kh-c3 38s ease-in-out infinite both}
-@keyframes kh-ca{0%{transform:translateX(65%)}68.947%{transform:translateX(65%)}73.158%{transform:translateX(15%)}100%{transform:translateX(15%)}}
-html.js .kh-ca{animation:kh-ca 38s ease-in-out infinite both}
-@keyframes kh-cf{0%{transform:scaleX(0.65)}68.947%{transform:scaleX(0.65)}73.158%{transform:scaleX(0.15)}100%{transform:scaleX(0.15)}}
-html.js .kh-cf{animation:kh-cf 38s ease-in-out infinite both}
-@keyframes kh-hh{0%{transform:translate3d(0,-7.8px,104.6px) scale3d(1,1,1)}50%{transform:translate3d(0,-7.8px,104.6px) scale3d(1,1,1)}54.211%{transform:translate3d(0,-7.8px,104.6px) scale3d(1.182,1,1)}54.737%{transform:translate3d(0,-7.8px,104.6px) scale3d(1.182,1,1)}58.947%{transform:translate3d(0,-39.8px,104.6px) scale3d(1.182,1,1)}68.947%{transform:translate3d(0,-39.8px,104.6px) scale3d(1.182,1,1)}73.158%{transform:translate3d(0,-39.8px,104.6px) scale3d(0.871,0.737,1)}100%{transform:translate3d(0,-39.8px,104.6px) scale3d(0.871,0.737,1)}}
-html.js .kh-hh{animation:kh-hh 38s ease-in-out infinite both}
-@keyframes kh-kp{0%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}74.474%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}75.395%{background-color:var(--ink);color:#fff;border-color:var(--ink);transform:none}75.868%{background-color:var(--ink);color:#fff;border-color:var(--ink);transform:scale(0.93)}76.711%{background-color:var(--ink);color:#fff;border-color:var(--ink);transform:none}78.158%{background-color:var(--ink);color:#fff;border-color:var(--ink);transform:none}79.079%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}100%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}}
-html.js .kh-kp{animation:kh-kp 38s ease-in-out infinite both}
-@keyframes kh-y4{0%{opacity:0}78.421%{opacity:0}79.474%{opacity:1}100%{opacity:1}}
-html.js .kh-y4{animation:kh-y4 38s ease-in-out infinite both}
-@keyframes kh-st{0%{border-color:var(--rule);color:var(--muted);transform:none}80.526%{border-color:var(--rule);color:var(--muted);transform:none}81.447%{border-color:var(--ink);color:var(--ink);transform:none}81.921%{border-color:var(--ink);color:var(--ink);transform:scale(0.93)}82.763%{border-color:var(--ink);color:var(--ink);transform:none}100%{border-color:var(--ink);color:var(--ink);transform:none}}
-html.js .kh-st{animation:kh-st 38s ease-in-out infinite both}
-@keyframes kh-sv{0%{opacity:0;transform:translateY(10px)}82.895%{opacity:0;transform:translateY(10px)}83.947%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .kh-sv{animation:kh-sv 38s ease-in-out infinite both}
-@keyframes kh-g4{0%{opacity:0}85%{opacity:0}86.053%{opacity:1}100%{opacity:1}}
-html.js .kh-g4{animation:kh-g4 38s ease-in-out infinite both}
-@keyframes fade-kh{0%{opacity:1}96.579%{opacity:1}99.342%{opacity:0}100%{opacity:0}}
-html.js .fade-kh{animation:fade-kh 38s linear infinite}
+@keyframes kh-pa-p{0%{opacity:1}18.409%{opacity:1}19.091%{opacity:0}100%{opacity:0}}
+@keyframes kh-y1{0%{opacity:0}9.545%{opacity:0}10.455%{opacity:1}100%{opacity:1}}
+html.js .kh-y1{animation:kh-y1 44s ease-in-out infinite both}
+@keyframes kh-w1{0%{opacity:0}10.909%{opacity:0}11.818%{opacity:1}22.273%{opacity:1}23.182%{opacity:0}100%{opacity:0}}
+html.js .kh-w1{animation:kh-w1 44s ease-in-out infinite both}
+@keyframes kh-g1{0%{opacity:0}22.273%{opacity:0}23.182%{opacity:1}100%{opacity:1}}
+html.js .kh-g1{animation:kh-g1 44s ease-in-out infinite both}
+@keyframes kh-y2{0%{opacity:0}25%{opacity:0}25.909%{opacity:1}100%{opacity:1}}
+html.js .kh-y2{animation:kh-y2 44s ease-in-out infinite both}
+@keyframes kh-t2{0%{opacity:0}25.909%{opacity:0}26.818%{opacity:1}27.273%{opacity:1}28.182%{opacity:0}100%{opacity:0}}
+html.js .kh-t2{animation:kh-t2 44s ease-in-out infinite both}
+@keyframes kh-w2{0%{opacity:0}27.273%{opacity:0}28.182%{opacity:1}30.909%{opacity:1}31.818%{opacity:0}100%{opacity:0}}
+html.js .kh-w2{animation:kh-w2 44s ease-in-out infinite both}
+@keyframes kh-wa{0%{opacity:1}29.091%{opacity:1}29.545%{opacity:0}100%{opacity:0}}
+html.js .kh-wa{animation:kh-wa 44s ease-in-out infinite both}
+@keyframes kh-wb{0%{opacity:0}29.091%{opacity:0}29.545%{opacity:1}100%{opacity:1}}
+html.js .kh-wb{animation:kh-wb 44s ease-in-out infinite both}
+@keyframes kh-g2{0%{opacity:0}30.909%{opacity:0}31.818%{opacity:1}100%{opacity:1}}
+html.js .kh-g2{animation:kh-g2 44s ease-in-out infinite both}
+@keyframes kh-g3{0%{opacity:0}44.091%{opacity:0}45%{opacity:1}100%{opacity:1}}
+html.js .kh-g3{animation:kh-g3 44s ease-in-out infinite both}
+@keyframes kh-y3{0%{opacity:0}48.182%{opacity:0}49.091%{opacity:1}100%{opacity:1}}
+html.js .kh-y3{animation:kh-y3 44s ease-in-out infinite both}
+@keyframes kh-g4{0%{opacity:0}67.727%{opacity:0}68.636%{opacity:1}100%{opacity:1}}
+html.js .kh-g4{animation:kh-g4 44s ease-in-out infinite both}
+@keyframes kh-y4{0%{opacity:0}71.364%{opacity:0}72.273%{opacity:1}100%{opacity:1}}
+html.js .kh-y4{animation:kh-y4 44s ease-in-out infinite both}
+@keyframes kh-w3{0%{opacity:0}72.273%{opacity:0}73.182%{opacity:1}75%{opacity:1}75.909%{opacity:0}100%{opacity:0}}
+html.js .kh-w3{animation:kh-w3 44s ease-in-out infinite both}
+@keyframes kh-g5{0%{opacity:0}75%{opacity:0}75.909%{opacity:1}100%{opacity:1}}
+html.js .kh-g5{animation:kh-g5 44s ease-in-out infinite both}
+@keyframes kh-g6{0%{opacity:0}80.909%{opacity:0}81.818%{opacity:1}100%{opacity:1}}
+html.js .kh-g6{animation:kh-g6 44s ease-in-out infinite both}
+@keyframes kh-y5{0%{opacity:0}84.545%{opacity:0}85.455%{opacity:1}100%{opacity:1}}
+html.js .kh-y5{animation:kh-y5 44s ease-in-out infinite both}
+@keyframes kh-g7{0%{opacity:0}87.727%{opacity:0}88.636%{opacity:1}100%{opacity:1}}
+html.js .kh-g7{animation:kh-g7 44s ease-in-out infinite both}
+@keyframes kh-t3{0%{color:var(--ink);border-color:var(--ink)}10.909%{color:var(--ink);border-color:var(--ink)}11.591%{color:var(--faint);border-color:transparent}75%{color:var(--faint);border-color:transparent}75.682%{color:var(--ink);border-color:var(--ink)}100%{color:var(--ink);border-color:var(--ink)}}
+html.js .kh-t3{animation:kh-t3 44s ease-in-out infinite both}
+@keyframes kh-td{0%{color:var(--faint);border-color:transparent}10.909%{color:var(--faint);border-color:transparent}11.591%{color:var(--ink);border-color:var(--ink)}30.909%{color:var(--ink);border-color:var(--ink)}31.591%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
+html.js .kh-td{animation:kh-td 44s ease-in-out infinite both}
+@keyframes kh-tp{0%{color:var(--faint);border-color:transparent}30.909%{color:var(--faint);border-color:transparent}31.591%{color:var(--ink);border-color:var(--ink)}75%{color:var(--ink);border-color:var(--ink)}75.682%{color:var(--faint);border-color:transparent}100%{color:var(--faint);border-color:transparent}}
+html.js .kh-tp{animation:kh-tp 44s ease-in-out infinite both}
+@keyframes kh-lv1{0%{opacity:0}10.909%{opacity:0}11.818%{opacity:1}22.273%{opacity:1}23.182%{opacity:0}100%{opacity:0}}
+html.js .kh-lv1{animation:kh-lv1 44s ease-in-out infinite both}
+@keyframes kh-lv2{0%{opacity:0}27.273%{opacity:0}28.182%{opacity:1}30.909%{opacity:1}31.818%{opacity:0}100%{opacity:0}}
+html.js .kh-lv2{animation:kh-lv2 44s ease-in-out infinite both}
+@keyframes kh-lv3{0%{opacity:0}72.273%{opacity:0}73.182%{opacity:1}75%{opacity:1}75.909%{opacity:0}100%{opacity:0}}
+html.js .kh-lv3{animation:kh-lv3 44s ease-in-out infinite both}
+@keyframes kh-c1{0%{opacity:1}30.909%{opacity:1}31.136%{opacity:0}100%{opacity:0}}
+html.js .kh-c1{animation:kh-c1 44s ease-in-out infinite both}
+@keyframes kh-c3{0%{opacity:0}30.909%{opacity:0}31.136%{opacity:1}100%{opacity:1}}
+html.js .kh-c3{animation:kh-c3 44s ease-in-out infinite both}
+@keyframes kh-ts1{0%{opacity:0}10.909%{opacity:0}11.364%{opacity:1}30.909%{opacity:1}31.364%{opacity:0}100%{opacity:0}}
+html.js .kh-ts1{animation:kh-ts1 44s ease-in-out infinite both}
+@keyframes kh-ts2{0%{opacity:0}30.909%{opacity:0}31.364%{opacity:1}75%{opacity:1}75.455%{opacity:0}100%{opacity:0}}
+html.js .kh-ts2{animation:kh-ts2 44s ease-in-out infinite both}
+@keyframes kh-ts3{0%{opacity:1}10.909%{opacity:1}11.364%{opacity:0}75%{opacity:0}75.455%{opacity:1}100%{opacity:1}}
+html.js .kh-ts3{animation:kh-ts3 44s ease-in-out infinite both}
+@keyframes kh-st{0%{border-color:var(--rule);color:var(--muted);transform:none}85.455%{border-color:var(--rule);color:var(--muted);transform:none}85.795%{border-color:var(--ink);color:var(--ink)}86.136%{transform:scale(0.93)}86.591%{transform:none}99.545%{border-color:var(--ink);color:var(--ink)}100%{border-color:var(--rule);color:var(--muted);transform:none}100%{border-color:var(--rule);color:var(--muted);transform:none}}
+html.js .kh-st{animation:kh-st 44s ease-in-out infinite both}
+@keyframes kh-sv{0%{opacity:0;transform:translateY(10px)}86.364%{opacity:0;transform:translateY(10px)}87.273%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-sv{animation:kh-sv 44s ease-in-out infinite both}
+@keyframes kh-3d{0%{opacity:1}10.909%{opacity:1}11.364%{opacity:0}75.455%{opacity:0}75.909%{opacity:1}100%{opacity:1}}
+html.js .kh-3d{animation:kh-3d 44s ease-in-out infinite both}
+@keyframes kh-dv{0%{opacity:0}11.364%{opacity:0}11.818%{opacity:1}30.909%{opacity:1}31.364%{opacity:0}100%{opacity:0}}
+html.js .kh-dv{animation:kh-dv 44s ease-in-out infinite both}
+@keyframes kh-pv{0%{opacity:0}31.364%{opacity:0}31.818%{opacity:1}75%{opacity:1}75.455%{opacity:0}100%{opacity:0}}
+html.js .kh-pv{animation:kh-pv 44s ease-in-out infinite both}
+@keyframes kh-fr{0%{transform:rotateY(-20deg)}0%{transform:rotateY(-20deg)}100%{transform:rotateY(1036deg)}100%{transform:rotateY(1036deg)}}
+html.js .kh-fr{animation:kh-fr 44s linear infinite both}
+@keyframes kh-ns{0%{transform:translateY(-100px) scale3d(1,.75,1)}3.182%{transform:translateY(-100px) scale3d(1,.75,1)}5.909%{transform:translateY(-100px) scale3d(1,1,1)}100%{transform:translateY(-100px) scale3d(1,1,1)}}
+html.js .kh-ns{animation:kh-ns 44s ease-in-out infinite both}
+@keyframes kh-fa{0%{opacity:1}76.591%{opacity:1}77.5%{opacity:0}100%{opacity:0}}
+html.js .kh-fa{animation:kh-fa 44s ease-in-out infinite both}
+@keyframes kh-fb{0%{opacity:0}76.591%{opacity:0}77.5%{opacity:1}100%{opacity:1}}
+html.js .kh-fb{animation:kh-fb 44s ease-in-out infinite both}
+@keyframes kh-bo{0%{opacity:1}82.273%{opacity:1}83.636%{opacity:0}100%{opacity:0}}
+html.js .kh-bo{animation:kh-bo 44s ease-in-out infinite both}
+@keyframes kh-hn{0%{opacity:0}1.364%{opacity:0}2.273%{opacity:1}10%{opacity:1}10.909%{opacity:0}100%{opacity:0}}
+html.js .kh-hn{animation:kh-hn 44s ease-in-out infinite both}
+@keyframes kh-z1{0%{opacity:1}5.455%{opacity:1}5.795%{opacity:0}100%{opacity:0}}
+html.js .kh-z1{animation:kh-z1 44s ease-in-out infinite both}
+@keyframes kh-z2{0%{opacity:0}5.455%{opacity:0}5.795%{opacity:1}100%{opacity:1}}
+html.js .kh-z2{animation:kh-z2 44s ease-in-out infinite both}
+@keyframes kh-nf{0%{transform:scaleX(0.333)}3.182%{transform:scaleX(0.333)}5.909%{transform:scaleX(0.667)}100%{transform:scaleX(0.667)}}
+html.js .kh-nf{animation:kh-nf 44s ease-in-out infinite both}
+@keyframes kh-nr{0%{transform:translateX(33.333%)}3.182%{transform:translateX(33.333%)}5.909%{transform:translateX(66.667%)}100%{transform:translateX(66.667%)}}
+html.js .kh-nr{animation:kh-nr 44s ease-in-out infinite both}
+@keyframes kh-nv0{0%{opacity:1}4.318%{opacity:1}4.432%{opacity:0}100%{opacity:0}}
+html.js .kh-nv0{animation:kh-nv0 44s linear infinite both}
+@keyframes kh-nv1{0%{opacity:0}4.318%{opacity:0}4.432%{opacity:1}5.455%{opacity:1}5.568%{opacity:0}100%{opacity:0}}
+html.js .kh-nv1{animation:kh-nv1 44s linear infinite both}
+@keyframes kh-nv2{0%{opacity:0}5.455%{opacity:0}5.568%{opacity:1}100%{opacity:1}}
+html.js .kh-nv2{animation:kh-nv2 44s linear infinite both}
+@keyframes kh-sf{0%{transform:scaleX(0)}75.909%{transform:scaleX(0)}78.182%{transform:scaleX(0.667)}100%{transform:scaleX(0.667)}}
+html.js .kh-sf{animation:kh-sf 44s ease-in-out infinite both}
+@keyframes kh-sn{0%{transform:translateX(0%)}75.909%{transform:translateX(0%)}78.182%{transform:translateX(66.667%)}100%{transform:translateX(66.667%)}}
+html.js .kh-sn{animation:kh-sn 44s ease-in-out infinite both}
+@keyframes kh-sv0{0%{opacity:1}77.045%{opacity:1}77.159%{opacity:0}100%{opacity:0}}
+html.js .kh-sv0{animation:kh-sv0 44s linear infinite both}
+@keyframes kh-sv1{0%{opacity:0}77.045%{opacity:0}77.159%{opacity:1}77.727%{opacity:1}77.841%{opacity:0}100%{opacity:0}}
+html.js .kh-sv1{animation:kh-sv1 44s linear infinite both}
+@keyframes kh-sv2{0%{opacity:0}77.727%{opacity:0}77.841%{opacity:1}100%{opacity:1}}
+html.js .kh-sv2{animation:kh-sv2 44s linear infinite both}
+@keyframes kh-sr{0%{opacity:0}75%{opacity:0}75.909%{opacity:1}100%{opacity:1}}
+html.js .kh-sr{animation:kh-sr 44s ease-in-out infinite both}
+@keyframes kh-kp{0%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}79.545%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}79.886%{background-color:var(--ink);color:#fff;border-color:var(--ink)}80.227%{transform:scale(0.93)}80.682%{transform:none}80.909%{background-color:var(--ink);color:#fff;border-color:var(--ink)}81.591%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}100%{background-color:#fff;color:var(--muted);border-color:var(--rule);transform:none}}
+html.js .kh-kp{animation:kh-kp 44s ease-in-out infinite both}
+@keyframes kh-cb{0%{background-color:var(--ink);border-color:var(--ink)}82.273%{background-color:var(--ink);border-color:var(--ink)}82.727%{background-color:#fff;border-color:var(--rule)}100%{background-color:#fff;border-color:var(--rule)}}
+html.js .kh-cb{animation:kh-cb 44s ease-in-out infinite both}
+@keyframes kh-cm{0%{opacity:1}82.273%{opacity:1}82.727%{opacity:0}100%{opacity:0}}
+html.js .kh-cm{animation:kh-cm 44s ease-in-out infinite both}
+@keyframes kh-r1{0%{opacity:0;transform:translateY(10px)}11.364%{opacity:0;transform:translateY(10px)}12.273%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r1{animation:kh-r1 44s ease-in-out infinite both}
+@keyframes kh-r2{0%{opacity:0;transform:translateY(10px)}12.727%{opacity:0;transform:translateY(10px)}13.636%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r2{animation:kh-r2 44s ease-in-out infinite both}
+@keyframes kh-r3{0%{opacity:0;transform:translateY(10px)}14.091%{opacity:0;transform:translateY(10px)}15%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r3{animation:kh-r3 44s ease-in-out infinite both}
+@keyframes kh-r4{0%{opacity:0;transform:translateY(10px)}15.455%{opacity:0;transform:translateY(10px)}16.364%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r4{animation:kh-r4 44s ease-in-out infinite both}
+@keyframes kh-r5{0%{opacity:0;transform:translateY(10px)}16.818%{opacity:0;transform:translateY(10px)}17.727%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r5{animation:kh-r5 44s ease-in-out infinite both}
+@keyframes kh-r6{0%{opacity:0;transform:translateY(10px)}18.182%{opacity:0;transform:translateY(10px)}19.091%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-r6{animation:kh-r6 44s ease-in-out infinite both}
+@keyframes kh-lh{0%{opacity:0;transform:translateY(10px)}19.091%{opacity:0;transform:translateY(10px)}20%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-lh{animation:kh-lh 44s ease-in-out infinite both}
+@keyframes kh-i1{0%{opacity:0;transform:translateY(10px)}20%{opacity:0;transform:translateY(10px)}20.909%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-i1{animation:kh-i1 44s ease-in-out infinite both}
+@keyframes kh-i2{0%{opacity:0;transform:translateY(10px)}20.909%{opacity:0;transform:translateY(10px)}21.818%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-i2{animation:kh-i2 44s ease-in-out infinite both}
+@keyframes kh-i3{0%{opacity:0;transform:translateY(10px)}21.818%{opacity:0;transform:translateY(10px)}22.727%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .kh-i3{animation:kh-i3 44s ease-in-out infinite both}
+@keyframes kh-ry{0%{transform:translateY(0)}32.955%{transform:translateY(0);animation-timing-function:cubic-bezier(.5,0,.9,.6)}34.091%{transform:translateY(-100px)}45.227%{transform:translateY(-100px);animation-timing-function:linear}47.273%{transform:translateY(0)}52.045%{transform:translateY(0);animation-timing-function:cubic-bezier(.5,0,.9,.6)}52.955%{transform:translateY(-100px)}58.182%{transform:translateY(-100px);animation-timing-function:linear}59.318%{transform:translateY(0)}61.591%{transform:translateY(0);animation-timing-function:cubic-bezier(.5,0,.9,.6)}62.5%{transform:translateY(-100px)}65.682%{transform:translateY(-100px);animation-timing-function:linear}66.818%{transform:translateY(0)}100%{transform:translateY(0)}}
+html.js .kh-ry{animation:kh-ry 44s ease-in-out infinite both}
+@keyframes kh-wm{0%{transform:translateY(0)}34.091%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}38.636%{transform:translateY(250px)}40%{transform:translateY(250px);animation-timing-function:linear}45.227%{transform:translateY(0)}52.955%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}55.682%{transform:translateY(160px)}56.591%{transform:translateY(160px);animation-timing-function:linear}58.182%{transform:translateY(0)}62.5%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}64.091%{transform:translateY(70px)}64.773%{transform:translateY(70px);animation-timing-function:linear}65.682%{transform:translateY(0)}100%{transform:translateY(0)}}
+html.js .kh-wm{animation:kh-wm 44s ease-in-out infinite both}
+@keyframes kh-fx{0%{transform:translateY(0)}34.091%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}38.636%{transform:translateY(75px)}40%{transform:translateY(75px);animation-timing-function:linear}45.227%{transform:translateY(0)}52.955%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}55.682%{transform:translateY(48px)}56.591%{transform:translateY(48px);animation-timing-function:linear}58.182%{transform:translateY(0)}62.5%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.62,.35,1)}64.091%{transform:translateY(21px)}64.773%{transform:translateY(21px);animation-timing-function:linear}65.682%{transform:translateY(0)}100%{transform:translateY(0)}}
+html.js .kh-fx{animation:kh-fx 44s ease-in-out infinite both}
+@keyframes kh-cu{0%{opacity:0;transform:scale(.2)}38.977%{opacity:0;transform:scale(.2)}39.886%{opacity:1;transform:scale(1)}47.273%{opacity:1;transform:scale(1)}47.955%{opacity:0;transform:scale(.2)}56.023%{opacity:0;transform:scale(.2)}56.932%{opacity:1;transform:scale(1)}59.318%{opacity:1;transform:scale(1)}60%{opacity:0;transform:scale(.2)}64.432%{opacity:0;transform:scale(.2)}65.341%{opacity:1;transform:scale(1)}66.818%{opacity:1;transform:scale(1)}67.5%{opacity:0;transform:scale(.2)}100%{opacity:0;transform:scale(.2)}}
+html.js .kh-cu{animation:kh-cu 44s ease-in-out infinite both}
+@keyframes kh-eo{0%{opacity:0}32.955%{opacity:0}33.227%{opacity:1}34.545%{opacity:1}34.818%{opacity:0}52.045%{opacity:0}52.318%{opacity:1}53.182%{opacity:1}53.455%{opacity:0}61.591%{opacity:0}61.864%{opacity:1}62.5%{opacity:1}62.773%{opacity:0}100%{opacity:0}}
+html.js .kh-eo{animation:kh-eo 44s ease-in-out infinite both}
+@keyframes kh-wt{0%{transform:scaleY(1)}32.955%{transform:scaleY(1)}34.091%{transform:scaleY(0)}49.545%{transform:scaleY(0)}51.364%{transform:scaleY(.5)}52.045%{transform:scaleY(.5)}52.955%{transform:scaleY(0)}59.545%{transform:scaleY(0)}60.909%{transform:scaleY(2)}61.591%{transform:scaleY(2)}62.5%{transform:scaleY(0)}100%{transform:scaleY(0)}}
+html.js .kh-wt{animation:kh-wt 44s ease-in-out infinite both}
+@keyframes kh-a0{0%{opacity:1}33.523%{opacity:1}33.636%{opacity:0}47.273%{opacity:0}47.386%{opacity:1}52.614%{opacity:1}52.727%{opacity:0}59.318%{opacity:0}59.432%{opacity:1}62.045%{opacity:1}62.159%{opacity:0}66.818%{opacity:0}66.932%{opacity:1}100%{opacity:1}}
+html.js .kh-a0{animation:kh-a0 44s linear infinite both}
+@keyframes kh-a1{0%{opacity:0}33.523%{opacity:0}33.636%{opacity:1}34.091%{opacity:1}34.205%{opacity:0}62.045%{opacity:0}62.159%{opacity:1}62.727%{opacity:1}62.841%{opacity:0}100%{opacity:0}}
+html.js .kh-a1{animation:kh-a1 44s linear infinite both}
+@keyframes kh-a2{0%{opacity:0}34.091%{opacity:0}34.205%{opacity:1}35%{opacity:1}35.114%{opacity:0}100%{opacity:0}}
+html.js .kh-a2{animation:kh-a2 44s linear infinite both}
+@keyframes kh-a3{0%{opacity:0}35%{opacity:0}35.114%{opacity:1}35.909%{opacity:1}36.023%{opacity:0}100%{opacity:0}}
+html.js .kh-a3{animation:kh-a3 44s linear infinite both}
+@keyframes kh-a4{0%{opacity:0}35.909%{opacity:0}36.023%{opacity:1}37.045%{opacity:1}37.159%{opacity:0}55.682%{opacity:0}55.795%{opacity:1}56.818%{opacity:1}56.932%{opacity:0}100%{opacity:0}}
+html.js .kh-a4{animation:kh-a4 44s linear infinite both}
+@keyframes kh-a5{0%{opacity:0}37.045%{opacity:0}37.159%{opacity:1}37.955%{opacity:1}38.068%{opacity:0}100%{opacity:0}}
+html.js .kh-a5{animation:kh-a5 44s linear infinite both}
+@keyframes kh-a6{0%{opacity:0}37.955%{opacity:0}38.068%{opacity:1}38.636%{opacity:1}38.75%{opacity:0}100%{opacity:0}}
+html.js .kh-a6{animation:kh-a6 44s linear infinite both}
+@keyframes kh-a7{0%{opacity:0}38.636%{opacity:0}38.75%{opacity:1}40.909%{opacity:1}41.023%{opacity:0}100%{opacity:0}}
+html.js .kh-a7{animation:kh-a7 44s linear infinite both}
+@keyframes kh-a8{0%{opacity:0}40.909%{opacity:0}41.023%{opacity:1}42.273%{opacity:1}42.386%{opacity:0}100%{opacity:0}}
+html.js .kh-a8{animation:kh-a8 44s linear infinite both}
+@keyframes kh-a9{0%{opacity:0}42.273%{opacity:0}42.386%{opacity:1}43.636%{opacity:1}43.75%{opacity:0}100%{opacity:0}}
+html.js .kh-a9{animation:kh-a9 44s linear infinite both}
+@keyframes kh-a10{0%{opacity:0}43.636%{opacity:0}43.75%{opacity:1}45%{opacity:1}45.114%{opacity:0}100%{opacity:0}}
+html.js .kh-a10{animation:kh-a10 44s linear infinite both}
+@keyframes kh-a11{0%{opacity:0}45%{opacity:0}45.114%{opacity:1}46.364%{opacity:1}46.477%{opacity:0}52.614%{opacity:0}52.727%{opacity:1}53.182%{opacity:1}53.295%{opacity:0}100%{opacity:0}}
+html.js .kh-a11{animation:kh-a11 44s linear infinite both}
+@keyframes kh-a12{0%{opacity:0}46.364%{opacity:0}46.477%{opacity:1}47.273%{opacity:1}47.386%{opacity:0}100%{opacity:0}}
+html.js .kh-a12{animation:kh-a12 44s linear infinite both}
+@keyframes kh-a13{0%{opacity:0}53.182%{opacity:0}53.295%{opacity:1}53.977%{opacity:1}54.091%{opacity:0}100%{opacity:0}}
+html.js .kh-a13{animation:kh-a13 44s linear infinite both}
+@keyframes kh-a14{0%{opacity:0}53.977%{opacity:0}54.091%{opacity:1}54.773%{opacity:1}54.886%{opacity:0}100%{opacity:0}}
+html.js .kh-a14{animation:kh-a14 44s linear infinite both}
+@keyframes kh-a15{0%{opacity:0}54.773%{opacity:0}54.886%{opacity:1}55.682%{opacity:1}55.795%{opacity:0}100%{opacity:0}}
+html.js .kh-a15{animation:kh-a15 44s linear infinite both}
+@keyframes kh-a16{0%{opacity:0}56.818%{opacity:0}56.932%{opacity:1}57.727%{opacity:1}57.841%{opacity:0}64.091%{opacity:0}64.205%{opacity:1}65.227%{opacity:1}65.341%{opacity:0}100%{opacity:0}}
+html.js .kh-a16{animation:kh-a16 44s linear infinite both}
+@keyframes kh-a17{0%{opacity:0}57.727%{opacity:0}57.841%{opacity:1}58.636%{opacity:1}58.75%{opacity:0}100%{opacity:0}}
+html.js .kh-a17{animation:kh-a17 44s linear infinite both}
+@keyframes kh-a18{0%{opacity:0}58.636%{opacity:0}58.75%{opacity:1}59.318%{opacity:1}59.432%{opacity:0}66.136%{opacity:0}66.25%{opacity:1}66.818%{opacity:1}66.932%{opacity:0}100%{opacity:0}}
+html.js .kh-a18{animation:kh-a18 44s linear infinite both}
+@keyframes kh-a19{0%{opacity:0}62.727%{opacity:0}62.841%{opacity:1}63.409%{opacity:1}63.523%{opacity:0}100%{opacity:0}}
+html.js .kh-a19{animation:kh-a19 44s linear infinite both}
+@keyframes kh-a20{0%{opacity:0}63.409%{opacity:0}63.523%{opacity:1}64.091%{opacity:1}64.205%{opacity:0}100%{opacity:0}}
+html.js .kh-a20{animation:kh-a20 44s linear infinite both}
+@keyframes kh-a21{0%{opacity:0}65.227%{opacity:0}65.341%{opacity:1}66.136%{opacity:1}66.25%{opacity:0}100%{opacity:0}}
+html.js .kh-a21{animation:kh-a21 44s linear infinite both}
+@keyframes kh-p0{0%{opacity:1}55.682%{opacity:1}55.795%{opacity:0}100%{opacity:0}}
+html.js .kh-p0{animation:kh-p0 44s linear infinite both}
+@keyframes kh-p1{0%{opacity:0}55.682%{opacity:0}55.795%{opacity:1}64.091%{opacity:1}64.205%{opacity:0}100%{opacity:0}}
+html.js .kh-p1{animation:kh-p1 44s linear infinite both}
+@keyframes kh-p2{0%{opacity:0}64.091%{opacity:0}64.205%{opacity:1}100%{opacity:1}}
+html.js .kh-p2{animation:kh-p2 44s linear infinite both}
+@keyframes kh-pc{0%{opacity:0}38.636%{opacity:0}39.545%{opacity:1}100%{opacity:1}}
+html.js .kh-pc{animation:kh-pc 44s ease-in-out infinite both}
+@keyframes kh-lb{0%{background-color:var(--pt-accent);color:#fff;transform:none}32.727%{background-color:var(--pt-accent);color:#fff;transform:none}33.068%{background-color:#0b2a3c;color:#fff;transform:scale(0.93)}33.636%{background-color:#0b2a3c;color:#fff;transform:none}34.432%{background-color:var(--pt-accent);color:#fff;transform:none}51.818%{background-color:var(--pt-accent);color:#fff;transform:none}52.159%{background-color:#0b2a3c;color:#fff;transform:scale(0.93)}52.727%{background-color:#0b2a3c;color:#fff;transform:none}53.523%{background-color:var(--pt-accent);color:#fff;transform:none}61.364%{background-color:var(--pt-accent);color:#fff;transform:none}61.705%{background-color:#0b2a3c;color:#fff;transform:scale(0.93)}62.273%{background-color:#0b2a3c;color:#fff;transform:none}63.068%{background-color:var(--pt-accent);color:#fff;transform:none}100%{background-color:var(--pt-accent);color:#fff;transform:none}}
+html.js .kh-lb{animation:kh-lb 44s ease-in-out infinite both}
+@keyframes kh-wf{0%{transform:scaleX(0.3)}49.545%{transform:scaleX(0.3)}51.364%{transform:scaleX(0.15)}59.545%{transform:scaleX(0.15)}60.909%{transform:scaleX(0.6)}100%{transform:scaleX(0.6)}}
+html.js .kh-wf{animation:kh-wf 44s ease-in-out infinite both}
+@keyframes kh-wr{0%{transform:translateX(30%)}49.545%{transform:translateX(30%)}51.364%{transform:translateX(15%)}59.545%{transform:translateX(15%)}60.909%{transform:translateX(60%)}100%{transform:translateX(60%)}}
+html.js .kh-wr{animation:kh-wr 44s ease-in-out infinite both}
+@keyframes kh-wv0{0%{opacity:1}50.455%{opacity:1}50.568%{opacity:0}100%{opacity:0}}
+html.js .kh-wv0{animation:kh-wv0 44s linear infinite both}
+@keyframes kh-wv1{0%{opacity:0}50.455%{opacity:0}50.568%{opacity:1}60.227%{opacity:1}60.341%{opacity:0}100%{opacity:0}}
+html.js .kh-wv1{animation:kh-wv1 44s linear infinite both}
+@keyframes kh-wv2{0%{opacity:0}60.227%{opacity:0}60.341%{opacity:1}100%{opacity:1}}
+html.js .kh-wv2{animation:kh-wv2 44s linear infinite both}
+@keyframes kh-b1{0%{transform:scaleX(0)}55.682%{transform:scaleX(0)}56.818%{transform:scaleX(.65)}100%{transform:scaleX(.65)}}
+html.js .kh-b1{animation:kh-b1 44s ease-in-out infinite both}
+@keyframes kh-b2{0%{transform:scaleX(0);background-color:#0e7490}38.636%{transform:scaleX(0);background-color:#0e7490}40%{transform:scaleX(.875);background-color:#0e7490}68.182%{transform:scaleX(.875);background-color:#0e7490}69.091%{transform:scaleX(.875);background-color:#e4572e}100%{transform:scaleX(.875);background-color:#e4572e}}
+html.js .kh-b2{animation:kh-b2 44s ease-in-out infinite both}
+@keyframes kh-b3{0%{transform:scaleX(0)}64.091%{transform:scaleX(0)}65.227%{transform:scaleX(.425)}100%{transform:scaleX(.425)}}
+html.js .kh-b3{animation:kh-b3 44s ease-in-out infinite both}
+@keyframes kh-v1{0%{opacity:0}55.909%{opacity:0}56.591%{opacity:1}100%{opacity:1}}
+html.js .kh-v1{animation:kh-v1 44s ease-in-out infinite both}
+@keyframes kh-v2{0%{opacity:0}38.864%{opacity:0}39.545%{opacity:1}100%{opacity:1}}
+html.js .kh-v2{animation:kh-v2 44s ease-in-out infinite both}
+@keyframes kh-v3{0%{opacity:0}64.318%{opacity:0}65%{opacity:1}100%{opacity:1}}
+html.js .kh-v3{animation:kh-v3 44s ease-in-out infinite both}
+@keyframes kh-bs{0%{opacity:0}68.182%{opacity:0}68.864%{opacity:1}100%{opacity:1}}
+html.js .kh-bs{animation:kh-bs 44s ease-in-out infinite both}
+@keyframes fade-kh{0%{opacity:1}97.045%{opacity:1}99.432%{opacity:0}100%{opacity:0}}
+html.js .fade-kh{animation:fade-kh 44s linear infinite}
 @media (max-width: 860px) {
-  html.js .kh-pa{animation:kh-pa-p 38s ease-in-out infinite both}
+  html.js .kh-pa{animation:kh-pa-p 44s ease-in-out infinite both}
 }
 /* robots and circuits: wiring, milestones, a failed test, and a printed fix */
 .kr-dv { position: absolute; inset: 0; overflow: hidden; }
