@@ -5079,8 +5079,6 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 .co-tdots b { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1.5px #fff; margin-left: -3px; }
 .co-tdots b:first-child { margin-left: 0; }
 .co-talk { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #3ba55d; margin-right: 6px; vertical-align: middle; animation: co-live 1.6s ease-out infinite; }
-.co-svg { position: absolute; left: clamp(16px, 2vw, 28px); right: clamp(16px, 2vw, 28px); top: 14px; width: calc(100% - 2 * clamp(16px, 2vw, 28px)); height: auto; }
-.co-svg text { font-family: Georgia, "Times New Roman", serif; }
 .co-ink path { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
 .co-cur path { stroke: #fff; stroke-width: 1.4; }
 .co-cur text { font-size: 11px; fill: #fff; font-family: Georgia, serif; }
@@ -5479,10 +5477,8 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 
 /* ── responsive ── */
 @media (max-width: 900px) {
-  .stage .board-shell.fade-ca, .stage .board-shell.fade-ch { grid-template-rows: minmax(0, 47%) minmax(0, 53%); }
   .stage .board-shell.fade-ch { grid-template-rows: minmax(0, 52%) minmax(0, 48%); }
   .co-tiles { display: none; }
-  .co-svg { width: 72%; }
   .co-side .side-dark { padding: 7px 12px; }
   .co-side .mode-pill { font-size: 11px; letter-spacing: 0.06em; }
   .co-side .co-bar { padding: 7px 12px 7px; }
@@ -5500,9 +5496,6 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
 }
 @media (max-width: 760px) {
   .co-curs { transform: scale(1.4); }
-  .cac-av, .cac-sv { display: none; }
-  .co-svg .cah text, .co-svg text[font-size="15"] { font-size: 16px; }
-  .co-svg .cah rect { width: 226px; }
   .co-react em { font-size: 11px; }
   .co-check .lbl { font-size: 11px; letter-spacing: 0.08em; }
 }
@@ -5550,8 +5543,6 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
   .co-toast { font-size: 11px; bottom: 60px; }
   .co-check { width: auto; right: clamp(16px, 2vw, 26px); }
   .co-react { bottom: 60px; }
-  .co-svg { left: 14px; width: min(calc((100% - 28px) * 1.45), 620px); }
-  .co-hintpos { transform: translate(-330px, 30px); }
   .kg-code { grid-template-columns: minmax(0, 1fr); }
   .kg-tree { display: none; }
 }
@@ -5564,10 +5555,8 @@ html.js .fade-xk{animation:fade-xk 18.6s linear infinite}
   .co-ink path, .co-draw path.cv { stroke-dashoffset: 0 !important; }
   .kg-ship, .kg-rock { animation: none !important; }
   .kg-rock { top: 40%; }
-  .car-f, .co-rooms .co-room.car-f { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(10,10,10,0.1); }
   .cht-2 { background: #fff; border-color: var(--ink); color: var(--ink); }
   .kg-tp, .pk-k1 { color: var(--ink); border-color: var(--ink); }
-  .cam { background: var(--ink); color: #fff; }
 }
 
 /* collaborate + projects timelines */
@@ -5601,10 +5590,14 @@ html.js .cf-sc{animation:cf-sc 39s ease-in-out infinite both}
 html.js .cf-md{animation:cf-md 39s ease-in-out infinite both}
 @keyframes cf-nph{0%{opacity:1}38.461%{opacity:1}38.974%{opacity:0}100%{opacity:0}}
 html.js .cf-nph{animation:cf-nph 39s ease-in-out infinite both}
-@keyframes cf-k2{0%{transform:none}38.846%{transform:none;animation-timing-function:steps(14,end)}42.693%{transform:translateX(101%)}100%{transform:translateX(101%)}}
+@keyframes cf-k2{0%{transform:none}38.846%{transform:none;animation-timing-function:steps(17,end)}42.693%{transform:translateX(101%)}100%{transform:translateX(101%)}}
 html.js .cf-k2{animation:cf-k2 39s linear infinite both}
 @keyframes cf-pk{0%{border-color:var(--rule);color:var(--muted);background:#fff}44.359%{border-color:var(--rule);color:var(--muted);background:#fff}45.129%{border-color:var(--ink);color:#fff;background:var(--ink)}100%{border-color:var(--ink);color:#fff;background:var(--ink)}}
 html.js .cf-pk{animation:cf-pk 39s ease-in-out infinite both}
+@keyframes cf-pk2{0%{border-color:var(--rule);color:var(--muted);background:#fff}45.513%{border-color:var(--rule);color:var(--muted);background:#fff}46.282%{border-color:var(--ink);color:#fff;background:var(--ink)}100%{border-color:var(--ink);color:#fff;background:var(--ink)}}
+html.js .cf-pk2{animation:cf-pk2 39s ease-in-out infinite both}
+@keyframes cf-pk3{0%{border-color:var(--rule);color:var(--muted);background:#fff}46.538%{border-color:var(--rule);color:var(--muted);background:#fff}47.308%{border-color:var(--ink);color:#fff;background:var(--ink)}100%{border-color:var(--ink);color:#fff;background:var(--ink)}}
+html.js .cf-pk3{animation:cf-pk3 39s ease-in-out infinite both}
 @keyframes cf-cr{0%{transform:none}47.693%{transform:none}48.051%{transform:scale(0.93)}48.77%{transform:none}100%{transform:none}}
 html.js .cf-cr{animation:cf-cr 39s ease-in-out infinite both}
 @keyframes cf-cn{0%{opacity:0;transform:translateY(10px)}50%{opacity:0;transform:translateY(10px)}51.282%{opacity:1;transform:none}100%{opacity:1;transform:none}}
@@ -5635,106 +5628,6 @@ html.js .cf-pa{animation:cf-pa 39s ease-in-out infinite both}
 @keyframes cf-pr{0%{opacity:0;transform:translateX(14px)}55%{opacity:0;transform:translateX(14px)}56.154%{opacity:1;transform:none}100%{opacity:1;transform:none}}
 @keyframes fade-cf{0%{opacity:1}96.667%{opacity:1}99.359%{opacity:0}100%{opacity:0}}
 html.js .fade-cf{animation:fade-cf 39s linear infinite}
-@keyframes cap-m{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cap-m{animation:cap-m 48.8s ease-in-out infinite both}
-@keyframes cat-m{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cat-m{animation:cat-m 48.8s ease-in-out infinite both}
-@keyframes cad-m{0%{opacity:1}100%{opacity:1}}
-html.js .cad-m{animation:cad-m 48.8s ease-in-out infinite both}
-@keyframes cap-l{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cap-l{animation:cap-l 48.8s ease-in-out infinite both}
-@keyframes cat-l{0%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cat-l{animation:cat-l 48.8s ease-in-out infinite both}
-@keyframes cad-l{0%{opacity:1}100%{opacity:1}}
-html.js .cad-l{animation:cad-l 48.8s ease-in-out infinite both}
-@keyframes cam{0%{background:var(--ink);color:#fff}100%{background:var(--ink);color:#fff}}
-html.js .cam{animation:cam 48.8s ease-in-out infinite both}
-@keyframes cac-mv{0%{opacity:1}36.476%{opacity:1}37.295%{opacity:0}100%{opacity:0}}
-html.js .cac-mv{animation:cac-mv 48.8s ease-in-out infinite both}
-@keyframes cac-m{0%{transform:translate(78px,98px)}4.509%{transform:translate(78px,98px)}6.967%{transform:translate(328px,98px)}11.066%{transform:translate(328px,98px)}13.525%{transform:translate(300px,210px)}24.18%{transform:translate(300px,210px)}26.64%{transform:translate(196px,98px)}34.427%{transform:translate(196px,98px)}36.476%{transform:translate(300px,210px)}100%{transform:translate(300px,210px)}}
-html.js .cac-m{animation:cac-m 48.8s cubic-bezier(0.4,0,0.2,1) infinite both}
-@keyframes cai-1{0%{stroke-dashoffset:242}0.41%{stroke-dashoffset:242}3.279%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-1{animation:cai-1 48.8s linear infinite both}
-@keyframes cas-m1{0%{opacity:0}4.918%{opacity:0}5.738%{opacity:1}10.655%{opacity:1}11.475%{opacity:0}100%{opacity:0}}
-html.js .cas-m1{animation:cas-m1 48.8s ease-in-out infinite both}
-@keyframes cai-3{0%{stroke-dashoffset:242}7.377%{stroke-dashoffset:242}10.041%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-3{animation:cai-3 48.8s linear infinite both}
-@keyframes cac-lv{0%{opacity:0}13.934%{opacity:0}14.754%{opacity:1}50%{opacity:1}50.82%{opacity:0}100%{opacity:0}}
-html.js .cac-lv{animation:cac-lv 48.8s ease-in-out infinite both}
-@keyframes cac-l{0%{transform:translate(380px,30px)}14.345%{transform:translate(380px,30px)}16.803%{transform:translate(196px,98px)}20.492%{transform:translate(196px,98px)}22.541%{transform:translate(250px,168px)}100%{transform:translate(250px,168px)}}
-html.js .cac-l{animation:cac-l 48.8s cubic-bezier(0.4,0,0.2,1) infinite both}
-@keyframes cai-w{0%{stroke-dashoffset:242}17.213%{stroke-dashoffset:242}20.082%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-w{animation:cai-w 48.8s linear infinite both}
-@keyframes cas-l1{0%{opacity:0}20.492%{opacity:0}21.312%{opacity:1}23.77%{opacity:1}24.59%{opacity:0}100%{opacity:0}}
-html.js .cas-l1{animation:cas-l1 48.8s ease-in-out infinite both}
-@keyframes cai-x{0%{stroke-dashoffset:242}27.049%{stroke-dashoffset:242}28.483%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-x{animation:cai-x 48.8s linear infinite both}
-@keyframes cae{0%{opacity:1}29.303%{opacity:1}30.328%{opacity:0}100%{opacity:0}}
-html.js .cae{animation:cae 48.8s ease-in-out infinite both}
-@keyframes cai-2{0%{stroke-dashoffset:242}30.737%{stroke-dashoffset:242}33.402%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-2{animation:cai-2 48.8s linear infinite both}
-@keyframes cag-1{0%{opacity:0}36.476%{opacity:0}37.501%{opacity:1}100%{opacity:1}}
-html.js .cag-1{animation:cag-1 48.8s ease-in-out infinite both}
-@keyframes cag-w{0%{opacity:0}38.319%{opacity:0}38.73%{opacity:1}100%{opacity:1}}
-html.js .cag-w{animation:cag-w 48.8s ease-in-out infinite both}
-@keyframes cag-t{0%{opacity:0}38.319%{opacity:0}38.935%{opacity:1}41.598%{opacity:1}41.885%{opacity:0}100%{opacity:0}}
-html.js .cag-t{animation:cag-t 48.8s ease-in-out infinite both}
-@keyframes cag-2{0%{opacity:0}41.701%{opacity:0}42.726%{opacity:1}100%{opacity:1}}
-html.js .cag-2{animation:cag-2 48.8s ease-in-out infinite both}
-@keyframes cah{0%{opacity:0;transform:translateY(10px)}45.492%{opacity:0;transform:translateY(10px)}46.517%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cah{animation:cah 48.8s ease-in-out infinite both}
-@keyframes cat{0%{opacity:0}50.82%{opacity:0}51.639%{opacity:1}56.967%{opacity:1}57.787%{opacity:0}100%{opacity:0}}
-html.js .cat{animation:cat 48.8s ease-in-out infinite both}
-@keyframes cap-a{0%{opacity:0;transform:translateY(10px)}50.82%{opacity:0;transform:translateY(10px)}51.844%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cap-a{animation:cap-a 48.8s ease-in-out infinite both}
-@keyframes cat-a{0%{opacity:0;transform:translateY(10px)}50.82%{opacity:0;transform:translateY(10px)}51.844%{opacity:1;transform:none}100%{opacity:1;transform:none}}
-html.js .cat-a{animation:cat-a 48.8s ease-in-out infinite both}
-@keyframes cad-a{0%{opacity:0}50.82%{opacity:0}51.639%{opacity:1}100%{opacity:1}}
-html.js .cad-a{animation:cad-a 48.8s ease-in-out infinite both}
-@keyframes cac-av{0%{opacity:0}53.279%{opacity:0}54.099%{opacity:1}63.115%{opacity:1}63.934%{opacity:0}100%{opacity:0}}
-html.js .cac-av{animation:cac-av 48.8s ease-in-out infinite both}
-@keyframes cac-a{0%{transform:translate(380px,250px)}53.688%{transform:translate(380px,250px)}55.738%{transform:translate(540px,218px)}60.655%{transform:translate(540px,218px)}62.705%{transform:translate(590px,250px)}100%{transform:translate(590px,250px)}}
-html.js .cac-a{animation:cac-a 48.8s cubic-bezier(0.4,0,0.2,1) infinite both}
-@keyframes cah2{0%{opacity:0}56.147%{opacity:0}57.377%{opacity:1}100%{opacity:1}}
-html.js .cah2{animation:cah2 48.8s ease-in-out infinite both}
-@keyframes cai-t{0%{stroke-dashoffset:242}58.196%{stroke-dashoffset:242}59.836%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-t{animation:cai-t 48.8s linear infinite both}
-@keyframes cac-sv{0%{opacity:0}60.246%{opacity:0}61.066%{opacity:1}68.033%{opacity:1}68.853%{opacity:0}100%{opacity:0}}
-html.js .cac-sv{animation:cac-sv 48.8s ease-in-out infinite both}
-@keyframes cac-s{0%{transform:translate(340px,250px)}60.655%{transform:translate(340px,250px)}62.705%{transform:translate(44px,132px)}63.115%{transform:translate(44px,132px)}65.983%{transform:translate(412px,132px)}68.033%{transform:translate(412px,132px)}100%{transform:translate(412px,132px)}}
-html.js .cac-s{animation:cac-s 48.8s cubic-bezier(0.4,0,0.2,1) infinite both}
-@keyframes cai-u{0%{stroke-dashoffset:242}63.115%{stroke-dashoffset:242}65.983%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
-html.js .cai-u{animation:cai-u 48.8s linear infinite both}
-@keyframes cab{0%{opacity:0}70.082%{opacity:0}70.902%{opacity:1}74.59%{opacity:1}75.41%{opacity:0}100%{opacity:0}}
-html.js .cab{animation:cab 48.8s ease-in-out infinite both}
-@keyframes car-g{0%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}74.181%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}75%{background:transparent;color:var(--muted);box-shadow:none}100%{background:transparent;color:var(--muted);box-shadow:none}}
-html.js .car-g{animation:car-g 48.8s ease-in-out infinite both}
-@keyframes car-f{0%{background:transparent;color:var(--muted);box-shadow:none}74.385%{background:transparent;color:var(--muted);box-shadow:none}75.205%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}100%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}}
-html.js .car-f{animation:car-f 48.8s ease-in-out infinite both}
-@keyframes cah-g{0%{opacity:1}74.181%{opacity:1}75%{opacity:0}100%{opacity:0}}
-html.js .cah-g{animation:cah-g 48.8s ease-in-out infinite both}
-@keyframes cap-g{0%{opacity:1}74.181%{opacity:1}75%{opacity:0}100%{opacity:0}}
-html.js .cap-g{animation:cap-g 48.8s ease-in-out infinite both}
-@keyframes cai-g{0%{opacity:1}74.181%{opacity:1}75%{opacity:0}100%{opacity:0}}
-html.js .cai-g{animation:cai-g 48.8s ease-in-out infinite both}
-@keyframes cah-f{0%{opacity:0}74.59%{opacity:0}75.41%{opacity:1}100%{opacity:1}}
-html.js .cah-f{animation:cah-f 48.8s ease-in-out infinite both}
-@keyframes cap-f{0%{opacity:0}74.59%{opacity:0}75.41%{opacity:1}100%{opacity:1}}
-html.js .cap-f{animation:cap-f 48.8s ease-in-out infinite both}
-@keyframes cai-f{0%{opacity:0}74.59%{opacity:0}75.41%{opacity:1}100%{opacity:1}}
-html.js .cai-f{animation:cai-f 48.8s ease-in-out infinite both}
-@keyframes caf-1{0%{opacity:0}76.23%{opacity:0}77.254%{opacity:1}100%{opacity:1}}
-html.js .caf-1{animation:caf-1 48.8s ease-in-out infinite both}
-@keyframes caf-2{0%{opacity:0}79.918%{opacity:0}80.943%{opacity:1}100%{opacity:1}}
-html.js .caf-2{animation:caf-2 48.8s ease-in-out infinite both}
-@keyframes cak{0%{transform:none}83.197%{transform:none}83.484%{transform:scale(0.93)}84.058%{transform:none}100%{transform:none}}
-html.js .cak{animation:cak 48.8s ease-in-out infinite both}
-@keyframes caf-s{0%{opacity:0;transform:translateY(20px) scale(0.6)}83.606%{opacity:0;transform:translateY(20px) scale(0.6)}84.323%{opacity:1;transform:translateY(0) scale(1.1)}87.296%{opacity:1;transform:translateY(-46px) scale(1)}88.73%{opacity:0;transform:translateY(-76px) scale(1)}100%{opacity:0;transform:translateY(-76px) scale(1)}}
-html.js .caf-s{animation:caf-s 48.8s ease-out infinite both}
-@keyframes caf-m{0%{opacity:0;transform:translateY(20px) scale(0.6)}85.656%{opacity:0;transform:translateY(20px) scale(0.6)}86.373%{opacity:1;transform:translateY(0) scale(1.1)}89.344%{opacity:1;transform:translateY(-46px) scale(1)}90.779%{opacity:0;transform:translateY(-76px) scale(1)}100%{opacity:0;transform:translateY(-76px) scale(1)}}
-html.js .caf-m{animation:caf-m 48.8s ease-out infinite both}
-@keyframes fade-ca{0%{opacity:1}97.337%{opacity:1}99.488%{opacity:0}100%{opacity:0}}
-html.js .fade-ca{animation:fade-ca 48.8s linear infinite}
 @keyframes cht-2{0%{opacity:0;transform:translateY(10px);background:#fafafa;border-color:var(--rule);color:var(--muted)}1.515%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}22.727%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}23.939%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
 html.js .cht-2{animation:cht-2 33s ease-in-out infinite both}
 @keyframes cht-1{0%{background:#fff;border-color:var(--ink);color:var(--ink)}22.424%{background:#fff;border-color:var(--ink);color:var(--ink)}23.636%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fafafa;border-color:var(--rule);color:var(--muted)}}
@@ -5841,6 +5734,589 @@ html.js .chk-b{animation:chk-b 33s ease-in-out infinite both}
 html.js .chk-r{animation:chk-r 33s ease-in-out infinite both}
 @keyframes fade-ch{0%{opacity:1}96.061%{opacity:1}99.242%{opacity:0}100%{opacity:0}}
 html.js .fade-ch{animation:fade-ch 33s linear infinite}
+/* ca: four friends trace one drop of blood through the heart, on one board */
+.co-cbtn.on { background: var(--ink); color: #fff; }
+.ca-svg { position: absolute; left: clamp(16px, 2vw, 28px); top: 14px; overflow: visible; width: min(calc(100% - 2 * clamp(16px, 2vw, 28px)), 900px); height: auto; }
+.ca-svg text { font-family: Georgia, "Times New Roman", serif; }
+.ca-q { font-size: 16px; fill: var(--ink); }
+.ca-n { fill: var(--faint); }
+.ca-fig rect { fill: #fff; stroke: var(--ink); stroke-width: 1.3; }
+.ca-fig text { font-size: 15px; fill: var(--ink); text-anchor: middle; }
+.ca-gs { fill: none; stroke: var(--hint); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
+.ca-gl { font-size: 13px; fill: var(--hint); text-anchor: middle; }
+.ca-hb rect { fill: #fff; stroke: rgba(204,34,34,0.3); }
+.ca-hb text { font-size: 13px; fill: var(--hint); }
+@media (max-width: 900px) {
+  .stage .board-shell.fade-ca { grid-template-rows: minmax(0, 52%) minmax(0, 48%); }
+  .ca-svg { left: 50%; top: 8px; width: min(calc((100% - 28px) * 640 / 380), 600px); transform: translate(-50%, -10.9%); }
+  .ca-q, .ca-hb { display: none; }
+  .ca-gl { font-size: 14px; }
+  .fade-ca .co-toast { left: 14px; bottom: 14px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ca-gs { stroke-dashoffset: 0 !important; }
+  .ca-rf { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(10,10,10,0.1); }
+}
+@keyframes ca-r1{0%{opacity:0}0.488%{opacity:0}1.22%{opacity:1}6.341%{opacity:1}7.073%{opacity:0}100%{opacity:0}}
+html.js .ca-r1{animation:ca-r1 41s ease-in-out infinite both}
+@keyframes ca-i1{0%{stroke-dashoffset:242}0.732%{stroke-dashoffset:242}5.61%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i1{animation:ca-i1 41s linear infinite both}
+@keyframes ca-v1{0%{opacity:1}6.341%{opacity:1}7.073%{opacity:0}100%{opacity:0}}
+html.js .ca-v1{animation:ca-v1 41s ease-in-out infinite both}
+@keyframes ca-c1{0%{transform:translate(250px,303px);animation-timing-function:linear}0.732%{transform:translate(250px,303px);animation-timing-function:linear}2.264%{transform:translate(152px,302px);animation-timing-function:linear}4.859%{transform:translate(150px,136px);animation-timing-function:linear}5.61%{transform:translate(198px,134px);animation-timing-function:linear}5.611%{transform:translate(198px,134px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(198px,134px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .ca-c1{animation:ca-c1 41s linear infinite both}
+@keyframes ca-r2{0%{opacity:0}8.293%{opacity:0}9.024%{opacity:1}18.537%{opacity:1}19.268%{opacity:0}38.537%{opacity:0}39.268%{opacity:1}48.78%{opacity:1}49.512%{opacity:0}100%{opacity:0}}
+html.js .ca-r2{animation:ca-r2 41s ease-in-out infinite both}
+@keyframes ca-v2{0%{opacity:0}7.317%{opacity:0}7.927%{opacity:1}19.024%{opacity:1}19.634%{opacity:0}37.561%{opacity:0}38.171%{opacity:1}49.512%{opacity:1}50.122%{opacity:0}100%{opacity:0}}
+html.js .ca-v2{animation:ca-v2 41s ease-in-out infinite both}
+@keyframes ca-c2{0%{transform:translate(360px,40px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}7.805%{transform:translate(360px,40px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}9.512%{transform:translate(290px,150px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}9.756%{transform:translate(290px,150px);animation-timing-function:linear}12.195%{transform:translate(290px,196px);animation-timing-function:linear}13.171%{transform:translate(290px,196px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}14.39%{transform:translate(282px,252px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}14.634%{transform:translate(282px,252px);animation-timing-function:linear}17.561%{transform:translate(364px,252px);animation-timing-function:linear}17.562%{transform:translate(364px,252px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}20%{transform:translate(364px,252px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}20.244%{transform:translate(296px,244px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}39.512%{transform:translate(296px,244px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}39.513%{transform:translate(296px,244px);animation-timing-function:linear}40.976%{transform:translate(346px,260px);animation-timing-function:linear}40.977%{transform:translate(346px,260px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}42.927%{transform:translate(346px,260px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}44.146%{transform:translate(198px,226px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}44.39%{transform:translate(198px,226px);animation-timing-function:linear}44.818%{transform:translate(172px,225px);animation-timing-function:linear}47.564%{transform:translate(172px,58px);animation-timing-function:linear}48.78%{transform:translate(246px,58px);animation-timing-function:linear}48.781%{transform:translate(246px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(246px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .ca-c2{animation:ca-c2 41s linear infinite both}
+@keyframes ca-i2{0%{stroke-dashoffset:242}9.756%{stroke-dashoffset:242}12.195%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i2{animation:ca-i2 41s linear infinite both}
+@keyframes ca-iw{0%{stroke-dashoffset:242}14.634%{stroke-dashoffset:242}17.561%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-iw{animation:ca-iw 41s linear infinite both}
+@keyframes ca-to{0%{opacity:0}20.976%{opacity:0}21.951%{opacity:1}25.854%{opacity:1}26.829%{opacity:0}100%{opacity:0}}
+html.js .ca-to{animation:ca-to 41s ease-in-out infinite both}
+@keyframes ca-da{0%{opacity:0}20.976%{opacity:0}21.951%{opacity:1}100%{opacity:1}}
+html.js .ca-da{animation:ca-da 41s ease-in-out infinite both}
+@keyframes ca-pa{0%{opacity:0;transform:translateY(10px)}20.976%{opacity:0;transform:translateY(10px)}21.951%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ca-pa{animation:ca-pa 41s ease-in-out infinite both}
+@keyframes ca-ta{0%{opacity:0;transform:translateY(10px)}20.976%{opacity:0;transform:translateY(10px)}21.951%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ca-ta{animation:ca-ta 41s ease-in-out infinite both}
+@keyframes ca-v3{0%{opacity:0}21.951%{opacity:0}22.561%{opacity:1}27.317%{opacity:1}27.927%{opacity:0}50%{opacity:0}50.61%{opacity:1}59.512%{opacity:1}60.122%{opacity:0}100%{opacity:0}}
+html.js .ca-v3{animation:ca-v3 41s ease-in-out infinite both}
+@keyframes ca-c3{0%{transform:translate(430px,282px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}22.927%{transform:translate(430px,282px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}24.878%{transform:translate(330px,262px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}28.293%{transform:translate(330px,262px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}28.537%{transform:translate(392px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}51.22%{transform:translate(392px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}51.221%{transform:translate(392px,58px);animation-timing-function:linear}52.885%{transform:translate(462px,58px);animation-timing-function:linear}54.694%{transform:translate(462px,134px);animation-timing-function:linear}55.122%{transform:translate(444px,134px);animation-timing-function:linear}55.123%{transform:translate(444px,134px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}55.61%{transform:translate(444px,134px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}56.463%{transform:translate(425px,150px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}56.585%{transform:translate(425px,150px);animation-timing-function:linear}58.537%{transform:translate(425px,196px);animation-timing-function:linear}58.538%{transform:translate(425px,196px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(425px,196px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .ca-c3{animation:ca-c3 41s linear infinite both}
+@keyframes ca-m1{0%{opacity:0}25.366%{opacity:0}26.341%{opacity:1}100%{opacity:1}}
+html.js .ca-m1{animation:ca-m1 41s ease-in-out infinite both}
+@keyframes ca-w1{0%{opacity:0}27.317%{opacity:0}28.293%{opacity:1}100%{opacity:1}}
+html.js .ca-w1{animation:ca-w1 41s ease-in-out infinite both}
+@keyframes ca-t1{0%{opacity:0}27.317%{opacity:0}27.927%{opacity:1}32.439%{opacity:1}32.927%{opacity:0}100%{opacity:0}}
+html.js .ca-t1{animation:ca-t1 41s ease-in-out infinite both}
+@keyframes ca-g1{0%{opacity:0}33.171%{opacity:0}34.146%{opacity:1}100%{opacity:1}}
+html.js .ca-g1{animation:ca-g1 41s ease-in-out infinite both}
+@keyframes ca-gs{0%{stroke-dashoffset:242}34.634%{stroke-dashoffset:242}36.585%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-gs{animation:ca-gs 41s linear infinite both}
+@keyframes ca-gl{0%{opacity:0}35.61%{opacity:0}36.585%{opacity:1}100%{opacity:1}}
+html.js .ca-gl{animation:ca-gl 41s ease-in-out infinite both}
+@keyframes ca-hb{0%{opacity:0;transform:translateY(10px)}36.098%{opacity:0;transform:translateY(10px)}37.073%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .ca-hb{animation:ca-hb 41s ease-in-out infinite both}
+@keyframes ca-ix{0%{stroke-dashoffset:242}39.512%{stroke-dashoffset:242}40.976%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-ix{animation:ca-ix 41s linear infinite both}
+@keyframes ca-we{0%{opacity:1}41.951%{opacity:1}43.171%{opacity:0}100%{opacity:0}}
+html.js .ca-we{animation:ca-we 41s ease-in-out infinite both}
+@keyframes ca-i4{0%{stroke-dashoffset:242}44.39%{stroke-dashoffset:242}48.78%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i4{animation:ca-i4 41s linear infinite both}
+@keyframes ca-i5{0%{stroke-dashoffset:242}51.22%{stroke-dashoffset:242}55.122%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i5{animation:ca-i5 41s linear infinite both}
+@keyframes ca-i6{0%{stroke-dashoffset:242}56.585%{stroke-dashoffset:242}58.537%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i6{animation:ca-i6 41s linear infinite both}
+@keyframes ca-v4{0%{opacity:0}59.512%{opacity:0}60.122%{opacity:1}67.317%{opacity:1}67.927%{opacity:0}100%{opacity:0}}
+html.js .ca-v4{animation:ca-v4 41s ease-in-out infinite both}
+@keyframes ca-c4{0%{transform:translate(520px,262px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}59.756%{transform:translate(520px,262px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}61.341%{transform:translate(442px,222px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}61.463%{transform:translate(442px,222px);animation-timing-function:linear}62.221%{transform:translate(476px,222px);animation-timing-function:linear}64.026%{transform:translate(476px,303px);animation-timing-function:linear}65.854%{transform:translate(394px,303px);animation-timing-function:linear}65.855%{transform:translate(394px,303px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(394px,303px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .ca-c4{animation:ca-c4 41s linear infinite both}
+@keyframes ca-i7{0%{stroke-dashoffset:242}61.463%{stroke-dashoffset:242}65.854%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .ca-i7{animation:ca-i7 41s linear infinite both}
+@keyframes ca-m2{0%{opacity:0}66.829%{opacity:0}67.805%{opacity:1}100%{opacity:1}}
+html.js .ca-m2{animation:ca-m2 41s ease-in-out infinite both}
+@keyframes ca-w2{0%{opacity:0}68.293%{opacity:0}69.268%{opacity:1}100%{opacity:1}}
+html.js .ca-w2{animation:ca-w2 41s ease-in-out infinite both}
+@keyframes ca-t2{0%{opacity:0}68.293%{opacity:0}68.902%{opacity:1}71.463%{opacity:1}71.951%{opacity:0}100%{opacity:0}}
+html.js .ca-t2{animation:ca-t2 41s ease-in-out infinite both}
+@keyframes ca-g2{0%{opacity:0}72.195%{opacity:0}73.171%{opacity:1}100%{opacity:1}}
+html.js .ca-g2{animation:ca-g2 41s ease-in-out infinite both}
+@keyframes ca-x1{0%{opacity:0;transform:translateY(20px) scale(0.6)}74.146%{opacity:0;transform:translateY(20px) scale(0.6)}75%{opacity:1;transform:translateY(0) scale(1.1)}78.537%{opacity:1;transform:translateY(-46px) scale(1)}80.244%{opacity:0;transform:translateY(-76px) scale(1)}80.488%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .ca-x1{animation:ca-x1 41s ease-out infinite both}
+@keyframes ca-x2{0%{opacity:0;transform:translateY(20px) scale(0.6)}75.61%{opacity:0;transform:translateY(20px) scale(0.6)}76.463%{opacity:1;transform:translateY(0) scale(1.1)}80%{opacity:1;transform:translateY(-46px) scale(1)}81.707%{opacity:0;transform:translateY(-76px) scale(1)}81.951%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .ca-x2{animation:ca-x2 41s ease-out infinite both}
+@keyframes ca-x3{0%{opacity:0;transform:translateY(20px) scale(0.6)}77.073%{opacity:0;transform:translateY(20px) scale(0.6)}77.927%{opacity:1;transform:translateY(0) scale(1.1)}81.463%{opacity:1;transform:translateY(-46px) scale(1)}83.171%{opacity:0;transform:translateY(-76px) scale(1)}83.415%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .ca-x3{animation:ca-x3 41s ease-out infinite both}
+@keyframes ca-bd{0%{opacity:0;transform:scale(0.6)}76.585%{opacity:0;transform:scale(0.6)}77.317%{opacity:1;transform:none}79.512%{opacity:1;transform:none}80.244%{opacity:0;transform:scale(0.6)}100%{opacity:0;transform:scale(0.6)}}
+html.js .ca-bd{animation:ca-bd 41s ease-in-out infinite both}
+@keyframes ca-rg{0%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}79.024%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}79.878%{background:transparent;color:var(--muted);box-shadow:none}100%{background:transparent;color:var(--muted);box-shadow:none}}
+html.js .ca-rg{animation:ca-rg 41s ease-in-out infinite both}
+@keyframes ca-rf{0%{background:transparent;color:var(--muted);box-shadow:none}79.024%{background:transparent;color:var(--muted);box-shadow:none}79.878%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}100%{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(10,10,10,0.1)}}
+html.js .ca-rf{animation:ca-rf 41s ease-in-out infinite both}
+@keyframes ca-h1{0%{opacity:1}20.976%{opacity:1}21.829%{opacity:0}100%{opacity:0}}
+html.js .ca-h1{animation:ca-h1 41s ease-in-out infinite both}
+@keyframes ca-h2{0%{opacity:0}21.341%{opacity:0}22.195%{opacity:1}79.024%{opacity:1}79.878%{opacity:0}100%{opacity:0}}
+html.js .ca-h2{animation:ca-h2 41s ease-in-out infinite both}
+@keyframes ca-h3{0%{opacity:0}79.39%{opacity:0}80.244%{opacity:1}100%{opacity:1}}
+html.js .ca-h3{animation:ca-h3 41s ease-in-out infinite both}
+@keyframes ca-pg{0%{opacity:1}79.024%{opacity:1}79.878%{opacity:0}100%{opacity:0}}
+html.js .ca-pg{animation:ca-pg 41s ease-in-out infinite both}
+@keyframes ca-pf{0%{opacity:0}79.512%{opacity:0}80.366%{opacity:1}100%{opacity:1}}
+html.js .ca-pf{animation:ca-pf 41s ease-in-out infinite both}
+@keyframes ca-n1{0%{opacity:1}79.024%{opacity:1}79.878%{opacity:0}100%{opacity:0}}
+html.js .ca-n1{animation:ca-n1 41s ease-in-out infinite both}
+@keyframes ca-n2{0%{opacity:0}79.39%{opacity:0}80.244%{opacity:1}100%{opacity:1}}
+html.js .ca-n2{animation:ca-n2 41s ease-in-out infinite both}
+@keyframes ca-f1{0%{opacity:0}80.976%{opacity:0}81.951%{opacity:1}100%{opacity:1}}
+html.js .ca-f1{animation:ca-f1 41s ease-in-out infinite both}
+@keyframes ca-f2{0%{opacity:0}85.366%{opacity:0}86.341%{opacity:1}100%{opacity:1}}
+html.js .ca-f2{animation:ca-f2 41s ease-in-out infinite both}
+@keyframes ca-f3{0%{opacity:0}89.268%{opacity:0}90.244%{opacity:1}100%{opacity:1}}
+html.js .ca-f3{animation:ca-f3 41s ease-in-out infinite both}
+@keyframes fade-ca{0%{opacity:1}96.829%{opacity:1}99.39%{opacity:0}100%{opacity:0}}
+html.js .fade-ca{animation:fade-ca 41s linear infinite}
+/* hc (homepage): an art club draws a street in one-point perspective */
+.hc-svg { position: absolute; left: clamp(16px, 2vw, 28px); top: 14px; overflow: visible; width: min(calc(100% - 2 * clamp(16px, 2vw, 28px)), 900px); height: auto; }
+.hc-svg text { font-family: Georgia, "Times New Roman", serif; }
+.hc-q { font-size: 16px; fill: var(--ink); }
+.hc-lb { font-size: 13px; fill: var(--muted); }
+.hc-hz { fill: none; stroke: #d9822b; stroke-width: 3; stroke-linecap: round; }
+.hc-vp { fill: #d9822b; }
+.hc-g { fill: none; stroke: var(--hint); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
+.fade-hc .co-msg { font-size: 13px; }
+@media (max-width: 900px) {
+  .stage .board-shell.fade-hc { grid-template-rows: minmax(0, 47%) minmax(0, 53%); }
+  .hc-svg { left: 50%; top: 10px; width: min(calc(100% * 640 / 610), 600px); transform: translate(-50%, -10.9%); }
+  .hc-q, .hc-lb { display: none; }
+}
+@media (max-width: 760px) {
+  .fade-hc .co-curs { transform: scale(1.75); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hc-g { stroke-dashoffset: 0 !important; }
+  .hc-tb { background: #fff; }
+}
+@keyframes hc-r1{0%{opacity:0}0.588%{opacity:0}1.471%{opacity:1}8.824%{opacity:1}9.706%{opacity:0}100%{opacity:0}}
+html.js .hc-r1{animation:hc-r1 34s ease-in-out infinite both}
+@keyframes hc-v1{0%{opacity:1}8.824%{opacity:1}9.706%{opacity:0}100%{opacity:0}}
+html.js .hc-v1{animation:hc-v1 34s ease-in-out infinite both}
+@keyframes hc-c1{0%{transform:translate(232px,322px);animation-timing-function:linear}0.882%{transform:translate(232px,322px);animation-timing-function:linear}4.118%{transform:translate(318px,124px);animation-timing-function:linear}4.412%{transform:translate(318px,124px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}5.294%{transform:translate(408px,322px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}5.295%{transform:translate(408px,322px);animation-timing-function:linear}8.529%{transform:translate(322px,124px);animation-timing-function:linear}8.53%{transform:translate(322px,124px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(322px,124px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .hc-c1{animation:hc-c1 34s linear infinite both}
+@keyframes hc-i1{0%{stroke-dashoffset:242}0.882%{stroke-dashoffset:242}4.118%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i1{animation:hc-i1 34s linear infinite both}
+@keyframes hc-i2{0%{stroke-dashoffset:242}5.294%{stroke-dashoffset:242}8.529%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i2{animation:hc-i2 34s linear infinite both}
+@keyframes hc-r2{0%{opacity:0}9.412%{opacity:0}10.294%{opacity:1}20%{opacity:1}20.882%{opacity:0}100%{opacity:0}}
+html.js .hc-r2{animation:hc-r2 34s ease-in-out infinite both}
+@keyframes hc-v2{0%{opacity:0}8.824%{opacity:0}9.559%{opacity:1}20.588%{opacity:1}21.324%{opacity:0}100%{opacity:0}}
+html.js .hc-v2{animation:hc-v2 34s ease-in-out infinite both}
+@keyframes hc-c2{0%{transform:translate(60px,70px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}10.588%{transform:translate(60px,70px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}10.589%{transform:translate(60px,70px);animation-timing-function:linear}11.256%{transform:translate(170px,71px);animation-timing-function:linear}12.647%{transform:translate(170px,300px);animation-timing-function:linear}13.315%{transform:translate(60px,299px);animation-timing-function:linear}14.706%{transform:translate(60px,70px);animation-timing-function:linear}14.707%{transform:translate(60px,70px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}16.029%{transform:translate(170px,71px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}16.176%{transform:translate(170px,71px);animation-timing-function:linear}16.933%{transform:translate(237px,93px);animation-timing-function:linear}18.284%{transform:translate(237px,219px);animation-timing-function:linear}19.412%{transform:translate(170px,300px);animation-timing-function:linear}19.413%{transform:translate(170px,300px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(170px,300px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .hc-c2{animation:hc-c2 34s linear infinite both}
+@keyframes hc-i3{0%{stroke-dashoffset:242}10.588%{stroke-dashoffset:242}14.706%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i3{animation:hc-i3 34s linear infinite both}
+@keyframes hc-i4{0%{stroke-dashoffset:242}16.176%{stroke-dashoffset:242}19.412%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i4{animation:hc-i4 34s linear infinite both}
+@keyframes hc-v3{0%{opacity:0}20.588%{opacity:0}21.324%{opacity:1}32.353%{opacity:1}33.088%{opacity:0}47.059%{opacity:0}47.794%{opacity:1}58.824%{opacity:1}59.559%{opacity:0}100%{opacity:0}}
+html.js .hc-v3{animation:hc-v3 34s ease-in-out infinite both}
+@keyframes hc-c3{0%{transform:translate(430px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}22.353%{transform:translate(430px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}22.354%{transform:translate(430px,50px);animation-timing-function:linear}22.982%{transform:translate(540px,50px);animation-timing-function:linear}24.412%{transform:translate(540px,300px);animation-timing-function:linear}25.041%{transform:translate(430px,300px);animation-timing-function:linear}26.471%{transform:translate(430px,50px);animation-timing-function:linear}26.472%{transform:translate(430px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}28.235%{transform:translate(430px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}28.236%{transform:translate(430px,50px);animation-timing-function:linear}30%{transform:translate(386px,50px);animation-timing-function:linear}30.001%{transform:translate(386px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}33.529%{transform:translate(386px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}33.824%{transform:translate(390px,42px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}48.235%{transform:translate(390px,42px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}48.236%{transform:translate(390px,42px);animation-timing-function:linear}49.706%{transform:translate(430px,58px);animation-timing-function:linear}49.707%{transform:translate(430px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}51.765%{transform:translate(430px,58px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}52.794%{transform:translate(430px,50px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}52.941%{transform:translate(430px,50px);animation-timing-function:linear}53.798%{transform:translate(386px,78px);animation-timing-function:linear}56.261%{transform:translate(386px,228px);animation-timing-function:linear}57.647%{transform:translate(430px,300px);animation-timing-function:linear}57.648%{transform:translate(430px,300px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(430px,300px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .hc-c3{animation:hc-c3 34s linear infinite both}
+@keyframes hc-i5{0%{stroke-dashoffset:242}22.353%{stroke-dashoffset:242}26.471%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i5{animation:hc-i5 34s linear infinite both}
+@keyframes hc-iw{0%{stroke-dashoffset:242}28.235%{stroke-dashoffset:242}30%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-iw{animation:hc-iw 34s linear infinite both}
+@keyframes hc-m1{0%{opacity:0}31.765%{opacity:0}32.941%{opacity:1}100%{opacity:1}}
+html.js .hc-m1{animation:hc-m1 34s ease-in-out infinite both}
+@keyframes hc-w1{0%{opacity:0}34.118%{opacity:0}35.294%{opacity:1}100%{opacity:1}}
+html.js .hc-w1{animation:hc-w1 34s ease-in-out infinite both}
+@keyframes hc-t1{0%{opacity:0}34.118%{opacity:0}34.853%{opacity:1}40.294%{opacity:1}40.882%{opacity:0}100%{opacity:0}}
+html.js .hc-t1{animation:hc-t1 34s ease-in-out infinite both}
+@keyframes hc-g1{0%{opacity:0}41.176%{opacity:0}42.353%{opacity:1}100%{opacity:1}}
+html.js .hc-g1{animation:hc-g1 34s ease-in-out infinite both}
+@keyframes hc-g{0%{stroke-dashoffset:242}42.941%{stroke-dashoffset:242}45.882%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-g{animation:hc-g 34s linear infinite both}
+@keyframes hc-gw{0%{opacity:1}60%{opacity:1}61.765%{opacity:0}100%{opacity:0}}
+html.js .hc-gw{animation:hc-gw 34s ease-in-out infinite both}
+@keyframes hc-ix{0%{stroke-dashoffset:242}48.235%{stroke-dashoffset:242}49.706%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-ix{animation:hc-ix 34s linear infinite both}
+@keyframes hc-we{0%{opacity:1}50.588%{opacity:1}52.059%{opacity:0}100%{opacity:0}}
+html.js .hc-we{animation:hc-we 34s ease-in-out infinite both}
+@keyframes hc-i6{0%{stroke-dashoffset:242}52.941%{stroke-dashoffset:242}57.647%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i6{animation:hc-i6 34s linear infinite both}
+@keyframes hc-v4{0%{opacity:0}60.588%{opacity:0}61.324%{opacity:1}68.824%{opacity:1}69.559%{opacity:0}100%{opacity:0}}
+html.js .hc-v4{animation:hc-v4 34s ease-in-out infinite both}
+@keyframes hc-c4{0%{transform:translate(320px,318px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}61.765%{transform:translate(320px,318px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}61.766%{transform:translate(320px,318px);animation-timing-function:linear}66.471%{transform:translate(320px,205px);animation-timing-function:linear}66.472%{transform:translate(320px,205px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(320px,205px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .hc-c4{animation:hc-c4 34s linear infinite both}
+@keyframes hc-i7{0%{stroke-dashoffset:242}61.765%{stroke-dashoffset:242}62.647%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i7{animation:hc-i7 34s linear infinite both}
+@keyframes hc-i8{0%{stroke-dashoffset:242}62.941%{stroke-dashoffset:242}63.824%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i8{animation:hc-i8 34s linear infinite both}
+@keyframes hc-i9{0%{stroke-dashoffset:242}63.971%{stroke-dashoffset:242}64.853%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i9{animation:hc-i9 34s linear infinite both}
+@keyframes hc-i10{0%{stroke-dashoffset:242}64.853%{stroke-dashoffset:242}65.735%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i10{animation:hc-i10 34s linear infinite both}
+@keyframes hc-i11{0%{stroke-dashoffset:242}65.588%{stroke-dashoffset:242}66.471%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .hc-i11{animation:hc-i11 34s linear infinite both}
+@keyframes hc-x1{0%{opacity:0;transform:translateY(20px) scale(0.6)}67.647%{opacity:0;transform:translateY(20px) scale(0.6)}68.676%{opacity:1;transform:translateY(0) scale(1.1)}72.941%{opacity:1;transform:translateY(-46px) scale(1)}75%{opacity:0;transform:translateY(-76px) scale(1)}75.294%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .hc-x1{animation:hc-x1 34s ease-out infinite both}
+@keyframes hc-x2{0%{opacity:0;transform:translateY(20px) scale(0.6)}69.412%{opacity:0;transform:translateY(20px) scale(0.6)}70.441%{opacity:1;transform:translateY(0) scale(1.1)}74.706%{opacity:1;transform:translateY(-46px) scale(1)}76.765%{opacity:0;transform:translateY(-76px) scale(1)}77.059%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .hc-x2{animation:hc-x2 34s ease-out infinite both}
+@keyframes hc-x3{0%{opacity:0;transform:translateY(20px) scale(0.6)}71.176%{opacity:0;transform:translateY(20px) scale(0.6)}72.206%{opacity:1;transform:translateY(0) scale(1.1)}76.471%{opacity:1;transform:translateY(-46px) scale(1)}78.529%{opacity:0;transform:translateY(-76px) scale(1)}78.824%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .hc-x3{animation:hc-x3 34s ease-out infinite both}
+@keyframes hc-m2{0%{opacity:0}72.353%{opacity:0}73.529%{opacity:1}100%{opacity:1}}
+html.js .hc-m2{animation:hc-m2 34s ease-in-out infinite both}
+@keyframes hc-to{0%{opacity:0}76.471%{opacity:0}77.647%{opacity:1}100%{opacity:1}}
+html.js .hc-to{animation:hc-to 34s ease-in-out infinite both}
+@keyframes hc-jn{0%{box-shadow:0 0 0 0 rgba(255,255,255,0)}80%{box-shadow:0 0 0 0 rgba(255,255,255,0)}81.176%{box-shadow:0 0 0 3px rgba(255,255,255,0.35)}86.471%{box-shadow:0 0 0 3px rgba(255,255,255,0.35)}87.647%{box-shadow:0 0 0 0 rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+html.js .hc-jn{animation:hc-jn 34s ease-in-out infinite both}
+@keyframes hc-tb{0%{opacity:0;transform:translateY(10px)}76.471%{opacity:0;transform:translateY(10px)}77.647%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .hc-tb{animation:hc-tb 34s ease-in-out infinite both}
+@keyframes hc-d3{0%{opacity:1}76.471%{opacity:1}77.647%{opacity:0}100%{opacity:0}}
+html.js .hc-d3{animation:hc-d3 34s ease-in-out infinite both}
+@keyframes hc-e3{0%{opacity:0}77.059%{opacity:0}78.235%{opacity:1}100%{opacity:1}}
+html.js .hc-e3{animation:hc-e3 34s ease-in-out infinite both}
+@keyframes hc-d4{0%{opacity:1}85.294%{opacity:1}86.471%{opacity:0}100%{opacity:0}}
+html.js .hc-d4{animation:hc-d4 34s ease-in-out infinite both}
+@keyframes hc-e4{0%{opacity:0}85.882%{opacity:0}87.059%{opacity:1}100%{opacity:1}}
+html.js .hc-e4{animation:hc-e4 34s ease-in-out infinite both}
+@keyframes hc-w3a{0%{opacity:1}77.059%{opacity:1}77.941%{opacity:0}100%{opacity:0}}
+html.js .hc-w3a{animation:hc-w3a 34s ease-in-out infinite both}
+@keyframes hc-w3b{0%{opacity:0}77.5%{opacity:0}78.382%{opacity:1}100%{opacity:1}}
+html.js .hc-w3b{animation:hc-w3b 34s ease-in-out infinite both}
+@keyframes hc-w4a{0%{opacity:1}85.882%{opacity:1}86.765%{opacity:0}100%{opacity:0}}
+html.js .hc-w4a{animation:hc-w4a 34s ease-in-out infinite both}
+@keyframes hc-w4b{0%{opacity:0}86.324%{opacity:0}87.206%{opacity:1}100%{opacity:1}}
+html.js .hc-w4b{animation:hc-w4b 34s ease-in-out infinite both}
+@keyframes hc-h1{0%{opacity:1}77.059%{opacity:1}77.941%{opacity:0}100%{opacity:0}}
+html.js .hc-h1{animation:hc-h1 34s ease-in-out infinite both}
+@keyframes hc-h2{0%{opacity:0}77.5%{opacity:0}78.382%{opacity:1}85.882%{opacity:1}86.765%{opacity:0}100%{opacity:0}}
+html.js .hc-h2{animation:hc-h2 34s ease-in-out infinite both}
+@keyframes hc-h3{0%{opacity:0}86.324%{opacity:0}87.206%{opacity:1}100%{opacity:1}}
+html.js .hc-h3{animation:hc-h3 34s ease-in-out infinite both}
+@keyframes fade-hc{0%{opacity:1}96.176%{opacity:1}99.265%{opacity:0}100%{opacity:0}}
+html.js .fade-hc{animation:fade-hc 34s linear infinite}
+/* cv: a French group practices market words out loud, with mic and camera on */
+.cv-sheet { position: absolute; left: clamp(16px, 2vw, 28px); right: clamp(16px, 2vw, 28px); top: 18px; }
+.cv-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; white-space: nowrap; }
+.cv-head b { font-weight: 400; font-size: 21px; color: var(--ink); }
+.cv-head span { font-size: 14px; color: var(--muted); }
+.cv-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.cv-card { height: 136px; border: 1px solid var(--rule); border-radius: 14px; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-width: 0; }
+.cv-ic { display: block; width: 76px; height: 57px; }
+.cv-w { display: grid; justify-items: center; min-width: 0; max-width: 100%; }
+.cv-w > * { grid-area: 1 / 1; }
+.cv-q { font-size: 18px; color: var(--faint); letter-spacing: 0.3em; }
+.cv-a { position: relative; display: inline-flex; align-items: center; gap: 7px; font-size: 18px; color: var(--c); white-space: nowrap; }
+.cv-a i { font-style: normal; width: 20px; height: 20px; border-radius: 50%; background: var(--c); color: #fff; font-size: 9px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cv-x { position: absolute; left: -3px; top: 52%; width: 22px; height: 2px; background: var(--hint); transform-origin: left center; transform: scaleX(0); }
+.cv-strip { margin-top: 14px; height: 52px; border: 1px dashed var(--rule); border-radius: 12px; background: rgba(255,255,255,0.9); display: grid; align-items: center; padding: 0 18px; }
+.cv-strip > * { grid-area: 1 / 1; min-width: 0; }
+.cv-sq { font-size: 15px; color: var(--faint); }
+.cv-sa { display: inline-flex; align-items: center; gap: 9px; font-size: 18px; color: var(--c); white-space: nowrap; }
+.cv-sa i { font-style: normal; width: 20px; height: 20px; border-radius: 50%; background: var(--c); color: #fff; font-size: 9px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cv-tiles { display: flex; gap: 8px; }
+.cv-tile { position: relative; width: 104px; height: 74px; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 24%, #f3f0ea) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='rgba(10,10,10,0.22)'%3E%3Ccircle cx='32' cy='24' r='10'/%3E%3Cpath d='M12 64c2-14 10-21 20-21s18 7 20 21z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center bottom / 62%; box-shadow: 0 6px 18px rgba(10,10,10,0.08); }
+.cv-tile em { position: absolute; left: 6px; bottom: 6px; font-style: normal; font-size: 10.5px; color: #fff; background: rgba(0,0,0,0.38); padding: 1px 6px; border-radius: 6px; }
+.cv-tile .cv-mic { position: absolute; right: 7px; bottom: 7px; width: 9px; height: 9px; border-radius: 50%; background: #3ba55d; box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
+.cv-ring { position: absolute; inset: -4px; border-radius: 15px; box-shadow: 0 0 0 3px var(--c); opacity: 0; }
+.cv-said { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+.co-msg.me .cv-said { margin-right: 5px; vertical-align: -1px; color: var(--faint); }
+.fade-cv .co-msg { font-size: 13px; }
+.fade-cv .co-react { bottom: 130px; }
+@media (max-width: 1100px) {
+  .cv-head span { display: none; }
+}
+@media (max-width: 900px) {
+  .stage .board-shell.fade-cv { grid-template-rows: minmax(0, 55%) minmax(0, 45%); }
+  .cv-head { display: none; }
+  .cv-sheet { left: 12px; right: 12px; top: 10px; }
+  .cv-grid { gap: 8px; }
+  .cv-card { height: 82px; gap: 4px; border-radius: 11px; }
+  .cv-ic { width: 46px; height: 34px; }
+  .cv-q, .cv-a { font-size: 13px; }
+  .cv-a i, .cv-sa i { display: none; }
+  .cv-x { width: 15px; }
+  .cv-strip { margin-top: 8px; height: 38px; padding: 0 12px; }
+  .cv-sq { font-size: 12px; }
+  .cv-sa { font-size: 13px; }
+  .cv-tiles { gap: 6px; }
+  .cv-tile { width: 60px; height: 44px; border-radius: 9px; }
+  .cv-tile em { display: none; }
+  .cv-tile .cv-mic { right: 5px; bottom: 5px; width: 7px; height: 7px; }
+  .cv-ring { border-radius: 12px; }
+  .fade-cv .co-dock { gap: 6px; }
+  .fade-cv .co-react { bottom: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv-x { transform: none; }
+  .cv-cb { background: var(--ink); color: #fff; }
+  .cv-sl { display: none; }
+}
+@keyframes cv-r1{0%{opacity:0}1.176%{opacity:0}2.059%{opacity:1}7.059%{opacity:1}7.941%{opacity:0}65.882%{opacity:0}66.765%{opacity:1}72.353%{opacity:1}73.235%{opacity:0}100%{opacity:0}}
+html.js .cv-r1{animation:cv-r1 34s ease-in-out infinite both}
+@keyframes cv-m1{0%{opacity:0}4.706%{opacity:0}5.882%{opacity:1}100%{opacity:1}}
+html.js .cv-m1{animation:cv-m1 34s ease-in-out infinite both}
+@keyframes cv-q1{0%{opacity:1}5.294%{opacity:1}6.176%{opacity:0}100%{opacity:0}}
+html.js .cv-q1{animation:cv-q1 34s ease-in-out infinite both}
+@keyframes cv-w1{0%{opacity:0}5.294%{opacity:0}6.176%{opacity:1}15.294%{opacity:1}16.176%{opacity:0}100%{opacity:0}}
+html.js .cv-w1{animation:cv-w1 34s ease-in-out infinite both}
+@keyframes cv-k1{0%{opacity:0}7.059%{opacity:0}8.235%{opacity:1}100%{opacity:1}}
+html.js .cv-k1{animation:cv-k1 34s ease-in-out infinite both}
+@keyframes cv-t1{0%{opacity:0}7.059%{opacity:0}7.794%{opacity:1}11.176%{opacity:1}11.765%{opacity:0}100%{opacity:0}}
+html.js .cv-t1{animation:cv-t1 34s ease-in-out infinite both}
+@keyframes cv-g1{0%{opacity:0}11.765%{opacity:0}12.941%{opacity:1}100%{opacity:1}}
+html.js .cv-g1{animation:cv-g1 34s ease-in-out infinite both}
+@keyframes cv-x1{0%{transform:scaleX(0)}12.941%{transform:scaleX(0)}14.118%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+html.js .cv-x1{animation:cv-x1 34s ease-out infinite both}
+@keyframes cv-a1{0%{opacity:0}15.882%{opacity:0}17.059%{opacity:1}100%{opacity:1}}
+html.js .cv-a1{animation:cv-a1 34s ease-in-out infinite both}
+@keyframes cv-r2{0%{opacity:0}16.471%{opacity:0}17.353%{opacity:1}22.353%{opacity:1}23.235%{opacity:0}50%{opacity:0}50.882%{opacity:1}55.882%{opacity:1}56.765%{opacity:0}100%{opacity:0}}
+html.js .cv-r2{animation:cv-r2 34s ease-in-out infinite both}
+@keyframes cv-m2{0%{opacity:0}20%{opacity:0}21.176%{opacity:1}100%{opacity:1}}
+html.js .cv-m2{animation:cv-m2 34s ease-in-out infinite both}
+@keyframes cv-q2{0%{opacity:1}20.588%{opacity:1}21.471%{opacity:0}100%{opacity:0}}
+html.js .cv-q2{animation:cv-q2 34s ease-in-out infinite both}
+@keyframes cv-a2{0%{opacity:0}20.882%{opacity:0}22.059%{opacity:1}100%{opacity:1}}
+html.js .cv-a2{animation:cv-a2 34s ease-in-out infinite both}
+@keyframes cv-g2{0%{opacity:0}24.118%{opacity:0}25.294%{opacity:1}100%{opacity:1}}
+html.js .cv-g2{animation:cv-g2 34s ease-in-out infinite both}
+@keyframes cv-cb{0%{background:transparent;color:var(--muted)}27.647%{background:transparent;color:var(--muted)}28.529%{background:var(--ink);color:#fff}100%{background:var(--ink);color:#fff}}
+html.js .cv-cb{animation:cv-cb 34s ease-in-out infinite both}
+@keyframes cv-sl{0%{opacity:1}27.647%{opacity:1}28.529%{opacity:0}100%{opacity:0}}
+html.js .cv-sl{animation:cv-sl 34s ease-in-out infinite both}
+@keyframes cv-ty{0%{opacity:0;transform:scale(0.6)}28.824%{opacity:0;transform:scale(0.6)}29.853%{opacity:1;transform:scale(1.06)}30.588%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .cv-ty{animation:cv-ty 34s ease-out infinite both}
+@keyframes cv-r3{0%{opacity:0}30.588%{opacity:0}31.471%{opacity:1}35.294%{opacity:1}36.176%{opacity:0}100%{opacity:0}}
+html.js .cv-r3{animation:cv-r3 34s ease-in-out infinite both}
+@keyframes cv-m3{0%{opacity:0}32.941%{opacity:0}34.118%{opacity:1}100%{opacity:1}}
+html.js .cv-m3{animation:cv-m3 34s ease-in-out infinite both}
+@keyframes cv-q3{0%{opacity:1}33.529%{opacity:1}34.412%{opacity:0}100%{opacity:0}}
+html.js .cv-q3{animation:cv-q3 34s ease-in-out infinite both}
+@keyframes cv-a3{0%{opacity:0}33.824%{opacity:0}35%{opacity:1}100%{opacity:1}}
+html.js .cv-a3{animation:cv-a3 34s ease-in-out infinite both}
+@keyframes cv-g3{0%{opacity:0}37.059%{opacity:0}38.235%{opacity:1}100%{opacity:1}}
+html.js .cv-g3{animation:cv-g3 34s ease-in-out infinite both}
+@keyframes cv-r4{0%{opacity:0}39.412%{opacity:0}40.294%{opacity:1}45.294%{opacity:1}46.176%{opacity:0}100%{opacity:0}}
+html.js .cv-r4{animation:cv-r4 34s ease-in-out infinite both}
+@keyframes cv-m4{0%{opacity:0}42.941%{opacity:0}44.118%{opacity:1}100%{opacity:1}}
+html.js .cv-m4{animation:cv-m4 34s ease-in-out infinite both}
+@keyframes cv-q4{0%{opacity:1}43.529%{opacity:1}44.412%{opacity:0}100%{opacity:0}}
+html.js .cv-q4{animation:cv-q4 34s ease-in-out infinite both}
+@keyframes cv-a4{0%{opacity:0}43.824%{opacity:0}45%{opacity:1}100%{opacity:1}}
+html.js .cv-a4{animation:cv-a4 34s ease-in-out infinite both}
+@keyframes cv-q5{0%{opacity:1}44.706%{opacity:1}45.588%{opacity:0}100%{opacity:0}}
+html.js .cv-q5{animation:cv-q5 34s ease-in-out infinite both}
+@keyframes cv-a5{0%{opacity:0}45%{opacity:0}46.176%{opacity:1}100%{opacity:1}}
+html.js .cv-a5{animation:cv-a5 34s ease-in-out infinite both}
+@keyframes cv-g4{0%{opacity:0}47.059%{opacity:0}48.235%{opacity:1}100%{opacity:1}}
+html.js .cv-g4{animation:cv-g4 34s ease-in-out infinite both}
+@keyframes cv-m5{0%{opacity:0}53.529%{opacity:0}54.706%{opacity:1}100%{opacity:1}}
+html.js .cv-m5{animation:cv-m5 34s ease-in-out infinite both}
+@keyframes cv-k2{0%{opacity:0}55.294%{opacity:0}56.471%{opacity:1}100%{opacity:1}}
+html.js .cv-k2{animation:cv-k2 34s ease-in-out infinite both}
+@keyframes cv-t2{0%{opacity:0}55.294%{opacity:0}56.029%{opacity:1}60.588%{opacity:1}61.176%{opacity:0}100%{opacity:0}}
+html.js .cv-t2{animation:cv-t2 34s ease-in-out infinite both}
+@keyframes cv-g5{0%{opacity:0}61.176%{opacity:0}62.353%{opacity:1}100%{opacity:1}}
+html.js .cv-g5{animation:cv-g5 34s ease-in-out infinite both}
+@keyframes cv-m6{0%{opacity:0}69.412%{opacity:0}70.588%{opacity:1}100%{opacity:1}}
+html.js .cv-m6{animation:cv-m6 34s ease-in-out infinite both}
+@keyframes cv-sq{0%{opacity:1}70.294%{opacity:1}71.176%{opacity:0}100%{opacity:0}}
+html.js .cv-sq{animation:cv-sq 34s ease-in-out infinite both}
+@keyframes cv-sa{0%{opacity:0;transform:translateY(10px)}70.588%{opacity:0;transform:translateY(10px)}71.765%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .cv-sa{animation:cv-sa 34s ease-in-out infinite both}
+@keyframes cv-g6{0%{opacity:0}73.529%{opacity:0}74.706%{opacity:1}100%{opacity:1}}
+html.js .cv-g6{animation:cv-g6 34s ease-in-out infinite both}
+@keyframes cv-x2{0%{opacity:0;transform:translateY(20px) scale(0.6)}75.882%{opacity:0;transform:translateY(20px) scale(0.6)}76.912%{opacity:1;transform:translateY(0) scale(1.1)}81.176%{opacity:1;transform:translateY(-46px) scale(1)}83.235%{opacity:0;transform:translateY(-76px) scale(1)}83.529%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .cv-x2{animation:cv-x2 34s ease-out infinite both}
+@keyframes cv-x3{0%{opacity:0;transform:translateY(20px) scale(0.6)}77.647%{opacity:0;transform:translateY(20px) scale(0.6)}78.676%{opacity:1;transform:translateY(0) scale(1.1)}82.941%{opacity:1;transform:translateY(-46px) scale(1)}85%{opacity:0;transform:translateY(-76px) scale(1)}85.294%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .cv-x3{animation:cv-x3 34s ease-out infinite both}
+@keyframes cv-kb{0%{transform:none}78.824%{transform:none}79.353%{transform:scale(0.93)}80.147%{transform:none}100%{transform:none}}
+html.js .cv-kb{animation:cv-kb 34s ease-in-out infinite both}
+@keyframes cv-x4{0%{opacity:0;transform:translateY(20px) scale(0.6)}79.412%{opacity:0;transform:translateY(20px) scale(0.6)}80.441%{opacity:1;transform:translateY(0) scale(1.1)}84.706%{opacity:1;transform:translateY(-46px) scale(1)}86.765%{opacity:0;transform:translateY(-76px) scale(1)}87.059%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .cv-x4{animation:cv-x4 34s ease-out infinite both}
+@keyframes fade-cv{0%{opacity:1}96.176%{opacity:1}99.265%{opacity:0}100%{opacity:0}}
+html.js .fade-cv{animation:fade-cv 34s linear infinite}
+/* cp: a Silk Road project, split on one board, then everyone on a tab of their own */
+.cp-svg { position: absolute; left: clamp(16px, 2vw, 28px); top: 14px; overflow: visible; width: min(calc(100% - 2 * clamp(16px, 2vw, 28px)), 900px); height: auto; }
+.cp-svg text { font-family: Georgia, "Times New Roman", serif; }
+.cp-tag { font-size: 12px; fill: var(--faint); letter-spacing: 0.04em; }
+.cp-pdf { fill: #fff; stroke: var(--rule); stroke-width: 1.2; filter: drop-shadow(0 2px 6px rgba(10,10,10,0.06)); }
+.cp-h { font-size: 17px; fill: var(--ink); }
+.cp-s { font-size: 12.5px; fill: var(--faint); }
+.cp-rows text { font-size: 14px; fill: var(--ink); }
+.cp-rows .cp-pt { fill: var(--faint); text-anchor: end; font-size: 12.5px; }
+.cp-rows path { stroke: var(--rule); stroke-width: 1; fill: none; }
+.cp-nm { font-size: 15px; }
+.cp-map circle { fill: var(--ink); }
+.cp-map text { font-size: 12px; fill: var(--muted); }
+.cp-gz text { font-size: 16px; fill: var(--ink); text-anchor: middle; }
+.cp-gz .cp-gh { font-size: 18px; }
+.cp-gz .cp-gc { font-size: 13px; fill: var(--faint); letter-spacing: 0.08em; }
+.cp-tl { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-dasharray: 240 600; stroke-dashoffset: 242; }
+.cp-rl { display: inline-grid; }
+.cp-rl > span { grid-area: 1 / 1; }
+.fade-cp .co-msg { font-size: 13px; }
+@media (max-width: 900px) {
+  .stage .board-shell.fade-cp { grid-template-rows: minmax(0, 54%) minmax(0, 46%); }
+  .cp-s1 { left: 0; top: 6px; width: min(calc(100% * 640 / 330), 680px); transform: translate(-1.25%, -9%); }
+  .cp-s2 { left: 50%; top: 6px; width: min(calc(100% * 640 / 440), 600px); transform: translate(-50%, -6%); }
+  .cp-tag, .cp-ft { display: none; }
+  .cp-pdf { height: 226px; }
+  .cp-gz .cp-gc { font-size: 14px; }
+}
+@media (max-width: 760px) {
+  .cp-map, .cp-i1, .cp-v1 { display: none; }
+  .cp-s1 .co-curs { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-tl { stroke-dashoffset: 0 !important; }
+  .cp-tb4 { background: #fff; border-color: var(--ink); color: var(--ink); }
+}
+@keyframes cp-r1{0%{opacity:0}0.556%{opacity:0}1.389%{opacity:1}9.444%{opacity:1}10.278%{opacity:0}100%{opacity:0}}
+html.js .cp-r1{animation:cp-r1 36s ease-in-out infinite both}
+@keyframes cp-i1{0%{stroke-dashoffset:242}0.833%{stroke-dashoffset:242}9.167%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-i1{animation:cp-i1 36s linear infinite both}
+@keyframes cp-v1{0%{opacity:1}15.556%{opacity:1}16.389%{opacity:0}100%{opacity:0}}
+html.js .cp-v1{animation:cp-v1 36s ease-in-out infinite both}
+@keyframes cp-c1{0%{transform:translate(592px,204px);animation-timing-function:linear}0.833%{transform:translate(592px,204px);animation-timing-function:linear}2.652%{transform:translate(548px,136px);animation-timing-function:linear}4.541%{transform:translate(464px,140px);animation-timing-function:linear}6.876%{transform:translate(392px,215px);animation-timing-function:linear}9.167%{transform:translate(346px,124px);animation-timing-function:linear}9.168%{transform:translate(346px,124px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}10%{transform:translate(346px,124px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}11.944%{transform:translate(206px,112px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}15.556%{transform:translate(206px,112px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(206px,112px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c1{animation:cp-c1 36s linear infinite both}
+@keyframes cp-v2{0%{opacity:0}3.889%{opacity:0}4.583%{opacity:1}8.333%{opacity:1}9.028%{opacity:0}100%{opacity:0}}
+html.js .cp-v2{animation:cp-v2 36s ease-in-out infinite both}
+@keyframes cp-c2{0%{transform:translate(206px,188px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(206px,188px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c2{animation:cp-c2 36s linear infinite both}
+@keyframes cp-v3{0%{opacity:0}8.889%{opacity:0}9.583%{opacity:1}13.889%{opacity:1}14.583%{opacity:0}100%{opacity:0}}
+html.js .cp-v3{animation:cp-v3 36s ease-in-out infinite both}
+@keyframes cp-c3{0%{transform:translate(206px,226px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(206px,226px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c3{animation:cp-c3 36s linear infinite both}
+@keyframes cp-v4{0%{opacity:0}15.833%{opacity:0}16.528%{opacity:1}20.556%{opacity:1}21.25%{opacity:0}100%{opacity:0}}
+html.js .cp-v4{animation:cp-v4 36s ease-in-out infinite both}
+@keyframes cp-c4{0%{transform:translate(206px,150px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(206px,150px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c4{animation:cp-c4 36s linear infinite both}
+@keyframes cp-t3{0%{stroke-dashoffset:242}5.278%{stroke-dashoffset:242}6.667%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-t3{animation:cp-t3 36s linear infinite both}
+@keyframes cp-n3{0%{opacity:0}6.667%{opacity:0}7.5%{opacity:1}100%{opacity:1}}
+html.js .cp-n3{animation:cp-n3 36s ease-in-out infinite both}
+@keyframes cp-t4{0%{stroke-dashoffset:242}10.278%{stroke-dashoffset:242}11.667%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-t4{animation:cp-t4 36s linear infinite both}
+@keyframes cp-n4{0%{opacity:0}11.667%{opacity:0}12.5%{opacity:1}100%{opacity:1}}
+html.js .cp-n4{animation:cp-n4 36s ease-in-out infinite both}
+@keyframes cp-t1{0%{stroke-dashoffset:242}12.222%{stroke-dashoffset:242}13.611%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-t1{animation:cp-t1 36s linear infinite both}
+@keyframes cp-n1{0%{opacity:0}13.611%{opacity:0}14.444%{opacity:1}100%{opacity:1}}
+html.js .cp-n1{animation:cp-n1 36s ease-in-out infinite both}
+@keyframes cp-t2{0%{stroke-dashoffset:242}17.222%{stroke-dashoffset:242}18.611%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-t2{animation:cp-t2 36s linear infinite both}
+@keyframes cp-n2{0%{opacity:0}18.611%{opacity:0}19.444%{opacity:1}100%{opacity:1}}
+html.js .cp-n2{animation:cp-n2 36s ease-in-out infinite both}
+@keyframes cp-m1{0%{opacity:0}20.556%{opacity:0}21.667%{opacity:1}100%{opacity:1}}
+html.js .cp-m1{animation:cp-m1 36s ease-in-out infinite both}
+@keyframes cp-k1{0%{opacity:0}22.222%{opacity:0}23.333%{opacity:1}100%{opacity:1}}
+html.js .cp-k1{animation:cp-k1 36s ease-in-out infinite both}
+@keyframes cp-q1{0%{opacity:0}22.222%{opacity:0}22.917%{opacity:1}26.111%{opacity:1}26.667%{opacity:0}100%{opacity:0}}
+html.js .cp-q1{animation:cp-q1 36s ease-in-out infinite both}
+@keyframes cp-g1{0%{opacity:0}26.667%{opacity:0}27.778%{opacity:1}100%{opacity:1}}
+html.js .cp-g1{animation:cp-g1 36s ease-in-out infinite both}
+@keyframes cp-tb2{0%{opacity:0;transform:translateY(8px)}30.556%{opacity:0;transform:translateY(8px)}31.667%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .cp-tb2{animation:cp-tb2 36s ease-in-out infinite both}
+@keyframes cp-tb3{0%{opacity:0;transform:translateY(8px)}32.222%{opacity:0;transform:translateY(8px)}33.333%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+html.js .cp-tb3{animation:cp-tb3 36s ease-in-out infinite both}
+@keyframes cp-tb4{0%{opacity:0;transform:translateY(8px);background:#fafafa;border-color:var(--rule);color:var(--muted)}33.889%{opacity:0;transform:translateY(8px);background:#fafafa;border-color:var(--rule);color:var(--muted)}35%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}35.278%{opacity:1;transform:none;background:#fafafa;border-color:var(--rule);color:var(--muted)}36.111%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}100%{opacity:1;transform:none;background:#fff;border-color:var(--ink);color:var(--ink)}}
+html.js .cp-tb4{animation:cp-tb4 36s ease-in-out infinite both}
+@keyframes cp-tb1{0%{background:#fff;border-color:var(--ink);color:var(--ink)}35%{background:#fff;border-color:var(--ink);color:var(--ink)}35.833%{background:#fafafa;border-color:var(--rule);color:var(--muted)}100%{background:#fafafa;border-color:var(--rule);color:var(--muted)}}
+html.js .cp-tb1{animation:cp-tb1 36s ease-in-out infinite both}
+@keyframes cp-d1m{0%{opacity:1}30.556%{opacity:1}31.389%{opacity:0}100%{opacity:0}}
+html.js .cp-d1m{animation:cp-d1m 36s ease-in-out infinite both}
+@keyframes cp-d2m{0%{opacity:0}31.111%{opacity:0}31.944%{opacity:1}100%{opacity:1}}
+html.js .cp-d2m{animation:cp-d2m 36s ease-in-out infinite both}
+@keyframes cp-d1a{0%{opacity:1}32.222%{opacity:1}33.056%{opacity:0}100%{opacity:0}}
+html.js .cp-d1a{animation:cp-d1a 36s ease-in-out infinite both}
+@keyframes cp-d3a{0%{opacity:0}32.778%{opacity:0}33.611%{opacity:1}100%{opacity:1}}
+html.js .cp-d3a{animation:cp-d3a 36s ease-in-out infinite both}
+@keyframes cp-d1s{0%{opacity:1}35%{opacity:1}35.833%{opacity:0}100%{opacity:0}}
+html.js .cp-d1s{animation:cp-d1s 36s ease-in-out infinite both}
+@keyframes cp-d4s{0%{opacity:0}35.556%{opacity:0}36.389%{opacity:1}100%{opacity:1}}
+html.js .cp-d4s{animation:cp-d4s 36s ease-in-out infinite both}
+@keyframes cp-d1l{0%{opacity:1}58.333%{opacity:1}59.167%{opacity:0}100%{opacity:0}}
+html.js .cp-d1l{animation:cp-d1l 36s ease-in-out infinite both}
+@keyframes cp-d4l{0%{opacity:0}58.889%{opacity:0}59.722%{opacity:1}100%{opacity:1}}
+html.js .cp-d4l{animation:cp-d4l 36s ease-in-out infinite both}
+@keyframes cp-wm1{0%{opacity:1}31.111%{opacity:1}31.944%{opacity:0}100%{opacity:0}}
+html.js .cp-wm1{animation:cp-wm1 36s ease-in-out infinite both}
+@keyframes cp-wm2{0%{opacity:0}31.528%{opacity:0}32.361%{opacity:1}100%{opacity:1}}
+html.js .cp-wm2{animation:cp-wm2 36s ease-in-out infinite both}
+@keyframes cp-wa1{0%{opacity:1}32.778%{opacity:1}33.611%{opacity:0}100%{opacity:0}}
+html.js .cp-wa1{animation:cp-wa1 36s ease-in-out infinite both}
+@keyframes cp-wa2{0%{opacity:0}33.194%{opacity:0}34.028%{opacity:1}100%{opacity:1}}
+html.js .cp-wa2{animation:cp-wa2 36s ease-in-out infinite both}
+@keyframes cp-ws1{0%{opacity:1}35%{opacity:1}35.833%{opacity:0}100%{opacity:0}}
+html.js .cp-ws1{animation:cp-ws1 36s ease-in-out infinite both}
+@keyframes cp-ws2{0%{opacity:0}35.417%{opacity:0}36.25%{opacity:1}100%{opacity:1}}
+html.js .cp-ws2{animation:cp-ws2 36s ease-in-out infinite both}
+@keyframes cp-wl1{0%{opacity:1}58.889%{opacity:1}59.722%{opacity:0}100%{opacity:0}}
+html.js .cp-wl1{animation:cp-wl1 36s ease-in-out infinite both}
+@keyframes cp-wl2{0%{opacity:0}59.306%{opacity:0}60.139%{opacity:1}100%{opacity:1}}
+html.js .cp-wl2{animation:cp-wl2 36s ease-in-out infinite both}
+@keyframes cp-b1{0%{opacity:1}35%{opacity:1}35.972%{opacity:0}100%{opacity:0}}
+html.js .cp-b1{animation:cp-b1 36s ease-in-out infinite both}
+@keyframes cp-b2{0%{opacity:0}35.417%{opacity:0}36.389%{opacity:1}100%{opacity:1}}
+html.js .cp-b2{animation:cp-b2 36s ease-in-out infinite both}
+@keyframes cp-p1{0%{opacity:1}35%{opacity:1}35.972%{opacity:0}100%{opacity:0}}
+html.js .cp-p1{animation:cp-p1 36s ease-in-out infinite both}
+@keyframes cp-p2{0%{opacity:0}35.417%{opacity:0}36.389%{opacity:1}100%{opacity:1}}
+html.js .cp-p2{animation:cp-p2 36s ease-in-out infinite both}
+@keyframes cp-o1{0%{opacity:1}35%{opacity:1}35.833%{opacity:0}100%{opacity:0}}
+html.js .cp-o1{animation:cp-o1 36s ease-in-out infinite both}
+@keyframes cp-o2{0%{opacity:0}35.417%{opacity:0}36.25%{opacity:1}100%{opacity:1}}
+html.js .cp-o2{animation:cp-o2 36s ease-in-out infinite both}
+@keyframes cp-h1{0%{opacity:1}35%{opacity:1}35.833%{opacity:0}100%{opacity:0}}
+html.js .cp-h1{animation:cp-h1 36s ease-in-out infinite both}
+@keyframes cp-h2{0%{opacity:0}35.417%{opacity:0}36.25%{opacity:1}59.167%{opacity:1}60%{opacity:0}100%{opacity:0}}
+html.js .cp-h2{animation:cp-h2 36s ease-in-out infinite both}
+@keyframes cp-h3{0%{opacity:0}59.583%{opacity:0}60.417%{opacity:1}100%{opacity:1}}
+html.js .cp-h3{animation:cp-h3 36s ease-in-out infinite both}
+@keyframes cp-m2{0%{opacity:0}37.222%{opacity:0}38.333%{opacity:1}100%{opacity:1}}
+html.js .cp-m2{animation:cp-m2 36s ease-in-out infinite both}
+@keyframes cp-k2{0%{opacity:0}38.889%{opacity:0}40%{opacity:1}100%{opacity:1}}
+html.js .cp-k2{animation:cp-k2 36s ease-in-out infinite both}
+@keyframes cp-q2{0%{opacity:0}38.889%{opacity:0}39.583%{opacity:1}42.778%{opacity:1}43.333%{opacity:0}100%{opacity:0}}
+html.js .cp-q2{animation:cp-q2 36s ease-in-out infinite both}
+@keyframes cp-g2{0%{opacity:0}43.333%{opacity:0}44.444%{opacity:1}100%{opacity:1}}
+html.js .cp-g2{animation:cp-g2 36s ease-in-out infinite both}
+@keyframes cp-e0{0%{opacity:0}36.111%{opacity:0}37.222%{opacity:1}100%{opacity:1}}
+html.js .cp-e0{animation:cp-e0 36s ease-in-out infinite both}
+@keyframes cp-e1{0%{stroke-dashoffset:242}44.444%{stroke-dashoffset:242}46.111%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-e1{animation:cp-e1 36s linear infinite both}
+@keyframes cp-e2{0%{opacity:0}45.556%{opacity:0}46.389%{opacity:1}100%{opacity:1}}
+html.js .cp-e2{animation:cp-e2 36s ease-in-out infinite both}
+@keyframes cp-x1{0%{opacity:0}46.389%{opacity:0}47.222%{opacity:1}100%{opacity:1}}
+html.js .cp-x1{animation:cp-x1 36s ease-in-out infinite both}
+@keyframes cp-x2{0%{opacity:0}47.222%{opacity:0}48.056%{opacity:1}100%{opacity:1}}
+html.js .cp-x2{animation:cp-x2 36s ease-in-out infinite both}
+@keyframes cp-x3{0%{opacity:0}48.056%{opacity:0}48.889%{opacity:1}100%{opacity:1}}
+html.js .cp-x3{animation:cp-x3 36s ease-in-out infinite both}
+@keyframes cp-x4{0%{opacity:0}48.889%{opacity:0}49.722%{opacity:1}100%{opacity:1}}
+html.js .cp-x4{animation:cp-x4 36s ease-in-out infinite both}
+@keyframes cp-x5{0%{opacity:0}49.722%{opacity:0}50.556%{opacity:1}100%{opacity:1}}
+html.js .cp-x5{animation:cp-x5 36s ease-in-out infinite both}
+@keyframes cp-x6{0%{opacity:0}50.556%{opacity:0}51.389%{opacity:1}100%{opacity:1}}
+html.js .cp-x6{animation:cp-x6 36s ease-in-out infinite both}
+@keyframes cp-v6{0%{opacity:0}53.056%{opacity:0}53.75%{opacity:1}57.5%{opacity:1}58.194%{opacity:0}100%{opacity:0}}
+html.js .cp-v6{animation:cp-v6 36s ease-in-out infinite both}
+@keyframes cp-c6{0%{transform:translate(246px,128px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}54.444%{transform:translate(246px,128px);animation-timing-function:linear}54.868%{transform:translate(251px,134px);animation-timing-function:linear}55.833%{transform:translate(262px,120px);animation-timing-function:linear}55.834%{transform:translate(262px,120px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(262px,120px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c6{animation:cp-c6 36s linear infinite both}
+@keyframes cp-u1{0%{stroke-dashoffset:242}54.444%{stroke-dashoffset:242}55.833%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-u1{animation:cp-u1 36s linear infinite both}
+@keyframes cp-v5{0%{opacity:0}60%{opacity:0}60.694%{opacity:1}65.278%{opacity:1}65.972%{opacity:0}100%{opacity:0}}
+html.js .cp-v5{animation:cp-v5 36s ease-in-out infinite both}
+@keyframes cp-c5{0%{transform:translate(300px,280px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}60%{transform:translate(300px,280px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}60.972%{transform:translate(196px,158px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}61.111%{transform:translate(196px,158px);animation-timing-function:linear}61.534%{transform:translate(222px,145px);animation-timing-function:linear}61.944%{transform:translate(248px,156px);animation-timing-function:linear}62.373%{transform:translate(222px,170px);animation-timing-function:linear}62.778%{transform:translate(196px,160px);animation-timing-function:linear}62.779%{transform:translate(200px,150px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}63.194%{transform:translate(192px,164px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}63.333%{transform:translate(192px,164px);animation-timing-function:linear}64.407%{transform:translate(146px,200px);animation-timing-function:linear}65%{transform:translate(142px,232px);animation-timing-function:linear}65.001%{transform:translate(142px,232px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}100%{transform:translate(142px,232px);animation-timing-function:cubic-bezier(0.4,0,0.2,1)}}
+html.js .cp-c5{animation:cp-c5 36s linear infinite both}
+@keyframes cp-l1{0%{stroke-dashoffset:242}61.111%{stroke-dashoffset:242}62.778%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-l1{animation:cp-l1 36s linear infinite both}
+@keyframes cp-l2{0%{stroke-dashoffset:242}63.333%{stroke-dashoffset:242}65%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+html.js .cp-l2{animation:cp-l2 36s linear infinite both}
+@keyframes cp-l3{0%{opacity:0}66.111%{opacity:0}66.944%{opacity:1}100%{opacity:1}}
+html.js .cp-l3{animation:cp-l3 36s ease-in-out infinite both}
+@keyframes cp-m3{0%{opacity:0}67.222%{opacity:0}68.333%{opacity:1}100%{opacity:1}}
+html.js .cp-m3{animation:cp-m3 36s ease-in-out infinite both}
+@keyframes cp-k3{0%{opacity:0}69.444%{opacity:0}70.556%{opacity:1}100%{opacity:1}}
+html.js .cp-k3{animation:cp-k3 36s ease-in-out infinite both}
+@keyframes cp-q3{0%{opacity:0}69.444%{opacity:0}70.139%{opacity:1}75%{opacity:1}75.556%{opacity:0}100%{opacity:0}}
+html.js .cp-q3{animation:cp-q3 36s ease-in-out infinite both}
+@keyframes cp-g3{0%{opacity:0}75.556%{opacity:0}76.667%{opacity:1}100%{opacity:1}}
+html.js .cp-g3{animation:cp-g3 36s ease-in-out infinite both}
+@keyframes cp-f1{0%{opacity:0;transform:translateY(20px) scale(0.6)}78.333%{opacity:0;transform:translateY(20px) scale(0.6)}79.306%{opacity:1;transform:translateY(0) scale(1.1)}83.333%{opacity:1;transform:translateY(-46px) scale(1)}85.278%{opacity:0;transform:translateY(-76px) scale(1)}85.556%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .cp-f1{animation:cp-f1 36s ease-out infinite both}
+@keyframes cp-kb{0%{transform:none}79.444%{transform:none}79.944%{transform:scale(0.93)}80.694%{transform:none}100%{transform:none}}
+html.js .cp-kb{animation:cp-kb 36s ease-in-out infinite both}
+@keyframes cp-f2{0%{opacity:0;transform:translateY(20px) scale(0.6)}80%{opacity:0;transform:translateY(20px) scale(0.6)}80.972%{opacity:1;transform:translateY(0) scale(1.1)}85%{opacity:1;transform:translateY(-46px) scale(1)}86.944%{opacity:0;transform:translateY(-76px) scale(1)}87.222%{opacity:0;transform:translateY(20px) scale(0.6)}100%{opacity:0;transform:translateY(20px) scale(0.6)}}
+html.js .cp-f2{animation:cp-f2 36s ease-out infinite both}
+@keyframes cp-m4{0%{opacity:0}82.222%{opacity:0}83.333%{opacity:1}100%{opacity:1}}
+html.js .cp-m4{animation:cp-m4 36s ease-in-out infinite both}
+@keyframes fade-cp{0%{opacity:1}96.389%{opacity:1}99.306%{opacity:0}100%{opacity:0}}
+html.js .fade-cp{animation:fade-cp 36s linear infinite}
 @keyframes pk-ca{0%{border-color:var(--rule)}100%{border-color:var(--rule)}}
 html.js .pk-ca{animation:pk-ca 32.4s ease-in-out infinite both}
 @keyframes pk-cb{0%{border-color:var(--rule)}100%{border-color:var(--rule)}}
