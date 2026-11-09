@@ -4156,6 +4156,7 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .xk-mini .l { display: block; width: 78%; height: 3px; border-radius: 2px; opacity: 0.55; margin-bottom: 5%; }
 .xk-mini .l.s { width: 48%; }
 .xk-name { display: block; font-size: 10.5px; color: var(--muted); padding: 5px 2px 0; }
+@media (max-width: 860px) { .fade-xk .xk-name { display: none; } }
 .xk-ask { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
 .xk-ask span { border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; background: #fff; color: var(--ink); }
 .xk-side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
@@ -5034,7 +5035,7 @@ html.js .fade-kc{animation:fade-kc 42s linear infinite}
 }
 @keyframes hk-sweep2 { from { transform: translateX(0); } to { transform: translateX(calc(1600% + 48px)); } }
 @media (max-width: 560px) { .hk-bn { display: none; } }
-@media (prefers-reduced-motion: reduce) { .hk-du, .hk-ph, .hk-fx { display: none; } }
+@media (prefers-reduced-motion: reduce) { .hk-du, .hk-ph, .hk-fx { display: none; } .hk-tp { color: var(--ink); border-color: var(--ink); } }
 @keyframes hk-h1{0%{opacity:1}29.457%{opacity:1}30%{opacity:0}100%{opacity:0}}
 html.js .hk-h1{animation:hk-h1 46s ease-in-out infinite both}
 @keyframes hk-h2{0%{opacity:0}30.109%{opacity:0}30.652%{opacity:1}62.935%{opacity:1}63.478%{opacity:0}100%{opacity:0}}
@@ -5229,11 +5230,11 @@ html.js .hk-drv{animation:hk-drv 46s ease-in-out infinite both}
 html.js .hk-gm{animation:hk-gm 46s linear infinite both}
 @keyframes hk-spin{0%{transform:rotateZ(0deg)}45.652%{transform:rotateZ(0deg);animation-timing-function:linear}64.348%{transform:rotateZ(-3679.58deg)}100%{transform:rotateZ(-3679.58deg)}}
 html.js .hk-spin{animation:hk-spin 46s linear infinite both}
-@keyframes hk-lf1{0%{transform:none}52.233%{transform:none;animation-timing-function:ease-out}52.667%{transform:translateY(-11px);animation-timing-function:ease-in}53.102%{transform:none}100%{transform:none}}
+@keyframes hk-lf1{0%{transform:none}52.233%{transform:none;animation-timing-function:ease-out}52.667%{transform:translateY(-14px);animation-timing-function:ease-in}53.102%{transform:none}100%{transform:none}}
 html.js .hk-lf1{animation:hk-lf1 46s ease-in-out infinite both}
-@keyframes hk-lf2{0%{transform:none}53.043%{transform:none;animation-timing-function:ease-out}53.478%{transform:translateY(-11px);animation-timing-function:ease-in}53.913%{transform:none}100%{transform:none}}
+@keyframes hk-lf2{0%{transform:none}53.043%{transform:none;animation-timing-function:ease-out}53.478%{transform:translateY(-14px);animation-timing-function:ease-in}53.913%{transform:none}100%{transform:none}}
 html.js .hk-lf2{animation:hk-lf2 46s ease-in-out infinite both}
-@keyframes hk-lf3{0%{transform:none}53.854%{transform:none;animation-timing-function:ease-out}54.289%{transform:translateY(-11px);animation-timing-function:ease-in}54.724%{transform:none}100%{transform:none}}
+@keyframes hk-lf3{0%{transform:none}53.854%{transform:none;animation-timing-function:ease-out}54.289%{transform:translateY(-14px);animation-timing-function:ease-in}54.724%{transform:none}100%{transform:none}}
 html.js .hk-lf3{animation:hk-lf3 46s ease-in-out infinite both}
 @keyframes hk-rl{0%{transform:none}52.233%{transform:none}52.776%{transform:rotateZ(-2.5deg) rotateX(-3deg)}53.478%{transform:rotateX(-4deg)}54.181%{transform:rotateZ(2.5deg) rotateX(-3deg)}54.833%{transform:none}100%{transform:none}}
 html.js .hk-rl{animation:hk-rl 46s ease-in-out infinite both}
@@ -6725,6 +6726,7 @@ html.js .fade-kt{animation:fade-kt 40s linear infinite}
 .kw-chats > .xw-msgs { grid-area: 1 / 1; min-height: 0; }
 .kw-bar .addr { font-family: var(--mono); display: grid; }
 .kw-ad > span { grid-area: 1 / 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 560px) { .kw-ix { display: none; } }
 .kw-page { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; }
 .kw-app { position: absolute; inset: 0; display: flex; flex-direction: column; min-height: 0; }
 .kw-nm { font-size: 17px; }
@@ -7627,7 +7629,7 @@ html.js .fade-k3{animation:fade-k3 42s linear infinite}
   .kh-ship { transform: scale(.85); transform-origin: 50% 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .kh-t3, .kr-td { color: var(--ink); border-color: var(--ink); }
+  .kh-t3 { color: var(--ink); border-color: var(--ink); }
 }
 @keyframes kh-pa-p{0%{opacity:1}18.409%{opacity:1}19.091%{opacity:0}100%{opacity:0}}
 @keyframes kh-y1{0%{opacity:0}9.545%{opacity:0}10.455%{opacity:1}100%{opacity:1}}
