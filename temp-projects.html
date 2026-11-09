@@ -6,7 +6,10 @@
   <title>Projects, Gausyn</title>
   <meta name="description" content="Essays, presentations, apps, games, and 3D parts built live beside the chat: real slides, ten themes, pictures, Present mode, games that run as they are written, models you can print, and export to PowerPoint, Word, or PDF." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=37" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=38" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="has-film-hero">
@@ -18,6 +21,7 @@
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav aria-label="Main">
+        <a class="nav-cta nav-cta-m" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
         <ul class="nav" id="site-menu">
           <li><a href="temp-whiteboard.html">Whiteboard</a></li>
@@ -25,7 +29,7 @@
           <li><a href="temp-collaborate.html">Collaborate</a></li>
           <li><a class="current" aria-current="page" href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
-          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
+          <li class="nav-cta-li"><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -56,7 +60,24 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <!-- ════ Games and worlds ════ -->
+    <section class="chapter" id="play">
+      <div class="op" data-tone="rose">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Games and worlds</span>
+          <h2 class="op-title"><span class="op-line">Make something that runs.</span> <span class="op-line op-l2">Then play it.</span></h2>
+          <p class="op-lede">Describe a game or a world and watch it built beside the chat, running the moment its code is written.</p>
+          <nav class="op-items" aria-label="In Games and worlds" style="--cols: 3">
+            <a class="op-item" href="#start"><small>Start one</small><span>Pick what you are making.</span></a>
+            <a class="op-item" href="#games"><small>Apps and games</small><span>Watch your game come to life.</span></a>
+            <a class="op-item" href="#worlds"><small>3D worlds</small><span>Build a world, then roll through it.</span></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" id="start" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Start one</span>
@@ -127,7 +148,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="games" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Apps and games</span>
@@ -195,7 +216,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="worlds" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">3D worlds</span>
@@ -259,7 +280,27 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <!-- ════ Engineering and hobbies ════ -->
+    <section class="chapter" id="build">
+      <div class="op" data-tone="cool">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Engineering and hobbies</span>
+          <h2 class="op-title"><span class="op-line">Parts, circuits, rockets.</span> <span class="op-line op-l2">Built to be tested.</span></h2>
+          <p class="op-lede">Design parts you can print, wire a robot arm, plan a launch on the budget you have, and write code in steps you can check.</p>
+          <nav class="op-items" aria-label="In Engineering and hobbies" style="--cols: 3">
+            <a class="op-item" href="#designed-3d"><small>Designed in 3D</small><span>Parts you can turn, measure, and print.</span></a>
+            <a class="op-item" href="#robots"><small>Robots and circuits</small><span>Wire it, test it, find out why.</span></a>
+            <a class="op-item" href="#hobby"><small>Hobby builds</small><span>Make it yourself, on your budget.</span></a>
+            <a class="op-item" href="#simulations"><small>Simulations and charts</small><span>Move a slider. See what changes.</span></a>
+            <a class="op-item" href="#code"><small>Engineering and code</small><span>Build it in steps you can test.</span></a>
+            <a class="op-item" href="#apps"><small>Apps, tools, and websites</small><span>Small things that do a real job.</span></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" id="designed-3d" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Designed in 3D</span>
@@ -326,7 +367,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="robots" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Robots and circuits</span>
@@ -437,7 +478,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="hobby" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Hobby builds</span>
@@ -544,7 +585,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="simulations" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Simulations and charts</span>
@@ -621,7 +662,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="code" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Engineering and code</span>
@@ -688,7 +729,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="apps" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Apps, tools, and websites</span>
@@ -805,7 +846,25 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <!-- ════ Writing and slides ════ -->
+    <section class="chapter" id="write">
+      <div class="op" data-tone="warm">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Writing and slides</span>
+          <h2 class="op-title"><span class="op-line">Essays and decks.</span> <span class="op-line op-l2">Written live, beside you.</span></h2>
+          <p class="op-lede">Drafts that improve every time you talk, ten looks for your slides, and course projects carried from the first plan to the final slide.</p>
+          <nav class="op-items" aria-label="In Writing and slides" style="--cols: 4">
+            <a class="op-item" href="#written-live"><small>Written live</small><span>Watch it take shape as it writes.</span></a>
+            <a class="op-item" href="#themes"><small>Themes</small><span>Ten looks, or your own.</span></a>
+            <a class="op-item" href="#written-work"><small>Written work</small><span>A page that improves every time you talk.</span></a>
+            <a class="op-item" href="#course-projects"><small>Course projects</small><span>From the first plan to the final slide.</span></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" id="written-live" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Written live</span>
@@ -892,7 +951,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="themes" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Themes</span>
@@ -942,7 +1001,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="written-work" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Written work</span>
@@ -1005,7 +1064,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="course-projects" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Course projects</span>
@@ -1327,7 +1386,7 @@
             <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
             <li><a href="temp-careers.html">Careers</a></li>
             <li><a href="temp-blog.html">Blog</a></li>
-            <li><a href="temp-investors.html">Investors</a></li>
+            <li><a href="https://forms.fillout.com/t/onmSPkT4hrus" target="_blank" rel="noopener noreferrer">Investors</a></li>
             <li><span>Research</span></li>
           </ul>
         </div>
@@ -1356,6 +1415,6 @@
     <button class="film-close" type="button">Close</button>
     <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
   </dialog>
-  <script src="assets/gausyn.js?v=37"></script>
+  <script src="assets/gausyn.js?v=38"></script>
 </body>
 </html>

@@ -411,28 +411,6 @@
     }
   }
 
-  // The boxes that open each part of a long page: a short silent loop (data-part names it),
-  // fetched on the way to it and playing only while on screen. Otherwise the poster stays.
-  if (hasIO && !reduce && !saveData) {
-    function syncPart(part) {
-      var video = part.querySelector('video');
-      if (!part.gzNear) { video.pause(); return; }
-      if (!video.getAttribute('src')) video.setAttribute('src', 'assets/part-' + part.getAttribute('data-part') + '.mp4');
-      var playing = video.play();
-      if (playing && playing.catch) playing.catch(function () { /* the poster stays */ });
-    }
-    var partIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        entry.target.gzNear = entry.isIntersecting;
-        syncPart(entry.target);
-      });
-    }, { rootMargin: '100px 0px' });
-    Array.prototype.forEach.call(document.querySelectorAll('.part'), function (part) {
-      part.querySelector('video').muted = true;
-      partIO.observe(part);
-    });
-  }
-
   // Headings that write themselves in as you scroll. Each word starts as a faint trace and
   // fills in on its way to the middle of the view, a heading's second sentence takes the
   // warm ink, and an .ink phrase gets a pen line drawn under it. Browsers without
@@ -473,6 +451,55 @@
       var head = el.closest('.scene-head');
       if (head) head.classList.add('wf-head');
     });
+  }
+
+  // Chapter openers: as one rises up the window its heading wipes in line by line, the
+  // dots bloom in from the edges and the rest follows. Each moving piece gets a --v from 0
+  // to 1 from where it sits on the page and the styles do the rest. Until this runs, and
+  // with reduced motion, every piece simply stands finished.
+  var openers = Array.prototype.slice.call(document.querySelectorAll('.op'));
+  if (openers.length && !reduce) {
+    // each piece starts when its top is this far down the window, and finishes at the second
+    var OP_PARTS = [['.op-bg', 1, 0.5], ['.op-dots', 1, 0.15], ['.op-eb', 0.95, 0.74], ['.op-line', 0.94, 0.5], ['.op-lede', 0.97, 0.76], ['.op-item', 0.99, 0.8]];
+    var opPieces = [], opFrame = 0;
+    function pageTop(el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; }
+    function opUpdate() {
+      opFrame = 0;
+      var vh = window.innerHeight || 1, y = window.pageYOffset || 0;
+      openers.forEach(function (op) {
+        var near = op.gzTop < y + vh * 2 && op.gzTop + op.gzHeight > y - vh;
+        if (near !== op.gzNear) { op.gzNear = near; op.classList.toggle('is-near', near); }
+      });
+      opPieces.forEach(function (p) {
+        var v = (p.a - (p.top - y) / vh) / (p.a - p.b);
+        v = v <= 0 ? 0 : v >= 1 ? 1 : Math.round(v * 1000) / 1000;
+        if (v !== p.v) { p.v = v; p.el.style.setProperty('--v', v); }
+      });
+    }
+    // where every piece sits, measured from layout so its own movement never counts
+    function opMeasure() {
+      opPieces = [];
+      openers.forEach(function (op) {
+        op.gzTop = pageTop(op);
+        op.gzHeight = op.offsetHeight;
+        OP_PARTS.forEach(function (spec) {
+          var row = null, col = 0;
+          Array.prototype.forEach.call(op.querySelectorAll(spec[0]), function (el) {
+            var top = pageTop(el);
+            // pieces side by side on one row follow each other, left to right
+            if (top === row) col++; else { row = top; col = 0; }
+            opPieces.push({ el: el, top: top, a: spec[1] - 0.04 * col, b: spec[2] - 0.04 * col, v: -1 });
+          });
+        });
+      });
+      opUpdate();
+    }
+    openers.forEach(function (op) { op.classList.add('is-live'); });
+    opMeasure();
+    window.addEventListener('scroll', function () { if (!opFrame) opFrame = requestAnimationFrame(opUpdate); }, { passive: true });
+    window.addEventListener('resize', function () { requestAnimationFrame(opMeasure); });
+    window.addEventListener('load', opMeasure);
+    if ('ResizeObserver' in window) new ResizeObserver(function () { requestAnimationFrame(opMeasure); }).observe(document.body);
   }
 
   // the header's menu on small screens

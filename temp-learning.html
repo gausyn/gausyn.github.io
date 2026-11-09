@@ -6,7 +6,10 @@
   <title>Learning, Gausyn</title>
   <meta name="description" content="A teacher for every subject: frontier intelligence tuned by people who teach it, pitched to your level, aware of your week, one tap from the whiteboard." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=37" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=38" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="has-film-hero">
@@ -18,6 +21,7 @@
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav aria-label="Main">
+        <a class="nav-cta nav-cta-m" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
         <ul class="nav" id="site-menu">
           <li><a href="temp-whiteboard.html">Whiteboard</a></li>
@@ -25,7 +29,7 @@
           <li><a href="temp-collaborate.html">Collaborate</a></li>
           <li><a href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
-          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
+          <li class="nav-cta-li"><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -52,7 +56,23 @@
 
     <section class="hero-intro" id="how">
       <div class="wrap">
-        <p class="lede" data-reveal>Frontier intelligence, tuned subject by subject by people who teach it. Ask Ava about mathematics, Kai about physics, or Iris about chemistry, at any hour and at any level, and get an answer <span class="ink">pitched exactly to you</span>, from Grade 4 to a doctorate. When a question deserves more, they draw it, quiz you on it, or open a whiteboard session and put it on your calendar.</p>
+        <p class="lede" data-reveal>Frontier intelligence, tuned subject by subject by people who teach it. Ask Ava about mathematics, Kai about physics, or Iris about chemistry, at any hour and at any level, and get an answer <span class="ink-keep"><span class="ink">pitched exactly to you</span>,</span> from Grade 4 to a doctorate. When a question deserves more, they draw it, quiz you on it, or open a whiteboard session and put it on your calendar.</p>
+      </div>
+    </section>
+
+    <!-- ════ Your teachers ════ -->
+    <section class="chapter" id="subjects">
+      <div class="op" data-tone="cool">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Your teachers</span>
+          <h2 class="op-title"><span class="op-line">Ask the right teacher.</span> <span class="op-line op-l2">Or be handed to one.</span></h2>
+          <p class="op-lede">Every subject has a teacher of its own, tuned for its field. Ask one about another&rsquo;s subject and it introduces you to the teacher who knows it best.</p>
+          <nav class="op-items" aria-label="In Your teachers" style="--cols: 2">
+            <a class="op-item" href="#teachers"><small>Meet your teachers</small><span>Twelve subjects. A teacher for every one.</span></a>
+            <a class="op-item" href="#right-teacher"><small>The right teacher for the question</small><span>Ask the wrong teacher, and meet the right one.</span></a>
+          </nav>
+        </div>
       </div>
     </section>
 
@@ -85,7 +105,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="right-teacher" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">The right teacher for the question</span>
@@ -139,7 +159,24 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <!-- ════ Your level ════ -->
+    <section class="chapter" id="your-level">
+      <div class="op" data-tone="warm">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Your level</span>
+          <h2 class="op-title"><span class="op-line">Answers pitched to you.</span> <span class="op-line op-l2">Remembered next time.</span></h2>
+          <p class="op-lede">It knows your grade, your week, and what tripped you up last time, so the same question gets the answer that fits you.</p>
+          <nav class="op-items" aria-label="In Your level" style="--cols: 3">
+            <a class="op-item" href="#ask-anything"><small>Ask anything</small><span>A conversation that already knows where you are.</span></a>
+            <a class="op-item" href="#pitched"><small>Pitched to you</small><span>One question. Four students. Four answers.</span></a>
+            <a class="op-item" href="#remembers"><small>Pick up where you left off</small><span>It remembers what you understood, and what you did not.</span></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene rule-top" id="ask-anything" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Ask anything</span>
@@ -196,7 +233,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="pitched" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Pitched to you</span>
@@ -233,7 +270,7 @@
       </div>
     </section>
 
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="remembers" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Pick up where you left off</span>
@@ -481,7 +518,7 @@
             <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
             <li><a href="temp-careers.html">Careers</a></li>
             <li><a href="temp-blog.html">Blog</a></li>
-            <li><a href="temp-investors.html">Investors</a></li>
+            <li><a href="https://forms.fillout.com/t/onmSPkT4hrus" target="_blank" rel="noopener noreferrer">Investors</a></li>
             <li><span>Research</span></li>
           </ul>
         </div>
@@ -510,6 +547,6 @@
     <button class="film-close" type="button">Close</button>
     <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
   </dialog>
-  <script src="assets/gausyn.js?v=37"></script>
+  <script src="assets/gausyn.js?v=38"></script>
 </body>
 </html>

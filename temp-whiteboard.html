@@ -6,7 +6,10 @@
   <title>Whiteboard, Gausyn</title>
   <meta name="description" content="One shared board, three ways to learn on it: lessons taught out loud, problems worked by hand with help beside the question, and any hard problem pulled aside into its own workspace." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="assets/gausyn.css?v=37" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/gausyn.css?v=38" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="has-film-hero">
@@ -18,6 +21,7 @@
     <div class="wrapw">
       <a class="wordmark" href="temp.html">gausyn</a>
       <nav aria-label="Main">
+        <a class="nav-cta nav-cta-m" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
         <ul class="nav" id="site-menu">
           <li><a class="current" aria-current="page" href="temp-whiteboard.html">Whiteboard</a></li>
@@ -25,7 +29,7 @@
           <li><a href="temp-collaborate.html">Collaborate</a></li>
           <li><a href="temp-projects.html">Projects</a></li>
           <li><a href="temp-about.html">About</a></li>
-          <li><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
+          <li class="nav-cta-li"><a class="nav-cta" href="https://forms.fillout.com/t/fFYbyT4sTous" target="_blank" rel="noopener noreferrer">Join the waitlist</a></li>
         </ul>
       </nav>
     </div>
@@ -52,7 +56,7 @@
 
     <section class="hero-intro" id="how">
       <div class="wrap">
-        <p class="lede" data-reveal>Every Gausyn session happens on <span class="ink">one shared board</span>. Be taught a real lesson out loud, work the problem yourself with help beside the exact question you are stuck on, or pull a hard problem aside into a room of its own. Move between all three by simply saying so.</p>
+        <p class="lede" data-reveal>Every Gausyn session happens on <span class="ink-keep"><span class="ink">one shared board</span>.</span> Be taught a real lesson out loud, work the problem yourself with help beside the exact question you are stuck on, or pull a hard problem aside into a room of its own. Move between all three by simply saying so.</p>
         <nav class="chapnav" aria-label="On this page" data-reveal>
           <a href="#teacher">Teacher mode</a>
           <a href="#practice">Practice mode</a>
@@ -62,22 +66,26 @@
       </div>
     </section>
 
-    <!-- â•â•â•â• Teacher mode â•â•â•â• -->
+    <!-- ════ Teacher mode ════ -->
     <section class="chapter" id="teacher">
-      <div class="part" data-part="teacher">
-        <div class="part-inner">
-          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-teacher-poster.jpg"></video></div>
-          <div class="part-copy">
-            <span class="eyebrow" data-reveal>Teacher mode</span>
-            <h2 data-reveal>A lesson that stops when you say wait.</h2>
-            <p class="lede" data-reveal>Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud, page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practice&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
-          </div>
+      <div class="op" data-tone="warm">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Teacher mode</span>
+          <h2 class="op-title"><span class="op-line">A real lesson, out loud.</span> <span class="op-line op-l2">It stops when you say wait.</span></h2>
+          <p class="op-lede">Join a scheduled session and the lesson is already chosen, already on the board, and taught out loud, page by page, at your pace. Interrupt it mid-sentence and it answers. Say &ldquo;let&rsquo;s practice&rdquo; and the worksheet appears. Say &ldquo;continue&rdquo; and the lesson picks up exactly where it paused.</p>
+          <nav class="op-items" aria-label="In Teacher mode" style="--cols: 4">
+            <a class="op-item" href="#chosen"><small>Before you even arrive</small><span>Your week already chose tonight&rsquo;s lesson.</span></a>
+            <a class="op-item" href="#out-loud"><small>Taught out loud</small><span>Page by page, in a voice that hears you.</span></a>
+            <a class="op-item" href="#interrupt"><small>Interrupt &middot; answer &middot; resume</small><span>Your question becomes part of the lesson.</span></a>
+            <a class="op-item" href="#one-sentence"><small>One sentence away</small><span>From being taught to trying it yourself.</span></a>
+          </nav>
         </div>
       </div>
     </section>
 
     <!-- scene 1: the schedule already chose the topic -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="chosen" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Before you even arrive</span>
@@ -151,7 +159,7 @@
     </section>
 
     <!-- scene 2: the biology walkthrough -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="out-loud" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Taught out loud</span>
@@ -317,7 +325,7 @@
     </section>
 
     <!-- scene 3: geography, interrupt, answer, resume -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="interrupt" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Interrupt &middot; answer &middot; resume</span>
@@ -480,7 +488,7 @@
     </section>
 
     <!-- scene 5: handoff to practice -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="one-sentence" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">One sentence away</span>
@@ -653,22 +661,29 @@
       </div>
     </section>
 
-    <!-- â•â•â•â• Practice mode â•â•â•â• -->
+    <!-- ════ Practice mode ════ -->
     <section class="chapter" id="practice">
-      <div class="part" data-part="practice">
-        <div class="part-inner">
-          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-practice-poster.jpg"></video></div>
-          <div class="part-copy">
-            <span class="eyebrow" data-reveal>Practice mode</span>
-            <h2 data-reveal>You work. It watches.</h2>
-            <p class="lede" data-reveal>Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
-          </div>
+      <div class="op" data-tone="cool">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Practice mode</span>
+          <h2 class="op-title"><span class="op-line">You work.</span> <span class="op-line op-l2">It watches.</span></h2>
+          <p class="op-lede">Bring a worksheet from the bank, upload tonight&rsquo;s homework, or ask for questions made just for you. You write on the board in your own hand; Gausyn reads what you wrote, checks it against math it has already worked out, and places help beside the exact problem you are stuck on. Never the answer.</p>
+          <nav class="op-items" aria-label="In Practice mode" style="--cols: 4">
+            <a class="op-item" href="#the-loop"><small>The loop</small><span>Hints beside the problem, not on top of it.</span></a>
+            <a class="op-item" href="#it-draws"><small>Words &middot; steps &middot; pictures</small><span>When words are not enough, it draws.</span></a>
+            <a class="op-item" href="#wrong-step"><small>The most useful moment</small><span>It catches the wrong step, and you find it.</span></a>
+            <a class="op-item" href="#reads-the-page"><small>Reads the page</small><span>It knows where every question and blank sits.</span></a>
+            <a class="op-item" href="#every-problem"><small>Every kind of problem</small><span>Not just equations with an x in them.</span></a>
+            <a class="op-item" href="#infinite-worksheet"><small>An infinite worksheet</small><span>It makes the questions itself.</span></a>
+            <a class="op-item" href="#grounded"><small>Under the hood</small><span>Grounded before it says a word.</span></a>
+          </nav>
         </div>
       </div>
     </section>
 
     <!-- scene 1: the classic socratic loop -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="the-loop" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">The loop</span>
@@ -784,7 +799,7 @@
     </section>
 
     <!-- scene 2: it draws -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="it-draws" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Words &middot; steps &middot; pictures</span>
@@ -886,7 +901,7 @@
     </section>
 
     <!-- scene 2b: the wrong turn -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="wrong-step" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">The most useful moment</span>
@@ -983,7 +998,7 @@
     </section>
 
     <!-- scene 3: layout-aware, blanks stay yours -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="reads-the-page" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">It reads the page like a teacher</span>
@@ -1081,7 +1096,7 @@
     </section>
 
     <!-- scene 3b: breadth of problems -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="every-problem" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Every kind of problem</span>
@@ -1267,7 +1282,7 @@ print(total)</code>
     </section>
 
     <!-- scene 4: generated questions, self-adjusting -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="infinite-worksheet" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">An infinite worksheet</span>
@@ -1398,7 +1413,7 @@ print(a, b)</code></div>
     </section>
 
     <!-- grounded before it speaks -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="grounded" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Under the hood</span>
@@ -1528,22 +1543,26 @@ print(a, b)</code></div>
       </div>
     </section>
 
-    <!-- â•â•â•â• Ask Gausyn â•â•â•â• -->
+    <!-- ════ Ask Gausyn ════ -->
     <section class="chapter" id="ask">
-      <div class="part" data-part="ask">
-        <div class="part-inner">
-          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-ask-poster.jpg"></video></div>
-          <div class="part-copy">
-            <span class="eyebrow" data-reveal>Ask Gausyn</span>
-            <h2 data-reveal>Drag a box. Get a room.</h2>
-            <p class="lede" data-reveal>Worksheets give you two inches of margin for a problem that needs a full page of thinking. Ask Gausyn fixes that: drag a box around any problem and it becomes its own workspace, the question pinned at the top, clean grid below, a pin left behind so you can jump straight back.</p>
-          </div>
+      <div class="op" data-tone="sage">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Ask Gausyn</span>
+          <h2 class="op-title"><span class="op-line">Drag a box.</span> <span class="op-line op-l2">Get a room.</span></h2>
+          <p class="op-lede">Worksheets give you two inches of margin for a problem that needs a full page of thinking. Ask Gausyn fixes that: drag a box around any problem and it becomes its own workspace, the question pinned at the top, clean grid below, a pin left behind so you can jump straight back.</p>
+          <nav class="op-items" aria-label="In Ask Gausyn" style="--cols: 4">
+            <a class="op-item" href="#one-gesture"><small>One gesture</small><span>From a cramped margin to a full page.</span></a>
+            <a class="op-item" href="#pictures"><small>Pictures</small><span>Word problems become diagrams you can argue with.</span></a>
+            <a class="op-item" href="#written-out"><small>Not only calculations</small><span>Proofs and arguments, written out in full.</span></a>
+            <a class="op-item" href="#tidy"><small>A session that stays tidy</small><span>Every hard problem gets a room.</span></a>
+          </nav>
         </div>
       </div>
     </section>
 
     <!-- scene 1: crop -> workspace, calculus -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="one-gesture" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">One gesture</span>
@@ -1659,7 +1678,7 @@ print(a, b)</code></div>
     </section>
 
     <!-- scene 2: physics workspace -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="pictures" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Any subject that needs a picture</span>
@@ -1765,7 +1784,7 @@ print(a, b)</code></div>
     </section>
 
     <!-- scene 3: an argument needs room -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="written-out" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">Not only calculations</span>
@@ -1854,7 +1873,7 @@ print(a, b)</code></div>
     </section>
 
     <!-- it stays organized -->
-    <section class="scene rule-top" data-scene>
+    <section class="scene rule-top" id="tidy" data-scene>
       <div class="wrap">
         <div class="scene-head" data-reveal>
           <span class="eyebrow">A session that stays tidy</span>
@@ -1977,16 +1996,14 @@ print(a, b)</code></div>
       </div>
     </section>
 
-    <!-- â•â•â•â• Every level, after all three as in the film â•â•â•â• -->
+    <!-- ════ Every level, after all three as in the film ════ -->
     <section class="chapter" id="levels">
-      <div class="part" data-part="levels">
-        <div class="part-inner">
-          <div class="part-media" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/part-levels-poster.jpg"></video></div>
-          <div class="part-copy">
-            <span class="eyebrow" data-reveal>Kindergarten to a doctorate</span>
-            <h2 data-reveal>The same teacher, at every level, in every subject.</h2>
-            <p class="lede" data-reveal>A tutor who can only do Grade 9 algebra is a tutor you outgrow. Gausyn teaches the fraction bar to an eight-year-old and the eigenvector to a graduate student with the same patience and the same method: one idea per page, in plain words, with a picture when a picture helps. Because it is one teacher rather than a shelf of courses, it can follow a student for a decade, and it already knows how they like to be taught when the material gets hard.</p>
-          </div>
+      <div class="op op-short" data-tone="rose">
+        <div class="op-bg" aria-hidden="true"><i class="op-dots l"></i><i class="op-dots r"></i></div>
+        <div class="op-inner">
+          <span class="op-eb">Every level</span>
+          <h2 class="op-title"><span class="op-line">Kindergarten to a doctorate.</span> <span class="op-line op-l2">The same teacher the whole way.</span></h2>
+          <p class="op-lede">A tutor who can only do Grade 9 algebra is a tutor you outgrow. Gausyn teaches the fraction bar to an eight-year-old and the eigenvector to a graduate student with the same patience and the same method: one idea per page, in plain words, with a picture when a picture helps. Because it is one teacher rather than a shelf of courses, it can follow a student for a decade, and it already knows how they like to be taught when the material gets hard.</p>
         </div>
       </div>
     </section>
@@ -2255,7 +2272,7 @@ print(a, b)</code></div>
             <li><a href="mailto:gausyninc@gmail.com">Contact</a></li>
             <li><a href="temp-careers.html">Careers</a></li>
             <li><a href="temp-blog.html">Blog</a></li>
-            <li><a href="temp-investors.html">Investors</a></li>
+            <li><a href="https://forms.fillout.com/t/onmSPkT4hrus" target="_blank" rel="noopener noreferrer">Investors</a></li>
             <li><span>Research</span></li>
           </ul>
         </div>
@@ -2284,6 +2301,6 @@ print(a, b)</code></div>
     <button class="film-close" type="button">Close</button>
     <video controls playsinline preload="none" poster="assets/gausyn-launch-poster.jpg"></video>
   </dialog>
-  <script src="assets/gausyn.js?v=37"></script>
+  <script src="assets/gausyn.js?v=38"></script>
 </body>
 </html>
