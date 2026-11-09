@@ -3334,7 +3334,7 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 .lx-slot > .lx-think, .lx-slot > .la-dr { position: absolute; left: 0; right: 0; top: 0; }
 /* what you type, laid over the placeholder; a white cover slides off it, one letter at a time */
 .lx-typed { display: none; }
-html.js .lx-ph > .lx-typed { display: block; inset: 0; z-index: 1; max-width: none; color: var(--ink); background: #fff; }
+html.js .lx-ph > .lx-typed { display: block; inset: 0 auto 0 0; width: max-content; z-index: 1; max-width: 100%; color: var(--ink); background: #fff; }
 .lx-typed i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #fff; border-left: 1.5px solid var(--ink); }
 .fade-lc .lx-msgs { padding: 4px clamp(16px, 11%, 120px) 16px; }
 .fade-lc .lx-input { margin-left: clamp(16px, 11%, 120px); margin-right: clamp(16px, 11%, 120px); }
