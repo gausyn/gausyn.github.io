@@ -453,68 +453,71 @@
     });
   }
 
-  // Chapter openers: each chapter opens on a whiteboard. As one rises up the window its
-  // heading comes up word by word, a red pen line runs under the key phrase, and the
-  // chapter's drawing sketches itself stroke by stroke with a pen tip at the end of the
-  // line being drawn. Every piece gets a --p from 0 (not yet) to 1 (done) from where it
-  // sits in the window, measured from layout so its own movement never counts.
+  // Chapter openers: each chapter opens on a band of whiteboard that holds in the window
+  // while scrolling slides the board sideways. The heading writes itself in as the band
+  // arrives; then each sketch draws itself, stroke by stroke behind a pen tip, as it comes
+  // in from the right, and its words come up beside it. Every piece is placed on one
+  // scale, u: scroll pixels since the band began to hold (negative while it arrives).
   var openers = Array.prototype.slice.call(document.querySelectorAll('.op'));
-  // a teacher climbing the levels moves on its own: held at the top until its drawing is
-  // done and on screen, and for good with reduced motion
+  // a teacher climbing the levels moves on its own: held still until its sketch is done
+  // and on screen, and for good with reduced motion
   openers.forEach(function (op) {
-    var svg = op.querySelector('.op-art svg');
-    if (svg && svg.querySelector('animateMotion') && svg.pauseAnimations) {
-      svg.pauseAnimations();
-      try { svg.setCurrentTime(8); } catch (e) {}
-      op.gzSmil = svg;
-    }
+    Array.prototype.forEach.call(op.querySelectorAll('.op-art svg'), function (svg) {
+      if (svg.querySelector('animateMotion') && svg.pauseAnimations) {
+        svg.pauseAnimations();
+        try { svg.setCurrentTime(8); } catch (e) {}
+      }
+    });
   });
   if (openers.length && !reduce) {
     var SVGNS = 'http://www.w3.org/2000/svg';
-    // each piece starts when its top is this far down the window, and is done at the second
-    var OP_PARTS = [['.op-board', 1.02, 0.62], ['.op-eb', 0.95, 0.74], ['.op-title', 0.93, 0.46], ['.op-lede', 0.95, 0.66], ['.op-art', 0.92, 0.3]];
-    var opPieces = [], opFrame = 0;
+    var opFrame = 0;
     var opClip = function (x) { return x <= 0 ? 0 : x >= 1 ? 1 : Math.round(x * 1000) / 1000; };
     var opSet = function (o, p) { if (o.p !== p) { o.p = p; o.el.style.setProperty('--ov', p); } };
     var pageTop = function (el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; };
-    openers.forEach(function (op) {
-      // the heading, a word at a time
+    // words, one span each, for the heading and for the lines beside the sketches
+    var opWords = function (root, skipSvg) {
       var words = [];
-      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) {
-        (function walk(node) {
-          Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-            if (n.nodeType === 3) {
-              var frag = document.createDocumentFragment();
-              n.nodeValue.split(/(\s+)/).forEach(function (part) {
-                if (!part) return;
-                if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-                var w = document.createElement('span');
-                w.className = 'op-w';
-                w.textContent = part;
-                frag.appendChild(w);
-                words.push({ el: w, p: -1 });
-              });
-              n.parentNode.replaceChild(frag, n);
-            } else if (n.nodeType === 1 && n.namespaceURI !== SVGNS) {
-              walk(n);
-            }
-          });
-        })(line);
+      (function walk(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            n.nodeValue.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+              var w = document.createElement('span');
+              w.className = 'op-w';
+              w.textContent = part;
+              frag.appendChild(w);
+              words.push({ el: w, p: -1 });
+            });
+            n.parentNode.replaceChild(frag, n);
+          } else if (n.nodeType === 1 && n.namespaceURI !== SVGNS) {
+            walk(n);
+          }
+        });
+      })(root);
+      return words;
+    };
+    // a sketch, in the order it is drawn: a stroke made of several pieces is split so the
+    // pieces follow one another; each item takes a share of the way by its length, starts
+    // a little before the one ahead of it ends, or keeps a window of its own
+    var opSketch = function (svg) {
+      Array.prototype.slice.call(svg.querySelectorAll('path.s')).forEach(function (el) {
+        var bits = (el.getAttribute('d') || '').match(/M[^M]*/g);
+        if (!bits || bits.length < 2) return;
+        var total = el.getTotalLength() || 1;
+        var w = parseFloat(el.getAttribute('data-w')) || Math.max(0.35, Math.min(2.2, total / 220));
+        bits.forEach(function (d, i) {
+          var p = el.cloneNode(false);
+          p.setAttribute('d', d);
+          el.parentNode.insertBefore(p, el);
+          p.setAttribute('data-w', Math.max(0.03, w * (p.getTotalLength() || 0) / total).toFixed(3));
+          if (i) p.removeAttribute('data-j');
+        });
+        el.parentNode.removeChild(el);
       });
-      op.gzWords = words;
-      var ink = op.querySelector('.op-ink path');
-      op.gzInk = ink ? { el: ink, p: -1 } : null;
-      // the drawing, in the order it is drawn: each item takes a share of the way by its
-      // length, starts a little before the one ahead of it ends, or keeps a window of its own
-      op.gzArt = [];
-      var svg = op.querySelector('.op-art svg');
-      if (!svg) return;
-      var nib = document.createElementNS(SVGNS, 'circle');
-      nib.setAttribute('class', 'op-nib');
-      nib.setAttribute('r', '5.5');
-      svg.appendChild(nib);
-      op.gzNib = nib;
-      var t = 0, start = 0, end = 0, pinned = [];
+      var items = [], t = 0, start = 0, end = 0, pinned = [];
       Array.prototype.forEach.call(svg.querySelectorAll('.s, .f, .mv'), function (el) {
         var stroke = el.classList.contains('s');
         var len = stroke && el.getTotalLength ? el.getTotalLength() : 0;
@@ -531,73 +534,129 @@
           end = Math.max(end, start + w);
           item.s = start; item.w = w;
         }
-        op.gzArt.push(item);
+        items.push(item);
       });
-      op.gzArt.forEach(function (it) { if (pinned.indexOf(it) === -1) { it.s /= end; it.w /= end; } });
-    });
-    function opArt(op, v) {
-      var tip = null;
-      op.gzArt.forEach(function (it) {
+      items.forEach(function (it) { if (pinned.indexOf(it) === -1) { it.s /= end || 1; it.w /= end || 1; } });
+      var nib = document.createElementNS(SVGNS, 'circle');
+      nib.setAttribute('class', 'op-nib');
+      nib.setAttribute('r', '5.5');
+      svg.appendChild(nib);
+      var smil = svg.querySelector('animateMotion') && svg.pauseAnimations ? svg : null;
+      return { items: items, nib: nib, nibOn: false, smil: smil, run: false };
+    };
+    var opDraw = function (pc, v) {
+      var sk = pc.sketch, tip = null;
+      sk.items.forEach(function (it) {
         var p = opClip((v - it.s) / it.w);
         opSet(it, p);
         if (it.stroke && p > 0 && p < 1 && (!tip || it.s >= tip.s)) tip = it;
       });
-      var nib = op.gzNib;
       if (tip) {
         var pt = tip.el.getPointAtLength(tip.len * tip.p);
         if (!tip.color) tip.color = window.getComputedStyle(tip.el).stroke;
-        nib.setAttribute('cx', pt.x.toFixed(1));
-        nib.setAttribute('cy', pt.y.toFixed(1));
-        nib.style.fill = tip.color;
-        if (!op.gzNibOn) { op.gzNibOn = true; nib.classList.add('on'); }
-      } else if (op.gzNibOn) {
-        op.gzNibOn = false;
-        nib.classList.remove('on');
+        sk.nib.setAttribute('cx', pt.x.toFixed(1));
+        sk.nib.setAttribute('cy', pt.y.toFixed(1));
+        sk.nib.style.fill = tip.color;
+        if (!sk.nibOn) { sk.nibOn = true; sk.nib.classList.add('on'); }
+      } else if (sk.nibOn) {
+        sk.nibOn = false;
+        sk.nib.classList.remove('on');
       }
       var drawn = v >= 1;
-      if (drawn !== op.gzDrawn) { op.gzDrawn = drawn; op.classList.toggle('is-drawn', drawn); }
-    }
+      if (drawn !== pc.drawn) { pc.drawn = drawn; pc.el.classList.toggle('is-drawn', drawn); }
+    };
+    openers.forEach(function (op) {
+      op.gzPin = op.querySelector('.op-pin');
+      op.gzBand = op.querySelector('.op-band');
+      op.gzTrack = op.querySelector('.op-track');
+      op.gzProg = op.querySelector('.op-prog');
+      var eb = op.querySelector('.op-eb');
+      op.gzEb = eb ? { el: eb, p: -1 } : null;
+      op.gzWords = [];
+      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) { op.gzWords = op.gzWords.concat(opWords(line)); });
+      var ink = op.querySelector('.op-ink path');
+      op.gzInk = ink ? { el: ink, p: -1 } : null;
+      op.gzSeq = [];
+      Array.prototype.forEach.call(op.gzTrack.children, function (el) {
+        if (el.classList.contains('op-head')) return;
+        var svg = el.querySelector('svg');
+        var say = el.querySelector('.op-say');
+        op.gzSeq.push({ el: el, sketch: svg ? opSketch(svg) : null, words: say ? opWords(say) : [], v: -1, p: -1, drawn: false });
+      });
+    });
     function opUpdate() {
       opFrame = 0;
       var vh = window.innerHeight || 1, y = window.pageYOffset || 0;
       openers.forEach(function (op) {
         var near = op.gzTop < y + vh * 1.5 && op.gzTop + op.gzHeight > y - vh * 0.5;
         if (near !== op.gzNear) { op.gzNear = near; op.classList.toggle('is-near', near); }
-      });
-      opPieces.forEach(function (pc) {
-        var v = opClip((pc.a - (pc.top - y) / vh) / (pc.a - pc.b));
-        if (v === pc.v) return;
-        pc.v = v;
-        var op = pc.op;
-        if (pc.kind === 'title') {
-          var n = op.gzWords.length, span = n > 1 ? 0.62 / (n - 1) : 0;
-          op.gzWords.forEach(function (w, i) { opSet(w, opClip((v - span * i) / 0.3)); });
-          if (op.gzInk) opSet(op.gzInk, opClip((v - 0.8) / 0.2));
-        } else if (pc.kind === 'art') {
-          opArt(op, v);
-        } else {
-          opSet(pc, v);
+        if (!near && op.gzDone) return;
+        op.gzDone = !near;
+        var u = y - (op.gzTop - op.gzT);
+        var go = op.gzTravel > 0 ? Math.max(0, Math.min(1, (u - op.gzHold) / (op.gzTravel * op.gzK))) : 0;
+        var tx = Math.round(-op.gzTravel * go * 10) / 10;
+        if (tx !== op.gzTx) { op.gzTx = tx; op.gzTrack.style.transform = 'translate3d(' + tx + 'px, 0, 0)'; }
+        var pr = op.gzTravel > 0 ? Math.round(go * 1000) / 1000 : opClip(u / op.gzRun);
+        if (op.gzProg && pr !== op.gzPr) { op.gzPr = pr; op.gzProg.style.transform = 'scaleX(' + pr + ')'; }
+        // the heading, a word at a time as the band arrives, then its pen line
+        var hv = opClip((u - op.gzHs) / (op.gzHe - op.gzHs));
+        if (hv !== op.gzHv) {
+          op.gzHv = hv;
+          if (op.gzEb) opSet(op.gzEb, opClip(hv / 0.3));
+          var nw = op.gzWords.length, span = nw > 1 ? 0.6 / (nw - 1) : 0;
+          op.gzWords.forEach(function (w, i) { opSet(w, opClip((hv - 0.1 - span * i) / 0.3)); });
+          if (op.gzInk) opSet(op.gzInk, opClip((hv - 0.84) / 0.16));
         }
-      });
-      // the climbing teacher waits for its drawing
-      openers.forEach(function (op) {
-        if (op.gzSmil) {
-          var run = !!op.gzNear && !!op.gzDrawn;
-          if (run !== op.gzRun) { op.gzRun = run; if (run) op.gzSmil.unpauseAnimations(); else op.gzSmil.pauseAnimations(); }
-        }
+        op.gzSeq.forEach(function (pc) {
+          var v = opClip((u - pc.us) / (pc.ue - pc.us));
+          if (v === pc.v) return;
+          pc.v = v;
+          pc.el.style.setProperty('--pv', v);
+          if (pc.sketch) opDraw(pc, v);
+          var nw = pc.words.length;
+          if (nw) {
+            var cv = opClip((v - 0.04) / 0.56), span = nw > 1 ? 0.7 / (nw - 1) : 0;
+            pc.words.forEach(function (w, i) { opSet(w, opClip((cv - span * i) / 0.3)); });
+          }
+        });
+        // the climbing teacher waits for its sketch
+        op.gzSeq.forEach(function (pc) {
+          var sk = pc.sketch;
+          if (sk && sk.smil) {
+            var run = !!op.gzNear && pc.drawn;
+            if (run !== sk.run) { sk.run = run; if (run) sk.smil.unpauseAnimations(); else sk.smil.pauseAnimations(); }
+          }
+        });
       });
     }
     function opMeasure() {
-      opPieces = [];
+      var vh = window.innerHeight || 1;
       openers.forEach(function (op) {
+        var vw = op.gzBand.clientWidth || 1;
+        var H = op.gzBand.offsetHeight;
+        var T = parseFloat(window.getComputedStyle(op.gzPin).top);
+        if (isNaN(T)) T = (vh - H) / 2;
+        var travel = Math.max(0, op.gzTrack.offsetWidth - vw);
+        var k = Math.max(1, Math.min(1.7, 620 / vw));
+        var hold = vh * 0.14, run = hold + travel * k + vh * 0.3;
+        var h = Math.round(H + run) + 'px';
+        if (op.style.height !== h) op.style.height = h;
+        op.gzT = T; op.gzTravel = travel; op.gzK = k; op.gzHold = hold; op.gzRun = run;
         op.gzTop = pageTop(op);
         op.gzHeight = op.offsetHeight;
-        OP_PARTS.forEach(function (spec) {
-          var el = op.querySelector(spec[0]);
-          if (!el) return;
-          var kind = spec[0] === '.op-title' ? 'title' : spec[0] === '.op-art' ? 'art' : 'one';
-          opPieces.push({ op: op, el: el, kind: kind, top: pageTop(el), a: spec[1], b: spec[2], v: -1, p: -1 });
+        // the heading comes in while the band rises to its place
+        op.gzHs = -(vh - T) * 0.82; op.gzHe = -(vh - T) * 0.04;
+        // each piece starts once part of it is in from the right and is done by the time it
+        // is centred, or just after the board stops, while the last of it is in full view
+        var last = hold + travel * k + vh * 0.1, early = -(vh - T) * 0.5;
+        op.gzSeq.forEach(function (pc) {
+          var L = pc.el.offsetLeft, W = pc.el.offsetWidth;
+          var sx = vw - 0.3 * W, ex = Math.max(vw * 0.05, (vw - W) / 2);
+          var us = Math.max(early, hold + (L - sx) * k), ue = Math.min(last, hold + (L - ex) * k);
+          if (ue < us + 140) { ue = Math.min(us + 140, last); if (ue < us + 60) us = ue - 140; }
+          pc.us = us; pc.ue = ue; pc.v = -1;
         });
+        op.gzHv = -1; op.gzDone = false;
       });
       opUpdate();
     }
