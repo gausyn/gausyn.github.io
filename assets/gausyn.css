@@ -4580,15 +4580,13 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .chapter + .scene { border-top: 0; padding-top: clamp(48px, 8vh, 88px); }
 /* ── chapter openers ─────────────────────────────────────────────────────
    Each chapter opens on a band of whiteboard that runs off both sides of the window, ruled
-   above and below and left open at the ends, so it reads as a board with no edge rather
-   than a card like the demos under it. While the band holds in the window, scrolling down
-   slides the board sideways through the chapter: the heading writes itself in, then one
-   sketch after another draws itself behind a pen tip, joined by hand-drawn arrows, each
-   with its stretch of the story beside it. The script gives every piece an --ov from 0
-   (not yet) to 1 (done). Without the script, with reduced motion and in print, the board
-   stands still with every sketch finished. */
+   above and below and left open at the ends. While the band holds in the window, scrolling
+   moves the board from one drawing to the next: it slides, stops, and the drawing plays
+   while it stands (lines draw, things move into place, words come up beside it), then it
+   slides on. The script drives everything from one eased scroll value. Without the script,
+   with reduced motion and in print, the board stands still with every drawing finished. */
 .chapter + section { border-top: 0; }
-.op { --op-soft: #f9f1e8; --op-acc: #a9722c; --op-wash: rgba(240, 199, 154, 0.3); --op-pen: #262624; --op-pw: clamp(300px, 35vw, 620px); --op-gut: clamp(24px, 6vw, 112px); position: relative; margin: clamp(28px, 6vh, 72px) 0; }
+.op { --op-soft: #f9f1e8; --op-acc: #a9722c; --op-wash: rgba(240, 199, 154, 0.32); --op-pen: #2a2a27; --op-gut: clamp(24px, 6vw, 112px); position: relative; margin: clamp(28px, 6vh, 72px) 0; }
 .op[data-tone="cool"] { --op-soft: #eef1f7; --op-acc: #4a5f86; --op-wash: rgba(201, 212, 232, 0.5); }
 .op[data-tone="sage"] { --op-soft: #edf2ea; --op-acc: #56724e; --op-wash: rgba(190, 214, 184, 0.42); }
 .op[data-tone="rose"] { --op-soft: #f8eef0; --op-acc: #9c5f68; --op-wash: rgba(232, 196, 200, 0.42); }
@@ -4596,7 +4594,7 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .op-band { position: relative; overflow: hidden; background: #fff; border-top: 1px solid rgba(10, 10, 10, 0.16); border-bottom: 1px solid rgba(10, 10, 10, 0.16); }
 .op-prog { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 2; height: 2px; background: var(--op-acc); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
 /* the board itself: faint squares, with a ruler's ticks along both edges that travel with it */
-.op-track { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(36px, 5vw, 72px) clamp(28px, 4vw, 64px); min-width: 100%; padding: clamp(56px, 9vh, 104px) var(--op-gut); background-image: linear-gradient(rgba(10, 10, 10, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 10, 10, 0.045) 1px, transparent 1px); background-size: 28px 28px; background-position: 0 0; }
+.op-track { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(40px, 7vh, 80px) 0; min-width: 100%; padding: clamp(56px, 9vh, 104px) var(--op-gut); background-image: linear-gradient(rgba(10, 10, 10, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 10, 10, 0.045) 1px, transparent 1px); background-size: 28px 28px; background-position: 0 0; }
 .op-track::before, .op-track::after { content: ""; position: absolute; left: 0; right: 0; height: 13px; pointer-events: none; background: linear-gradient(90deg, rgba(10, 10, 10, 0.2) 1px, transparent 1px) 0 0 / 28px 7px repeat-x, linear-gradient(90deg, rgba(10, 10, 10, 0.26) 1px, transparent 1px) 0 0 / 140px 13px repeat-x; }
 .op-track::before { top: 0; }
 .op-track::after { bottom: 0; transform: scaleY(-1); }
@@ -4610,101 +4608,134 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .op-mark { position: relative; white-space: nowrap; }
 .op-ink { position: absolute; left: -3%; bottom: -0.1em; width: 106%; height: 0.36em; overflow: visible; pointer-events: none; }
 .op-ink path { fill: none; stroke: var(--hint); stroke-width: 2.3; stroke-linecap: round; opacity: 0.86; }
-/* each sketch, with its words beside it */
-.op-part { position: relative; isolation: isolate; flex: none; width: var(--op-pw); display: flex; flex-direction: column; gap: clamp(12px, 2vh, 22px); }
-.op-part::before { content: ""; position: absolute; left: -12%; right: -12%; top: -10%; height: 90%; z-index: -1; background: radial-gradient(closest-side, var(--op-wash), transparent); }
-.op-part.op-cap-top .op-say { order: -1; }
-.op-say { max-width: 25em; font-size: clamp(16.5px, 1.2vw, 20.5px); line-height: 1.5; font-style: italic; color: #3a3a37; text-wrap: pretty; }
+/* each drawing, with its words beside it */
+.op-part { --op-aw: min(100%, 46vw, 600px); position: relative; isolation: isolate; flex: 0 0 100%; display: flex; align-items: center; justify-content: center; gap: clamp(22px, 3vw, 52px); }
+.op-art { position: relative; flex: none; width: var(--op-aw); }
+.op-art::before { content: ""; position: absolute; left: 2%; right: 2%; top: 4%; bottom: 4%; z-index: -1; background: radial-gradient(closest-side, var(--op-wash), transparent); }
+.op-say { flex: 0 1 15em; margin: 0; font-size: clamp(19px, 1.5vw, 25px); line-height: 1.45; letter-spacing: -0.005em; color: #2f2f2c; text-wrap: pretty; }
 .op-link, .op-end { display: none; }
-/* the sketches */
 .op-art svg, .op-link svg, .op-end svg { display: block; width: 100%; height: auto; overflow: visible; }
-.op .s { fill: none; stroke: var(--op-pen); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.op .t { stroke: var(--op-acc); }
-.op .r { stroke: var(--hint); }
-.op .g { stroke: rgba(10, 10, 10, 0.24); stroke-width: 1.7; }
-.op .w { stroke-width: 3.4; }
-.op .n { stroke-width: 1.8; }
-.op .wide { stroke-width: 12; }
-.op .c2 { stroke: #a9722c; }
-.op .c3 { stroke: #4a5f86; }
-.op .c4 { stroke: #56724e; }
-.op .c5 { stroke: #9c5f68; }
-.op-art .tx { font-family: var(--serif); fill: var(--op-pen); }
-.op-art .kf { fill: var(--op-soft); }
-.op-art .kw, .op-art .onc, .op-art .onr, .op-art .tagtx { fill: #fff; }
-.op-art .ki, .op-art .tag, .op-art .orb { fill: var(--op-pen); }
-.op-art .kt, .op-art .kc, .op-art .tagc { fill: var(--op-acc); }
-.op-art .kg, .op-art .tagg { fill: #56724e; }
-.op-art .kc2, .op-art .tagc2 { fill: #a9722c; }
-.op-art .kr { fill: #9c5f68; }
-.op-art .kl { fill: #e3e2dd; }
-.op-art .coin { fill: #f0c79a; stroke: #a9722c; stroke-width: 2; }
-.op-art .glow { fill: rgba(240, 199, 154, 0.5); }
-.op-art .it { font-style: italic; }
-.op-art .red { fill: var(--hint); }
-.op-art .mu { fill: var(--muted); }
-.op-art .c2t { fill: #a9722c; }
-.op-art .c3t { fill: #4a5f86; }
-.op-art .c4t { fill: #56724e; }
-.op-nib { fill: var(--op-pen); stroke: #fff; stroke-width: 2.5; paint-order: stroke; opacity: 0; transition: opacity 0.2s ease; }
-.op-nib.on { opacity: 1; }
-/* once the script is driving it: the band holds in the window and the board slides */
+/* the drawing kit: ink, the chapter's colour, the red pen, soft rules for lines of writing */
+.op .zk, .op .za, .op .zr, .op .zg, .op .zb, .op .zc1, .op .zc2, .op .zc3, .op .zc4 { fill: none; stroke: var(--op-pen); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.op .za { stroke: var(--op-acc); }
+.op .zr { stroke: var(--hint); }
+.op .zg { stroke: rgba(10, 10, 10, 0.18); stroke-width: 1.4; }
+.op .zb { stroke: #e1ddd3; stroke-width: 8; }
+.op .zbs { stroke-width: 6; }
+.op .zgl { stroke: rgba(10, 10, 10, 0.07); stroke-width: 1; }
+.op .zba { stroke: var(--op-wash); }
+.op .zc1 { stroke: #a9722c; }
+.op .zc2 { stroke: #4a5f86; }
+.op .zc3 { stroke: #56724e; }
+.op .zc4 { stroke: #9c5f68; }
+.op .zthin { stroke-width: 1.7; }
+.op .zthick { stroke-width: 3.4; }
+.op .zfat { stroke-width: 5.5; }
+.op .zbar { stroke-width: 5.5; }
+.op .zfaint { stroke-opacity: 0.4; }
+.op .zdash { stroke-dasharray: 7 7; }
+.op .zdot { stroke-dasharray: 0.5 7; }
+.op .zhalf { fill-opacity: 0.6; }
+.op .zf { fill: var(--op-soft); }
+.op .zfw { fill: #fff; }
+.op .zfs { fill: rgba(40, 32, 20, 0.08); }
+.op .zfk { fill: var(--op-pen); }
+.op .zfa { fill: var(--op-acc); }
+.op .zfr { fill: var(--hint); }
+.op .zfg { fill: #f3f1ec; }
+.op .zfm { fill: #e4e1d9; }
+.op .zfy { fill: #fbf0c9; }
+.op .zq1 { fill: #f6e5cf; }
+.op .zq2 { fill: #dde5f1; }
+.op .zq3 { fill: #dce8d6; }
+.op .zq4 { fill: #f1dde1; }
+.op .zp1 { fill: #a9722c; }
+.op .zp2 { fill: #4a5f86; }
+.op .zp3 { fill: #56724e; }
+.op .zp4 { fill: #9c5f68; }
+.op .zx { font-family: var(--serif); fill: var(--op-pen); }
+.op .zi { font-style: italic; }
+.op .zxa { fill: var(--op-acc); }
+.op .zxw { fill: #fff; }
+.op .zxm { fill: #8d897f; }
+.op .zxr { fill: var(--hint); }
+.op .zxc { font-family: var(--mono); }
+.op .zx1 { fill: #a9722c; }
+.op .zx2 { fill: #4a5f86; }
+.op .zx3 { fill: #56724e; }
+.op .zx4 { fill: #9c5f68; }
+.op .zcur { fill: var(--op-pen); stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
+.op .zcur1 { fill: #a9722c; } .op .zcur2 { fill: #4a5f86; } .op .zcur3 { fill: #56724e; } .op .zcur4 { fill: #9c5f68; }
+.op .zfn { fill: #2f3a55; }
+.op .zfl { fill: rgba(240, 199, 154, 0.38); }
+.op .zfq { fill: #fde9a8; }
+.op .zguide { fill: none; stroke: none; }
+/* once the script is driving it: the band holds in the window and the board moves */
 @media screen {
-  .op.is-live { --op-h: clamp(420px, calc(100svh - var(--header-h) - 2 * clamp(14px, 4.5vh, 52px)), 860px); margin: 0; }
+  .op.is-live { --op-h: clamp(440px, calc(100svh - var(--header-h) - 2 * clamp(14px, 4vh, 44px)), 900px); margin: 0; }
   .op.is-live .op-pin { position: sticky; top: calc(var(--header-h) + (100svh - var(--header-h) - var(--op-h)) / 2); }
   .op.is-live .op-band { height: var(--op-h); }
   .op.is-live .op-track { flex-wrap: nowrap; justify-content: flex-start; gap: 0; width: max-content; height: 100%; padding: 0 var(--op-gut); }
   .op.is-near .op-track { will-change: transform; }
-  .op.is-live .op-head { flex: none; width: clamp(320px, 42vw, 760px); max-width: none; padding-right: clamp(8px, 2vw, 32px); }
-  .op.is-live .op-link { display: block; flex: none; width: clamp(76px, 8.5vw, 150px); margin: 0 clamp(6px, 1.2vw, 22px); }
-  .op.is-live .op-end { display: block; flex: none; width: clamp(80px, 8vw, 140px); margin-left: clamp(10px, 2vw, 36px); }
-  .op.is-live .op-part { transform: translateY(var(--y, 0px)); }
-  .op.is-live .op-art svg { max-height: calc(var(--op-h) * 0.56); }
-  .op.is-live .op-w { display: inline-block; opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 0.5em), 0); }
+  .op.is-live .op-head { flex: none; width: clamp(340px, 42vw, 760px); max-width: none; padding-right: clamp(8px, 2vw, 32px); }
+  .op.is-live .op-part { --op-aw: min(54vw, 820px, calc(var(--op-h) * 1.02)); flex: none; }
+  .op.is-live .op-say { flex: none; width: clamp(220px, 21vw, 360px); }
+  .op.is-live .op-link { display: block; flex: none; width: clamp(64px, 6.5vw, 120px); margin: 0 clamp(14px, 2.4vw, 40px); }
+  .op.is-live .op-end { display: block; flex: none; width: clamp(80px, 8vw, 140px); margin-left: clamp(14px, 2.4vw, 40px); }
+  .op.is-live .zd { stroke-dasharray: 1 1; }
+  .op.is-live .op-w { display: inline-block; opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 0.45em), 0); }
   .op.is-live .op-eb { opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 14px), 0); }
   .op.is-live .op-ink path { stroke-dasharray: 1 1; stroke-dashoffset: calc((1 - var(--ov, 1)) * 1px); opacity: clamp(0, var(--ov, 1) * 40, 0.86); }
-  .op.is-live .s { stroke-dasharray: 1 1; stroke-dashoffset: calc((1 - var(--ov, 1)) * 1px); opacity: clamp(0, var(--ov, 1) * 40, 1); }
-  .op.is-live .op-art .f { opacity: var(--ov, 1); transform: translate(0, calc((1 - var(--ov, 1)) * 8px)); }
-  .op.is-live .op-art .mv { opacity: clamp(0, var(--ov, 1) * 3, 1); transform: translate(calc((1 - var(--ov, 1)) * var(--dx, 0px)), calc((1 - var(--ov, 1)) * var(--dy, 0px))); }
-  .op.is-live .op-part::before { opacity: var(--pv, 1); }
+  .op.is-live .op-art::before { opacity: var(--pv, 1); transform: scale(calc(0.8 + 0.2 * var(--pv, 1))); }
 }
-/* and what keeps moving once a sketch is done, only while its band is near the window */
-.op-art .a-breathe, .op-art .a-twinkle, .op-art .a-spin, .op-art .a-hop, .op-art .a-glow { transform-box: fill-box; transform-origin: center; }
-.op.is-near .is-drawn .a-breathe { animation: op-breathe 3.6s ease-in-out infinite; }
-.op.is-near .is-drawn .a-twinkle { animation: op-twinkle 2.8s ease-in-out infinite; }
-.op.is-near .is-drawn .a-spin { animation: op-coin 1.6s ease-in-out infinite; }
-.op.is-near .is-drawn .a-hop { animation: op-hop 1.8s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
-.op.is-near .is-drawn .a-blink { animation: op-blink 1.1s steps(1) infinite; }
-.op.is-near .is-drawn .a-glow { animation: op-glow 2.4s ease-in-out infinite; }
-.op.is-near .is-drawn .a-talk { animation: op-talk 1.8s ease-in-out infinite; }
-@keyframes op-breathe { 0%, 100% { transform: scale(0.82); opacity: 0.6; } 50% { transform: scale(1.18); opacity: 1; } }
-@keyframes op-twinkle { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.66); } }
-@keyframes op-coin { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.18); } }
-@keyframes op-hop { 0%, 55%, 100% { transform: none; } 25% { transform: translateY(-16px); } }
-@keyframes op-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes op-glow { 0%, 100% { opacity: 0.55; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.06); } }
-@keyframes op-talk { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
-@media print { .op * { --ov: 1 !important; } .op { height: auto !important; } }
+/* what keeps moving once a drawing is done, only while its band is near the window */
+.op .zl { transform-box: fill-box; transform-origin: center; }
+.op.is-near .is-done .zl-breathe { animation: zl-breathe 3.4s ease-in-out infinite; }
+.op.is-near .is-done .zl-bar { animation: zl-bar 1.15s ease-in-out infinite; }
+.op.is-near .is-done .zl-twinkle { animation: zl-twinkle 2.6s ease-in-out infinite; }
+.op.is-near .is-done .zl-bob { animation: zl-bob 3s ease-in-out infinite; }
+.op.is-near .is-done .zl-swing { animation: zl-swing 2.4s ease-in-out infinite; }
+.op.is-near .is-done .zl-swingf { animation: zl-swing 1.5s ease-in-out infinite; }
+.op.is-near .is-done .zl-swings { animation: zl-swing 3s ease-in-out infinite; }
+.op.is-near .is-done .zl-spin { animation: zl-spin 9s linear infinite; }
+.op.is-near .is-done .zl-blink { animation: zl-blink 1.1s steps(1) infinite; }
+.op.is-near .is-done .zl-pulse { animation: zl-pulse 2.2s ease-in-out infinite; }
+.op.is-near .is-done .zl-float { animation: zl-float 3.6s ease-in-out infinite; }
+.op.is-near .is-done .zl-rock { animation: zl-rock 3.2s ease-in-out infinite; }
+@keyframes zl-breathe { 0%, 100% { transform: scale(0.94); opacity: 0.45; } 50% { transform: scale(1.1); opacity: 1; } }
+@keyframes zl-bar { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4); } }
+@keyframes zl-twinkle { 0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); } 50% { opacity: 0.4; transform: scale(0.6) rotate(20deg); } }
+@keyframes zl-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes zl-swing { 0%, 100% { transform: rotate(-13deg); } 50% { transform: rotate(13deg); } }
+@keyframes zl-spin { to { transform: rotate(360deg); } }
+@keyframes zl-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes zl-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes zl-float { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0, -7px) rotate(-2deg); } }
+@keyframes zl-rock { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@media print { .op { height: auto !important; } .op-track { transform: none !important; } }
 @media (max-width: 900px) {
-  .op { --op-pw: clamp(280px, 44vw, 460px); }
-  .op.is-live .op-head { width: clamp(300px, 62vw, 560px); }
+  .op-part { --op-aw: min(100%, 80vw, 560px); flex-direction: column; align-items: flex-start; gap: 18px; width: var(--op-aw); flex: none; }
+  .op-say { flex: none; width: 100%; }
+  .op.is-live .op-part { --op-aw: min(84vw, 560px, calc(var(--op-h) * 0.82)); }
+  .op.is-live .op-say { width: var(--op-aw); max-width: 30em; }
+  .op.is-live .op-head { width: clamp(300px, 70vw, 600px); }
 }
 @media (max-width: 760px) {
-  .op { --op-pw: min(84vw, 440px); --op-gut: 7vw; margin: 24px 0; }
-  .op.is-live { --op-h: clamp(440px, calc(100svh - var(--header-h) - 96px), 660px); margin: 0; }
-  .op-part { width: min(100%, 460px); }
-  .op.is-live .op-part { width: var(--op-pw); transform: translateY(calc(var(--y, 0px) * 0.5)); }
+  .op { --op-gut: 7vw; margin: 24px 0; }
+  .op-part { --op-aw: min(100%, 92vw, 520px); }
+  .op.is-live { --op-h: clamp(460px, calc(100svh - var(--header-h) - 80px), 700px); margin: 0; }
+  .op.is-live .op-part { --op-aw: min(88vw, 520px, calc(var(--op-h) * 0.82)); }
   .op.is-live .op-head { width: 84vw; padding-right: 0; }
-  .op.is-live .op-link { width: 16vw; margin: 0 2vw; }
+  .op.is-live .op-link { width: 12vw; margin: 0 5vw; }
   .op.is-live .op-end { display: none; }
-  .op.is-live .op-art svg { max-height: calc(var(--op-h) * 0.5); }
   .op-title { font-size: clamp(34px, 9.6vw, 46px); }
   .op-eb { font-size: 12.5px; }
-  .op-say { font-size: 16.5px; }
-  .op .s { stroke-width: 3; }
-  .op .w { stroke-width: 4.2; }
-  .op .n { stroke-width: 2.3; }
-  .op .g { stroke-width: 2.1; }
+  .op-say { font-size: 18px; }
+  .op .zk, .op .za, .op .zr, .op .zc1, .op .zc2, .op .zc3, .op .zc4 { stroke-width: 3.3; }
+  .op .zthin { stroke-width: 2.2; }
+  .op .zthick { stroke-width: 4.2; }
+  .op .zg { stroke-width: 1.8; }
+  .op .zbar, .op .zfat { stroke-width: 6.5; }
 }
 /* tablets: the same fixed windows, a little tighter */
 @media (max-width: 1000px) {

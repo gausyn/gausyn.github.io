@@ -454,29 +454,111 @@
   }
 
   // Chapter openers: each chapter opens on a band of whiteboard that holds in the window
-  // while scrolling slides the board sideways. The heading writes itself in as the band
-  // arrives; then each sketch draws itself, stroke by stroke behind a pen tip, as it comes
-  // in from the right, and its words come up beside it. Every piece is placed on one
-  // scale, u: scroll pixels since the band began to hold (negative while it arrives).
+  // while scrolling moves the board from one drawing to the next. The heading writes itself
+  // in as the band arrives; then the board slides to each drawing in turn and stands while
+  // it plays, its words coming up beside it, before sliding on. Everything is placed on one
+  // scale, u: scroll pixels since the band began to hold, followed through a short ease so
+  // a mouse wheel's steps never show as jumps.
   var openers = Array.prototype.slice.call(document.querySelectorAll('.op'));
-  // a teacher climbing the levels moves on its own: held still until its sketch is done
-  // and on screen, and for good with reduced motion
-  openers.forEach(function (op) {
-    Array.prototype.forEach.call(op.querySelectorAll('.op-art svg'), function (svg) {
-      if (svg.querySelector('animateMotion') && svg.pauseAnimations) {
-        svg.pauseAnimations();
-        try { svg.setCurrentTime(8); } catch (e) {}
-      }
-    });
-  });
-  if (openers.length && !reduce) {
+  var opPrint = window.matchMedia ? window.matchMedia('print') : null;
+  if (openers.length && !reduce && !(opPrint && opPrint.matches)) {
     var SVGNS = 'http://www.w3.org/2000/svg';
-    var opFrame = 0;
-    var opClip = function (x) { return x <= 0 ? 0 : x >= 1 ? 1 : Math.round(x * 1000) / 1000; };
-    var opSet = function (o, p) { if (o.p !== p) { o.p = p; o.el.style.setProperty('--ov', p); } };
+    // A drawing's moving parts. Each element that moves carries data-k, a list of tracks
+    // separated by ";": a letter, the stretch of the drawing's own progress (0 to 1) it
+    // plays over, then optional from and to values, an easing, or "#id" of a path to follow.
+    //   d draw a line   o fade   s pop (scale)   S stretch across   V stretch up
+    //   x, y move from an offset   r turn   w, h open a clip   p follow a path   n count
+    // Several tracks of one letter play one after another. The markup holds the finished
+    // picture, which is what shows without the script.
+    var zEase = {
+      l: function (x) { return x; },
+      i: function (x) { return x * x * x; },
+      o: function (x) { x = 1 - x; return 1 - x * x * x; },
+      io: function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; },
+      s: function (x) { return 0.5 - Math.cos(Math.PI * x) / 2; },
+      b: function (x) { var c = 1.9, d = c + 1; x -= 1; return 1 + d * x * x * x + c * x * x; },
+      B: function (x) {
+        var n = 7.5625, d = 2.75;
+        if (x < 1 / d) return n * x * x;
+        if (x < 2 / d) { x -= 1.5 / d; return n * x * x + 0.75; }
+        if (x < 2.5 / d) { x -= 2.25 / d; return n * x * x + 0.9375; }
+        x -= 2.625 / d; return n * x * x + 0.984375;
+      }
+    };
+    var zDef = { d: [0, 1, 's'], o: [0, 1, 'o'], s: [0, 1, 'b'], S: [0, 1, 'io'], V: [0, 1, 'o'], x: [0, 0, 'io'], y: [0, 0, 'io'], r: [0, 0, 'io'], w: [0, 1, 'io'], h: [0, 1, 'io'], p: [0, 1, 'io'], n: [0, 1, 'l'] };
+    var zParse = function (str) {
+      var tr = {};
+      str.split(';').forEach(function (s) {
+        s = s.trim();
+        if (!s || !zDef[s.charAt(0)]) return;
+        var type = s.charAt(0), bits = s.slice(1).split(','), nums = [], ease = null, ref = null;
+        for (var i = 2; i < bits.length; i++) {
+          var q = bits[i].trim();
+          if (q.charAt(0) === '#') ref = q.slice(1);
+          else if (q !== '' && !isNaN(+q)) nums.push(+q);
+          else if (q) ease = q;
+        }
+        var d = zDef[type];
+        (tr[type] = tr[type] || []).push({ a: +bits[0], b: +bits[1], f: nums.length ? nums[0] : d[0], t: nums.length > 1 ? nums[1] : d[1], e: zEase[ease || d[2]] || zEase.io, ref: ref });
+      });
+      Object.keys(tr).forEach(function (k) { tr[k].sort(function (p, q) { return p.a - q.a; }); });
+      return tr;
+    };
+    var zVal = function (list, t) {
+      var v = list[0].f;
+      for (var i = 0; i < list.length; i++) {
+        var k = list[i];
+        if (t < k.a) break;
+        v = t >= k.b ? k.t : k.f + (k.t - k.f) * k.e((t - k.a) / ((k.b - k.a) || 1));
+      }
+      return v;
+    };
+    var zItem = function (el) {
+      var tr = zParse(el.getAttribute('data-k') || '');
+      var it = { el: el, tr: tr, last: {}, moves: !!(tr.x || tr.y || tr.s || tr.S || tr.V || tr.r || tr.p) };
+      if (tr.w) it.fw = parseFloat(el.getAttribute('width')) || 0;
+      if (tr.h) it.fh = parseFloat(el.getAttribute('height')) || 0;
+      if (tr.p) {
+        var guide = el.ownerSVGElement && el.ownerSVGElement.getElementById ? el.ownerSVGElement.getElementById(tr.p[0].ref) : null;
+        if (guide && guide.getTotalLength) { it.guide = guide; it.glen = guide.getTotalLength(); it.g0 = guide.getPointAtLength(0); }
+      }
+      return it;
+    };
+    var zApply = function (it, t) {
+      var tr = it.tr, el = it.el, L = it.last;
+      if (tr.d || tr.o) {
+        var op = 1;
+        if (tr.d) {
+          var dv = zVal(tr.d, t), off = (1 - dv).toFixed(4);
+          if (L.d !== off) { L.d = off; el.style.strokeDashoffset = off; }
+          if (dv <= 0.0005) op = 0;
+        }
+        if (tr.o) op *= zVal(tr.o, t);
+        op = Math.round(Math.max(0, Math.min(1, op)) * 1000) / 1000;
+        if (L.o !== op) { L.o = op; el.style.opacity = op; }
+      }
+      if (it.moves) {
+        var x = tr.x ? zVal(tr.x, t) : 0, y = tr.y ? zVal(tr.y, t) : 0;
+        if (it.guide) {
+          var pt = it.guide.getPointAtLength(it.glen * Math.max(0, Math.min(1, zVal(tr.p, t))));
+          x += pt.x - it.g0.x; y += pt.y - it.g0.y;
+        }
+        var s = tr.s ? zVal(tr.s, t) : 1, sx = s * (tr.S ? zVal(tr.S, t) : 1), sy = s * (tr.V ? zVal(tr.V, t) : 1), r = tr.r ? zVal(tr.r, t) : 0;
+        var tf = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px)' + (r ? ' rotate(' + r.toFixed(2) + 'deg)' : '') +
+          (sx !== 1 || sy !== 1 ? ' scale(' + Math.max(sx, 0.001).toFixed(4) + ',' + Math.max(sy, 0.001).toFixed(4) + ')' : '');
+        if (L.tf !== tf) { L.tf = tf; el.style.transform = tf; }
+        var vis = Math.abs(sx * sy) < 0.003 ? 'hidden' : '';
+        if (L.vis !== vis) { L.vis = vis; el.style.visibility = vis; }
+      }
+      if (tr.w) { var w = (it.fw * Math.max(0, zVal(tr.w, t))).toFixed(2); if (L.w !== w) { L.w = w; el.setAttribute('width', w); } }
+      if (tr.h) { var h = (it.fh * Math.max(0, zVal(tr.h, t))).toFixed(2); if (L.h !== h) { L.h = h; el.setAttribute('height', h); } }
+      if (tr.n) { var n = String(Math.round(zVal(tr.n, t))); if (L.n !== n) { L.n = n; el.textContent = n; } }
+    };
+    var opClip = function (x) { return x <= 0 ? 0 : x >= 1 ? 1 : x; };
+    var opSet = function (o, p) { p = Math.round(p * 1000) / 1000; if (o.p !== p) { o.p = p; o.el.style.setProperty('--ov', p); } };
     var pageTop = function (el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; };
-    // words, one span each, for the heading and for the lines beside the sketches
-    var opWords = function (root, skipSvg) {
+    // words, one span each, for the heading and for the lines beside the drawings
+    var opWords = function (root) {
       var words = [];
       (function walk(node) {
         Array.prototype.slice.call(node.childNodes).forEach(function (n) {
@@ -499,170 +581,155 @@
       })(root);
       return words;
     };
-    // a sketch, in the order it is drawn: a stroke made of several pieces is split so the
-    // pieces follow one another; each item takes a share of the way by its length, starts
-    // a little before the one ahead of it ends, or keeps a window of its own
-    var opSketch = function (svg) {
-      Array.prototype.slice.call(svg.querySelectorAll('path.s')).forEach(function (el) {
-        var bits = (el.getAttribute('d') || '').match(/M[^M]*/g);
-        if (!bits || bits.length < 2) return;
-        var total = el.getTotalLength() || 1;
-        var w = parseFloat(el.getAttribute('data-w')) || Math.max(0.35, Math.min(2.2, total / 220));
-        bits.forEach(function (d, i) {
-          var p = el.cloneNode(false);
-          p.setAttribute('d', d);
-          el.parentNode.insertBefore(p, el);
-          p.setAttribute('data-w', Math.max(0.03, w * (p.getTotalLength() || 0) / total).toFixed(3));
-          if (i) p.removeAttribute('data-j');
-        });
-        el.parentNode.removeChild(el);
-      });
-      var items = [], t = 0, start = 0, end = 0, pinned = [];
-      Array.prototype.forEach.call(svg.querySelectorAll('.s, .f, .mv'), function (el) {
-        var stroke = el.classList.contains('s');
-        var len = stroke && el.getTotalLength ? el.getTotalLength() : 0;
-        var item = { el: el, len: len, stroke: stroke, color: '', p: -1 };
-        var at = el.getAttribute('data-at');
-        if (at) {
-          at = at.split(',');
-          item.s = +at[0]; item.w = +at[1] - +at[0];
-          pinned.push(item);
-        } else {
-          var w = parseFloat(el.getAttribute('data-w')) || (stroke ? Math.max(0.35, Math.min(2.2, len / 220)) : el.classList.contains('mv') ? 0.9 : 0.5);
-          if (!el.hasAttribute('data-j')) start = t;
-          t = Math.max(t, start + w * 0.8);
-          end = Math.max(end, start + w);
-          item.s = start; item.w = w;
-        }
-        items.push(item);
-      });
-      items.forEach(function (it) { if (pinned.indexOf(it) === -1) { it.s /= end || 1; it.w /= end || 1; } });
-      var nib = document.createElementNS(SVGNS, 'circle');
-      nib.setAttribute('class', 'op-nib');
-      nib.setAttribute('r', '5.5');
-      svg.appendChild(nib);
-      var smil = svg.querySelector('animateMotion') && svg.pauseAnimations ? svg : null;
-      return { items: items, nib: nib, nibOn: false, smil: smil, run: false };
-    };
-    var opDraw = function (pc, v) {
-      var sk = pc.sketch, tip = null;
-      sk.items.forEach(function (it) {
-        var p = opClip((v - it.s) / it.w);
-        opSet(it, p);
-        if (it.stroke && p > 0 && p < 1 && (!tip || it.s >= tip.s)) tip = it;
-      });
-      if (tip) {
-        var pt = tip.el.getPointAtLength(tip.len * tip.p);
-        if (!tip.color) tip.color = window.getComputedStyle(tip.el).stroke;
-        sk.nib.setAttribute('cx', pt.x.toFixed(1));
-        sk.nib.setAttribute('cy', pt.y.toFixed(1));
-        sk.nib.style.fill = tip.color;
-        if (!sk.nibOn) { sk.nibOn = true; sk.nib.classList.add('on'); }
-      } else if (sk.nibOn) {
-        sk.nibOn = false;
-        sk.nib.classList.remove('on');
-      }
-      var drawn = v >= 1;
-      if (drawn !== pc.drawn) { pc.drawn = drawn; pc.el.classList.toggle('is-drawn', drawn); }
+    var opScene = function (root) { return Array.prototype.map.call(root.querySelectorAll('[data-k]'), zItem); };
+    var opPlay = function (piece, t) {
+      if (t === piece.t) return false;
+      piece.t = t;
+      piece.items.forEach(function (it) { zApply(it, t); });
+      return true;
     };
     openers.forEach(function (op) {
-      op.gzPin = op.querySelector('.op-pin');
-      op.gzBand = op.querySelector('.op-band');
-      op.gzTrack = op.querySelector('.op-track');
-      op.gzProg = op.querySelector('.op-prog');
+      op.zPin = op.querySelector('.op-pin');
+      op.zBand = op.querySelector('.op-band');
+      op.zTrack = op.querySelector('.op-track');
+      op.zProg = op.querySelector('.op-prog');
       var eb = op.querySelector('.op-eb');
-      op.gzEb = eb ? { el: eb, p: -1 } : null;
-      op.gzWords = [];
-      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) { op.gzWords = op.gzWords.concat(opWords(line)); });
+      op.zEb = eb ? { el: eb, p: -1 } : null;
+      op.zWords = [];
+      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) { op.zWords = op.zWords.concat(opWords(line)); });
       var ink = op.querySelector('.op-ink path');
-      op.gzInk = ink ? { el: ink, p: -1 } : null;
-      op.gzSeq = [];
-      Array.prototype.forEach.call(op.gzTrack.children, function (el) {
-        if (el.classList.contains('op-head')) return;
-        var svg = el.querySelector('svg');
-        var say = el.querySelector('.op-say');
-        op.gzSeq.push({ el: el, sketch: svg ? opSketch(svg) : null, words: say ? opWords(say) : [], v: -1, p: -1, drawn: false });
+      op.zInk = ink ? { el: ink, p: -1 } : null;
+      op.zParts = []; op.zLinks = []; op.zEnd = null;
+      var link = null;
+      Array.prototype.forEach.call(op.zTrack.children, function (el) {
+        if (el.classList.contains('op-link')) {
+          link = { el: el, items: opScene(el), t: -1 };
+          op.zLinks.push(link);
+        } else if (el.classList.contains('op-part')) {
+          var say = el.querySelector('.op-say');
+          op.zParts.push({ el: el, items: opScene(el.querySelector('.op-art') || el), words: say ? opWords(say) : [], link: link, t: -1, on: false, done: false });
+          link = null;
+        } else if (el.classList.contains('op-end')) {
+          op.zEnd = { el: el, items: opScene(el), t: -1 };
+        }
       });
     });
-    function opUpdate() {
-      opFrame = 0;
-      var vh = window.innerHeight || 1, y = window.pageYOffset || 0;
-      openers.forEach(function (op) {
-        var near = op.gzTop < y + vh * 1.5 && op.gzTop + op.gzHeight > y - vh * 0.5;
-        if (near !== op.gzNear) { op.gzNear = near; op.classList.toggle('is-near', near); }
-        if (!near && op.gzDone) return;
-        op.gzDone = !near;
-        var u = y - (op.gzTop - op.gzT);
-        var go = op.gzTravel > 0 ? Math.max(0, Math.min(1, (u - op.gzHold) / (op.gzTravel * op.gzK))) : 0;
-        var tx = Math.round(-op.gzTravel * go * 10) / 10;
-        if (tx !== op.gzTx) { op.gzTx = tx; op.gzTrack.style.transform = 'translate3d(' + tx + 'px, 0, 0)'; }
-        var pr = op.gzTravel > 0 ? Math.round(go * 1000) / 1000 : opClip(u / op.gzRun);
-        if (op.gzProg && pr !== op.gzPr) { op.gzPr = pr; op.gzProg.style.transform = 'scaleX(' + pr + ')'; }
-        // the heading, a word at a time as the band arrives, then its pen line
-        var hv = opClip((u - op.gzHs) / (op.gzHe - op.gzHs));
-        if (hv !== op.gzHv) {
-          op.gzHv = hv;
-          if (op.gzEb) opSet(op.gzEb, opClip(hv / 0.3));
-          var nw = op.gzWords.length, span = nw > 1 ? 0.6 / (nw - 1) : 0;
-          op.gzWords.forEach(function (w, i) { opSet(w, opClip((hv - 0.1 - span * i) / 0.3)); });
-          if (op.gzInk) opSet(op.gzInk, opClip((hv - 0.84) / 0.16));
+    var opRender = function (op, u) {
+      // the board: standing, or sliding from one drawing to the next
+      var x = 0, m = op.zMoves;
+      for (var i = 0; i < m.length; i++) {
+        var s = m[i];
+        if (u < s.a) break;
+        x = u >= s.b ? s.t : s.f + (s.t - s.f) * zEase.io((u - s.a) / (s.b - s.a));
+      }
+      x = Math.round(x * 10) / 10;
+      if (x !== op.zX) { op.zX = x; op.zTrack.style.transform = 'translate3d(' + x + 'px, 0, 0)'; }
+      var pr = Math.round(opClip(u / op.zEndU) * 1000) / 1000;
+      if (op.zProg && pr !== op.zPr) { op.zPr = pr; op.zProg.style.transform = 'scaleX(' + pr + ')'; }
+      // the heading, a word at a time as the band arrives, then its pen line
+      var hv = opClip((u - op.zHs) / (op.zHe - op.zHs));
+      if (hv !== op.zHv) {
+        op.zHv = hv;
+        if (op.zEb) opSet(op.zEb, opClip(hv / 0.3));
+        var nw = op.zWords.length, sp = nw > 1 ? 0.6 / (nw - 1) : 0;
+        op.zWords.forEach(function (w, i) { opSet(w, opClip((hv - 0.1 - sp * i) / 0.3)); });
+        if (op.zInk) opSet(op.zInk, opClip((hv - 0.84) / 0.16));
+      }
+      // the arrows drawn while the board slides, and the one that turns down into the page
+      op.zLinks.forEach(function (lk) { opPlay(lk, opClip((u - lk.ua) / (lk.ub - lk.ua))); });
+      if (op.zEnd) opPlay(op.zEnd, opClip((u - op.zEnd.ua) / (op.zEnd.ub - op.zEnd.ua)));
+      // each drawing, and its words
+      op.zParts.forEach(function (pc) {
+        var t = opClip((u - pc.ua) / (pc.ub - pc.ua));
+        if (!opPlay(pc, t)) return;
+        pc.el.style.setProperty('--pv', Math.round(opClip(t / 0.25) * 1000) / 1000);
+        var nw = pc.words.length;
+        if (nw) {
+          var cv = opClip((t - 0.02) / 0.42), sp = nw > 1 ? 0.6 / (nw - 1) : 0;
+          pc.words.forEach(function (w, i) { opSet(w, opClip((cv - sp * i) / 0.4)); });
         }
-        op.gzSeq.forEach(function (pc) {
-          var v = opClip((u - pc.us) / (pc.ue - pc.us));
-          if (v === pc.v) return;
-          pc.v = v;
-          pc.el.style.setProperty('--pv', v);
-          if (pc.sketch) opDraw(pc, v);
-          var nw = pc.words.length;
-          if (nw) {
-            var cv = opClip((v - 0.04) / 0.56), span = nw > 1 ? 0.7 / (nw - 1) : 0;
-            pc.words.forEach(function (w, i) { opSet(w, opClip((cv - span * i) / 0.3)); });
-          }
-        });
-        // the climbing teacher waits for its sketch
-        op.gzSeq.forEach(function (pc) {
-          var sk = pc.sketch;
-          if (sk && sk.smil) {
-            var run = !!op.gzNear && pc.drawn;
-            if (run !== sk.run) { sk.run = run; if (run) sk.smil.unpauseAnimations(); else sk.smil.pauseAnimations(); }
-          }
-        });
+        var on = t > 0, done = t >= 1;
+        if (on !== pc.on) { pc.on = on; pc.el.classList.toggle('is-on', on); }
+        if (done !== pc.done) { pc.done = done; pc.el.classList.toggle('is-done', done); }
       });
-    }
-    function opMeasure() {
+    };
+    // follow the scroll through a short ease; far-off bands just jump to where they belong
+    var opRaf = 0, opLast = 0;
+    var opTick = function (now) {
+      opRaf = 0;
+      var dt = opLast ? Math.min(0.064, Math.max(0.001, (now - opLast) / 1000)) : 0.016;
+      opLast = now;
+      var vh = window.innerHeight || 1, y = window.pageYOffset || 0, busy = false;
+      openers.forEach(function (op) {
+        var near = op.zTop < y + vh * 1.6 && op.zTop + op.zHeight > y - vh * 0.6;
+        if (near !== op.zNear) { op.zNear = near; op.classList.toggle('is-near', near); }
+        var goal = y - (op.zTop - op.zT), u = op.zU;
+        if (!near || u == null || Math.abs(goal - u) > vh * 2) u = goal;
+        else {
+          u += (goal - u) * (1 - Math.exp(-dt / 0.085));
+          if (Math.abs(goal - u) < 0.4) u = goal;
+        }
+        if (u !== goal) busy = true;
+        op.zU = u;
+        var cu = Math.max(op.zHs - 40, Math.min(op.zRun + 40, u));
+        if (cu !== op.zCu) { op.zCu = cu; opRender(op, cu); }
+      });
+      if (busy) opRaf = requestAnimationFrame(opTick); else opLast = 0;
+    };
+    var opKick = function () { if (!opRaf) opRaf = requestAnimationFrame(opTick); };
+    var opMeasure = function () {
       var vh = window.innerHeight || 1;
       openers.forEach(function (op) {
-        var vw = op.gzBand.clientWidth || 1;
-        var H = op.gzBand.offsetHeight;
-        var T = parseFloat(window.getComputedStyle(op.gzPin).top);
+        var vw = op.zBand.clientWidth || 1, H = op.zBand.offsetHeight;
+        var T = parseFloat(window.getComputedStyle(op.zPin).top);
         if (isNaN(T)) T = (vh - H) / 2;
-        var travel = Math.max(0, op.gzTrack.offsetWidth - vw);
-        var k = Math.max(1, Math.min(1.7, 620 / vw));
-        var hold = vh * 0.14, run = hold + travel * k + vh * 0.3;
+        var travel = Math.max(0, op.zTrack.offsetWidth - vw);
+        var mid = function (el) { return Math.max(-travel, Math.min(0, Math.round(vw / 2 - el.offsetLeft - el.offsetWidth / 2))); };
+        // the heading stands a moment; then for each drawing: slide to it, stand while it plays
+        var HEAD = vh * 0.22, SLIDE = vh * 0.45, PLAY = vh * 0.7, REST = vh * 0.05;
+        var u = HEAD, x = 0, moves = [];
+        op.zParts.forEach(function (pc) {
+          var nx = mid(pc.el), dist = Math.abs(nx - x);
+          var sl = dist < 2 ? 0 : SLIDE * Math.max(0.5, Math.min(1.2, dist / (vw * 0.75)));
+          if (sl) moves.push({ a: u, b: u + sl, f: x, t: nx });
+          if (pc.link) { pc.link.ua = sl ? u + sl * 0.1 : u - vh * 0.2; pc.link.ub = sl ? u + sl * 0.85 : u; }
+          pc.ua = u + sl * 0.55; pc.ub = u + sl + PLAY;
+          u = pc.ub + REST; x = nx;
+        });
+        if (op.zEnd) {
+          var ex = -travel, es = Math.abs(ex - x) < 2 ? 0 : SLIDE * 0.55;
+          if (es) moves.push({ a: u, b: u + es, f: x, t: ex });
+          op.zEnd.ua = es ? u + es * 0.25 : u - vh * 0.12; op.zEnd.ub = u + Math.max(es, vh * 0.08);
+          u += es;
+        }
+        op.zEndU = u;
+        var run = u + vh * 0.16;
         var h = Math.round(H + run) + 'px';
         if (op.style.height !== h) op.style.height = h;
-        op.gzT = T; op.gzTravel = travel; op.gzK = k; op.gzHold = hold; op.gzRun = run;
-        op.gzTop = pageTop(op);
-        op.gzHeight = op.offsetHeight;
+        op.zMoves = moves; op.zRun = run; op.zT = T;
+        op.zTop = pageTop(op);
+        op.zHeight = op.offsetHeight;
         // the heading comes in while the band rises to its place
-        op.gzHs = -(vh - T) * 0.82; op.gzHe = -(vh - T) * 0.04;
-        // each piece starts once part of it is in from the right and is done by the time it
-        // is centred, or just after the board stops, while the last of it is in full view
-        var last = hold + travel * k + vh * 0.1, early = -(vh - T) * 0.5;
-        op.gzSeq.forEach(function (pc) {
-          var L = pc.el.offsetLeft, W = pc.el.offsetWidth;
-          var sx = vw - 0.3 * W, ex = Math.max(vw * 0.05, (vw - W) / 2);
-          var us = Math.max(early, hold + (L - sx) * k), ue = Math.min(last, hold + (L - ex) * k);
-          if (ue < us + 140) { ue = Math.min(us + 140, last); if (ue < us + 60) us = ue - 140; }
-          pc.us = us; pc.ue = ue; pc.v = -1;
-        });
-        op.gzHv = -1; op.gzDone = false;
+        op.zHs = -(vh - T) * 0.8; op.zHe = -(vh - T) * 0.05;
+        op.zHv = -1; op.zCu = null; op.zX = null; op.zPr = null; op.zU = null;
+        op.zParts.forEach(function (pc) { pc.t = -1; });
+        op.zLinks.forEach(function (lk) { lk.t = -1; });
+        if (op.zEnd) op.zEnd.t = -1;
       });
-      opUpdate();
-    }
+      opLast = 0;
+      opTick(window.performance && performance.now ? performance.now() : 0);
+    };
+    var opFinish = function () {
+      openers.forEach(function (op) {
+        op.zParts.concat(op.zLinks, op.zEnd ? [op.zEnd] : []).forEach(function (pc) { opPlay(pc, 1); });
+        op.zCu = null;
+      });
+    };
+    window.addEventListener('beforeprint', opFinish);
+    window.addEventListener('afterprint', function () { requestAnimationFrame(opMeasure); });
     openers.forEach(function (op) { op.classList.add('is-live'); });
     opMeasure();
-    window.addEventListener('scroll', function () { if (!opFrame) opFrame = requestAnimationFrame(opUpdate); }, { passive: true });
+    window.addEventListener('scroll', opKick, { passive: true });
     window.addEventListener('resize', function () { requestAnimationFrame(opMeasure); });
     window.addEventListener('load', opMeasure);
     if ('ResizeObserver' in window) new ResizeObserver(function () { requestAnimationFrame(opMeasure); }).observe(document.body);
