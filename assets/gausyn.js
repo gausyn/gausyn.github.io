@@ -454,8 +454,8 @@
   }
 
   // Chapter openers: each chapter opens on a band of whiteboard that holds in the window
-  // while scrolling moves the board from one drawing to the next. The heading writes itself
-  // in as the band arrives; then the board slides to each drawing in turn and stands while
+  // while scrolling moves the board from one drawing to the next. The heading stands as
+  // written; then the board slides to each drawing in turn and stands while
   // it plays, its words coming up beside it, before sliding on. Everything is placed on one
   // scale, u: scroll pixels since the band began to hold, followed through a short ease so
   // a mouse wheel's steps never show as jumps.
@@ -557,7 +557,7 @@
     var opClip = function (x) { return x <= 0 ? 0 : x >= 1 ? 1 : x; };
     var opSet = function (o, p) { p = Math.round(p * 1000) / 1000; if (o.p !== p) { o.p = p; o.el.style.setProperty('--ov', p); } };
     var pageTop = function (el) { var y = 0; for (var n = el; n; n = n.offsetParent) y += n.offsetTop; return y; };
-    // words, one span each, for the heading and for the lines beside the drawings
+    // words, one span each, for the lines beside the drawings
     var opWords = function (root) {
       var words = [];
       (function walk(node) {
@@ -593,25 +593,9 @@
       op.zBand = op.querySelector('.op-band');
       op.zTrack = op.querySelector('.op-track');
       op.zProg = op.querySelector('.op-prog');
-      var eb = op.querySelector('.op-eb');
-      op.zEb = eb ? { el: eb, p: -1 } : null;
-      op.zWords = [];
-      Array.prototype.forEach.call(op.querySelectorAll('.op-line'), function (line) { op.zWords = op.zWords.concat(opWords(line)); });
-      var ink = op.querySelector('.op-ink path');
-      op.zInk = ink ? { el: ink, p: -1 } : null;
-      op.zParts = []; op.zLinks = []; op.zEnd = null;
-      var link = null;
-      Array.prototype.forEach.call(op.zTrack.children, function (el) {
-        if (el.classList.contains('op-link')) {
-          link = { el: el, items: opScene(el), t: -1 };
-          op.zLinks.push(link);
-        } else if (el.classList.contains('op-part')) {
-          var say = el.querySelector('.op-say');
-          op.zParts.push({ el: el, items: opScene(el.querySelector('.op-art') || el), words: say ? opWords(say) : [], link: link, t: -1, on: false, done: false });
-          link = null;
-        } else if (el.classList.contains('op-end')) {
-          op.zEnd = { el: el, items: opScene(el), t: -1 };
-        }
+      op.zParts = Array.prototype.map.call(op.querySelectorAll('.op-part'), function (el) {
+        var say = el.querySelector('.op-say');
+        return { el: el, items: opScene(el.querySelector('.op-art') || el), words: say ? opWords(say) : [], t: -1, on: false, done: false };
       });
     });
     var opRender = function (op, u) {
@@ -626,18 +610,6 @@
       if (x !== op.zX) { op.zX = x; op.zTrack.style.transform = 'translate3d(' + x + 'px, 0, 0)'; }
       var pr = Math.round(opClip(u / op.zEndU) * 1000) / 1000;
       if (op.zProg && pr !== op.zPr) { op.zPr = pr; op.zProg.style.transform = 'scaleX(' + pr + ')'; }
-      // the heading, a word at a time as the band arrives, then its pen line
-      var hv = opClip((u - op.zHs) / (op.zHe - op.zHs));
-      if (hv !== op.zHv) {
-        op.zHv = hv;
-        if (op.zEb) opSet(op.zEb, opClip(hv / 0.3));
-        var nw = op.zWords.length, sp = nw > 1 ? 0.6 / (nw - 1) : 0;
-        op.zWords.forEach(function (w, i) { opSet(w, opClip((hv - 0.1 - sp * i) / 0.3)); });
-        if (op.zInk) opSet(op.zInk, opClip((hv - 0.84) / 0.16));
-      }
-      // the arrows drawn while the board slides, and the one that turns down into the page
-      op.zLinks.forEach(function (lk) { opPlay(lk, opClip((u - lk.ua) / (lk.ub - lk.ua))); });
-      if (op.zEnd) opPlay(op.zEnd, opClip((u - op.zEnd.ua) / (op.zEnd.ub - op.zEnd.ua)));
       // each drawing, and its words
       op.zParts.forEach(function (pc) {
         var t = opClip((u - pc.ua) / (pc.ub - pc.ua));
@@ -671,7 +643,7 @@
         }
         if (u !== goal) busy = true;
         op.zU = u;
-        var cu = Math.max(op.zHs - 40, Math.min(op.zRun + 40, u));
+        var cu = Math.max(-40, Math.min(op.zRun + 40, u));
         if (cu !== op.zCu) { op.zCu = cu; opRender(op, cu); }
       });
       if (busy) opRaf = requestAnimationFrame(opTick); else opLast = 0;
@@ -692,16 +664,9 @@
           var nx = mid(pc.el), dist = Math.abs(nx - x);
           var sl = dist < 2 ? 0 : SLIDE * Math.max(0.5, Math.min(1.2, dist / (vw * 0.75)));
           if (sl) moves.push({ a: u, b: u + sl, f: x, t: nx });
-          if (pc.link) { pc.link.ua = sl ? u + sl * 0.1 : u - vh * 0.2; pc.link.ub = sl ? u + sl * 0.85 : u; }
           pc.ua = u + sl * 0.55; pc.ub = u + sl + PLAY;
           u = pc.ub + REST; x = nx;
         });
-        if (op.zEnd) {
-          var ex = -travel, es = Math.abs(ex - x) < 2 ? 0 : SLIDE * 0.55;
-          if (es) moves.push({ a: u, b: u + es, f: x, t: ex });
-          op.zEnd.ua = es ? u + es * 0.25 : u - vh * 0.12; op.zEnd.ub = u + Math.max(es, vh * 0.08);
-          u += es;
-        }
         op.zEndU = u;
         var run = u + vh * 0.16;
         var h = Math.round(H + run) + 'px';
@@ -709,19 +674,15 @@
         op.zMoves = moves; op.zRun = run; op.zT = T;
         op.zTop = pageTop(op);
         op.zHeight = op.offsetHeight;
-        // the heading comes in while the band rises to its place
-        op.zHs = -(vh - T) * 0.8; op.zHe = -(vh - T) * 0.05;
-        op.zHv = -1; op.zCu = null; op.zX = null; op.zPr = null; op.zU = null;
+        op.zCu = null; op.zX = null; op.zPr = null; op.zU = null;
         op.zParts.forEach(function (pc) { pc.t = -1; });
-        op.zLinks.forEach(function (lk) { lk.t = -1; });
-        if (op.zEnd) op.zEnd.t = -1;
       });
       opLast = 0;
       opTick(window.performance && performance.now ? performance.now() : 0);
     };
     var opFinish = function () {
       openers.forEach(function (op) {
-        op.zParts.concat(op.zLinks, op.zEnd ? [op.zEnd] : []).forEach(function (pc) { opPlay(pc, 1); });
+        op.zParts.forEach(function (pc) { opPlay(pc, 1); });
         op.zCu = null;
       });
     };

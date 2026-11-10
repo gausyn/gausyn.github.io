@@ -4613,8 +4613,7 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .op-art { position: relative; flex: none; width: var(--op-aw); }
 .op-art::before { content: ""; position: absolute; left: 2%; right: 2%; top: 4%; bottom: 4%; z-index: -1; background: radial-gradient(closest-side, var(--op-wash), transparent); }
 .op-say { flex: 0 1 15em; margin: 0; font-size: clamp(19px, 1.5vw, 25px); line-height: 1.45; letter-spacing: -0.005em; color: #2f2f2c; text-wrap: pretty; }
-.op-link, .op-end { display: none; }
-.op-art svg, .op-link svg, .op-end svg { display: block; width: 100%; height: auto; overflow: visible; }
+.op-art svg { display: block; width: 100%; height: auto; overflow: visible; }
 /* the drawing kit: ink, the chapter's colour, the red pen, soft rules for lines of writing */
 .op .zk, .op .za, .op .zr, .op .zg, .op .zb, .op .zc1, .op .zc2, .op .zc3, .op .zc4 { fill: none; stroke: var(--op-pen); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 .op .za { stroke: var(--op-acc); }
@@ -4628,6 +4627,11 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .op .zc2 { stroke: #4a5f86; }
 .op .zc3 { stroke: #56724e; }
 .op .zc4 { stroke: #9c5f68; }
+.op path.zah { stroke-width: 1.2; fill: var(--op-pen); }
+.op path.zah.za { fill: var(--op-acc); }
+.op path.zah.zr { fill: var(--hint); }
+.op path.zah.zg { fill: rgba(10, 10, 10, 0.18); stroke-width: 0; }
+.op path.zah.zc4 { fill: #9c5f68; }
 .op .zthin { stroke-width: 1.7; }
 .op .zthick { stroke-width: 3.4; }
 .op .zfat { stroke-width: 5.5; }
@@ -4680,12 +4684,9 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
   .op.is-live .op-head { flex: none; width: clamp(340px, 42vw, 760px); max-width: none; padding-right: clamp(8px, 2vw, 32px); }
   .op.is-live .op-part { --op-aw: min(54vw, 820px, calc(var(--op-h) * 1.02)); flex: none; }
   .op.is-live .op-say { flex: none; width: clamp(220px, 21vw, 360px); }
-  .op.is-live .op-link { display: block; flex: none; width: clamp(64px, 6.5vw, 120px); margin: 0 clamp(14px, 2.4vw, 40px); }
-  .op.is-live .op-end { display: block; flex: none; width: clamp(80px, 8vw, 140px); margin-left: clamp(14px, 2.4vw, 40px); }
+  .op.is-live .op-part { margin-left: clamp(88px, 10vw, 200px); }
   .op.is-live .zd { stroke-dasharray: 1 1; }
   .op.is-live .op-w { display: inline-block; opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 0.45em), 0); }
-  .op.is-live .op-eb { opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 14px), 0); }
-  .op.is-live .op-ink path { stroke-dasharray: 1 1; stroke-dashoffset: calc((1 - var(--ov, 1)) * 1px); opacity: clamp(0, var(--ov, 1) * 40, 0.86); }
   .op.is-live .op-art::before { opacity: var(--pv, 1); transform: scale(calc(0.8 + 0.2 * var(--pv, 1))); }
 }
 /* what keeps moving once a drawing is done, only while its band is near the window */
@@ -4726,8 +4727,7 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
   .op.is-live { --op-h: clamp(460px, calc(100svh - var(--header-h) - 80px), 700px); margin: 0; }
   .op.is-live .op-part { --op-aw: min(88vw, 520px, calc(var(--op-h) * 0.82)); }
   .op.is-live .op-head { width: 84vw; padding-right: 0; }
-  .op.is-live .op-link { width: 12vw; margin: 0 5vw; }
-  .op.is-live .op-end { display: none; }
+  .op.is-live .op-part { margin-left: 18vw; }
   .op-title { font-size: clamp(34px, 9.6vw, 46px); }
   .op-eb { font-size: 12.5px; }
   .op-say { font-size: 18px; }
