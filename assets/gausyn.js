@@ -411,13 +411,15 @@
     }
   }
 
-  // Headings that write themselves in as you scroll. Each word starts as a faint trace and
-  // fills in on its way to the middle of the view, a heading's second sentence takes the
-  // warm ink, and an .ink phrase gets a pen line drawn under it. Browsers without
-  // scroll-linked animation, and reduced motion, simply show the finished heading.
+  // Headings, and the paragraph under a product page's opening. A heading's second sentence
+  // takes the warm ink and an .ink phrase gets a pen line under it. Section headings are
+  // simply there; only that opening paragraph (and anything marked data-fill) writes itself
+  // in as you scroll, each word filling in from a faint trace on its way to the middle of
+  // the view. Browsers without scroll-linked animation, and reduced motion, show it whole.
   var canFill = !reduce && window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
-  if (canFill && document.body.classList.contains('has-film-hero')) {
+  if (document.body.classList.contains('has-film-hero')) {
     Array.prototype.forEach.call(document.querySelectorAll('.scene-head h2, .hero-intro .lede, [data-fill]'), function (el) {
+      var fill = canFill && !el.closest('.scene-head');
       var words = [], heading = /^H[1-3]$/.test(el.tagName), second = false;
       (function walk(node) {
         Array.prototype.slice.call(node.childNodes).forEach(function (n) {
@@ -439,17 +441,16 @@
           }
         });
       })(el);
+      Array.prototype.forEach.call(el.querySelectorAll('.ink'), function (ink) {
+        ink.insertAdjacentHTML('beforeend', '<svg class="ink-mark" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3,9 C38,4 76,12 116,7 S170,3 197,8"/></svg>');
+      });
+      if (!fill) return;
       words.forEach(function (w, i) {
         var a = 4 + 34 * i / Math.max(words.length, 1);
         w.style.setProperty('--a', a.toFixed(1) + '%');
         w.style.setProperty('--b', (a + 12).toFixed(1) + '%');
       });
-      Array.prototype.forEach.call(el.querySelectorAll('.ink'), function (ink) {
-        ink.insertAdjacentHTML('beforeend', '<svg class="ink-mark" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3,9 C38,4 76,12 116,7 S170,3 197,8"/></svg>');
-      });
       el.classList.add('wf');
-      var head = el.closest('.scene-head');
-      if (head) head.classList.add('wf-head');
     });
   }
 
@@ -714,7 +715,7 @@
 
   // Email links: plenty of computers have no mail app set up, and there a mailto link does
   // nothing at all. So a click on one offers the ways to write: the mail app, a mail site
-  // in the browser with the message started, or the address copied (it is never shown).
+  // in the browser with the message started, or the address copied.
   var mail = null, mailFrom = null;
   function mailParts(href) {
     var bits = href.replace(/^mailto:/i, '').split('?'), q = {};

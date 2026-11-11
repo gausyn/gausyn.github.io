@@ -655,6 +655,9 @@ html.js .cyc-route > *:nth-child(1) { animation-delay: 0s; } html.js .cyc-route 
 :root { --fade-in: 1; }
 html.js [data-reveal] { opacity: calc(1 - var(--fade-in)); transform: translateY(calc(var(--fade-in) * 18px)); transition: opacity 0.6s ease, transform 0.6s ease; }
 html.js [data-reveal].in { opacity: 1; transform: none; }
+/* section headings are simply there, on every page: only a page's opening (its hero,
+   page head, article or job head) and the About page fade in */
+html.js body:not(.page-about) :is(.scene-head, .jobs-head, h2)[data-reveal] { opacity: 1; transform: none; transition: none; }
 
 /* ── responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
@@ -1786,7 +1789,7 @@ html.js .fade-pr{animation:fade-pr 50s linear infinite}
   padding: 92px var(--hero-pad) clamp(28px, 5vh, 52px);
 }
 .hero-media { position: absolute; inset: 0; background: #171310 center / cover no-repeat; }
-[data-film="home"] .hero-media { background-image: url("film-home-poster.jpg"); }
+[data-film="home-lesson"] .hero-media { background-image: url("film-home-lesson-poster.jpg"); }
 [data-film="whiteboard"] .hero-media { background-image: url("film-whiteboard-poster.jpg"); }
 [data-film="learning"] .hero-media { background-image: url("film-learning-poster.jpg"); }
 [data-film="collaborate"] .hero-media { background-image: url("film-collaborate-poster.jpg"); }
@@ -1843,7 +1846,6 @@ html.js .fade-pr{animation:fade-pr 50s linear infinite}
     html.js .scene .wf .w, html.js .scene .wf .ink-mark path, html.js .has-film-hero .scene .stage { animation-play-state: running !important; }
     html.js .wf .w { animation: wf-in linear both; animation-timeline: --wf; animation-range: cover var(--a) cover var(--b); }
     html.js .wf .ink-mark path { animation: ink-draw linear both; animation-timeline: --wf; animation-range: cover 34% cover 50%; }
-    html.js .wf-head[data-reveal] { opacity: 1; transform: none; }
     html.js .has-film-hero .scene .stage { animation: stage-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
     html.js .hero-full { view-timeline: --hero block; }
     html.js .hero-full .hero-media { animation: hero-drift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
@@ -1907,7 +1909,7 @@ html.js .has-film-hero.past-hero .site-header { background: rgba(255, 255, 255, 
 }
 @media (max-aspect-ratio: 3/4) {
   .hero-media::after { background: linear-gradient(to bottom, rgba(14, 11, 9, 0.4) 0%, rgba(14, 11, 9, 0) 12%, rgba(14, 11, 9, 0) 50%, rgba(14, 11, 9, 0.66) 100%); }
-  [data-film="home"] .hero-media { background-image: url("film-home-poster-tall.jpg"); }
+  [data-film="home-lesson"] .hero-media { background-image: url("film-home-lesson-poster-tall.jpg"); }
   [data-film="whiteboard"] .hero-media { background-image: url("film-whiteboard-poster-tall.jpg"); }
   [data-film="learning"] .hero-media { background-image: url("film-learning-poster-tall.jpg"); }
   [data-film="collaborate"] .hero-media { background-image: url("film-collaborate-poster-tall.jpg"); }
