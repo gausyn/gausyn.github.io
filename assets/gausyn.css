@@ -658,6 +658,8 @@ html.js [data-reveal].in { opacity: 1; transform: none; }
 /* section headings are simply there, on every page: only a page's opening (its hero,
    page head, article or job head) and the About page fade in */
 html.js body:not(.page-about) :is(.scene-head, .jobs-head, h2)[data-reveal] { opacity: 1; transform: none; transition: none; }
+/* a page's title for screen readers and search, when the page opens straight on a chapter */
+.vh-title { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
 /* ── responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
@@ -1843,10 +1845,10 @@ html.js .fade-pr{animation:fade-pr 50s linear infinite}
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     html.js .wf { view-timeline: --wf block; }
-    html.js .scene .wf .w, html.js .scene .wf .ink-mark path, html.js .has-film-hero .scene .stage { animation-play-state: running !important; }
+    html.js .scene .wf .w, html.js .scene .wf .ink-mark path, html.js .scene .stage { animation-play-state: running !important; }
     html.js .wf .w { animation: wf-in linear both; animation-timeline: --wf; animation-range: cover var(--a) cover var(--b); }
     html.js .wf .ink-mark path { animation: ink-draw linear both; animation-timeline: --wf; animation-range: cover 34% cover 50%; }
-    html.js .has-film-hero .scene .stage { animation: stage-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+    html.js .scene .stage { animation: stage-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
     html.js .hero-full { view-timeline: --hero block; }
     html.js .hero-full .hero-media { animation: hero-drift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
     html.js .hero-full .hero-copy { animation: hero-lift linear both; animation-timeline: --hero; animation-range: exit 0% exit 55%; }
@@ -4676,6 +4678,19 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
 .op .zfl { fill: rgba(240, 199, 154, 0.38); }
 .op .zfq { fill: #fde9a8; }
 .op .zguide { fill: none; stroke: none; }
+/* the Projects workspace: the 3D tab's blue part, a dark slide theme, the browser's three dots */
+.op .zfb { fill: #4f7fe0; }
+.op .zfbd { fill: #3a63c2; }
+.op .zkb { fill: none; stroke: #4f7fe0; stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
+.op .zkbn { fill: none; stroke: #23305a; stroke-width: 19; stroke-linecap: round; stroke-linejoin: round; }
+.op .zfmid { fill: #0f172a; }
+.op .zfsky { fill: #38bdf8; }
+.op .zsky { fill: none; stroke: #38bdf8; stroke-linecap: round; }
+.op .zw { fill: none; stroke: #fff; stroke-linecap: round; }
+.op .zxl { fill: #e2e8f0; }
+.op .zxs { fill: #7dd3fc; }
+.op .zfteal { fill: #2a9d8f; }
+.op .zfd1 { fill: #ee8b7a; } .op .zfd2 { fill: #f2c14e; } .op .zfd3 { fill: #8cc084; }
 /* once the script is driving it: the band holds in the window and the board moves */
 @media screen {
   .op.is-live { --op-h: clamp(440px, calc(100svh - var(--header-h) - 2 * clamp(14px, 4vh, 44px)), 900px); margin: 0; }
@@ -4690,6 +4705,13 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
   .op.is-live .zd { stroke-dasharray: 1 1; }
   .op.is-live .op-w { display: inline-block; opacity: var(--ov, 1); transform: translate3d(0, calc((1 - var(--ov, 1)) * 0.45em), 0); }
   .op.is-live .op-art::before { opacity: var(--pv, 1); transform: scale(calc(0.8 + 0.2 * var(--pv, 1))); }
+}
+/* on wide screens the first drawing stands beside the heading, its words under it, so the
+   band never opens on an empty half; the script plays it as the band rises into place */
+@media screen and (min-width: 901px) {
+  .op.is-live .op-head { width: clamp(320px, 36vw, 680px); }
+  .op.is-live .op-head + .op-part { --op-aw: min(46vw, 760px, calc((var(--op-h) - 170px) * 1.36)); flex-direction: column; align-items: flex-start; gap: clamp(10px, 1.8vh, 20px); margin-left: clamp(28px, 4vw, 80px); }
+  .op.is-live .op-head + .op-part .op-say { width: var(--op-aw); max-width: 34em; font-size: clamp(17px, 1.3vw, 22px); }
 }
 /* what keeps moving once a drawing is done, only while its band is near the window */
 .op .zl { transform-box: fill-box; transform-origin: center; }
@@ -4738,6 +4760,14 @@ html.js .fade-ld{animation:fade-ld 36.4s linear infinite}
   .op .zthick { stroke-width: 4.2; }
   .op .zg { stroke-width: 1.8; }
   .op .zbar, .op .zfat { stroke-width: 6.5; }
+}
+/* phones and tablets: the first drawing sits under the heading, sized to fit the band, and the
+   rest follow along the board one at a time */
+@media screen and (max-width: 900px) {
+  .op.is-live .op-track { display: grid; grid-auto-flow: column; grid-template-rows: auto auto; grid-auto-columns: max-content; align-content: center; align-items: center; row-gap: clamp(16px, 2.6vh, 28px); }
+  .op.is-live .op-head { grid-row: 1; grid-column: 1; align-self: end; }
+  .op.is-live .op-head + .op-part { grid-row: 2; grid-column: 1; align-self: start; margin-left: 0; --op-aw: min(84vw, 520px, calc((var(--op-h) - 330px) * 1.36)); }
+  .op.is-live .op-part + .op-part { grid-row: 1 / span 2; }
 }
 /* tablets: the same fixed windows, a little tighter */
 @media (max-width: 1000px) {

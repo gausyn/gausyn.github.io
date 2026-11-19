@@ -417,7 +417,7 @@
   // in as you scroll, each word filling in from a faint trace on its way to the middle of
   // the view. Browsers without scroll-linked animation, and reduced motion, show it whole.
   var canFill = !reduce && window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
-  if (document.body.classList.contains('has-film-hero')) {
+  if (document.querySelector('.scene-head h2, .hero-intro .lede, [data-fill]')) {
     Array.prototype.forEach.call(document.querySelectorAll('.scene-head h2, .hero-intro .lede, [data-fill]'), function (el) {
       var fill = canFill && !el.closest('.scene-head');
       var words = [], heading = /^H[1-3]$/.test(el.tagName), second = false;
@@ -644,7 +644,7 @@
         }
         if (u !== goal) busy = true;
         op.zU = u;
-        var cu = Math.max(-40, Math.min(op.zRun + 40, u));
+        var cu = Math.max(op.zLo, Math.min(op.zRun + 40, u));
         if (cu !== op.zCu) { op.zCu = cu; opRender(op, cu); }
       });
       if (busy) opRaf = requestAnimationFrame(opTick); else opLast = 0;
@@ -661,7 +661,15 @@
         // the heading stands a moment; then for each drawing: slide to it, stand while it plays
         var HEAD = vh * 0.22, SLIDE = vh * 0.45, PLAY = vh * 0.7, REST = vh * 0.05;
         var u = HEAD, x = 0, moves = [];
-        op.zParts.forEach(function (pc) {
+        op.zParts.forEach(function (pc, i) {
+          // on wide screens the first drawing stands beside the heading, already in full view:
+          // it plays as the band rises into place, so the board never opens on an empty half
+          // (and a band at the very top of a page opens on it finished)
+          if (i === 0 && pc.el.offsetLeft + pc.el.offsetWidth <= vw - 4) {
+            pc.ua = -(vh - T) * 0.85; pc.ub = -(vh - T) * 0.12;
+            u = HEAD + vh * 0.3;
+            return;
+          }
           var nx = mid(pc.el), dist = Math.abs(nx - x);
           var sl = dist < 2 ? 0 : SLIDE * Math.max(0.5, Math.min(1.2, dist / (vw * 0.75)));
           if (sl) moves.push({ a: u, b: u + sl, f: x, t: nx });
@@ -672,7 +680,7 @@
         var run = u + vh * 0.16;
         var h = Math.round(H + run) + 'px';
         if (op.style.height !== h) op.style.height = h;
-        op.zMoves = moves; op.zRun = run; op.zT = T;
+        op.zMoves = moves; op.zRun = run; op.zT = T; op.zLo = -(vh - T) - 40;
         op.zTop = pageTop(op);
         op.zHeight = op.offsetHeight;
         op.zCu = null; op.zX = null; op.zPr = null; op.zU = null;
