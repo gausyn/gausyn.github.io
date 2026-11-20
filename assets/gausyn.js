@@ -128,8 +128,14 @@
   var PACE = 1.7;
 
   // Demos. Each is one fixed window telling one story in steps. It waits on its opening
-  // frame until the window is properly on screen, plays from the top, and goes back to the
+  // frame until the window is properly on screen, plays from there, and goes back to the
   // opening once it has left the screen, so nobody meets one halfway through or at its end.
+  // A demo can open on a later step (data-start, in seconds) so it starts in the action;
+  // the steps before it come round later in the loop.
+  function startOf(stage) {
+    var s = parseFloat(stage.getAttribute('data-start'));
+    return isNaN(s) ? 0 : s * 1000;
+  }
   function loopAnim(wrap) {
     if (!wrap || !wrap.getAnimations) return null;
     return wrap.getAnimations().filter(function (a) { return a.animationName && a.animationName.indexOf('fade-') === 0; })[0] || null;
@@ -198,7 +204,7 @@
     });
     stage.appendChild(rail);
     stage.gzSteps = { bar: bar, list: list, on: -1 };
-    paint(stage, 0);
+    paint(stage, startOf(stage));
   }
   function paint(stage, t) {
     var rail = stage.gzSteps;
@@ -230,7 +236,7 @@
     if (stage.gzPlaying) return;
     stage.gzPlaying = true;
     running.push(stage);
-    seek(stage, 0);
+    seek(stage, startOf(stage));
     stage.gzScene.classList.add('play');
     if (!tick.on) { tick.on = true; requestAnimationFrame(tick); }
   }
@@ -243,8 +249,8 @@
     stage.gzPlaying = false;
     running.splice(running.indexOf(stage), 1);
     stage.gzScene.classList.remove('play');
-    seek(stage, 0);
-    paint(stage, 0);
+    seek(stage, startOf(stage));
+    paint(stage, startOf(stage));
     follow(stage, true);
   }
 
@@ -273,6 +279,7 @@
       if (!stage || (film && el.contains(film))) { sio.observe(el); return; }
       stage.gzScene = el;
       buildSteps(stage);
+      if (startOf(stage)) { seek(stage, startOf(stage)); follow(stage, true); }
       reached.observe(stage);
       gone.observe(stage);
     });
