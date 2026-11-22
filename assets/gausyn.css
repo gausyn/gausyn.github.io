@@ -3885,7 +3885,7 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 
 /* careers, set like the legal pages: open roles as ruled rows, details and applying as a small table */
 .legal-head .job-back { margin-bottom: clamp(18px, 3vh, 28px); }
-.legal-head .meta span { white-space: nowrap; }
+.legal-head .meta span { display: inline-block; }
 .legal ul.roles { list-style: none; padding-left: 0; gap: 0; margin-top: 10px; border-top: 1px solid var(--rule); }
 .legal .roles li { border-bottom: 1px solid var(--rule); }
 .legal .roles a { display: grid; grid-template-columns: minmax(0, 1fr) 20px; gap: 4px 16px; padding: 15px 0; color: inherit; text-decoration: none; }
