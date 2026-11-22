@@ -3883,6 +3883,27 @@ html.js .film-langline > span:nth-child(5) { animation-delay: 5s; }
 
 .legal .draftnote { color: var(--faint); font-size: clamp(13.5px, 0.95vw, 15px); line-height: 1.65; margin-top: 1.1em; }
 
+/* careers, set like the legal pages: open roles as ruled rows, details and applying as a small table */
+.legal-head .job-back { margin-bottom: clamp(18px, 3vh, 28px); }
+.legal-head .meta span { white-space: nowrap; }
+.legal ul.roles { list-style: none; padding-left: 0; gap: 0; margin-top: 10px; border-top: 1px solid var(--rule); }
+.legal .roles li { border-bottom: 1px solid var(--rule); }
+.legal .roles a { display: grid; grid-template-columns: minmax(0, 1fr) 20px; gap: 4px 16px; padding: 15px 0; color: inherit; text-decoration: none; }
+.legal .roles a:hover { opacity: 1; }
+.legal .roles .role-t { color: var(--ink); font-size: clamp(16.5px, 1.25vw, 18.5px); line-height: 1.35; }
+.legal .roles .role-s { grid-column: 1; color: var(--muted); font-size: clamp(14.5px, 1vw, 15.5px); line-height: 1.6; }
+.legal .roles .role-m { grid-column: 1; color: var(--faint); font-size: 13px; line-height: 1.5; letter-spacing: 0.02em; }
+.legal .roles .role-go { grid-column: 2; grid-row: 1; color: var(--faint); text-align: right; transition: transform 0.2s ease; }
+.legal .roles a:hover .role-t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.legal .roles a:hover .role-go { color: var(--ink); transform: translateX(3px); }
+.legal .roles + p { margin-top: 18px; }
+.legal .clause h3 + ul.roles { margin-top: 6px; }
+.legal .glance { margin-top: 16px; }
+.legal .glance dt, .legal .glance dd { font-size: clamp(14.5px, 1vw, 15.5px); line-height: 1.55; }
+.legal .glance + p { margin-top: 14px; }
+.legal .clause > ul + p { margin-top: 0.85em; }
+.legal .more-all { font-size: 14.5px; }
+
 /* ════ Learning & Projects replicas ═══════════════════════════════════════ */
 
 /* inline mathematics, set like the product's KaTeX */
